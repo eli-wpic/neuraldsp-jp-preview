@@ -13,6 +13,8 @@ pat = re.compile(r'''(=["']|&quot;|&#34;|\(['"]?|:\s?["'])/(?!/)''')
 for f in out.rglob('*.html'):
     s = f.read_text()
     s = pat.sub(lambda m: m.group(1) + base, s)
+    # pages that only exist on the real store (help-centre app, customer accounts, policies) open on neuraldsp.jp
+    s = re.sub(r'(href=")' + re.escape(base) + r'(a/|account|policies/|checkout)', r'\1https://neuraldsp.jp/\2', s)
     f.write_text(s)
 # folders that also have a page of the same name (/blogs/news and /blogs/news/<article>, /collections): Pages needs index.html
 for f in list(out.rglob('*.html')):
