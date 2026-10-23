@@ -1,0 +1,32 @@
+<section class="nd-awards">
+  <div class="container nd-awards__row">
+    {%- for block in section.blocks -%}
+      <div class="nd-awards__item" {{ block.shopify_attributes }}>
+        {% render 'nd-media', image: block.settings.image, url: block.settings.image_url, alt: block.settings.line1, sizes: '120px' %}
+        <div>
+          {%- if block.settings.line1 != blank -%}<p>{{ block.settings.line1 }}</p>{%- endif -%}
+          {%- if block.settings.line2 != blank -%}<p>{{ block.settings.line2 }}</p>{%- endif -%}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ND · Awards",
+  "blocks": [
+    {
+      "type": "award",
+      "name": "Award",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Badge" },
+        { "type": "text", "id": "image_url", "label": "Badge URL" },
+        { "type": "text", "id": "line1", "label": "Line 1" },
+        { "type": "text", "id": "line2", "label": "Line 2" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "ND · Awards" }]
+}
+{% endschema %}

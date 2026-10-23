@@ -1,0 +1,20 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Neural DSP Japan",
+    "theme_version": "1.0.0",
+    "theme_author": "WPIC Creative",
+    "theme_documentation_url": "https://neuraldsp.jp",
+    "theme_support_url": "https://neuraldsp.jp/pages/contact"
+  },
+  {
+    "name": "Brand",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon"
+      }
+    ]
+  }
+]

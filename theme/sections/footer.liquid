@@ -1,0 +1,104 @@
+{%- comment -%}
+  Footer — each column uses a Shopify menu when one is chosen; otherwise it shows the links carried over from the live site
+  (one "label|url" per line), so nothing disappears on the theme switch.
+{%- endcomment -%}
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__grid">
+      <div class="site-footer__brand">
+        <a class="logo" href="{{ routes.root_url }}">
+          <img src="{{ section.settings.logo_url }}" alt="{{ shop.name | escape }}" width="85" height="26" loading="lazy">
+          <span class="logo__region">JAPAN</span>
+        </a>
+        {%- if section.settings.tagline != blank -%}<p class="site-footer__tag">{{ section.settings.tagline }}</p>{%- endif -%}
+      </div>
+      {%- for block in section.blocks -%}
+        <div {{ block.shopify_attributes }}>
+          <h4>{{ block.settings.title }}</h4>
+          <ul>
+            {%- assign m = linklists[block.settings.menu] -%}
+            {%- if block.settings.menu != blank and m.links.size > 0 -%}
+              {%- for link in m.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {%- if block.settings.include_children -%}
+                  {%- for child in link.links -%}<li class="sub"><a href="{{ child.url }}">{{ child.title }}</a></li>{%- endfor -%}
+                {%- endif -%}
+              {%- endfor -%}
+            {%- else -%}
+              {%- assign lines = block.settings.links | newline_to_br | split: '<br />' -%}
+              {%- for line in lines -%}
+                {%- assign parts = line | strip | split: '|' -%}
+                {%- if parts.size > 1 -%}
+                  {%- assign href = parts[1] | strip -%}
+                  <li><a href="{{ href }}"{% if href contains 'http' %}{% unless href contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ parts[0] | strip }}</a></li>
+                {%- endif -%}
+              {%- endfor -%}
+            {%- endif -%}
+          </ul>
+        </div>
+      {%- endfor -%}
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="social">
+        {%- if section.settings.x_url != blank -%}<a class="icon-btn" href="{{ section.settings.x_url }}" aria-label="X" target="_blank" rel="noopener">{% render 'icon', name: 'x' %}</a>{%- endif -%}
+        {%- if section.settings.youtube_url != blank -%}<a class="icon-btn" href="{{ section.settings.youtube_url }}" aria-label="YouTube" target="_blank" rel="noopener">{% render 'icon', name: 'youtube' %}</a>{%- endif -%}
+        {%- if section.settings.line_url != blank -%}<a class="icon-btn" href="{{ section.settings.line_url }}" aria-label="LINE" target="_blank" rel="noopener">{% render 'icon', name: 'line' %}</a>{%- endif -%}
+      </div>
+
+      {%- if localization.available_countries.size > 1 or localization.available_languages.size > 1 -%}
+        {%- form 'localization', class: 'nd-localization' -%}
+          {%- if localization.available_languages.size > 1 -%}
+            <label class="visually-hidden" for="FooterLanguage">{{ 'general.language' | t }}</label>
+            <select id="FooterLanguage" name="locale_code" onchange="this.form.submit()">
+              {%- for language in localization.available_languages -%}
+                <option value="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} selected{% endif %}>{{ language.endonym_name | capitalize }}</option>
+              {%- endfor -%}
+            </select>
+          {%- endif -%}
+          {%- if localization.available_countries.size > 1 -%}
+            <label class="visually-hidden" for="FooterCountry">{{ 'general.country' | t }}</label>
+            <select id="FooterCountry" name="country_code" onchange="this.form.submit()">
+              {%- for country in localization.available_countries -%}
+                <option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>{{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})</option>
+              {%- endfor -%}
+            </select>
+          {%- endif -%}
+        {%- endform -%}
+      {%- endif -%}
+
+      <ul class="payment-icons" aria-label="{{ 'general.payment_methods' | t }}">
+        {%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag }}</li>{%- endfor -%}
+      </ul>
+      <span class="site-footer__copy">{{ section.settings.copyright }}</span>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "section-footer",
+  "settings": [
+    { "type": "text", "id": "logo_url", "label": "Logo URL", "default": "https://neuraldsp.jp/cdn/shop/files/full_white.png?v=1768447326&width=320" },
+    { "type": "text", "id": "tagline", "label": "Tagline" },
+    { "type": "text", "id": "x_url", "label": "X URL" },
+    { "type": "text", "id": "youtube_url", "label": "YouTube URL" },
+    { "type": "text", "id": "line_url", "label": "LINE URL" },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2026 Neural DSP 日本公式オンラインストア, All rights reserved." }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Link column",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Heading" },
+        { "type": "link_list", "id": "menu", "label": "Menu (optional)" },
+        { "type": "checkbox", "id": "include_children", "label": "Show nested links", "default": false },
+        { "type": "textarea", "id": "links", "label": "Links when no menu is chosen", "info": "One per line: label|url" }
+      ]
+    }
+  ],
+  "max_blocks": 6
+}
+{% endschema %}

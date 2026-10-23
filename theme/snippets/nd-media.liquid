@@ -1,0 +1,21 @@
+{%- comment -%}
+  Renders an image from an image_picker value, falling back to a CDN URL (used for content carried over from the old theme).
+  Params: image, url, alt, sizes, loading, class, w, h (intrinsic size hint for URL images; CSS keeps the real ratio)
+{%- endcomment -%}
+{%- liquid
+  assign _alt = alt | default: ''
+  assign _loading = loading | default: 'lazy'
+  assign _sizes = sizes | default: '100vw'
+  assign _w = w | default: 1600
+  assign _h = h | default: 1000
+-%}
+{%- if image != blank -%}
+  {{ image | image_url: width: 2400 | image_tag: loading: _loading, sizes: _sizes, widths: '480, 800, 1200, 1600, 2400', alt: _alt, class: class }}
+{%- elsif url != blank -%}
+  {%- assign _u = url | split: '?' | first -%}
+  {%- if _u contains 'cdn.shopify.com' or _u contains '/cdn/shop/' -%}
+    <img src="{{ _u }}?width=1600" srcset="{{ _u }}?width=600 600w, {{ _u }}?width=1000 1000w, {{ _u }}?width=1600 1600w, {{ _u }}?width=2400 2400w" sizes="{{ _sizes }}" width="{{ _w }}" height="{{ _h }}" alt="{{ _alt | escape }}" loading="{{ _loading }}" decoding="async"{% if class %} class="{{ class }}"{% endif %}>
+  {%- else -%}
+    <img src="{{ url }}" width="{{ _w }}" height="{{ _h }}" alt="{{ _alt | escape }}" loading="{{ _loading }}" decoding="async"{% if class %} class="{{ class }}"{% endif %}>
+  {%- endif -%}
+{%- endif -%}

@@ -1,0 +1,142 @@
+{%- comment -%}
+  Header — menu comes from Shopify navigation (default: main-menu), so the live menu carries over unchanged.
+  Items with children open a dropdown; hardware items show their product image when the link points to a product.
+{%- endcomment -%}
+{%- assign menu = linklists[section.settings.menu] -%}
+{%- assign use_blocks = false -%}
+{%- if section.settings.nav_source == 'blocks' and section.blocks.size > 0 -%}{%- assign use_blocks = true -%}{%- endif -%}
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo" href="{{ routes.root_url }}" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 320 | image_tag: alt: shop.name, height: 26, width: 85 }}
+      {%- else -%}
+        <img src="{{ section.settings.logo_url }}" alt="{{ shop.name | escape }}" width="85" height="26">
+      {%- endif -%}
+      {%- if section.settings.region != blank -%}<span class="logo__region">{{ section.settings.region }}</span>{%- endif -%}
+    </a>
+
+    <nav class="nav" aria-label="{{ 'general.main_menu' | t }}">
+      {%- if use_blocks -%}
+        {%- for block in section.blocks -%}
+          {%- assign kids = block.settings.children | newline_to_br | split: '<br />' -%}
+          {%- if block.type == 'group' -%}
+            <div class="nav__item" {{ block.shopify_attributes }}>
+              <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="Mega-{{ block.id }}" data-mega-trigger>{{ block.settings.label }} {% render 'icon', name: 'chev' %}</button>
+              {%- assign n_kids = 0 -%}{%- for line in kids -%}{%- if line contains '|' -%}{%- assign n_kids = n_kids | plus: 1 -%}{%- endif -%}{%- endfor -%}
+              <div class="mega mega--list" id="Mega-{{ block.id }}" style="--n: {{ n_kids | at_most: 3 }}">
+                {%- for line in kids -%}
+                  {%- assign parts = line | strip | split: '|' -%}
+                  {%- if parts.size > 1 -%}
+                    {%- assign kid_handle = parts[1] | strip | split: '/products/' | last -%}
+                    {%- assign kid = all_products[kid_handle] -%}
+                    <a href="{{ parts[1] | strip }}">
+                      {%- if parts[1] contains '/products/' and kid != blank -%}{% render 'nd-product-thumb', product: kid, width: 240 %}{%- endif -%}
+                      <strong>{{ parts[0] | strip }}</strong>
+                      {%- if parts[1] contains '/products/' and kid.price -%}<span>{% render 'nd-price', price: kid.price %}</span>{%- endif -%}
+                    </a>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
+            </div>
+          {%- else -%}
+            <a href="{{ block.settings.url }}" {{ block.shopify_attributes }}>{{ block.settings.label }}</a>
+          {%- endif -%}
+        {%- endfor -%}
+      {%- else -%}
+      {%- for link in menu.links -%}
+        {%- if link.links.size > 0 -%}
+          <div class="nav__item">
+            <button class="nav__trigger" type="button" aria-expanded="false" aria-controls="Mega-{{ forloop.index }}" data-mega-trigger>
+              {{ link.title }} {% render 'icon', name: 'chev' %}
+            </button>
+            <div class="mega mega--list" id="Mega-{{ forloop.index }}">
+              <a class="mega__all" href="{{ link.url }}">{{ link.title }} {% render 'icon', name: 'arrow' %}</a>
+              {%- for child in link.links -%}
+                <a href="{{ child.url }}">
+                  {%- if child.type == 'product_link' and child.object.featured_media -%}
+                    {{ child.object.featured_media | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' }}
+                  {%- endif -%}
+                  <strong>{{ child.title }}</strong>
+                  {%- if child.type == 'product_link' -%}<span>{% render 'nd-price', price: child.object.price %}</span>{%- endif -%}
+                </a>
+              {%- endfor -%}
+            </div>
+          </div>
+        {%- else -%}
+          <a href="{{ link.url }}"{% if link.active %} aria-current="page"{% endif %}>{{ link.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+      {%- endif -%}
+    </nav>
+
+    <div class="header-icons">
+      <a class="icon-btn hide-sm" href="{{ routes.search_url }}" aria-label="{{ 'general.search' | t }}">{% render 'icon', name: 'search' %}</a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="icon-btn hide-sm header-login" href="{{ routes.account_url }}">
+          {%- if customer -%}{% render 'icon', name: 'account' %}<span class="visually-hidden">{{ 'customer.account' | t }}</span>{%- else -%}<span class="header-login__label">{{ 'customer.log_in' | t }}</span>{%- endif -%}
+        </a>
+      {%- endif -%}
+      <a class="icon-btn header-cart" href="{{ routes.cart_url }}" aria-label="{{ 'cart.title' | t }}">
+        {% render 'icon', name: 'cart' %}
+        <span class="header-cart__count" data-cart-count{% if cart.item_count == 0 %} hidden{% endif %}>{{ cart.item_count }}</span>
+      </a>
+      <button class="icon-btn menu-toggle" type="button" aria-label="{{ 'general.menu' | t }}" aria-expanded="false" aria-controls="MobileNav" data-menu-toggle>{% render 'icon', name: 'menu' %}</button>
+    </div>
+  </div>
+</header>
+
+<nav class="mobile-nav" id="MobileNav" aria-label="{{ 'general.mobile_menu' | t }}">
+  {%- if use_blocks -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'group' -%}
+        {%- assign kids = block.settings.children | newline_to_br | split: '<br />' -%}
+        <details class="mobile-nav__group"><summary>{{ block.settings.label }}</summary>
+          {%- for line in kids -%}{%- assign parts = line | strip | split: '|' -%}{%- if parts.size > 1 -%}<a href="{{ parts[1] | strip }}">{{ parts[0] | strip }} <span>→</span></a>{%- endif -%}{%- endfor -%}
+        </details>
+      {%- else -%}
+        <a href="{{ block.settings.url }}">{{ block.settings.label }} <span>→</span></a>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- else -%}
+  {%- for link in menu.links -%}
+    {%- if link.links.size > 0 -%}
+      <details class="mobile-nav__group">
+        <summary>{{ link.title }}</summary>
+        <a href="{{ link.url }}">{{ link.title }} <span>→</span></a>
+        {%- for child in link.links -%}<a href="{{ child.url }}">{{ child.title }} <span>→</span></a>{%- endfor -%}
+      </details>
+    {%- else -%}
+      <a href="{{ link.url }}">{{ link.title }} <span>→</span></a>
+    {%- endif -%}
+  {%- endfor -%}
+  {%- endif -%}
+  <a href="{{ routes.search_url }}">{{ 'general.search' | t }} <span>→</span></a>
+  {%- if shop.customer_accounts_enabled -%}<a href="{{ routes.account_url }}">{{ 'customer.log_in' | t }} <span>→</span></a>{%- endif -%}
+</nav>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "section-header",
+  "settings": [
+    { "type": "select", "id": "nav_source", "label": "Navigation source", "default": "blocks", "options": [
+      { "value": "blocks", "label": "Simplified menu (blocks below)" }, { "value": "menu", "label": "Shopify menu" }
+    ] },
+    { "type": "link_list", "id": "menu", "label": "Shopify menu", "default": "main-menu" },
+    { "type": "image_picker", "id": "logo", "label": "Logo" },
+    { "type": "text", "id": "logo_url", "label": "Logo URL (used when no logo image is chosen)", "default": "https://neuraldsp.jp/cdn/shop/files/full_white.png?v=1768447326&width=320" },
+    { "type": "text", "id": "region", "label": "Region label", "default": "JAPAN" }
+  ],
+  "blocks": [
+    { "type": "link", "name": "Link", "settings": [
+      { "type": "text", "id": "label", "label": "Label" }, { "type": "text", "id": "url", "label": "URL" }
+    ] },
+    { "type": "group", "name": "Dropdown", "settings": [
+      { "type": "text", "id": "label", "label": "Label" },
+      { "type": "textarea", "id": "children", "label": "Links", "info": "One per line: label|url" }
+    ] }
+  ],
+  "max_blocks": 8
+}
+{% endschema %}

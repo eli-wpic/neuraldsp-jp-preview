@@ -1,0 +1,18 @@
+<section class="nd-form-section">
+  <div class="container nd-form-wrap">
+    {%- form 'contact', class: 'nd-form' -%}
+      {%- if form.posted_successfully? -%}<p class="nd-form__ok" role="status">{{ 'contact.success' | t }}</p>{%- endif -%}
+      {%- if form.errors -%}<div class="nd-form__err" role="alert">{{ form.errors | default_errors }}</div>{%- endif -%}
+      <div class="nd-form__row">
+        <label>{{ 'contact.name' | t }}<input type="text" name="contact[{{ 'contact.name' | t }}]" autocomplete="name" value="{{ form.name }}"></label>
+        <label>{{ 'contact.email' | t }} <span class="badge badge--req">{{ 'general.required' | t }}</span><input type="email" name="contact[email]" autocomplete="email" required value="{{ form.email }}"></label>
+      </div>
+      <label>{{ 'contact.phone' | t }}<input type="tel" name="contact[{{ 'contact.phone' | t }}]" autocomplete="tel" value="{{ form.phone }}"></label>
+      <label>{{ 'contact.message' | t }} <span class="badge badge--req">{{ 'general.required' | t }}</span><textarea name="contact[body]" rows="7" required>{{ form.body }}</textarea></label>
+      <button class="btn btn--primary" type="submit">{{ 'contact.send' | t }}</button>
+    {%- endform -%}
+  </div>
+</section>
+{% schema %}
+{ "name": "Contact form", "tag": "section", "settings": [], "presets": [{ "name": "Contact form" }] }
+{% endschema %}

@@ -1,0 +1,108 @@
+{
+  "general": {
+    "page": "{{ page }}ページ",
+    "home": "ホーム",
+    "search": "検索",
+    "menu": "メニュー",
+    "main_menu": "メインメニュー",
+    "mobile_menu": "モバイルメニュー",
+    "close": "閉じる",
+    "previous": "前へ",
+    "next": "次へ",
+    "pagination": "ページ送り",
+    "play_video": "動画を再生",
+    "payment_methods": "お支払い方法",
+    "language": "言語",
+    "country": "国・地域",
+    "required": "必須",
+    "password": "パスワード",
+    "enter": "入る",
+    "404_title": "ページが見つかりません",
+    "404_text": "お探しのページは移動または削除された可能性があります。"
+  },
+  "accessibility": {
+    "skip_to_content": "本文へスキップ"
+  },
+  "cart": {
+    "title": "カート",
+    "add_error": "カートに追加できませんでした。時間をおいて再度お試しください。",
+    "quantity": "数量",
+    "remove": "削除",
+    "subtotal": "小計",
+    "taxes_shipping": "税込・送料無料。",
+    "update": "更新",
+    "checkout": "購入手続きへ",
+    "empty": "カートは空です。",
+    "continue": "買い物を続ける"
+  },
+  "products": {
+    "sold_out": "売り切れ",
+    "gallery": "画像ギャラリー",
+    "plugin_info": "選択中のプラグインの説明",
+    "plugin_clear": "プラグインの選択を解除",
+    "qty_down": "数量を減らす",
+    "qty_up": "数量を増やす",
+    "base": "本体",
+    "set": "セット",
+    "no_accessories": "アクセサリーなし",
+    "selected": "選択中",
+    "view_plugin": "商品ページを見る"
+  },
+  "collections": {
+    "count": "{{ count }} 商品",
+    "sort_by": "並べ替え",
+    "empty": "商品がありません。",
+    "all": "すべてのコレクション"
+  },
+  "search": {
+    "placeholder": "キーワードを入力",
+    "results": "「{{ terms }}」の検索結果：{{ count }}件",
+    "none": "該当する結果がありません。"
+  },
+  "blogs": {
+    "read_more": "続きを読む",
+    "back": "一覧に戻る"
+  },
+  "contact": {
+    "name": "お名前",
+    "email": "メールアドレス",
+    "phone": "電話番号",
+    "message": "お問い合わせ内容",
+    "send": "送信する",
+    "success": "お問い合わせありがとうございます。担当者よりご連絡いたします。"
+  },
+  "customer": {
+    "log_in": "ログイン",
+    "log_out": "ログアウト",
+    "account": "アカウント",
+    "register": "新規登録",
+    "forgot": "パスワードをお忘れですか？",
+    "recover_sent": "パスワード再設定用のメールを送信しました。",
+    "send": "送信",
+    "first_name": "名",
+    "last_name": "姓",
+    "orders": "注文履歴",
+    "order": "注文",
+    "date": "日付",
+    "status": "ステータス",
+    "no_orders": "まだ注文はありません。",
+    "addresses": "住所",
+    "add_address": "住所を追加",
+    "zip": "郵便番号",
+    "province": "都道府県",
+    "city": "市区町村",
+    "address1": "番地",
+    "address2": "建物名・部屋番号",
+    "save": "保存",
+    "product": "商品",
+    "total": "合計",
+    "shipping": "配送先",
+    "activate": "アカウントを有効化",
+    "reset": "パスワードを再設定",
+    "password_confirm": "パスワード（確認）"
+  },
+  "gift_card": {
+    "title": "ギフトカード",
+    "expired": "このギフトカードは有効期限が切れています。"
+  }
+}

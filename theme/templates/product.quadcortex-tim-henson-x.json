@@ -1,0 +1,75 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-tim (product-quadcortex-tim-henson-x) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "thx_hero": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/68R7yg33ZH6OlJ8wYyavnN/92edfcf01241f6ef10ff6ec56f22d0b5/Sequence_01_4.mp4",
+        "title": "Quad Cortex + Archetype: Tim Henson X",
+        "subtitle": "Tim Henson のシグネチャートーンと革新的なサウンドを、あなたのギターに。",
+        "film_url": "https://youtu.be/Mz1uL3K75pY",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-tim",
+          "quadcortex-mini-plugin-bundle-tim"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "thx_about": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Archetype: Tim Henson Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-tim-henson",
+        "body": "<p>Tim Hensonのすべては独特です。そのアーティストとしてのアイデンティティは、自らの美学を絶え間なく追求する姿勢によって形作られています。時に思いもよらないものからインスピレーションを得ながら生み出されるトーンとスタイルは、彼自身と同じように唯一無二の存在です。</p><p>多くの人が既存の成功を繰り返そうとする中、Timはまだ誰も踏み込んでいない領域に可能性を見出します。革新と進化を追い求め、常に最先端のその先へ。その姿勢と創造性を形にしたのが、Archetype: Tim Henson Xです。</p><p>象徴的な<strong>Multivoicer</strong>では、最大4つのピッチシフトされたボイスを加え、Tim Hensonのサウンドを特徴づける豊かで重層的なハーモニーを生み出すことができます。さらに、Boost、Compressor、Overdriveをはじめ、Stereo Chorus、Delay、Reverbなど、多彩なサウンドメイキングツールを搭載しています。</p><p>誇りを持ってご紹介します。<br/><strong>Archetype: Tim Henson X。</strong></p>"
+      }
+    },
+    "thx_sysreq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/thx-system-requirements.webp?v=1788843502",
+        "image_alt": "Archetype: Tim Henson X システム要件",
+        "heading": "システム要件",
+        "body": "<p>Archetype: Tim Henson X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "thx_gs": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    }
+  },
+  "order": [
+    "thx_hero",
+    "main",
+    "thx_about",
+    "thx_sysreq",
+    "thx_gs"
+  ]
+}

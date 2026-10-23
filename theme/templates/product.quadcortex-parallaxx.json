@@ -1,0 +1,107 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-par (product-quadcortex-parallaxx) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "custom_liquid_zte9pn": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/3WFEf6rw1arqF2SuWnVJl6/090020e5fee563d7d3b6002de43461d2/parallaxx-video-loop.mp4",
+        "title": "Quad Cortex + Parallax X",
+        "subtitle": "究極のベーストーンを作り上げるために必要なものがすべて揃っています。",
+        "film_url": "https://youtu.be/VHpBHTmskDo",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-par",
+          "quadcortex-mini-plugin-bundle-par"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_two_col_overview": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/parallaxx.png?v=1763451634",
+        "image_alt": "Parallax X",
+        "heading": "Archetype: Parallax Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/parallax",
+        "body": "<p>何十年もの間、並列処理によるベースサウンドの加工は、強力なベーストーンを支える基本的な手法でした。従来は、明瞭さと攻撃性を得るために高音域を歪ませつつ、低音域を強く圧縮して圧倒的な土台を作るために、2つのリグを組んだり、複数のプラグインを使って処理を行う必要がありました。</p><p>Parallax X は、このプロセスに革新をもたらします。単一のプラグイン内で、ベースの包括的な並列処理を実現し、究極のベーストーンを作り上げるために必要なすべてを提供します。直感的なインターフェースの中で、精密さ・柔軟性・パワーを兼ね備えた音作りが可能になります。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Archetype: Parallax X</strong></p>"
+      }
+    },
+    "custom_liquid_video_yt": {
+      "type": "nd-video",
+      "settings": {
+        "youtube_id": "VHpBHTmskDo"
+      }
+    },
+    "custom_liquid_iyiemb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "video_url": "https://cdn.shopify.com/videos/c/o/v/d311b1df82564e78bf3269c60cfbf355.mov",
+        "heading": "システム要件",
+        "body": "<p>Parallax X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、 <a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\"> サポートページ </a> をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\"> iLok License Manager </a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "rich_text_cwbcev": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    },
+    "custom_liquid_trial_modal": {
+      "type": "nd-trial",
+      "settings": {
+        "title": "Parallax Xを\nダウンロードする",
+        "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/parallax-x-product-card.png",
+        "subline": "14日間無料体験",
+        "description": "メールアドレスを入力して無料体験を始めましょう！",
+        "placeholder": "メールアドレスを入力する",
+        "submit": "無料体験する"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_zte9pn",
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_two_col_overview",
+    "custom_liquid_video_yt",
+    "custom_liquid_iyiemb",
+    "rich_text_cwbcev",
+    "custom_liquid_trial_modal"
+  ]
+}

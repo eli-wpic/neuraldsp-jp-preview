@@ -1,0 +1,17 @@
+<section class="nd-video-section">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}<h2 class="nd-video-section__title">{{ section.settings.heading }}</h2>{%- endif -%}
+    <div class="nd-video-section__frame">{% render 'nd-video', youtube: section.settings.youtube_id, url: section.settings.video_url, title: section.settings.heading %}</div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Video",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
+    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" }
+  ],
+  "presets": [{ "name": "ND · Video" }]
+}
+{% endschema %}

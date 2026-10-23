@@ -1,0 +1,26 @@
+<section class="nd-stats">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}<h2 class="nd-stats__title">{{ section.settings.heading | newline_to_br }}</h2>{%- endif -%}
+    <div class="nd-stats__row">
+      {%- for block in section.blocks -%}
+        <div class="nd-stats__item" {{ block.shopify_attributes }}><strong>{{ block.settings.value }}</strong><span>{{ block.settings.label }}</span></div>
+      {%- endfor -%}
+    </div>
+    {%- if section.settings.link_label != blank -%}<a class="btn" href="{{ section.settings.link_url }}"{% if section.settings.link_url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ section.settings.link_label }}</a>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Stats",
+  "settings": [
+    { "type": "textarea", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "link_label", "label": "Link label" },
+    { "type": "text", "id": "link_url", "label": "Link URL" }
+  ],
+  "blocks": [{ "type": "stat", "name": "Stat", "settings": [
+    { "type": "text", "id": "value", "label": "Value" },
+    { "type": "text", "id": "label", "label": "Label" }
+  ] }],
+  "presets": [{ "name": "ND · Stats" }]
+}
+{% endschema %}

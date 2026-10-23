@@ -1,0 +1,59 @@
+{%- comment -%}
+  Compact real-time 3D viewer for product pages (Quad Cortex, Quad Cortex mini, Nano Cortex).
+  Built from the supplied retail photos; drag to spin, buttons switch the camera view.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  case s.model
+    when 'mini'
+      assign poster = 'mini-three-quarter-1600.webp'
+    when 'nano'
+      assign poster = 'nano-three-quarter-1600.webp'
+    else
+      assign poster = 'qc-three-quarter-1600.webp'
+  endcase
+-%}
+<section class="nd-viewer" data-3d="viewer" aria-labelledby="ViewerTitle-{{ section.id }}">
+  <div class="container">
+    <header class="nd-viewer__head">
+      {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      <h2 id="ViewerTitle-{{ section.id }}">{{ s.heading }}</h2>
+    </header>
+    <div class="nd-viewer__stage" data-3d-stage data-model="{{ s.model }}"
+      {%- case s.model -%}
+        {%- when 'mini' %} data-tex-top="{{ 'mini-top.webp' | asset_url }}" data-tex-rear="{{ 'mini-rear.webp' | asset_url }}"
+        {%- when 'nano' %} data-tex-top="{{ 'nano-top.webp' | asset_url }}" data-tex-rear="{{ 'nano-rear.webp' | asset_url }}" data-tex-front="{{ 'nano-front.webp' | asset_url }}" data-tex-left="{{ 'nano-left.webp' | asset_url }}" data-tex-right="{{ 'nano-right.webp' | asset_url }}"
+        {%- else %} data-tex-top="{{ 'qc-top.webp' | asset_url }}" data-tex-screen="{{ 'qc-screen.webp' | asset_url }}" data-tex-rear="{{ 'qc-rear.webp' | asset_url }}"
+      {%- endcase -%}>
+      <img class="nd-viewer__poster" src="{{ poster | asset_url }}" alt="{{ s.heading | escape }}" width="1600" height="1100" loading="lazy">
+      <canvas aria-label="{{ s.canvas_label | escape }}" role="img"></canvas>
+      <span class="qc3d__hint nd-viewer__hint" data-drag-hint aria-hidden="true"><svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h22M5 2 1 6l4 4M19 2l4 4-4 4"/></svg>{{ s.drag_label }}</span>
+    </div>
+    <div class="nd-viewer__controls" role="group" aria-label="{{ s.heading | escape }}">
+      {%- assign labels = s.view_labels | split: ',' -%}
+      {%- assign captions = s.view_captions | split: '|' -%}
+      {%- for l in labels -%}
+        <button type="button" class="nd-viewer__btn" data-view="{{ forloop.index0 }}" data-caption="{{ captions[forloop.index0] | strip | escape }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ l | strip }}</button>
+      {%- endfor -%}
+    </div>
+    <p class="nd-viewer__caption" aria-live="polite" data-view-caption>{{ captions[0] | strip }}</p>
+  </div>
+</section>
+<script type="module" src="{{ 'nd-3d.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "ND · 3D viewer",
+  "settings": [
+    { "type": "select", "id": "model", "label": "Model", "default": "qc", "options": [
+      { "value": "qc", "label": "Quad Cortex" }, { "value": "mini", "label": "Quad Cortex mini" }, { "value": "nano", "label": "Nano Cortex" }
+    ] },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "3D VIEW" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "view_labels", "label": "View buttons (comma separated, max 5)" },
+    { "type": "textarea", "id": "view_captions", "label": "Captions per view (separated by |)" },
+    { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
+    { "type": "text", "id": "canvas_label", "label": "3D model description (screen readers)" }
+  ],
+  "presets": [{ "name": "ND · 3D viewer" }]
+}
+{% endschema %}

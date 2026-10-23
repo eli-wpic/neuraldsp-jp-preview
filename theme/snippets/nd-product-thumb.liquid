@@ -1,0 +1,30 @@
+{%- comment -%}
+  Product thumbnail on a transparent background. Hardware and accessories use the cut-out renders shipped
+  with the theme (Shopify's own product photos have white backgrounds); everything else uses its featured image.
+  Params: product, width (default 400), loading (default 'lazy')
+{%- endcomment -%}
+{%- liquid
+  assign w = width | default: 400
+  assign cut = ''
+  case product.handle
+    when 'quad-cortex'
+      assign cut = 'qc-three-quarter-800.webp'
+    when 'quad-cortex-mini'
+      assign cut = 'mini-three-quarter-1600.webp'
+    when 'nano-cortex'
+      assign cut = 'nano-three-quarter-1600.webp'
+    when 'quad-cortex-mini-psu'
+      assign cut = 'minipsu-photo-1.webp'
+    else
+      if product.handle contains 'gig-case'
+        assign cut = 'gigcase-hero.webp'
+      elsif product.handle contains 'psu'
+        assign cut = 'psu-hero.webp'
+      endif
+  endcase
+-%}
+{%- if cut != '' -%}
+  <img class="nd-cutout" src="{{ cut | asset_url }}" alt="" width="{{ w }}" height="{{ w | times: 0.625 | round }}" loading="{{ loading | default: 'lazy' }}">
+{%- elsif product.featured_media -%}
+  {{ product.featured_media | image_url: width: w | image_tag: loading: loading | default: 'lazy', alt: '' }}
+{%- endif -%}

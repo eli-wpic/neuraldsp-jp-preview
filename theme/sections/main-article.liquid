@@ -1,0 +1,13 @@
+<article class="nd-article">
+  <header class="nd-page-head"><div class="container">
+    <p class="crumbs"><a href="{{ blog.url }}">{{ blog.title }}</a></p>
+    <h1>{{ article.title }}</h1>
+    <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: '%Y.%m.%d' }}</time>
+  </div></header>
+  {%- if article.image -%}<div class="container nd-article__hero">{{ article.image | image_url: width: 2000 | image_tag: widths: '800, 1200, 2000', sizes: '(max-width: 1280px) 100vw, 1200px', alt: article.title }}</div>{%- endif -%}
+  <section class="nd-html nd-html--narrow"><div class="container"><div class="nd-prose nd-prose--table">{{ article.content }}</div></div></section>
+  <div class="container nd-article__back"><a class="link-arrow" href="{{ blog.url }}">{{ 'blogs.back' | t }} {% render 'icon', name: 'arrow' %}</a></div>
+</article>
+{% schema %}
+{ "name": "Article", "tag": "section", "settings": [] }
+{% endschema %}

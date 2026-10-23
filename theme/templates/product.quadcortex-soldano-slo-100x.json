@@ -1,0 +1,117 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-slo (product-quadcortex-soldano-slo-100x) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "custom_liquid_zte9pn": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/1acXPXabixWIzzVtrqekO5/1337a6febceeb38ae7d4d6f494f87bf3/soldano-slo-x-hero-video-landing.mp4",
+        "title": "Quad Cortex + Archetype: Soldano SLO-100 X",
+        "subtitle": "アメリカン・ハイゲイン・トーンの源流となった伝説的アンプ",
+        "film_url": "https://www.youtube.com/watch?v=hNEJM997cYM",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-slo",
+          "quadcortex-mini-plugin-bundle-slo"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_two_col_overview": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/soladno-slo-100-x-overview.webp?v=1763452620",
+        "image_alt": "Soldano SLO-100 X",
+        "heading": "Soldano SLO-100 Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/soldano-slo-100",
+        "body": "<p>ギターアンプの歴史において、Soldano SLO-100 ほど深い敬意と畏敬を集める名は多くありません。Mike Soldano が生み出した独自の回路設計は、SLO-100 を単なるアイコンにしただけでなく、現代音楽において今なお広く使われている “アメリカン・ハイゲイン・サウンド” の源流そのものとなりました。</p><p>この卓越したアンプのあらゆるニュアンスを再現することは、非常に大きな責任であり、私たちも慎重に取り組みました。そして 2021年、Soldano SLO-100 プラグインが誕生しました。</p><p>そして 2024年、私たちはこの“トーンの巨人”を再び見つめ直し、最新かつ最高峰のプラグイン技術でアップデートできることを嬉しく思います。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Soldano SLO-100 X</strong></p>"
+      }
+    },
+    "custom_liquid_video_yt": {
+      "type": "nd-video",
+      "settings": {
+        "youtube_id": "hNEJM997cYM"
+      }
+    },
+    "custom_liquid_dcjcnv": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/soladno-slo-100-x-system-requirements.webp?v=1763452603",
+        "image_alt": "System requirements",
+        "heading": "システム要件",
+        "body": "<p>Soldano SLO-100 X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、 <a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a> をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "custom_liquid_between_sections": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/soldano-slo-100-x-home-background-img.webp?v=1763453046",
+        "image_alt": ""
+      }
+    },
+    "rich_text_cwbcev": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    },
+    "custom_liquid_trial_modal": {
+      "type": "nd-trial",
+      "settings": {
+        "title": "Archetype: Soldano SLO-100 Xを\nダウンロードする",
+        "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/soldano-slo-100-x-product-card.png",
+        "subline": "14日間無料体験",
+        "description": "メールアドレスを入力して無料体験を始めましょう！",
+        "placeholder": "メールアドレスを入力する",
+        "submit": "無料体験する"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_zte9pn",
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_two_col_overview",
+    "custom_liquid_video_yt",
+    "custom_liquid_dcjcnv",
+    "custom_liquid_between_sections",
+    "rich_text_cwbcev",
+    "custom_liquid_trial_modal"
+  ]
+}

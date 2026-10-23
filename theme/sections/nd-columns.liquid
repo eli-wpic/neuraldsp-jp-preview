@@ -1,0 +1,51 @@
+<section class="nd-columns">
+  <div class="container">
+    {%- if section.settings.heading != blank or section.settings.body != blank -%}
+      <header class="section-head">
+        {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading | newline_to_br }}</h2>{%- endif -%}
+        {%- if section.settings.body != blank -%}<div class="nd-prose">{{ section.settings.body }}</div>{%- endif -%}
+      </header>
+    {%- endif -%}
+    <div class="nd-columns__grid" style="--cols: {{ section.settings.columns }}">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        <div class="nd-columns__item" {{ block.shopify_attributes }}>
+          {%- if b.image != blank or b.image_url != blank -%}
+            {%- if b.link_url != blank -%}<a class="nd-columns__media" href="{{ b.link_url }}" tabindex="-1">{%- else -%}<div class="nd-columns__media">{%- endif -%}
+              {% render 'nd-media', image: b.image, url: b.image_url, alt: b.title, sizes: '(max-width: 760px) 100vw, 33vw' %}
+            {%- if b.link_url != blank -%}</a>{%- else -%}</div>{%- endif -%}
+          {%- endif -%}
+          {%- if b.title != blank -%}<h3>{{ b.title }}</h3>{%- endif -%}
+          {%- if b.text != blank -%}<div class="nd-prose">{{ b.text }}</div>{%- endif -%}
+          {%- if b.link_label != blank and b.link_url != blank -%}<a class="btn btn--small" href="{{ b.link_url }}">{{ b.link_label }}</a>{%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ND · Columns",
+  "settings": [
+    { "type": "textarea", "id": "heading", "label": "Heading" },
+    { "type": "html", "id": "body", "label": "Intro (HTML)" },
+    { "type": "range", "id": "columns", "label": "Columns on desktop", "min": 1, "max": 4, "step": 1, "default": 3 }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "image_url", "label": "Image URL" },
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "html", "id": "text", "label": "Text (HTML)" },
+        { "type": "text", "id": "link_label", "label": "Link label" },
+        { "type": "text", "id": "link_url", "label": "Link URL" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "ND · Columns" }]
+}
+{% endschema %}

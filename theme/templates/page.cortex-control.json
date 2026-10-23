@@ -1,0 +1,189 @@
+/*
+ * Simplified: Cortex Cloud and Cortex Control on one page (all live text kept).
+ */
+{
+  "sections": {
+    "c_custom_liquid_3xrhay": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": false,
+        "title": "Cortex Control™",
+        "subtitle": "Quad Cortex専用フル統合型デスクトップコントローラー",
+        "button_label": "Windows",
+        "button_url": "https://downloads.neuraldsp.com/file/cortex-control-installers/v_4.1.0/windows/Cortex%20Control%20v4.1.0.exe",
+        "film_url": "https://youtu.be/Dw01UVeM-Fs",
+        "film_label": "▶ フル動画を見る",
+        "bg_youtube": "Dw01UVeM-Fs",
+        "overlay": 55
+      }
+    },
+    "a_rich_text_hkrcam": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Nano_Cortex_-_Web_assets_9.jpg?v=1749445872",
+        "image_alt": "",
+        "heading": "NeuralDSP アカウント",
+        "button_label": "アカウントを登録",
+        "button_url": "https://cloud.neuraldsp.com/cloud/login",
+        "body": "<p>Cortex Control™および Cortex Cloud™をご利用いただくには、専用のアカウントが必要となります。</p>"
+      }
+    },
+    "c_rich_text_bqppx6": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "body": "<p><h5>Cortex Controlは、洗練された直感的なデスクトップインターフェースで、Quad Cortexのあらゆる機能や設定を簡単に操作できます。</h5></p>"
+      }
+    },
+    "c_single_image_iq3jmb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-laptop-group_fffa5154-7870-44e3-8407-107c1566f29a.webp?v=1743736347",
+        "image_alt": ""
+      }
+    },
+    "c_image_with_text_xdmbqn": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-boots-workflow-img.webp?v=1743736714",
+        "image_alt": "",
+        "heading": "数秒で起動",
+        "body": "<p>Cortex Controlは数秒で起動し、Quad Cortexの現在の状態を瞬時に同期。作業の流れを妨げることなく、すぐに前回の続きから操作を再開できます。</p><h3>最適化されたワークフロー</h3><p>直感的なマウス操作とキーボードショートカットにより、パラメータの調整、ファイル管理、各種操作、Cortex Control内のナビゲーションがスムーズかつ効率的に行えます。</p>"
+      }
+    },
+    "c_image_with_text_zh4bfg": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-backups-bulk-img.webp?v=1744081694",
+        "image_alt": "",
+        "heading": "一括操作",
+        "body": "<p>プリセットを複数選択して、コピー、いいね、アップロード、ダウンロード、削除が数クリックで完了。同様に、Neural CaptureやIRもまとめて編集、アップロード、ダウンロード、削除が可能です。</p><h3>ローカルバックアップ</h3><p>Cortex Controlを使えば、Quad CortexのローカルバックアップをPC上に直接作成・管理できます。必要なだけ何度でもバックアップを作成可能です。</p><p>バックアップの名前変更、更新、削除、呼び出しが素早く行えるクイックアクションにより、バックアップ管理が簡単かつ効率的に行えます。</p>"
+      }
+    },
+    "c_image_with_text_jeg4cd": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-internet-usb.webp?v=1744081792",
+        "image_alt": "",
+        "heading": "USB経由のインターネット接続",
+        "body": "<p>Quad Cortexは、パソコンと接続されたUSBケーブルを通じてインターネットにアクセスできます。これにより、Wi-Fi環境に依存せず、常に安定したインターネット接続が可能です。Cortex Controlを起動中は、Quad CortexはUSB経由のインターネット接続を優先します。</p>"
+      }
+    },
+    "c_rich_text_h7gf6l": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-import-ir_1.png?v=1744083444",
+        "image_alt": "",
+        "heading": "IRのインポート",
+        "body": "<p>Cortex Controlを使えば、IRをQuad CortexやCortex Cloudプロフィールに簡単に追加できます。IRライブラリを開き、IRファイルをドラッグ＆ドロップするだけでOK。アップロード先に応じて、IRはすぐにQuad CortexまたはCortex Cloudアカウントで使用可能になります。</p>"
+      }
+    },
+    "c_image_with_text_djggil": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-tuner-audition-image.webp?v=1744085010",
+        "image_alt": "",
+        "heading": "ライブチューナー",
+        "body": "<p>チューナー画面を開かずに素早くチューニング。ユーティリティバーのチューナーボタンをCMD（Mac）/CTRL（Windows）を押しながらクリックすることで、ライブチューナーを切り替えられます。</p><h3>オーディションデバイス（試聴デバイス）</h3><p>The Grid上のデバイスをクリックし、次にDevice List内の別のデバイスをクリックすることで試聴（オーディション）が可能です。試聴中のデバイスを再度クリックすると、The Grid内の既存デバイスと置き換えて追加されます。変更をキャンセルする場合はESCキーを押してください。</p>"
+      }
+    },
+    "c_rich_text_yxkyjc": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-capture-img_1.png?v=1744085423",
+        "image_alt": "",
+        "heading": "Neural Captureの作成",
+        "body": "<p>Neural Captureの作成プロセスは、Cortex Control上ですべて完結できます。</p>"
+      }
+    },
+    "c_multicolumn_yfef7m": {
+      "type": "nd-columns",
+      "settings": {
+        "columns": 2
+      },
+      "blocks": {
+        "column_0": {
+          "type": "column",
+          "settings": {
+            "title": "Windows最小動作環境",
+            "text": "<p>Intel Core i3 プロセッサ（i3-4130 / i5-2500以上）</p><p>AMD クアッドコアプロセッサ（R5 2200G以上）</p><p>RAM 8GB以上</p><p>Windows 10以上</p><p>※ Cortex Controlの動作には最新のCorOSおよびWindows USBオーディオドライバーが必要です。</p>"
+          }
+        },
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "title": "macOS最小動作環境",
+            "text": "<p>Intel Core i3 プロセッサ（i3-4130 / i5-2500以上）</p><p>または Apple Silicon（M1以上）</p><p>RAM 8GB以上</p><p>macOS 11 Big Sur以上</p><p>※ Cortex Controlの動作には最新のCorOSが必要です。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "column_0",
+        "column_1"
+      ]
+    },
+    "c_rich_text_uad4by": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "macOSおよびWindows向けに無料提供",
+        "button_label": "ダウンロード",
+        "button_url": "https://neuraldsp.com/downloads",
+        "body": "<p>今すぐmacOSまたはWindows向けにCortex Controlをダウンロード。</p>"
+      }
+    },
+    "c_single_image_86acr6": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-last-section.webp?v=1744091524",
+        "image_alt": ""
+      }
+    },
+    "a_single_image_lbw6ih": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-laptop-group_a93cb64d-6c1f-4331-b2cb-fda349d503ff.webp?v=1744699177",
+        "image_alt": ""
+      }
+    },
+    "a_rich_text_icp33q": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-cortex_cloud_img.webp?v=1742889867",
+        "image_alt": "",
+        "heading": "Cortex Cloud",
+        "button_label": "アクセスする",
+        "button_url": "https://cloud.neuraldsp.com/cloud",
+        "body": "<p>iOS と Android 対応の Cortex Mobile アプリを使って、ユーザー、プリセット、Neural Capture を発見しましょう。</p><p>Neural DSP アカウントを Quad Cortex にリンクすることで、バックアップの作成、コンテンツの共有、他のユーザーからのアイテムのダウンロードが可能になります。</p><p>さらに、インパルスレスポンス（IR）ライブラリも利用できるようになり、IR を Quad Cortex に転送したり、アカウントに保存された IR を管理することもできます。</p>"
+      }
+    }
+  },
+  "order": [
+    "c_custom_liquid_3xrhay",
+    "a_rich_text_hkrcam",
+    "c_rich_text_bqppx6",
+    "c_single_image_iq3jmb",
+    "c_image_with_text_xdmbqn",
+    "c_image_with_text_zh4bfg",
+    "c_image_with_text_jeg4cd",
+    "c_rich_text_h7gf6l",
+    "c_image_with_text_djggil",
+    "c_rich_text_yxkyjc",
+    "c_multicolumn_yfef7m",
+    "c_rich_text_uad4by",
+    "c_single_image_86acr6",
+    "a_single_image_lbw6ih",
+    "a_rich_text_icp33q"
+  ]
+}

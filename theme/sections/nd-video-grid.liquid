@@ -1,0 +1,31 @@
+<section class="nd-vgrid">
+  <div class="container nd-vgrid__grid">
+    {%- for block in section.blocks -%}
+      {%- assign b = block.settings -%}
+      <a class="nd-vgrid__tile nd-vgrid__tile--{{ forloop.index }}" href="{{ b.link_url }}" {{ block.shopify_attributes }}>
+        {%- if b.video_url != blank -%}{% render 'nd-video', url: b.video_url, autoplay: true %}{%- else -%}{% render 'nd-media', image: b.image, url: b.image_url, alt: '' %}{%- endif -%}
+        <span class="nd-vgrid__copy">
+          <strong>{{ b.title }}</strong>
+          <span>{{ b.text }}</span>
+          {%- if b.link_label != blank -%}<span class="btn btn--small btn--primary">{{ b.link_label }}</span>{%- endif -%}
+        </span>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Video grid",
+  "max_blocks": 3,
+  "blocks": [{ "type": "tile", "name": "Tile", "settings": [
+    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_url", "label": "Image URL" },
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "text", "id": "text", "label": "Text" },
+    { "type": "text", "id": "link_label", "label": "Link label", "default": "詳しく見る" },
+    { "type": "text", "id": "link_url", "label": "Link URL" }
+  ] }],
+  "presets": [{ "name": "ND · Video grid" }]
+}
+{% endschema %}

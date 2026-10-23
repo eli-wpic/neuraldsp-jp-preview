@@ -1,0 +1,46 @@
+/*
+ * Generated from the live /pages/accessory (page-accessory) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "multicolumn_lez77y": {
+      "type": "nd-columns",
+      "settings": {
+        "columns": 2
+      },
+      "blocks": {
+        "column_0": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Comp0.jpg?v=1748845530",
+            "title": "Gig Case",
+            "link_label": "詳しく見る",
+            "link_url": "/products/gig-case"
+          }
+        },
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/TOP.jpg?v=1751002730",
+            "title": "電源アダプター（PSU）",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quad-cortex-psu"
+          }
+        }
+      },
+      "block_order": [
+        "column_0",
+        "column_1"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "multicolumn_lez77y"
+  ]
+}

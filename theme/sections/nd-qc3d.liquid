@@ -1,0 +1,246 @@
+{%- comment -%}
+  Homepage hero: a dock of items the visitor can switch between.
+  - "product" items: a real-time 3D story (Quad Cortex / mini / Nano), pinned while the page scrolls through 5 views.
+  - "campaign" items: headline + buttons over a 3D model or a photo/video, with optional start/end dates.
+    While a campaign is in its dates it can open first; outside its dates it disappears from the dock.
+  Drag to spin; 購入する is always one tap away; スキップ jumps past the hero.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign today = 'now' | date: '%Y-%m-%d'
+-%}
+{%- capture textures -%}
+  {"qc":{"top":{{ 'qc-top.webp' | asset_url | json }},"screen":{{ 'qc-screen.webp' | asset_url | json }},"rear":{{ 'qc-rear.webp' | asset_url | json }}},
+   "mini":{"top":{{ 'mini-top.webp' | asset_url | json }},"rear":{{ 'mini-rear.webp' | asset_url | json }}},
+   "nano":{"top":{{ 'nano-top.webp' | asset_url | json }},"rear":{{ 'nano-rear.webp' | asset_url | json }},"front":{{ 'nano-front.webp' | asset_url | json }},"left":{{ 'nano-left.webp' | asset_url | json }},"right":{{ 'nano-right.webp' | asset_url | json }}}}
+{%- endcapture -%}
+
+{%- comment -%} which items are live today (campaign switch + dates) {%- endcomment -%}
+{%- capture live_list -%}
+  {%- for block in section.blocks -%}
+    {%- assign b = block.settings -%}
+    {%- assign live = true -%}
+    {%- if block.type == 'campaign' -%}
+      {%- if b.enabled == false -%}{%- assign live = false -%}{%- endif -%}
+      {%- if b.start_date != blank and today < b.start_date -%}{%- assign live = false -%}{%- endif -%}
+      {%- if b.end_date != blank and today > b.end_date -%}{%- assign live = false -%}{%- endif -%}
+    {%- endif -%}
+    {%- if live -%}[{{ forloop.index0 }}]{%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
+{%- assign first_id = live_list | remove_first: '[' | split: ']' | first | plus: 0 -%}
+{%- assign first_block = section.blocks[first_id] -%}
+{%- assign first_model = first_block.settings.model | default: 'qc' -%}
+{%- assign live_count = live_list | split: '[' | size | minus: 1 -%}
+
+<section class="qc3d{% if first_block.type == 'campaign' %} is-single{% endif %}" id="hardware" data-qc3d data-3d="scroll" aria-label="{{ s.label | escape }}">
+  <div class="qc3d__sticky">
+    <div class="qc3d__stage{% if first_model == 'none' %} is-media{% endif %}" data-qc3d-stage data-3d-stage data-model="{% if first_model == 'none' %}qc{% else %}{{ first_model }}{% endif %}" data-textures="{{ textures | strip_newlines | escape }}">
+      {%- case first_model -%}
+        {%- when 'mini' -%}{%- assign poster = 'mini-three-quarter-1600.webp' -%}
+        {%- when 'nano' -%}{%- assign poster = 'nano-three-quarter-1600.webp' -%}
+        {%- else -%}{%- assign poster = 'qc-three-quarter-1600.webp' -%}
+      {%- endcase -%}
+      <img class="qc3d__poster" src="{{ poster | asset_url }}" sizes="100vw" alt="" width="1600" height="1000" fetchpriority="high">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'campaign' and block.settings.model == 'none' -%}
+          <div class="qc3d__media" data-media="{{ forloop.index0 }}"{% if forloop.index0 != first_id %} hidden{% endif %}>
+            {%- if block.settings.video_url != blank -%}
+              <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
+            {%- else -%}
+              {% render 'nd-media', image: block.settings.image, url: block.settings.image_url, alt: block.settings.title, loading: 'eager' %}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+      <canvas aria-label="{{ s.canvas_label | escape }}" role="img"></canvas>
+    </div>
+    <span class="qc3d__hint" data-drag-hint aria-hidden="true"><svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h22M5 2 1 6l4 4M19 2l4 4-4 4"/></svg>{{ s.drag_label }}</span>
+
+    {%- for block in section.blocks -%}
+      {%- capture tag -%}[{{ forloop.index0 }}]{%- endcapture -%}
+      {%- unless live_list contains tag -%}{%- continue -%}{%- endunless -%}
+      {%- assign b = block.settings -%}
+      {%- assign p = b.product -%}
+      {%- assign more_url = b.more_url | default: p.url -%}
+      <div class="qc3d__copy" data-item="{{ forloop.index0 }}" data-kind="{{ block.type }}" data-model="{{ b.model }}"{% if forloop.index0 != first_id %} hidden{% endif %} {{ block.shopify_attributes }}>
+        {%- if block.type == 'campaign' -%}
+          <article class="chapter chapter--hero" data-chapter>
+            {%- if b.eyebrow != blank -%}<p class="chapter__eyebrow"><i></i>{{ b.eyebrow }}</p>{%- endif -%}
+            <h1 class="display">{{ b.title | newline_to_br }}</h1>
+            {%- if b.lead != blank -%}<p class="chapter__lead">{{ b.lead }}</p>{%- endif -%}
+            {%- if b.body != blank -%}<p class="chapter__body">{{ b.body }}</p>{%- endif -%}
+            <div class="chapter__buy">
+              {%- if b.button_label != blank -%}<a class="btn btn--primary" href="{{ b.button_url }}">{{ b.button_label }}</a>{%- endif -%}
+              {%- if b.button2_label != blank -%}<a class="btn" href="{{ b.button2_url }}">{{ b.button2_label }}</a>{%- endif -%}
+            </div>
+            {%- if b.note != blank -%}<p class="chapter__key">{{ b.note }}</p>{%- endif -%}
+          </article>
+        {%- else -%}
+          <article class="chapter chapter--hero" data-chapter>
+            <p class="chapter__eyebrow"><i></i>{{ b.c0_eyebrow }}</p>
+            <h1 class="display">{{ b.c0_title | newline_to_br }}</h1>
+            <p class="chapter__lead">{{ b.c0_lead }}</p>
+            {%- if b.c0_body != blank -%}<p class="chapter__body">{{ b.c0_body }}</p>{%- endif -%}
+            <div class="chapter__buy">
+              {%- if p != blank -%}<p class="price">{% render 'nd-price', price: p.price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
+              {%- if p != blank -%}<button class="btn btn--primary" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>{%- endif -%}
+              <a class="btn" href="{{ more_url | default: '#' }}">{{ s.more_label }}</a>
+            </div>
+            {%- if b.c0_link_label != blank -%}<a class="link-arrow chapter__more" href="{{ b.c0_link_url }}">{{ b.c0_link_label }} {% render 'icon', name: 'down' %}</a>{%- endif -%}
+          </article>
+          {%- for n in (1..3) -%}
+            {%- capture k_label %}c{{ n }}_label{% endcapture -%}
+            {%- capture k_title %}c{{ n }}_title{% endcapture -%}
+            {%- capture k_body %}c{{ n }}_body{% endcapture -%}
+            <article class="chapter" data-chapter>
+              <p class="chapter__num">0{{ n }} <span>{{ b[k_label] }}</span></p>
+              <h2 class="chapter__title">{{ b[k_title] | newline_to_br }}</h2>
+              <div class="chapter__body nd-prose">{{ b[k_body] }}</div>
+            </article>
+          {%- endfor -%}
+          <article class="chapter chapter--right" data-chapter>
+            <p class="chapter__num">04 <span>{{ b.c4_label }}</span></p>
+            <h2 class="chapter__title">{{ p.title }}</h2>
+            {%- if p != blank -%}<p class="price price--xl">{% render 'nd-price', price: p.price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
+            {%- if b.c4_body != blank -%}<p class="chapter__body">{{ b.c4_body }}</p>{%- endif -%}
+            <div class="chapter__buy">
+              {%- if p != blank -%}<button class="btn btn--primary" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>{%- endif -%}
+              <a class="btn" href="{{ more_url | default: '#' }}">{{ s.more_label }}</a>
+            </div>
+          </article>
+          <nav class="qc3d__nav" aria-label="{{ p.title | escape }}">
+            <button type="button" data-goto="0">00</button>
+            <button type="button" data-goto="1">01</button>
+            <button type="button" data-goto="2">02</button>
+            <button type="button" data-goto="3">03</button>
+            <button type="button" data-goto="4">04</button>
+          </nav>
+          {%- if p != blank -%}
+            <div class="qc3d__buybar">
+              <span class="qc3d__buybar-name">{{ p.title }}</span>
+              <span class="qc3d__buybar-price">{% render 'nd-price', price: p.price %}</span>
+              <button class="btn btn--primary btn--small" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>
+            </div>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+
+    {%- if live_count > 1 -%}
+      <div class="qc3d__dock" role="tablist" aria-label="{{ s.dock_label | escape }}">
+        {%- for block in section.blocks -%}
+          {%- capture tag -%}[{{ forloop.index0 }}]{%- endcapture -%}
+          {%- unless live_list contains tag -%}{%- continue -%}{%- endunless -%}
+          {%- assign b = block.settings -%}
+          {%- liquid
+            case b.model
+              when 'mini'
+                assign thumb = 'mini-three-quarter-1600.webp'
+              when 'nano'
+                assign thumb = 'nano-three-quarter-1600.webp'
+              when 'qc'
+                assign thumb = 'qc-three-quarter-800.webp'
+              else
+                assign thumb = ''
+            endcase
+          -%}
+          <button type="button" class="qc3d__dock-item{% if block.type == 'campaign' %} is-campaign{% endif %}" role="tab" data-dock-item="{{ forloop.index0 }}" aria-selected="{% if forloop.index0 == first_id %}true{% else %}false{% endif %}">
+            {%- if b.thumb != blank -%}{{ b.thumb | image_url: width: 200 | image_tag: alt: '', loading: 'lazy' }}
+            {%- elsif thumb != '' -%}<img src="{{ thumb | asset_url }}" alt="" width="96" height="60" loading="lazy">
+            {%- elsif b.image_url != blank -%}<img src="{{ b.image_url | split: '?' | first }}?width=200" alt="" width="96" height="60" loading="lazy">{%- endif -%}
+            <span class="qc3d__dock-text">
+              <b>{%- if block.type == 'campaign' -%}{{ b.dock_label | default: s.campaign_label }}{%- else -%}{{ b.product.title }}{%- endif -%}</b>
+              {%- if block.type == 'campaign' -%}<small>{{ b.dock_sub }}</small>{%- elsif b.product != blank -%}<small>{% render 'nd-price', price: b.product.price %}</small>{%- endif -%}
+            </span>
+          </button>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    <a class="qc3d__skip btn btn--small btn--down" href="#{{ s.skip_target }}">{{ s.skip_label }}</a>
+    <i class="qc3d__bar" aria-hidden="true"></i>
+  </div>
+</section>
+<script type="module" src="{{ 'nd-3d.js' | asset_url }}"></script>
+
+{% schema %}
+{
+  "name": "ND · Hero 3D + campaign",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Section label (screen readers)", "default": "Neural DSP" },
+    { "type": "text", "id": "dock_label", "label": "Dock label (screen readers)", "default": "表示する製品を選ぶ" },
+    { "type": "text", "id": "campaign_label", "label": "Default campaign dock label", "default": "キャンペーン" },
+    { "type": "text", "id": "tax_label", "label": "Tax label", "default": "税込" },
+    { "type": "text", "id": "buy_label", "label": "Buy button", "default": "購入する" },
+    { "type": "text", "id": "more_label", "label": "Details button", "default": "詳しく見る" },
+    { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
+    { "type": "text", "id": "canvas_label", "label": "3D description (screen readers)", "default": "製品の3Dモデル。左右にドラッグすると回転します。" },
+    { "type": "text", "id": "skip_label", "label": "Skip label", "default": "スキップ" },
+    { "type": "text", "id": "skip_target", "label": "Skip to section id", "default": "plugins" }
+  ],
+  "blocks": [
+    {
+      "type": "campaign",
+      "name": "Campaign",
+      "settings": [
+        { "type": "checkbox", "id": "enabled", "label": "Show this campaign", "default": true },
+        { "type": "text", "id": "start_date", "label": "Start date (YYYY-MM-DD, optional)" },
+        { "type": "text", "id": "end_date", "label": "End date (YYYY-MM-DD, optional)" },
+        { "type": "text", "id": "dock_label", "label": "Dock label", "default": "キャンペーン" },
+        { "type": "text", "id": "dock_sub", "label": "Dock sub text" },
+        { "type": "select", "id": "model", "label": "Visual", "default": "mini", "options": [
+          { "value": "qc", "label": "3D Quad Cortex" }, { "value": "mini", "label": "3D Quad Cortex mini" }, { "value": "nano", "label": "3D Nano Cortex" }, { "value": "none", "label": "Photo or video" }
+        ] },
+        { "type": "image_picker", "id": "image", "label": "Photo (when Visual = photo or video)" },
+        { "type": "text", "id": "image_url", "label": "Photo URL" },
+        { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
+        { "type": "image_picker", "id": "thumb", "label": "Dock thumbnail (optional)" },
+        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+        { "type": "textarea", "id": "title", "label": "Title" },
+        { "type": "text", "id": "lead", "label": "Lead" },
+        { "type": "textarea", "id": "body", "label": "Body" },
+        { "type": "text", "id": "button_label", "label": "Button" },
+        { "type": "text", "id": "button_url", "label": "Button URL" },
+        { "type": "text", "id": "button2_label", "label": "Second button" },
+        { "type": "text", "id": "button2_url", "label": "Second button URL" },
+        { "type": "text", "id": "note", "label": "Small print" }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Product 3D story",
+      "settings": [
+        { "type": "product", "id": "product", "label": "Product" },
+        { "type": "select", "id": "model", "label": "3D model", "default": "qc", "options": [
+          { "value": "qc", "label": "Quad Cortex" }, { "value": "mini", "label": "Quad Cortex mini" }, { "value": "nano", "label": "Nano Cortex" }
+        ] },
+        { "type": "text", "id": "more_url", "label": "Details link (defaults to the product page)" },
+        { "type": "image_picker", "id": "thumb", "label": "Dock thumbnail (optional; defaults to the render)" },
+        { "type": "header", "content": "00 · Overview" },
+        { "type": "text", "id": "c0_eyebrow", "label": "Eyebrow" },
+        { "type": "textarea", "id": "c0_title", "label": "Title" },
+        { "type": "text", "id": "c0_lead", "label": "Lead" },
+        { "type": "textarea", "id": "c0_body", "label": "Body" },
+        { "type": "text", "id": "c0_link_label", "label": "Text link" },
+        { "type": "text", "id": "c0_link_url", "label": "Text link URL" },
+        { "type": "header", "content": "01–03" },
+        { "type": "text", "id": "c1_label", "label": "01 label" },
+        { "type": "textarea", "id": "c1_title", "label": "01 title" },
+        { "type": "html", "id": "c1_body", "label": "01 body (HTML)" },
+        { "type": "text", "id": "c2_label", "label": "02 label" },
+        { "type": "textarea", "id": "c2_title", "label": "02 title" },
+        { "type": "html", "id": "c2_body", "label": "02 body (HTML)" },
+        { "type": "text", "id": "c3_label", "label": "03 label" },
+        { "type": "textarea", "id": "c3_title", "label": "03 title" },
+        { "type": "html", "id": "c3_body", "label": "03 body (HTML)" },
+        { "type": "header", "content": "04 · Choose" },
+        { "type": "text", "id": "c4_label", "label": "Label", "default": "選ぶ" },
+        { "type": "textarea", "id": "c4_body", "label": "Body" }
+      ]
+    }
+  ],
+  "max_blocks": 6,
+  "presets": [{ "name": "ND · Hero 3D + campaign" }]
+}
+{% endschema %}

@@ -1,0 +1,145 @@
+{%- comment -%}
+  "Find your sound": tone rail + featured plugin bundles + the rest of a bundle collection.
+  Each featured block picks a bundle product; price and link come from Shopify.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<section class="section plugins" id="{{ s.anchor | default: 'plugins' }}" data-plugins aria-labelledby="PluginsTitle-{{ section.id }}">
+  <div class="container">
+    <header class="section-head reveal">
+      {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      <h2 id="PluginsTitle-{{ section.id }}">{{ s.heading }}</h2>
+      {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
+    </header>
+
+    <div class="tone reveal">
+      <p class="tone__label">{{ s.rail_label }}</p>
+      <div class="rail" data-tone-filter></div>
+      <p class="tone__count" aria-live="polite" data-tone-count></p>
+    </div>
+    <script type="application/json" data-tones>
+      {
+        "tones": [
+          { "id": "all", "label": {{ s.tone_all | json }}, "en": "ALL" },
+          { "id": "clean", "label": {{ s.tone_clean | json }}, "en": "CLEAN" },
+          { "id": "crunch", "label": {{ s.tone_crunch | json }}, "en": "CRUNCH" },
+          { "id": "highgain", "label": {{ s.tone_highgain | json }}, "en": "HIGH GAIN" },
+          { "id": "ambient", "label": {{ s.tone_ambient | json }}, "en": "AMBIENT" }
+        ],
+        "countAll": {{ s.count_all | json }},
+        "countSome": {{ s.count_some | json }}
+      }
+    </script>
+
+    {%- assign featured_handles = '' -%}
+    <div class="plugin-list">
+      {%- for block in section.blocks -%}
+        {%- assign b = block.settings -%}
+        {%- assign bp = b.product -%}
+        {%- assign featured_handles = featured_handles | append: bp.handle | append: ',' -%}
+        {%- assign flip = forloop.index0 | modulo: 2 -%}
+        <article class="plugin-row reveal{% if flip == 1 %} is-flip{% endif %}" data-tones="{{ b.tones | replace: ',', ' ' }}" {{ block.shopify_attributes }}>
+          <div class="plugin-media">
+            <div class="plugin-media__frame">
+              {%- if b.youtube_id != blank -%}
+                {% render 'nd-video', youtube: b.youtube_id, title: b.name %}
+              {%- else -%}
+                {% render 'nd-media', image: b.image, url: b.image_url, alt: b.name, sizes: '(max-width: 980px) 100vw, 58vw' %}
+              {%- endif -%}
+            </div>
+          </div>
+          <div class="plugin-copy">
+            <h3>{{ b.name | default: bp.title }}</h3>
+            {%- if b.description != blank -%}<p>{{ b.description }}</p>{%- endif -%}
+            {%- if b.genres != blank -%}<p class="genres">{{ b.genres }}</p>{%- endif -%}
+            <p class="compat">{{ s.compat_label }}：Quad Cortex ／ Quad Cortex mini <span>（Nano Cortex {{ s.not_supported }}）</span></p>
+            <div class="plugin-actions">
+              <a class="btn btn--ext" href="{{ b.trial_url | default: s.trial_url }}" target="_blank" rel="noopener">{{ s.trial_label }}</a>
+              {%- if bp != blank -%}<a class="btn btn--primary" href="{{ bp.url }}">{{ s.details_label }}</a>{%- endif -%}
+            </div>
+            {%- if s.trial_note != blank -%}<p class="trial-note">{{ s.trial_note }}{%- if b.plugin_url != blank -%} <a class="ext" href="{{ b.plugin_url }}" target="_blank" rel="noopener">{{ s.site_label }}</a>{%- endif -%}</p>{%- endif -%}
+          </div>
+        </article>
+      {%- endfor -%}
+      <p class="tone__empty" data-tone-empty hidden>{{ s.empty_label }}</p>
+    </div>
+
+    {%- assign more = collections[s.more_collection].products -%}
+    {%- if s.more_products.count > 0 -%}{%- assign more = s.more_products -%}{%- endif -%}
+    {%- if more.size > 0 -%}
+      <div class="more-plugins">
+        <div class="more-plugins__head">
+          <h3>{{ s.more_heading }}</h3>
+          {%- if s.browse_label != blank -%}<a class="link-arrow ext" href="{{ s.browse_url }}" target="_blank" rel="noopener">{{ s.browse_label }}</a>{%- endif -%}
+        </div>
+        <div class="mini-grid">
+          {%- for p in more limit: 24 -%}
+            {%- unless featured_handles contains p.handle -%}
+              {%- assign p_tones = p.metafields.custom.tones | default: '' -%}
+              {%- if p_tones == blank -%}
+                {%- assign map_lines = s.tone_map | newline_to_br | split: '<br />' -%}
+                {%- for line in map_lines -%}
+                  {%- assign kv = line | strip | split: '|' -%}
+                  {%- if kv.size > 1 and p.handle contains kv[0] -%}{%- assign p_tones = kv[1] | replace: ',', ' ' -%}{%- break -%}{%- endif -%}
+                {%- endfor -%}
+              {%- endif -%}
+              <a class="mini-card" href="{{ p.url }}" data-tones="{{ p_tones }}">
+                {%- if p.featured_media -%}{{ p.featured_media | image_url: width: 600 | image_tag: loading: 'lazy', widths: '300, 600', sizes: '(max-width: 760px) 50vw, 20vw', alt: '' }}{%- endif -%}
+                <strong>{{ p.title }}</strong>
+                <span class="yen">{{ p.price | money_without_trailing_zeros }}</span>
+              </a>
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+<script type="module" src="{{ 'plugin-discovery.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "ND · Plugin discovery",
+  "settings": [
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "plugins" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Sound Discovery" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "html", "id": "body", "label": "Intro (HTML)" },
+    { "type": "text", "id": "rail_label", "label": "Tone rail label", "default": "サウンドの傾向で探す" },
+    { "type": "text", "id": "tone_all", "label": "All", "default": "すべて" },
+    { "type": "text", "id": "tone_clean", "label": "Clean", "default": "クリーン" },
+    { "type": "text", "id": "tone_crunch", "label": "Crunch", "default": "クランチ" },
+    { "type": "text", "id": "tone_highgain", "label": "High gain", "default": "ハイゲイン" },
+    { "type": "text", "id": "tone_ambient", "label": "Ambient", "default": "アンビエント" },
+    { "type": "text", "id": "count_all", "label": "Count (all)", "default": "{n}種類のプラグイン" },
+    { "type": "text", "id": "count_some", "label": "Count (filtered)", "default": "{total}種類中 {n}種類が該当" },
+    { "type": "text", "id": "empty_label", "label": "No match", "default": "該当するプラグインはありません" },
+    { "type": "text", "id": "compat_label", "label": "Compatibility label", "default": "対応ハードウェア" },
+    { "type": "text", "id": "not_supported", "label": "Not supported", "default": "非対応" },
+    { "type": "text", "id": "trial_label", "label": "Trial button", "default": "14日間無料体験" },
+    { "type": "text", "id": "trial_url", "label": "Trial URL", "default": "https://neuraldsp.com/downloads" },
+    { "type": "text", "id": "details_label", "label": "Plugin page button", "default": "詳しく見る", "info": "Plugins are sold with a Quad Cortex or Quad Cortex mini, so this opens the plugin page where the hardware is chosen." },
+    { "type": "text", "id": "site_label", "label": "neuraldsp.com link", "default": "neuraldsp.com" },
+    { "type": "text", "id": "trial_note", "label": "Trial note" },
+    { "type": "text", "id": "more_label", "label": "Plugin details link", "default": "詳しく見る" },
+    { "type": "collection", "id": "more_collection", "label": "More plugins collection" },
+    { "type": "product_list", "id": "more_products", "label": "…or pick products", "limit": 24 },
+    { "type": "textarea", "id": "tone_map", "label": "Tones for the product grid", "info": "One per line: handle-suffix|tones (clean, crunch, highgain, ambient)", "default": "-joh|clean,crunch\n-mis|highgain,clean\n-tim|clean,crunch,ambient\n-rab|highgain,ambient\n-pet|highgain,crunch\n-goj|highgain\n-for|highgain\n-nol|highgain,clean\n-par|highgain\n-pli|clean,crunch,ambient\n-slo|crunch,highgain\n-cor|clean,crunch" },
+    { "type": "text", "id": "more_heading", "label": "More plugins heading" },
+    { "type": "text", "id": "browse_label", "label": "Browse all label" },
+    { "type": "text", "id": "browse_url", "label": "Browse all URL", "default": "https://neuraldsp.com/plugins" }
+  ],
+  "blocks": [{ "type": "plugin", "name": "Featured plugin", "settings": [
+    { "type": "product", "id": "product", "label": "Bundle product" },
+    { "type": "text", "id": "name", "label": "Plugin name" },
+    { "type": "textarea", "id": "headline", "label": "Headline" },
+    { "type": "textarea", "id": "description", "label": "Description" },
+    { "type": "text", "id": "genres", "label": "Genres" },
+    { "type": "text", "id": "tones", "label": "Tones (comma separated: clean, crunch, highgain, ambient)" },
+    { "type": "image_picker", "id": "image", "label": "Artwork" },
+    { "type": "text", "id": "image_url", "label": "Artwork URL" },
+    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
+    { "type": "text", "id": "plugin_url", "label": "Plugin page (neuraldsp.com)" },
+    { "type": "text", "id": "trial_url", "label": "Trial URL override" }
+  ] }],
+  "presets": [{ "name": "ND · Plugin discovery" }]
+}
+{% endschema %}

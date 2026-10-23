@@ -1,0 +1,9 @@
+{%- comment -%} Params: url (mp4), youtube (id), poster, class, autoplay (bool), title {%- endcomment -%}
+{%- if youtube != blank -%}
+  <div class="nd-yt{% if class %} {{ class }}{% endif %}" data-yt="{{ youtube }}">
+    <img src="https://i.ytimg.com/vi/{{ youtube }}/hqdefault.jpg" width="480" height="360" alt="{{ title | escape }}" loading="lazy">
+    <button type="button" class="nd-yt__play" aria-label="{{ 'general.play_video' | t }}{% if title %}: {{ title | escape }}{% endif %}">{% render 'icon', name: 'play' %}</button>
+  </div>
+{%- elsif url != blank -%}
+  <video class="{{ class }}" src="{{ url }}" {% if autoplay %}autoplay muted loop playsinline{% else %}controls playsinline preload="metadata"{% endif %}{% if poster %} poster="{{ poster }}"{% endif %}></video>
+{%- endif -%}

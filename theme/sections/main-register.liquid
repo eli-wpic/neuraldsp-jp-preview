@@ -1,0 +1,16 @@
+<section class="nd-page-head nd-account"><div class="container nd-form-wrap">
+  <h1>{{ 'customer.register' | t }}</h1>
+  {%- form 'create_customer', class: 'nd-form' -%}
+    {%- if form.errors -%}<div class="nd-form__err">{{ form.errors | default_errors }}</div>{%- endif -%}
+    <div class="nd-form__row">
+      <label>{{ 'customer.last_name' | t }}<input type="text" name="customer[last_name]" autocomplete="family-name"></label>
+      <label>{{ 'customer.first_name' | t }}<input type="text" name="customer[first_name]" autocomplete="given-name"></label>
+    </div>
+    <label>{{ 'contact.email' | t }}<input type="email" name="customer[email]" autocomplete="email" required></label>
+    <label>{{ 'general.password' | t }}<input type="password" name="customer[password]" autocomplete="new-password" required></label>
+    <button class="btn btn--primary" type="submit">{{ 'customer.register' | t }}</button>
+  {%- endform -%}
+</div></section>
+{% schema %}
+{ "name": "Register", "settings": [] }
+{% endschema %}

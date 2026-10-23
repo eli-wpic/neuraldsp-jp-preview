@@ -1,0 +1,94 @@
+{%- comment -%}
+  Newsletter sign-up, same fields and tagging as the live store: email (required), birthday + gender (optional)
+  are added to contact[tags] as birthday_YYYY-MM-DD / gender_xxx for segmentation.
+  style: inline (section on the page) or popup (floating button that opens a dialog — used on product pages).
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+{%- assign fid = 'Newsletter-' | append: section.id -%}
+{%- capture form_markup -%}
+  {%- form 'customer', id: fid, class: 'nd-nl__form', data-nd-newsletter: '' -%}
+    <input type="hidden" name="contact[tags]" value="{{ s.tags }}" data-nl-tags>
+    {%- if form.posted_successfully? -%}
+      <p class="nd-nl__ok" role="status">{{ s.success }}</p>
+    {%- endif -%}
+    {%- if form.errors -%}
+      <p class="nd-nl__err" role="alert">{{ form.errors | default_errors }}</p>
+    {%- endif -%}
+    <div class="nd-nl__field">
+      <label for="{{ fid }}-email">{{ s.email_label }} <span class="badge badge--req">{{ s.required_label }}</span></label>
+      <input id="{{ fid }}-email" type="email" name="contact[email]" autocomplete="email" required placeholder="{{ s.email_placeholder }}">
+    </div>
+    <div class="nd-nl__row">
+      <div class="nd-nl__field">
+        <label for="{{ fid }}-bday">{{ s.birthday_label }} <span class="badge">{{ s.optional_label }}</span></label>
+        <input id="{{ fid }}-bday" type="date" data-nl-birthday>
+      </div>
+      <fieldset class="nd-nl__field">
+        <legend>{{ s.gender_label }} <span class="badge">{{ s.optional_label }}</span></legend>
+        <div class="nd-nl__radios">
+          <label><input type="radio" name="nl-gender-{{ section.id }}" value="male" data-nl-gender> {{ s.male }}</label>
+          <label><input type="radio" name="nl-gender-{{ section.id }}" value="female" data-nl-gender> {{ s.female }}</label>
+          <label><input type="radio" name="nl-gender-{{ section.id }}" value="na" data-nl-gender> {{ s.other }}</label>
+        </div>
+      </fieldset>
+    </div>
+    <button type="submit" class="btn btn--primary nd-nl__submit">{{ s.submit }}</button>
+  {%- endform -%}
+{%- endcapture -%}
+
+{%- if s.style == 'popup' -%}
+  <button type="button" class="nd-nl-fab btn btn--primary btn--small btn--nochev" data-dialog-open="Dialog-{{ section.id }}">{{ s.popup_button }}</button>
+  <dialog class="nd-dialog nd-nl nd-nl--popup" id="Dialog-{{ section.id }}" aria-labelledby="{{ fid }}-title">
+    <button type="button" class="nd-dialog__close" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+    <h2 id="{{ fid }}-title">{{ s.heading }}</h2>
+    {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
+    {{ form_markup }}
+  </dialog>
+{%- else -%}
+  <section class="nd-nl nd-nl--inline">
+    <div class="container">
+      {%- if s.banner_url != blank or s.banner != blank -%}
+        <div class="nd-nl__banner"><picture>
+          {%- if s.banner_mobile_url != blank -%}<source media="(max-width: 749px)" srcset="{{ s.banner_mobile_url | split: '?' | first }}?width=1000">{%- endif -%}
+          {% render 'nd-media', image: s.banner, url: s.banner_url, alt: s.banner_alt, sizes: '(max-width: 1280px) 100vw, 1200px' %}
+        </picture></div>
+      {%- endif -%}
+      <div class="nd-nl__inner">
+        <h2 id="{{ fid }}-title">{{ s.heading }}</h2>
+        {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
+        {{ form_markup }}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "ND · Newsletter",
+  "settings": [
+    { "type": "select", "id": "style", "label": "Style", "default": "inline", "options": [
+      { "value": "inline", "label": "Inline section" }, { "value": "popup", "label": "Floating button + pop-up" }
+    ] },
+    { "type": "text", "id": "popup_button", "label": "Pop-up button label", "default": "メルマガに登録する" },
+    { "type": "image_picker", "id": "banner", "label": "Banner image" },
+    { "type": "text", "id": "banner_url", "label": "Banner image URL" },
+    { "type": "text", "id": "banner_mobile_url", "label": "Banner phone image URL" },
+    { "type": "text", "id": "banner_alt", "label": "Banner alt text" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "メルマガ登録で最新情報をゲット！" },
+    { "type": "html", "id": "body", "label": "Text (HTML)" },
+    { "type": "text", "id": "tags", "label": "Customer tags", "default": "newsletter, email-signup-section" },
+    { "type": "text", "id": "email_label", "label": "Email label", "default": "メールアドレス" },
+    { "type": "text", "id": "email_placeholder", "label": "Email placeholder", "default": "メールアドレスを入力" },
+    { "type": "text", "id": "birthday_label", "label": "Birthday label", "default": "生年月日" },
+    { "type": "text", "id": "gender_label", "label": "Gender label", "default": "性別" },
+    { "type": "text", "id": "male", "label": "Male", "default": "男性" },
+    { "type": "text", "id": "female", "label": "Female", "default": "女性" },
+    { "type": "text", "id": "other", "label": "Other", "default": "その他" },
+    { "type": "text", "id": "required_label", "label": "Required badge", "default": "必須" },
+    { "type": "text", "id": "optional_label", "label": "Optional badge", "default": "任意" },
+    { "type": "text", "id": "submit", "label": "Submit label", "default": "登録する" },
+    { "type": "text", "id": "success", "label": "Success message", "default": "ご登録ありがとうございます。" }
+  ],
+  "presets": [{ "name": "ND · Newsletter" }]
+}
+{% endschema %}

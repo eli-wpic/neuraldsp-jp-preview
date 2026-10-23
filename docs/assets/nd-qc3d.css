@@ -1,0 +1,165 @@
+/* Pinned 3D hero. Shopify: assets/nd-qc3d.css with sections/nd-qc3d.liquid */
+
+
+.qc3d { position: relative; height: 400svh; margin-top: -64px; background: #050506; } /* slides under the translucent sticky header */
+.qc3d__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; }
+
+/* studio backdrop: soft key pool + faint warm floor bounce */
+.qc3d__sticky::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(42% 40% at 62% 52%, rgba(160, 175, 195, 0.13), transparent 70%),
+    radial-gradient(60% 30% at 60% 86%, rgba(255, 150, 90, 0.06), transparent 70%),
+    radial-gradient(120% 90% at 50% 40%, #121316 0%, #070708 60%, #040405 100%);
+}
+
+.qc3d__stage { position: absolute; inset: 0; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.qc3d__stage.is-dragging { cursor: grabbing; }
+.qc3d__stage canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity 900ms var(--ease-out); }
+.qc3d__stage.is-ready canvas { opacity: 1; }
+.qc3d__poster {
+  position: absolute; right: 4%; top: 50%; width: min(58vw, 980px); height: auto; translate: 0 -50%;
+  filter: drop-shadow(0 40px 40px rgba(0,0,0,0.6)); pointer-events: none;
+  transition: opacity 600ms var(--ease-out);
+}
+.qc3d__stage.is-ready .qc3d__poster { opacity: 0; }
+.qc3d__stage.is-fallback .qc3d__poster { opacity: 1; }
+
+.qc3d__hint {
+  position: absolute; z-index: 3; top: 88px; right: var(--gutter);
+  display: inline-flex; align-items: center; gap: 10px; padding: 9px 16px; border-radius: 999px;
+  border: 1px solid var(--line-2); color: var(--text-2); font-size: var(--fs-xs);
+  pointer-events: none; transition: opacity 400ms;
+}
+.qc3d__hint svg { width: 20px; height: 10px; }
+.qc3d__hint.is-used { opacity: 0; }
+
+/* chapter copy */
+.qc3d__copy { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.chapter {
+  position: absolute; left: var(--gutter); top: 50%; width: min(520px, 42vw);
+  translate: 0 -50%; will-change: opacity, transform; opacity: 0;
+  display: grid; gap: 18px; align-content: center;
+}
+.chapter.is-active { pointer-events: auto; }
+.chapter--right { left: auto; right: var(--gutter); }
+.chapter--hero { width: min(600px, 46vw); }
+
+.display {
+  font-family: var(--display); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125;
+  text-transform: uppercase; font-size: var(--fs-display); line-height: 0.9; letter-spacing: -0.01em;
+  color: #f4f1ea;
+}
+.chapter__eyebrow { display: flex; align-items: center; gap: 10px; font-size: var(--fs-s); color: var(--text-2); }
+.chapter__eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px var(--accent); }
+.chapter__lead { font-size: var(--fs-l); font-weight: 600; }
+.chapter__body { color: var(--text-2); font-size: var(--fs-m); max-width: 30em; }
+.chapter__num { font-size: var(--fs-s); font-weight: 500; color: var(--accent); }
+.chapter__num span { color: var(--text-2); margin-left: 12px; }
+.chapter__title { font-size: var(--fs-xl); line-height: 1.25; font-weight: 700; }
+.chapter--right .chapter__title { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125; text-transform: uppercase; line-height: 0.95; }
+.chapter__buy { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 14px; margin-top: 6px; }
+.chapter__key { font-size: var(--fs-xs); color: var(--text-3); }
+.chapter__key b { color: var(--text-2); font-weight: 500; }
+.chapter__list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,0.1); }
+.chapter__list li { display: grid; grid-template-columns: 13em 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: var(--fs-s); color: var(--text-2); }
+.chapter__list b { font-weight: 600; color: var(--text); }
+.price { font-size: var(--fs-l); font-weight: 700; margin-right: 8px; }
+.price small { font-size: var(--fs-xs); font-weight: 400; color: var(--text-3); margin-left: 4px; }
+.price--xl { font-size: var(--fs-xl); }
+
+
+/* chapter nav: a quiet vertical stepper on the right edge */
+.qc3d__nav {
+  position: absolute; z-index: 3; right: var(--gutter); top: 50%; translate: 0 -50%;
+  display: grid; gap: 6px;
+}
+.qc3d__nav button {
+  width: 36px; height: 36px; border-radius: 999px; padding: 0; cursor: pointer;
+  border: 1px solid var(--line-2); background: rgba(12,13,15,.5); color: var(--text-3);
+  font: 500 var(--fs-xs)/1 var(--font);
+  transition: color var(--t-press), background-color var(--t-press), border-color var(--t-press);
+}
+.qc3d__nav button:hover { color: var(--text); border-color: var(--text-3); }
+.qc3d__nav button[aria-current="true"] { color: #0b0c0d; background: var(--paper); border-color: var(--paper); }
+.qc3d__skip { position: absolute; z-index: 4; right: var(--gutter); bottom: 26px; }
+
+/* dock: pick which product (or campaign) the hero shows */
+.qc3d__dock {
+  position: absolute; z-index: 4; left: 50%; bottom: 22px; translate: -50% 0;
+  display: flex; gap: 4px; padding: 5px; border-radius: 999px; max-width: calc(100vw - 2 * var(--gutter));
+  background: rgba(12,13,15,.78); border: 1px solid var(--line-2);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.qc3d__dock-item {
+  display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 4px 18px 4px 6px; border-radius: 999px;
+  border: 0; background: none; color: var(--text-2); cursor: pointer; text-align: left; font: inherit;
+  transition: background-color var(--t-press), color var(--t-press);
+}
+.qc3d__dock-item img { width: 60px; height: 40px; object-fit: contain; filter: drop-shadow(0 6px 8px rgba(0,0,0,.6)); }
+.qc3d__dock-text { display: grid; line-height: 1.3; }
+.qc3d__dock-text b { font-size: var(--fs-s); font-weight: 600; white-space: nowrap; }
+.qc3d__dock-text small { font-size: var(--fs-xs); color: var(--text-3); white-space: nowrap; }
+.qc3d__dock-item:hover { color: var(--text); background: rgba(255,255,255,.06); }
+.qc3d__dock-item[aria-selected="true"] { background: var(--paper); color: #0b0c0d; }
+.qc3d__dock-item[aria-selected="true"] small { color: #55575c; }
+.qc3d__dock-item.is-campaign b::before { content: ""; display: inline-block; width: 7px; height: 7px; margin-right: 7px; border-radius: 50%; background: var(--accent); vertical-align: 1px; }
+.qc3d__dock ~ .qc3d__skip { bottom: 30px; }
+
+/* campaigns: one screen, no chapter stepper, photo/video can replace the 3D */
+.qc3d.is-single { height: 100svh; }
+.qc3d.is-single .qc3d__bar, .qc3d.is-single .qc3d__hint { display: none; }
+.qc3d__media { position: absolute; inset: 0; }
+.qc3d__media img, .qc3d__media video { width: 100%; height: 100%; object-fit: cover; }
+.qc3d__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(5,5,6,.85) 0%, rgba(5,5,6,.35) 55%, transparent 80%); }
+.qc3d__stage.is-media canvas, .qc3d__stage.is-media .qc3d__poster { visibility: hidden; }
+.qc3d__stage canvas { transition: opacity 900ms var(--ease-out), filter 300ms; }
+.qc3d__stage.is-swapping canvas { opacity: .25; filter: blur(6px); }
+.chapter__more { margin-top: 2px; }
+
+/* buy pill: always one tap away while the 3D story plays (hidden where the chapter already shows a buy button) */
+.qc3d__buybar {
+  position: fixed; z-index: 46; left: var(--gutter); bottom: 22px;
+  display: flex; align-items: center; gap: 14px; padding: 6px 6px 6px 18px; border-radius: 999px;
+  background: rgba(12, 13, 15, 0.82); border: 1px solid rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 16px 40px -16px rgba(0,0,0,.9);
+  opacity: 0; translate: 0 10px; pointer-events: none;
+  transition: opacity .3s var(--ease-out), translate .3s var(--ease-out);
+}
+body.show-buy .qc3d__buybar { opacity: 1; translate: 0 0; pointer-events: auto; }
+.qc3d__buybar-name { font-size: var(--fs-s); font-weight: 600; }
+.qc3d__buybar-price { font-size: var(--fs-s); color: var(--text-2); }
+.qc3d__bar { position: absolute; z-index: 3; left: 0; bottom: 0; height: 2px; width: calc(var(--p, 0) * 100%); background: var(--accent); box-shadow: 0 0 10px var(--accent-glow); }
+
+/* ---------- phones / portrait: unit in the upper half, copy below ---------- */
+@media (max-width: 860px), (max-aspect-ratio: 1/1) {
+  .qc3d { height: 440svh; }
+  .chapter, .chapter--right, .chapter--hero {
+    left: var(--gutter); right: var(--gutter); width: auto; top: auto; bottom: 92px; translate: 0 0; gap: 12px;
+  }
+  .chapter--hero .chapter__body, .chapter__key { display: none; }
+  .chapter__list li { grid-template-columns: 1fr; gap: 2px; padding: 8px 0; font-size: 13px; }
+  .qc3d__poster { right: 50%; translate: 50% 0; top: 13%; width: 92vw; }
+  .qc3d__hint { top: 78px; }
+  .qc3d__nav { display: none; } /* phones: just scroll */
+  .chapter, .chapter--right, .chapter--hero { bottom: 112px; }
+  .qc3d__dock {
+    left: var(--gutter); right: var(--gutter); translate: none; bottom: 12px; max-width: none;
+    display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 2px; padding: 4px; border-radius: 18px;
+  }
+  .qc3d__dock-item { flex-direction: column; justify-content: center; gap: 2px; min-height: 64px; padding: 6px 4px; border-radius: 14px; text-align: center; }
+  .qc3d__dock-item img { width: 44px; height: 28px; }
+  .qc3d__dock-text { min-width: 0; width: 100%; }
+  .qc3d__dock-text b { font-size: 11px; overflow: hidden; text-overflow: ellipsis; }
+  .qc3d__dock-text small { display: none; }
+  .qc3d__dock-item.is-campaign b::before { width: 5px; height: 5px; margin-right: 4px; }
+  .qc3d__skip { top: 76px; bottom: auto; right: var(--gutter); }
+  .qc3d__hint { display: none; }
+  .qc3d__buybar { top: 74px; bottom: auto; left: auto; right: var(--gutter); gap: 10px; padding-left: 14px; }
+  body.show-buy .qc3d__skip { visibility: hidden; }
+  .qc3d__buybar-name { display: none; }
+}
+
+/* campaign headlines are sentences, not product names: one step smaller than the product display */
+.qc3d__copy[data-kind="campaign"] .display { font-family: var(--font); font-weight: 700; font-stretch: normal; font-variation-settings: normal; text-transform: none; font-size: var(--fs-2xl); line-height: 1.2; letter-spacing: 0; max-width: 14em; }

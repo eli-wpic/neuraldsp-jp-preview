@@ -1,0 +1,117 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-nol (product-quadcortex-nollyx) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "custom_liquid_zte9pn": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/ZoyNDOiY1FovYdATnWAGh/d336573816f1d726c973eb0a49c9af16/Sequence_01_7.mp4",
+        "title": "Quad Cortex + Archetype: Nolly X",
+        "subtitle": "Nolly がカスタム改造したギターアンプ・コレクションを、100% の精度で捉えた最も純粋なエッセンス。",
+        "film_url": "https://youtu.be/bpod5JnymrA",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-nol",
+          "quadcortex-mini-plugin-bundle-nol"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_two_col_overview": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/Nolly-amps.webp?v=1763429010",
+        "image_alt": "Archetype: Nolly X",
+        "heading": "Archetype: Nolly Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-nolly",
+        "body": "<p>Adam “Nolly” Getgood は、現代メタルシーンにおける圧倒的な存在であり、ベーシスト、プロデューサー、ミキシングエンジニアとして類まれな貢献をしてきました。音への徹底したこだわりと革新的なアプローチにより、彼はミュージシャンやプロデューサーから絶大な尊敬を集めています。</p><p>完璧なギター・トーンを追い求める中で、Nolly が試してこなかったことはほとんどありません。彼はお気に入りのアンプを自分の理想に合わせて再設計するために、電子工学までも独学で習得し、徹底的に改造してきました。この話を聞いたとき、私たちは「これはぜひ一緒にやるべきだ」と確信しました。数えきれないほどの試作を重ね、数千ものインパルス・レスポンスファイルを試聴し、ついに Nolly が思い描く“完璧なギターサウンド”のビジョンをひとつのプラグインに凝縮することに成功しました。</p><p>そして彼の研ぎ澄まされ続けるサウンドメイキングの技術と、その独自のサウンドへの需要の高まりを受け、私たちは彼のシグネチャー・プラグインをアップデートすべき時が来たと判断しました。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Archetype: Nolly X</strong></p>"
+      }
+    },
+    "custom_liquid_video_yt": {
+      "type": "nd-video",
+      "settings": {
+        "youtube_id": "bpod5JnymrA"
+      }
+    },
+    "custom_liquid_gbjpcw": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nolly-x-system-requirements.webp?v=1763429025",
+        "image_alt": "System requirements",
+        "heading": "システム要件",
+        "body": "<p>Archetype: Nolly X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、 <a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a> をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "custom_liquid_between_sections": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nolly-x-pre-footer-img.webp?v=1763432753",
+        "image_alt": ""
+      }
+    },
+    "rich_text_cwbcev": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    },
+    "custom_liquid_trial_modal": {
+      "type": "nd-trial",
+      "settings": {
+        "title": "Archetype: Nolly Xを\nダウンロードする",
+        "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nolly-x-product-card.png",
+        "subline": "14日間無料体験",
+        "description": "メールアドレスを入力して無料体験を始めましょう！",
+        "placeholder": "メールアドレスを入力する",
+        "submit": "無料体験する"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_zte9pn",
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_two_col_overview",
+    "custom_liquid_video_yt",
+    "custom_liquid_gbjpcw",
+    "custom_liquid_between_sections",
+    "rich_text_cwbcev",
+    "custom_liquid_trial_modal"
+  ]
+}

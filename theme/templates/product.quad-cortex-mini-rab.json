@@ -1,0 +1,75 @@
+/*
+ * Generated from the live /products/quadcortex-mini-plugin-bundle-rab (product-quad-cortex-mini-rab) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "rabea_hero": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/1tY0lksPbf4o7rtiESWb7F/64c2be7d243cafed4efd457d63614900/RABEA_-_Landing_-_hero-loop_background.mp4",
+        "title": "Quad Cortex mini + Archetype: Rabea X",
+        "subtitle": "Rabea Massaad のシグネチャートーンと、ギターから広がる新たなサウンドの可能性を。",
+        "film_url": "https://youtu.be/ZS5Swq-FPy8",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "mini",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-rab",
+          "quadcortex-mini-plugin-bundle-rab"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "rabea_about": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Archetype: Rabea Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-rabea",
+        "body": "<p>Rabeaのすべては独特です——そのルック、軽やかに横断する幅広いスタイル、そして卓越したトーンメイキング。Neural DSPとの関わりは創業当初から続いており、彼のArchetypeを制作するなら、その人物と同じくインスピレーションに満ちた特別なものにしなければならないと確信していました。</p><p>このプラグインに盛り込まれたすべての要素——すべてのアンプとエフェクト——は、完全に新しく設計されています。その革新性を象徴するのが、コマーシャルギタープラグインとして初となる、この種の<strong>ギター演奏からシンセサウンドを生み出す「Overlordモノシンセ」</strong>です。ギターからシンセをシームレスにコントロールできる独自のアルゴリズムは、Neural DSPにとっても未知の領域への挑戦となりました。</p><p>シームレスなトラッキングと充実した機能をシンプルなインターフェースに凝縮することで、新たなサウンドの可能性を追求。妥協することなく、インスピレーションを形にするという、このプラグインに込められた精神を体現しています。</p><p>誇りを持ってご紹介します。<br/><strong>Archetype: Rabea X。</strong></p>"
+      }
+    },
+    "rabea_sysreq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/rabea-system-requirements.webp?v=1788832980",
+        "image_alt": "Archetype: Rabea X システム要件",
+        "heading": "システム要件",
+        "body": "<p>Archetype: Rabea X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "rabea_gs": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    }
+  },
+  "order": [
+    "rabea_hero",
+    "main",
+    "rabea_about",
+    "rabea_sysreq",
+    "rabea_gs"
+  ]
+}

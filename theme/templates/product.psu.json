@@ -1,0 +1,48 @@
+/*
+ * Generated from the live /products/quad-cortex-psu (product-psu) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": false,
+        "photo_assets": "psu-photo-1.webp,psu-photo-2.webp,psu-photo-3.webp,psu-photo-4.webp"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_cuycak": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "hero": {
+      "type": "nd-hero",
+      "settings": {
+        "title": "電源アダプター（PSU）",
+        "subtitle": "Quad Cortex用電源アダプターです。Nano Cortex・Quad Cortex Miniでもご使用いただけます。",
+        "asset_image": "psu-hero.webp",
+        "show_buy": true,
+        "buy_label": "購入する",
+        "overlay": 0,
+        "button_label": "詳しく見る",
+        "button_url": "#buy"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "product_newsletter_popup_cuycak"
+  ]
+}

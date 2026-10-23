@@ -1,0 +1,46 @@
+<section class="lineup" id="lineup" aria-labelledby="LineupTitle-{{ section.id }}">
+  <div class="container">
+    <div class="lineup__head">
+      <h2 id="LineupTitle-{{ section.id }}">{{ section.settings.heading }}</h2>
+      {%- if section.settings.compare_label != blank -%}<a class="link-arrow" href="{{ section.settings.compare_url }}">{{ section.settings.compare_label }} {% render 'icon', name: 'arrow' %}</a>{%- endif -%}
+    </div>
+    <div class="lineup__row">
+      {%- for block in section.blocks -%}
+        {%- assign p = block.settings.product -%}
+        <a class="lineup__item" href="{{ p.url | default: block.settings.url }}" {{ block.shopify_attributes }}>
+          {%- if block.settings.asset_image != blank -%}
+            <img src="{{ block.settings.asset_image | asset_url }}" alt="{{ p.title | escape }}" width="1600" height="1100" loading="lazy">
+          {%- elsif block.settings.image != blank or block.settings.image_url != blank -%}
+            {% render 'nd-media', image: block.settings.image, url: block.settings.image_url, alt: p.title, sizes: '(max-width: 860px) 140px, 33vw' %}
+          {%- elsif p.featured_media -%}
+            {{ p.featured_media | image_url: width: 900 | image_tag: loading: 'lazy', widths: '300, 600, 900', sizes: '(max-width: 860px) 140px, 33vw', alt: p.title }}
+          {%- endif -%}
+          <span class="lineup__name">{{ block.settings.title | default: p.title }}</span>
+          <span class="lineup__role">{{ block.settings.text }}</span>
+          {%- if p != blank -%}<span class="lineup__price">{% render 'nd-price', price: p.price %}</span>{%- endif -%}
+        </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Lineup",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Cortex ラインアップ" },
+    { "type": "text", "id": "compare_label", "label": "Compare link label" },
+    { "type": "text", "id": "compare_url", "label": "Compare link URL", "default": "#compare" }
+  ],
+  "blocks": [{ "type": "product", "name": "Product", "settings": [
+    { "type": "product", "id": "product", "label": "Product" },
+    { "type": "text", "id": "title", "label": "Title override" },
+    { "type": "text", "id": "text", "label": "Text" },
+    { "type": "text", "id": "asset_image", "label": "Theme asset image (e.g. mini-three-quarter-1600.webp)" },
+    { "type": "image_picker", "id": "image", "label": "Image override" },
+    { "type": "text", "id": "image_url", "label": "Image URL override" },
+    { "type": "text", "id": "url", "label": "Link (when no product)" }
+  ] }],
+  "max_blocks": 4,
+  "presets": [{ "name": "ND · Lineup" }]
+}
+{% endschema %}

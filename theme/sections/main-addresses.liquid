@@ -1,0 +1,31 @@
+<section class="nd-page-head nd-account"><div class="container">
+  <p class="crumbs"><a href="{{ routes.account_url }}">{{ 'customer.account' | t }}</a></p>
+  <h1>{{ 'customer.addresses' | t }}</h1>
+  {%- paginate customer.addresses by 10 -%}
+    {%- for address in customer.addresses -%}
+      <div class="nd-address"><p>{{ address | format_address }}</p>
+        {%- form 'customer_address', address -%}
+          <input type="hidden" name="_method" value="delete"><button class="btn btn--small btn--nochev" type="submit">{{ 'cart.remove' | t }}</button>
+        {%- endform -%}
+      </div>
+    {%- endfor -%}
+  {%- endpaginate -%}
+  <h2>{{ 'customer.add_address' | t }}</h2>
+  {%- form 'customer_address', customer.new_address, class: 'nd-form' -%}
+    <div class="nd-form__row">
+      <label>{{ 'customer.last_name' | t }}<input type="text" name="address[last_name]"></label>
+      <label>{{ 'customer.first_name' | t }}<input type="text" name="address[first_name]"></label>
+    </div>
+    <label>{{ 'customer.zip' | t }}<input type="text" name="address[zip]" autocomplete="postal-code"></label>
+    <label>{{ 'customer.province' | t }}<input type="text" name="address[province]"></label>
+    <label>{{ 'customer.city' | t }}<input type="text" name="address[city]"></label>
+    <label>{{ 'customer.address1' | t }}<input type="text" name="address[address1]"></label>
+    <label>{{ 'customer.address2' | t }}<input type="text" name="address[address2]"></label>
+    <label>{{ 'contact.phone' | t }}<input type="tel" name="address[phone]"></label>
+    <input type="hidden" name="address[country]" value="Japan">
+    <button class="btn btn--primary" type="submit">{{ 'customer.save' | t }}</button>
+  {%- endform -%}
+</div></section>
+{% schema %}
+{ "name": "Addresses", "settings": [] }
+{% endschema %}

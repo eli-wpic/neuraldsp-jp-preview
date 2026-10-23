@@ -1,0 +1,54 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "x_url": "https://x.com/NeuraldspJapan",
+        "youtube_url": "https://www.youtube.com/channel/UCjLErxPQl71bralJAH8K_9w",
+        "line_url": "https://lin.ee/Ayk4amH7",
+        "copyright": "© 2026 Neural DSP 日本公式オンラインストア, All rights reserved."
+      },
+      "blocks": {
+        "col_0": {
+          "type": "column",
+          "settings": {
+            "title": "製品",
+            "links": "Nano Cortex|/products/nano-cortex\nQuad Cortex|/products/quad-cortex\nQuad Cortex mini|/products/quad-cortex-mini\nQuad Cortex + Plugin|/pages/quad-cortex-and-plugin-bundle\nQuad Cortex mini + Plugin|/pages/quad-cortex-mini-plugin\nAccessory|/pages/accessory\nCortex Cloud|/pages/neuraldsp-account"
+          }
+        },
+        "col_1": {
+          "type": "column",
+          "settings": {
+            "title": "コミュニティ",
+            "links": "Artists|https://neuraldsp.com/artists\nDiscord|https://discord.com/invite/7c9RZ9Tp36\nForum|https://shorturl.at/m98Y0"
+          }
+        },
+        "col_2": {
+          "type": "column",
+          "settings": {
+            "title": "サポート",
+            "links": "ユーザーマニュアル|/a/support/getting-started/user-manuals\nお買い物ガイド|/a/support/support-category/shopping-guide\nQuad Cortex® F.A.Q.|/a/support/quad-cortex/quad-cortex-faq\nNano Cortex® F.A.Q.|/a/support/nano-cortex/nano-cortex-faq\nトラブルシューティング|/a/support/support-category/troubleshooting\nお問い合わせ|/pages/contact"
+          }
+        },
+        "col_3": {
+          "type": "column",
+          "settings": {
+            "title": "法的事項",
+            "links": "利用規約|/pages/terms-of-service\n保証ポリシー|/pages/hardware-warranty-policy\n返金ポリシー|/pages/refund-policy\nCortex Cloud 利用規約|/pages/terms-of-use-cortex-cloud\nプライバシーポリシー|/pages/privacy-policy\n特定商取引法に基づく表記|/pages/legal-notice"
+          }
+        }
+      },
+      "block_order": [
+        "col_0",
+        "col_1",
+        "col_2",
+        "col_3"
+      ]
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

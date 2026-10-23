@@ -1,0 +1,598 @@
+/*
+ * Generated from the live site (see tools/convert_live_to_theme.py); FAQ anchored at #faq.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": true,
+        "show_accessories": true,
+        "show_trial": false,
+        "bundles": [
+          "quadcortex-mini-plugin-bundle-joh",
+          "quadcortex-mini-plugin-bundle-mis",
+          "quadcortex-mini-plugin-bundle-tim",
+          "quadcortex-mini-plugin-bundle-rab",
+          "quadcortex-mini-plugin-bundle-pet",
+          "quadcortex-mini-plugin-bundle-goj",
+          "quadcortex-mini-plugin-bundle-for",
+          "quadcortex-mini-plugin-bundle-nol",
+          "quadcortex-mini-plugin-bundle-par",
+          "quadcortex-mini-plugin-bundle-pli",
+          "quadcortex-mini-plugin-bundle-slo",
+          "quadcortex-mini-plugin-bundle-cor"
+        ],
+        "addons": [
+          "plugin-addon-archetype-john-mayer-x",
+          "plugin-addon-archetype-misha-mansoor-x",
+          "plugin-addon-archetype-tim-henson-x",
+          "plugin-addon-archetype-rabea-x",
+          "plugin-addon-archetype-petrucci-x",
+          "plugin-addon-archetype-gojira-x",
+          "plugin-addon-fortin-nameless-suite-x",
+          "plugin-addon-archetype-nolly-x",
+          "plugin-addon-parallax-x",
+          "plugin-addon-archetype-plini-x",
+          "plugin-addon-soldano-slo-100-x",
+          "plugin-addon-archetype-cory-wong-x"
+        ],
+        "accessories": [
+          "quad-cortex-psu",
+          "quad-cortex-mini-psu"
+        ],
+        "media_mode": "3d",
+        "model": "mini",
+        "view_labels": "全体,The Grid,フットスイッチ,入力と出力,正面",
+        "view_titles": "妥協ゼロ。ただ、コンパクト。|リグ全体をひと目で把握。|タッチスクリーン &ロータリーフットスイッチ|シンプルな接続。自由なセットアップ。|小さなボディ。大きなサウンド。",
+        "view_captions": "Quad Cortex mini は、Neural DSP が誇るフラッグシップ Quad Cortex の体験を、コンパクトで使いやすいフォーマットに凝縮した次世代フロア型アンプモデラー＆マルチエフェクターです。|The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。|7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。|INPUT 2 / CAPTURE INPUT 専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 DUAL EFFECTS LOOPS SEND 1/2 および RETURN 1/2 は、それぞれ |",
+        "film_url": "https://youtu.be/9HzXdhslnRw",
+        "film_label": "▶ フル動画を見る",
+        "photo_assets": "mini-photo-1.webp,mini-photo-2.webp,mini-photo-3.webp,mini-photo-4.webp"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "rich_text_krypv3": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "youtube_id": "SPL1EWAVGis",
+        "heading": "小さなボディ。大きなサウンド。",
+        "body": "<p>Quad Cortex mini は、一切の妥協をすることなく、Quad Cortex のフル体験をこれまでで最もコンパクトかつ実用的なフォーマットに凝縮しました。<br/><br/>処理能力、音質、Neural Capture テクノロジー、そして 7インチのタッチスクリーンまで、Quad Cortex と同等の性能を搭載。ペダルボードやモダンなリグ、デスクトップ環境にも自然にフィットします。<br/><br/>そのサイズと価格帯からは想像できないほどの高いパフォーマンスを実現。世界水準のサウンドを素早く作り込み、膨大なアンプ、エフェクト、Capture を自在に探求し、場所を選ばずクリエイティブなリグ構築が可能です。<br/><br/>Quad Cortex プラットフォームに初めて触れる方にも、すでに使い慣れている方にも。Quad Cortex mini は同じプラットフォームとワークフローを共有し、最初の一音から直感的で、深く没入できる音作り体験を提供します。</p><h2>Quad Cortex mini のファーストルック</h2><h3>フル<br/>Quad Cortex<br/>プロセッシングパワー</h3><p>コンパクトな筐体に、フラッグシップ級のパフォーマンス</p><h3>直感的な<br/>ビジュアル<br/>ワークフロー</h3><p>グリッドベースのシグナルフローを備えた7インチ・タッチスクリーン</p><h3>Neural Capture<br/>テクノロジー</h3><p>実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを 超高精度なデジタルレプリカとして作成・演奏可能</p><h3>50%以上<br/>小型化された<br/>フットプリント</h3><p>Quad Cortexのすべてのパワーを、どこへでも</p>"
+      }
+    },
+    "rich_text_6pwqvc": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-top.webp?v=1769062513",
+        "image_alt": "",
+        "heading": "アリーナ級のパフォーマンス。すぐに使えるコンパクトサイズ。",
+        "body": "<p>驚くほどコンパクトな筐体に、ギター／ベース用の完全なリグを凝縮。スタジオからステージまで、ペダルボードやモダンなリグ、デスクトップ環境に自然にフィットするよう設計されています。</p><p>わずか <strong>22.8 × 11.8 cm</strong> のフットプリント、重量 <strong>1.5 kg</strong>。Quad Cortex mini は、設置しやすく、持ち運びやすく、既存のリグにもシンプルに組み込める形状で、フラッグシップ級のパフォーマンスを提供します。</p><p>外形寸法</p><p>22.8 × 11.8 × 6.5 cm<br/>/ 8.9” × 4.6” × 2.5”</p><p>重量</p><p>1.5 kg / 3.3 lbs</p>"
+      }
+    },
+    "rich_text_dzy9mb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/90-plus.png?v=1769063854",
+        "image_alt": "90+",
+        "heading": "すぐに演奏できる、完結したクリエイティブ・ツールキット",
+        "body": "<p>Quad Cortex mini には、厳選されたアンプ、エフェクト、キャビネットがあらかじめ搭載されています。接続したその瞬間から、インスピレーションあふれるギター／ベース用リグを構築するために必要なすべてが揃っています。</p><p>ヴィンテージテイストからモダンなアンプ、スタジオクオリティのエフェクト、柔軟なキャビネットシミュレーションまで、すべてのバーチャルデバイスは演奏に自然に反応し、シームレスに連携するよう設計されています。</p><p>classic / modern / contemporary を網羅する90種類以上のアンプ・モデル</p><p>完全なシグナルチェーン構築のための100種類以上のエフェクト＆ユーティリティ</p><p>柔軟なマイク配置に対応する1000種類以上のキャビネットIR</p>"
+      }
+    },
+    "single_image_tpda8j": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-capture-image_f8e5771e-ffb6-474c-b749-098e84abadaa.webp?v=1769734660",
+        "image_alt": ""
+      }
+    },
+    "rich_text_4vbhpb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/capture-v1-img.png?v=1769068336",
+        "image_alt": "Neural Capture Version 1",
+        "heading": "Neural Capture",
+        "body": "<p><strong>実機をキャプチャ。どこでも演奏。<br/></strong><br/>Neural Capture は、実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルモデルとして再現します。世界中のプレイヤーやアーティストが作成した何千もの Capture から選ぶことも、あなた自身の機材を手軽にキャプチャすることも可能です。</p><p>音色だけでなく、ダイナミクスやタッチ、弾き心地までもが忠実にキャプチャされるため、演奏への反応は常に自然。ギターのボリュームを絞る、強くピッキングする――どんな操作にも、音楽的で馴染みのあるレスポンスが返ってきます。</p><p>あなたが信頼するサウンドは、演奏する場所を選ばず、常にあなたと共にあります。</p><p>Quad Cortex mini には、2,000以上の高品質なファクトリー Neural Capture があらかじめ収録されており、箱から出してすぐに、インスピレーションあふれるスタジオクオリティのサウンドを演奏できます。<br/><br/></p><p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。</p><p>日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p><p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。 ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現します。</p><p>ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、 ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+      }
+    },
+    "rich_text_dgvea3": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-cortex_cloud_img.webp?v=1769062013",
+        "image_alt": "",
+        "heading": "Cortex Cloud",
+        "body": "<p><strong>成長し続けるトーンの世界</strong><br/><br/>Cortex Cloud は、Quad Cortex mini を、世界中のアーティストやプレイヤーによって作成された Neural Capture<strong> </strong>やプリセットのライブラリへと接続します。このライブラリは、常に拡張され続けています。</p><p>他のユーザーがキャプチャしたアンプ、キャビネット、ペダルを発見し、それらを自分のリグへ即座に取り込むことが可能です。サウンドは高速に読み込まれ、シームレスに統合されるため、インスピレーションを途切れさせることはありません。</p><p>自分自身の Neural Capture を共有し、新たなアイデアを探求しながら、サウンドを継続的に進化させていくことができます。</p>"
+      }
+    },
+    "custom_liquid_88nkjy": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qcm-the-grid.webp?v=1769072792",
+        "image_alt": "Quad Cortex mini - The Grid",
+        "heading": "The Grid",
+        "body": "<p>リグ全体をひと目で把握。</p><p>The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。 シグナルチェインの構築・理解・編集を直感的に行えるよう設計されており、 メニューを深く潜ったり、隠れた階層を探したりする必要はありません。</p><p>バーチャル・デバイスのブロックを、明快なグリッドベースのシグナルフロー上に配置してリグを作成できます。 ブロックは自由に並べ替えられ、信号を並列パスへ分岐させたり、 チェイン内の任意のポイントを別の出力へルーティングしたりも、確かな精度と自信をもって行えます。</p><p>複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。 すべてが「あるべき場所」にきちんと収まります。</p>"
+      }
+    },
+    "single_image_gffdxp": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-beauty-wide.webp?v=1769072536",
+        "image_alt": ""
+      }
+    },
+    "rich_text_gh63bm": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "速く、直感的な操作性のための設計",
+        "body": "<p><strong>タッチスクリーン &amp; ロータリーフットスイッチ</strong><br/><br/>7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。サウンドの編集時でも、パフォーマンス中でも、確かな操作感を提供します。</p><p><strong>パラメータ・フォーカス・システム<br/></strong><br/>ブロックを選択すると、ロータリーフットスイッチは自動的に最も関連性の高いパラメータへ割り当てられます。これにより、音を“耳で聴きながら”素早く調整でき、メニュー操作に気を取られることなく演奏に集中できます。</p><p><strong>柔軟なスイッチング・モード</strong><br/><br/>あなたの演奏スタイルに合わせて操作方法を選択できます。<br/><br/><strong>・プリセット・モード</strong>：完成したリグ同士を切り替え<br/><br/><strong>・シーン・モード</strong>：1つのプリセット内でシームレスに音色を切り替え<br/><br/><strong>・ストンプ・モード</strong>：ペダルボード感覚の操作<br/><br/><strong>・ハイブリッド・モード</strong>：フットスイッチ列ごとにモードを組み合わせ可能</p><p><strong>ギグ・ビュー</strong><br/><br/>大きな文字と明確なビジュアルフィードバックを備えた、高コントラストでライブ向きのレイアウト。「Opposite Page Preview」により、もう一方のページに割り当てられた内容もひと目で確認でき、演奏中に迷うことはありません。</p>"
+      }
+    },
+    "custom_liquid_tpwyqn": {
+      "type": "nd-numbered",
+      "settings": {
+        "heading": "入力と出力",
+        "subheading": "シンプルな接続。自由なセットアップ。",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/9789b00a3d5a31041fb594ab2f8ca442.svg?v=1769051445"
+      },
+      "blocks": {
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "number": "1",
+            "title": "INPUT 2 / CAPTURE INPUT",
+            "text": "<p>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 楽器やマイクを接続できます。また、この入力は Neural Capture の作成にも使用されます。</p>"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "number": "2",
+            "title": "INPUT 1",
+            "text": "<p>楽器接続用の 1/4インチ TS入力。</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "number": "3",
+            "title": "DUAL EFFECTS LOOPS",
+            "text": "<p>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。 ループ1には標準のTRSケーブルを、2系統のFXループ両方を使用する場合は TRSインサートケーブル（TRS → デュアルTS） を使用してください。</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "number": "4",
+            "title": "EXPRESSION INPUT",
+            "text": "<p>ボリューム、ワウ、ピッチ、エフェクトなどのパラメーターをリアルタイムでコントロールするための、 1/4インチ TRS エクスプレッションペダル入力。2系統目のエクスプレッション入力は MIDI経由で利用可能です。</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "number": "5",
+            "title": "XLR OUTPUTS",
+            "text": "<p>2系統のモノラル・バランスXLR出力。</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "number": "6",
+            "title": "MIDI IN & OUT / THRU",
+            "text": "<p>MIDIメッセージの送受信に対応した 1/8インチ TRS MIDI Type-A 端子。 プリセット切替や対応パラメーターの自動制御、他のMIDI機器のコントロールが可能です。</p>"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "number": "7",
+            "title": "USB-C",
+            "text": "<p>コンピューターに接続し、マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。 レコーディングやリアンプにも対応します。</p>"
+          }
+        },
+        "item_7": {
+          "type": "item",
+          "settings": {
+            "number": "8",
+            "title": "HEADPHONES OUTPUT",
+            "text": "<p>静かな環境での練習やモニタリングに最適な、1/8インチ TRS ヘッドフォン出力。</p>"
+          }
+        },
+        "item_8": {
+          "type": "item",
+          "settings": {
+            "number": "9",
+            "title": "POWER SWITCH",
+            "text": "<p>メカニカル方式の電源スイッチ。</p>"
+          }
+        },
+        "item_9": {
+          "type": "item",
+          "settings": {
+            "number": "10",
+            "title": "TS OUTPUTS",
+            "text": "<p>柔軟なルーティングが可能な、2系統の 1/4インチ TS 出力。</p>"
+          }
+        },
+        "item_10": {
+          "type": "item",
+          "settings": {
+            "number": "11",
+            "title": "CAPTURE OUTPUT",
+            "text": "<p>Neural Capture作成専用のアウトプット。</p>"
+          }
+        },
+        "item_11": {
+          "type": "item",
+          "settings": {
+            "number": "12",
+            "title": "POWER INPUT",
+            "text": "<p>12V DC / 1.2A、センターマイナス仕様の ロック式 2.1 / 5.5mm DC電源入力。 電源アダプターが付属し、一般的なペダルボード用電源と互換性のある 非ロック式アダプターも同梱。 電源投入動作は、接続時に自動で起動する設定、または電源スイッチによる手動起動のいずれかを選択できます。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6",
+        "item_7",
+        "item_8",
+        "item_9",
+        "item_10",
+        "item_11"
+      ]
+    },
+    "single_image_ahaieh": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/QC-Mini-Clean-Angle-web.webp?v=1769053428",
+        "image_alt": ""
+      }
+    },
+    "rich_text_w4egmi": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "使用シーン",
+        "body": "<h3>ライブ・パフォーマンス</h3><p>ステージのために設計された、ギター／ベース用の完全なリグ。 Quad Cortex mini は、ライブ環境において安定したサウンド、 素早い切り替え、そして自信をもって操作できるコントロール性を提供します。</p><h3>スタジオ &amp; レコーディング</h3><p>ギターやベースのレコーディング／リアンプに対応する、 パワフルなオールインワン・ツール。 Quad Cortex mini はマルチチャンネル対応の USB-C オーディオインターフェースとしても機能し、 現代的な DAW ワークフローに自然に組み込めます。</p><h3>練習 &amp; ソングライティング</h3><p>ヘッドフォンを使った静かな練習、内蔵メトロノームによるタイムキープ、 そしてクリエイティブな流れを止めることなく、 サウンドの作成・調整・保存を素早く行えます。</p><h3>コンパクトなツアーセットアップ</h3><p>省スペースを重視したツアーやプロフェッショナルなステージリグに最適。 Quad Cortex mini は、驚くほどコンパクトな筐体で フルステージ級の機能を提供します。</p>"
+      }
+    },
+    "rich_text_ewyvb6": {
+      "type": "nd-html",
+      "settings": {
+        "width": "wide",
+        "html": "<h3>Quad Cortex との比較</h3><img alt=\"\" loading=\"lazy\" src=\"https://neuraldsp.jp/cdn/shop/files/9789b00a3d5a31041fb594ab2f8ca442_8f43fc47-0ab2-48a9-b1f4-d03c30af6efb.svg?v=1769153054\"/><p>CorOS 機能一覧</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>バーチャル・デバイス・ライブラリ</th><td>200</td><td>200</td></tr><tr><th>Neural Capture ライブラリ</th><td>1500</td><td>1500</td></tr><tr><th>インパルス・レスポンス（IR）ライブラリ</th><td>1000</td><td>1000</td></tr><tr><th>ユーザー・プリセット保存数</th><td>3072</td><td>3072</td></tr><tr><th>ユーザー・キャプチャ保存数</th><td>2048</td><td>2048</td></tr><tr><th>ユーザー IR 保存数</th><td>2048</td><td>2048</td></tr><tr><th>プラグイン互換性</th><td>対応</td><td>対応</td></tr><tr><th>パラメーター・エンコーダー割り当て</th><td>対応*</td><td>対応（最大10同時）</td></tr><tr><th>SCENE &amp; STOMP モード</th><td>対応**</td><td>対応（1プリセットあたり8）</td></tr><tr><th>HYBRID モード</th><td>対応***</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 1</th><td>対応</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 2</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Cloud™ アクセス</th><td>対応</td><td>対応</td></tr><tr><th>クラウドバックアップ</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Control™ アプリ</th><td>対応</td><td>対応</td></tr><tr><th>グローバル EQ</th><td>対応</td><td>対応</td></tr><tr><th>ルーパー</th><td>対応</td><td>対応</td></tr><tr><th>モメンタリー・フットスイッチ割り当て</th><td>非対応</td><td>対応</td></tr></tbody></table><p>*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。</p><p>**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。</p><p>***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。</p><p>ハードウェア I/O</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>オーディオ入力</th><td>1× 1/4インチ TS（入力 1）<br/>1× コンボ XLR + 1/4インチ TRS（入力 2）<br/>1× 1/4インチ TRS（リターン 1/2）*</td><td>2× コンボ XLR + 1/4インチ TRS（入力 1/2）<br/>2× 1/4インチ TRS（リターン 1/2）</td></tr><tr><th>オーディオ出力</th><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TS（アウト 3/4）<br/>1× 1/4インチ TRS（センド 1/2）*<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/8インチ TRS（ヘッドフォン）</td><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TRS（アウト 3/4）<br/>2× 1/4インチ TRS（センド 1/2）<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/4インチ TRS（ヘッドフォン）</td></tr><tr><th>ヘッドフォン</th><td>対応（1/8インチ TRS）</td><td>対応（1/4インチ TRS）</td></tr><tr><th>USB オーディオ</th><td>対応（USB-C）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td><td>対応（USB-A）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td></tr><tr><th>MIDI</th><td>MIDI 入力（1/8インチ TRS Type-A）<br/>MIDI 出力（1/8インチ TRS Type-A）<br/>MIDI Over USB 対応</td><td>MIDI 入力（DIN）<br/>MIDI 出力（DIN）<br/>MIDI Over USB 対応</td></tr><tr><th>エクスプレッション・ペダル</th><td>Expression 1：1/4インチ TRS<br/>Expression 2：MIDI</td><td>Expression 1：1/4インチ TRS<br/>Expression 2：1/4インチ TRS</td></tr><tr><th>電源</th><td>12V DC 1.2A<br/>センターネガティブ<br/>2.1 / 5.5mm DC ロッキングコネクター<br/>電源アダプター付属</td><td>12V DC 3A<br/>センターネガティブ<br/>2.1 / 5.5mm DC 標準コネクター 電源アダプター付属</td></tr></tbody></table><p>*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。</p><p>その他</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>ワイヤレス接続</th><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）<br/></td><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）</td></tr><tr><th>電源スイッチ</th><td>あり</td><td>あり</td></tr><tr><th>マスターボリューム</th><td>あり（＋／− ボタン）</td><td>あり（ノブ）</td></tr><tr><th>フットスイッチ</th><td>ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ</td><td>ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ</td></tr><tr><th>ディスプレイ</th><td>7インチ カラータッチスクリーン</td><td>7インチ カラータッチスクリーン</td></tr><tr><th>シャーシ</th><td>アルマイト加工アルミニウム</td><td>アルマイト加工アルミニウム</td></tr><tr><th>外形寸法</th><td>22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）</td><td>29 × 19.5 cm（11.4 × 7.7インチ）</td></tr><tr><th>重量</th><td>1.5 kg（3.3 lbs）</td><td>1.95 kg（4.2 lbs）</td></tr><tr><th>価格</th><td>¥219,000</td><td>¥279,000</td></tr></tbody></table>"
+      }
+    },
+    "custom_liquid_gqvxw7": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Quad Cortex エコシステム",
+        "body": "<h3>進化し続ける設計</h3><p>Quad Cortex mini は Quad Cortex プラットフォームの一部で、継続的な CorOS アップデートとともに成長するよう設計されています。 新機能やデバイス、ワークフローの改善が時間とともに追加されるため、演奏を始めた後もセットアップは拡張し続けます。</p><h3>Cortex Control</h3><p>Cortex Control はデバイスを管理するためのデスクトップ用コンパニオンアプリです。 プリセットの編集、コンテンツの整理とバックアップ、ライブラリ管理をコンピューター上で効率的に行えます。</p><h3>プラグイン互換性</h3><p>対応する Neural DSP プラグインを Quad Cortex mini と一緒に使用できます。 ソフトウェアとハードウェアのワークフローをつなぎ、慣れ親しんだサウンドをライブやスタンドアローンのセットアップへ簡単に持ち込めます。</p><h3>Wi-Fi とクラウド連携</h3><p>内蔵 Wi-Fi により Quad Cortex mini は常に接続された状態を保てます。 Cortex Cloud からのコンテンツダウンロード、CorOS ファームウェアの更新、デバイス管理をワイヤレスで行えるため、 常に最新の状態を手間なく維持できます。</p>"
+      }
+    },
+    "collapsible_content_rqxwrm": {
+      "type": "nd-faq",
+      "settings": {
+        "eyebrow": "FAQs",
+        "heading": "よくあるご質問",
+        "anchor": "faq"
+      },
+      "blocks": {
+        "qa_0": {
+          "type": "qa",
+          "settings": {
+            "question": "デジタル機材を使ったことがなくても、Quad Cortex mini は使えますか？",
+            "answer": "<p>Quad Cortex mini は、デジタル機材をこれまで一度も使ったことがない方でも、最初のセッションから直感的に扱えるよう設計されています。タッチスクリーンによる操作、視覚的に分かりやすいシグナルチェイン、そして直感的なコントロールにより、専門的な知識がなくてもリグの構成や音の変化を理解し、サウンドを調整できます。<br/><br/>まずは工場出荷時のプリセットを使って演奏を始め、慣れてきたら自分のペースで高度な機能へステップアップすることが可能です。<br/>Quad Cortex mini は、シンプルな練習や演奏用途から、より複雑なリグ構築まで、あなたの成長に合わせて進化し続けます。</p>"
+          }
+        },
+        "qa_1": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は「機能を削減した」Quad Cortex ですか？",
+            "answer": "<p>いいえ。Quad Cortex mini は、小型化された筐体に収められた フルスペックの Quad Cortex です。音質、基本となるワークフロー、エコシステム、そして長期的なアップデート方針に至るまで、すべて Quad Cortex と完全に同一 です。サイズだけをコンパクトにし、クオリティや体験に一切の妥協はありません。</p>"
+          }
+        },
+        "qa_2": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex と Quad Cortex mini の間で、プリセットやバックアップは互換性がありますか？",
+            "answer": "<p>はい。プリセットおよびバックアップは、すべての Quad Cortex デバイス間で互換性があります。そのため、Quad Cortex と Quad Cortex mini の間でコンテンツを自由に移行できます。どちらのモデルでも、同じリグ、同じサウンド、同じワークフローをそのまま共有可能です。</p>"
+          }
+        },
+        "qa_3": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は、Quad Cortex と同じ CorOS アップデートを使用しますか？",
+            "answer": "<p>はい。Quad Cortex mini は Quad Cortex と同じ CorOS プラットフォームを共有しており、アップデートは 同時にリリース されます。機能追加や改善は、どちらのモデルでも同じタイミングで提供されます。</p>"
+          }
+        },
+        "qa_4": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex よりフットスイッチの数が少ないですが、どのように操作するのですか？",
+            "answer": "<p>Quad Cortex mini では フットスイッチ・ページ・システム を採用しており、フットスイッチの数を増やすことなく、より多くの機能へアクセスできます。ページ I には、基本となる主要な操作が割り当てられています。フットスイッチを 長押し すると ページ II が表示され、追加の操作や機能が割り当てられた、もう一組のコントロールに切り替わります。これにより、コンパクトなサイズながら柔軟で直感的な操作が可能です。</p>"
+          }
+        },
+        "qa_5": {
+          "type": "qa",
+          "settings": {
+            "question": "8つのシーンにアクセスすることはできますか？",
+            "answer": "<p>はい。8つすべてのシーンにアクセス可能です。シーンはページごとに分割されており、ページを切り替えることで残りのシーンにもアクセスできます。コンパクトな操作系でも、Quad Cortex と同等のシーン運用が可能です。</p>"
+          }
+        },
+        "qa_6": {
+          "type": "qa",
+          "settings": {
+            "question": "フットスイッチ・ページ・システムとは何ですか？ また、なぜ重要なのでしょうか？",
+            "answer": "<p>フットスイッチ・ページ を使うことで、限られた数のフットスイッチでも、通常では割り当てきれないほど多くの操作やコントロールを設定できます。この仕組みによって、ハードウェアをコンパクトに保ちながらも、ライブパフォーマンスに必要な柔軟性をしっかりと維持できます。Quad Cortex mini における操作性と表現力を支える、非常に重要なシステムです。</p>"
+          }
+        },
+        "qa_7": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は、プリセット／シーン／ストンプ／ハイブリッド・モードに対応していますか？",
+            "answer": "<p>はい。<br/>Quad Cortex mini は、プリセット・モード、シーン・モード、ストンプ・モード、ハイブリッド・モード のすべてに対応しています。<br/><br/>サウンドの切り替え方法やエフェクトの操作を、自分の演奏スタイルに合わせて自由に選択できます。</p>"
+          }
+        },
+        "qa_8": {
+          "type": "qa",
+          "settings": {
+            "question": "ロータリーフットスイッチは Quad Cortex と同じものですか？",
+            "answer": "<p>はい。<br/>Quad Cortex mini では、Quad Cortex と同じ ステンレス製ロータリーフットスイッチ を採用しています。<br/>スイッチ操作とパラメーター調整の両方に対応し、確かな操作感と高い耐久性を備えています。</p>"
+          }
+        },
+        "qa_9": {
+          "type": "qa",
+          "settings": {
+            "question": "Focus システムとは何ですか？",
+            "answer": "<p>Focus システム は、選択中のブロックに関連する最も重要なパラメーターを、ロータリーフットスイッチへ自動的に割り当てる機能です。<br/><br/>これにより、メニューを行き来することなく、モデルの切り替えや設定の微調整を素早く行うことができ、スムーズかつ直感的な音作りが可能になります。</p>"
+          }
+        },
+        "qa_10": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini はモメンタリー・ストンプの割り当てに対応していますか？",
+            "answer": "<p>いいえ。<br/>Quad Cortex mini では、「押し続ける（プレス＆ホールド）」操作を使用する専用コマンドがあるため、モメンタリー・ストンプの割り当てには対応していません。<br/><br/>この仕様は、限られたフットスイッチ数でも多くの機能にアクセスできるようにするための設計によるものです。</p>"
+          }
+        },
+        "qa_11": {
+          "type": "qa",
+          "settings": {
+            "question": "Gig View はありますか？",
+            "answer": "<p>はい。<br/>Gig View を搭載しています。<br/>高コントラストで視認性に優れた、ライブパフォーマンス向けのレイアウトを採用しており、明確なビジュアルフィードバックによって、演奏中でも状況をひと目で把握できます。</p>"
+          }
+        },
+        "qa_12": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini には、いくつのエフェクトループがありますか？",
+            "answer": "<p>Quad Cortex mini には、2系統のエフェクトループが搭載されています。<br/>SEND／RETURN はそれぞれ<strong> </strong>共有の TRS ジャック（SEND 1/2、RETURN 1/2）を使用します。</p><p><strong>接続方法について</strong></p><ul><li>標準の TS ケーブルを SEND 1/2 または RETURN 1/2 に接続した場合、使用されるのは ループ1のみ です。<br/></li><li>ループ1とループ2の両方を使用する場合は、TRS インサートケーブル（TRS → デュアル TS） を使用してください。<br/></li></ul><p><strong>端子の割り当て</strong></p><p><strong>SEND 1/2</strong></p><ul><li>Tip：Send 1</li><li>Ring：Send 2</li><li>Sleeve：グラウンド<br/></li></ul><p><strong>RETURN 1/2</strong></p><ul><li>Tip：Return 1</li><li>Ring：Return 2</li><li>Sleeve：グラウンド<br/></li></ul><p>この設計により、ハードウェアをコンパクトに保ちながら、2系統の独立したエフェクトループを実現しています。<br/>ルーティングは The Grid 上で柔軟に設定でき、さまざまなリグ構成に対応します。</p>"
+          }
+        },
+        "qa_13": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini はフル MIDI 対応ですか？",
+            "answer": "<p>はい<strong>。</strong>Quad Cortex mini は、1/8インチ TRS（MIDI Type A）接続による MIDI コントロールに加え、USB 経由の MIDI（MIDI over USB） にも対応しており、フル MIDI コントロールが可能です。</p><p>外部 MIDI 機器との連携や、詳細なコントロール設定にも柔軟に対応します。</p>"
+          }
+        },
+        "qa_14": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は USB-C から電源供給されますか？",
+            "answer": "<p>いいえ<strong>。</strong>USB-C 端子は、データ転送およびオーディオインターフェース機能のために使用されます。Quad Cortex mini の動作には、外部電源が必要です。USB-C は電源供給用ではありませんので、ご注意ください。</p>"
+          }
+        },
+        "qa_15": {
+          "type": "qa",
+          "settings": {
+            "question": "電源仕様はどうなっていますか？",
+            "answer": "<p>Quad Cortex mini は、12V DC / 1.2A、センターマイナス仕様の電源を使用します。ロック機構付きのバレルコネクターを採用しており、電源の抜けを防ぎます。電源アダプターは <strong>製品に同梱</strong> されています。</p>"
+          }
+        },
+        "qa_16": {
+          "type": "qa",
+          "settings": {
+            "question": "なぜ非ロック式の電源アダプターが付属しているのですか？",
+            "answer": "<p>ロック式コネクターは、ライブ環境でも電源が抜けにくいよう設計されています。一方で、付属の非ロック式アダプターは、一般的なペダルボード用電源（Quad Cortex 付属の電源アダプターなど）との互換性を確保するために同梱されています。これにより、ライブ用途と既存の電源環境のどちらにも柔軟に対応できます。</p>"
+          }
+        },
+        "qa_17": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini には、どのような入力端子がありますか？",
+            "answer": "<p>INPUT 1 は、1/4インチの楽器用入力です。INPUT 2 は、XLR と 1/4インチを兼ねたコンボ入力で、楽器またはマイクの接続に対応しています。必要に応じて ファンタム電源 も使用可能です。ギター／ベースからマイク入力まで、幅広い用途に対応します。</p>"
+          }
+        },
+        "qa_18": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は Cortex Control アプリに対応していますか？",
+            "answer": "<p>はい。Quad Cortex mini は、最新バージョンの Cortex Control に完全対応しています。デスクトップからの編集・管理もスムーズに行えます。</p>"
+          }
+        },
+        "qa_19": {
+          "type": "qa",
+          "settings": {
+            "question": "本体を受け取ったら、アップデートは必要ですか？",
+            "answer": "<p>はい。製品には、出荷時点での旧バージョンの CorOS がインストールされている場合があります。受け取り次第、最新の CorOS および Cortex Control にアップデートすることをおすすめします。これにより、すべての機能との互換性が確保され、新機能や改善点を最大限に活用できます。</p>"
+          }
+        },
+        "qa_20": {
+          "type": "qa",
+          "settings": {
+            "question": "Windows® ではオーディオドライバーが必要ですか？",
+            "answer": "<p>はい。Windows® 環境では、専用のオーディオドライバーが必要です。ドライバーは、当社の <a href=\"https://neuraldsp.com/downloads\" rel=\"noopener\" target=\"_blank\">Downloads ページ</a> からダウンロードできます。また、Quad Cortex と Quad Cortex mini の両方を使用する場合は、それぞれのデバイスに対応した 両方のドライバーをインストールする必要があります。</p>"
+          }
+        },
+        "qa_21": {
+          "type": "qa",
+          "settings": {
+            "question": "プラグイン互換機能では、いくつのデバイスでプラグインを有効化できますか？",
+            "answer": "<p>Neural DSP の1つのアカウントにつき、最大で Quad Cortex を3台、Quad Cortex mini を3台までプラグインを有効化できます。</p>"
+          }
+        },
+        "qa_22": {
+          "type": "qa",
+          "settings": {
+            "question": "同時にいくつの楽器を使用できますか？",
+            "answer": "<p>Quad Cortex mini は、最大で4系統の楽器信号を同時に扱うことができます。メイン入力である INPUT 1 と INPUT 2 に加え、RETURN 1/2 を TRS インサートケーブルで分岐入力として使用することが可能で、RETURN 1/2 を2系統の入力信号に分けて利用できます。</p>"
+          }
+        },
+        "qa_23": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini の耐久性はどの程度ですか？",
+            "answer": "<p>Quad Cortex mini は、ツアー、スタジオ、モバイル用途を想定して設計されており、堅牢な素材と高い耐久性を備えた構造を採用しています。実際の使用環境を想定したテストを通じて、信頼性と耐久性が十分に検証されています。ライブや持ち運びを伴う環境でも、安心して使用できます。</p>"
+          }
+        },
+        "qa_24": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini でヘッドフォンは使えますか？",
+            "answer": "<p>はい。Quad Cortex mini には専用のヘッドフォン出力が搭載されており、サイレント練習やモニタリングに使用できます。</p>"
+          }
+        },
+        "qa_25": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini で録音するのに、別途オーディオインターフェースは必要ですか？",
+            "answer": "<p>いいえ、必要ありません。Quad Cortex mini はマルチチャンネル対応の USB-C オーディオインターフェースとして機能するため、追加の機材なしで DAW に直接録音できます。</p>"
+          }
+        },
+        "qa_26": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini はインターネット接続なしでも使えますか？",
+            "answer": "<p>はい、使用できます。インターネット接続が必要なのは、ファームウェアのアップデート、Cortex Cloud からのコンテンツダウンロード、または Neural Capture V2 モデルの作成を行う場合のみです。演奏、練習、ライブパフォーマンスなどは、完全にオフライン環境で問題なく行えます。</p>"
+          }
+        },
+        "qa_27": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini を使うのにコンピューターは必要ですか？",
+            "answer": "<p>いいえ、必要ありません。Quad Cortex mini はスタンドアロン機器として動作し、演奏・練習・ライブパフォーマンスを単体で行うことができます。</p>"
+          }
+        },
+        "qa_28": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini には、すぐに使えるサウンドが入っていますか？",
+            "answer": "<p>はい。Quad Cortex mini には、ファクトリープリセットをはじめ、以下のコンテンツがあらかじめ収録されています。</p><ul><li>90種類以上のアンプモデル</li><li>100種類以上のエフェクト</li><li>1,000種類以上のキャビネット IR</li><li>2,000種類以上の Neural Capture</li></ul><p>購入後すぐに演奏を始めることができます。</p>"
+          }
+        },
+        "qa_29": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex mini は、従来のアンプやペダルの代わりになりますか？",
+            "answer": "<p>はい、用途によっては置き換えることが可能です。Quad Cortex mini は、従来のアンプ、キャビネット、ペダルを完全に置き換えて使うことも、既存の機材と組み合わせて使うこともできます。どこまで置き換えるかは、あなたのセットアップやプレイスタイル、好みによって異なります。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_0",
+        "qa_1",
+        "qa_2",
+        "qa_3",
+        "qa_4",
+        "qa_5",
+        "qa_6",
+        "qa_7",
+        "qa_8",
+        "qa_9",
+        "qa_10",
+        "qa_11",
+        "qa_12",
+        "qa_13",
+        "qa_14",
+        "qa_15",
+        "qa_16",
+        "qa_17",
+        "qa_18",
+        "qa_19",
+        "qa_20",
+        "qa_21",
+        "qa_22",
+        "qa_23",
+        "qa_24",
+        "qa_25",
+        "qa_26",
+        "qa_27",
+        "qa_28",
+        "qa_29"
+      ]
+    },
+    "custom_liquid_ewjyyk": {
+      "type": "nd-specs",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "label": "マニュアル",
+            "url": "/a/support/quad-cortex-mini/user-manual"
+          }
+        }
+      },
+      "block_order": [
+        "card_0"
+      ]
+    },
+    "single_image_g7kzr7": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/QC_Minis_flow.png?v=1769064771",
+        "image_alt": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "rich_text_krypv3",
+    "rich_text_6pwqvc",
+    "rich_text_dzy9mb",
+    "single_image_tpda8j",
+    "rich_text_4vbhpb",
+    "rich_text_dgvea3",
+    "custom_liquid_88nkjy",
+    "single_image_gffdxp",
+    "rich_text_gh63bm",
+    "custom_liquid_tpwyqn",
+    "single_image_ahaieh",
+    "rich_text_w4egmi",
+    "rich_text_ewyvb6",
+    "custom_liquid_gqvxw7",
+    "collapsible_content_rqxwrm",
+    "custom_liquid_ewjyyk",
+    "single_image_g7kzr7"
+  ]
+}

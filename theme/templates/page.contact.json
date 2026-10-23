@@ -1,0 +1,20 @@
+/*
+ * Generated from the live /pages/contact (page-contact) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "form": {
+      "type": "contact-form",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main",
+    "form"
+  ]
+}

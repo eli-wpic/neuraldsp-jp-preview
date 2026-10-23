@@ -1,0 +1,518 @@
+/*
+ * Generated from the live site (see tools/convert_live_to_theme.py); FAQ anchored at #faq.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": true,
+        "show_trial": false,
+        "accessories": [
+          "quad-cortex-psu",
+          "quad-cortex-mini-psu"
+        ],
+        "media_mode": "3d",
+        "model": "nano",
+        "view_labels": "全体,コントロール,フットスイッチ,入力と出力,正面",
+        "view_titles": "あなたのトーン。あなたのリグ。どこでもプレイ|手のひらに収まる、超強力なリグ|軽快に移動、圧倒的なサウンド|入力と出力|300種類の高品質IR、25種類のプリセットキャプチャーを搭載。",
+        "view_captions": "Nano Cortex® は、Neural DSP が開発した手のひらサイズのデジタルアンプ & エフェクトプロセッサーです。|Bass, Mid, Treble トーンを調整するためのコントロール。 Gain Neural Captureに適用されるサチュレーションのレベルを調整します。 Capture Neural Captureプロセスを開始します。|Nano Cortexは、2つのスタンダードなストンプボックスペダルを並べた幅と同じで、重さはわずか620g（1.36lbs）。ギグバッグやバックパックに簡単に収まります。|1/4\" instrument input ギターやベース用。 Dual 1/4\" TRS outputs スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。 USB-C 録音や電源供給に対応。 Capture inpu|",
+        "film_url": "https://youtu.be/CJ3qnwxDecE?si=83w4mqq3CtZAOtTO",
+        "film_label": "▶ フル動画を見る",
+        "photo_assets": "nano-photo-1.webp,nano-photo-2.webp,nano-photo-3.webp,nano-photo-4.webp,nano-photo-5.webp"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "video_89yj6x": {
+      "type": "nd-video",
+      "settings": {
+        "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/a154d4bd58104f39855fdaa705217dea/a154d4bd58104f39855fdaa705217dea.HD-720p-4.5Mbps-86234243.mp4?v=0",
+        "heading": "サウンドデモ｜Yo Onitan"
+      }
+    },
+    "custom_liquid_hjp4qe": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/Nano_Cortex_-_Web_assets_6_30bf7111-2d0e-4a41-a9b1-9ce6826f7749.jpg?v=1741847611",
+        "image_alt": "Nano Cortexの使用イメージ",
+        "heading": "手のひらに収まる、超強力なリグ",
+        "body": "<p>手のひらサイズに収まる超強力なリグ、Nano Cortexはスタジオ級のサウンド、自由にカスタマイズできるシグナルチェーン、充実のエフェクト群、そして革新的なNeural Captureテクノロジーを搭載し、ステージでもスタジオでも、あらゆる場面で理想のトーンを即座に引き出します。</p><p>Neural Captureは登場以来、アンプやキャビネット、ドライブペダルのキャプチャと再現において他に類を見ない精度を実現し、演奏時のリアルさとレスポンスの良さはアーティストやエンジニアから高く評価されてきました。そして今、その革新的なテクノロジーは、いつでもどこでもインスピレーションを形にできる、現場対応型のポータブルユニットに凝縮されています。ポータブルかつプロフェッショナルなトーンの未来へようこそ。</p>"
+      }
+    },
+    "custom_liquid_6hmybr": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/NanOS-2.2.0.webp?v=1764306465",
+        "image_alt": "",
+        "heading": "NanOS 2.2.0 を公開しました",
+        "button_label": "詳しく見る",
+        "button_url": "/blogs/news/nano-cortex-updates-nanos-2-2-0-is-now-available",
+        "body": "<h3>2.2.0 の新機能</h3><ul><li>Neural Capture バージョン2 プレイヤー</li><li>新しいトレモロ・エフェクト</li><li>自動モノラル・サミング</li><li>Cortex Cloud オフラインモード</li><li>クラウドバックアップ</li><li>キャプチャの試聴機能</li></ul>"
+      }
+    },
+    "custom_liquid_d6ym6c": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/6GRfFl5cj6tF4mmJUtAAMB/9fc2699e9a09714f622a18505e008a3a/NC-360-vid-white.mp4"
+      }
+    },
+    "multicolumn_34lwl7": {
+      "type": "nd-columns",
+      "settings": {
+        "columns": 4,
+        "heading": "主な特徴"
+      },
+      "blocks": {
+        "column_0": {
+          "type": "column",
+          "settings": {
+            "text": "<ul><li>超コンパクトなペダルにフルギター/ベースリグ</li><li>Quad Cortexと同じ解像度と品質のNeural Captureテクノロジー</li><li>どんなアンプ、キャビネット、ドライブペダルでも、数分で驚くほど正確なデジタルレプリカをデバイス上で作成</li><li>Cortex Cloudで数千のNeural Capturesに無料アクセス</li></ul>"
+          }
+        },
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "text": "<ul><li>手のひらに収まるサイズで、重さはわずか620g（1.36lbs）</li><li>Pre/Post FXを備えた包括的なシグナルチェーン</li><li>インパルスレスポンス（IR）ローダー</li><li>内蔵インプットゲート（エフェクトスロット不使用）</li><li>楽器を持ち替えずにチューニングをトランスポーズ</li></ul>"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "text": "<ul><li>カスタマイズ可能なフットスイッチ機能</li><li>ギャップレス・プリセット切り替え</li><li>24ビット、48kHz録音対応の本格的な低遅延オーディオインターフェース</li><li>スタンドアロ－ンユニットとして単体で使用することも、既存のセットアップに組み込むことも可能</li><li>ライブ演奏、スタジオ録音、または自宅練習に最適</li></ul>"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "text": "<ul><li>直感的で使いやすく、初心者にも易しい</li><li>Cortex Cloudアプリを使って、Bluetooth経由でキャプチャをワイヤレスでダウンロードし、パラメーターをコントロールし、プリセットを管理</li><li>MIDI TRS入力 + USB経由でのフルMIDIコントロール</li><li>内蔵チューナー</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "column_0",
+        "column_1",
+        "column_2",
+        "column_3"
+      ]
+    },
+    "rich_text_wrphyg": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Nano_Cortex_-_Web_assets_5_0619dfb6-2139-4c8a-a44b-dcb28447e297.jpg?v=1741847925",
+        "image_alt": "",
+        "heading": "Neural Capture",
+        "body": "<p><strong>追加のツールやアプリを使わず、フラッグシップモデルQuad Cortexと同じ解像度で、デバイス上で数分以内にNeural Captureを作成できます。</strong></p><p>Nano Cortexは、あらゆる物理的なアンプ、オーバードライブ、キャビネットの音響特性を、これまでにない精度で学習し、再現することができます</p><p>機器を接続し、Captureボタンを押すだけで、わずか数分で本物とほぼ見分けがつかないデジタル版が作成できます。コンピューターやインターネット、Cortex Cloudアプリに接続する必要はありません。シンプルで素早く、これ一台で完結します。</p><p>自分の機材をキャプチャしたくない場合でも、Cortex Cloudで他のユーザーが作成した数千のNeural Captureに無料でアクセスでき、音作りの可能性が無限に広がります。</p>"
+      }
+    },
+    "image_with_text_tkrdtf": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-full-rig-screen.webp?v=1745902891",
+        "image_alt": "",
+        "heading": "ギターまたはベースの完全なリグを手のひらサイズで",
+        "body": "<p>Nano Cortexは、スタジオグレードのサウンド、完全にカスタマイズ可能なシグナルチェーン、充実したエフェクトスイート、そして革新的なNeural Capture技術を、コンパクトで超ポータブルなペダルにすべて搭載しています。ステージでも、スタジオでも、その間のどこにいても、理想のトーンにすぐに手が届きます。</p><p>Neural Captureはリリース以来、トーンへのアプローチを一新し、アンプ、キャビネット、ドライブペダルの音をこれまでにない精度でキャプチャして再現してきました。アーティストやエンジニアからも、そのリアルさとレスポンスの良さが高く評価されています。</p><p>そして今、その画期的な技術が、どこでもインスピレーションを形にできるよう、現場での使用を想定して設計された持ち運びに便利なユニットに凝縮されました。</p><p>ポータブルかつプロフェッショナルグレードのトーンの未来へようこそ。</p>"
+      }
+    },
+    "custom_liquid_qmu8mb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-capture-chain.webp?v=1745905053",
+        "image_alt": "Neural Capture Image",
+        "heading": "Neural Capture",
+        "body": "<p>お気に入りのアンプを手のひらで簡単に操作できる夢を見たことはありませんか？Nano Cortexには、 <em>Mesa Boogie® JP2C®, Fender® Princeton® 65, Diezel® VH4®,</em> and <em>Ampeg® SVT Classic®</em>. などの名高いモデルを含む25種類のNeural Captureがプリインストールされています。</p><p>&gt; さらに、Cortex Cloudでは、現存する最も希少で高価なアンプを含む、日々増え続ける数千のCaptureに無料でアクセスできます。また、お気に入りの機材のNeural Captureを数分で作成し、完全に自分だけのパーソナライズされたリグを作ることもできます。</p><p>プリインストールされたNeural Captureに加えて、最大256種類のNeural Captureを保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p><h2>Impulse Responses</h2><p>キャビネットがトーン作りに与える影響は非常に大きいと言えます。高品質なキャビネットシミュレーションは、音に深み、個性、そしてリアルさを加え、サウンドに大きな違いをもたらします。</p><p>Nano Cortexには、300種類のスタジオ品質のインパルスレスポンス（IR）がプリインストールされたIRローダーが搭載されており、それぞれに5つの異なるマイクオプションと6つのマイクポジションが用意されています。これにより、非常に詳細でカスタマイズ可能なキャビネットシミュレーションモジュールが提供され、無限のトーンシェイピングの可能性が広がります。</p><p>プリインストールされたIRに加えて、自分自身のIRを最大256個まで保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p><h2>エフェクト</h2><p>NanOS 2.0.0により、Nano Cortexにはカスタマイズ可能なプリエフェクトスロットとポストエフェクトスロットが追加され、50種類以上のエフェクトとユーティリティが搭載されました。</p><h2>Pre Effects</h2><p><strong>アダプティブゲート:</strong> 不要なノイズを低減し、クリーンな信号を提供します。</p><p><strong>トランスポーズ:</strong> 遅延を感じることなく、楽器のチューニングを変更できます。</p><h2>Post Effects</h2><p><strong>コーラス:</strong> 豊かで贅沢なモジュレーション効果で知られる、Boss® DC-2W® コーラスの高品質なエミュレーション。</p><p><strong>アナログディレイ:</strong> BBDスタイルのエコーを再現した、暖かみのあるヴィンテージスタイルのディレイ。</p><p><strong>マインドホールリバーブ:</strong> 伝説的なLexicon® 224® リバーブの高品質なエミュレーションで、広範囲なリバーブ効果を提供します。小さな部屋のアンビエンスから広大なホールエフェクトまで対応。</p><h2>EQ（イコライザー）</h2><p><ol>• パラメトリック3バンド</ol><ol>• ローカット・ハイカット</ol><ol>• グラフィック9バンド</ol></p><h2>インプットゲート</h2><p>NanOS 2.0.0では、シグナルチェーンの最初にインプットゲートが標準搭載され、ノイズゲート用にエフェクトスロットを使わずに不要なノイズを除去できるようになりました。</p><p><a href=\"https://neuraldsp.com/nano-cortex-device-list\" rel=\"noopener\" target=\"_blank\"> デバイス一覧を見る </a></p>"
+      }
+    },
+    "single_image_z4r3uf": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Nano_Cortex_-_Web_assets_1_0de6066c-6833-40ed-9da4-ccffe6025a27.jpg?v=1745917820",
+        "image_alt": ""
+      }
+    },
+    "rich_text_vhphgl": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "軽快に移動、圧倒的なサウンド",
+        "body": "<p>Nano Cortexは、2つのスタンダードなストンプボックスペダルを並べた幅と同じで、重さはわずか620g（1.36lbs）。ギグバッグやバックパックに簡単に収まります。</p><p>コンパクトなデザインにもかかわらず、フルギター/ベースリグの性能と多機能性を備えており、ステージ、スタジオ、または外出先でも完璧に対応します。</p>"
+      }
+    },
+    "background_video_wqmbwc": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/db7fa8dd437b4ca9a13f2905d85ce84c/db7fa8dd437b4ca9a13f2905d85ce84c.SD-480p-1.5Mbps-46731224.mp4?v=0"
+      }
+    },
+    "rich_text_qkpgfd": {
+      "type": "nd-numbered",
+      "settings": {
+        "heading": "コントロール",
+        "subheading": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486"
+      },
+      "blocks": {
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "number": "1",
+            "title": "Bass, Mid, Treble",
+            "text": "<p>トーンを調整するためのコントロール。</p>"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "number": "2",
+            "title": "Amount",
+            "text": "<p>信号チェーン内で選択したエフェクトの強さを調整します。</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "number": "3",
+            "title": "Gain",
+            "text": "<p>Neural Captureに適用されるサチュレーションのレベルを調整します。</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "number": "4",
+            "title": "Level",
+            "text": "<p>出力信号全体のレベルを調整します。</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "number": "5",
+            "title": "Exit",
+            "text": "<p>現在の機能を終了し、前のモードに戻ります。</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "number": "6",
+            "title": "Capture",
+            "text": "<p>Capture: Neural Captureプロセスを開始します。</p>"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "number": "7",
+            "title": "Save",
+            "text": "<p>設定やプリセットを調整後に保存します。</p>"
+          }
+        },
+        "item_7": {
+          "type": "item",
+          "settings": {
+            "number": "8",
+            "title": "Capture Banks",
+            "text": "<p>異なるNeural Captureのバンクを切り替えます。</p>"
+          }
+        },
+        "item_8": {
+          "type": "item",
+          "settings": {
+            "number": "9",
+            "title": "FX Blocks",
+            "text": "<p>エフェクトスロット: シグナルチェーン内のエフェクトスロットを切り替えます。</p>"
+          }
+        },
+        "item_9": {
+          "type": "item",
+          "settings": {
+            "number": "10",
+            "title": "Capture Slots",
+            "text": "<p>フットスイッチIを回して利用可能なNeural Captureスロットをスクロールします。</p>"
+          }
+        },
+        "item_10": {
+          "type": "item",
+          "settings": {
+            "number": "11",
+            "title": "IR Loader Slots",
+            "text": "<p>フットスイッチIIを回して利用可能なインパルスレスポンスをスクロールします。</p>"
+          }
+        },
+        "item_11": {
+          "type": "item",
+          "settings": {
+            "number": "12",
+            "title": "Footswitches I and II",
+            "text": "<p>これらのステンレス鋼製フットスイッチは、精密なコントロールが可能なロータリーノブとしても機能し、プリセット、FXブロック、またはバイパスモード間で手を使わずに切り替えることができます。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6",
+        "item_7",
+        "item_8",
+        "item_9",
+        "item_10",
+        "item_11"
+      ]
+    },
+    "rich_text_ae8n7g": {
+      "type": "nd-numbered",
+      "settings": {
+        "heading": "入力と出力",
+        "subheading": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486"
+      },
+      "blocks": {
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "number": "1",
+            "title": "1/4\" instrument input",
+            "text": "<p>ギターやベース用。</p>"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "number": "2",
+            "title": "Dual 1/4\" TRS outputs",
+            "text": "<p>スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "number": "3",
+            "title": "Ground lift switch",
+            "text": "<p>グラウンドループによるノイズを軽減します。</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "number": "4",
+            "title": "TRS expression & MIDI input",
+            "text": "<p>MIDIコントローラー、エクスプレッションペダル、フットスイッチなどを接続してコントロールオプションを拡張できます。</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "number": "5",
+            "title": "3.5mm headphone output",
+            "text": "<p>深夜練習に最適な静音出力。</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "number": "6",
+            "title": "Headphones level knob",
+            "text": "<p>ヘッドフォン音量の調整ノブ。</p>"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "number": "7",
+            "title": "USB-C",
+            "text": "<p>録音や電源供給に対応。</p>"
+          }
+        },
+        "item_7": {
+          "type": "item",
+          "settings": {
+            "number": "8",
+            "title": "Power Input",
+            "text": "<p>9-12V DC センターネガティブ。</p>"
+          }
+        },
+        "item_8": {
+          "type": "item",
+          "settings": {
+            "number": "9",
+            "title": "Capture input (XLR & TS)",
+            "text": "<p>Neural Captureを作成するための入力端子。</p>"
+          }
+        },
+        "item_9": {
+          "type": "item",
+          "settings": {
+            "number": "10",
+            "title": "Boost switch",
+            "text": "<p>キャプチャ入力を+26dBブーストします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6",
+        "item_7",
+        "item_8",
+        "item_9"
+      ]
+    },
+    "rich_text_w8yrhb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-cortex_cloud_img.webp?v=1742889867",
+        "image_alt": "",
+        "heading": "Cortex Cloud",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/neuraldsp-account",
+        "body": "<p>指先ひとつで広がる、進化し続ける音色コレクション</p><p>Cortex Cloud で、Cortex Cloudで、進化し続ける膨大な音色コレクションに即アクセスしましょう。他のユーザーや有名アーティスト、プロデューサーが作成した数千ものCaptureを探索できます。</p><p>Cortex Cloud アプリを使えば、Capture をブラウズ・検索・ワイヤレスで Nano Cortex に直接ダウンロード可能。</p><p>他のユーザーがキャプチャーしたアンプ、キャビネット、ペダルの音を即座に利用できます。</p><p>伝説のヴィンテージトーンから超レアなドライブペダル、最新のハイゲインサウンドまで、Cortex Cloud があなたの求める音を提供します。</p><p>世界中のクリエイターが集う活気あるコミュニティに参加して、自分の Capture を共有しましょう。</p>"
+      }
+    },
+    "collapsible_content_xx4f6y": {
+      "type": "nd-faq",
+      "settings": {
+        "eyebrow": "FAQs",
+        "heading": "よくあるご質問",
+        "anchor": "faq"
+      },
+      "blocks": {
+        "qa_0": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural Captureとは？",
+            "answer": "<p>Neural DSPの定評あるNeural Capture技術は、あらゆるアンプ、キャビネット、ドライブペダルの精確なデジタルレプリカを作成できます。<br/><br/>プロセスは迅速かつ簡単です。機材を接続し、「Capture」ボタンを押すだけで、数分以内に実機とほとんど見分けがつかないデジタルバージョンが完成します。</p><p>パソコンやインターネット、Cortex Cloudアプリに接続する必要はありません。本体のみですべて完結できるため、素早く簡単に使用できます。</p><p>Nano Cortexで作成されたNeural Captureは、フラッグシップモデルであるQuad Cortexと同じ解像度と品質を持ち、両機種間でシームレスに転送可能です。</p><p>さらに、Cortex Cloudへの無料アクセスも可能で、Neural Captureの共有や、Cortex Cloudコミュニティによって作成された数千のCaptureにアクセスできます。これらのCaptureは、Cortex Cloudアプリを通じてNano Cortexにワイヤレスでダウンロードできます。</p>"
+          }
+        },
+        "qa_1": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexは他の製品と何が違いますか？",
+            "answer": "<p>Nano Cortexは、卓越した音質、使いやすさ、そしてパソコンやインターネット接続なしで本体だけでNeural Captureを作成できる点で際立っています。Captureプロセスはわずか約5分で完了し、他のデバイスでは数時間かかることもあります。</p><p>Neural Captureは、最も本物に近く自然なトーンキャプチャーソリューションとして広く認識されています。Nano Cortexでは、他のユーザーが作成した数千の無料Neural CaptureにアクセスできるCortex Cloudも利用可能です。</p><p>さらに、Nano Cortexには高品質なエフェクトを備えた包括的なシグナルチェーンが搭載されており、コンパクトなペダル内で完結するリグを実現しています。</p>"
+          }
+        },
+        "qa_2": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexはギターとベースの両方に対応していますか？",
+            "answer": "<p>はい、Nano Cortexはギターとベースの両方のプレイヤー向けに設計されており、それぞれに幅広いトーンを提供します。</p>"
+          }
+        },
+        "qa_3": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexは初心者にも適していますか？",
+            "answer": "<p>はい、Nano Cortexは直感的で初心者にも使いやすいように設計されています。シンプルなインターフェースにより、箱から出してすぐに理想的なトーンを簡単に作ることができます。高度な機能を備えながらも、すべてのレベルのプレイヤーにとって扱いやすく、初心者でも圧倒されることなく多彩なサウンドを楽しめます。</p>"
+          }
+        },
+        "qa_4": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano CortexはCortex Cloudアプリなしでも使えますか？",
+            "answer": "<p>はい、Nano CortexはCortex Cloudアプリなしでも完全に単体で使用できます。アプリは主にCaptureのダウンロード、プリセットや設定の管理、ファームウェアの更新に使われますが、通常の使用には必須ではありません。</p>"
+          }
+        },
+        "qa_5": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano CortexでPlugin Compatibility（PCOM）は今後対応されますか？",
+            "answer": "<p>いいえ、Plugin Compatibility（PCOM）はNano Cortexには実装されません。これは、Neural DSPのプラグインがアンプモデリング技術を使用しており、Nano CortexのNeural Capture技術とは大きく異なるためです。さらに、Nano Cortexには固定されたシグナルチェーンがあるため、Neural DSPのプラグインを動作させることもできません。</p>"
+          }
+        },
+        "qa_6": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexの使い方に関するガイドはありますか？",
+            "answer": "<p>はい、ユーザーマニュアルに加えて、「Getting Started」セクションにはNano Cortexを最大限に活用するための資料や動画も用意しています。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_0",
+        "qa_1",
+        "qa_2",
+        "qa_3",
+        "qa_4",
+        "qa_5",
+        "qa_6"
+      ]
+    },
+    "17840000398609e130": {
+      "type": "apps",
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "custom_liquid_wu4vmx": {
+      "type": "nd-specs",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "label": "詳細を見る",
+            "url": "/a/support/nano-cortex/nano-cortex-faq"
+          }
+        },
+        "card_1": {
+          "type": "card",
+          "settings": {
+            "label": "ハードウェア仕様",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/26969da01e1648fb98680ff3f5356853.mp4",
+            "modal_html": "<p><h2>ハードウェア仕様</h2>×</p><p><strong>インストゥルメント入力</strong><br/>コネクタ：1/4インチ TRS-F<br/>インピーダンス：1MΩ<br/>最大入力レベル：+10dBu</p><p><strong>コンボキャプチャ入力</strong><br/>コネクタ：XLR-F + 1/4インチ TRS-F<br/>TSインピーダンス：1MΩ<br/>XLRインピーダンス：45kΩ<br/>最大入力レベル：+10dBu<br/>ブーストゲイン：+26dB</p><p><strong>TRS出力 1L/2R</strong><br/>コネクタ：（2）1/4インチ TRS-F<br/>インピーダンス：560Ω<br/>最大出力レベル：+10dBu（アンバランス） / +16dBu（バランス）</p><p><strong>ヘッドフォン出力</strong><br/>コネクタ：3.5mm TRS-F<br/>最大出力：55mW（20Ω負荷時）</p><p><strong>EXP / MIDI入力</strong><br/>エクスプレッションコネクタ：1/4インチ TRS-F<br/>MIDIコネクタ：MIDI TRSタイプA</p><p><strong>USBオーディオ</strong><br/>フォーマット：USBオーディオクラス2.0準拠<br/>チャンネル数：7（入力4 / 出力3）<br/>オーディオクロック：48kHz（固定）</p><p><strong>一般仕様</strong><br/>外装：アルマイト処理アルミニウムユニボディ<br/>操作系：<br/>・ステンレス製ストンプ + ロータリーフットスイッチ ×2<br/>・ノブ ×7<br/>・アナログスイッチ ×2<br/>・デジタルスイッチ ×5</p><p><strong>寸法</strong><br/>14.4 x 10.3 x 6.2 cm / 5.6 x 4.0 x 2.4インチ</p><p><strong>重量</strong><br/>620g / 1.36ポンド</p><p><strong>電源入力</strong><br/>9–12V DC、600mA（センターマイナス）<br/>USB-C：5V、1.5A以上</p><p><strong>環境情報</strong><br/>動作温度：0～50°C（32～122°F）<br/>保存温度：-10～70°C（14～158°F）<br/>湿度：最大結露なし</p>"
+          }
+        },
+        "card_2": {
+          "type": "card",
+          "settings": {
+            "label": "製品アップデート",
+            "video_url": "https://cdn.shopify.com/videos/c/o/v/93fca4dac0f341f7978c30f577e0e2a8.mp4",
+            "url": "/blogs/news"
+          }
+        }
+      },
+      "block_order": [
+        "card_0",
+        "card_1",
+        "card_2"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "video_89yj6x",
+    "custom_liquid_hjp4qe",
+    "custom_liquid_6hmybr",
+    "custom_liquid_d6ym6c",
+    "multicolumn_34lwl7",
+    "rich_text_wrphyg",
+    "image_with_text_tkrdtf",
+    "custom_liquid_qmu8mb",
+    "single_image_z4r3uf",
+    "rich_text_vhphgl",
+    "background_video_wqmbwc",
+    "rich_text_qkpgfd",
+    "rich_text_ae8n7g",
+    "rich_text_w8yrhb",
+    "collapsible_content_xx4f6y",
+    "17840000398609e130",
+    "custom_liquid_wu4vmx"
+  ]
+}

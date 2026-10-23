@@ -1,0 +1,23 @@
+/*
+ * Generated from the live /pages/legal-notice (page-legal-notice) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "rich_text_vbceit": {
+      "type": "nd-html",
+      "settings": {
+        "width": "narrow",
+        "html": "<p>運営会社：WPIC Technology Japan合同会社<br/>代表責任者：ジョゼフ・サザーランド・キュビットクック<br/>住所：東京都港区北青山2-7-26 Landwork青山ビル4階<br/>電話番号：03-4500-6209<br/>メールアドレス：support.japan@neuraldsp.com</p><p>販売価格：税込み表示</p><p>商品代金以外の必要料金：全国送料無料</p><p>支払方法および支払の時期：</p><ul><li>クレジットカード</li><li>ShopPay</li><li>Apple Pay</li><li>Google Pay</li><li>Paypay</li><li>銀行振込</li><li>ペイジー決済</li><li>あと払い（ペイディ）</li><li>コンビニ決済</li></ul><p>商品の引渡時期：注文確定後から通常6日から10日（年末年始を除く）</p><p>商品の引渡方法：佐川急便</p><p>返品・不良品・キャンセルについて：<br/>未使用の場合のみ14日以内に返品可<br/>詳細なルールについては、以下のページをご確認ください。</p><p><a href=\"/pages/refund-policy\">返金ポリシー</a></p><p>お客様の個人情報：当ウェブサイト「<a href=\"/pages/privacy-policy\">プライバシーポリシー</a>」をご確認ください。</p>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_vbceit"
+  ]
+}

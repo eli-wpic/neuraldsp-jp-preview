@@ -1,0 +1,108 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-goj (product-quadcortex-gojirax) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "custom_liquid_zte9pn": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/4tenMrDttVj8cyJInUcmyn/f5ef3e5a65d911469c90010442b95496/Archetype_Gojira_-_Landing_-_Video.mp4",
+        "title": "Quad Cortex + Archetype: Gojira X",
+        "subtitle": "メタル界で最も破壊力のあるギタリストの一人、Gojira のジョー・デュプランティエによる、誰もが求めるトーンがすべて詰め込まれています。",
+        "film_url": "https://youtu.be/MhnkGMBn1tw",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-goj",
+          "quadcortex-mini-plugin-bundle-goj"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_two_col_overview": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/a_gojira-overview.webp?v=1763362927",
+        "image_alt": "Archetype: Gojira X",
+        "heading": "Archetype: Gojira Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-gojira",
+        "body": "<p>2021年、私たちは Archetype: Gojira を世に送り出しました。これは、世界で最も影響力のあるメタルバンドのひとつである Gojira の多彩なサウンドを凝縮することを目指したプラグインでした。</p><p>Archetype: Gojira X は、その壮大な試みを進化させたものです。バンドの伝説的な楽曲が切り開いてきた広大な音楽的領域を、さらに深く巡ります。静かで内省的なクリーントーンから、最も凶暴で破壊力のあるハイゲイン設定まで、Archetype: Gojira X は多彩な選択肢を提供します。</p><p>Archetype: Gojira X によって、アーティストは自らの音楽的ビジョンに生命を吹き込むために必要な、現代的なツールを自由に探求できます。この進化は、バンドが長年にわたって成し遂げてきた成長と成功を映し出し、メタルの境界を再定義し続けている姿と重なります。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Archetype: Gojira X</strong></p>"
+      }
+    },
+    "custom_liquid_video_yt": {
+      "type": "nd-video",
+      "settings": {
+        "youtube_id": "MhnkGMBn1tw"
+      }
+    },
+    "image_with_text_gqqlkf": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/a-gojira-x-system-requirements.webp?v=1763362933",
+        "image_alt": "",
+        "heading": "システム要件",
+        "body": "<p>Archetype Gojira X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応） でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "rich_text_cwbcev": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    },
+    "custom_liquid_trial_modal": {
+      "type": "nd-trial",
+      "settings": {
+        "title": "Archetype: Gojira Xを\nダウンロードする",
+        "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/a-gojira-x-product-card_cfb2c9e8-e68e-493b-b7ff-4ab47441172f.png",
+        "subline": "14日間無料体験",
+        "description": "メールアドレスを入力して無料体験を始めましょう！",
+        "placeholder": "メールアドレスを入力する",
+        "submit": "無料体験する"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_zte9pn",
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_two_col_overview",
+    "custom_liquid_video_yt",
+    "image_with_text_gqqlkf",
+    "rich_text_cwbcev",
+    "custom_liquid_trial_modal"
+  ]
+}

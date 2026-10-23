@@ -1,0 +1,19 @@
+<section class="nd-page-head nd-account"><div class="container nd-form-wrap">
+  <h1>{{ 'customer.log_in' | t }}</h1>
+  {%- form 'customer_login', class: 'nd-form' -%}
+    {%- if form.errors -%}<div class="nd-form__err">{{ form.errors | default_errors }}</div>{%- endif -%}
+    <label>{{ 'contact.email' | t }}<input type="email" name="customer[email]" autocomplete="email" required></label>
+    {%- if form.password_needed -%}<label>{{ 'general.password' | t }}<input type="password" name="customer[password]" autocomplete="current-password"></label>{%- endif -%}
+    <button class="btn btn--primary" type="submit">{{ 'customer.log_in' | t }}</button>
+    <p><a href="#recover" data-recover>{{ 'customer.forgot' | t }}</a> ・ <a href="{{ routes.account_register_url }}">{{ 'customer.register' | t }}</a></p>
+  {%- endform -%}
+  {%- form 'recover_customer_password', class: 'nd-form', id: 'recover' -%}
+    {%- if form.posted_successfully? -%}<p class="nd-form__ok">{{ 'customer.recover_sent' | t }}</p>{%- endif -%}
+    <h2>{{ 'customer.forgot' | t }}</h2>
+    <label>{{ 'contact.email' | t }}<input type="email" name="email" autocomplete="email" required></label>
+    <button class="btn" type="submit">{{ 'customer.send' | t }}</button>
+  {%- endform -%}
+</div></section>
+{% schema %}
+{ "name": "Login", "settings": [] }
+{% endschema %}

@@ -1,0 +1,108 @@
+/*
+ * Generated from the live /products/quadcortex-mini-plugin-bundle-cor (product-quad-cortex-mini-cor) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "custom_liquid_zte9pn": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/6bB7mYyVg52ryNYLuYJAPY/262c97971a0e59b2ad0316a294ba06ed/Sequence_01_8.mp4",
+        "title": "Quad Cortex mini + Archetype: Cory Wong X",
+        "subtitle": "完璧なクリーン・トーンやエッジ・オブ・ブレイクアップ・トーンを求めるプレイヤーのために、幅広いサウンドオプションを備えた非常に多用途なプラグイン。",
+        "film_url": "https://youtu.be/Zy9uFDh9I6o",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "mini",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-cor",
+          "quadcortex-mini-plugin-bundle-cor"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_two_col_overview": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/archetype-cory-wong-x-overview.webp?v=1761224700",
+        "image_alt": "Archetype: Cory Wong X",
+        "heading": "Archetype: Cory Wong Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-cory-wong",
+        "body": "<p>Vulfpeck のような偉業を成し遂げたアーティストは、ほとんど存在しません。圧倒的な才能、素晴らしい音楽、そして天才的なブランディングの完璧な融合によって、彼らはDIYの出自からスタートし、いまや世界的に熱狂的なカルト的ファンベースを築き上げ、マディソン・スクエア・ガーデンをソールドアウトさせるまでに至りました。</p><p>その中で、Cory Wong は現代のギターヒーローとして知られています。彼のユニークなプレイスタイルと完璧なトーンは、誰もが認めるものです。</p><p>Cory の妥協を許さない基準と、もはや現実離れした完璧主義的な期待が、私たちにとってまさに求めていた挑戦となりました。その結果生まれたのは、これまでにない作品——完璧なクリーン・トーンやエッジ・オブ・ブレイクアップ・トーンを追求するプレイヤーに向けて、幅広いサウンドオプションを提供する、非常に多用途なプラグインです。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Archetype: Cory Wong X</strong></p>"
+      }
+    },
+    "custom_liquid_video_yt": {
+      "type": "nd-video",
+      "settings": {
+        "youtube_id": "Zy9uFDh9I6o"
+      }
+    },
+    "image_with_text_gqqlkf": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/cwx-system-requirements.webp?v=1761266990",
+        "image_alt": "",
+        "heading": "システム要件",
+        "body": "<p>Archetype Cory Wong X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応） でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "rich_text_cwbcev": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    },
+    "custom_liquid_trial_modal": {
+      "type": "nd-trial",
+      "settings": {
+        "title": "Archetype: Cory Wong Xを\nダウンロードする",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/cwx-standalone.png?v=1761285119",
+        "subline": "14日間無料体験",
+        "description": "メールアドレスを入力して無料体験を始めましょう！",
+        "placeholder": "メールアドレスを入力する",
+        "submit": "無料体験する"
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_zte9pn",
+    "main",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_two_col_overview",
+    "custom_liquid_video_yt",
+    "image_with_text_gqqlkf",
+    "rich_text_cwbcev",
+    "custom_liquid_trial_modal"
+  ]
+}

@@ -1,0 +1,12 @@
+<section class="nd-page-head nd-account"><div class="container nd-form-wrap">
+  <h1>{{ 'customer.activate' | t }}</h1>
+  {%- form 'activate_customer_password', class: 'nd-form' -%}
+    {%- if form.errors -%}<div class="nd-form__err">{{ form.errors | default_errors }}</div>{%- endif -%}
+    <label>{{ 'general.password' | t }}<input type="password" name="customer[password]" autocomplete="new-password" required></label>
+    <label>{{ 'customer.password_confirm' | t }}<input type="password" name="customer[password_confirmation]" autocomplete="new-password" required></label>
+    <button class="btn btn--primary" type="submit">{{ 'customer.activate' | t }}</button>
+  {%- endform -%}
+</div></section>
+{% schema %}
+{ "name": "Activate account", "settings": [] }
+{% endschema %}

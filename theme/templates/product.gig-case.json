@@ -1,0 +1,113 @@
+/*
+ * Generated from the live /products/gig-case (product-gig-case) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": false
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_f8pnqu": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "rich_text_phjttt": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_3_16f5327a-de9b-48e1-a7f8-fac71c43b828.jpg?v=1742958424",
+        "image_alt": "",
+        "heading": "耐久性のある保護",
+        "body": "<p>衝撃に耐え、Quad Cortexを損傷や天候から守るように設計されています。</p><br/><br/>"
+      }
+    },
+    "rich_text_pmd6aq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_7.jpg?v=1742958443",
+        "image_alt": "",
+        "heading": "上部コンパートメント",
+        "body": "<p>ケーブルやタブレット、ギターストラップを収納するのに便利な収納と、伸縮性のあるネオプレンプレートを備えています。Quad Cortexとは硬いプレートで仕切られています。</p><br/>"
+      }
+    },
+    "rich_text_7xeexj": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_5_581f2141-f612-4c02-8d2e-3add285edcc8.jpg?v=1742958460",
+        "image_alt": "",
+        "heading": "PSU収納",
+        "body": "<p>Quad Cortexの電源ユニット専用の収納です。<br/></p><br/><br/>"
+      }
+    },
+    "rich_text_y6jmfx": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_15.jpg?v=1742958685",
+        "image_alt": "",
+        "heading": "持ち運びオプション",
+        "body": "<p>快適なゴム製ハンドルと、丈夫なスチールフック付きの取り外し可能なパッド入りショルダーストラップが付いています。<br/></p><br/><br/>"
+      }
+    },
+    "rich_text_qhvrkw": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_16_785ba7e1-48a8-4b46-a3f1-6f9726d36cdc.jpg?v=1742958846",
+        "image_alt": "",
+        "heading": "コンパクトで軽量",
+        "body": "<p>サイズは406 x 254 x 127 mm、重量はわずか1 kgです。</p><br/><br/>"
+      }
+    },
+    "rich_text_tnjdpm": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_8.jpg?v=1742958727",
+        "image_alt": "",
+        "heading": "洗練されたデザイン",
+        "body": "<p>エレガントなグレーの色合い</p><br/><br/>"
+      }
+    },
+    "hero": {
+      "type": "nd-hero",
+      "settings": {
+        "title": "Gig Case",
+        "subtitle": "Neural DSP Quad Cortex 専用\nQuad Cortexをしっかりと保護するために特別に設計されています。精密成形された型で、Quad Cortexをしっかりと固定し、衝撃や天候から守ります。",
+        "asset_image": "gigcase-hero.webp",
+        "show_buy": true,
+        "buy_label": "購入する",
+        "overlay": 0,
+        "button_label": "詳しく見る",
+        "button_url": "#buy"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "main",
+    "product_newsletter_popup_f8pnqu",
+    "rich_text_phjttt",
+    "rich_text_pmd6aq",
+    "rich_text_7xeexj",
+    "rich_text_y6jmfx",
+    "rich_text_qhvrkw",
+    "rich_text_tnjdpm"
+  ]
+}

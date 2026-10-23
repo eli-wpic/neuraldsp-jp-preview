@@ -1,0 +1,12 @@
+<section class="nd-page-head">
+  <div class="container">
+    <p class="crumbs"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / {{ page.title }}</p>
+    <h1>{{ page.title }}</h1>
+  </div>
+</section>
+{%- if page.content != blank -%}
+  <section class="nd-html nd-html--narrow"><div class="container"><div class="nd-prose nd-prose--table">{{ page.content }}</div></div></section>
+{%- endif -%}
+{% schema %}
+{ "name": "Page", "tag": "section", "class": "section-main-page", "settings": [] }
+{% endschema %}

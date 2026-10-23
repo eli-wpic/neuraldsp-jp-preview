@@ -1,0 +1,27 @@
+{%- paginate search.results by 24 -%}
+<section class="nd-page-head">
+  <div class="container">
+    <h1>{{ 'general.search' | t }}</h1>
+    <form action="{{ routes.search_url }}" method="get" role="search" class="nd-search">
+      <label class="visually-hidden" for="SearchInput">{{ 'general.search' | t }}</label>
+      <input id="SearchInput" type="search" name="q" value="{{ search.terms | escape }}" placeholder="{{ 'search.placeholder' | t }}">
+      <input type="hidden" name="options[prefix]" value="last">
+      <button class="btn btn--primary btn--nochev" type="submit">{{ 'general.search' | t }}</button>
+    </form>
+    {%- if search.performed -%}<p class="nd-search__count">{{ 'search.results' | t: count: search.results_count, terms: search.terms }}</p>{%- endif -%}
+  </div>
+</section>
+<section class="nd-collection"><div class="container nd-grid">
+  {%- for item in search.results -%}
+    {%- case item.object_type -%}
+      {%- when 'product' -%}{% render 'product-card', product: item %}
+      {%- else -%}<a class="nd-card nd-card--text" href="{{ item.url }}"><span class="nd-card__title">{{ item.title }}</span><span>{{ item.content | strip_html | truncate: 90 }}</span></a>
+    {%- endcase -%}
+  {%- else -%}{%- if search.performed -%}<p>{{ 'search.none' | t }}</p>{%- endif -%}
+  {%- endfor -%}
+</div>
+<div class="container">{% render 'pagination', paginate: paginate %}</div></section>
+{%- endpaginate -%}
+{% schema %}
+{ "name": "Search", "tag": "section", "settings": [] }
+{% endschema %}

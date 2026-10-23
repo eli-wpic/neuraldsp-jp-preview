@@ -1,0 +1,29 @@
+{%- paginate collection.products by 24 -%}
+<section class="nd-page-head">
+  <div class="container">
+    <p class="crumbs"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / {{ collection.title }}</p>
+    <h1>{{ collection.title }}</h1>
+    {%- if collection.description != blank -%}<div class="nd-prose">{{ collection.description }}</div>{%- endif -%}
+  </div>
+</section>
+<section class="nd-collection">
+  <div class="container">
+    <form class="nd-sort" method="get">
+      <span>{{ 'collections.count' | t: count: collection.products_count }}</span>
+      {%- assign current_sort = collection.sort_by | default: collection.default_sort_by -%}
+      <label>{{ 'collections.sort_by' | t }}
+        <select name="sort_by" onchange="this.form.submit()">
+          {%- for option in collection.sort_options -%}<option value="{{ option.value }}"{% if option.value == current_sort %} selected{% endif %}>{{ option.name }}</option>{%- endfor -%}
+        </select>
+      </label>
+    </form>
+    <div class="nd-grid">
+      {%- for product in collection.products -%}{% render 'product-card', product: product %}{%- else -%}<p>{{ 'collections.empty' | t }}</p>{%- endfor -%}
+    </div>
+    {% render 'pagination', paginate: paginate %}
+  </div>
+</section>
+{%- endpaginate -%}
+{% schema %}
+{ "name": "Collection", "tag": "section", "settings": [] }
+{% endschema %}

@@ -1,0 +1,374 @@
+{%- comment -%}
+  Product page buy box (our design, mockup 1). Everything comes from Shopify:
+  - gallery = product.media, price/variants = product, description = product.description
+  - left column = the same real-time 3D model as the homepage (view buttons glide the camera), photos behind a 写真 tab;
+    products without a 3D model show the photo gallery.
+  - plugins = multi-select. Each plugin card is matched to an "add-on" product (plugin-only, sold with the hardware);
+    the cart gets hardware + every chosen add-on. Until add-on products exist, the picker falls back to the
+    store's bundle products, which allow one plugin per order.
+  - accessories = "accessories" product list, never pre-selected.
+  Buttons keep the live labels: カートに追加する / 購入する.
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign current_variant = product.selected_or_first_available_variant
+  assign base_price = current_variant.price
+-%}
+<div class="pdp-wrap" id="ProductInfo-{{ section.id }}" data-product-form data-section="{{ section.id }}">
+  <div class="pdp{% if s.media_mode == '3d' %} pdp--3d{% endif %}">
+    <div class="pdp__left">
+      {%- if s.media_mode == '3d' -%}
+        <div class="pdp-3d" data-3d="viewer" data-pdp-media data-qc3d>
+          <div class="pdp-3d__stage nd-viewer__stage" data-3d-stage data-model="{{ s.model }}"
+            {%- case s.model -%}
+              {%- when 'mini' %} data-tex-top="{{ 'mini-top.webp' | asset_url }}" data-tex-rear="{{ 'mini-rear.webp' | asset_url }}"
+              {%- when 'nano' %} data-tex-top="{{ 'nano-top.webp' | asset_url }}" data-tex-rear="{{ 'nano-rear.webp' | asset_url }}" data-tex-front="{{ 'nano-front.webp' | asset_url }}" data-tex-left="{{ 'nano-left.webp' | asset_url }}" data-tex-right="{{ 'nano-right.webp' | asset_url }}"
+              {%- else %} data-tex-top="{{ 'qc-top.webp' | asset_url }}" data-tex-screen="{{ 'qc-screen.webp' | asset_url }}" data-tex-rear="{{ 'qc-rear.webp' | asset_url }}"
+            {%- endcase -%}>
+            {%- case s.model -%}
+              {%- when 'mini' -%}{%- assign poster = 'mini-three-quarter-1600.webp' -%}
+              {%- when 'nano' -%}{%- assign poster = 'nano-three-quarter-1600.webp' -%}
+              {%- else -%}{%- assign poster = 'qc-three-quarter-1600.webp' -%}
+            {%- endcase -%}
+            <img class="nd-viewer__poster" src="{{ poster | asset_url }}" alt="{{ product.title | escape }}" width="1600" height="1100" fetchpriority="high">
+            <canvas aria-label="{{ product.title | escape }} 3D" role="img"></canvas>
+            <span class="nd-viewer__hint" data-drag-hint aria-hidden="true"><svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h22M5 2 1 6l4 4M19 2l4 4-4 4"/></svg>{{ s.drag_label }}</span>
+          </div>
+          {%- liquid
+            assign film_id = ''
+            if s.film_url contains 'youtu'
+              if s.film_url contains 'v='
+                assign film_id = s.film_url | split: 'v=' | last | split: '&' | first
+              else
+                assign film_id = s.film_url | split: '?' | first | split: '/' | last
+              endif
+            endif
+          -%}
+          {%- assign v_labels = s.view_labels | split: ',' -%}
+          {%- assign v_titles = s.view_titles | split: '|' -%}
+          {%- assign v_caps = s.view_captions | split: '|' -%}
+          <div class="pdp-3d__caption" aria-live="polite" data-view-caption>
+            <b data-view-title>{{ v_titles[0] | strip }}</b>
+            <span data-view-text>{{ v_caps[0] | strip }}</span>
+          </div>
+          <div class="pdp-3d__views" role="group" aria-label="{{ product.title | escape }}">
+            {%- for l in v_labels -%}
+              <button type="button" class="nd-viewer__btn" data-view="{{ forloop.index0 }}" data-title="{{ v_titles[forloop.index0] | strip | escape }}" data-caption="{{ v_caps[forloop.index0] | strip | escape }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ l | strip }}</button>
+            {%- endfor -%}
+            {%- if film_id != blank -%}
+              <button type="button" class="nd-viewer__btn nd-viewer__btn--film" data-film="{{ film_id }}" aria-pressed="false">{{ s.film_label }}</button>
+            {%- endif -%}
+            {%- if product.media.size > 0 or s.photo_assets != blank -%}
+              <button type="button" class="nd-viewer__btn nd-viewer__btn--photos" data-photos-toggle aria-expanded="false" aria-controls="Gallery-{{ section.id }}">{{ s.photos_label }}</button>
+            {%- endif -%}
+          </div>
+          {%- if film_id != blank -%}<div class="pdp-film" data-film-stage hidden></div>{%- endif -%}
+        </div>
+      {%- endif -%}
+      <div class="gallery{% if s.media_mode == '3d' %} gallery--overlay{% endif %}" id="Gallery-{{ section.id }}" data-gallery{% if s.media_mode == '3d' %} hidden{% endif %}>
+        {%- if s.media_mode == '3d' -%}<button type="button" class="gallery__close" data-photos-toggle aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>{%- endif -%}
+        {%- liquid
+          assign photo_list = s.photo_assets | remove: ' ' | split: ','
+          assign use_assets = false
+          if s.photo_assets != blank
+            assign use_assets = true
+            assign n_photos = photo_list.size
+          else
+            assign n_photos = product.media.size
+          endif
+        -%}
+        <div class="gallery__main" tabindex="0" role="group" aria-roledescription="{{ 'products.gallery' | t }}" aria-label="{{ product.title | escape }}">
+          {%- if use_assets -%}
+            {%- for f in photo_list -%}
+              <div class="gallery__slide{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}">
+                <img src="{{ f | asset_url }}" alt="{{ product.title | escape }}" width="1800" height="1200" loading="lazy">
+              </div>
+            {%- endfor -%}
+          {%- else -%}
+            {%- for media in product.media -%}
+              {%- liquid
+                assign load = 'lazy'
+                if forloop.first
+                  assign load = 'eager'
+                endif
+              -%}
+              {%- assign media_alt = media.alt | default: product.title -%}
+              <div class="gallery__slide{% if forloop.first %} is-active{% endif %}" data-slide="{{ forloop.index0 }}">
+                {%- case media.media_type -%}
+                  {%- when 'image' -%}
+                    {{ media | image_url: width: 1800 | image_tag: loading: load, widths: '600, 900, 1200, 1800', sizes: '(max-width: 1000px) 100vw, 60vw', alt: media_alt }}
+                  {%- when 'video' -%}
+                    {{ media | video_tag: controls: true, playsinline: true, image_size: '1600x' }}
+                  {%- when 'external_video' -%}
+                    {{ media | external_video_tag }}
+                  {%- else -%}
+                    {{ media | media_tag }}
+                {%- endcase -%}
+              </div>
+            {%- endfor -%}
+          {%- endif -%}
+          {%- if n_photos > 1 -%}
+            <button class="gallery__nav gallery__nav--prev" type="button" aria-label="{{ 'general.previous' | t }}" data-gallery-prev>{% render 'icon', name: 'arrow-left' %}</button>
+            <button class="gallery__nav gallery__nav--next" type="button" aria-label="{{ 'general.next' | t }}" data-gallery-next>{% render 'icon', name: 'arrow' %}</button>
+          {%- endif -%}
+        </div>
+        {%- if n_photos > 1 -%}
+          <div class="gallery__thumbs">
+            {%- if use_assets -%}
+              {%- for f in photo_list -%}
+                <button type="button" data-thumb="{{ forloop.index0 }}" aria-label="{{ product.title | escape }} {{ forloop.index }}"{% if forloop.first %} aria-current="true"{% endif %}><img src="{{ f | asset_url }}" alt="" width="120" height="80" loading="lazy"></button>
+              {%- endfor -%}
+            {%- else -%}
+              {%- for media in product.media -%}
+                <button type="button" data-thumb="{{ forloop.index0 }}" aria-label="{{ media.alt | default: product.title | escape }}"{% if forloop.first %} aria-current="true"{% endif %}>
+                  {{ media.preview_image | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' }}
+                </button>
+              {%- endfor -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+
+    <aside class="buy" id="buy" aria-labelledby="Title-{{ section.id }}">
+      <div class="buy__head">
+        <p class="chapter__eyebrow"><i></i>Neural DSP ／ {{ product.title }}</p>
+        <h1 class="buy__title" id="Title-{{ section.id }}">{{ product.title }}</h1>
+        <p class="price"><span data-unit-price>{% render 'nd-price', price: base_price %}</span> <small data-unit-note>{{ s.tax_label }}</small></p>
+        <p class="buy__price-note">{{ s.shipping_label }}</p>
+        {%- for block in section.blocks -%}
+          {%- if block.type == '@app' -%}<div class="buy__app">{% render block %}</div>{%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if product.description != blank -%}
+        <div class="buy__desc nd-prose" data-collapsible>
+          <div class="buy__desc-inner">{{ product.description }}</div>
+          <button type="button" class="buy__more" data-collapse-toggle data-more="{{ s.more_label }}" data-less="{{ s.less_label }}">{{ s.more_label }}</button>
+        </div>
+      {%- endif -%}
+
+      {%- unless product.has_only_default_variant -%}
+        <div class="buy__variants">
+          {%- for option in product.options_with_values -%}
+            <label class="buy__option">{{ option.name }}
+              <select data-option="{{ forloop.index0 }}">
+                {%- for value in option.values -%}<option value="{{ value | escape }}"{% if option.selected_value == value %} selected{% endif %}>{{ value }}</option>{%- endfor -%}
+              </select>
+            </label>
+          {%- endfor -%}
+        </div>
+      {%- endunless -%}
+
+      {%- if s.hardware_choices.count > 1 -%}
+        <hr>
+        <div>
+          <h2 class="buy__h" id="HwLabel-{{ section.id }}">{{ s.hardware_heading }}</h2>
+          <p class="buy__sub">{{ s.hardware_sub }}</p>
+        </div>
+        <nav class="plugs plugs--hw is-open" aria-labelledby="HwLabel-{{ section.id }}">
+          {%- for h in s.hardware_choices -%}
+            {%- liquid
+              if h.handle contains 'mini'
+                assign hw_name = 'Quad Cortex mini'
+                assign hw_img = 'mini-three-quarter-1600.webp'
+              else
+                assign hw_name = 'Quad Cortex'
+                assign hw_img = 'qc-three-quarter-800.webp'
+              endif
+            -%}
+            <a class="plug plug--link" href="{{ h.url }}" data-keep-place{% if h.id == product.id %} aria-current="page"{% endif %}>
+              <img src="{{ hw_img | asset_url }}" alt="" width="72" height="45" loading="lazy">
+              <span class="plug__name">{{ hw_name }}</span>
+              <span class="plug__price yen">{% render 'nd-price', price: h.price %}</span>
+              <i class="plug__tick" aria-hidden="true"></i>
+            </a>
+          {%- endfor -%}
+        </nav>
+      {%- endif -%}
+
+      {%- if s.show_bundles and s.bundles.count > 0 -%}
+        {%- assign multi = false -%}
+        {%- if s.addons.count > 0 -%}{%- assign multi = true -%}{%- endif -%}
+        <hr>
+        <div>
+          <h2 class="buy__h" id="PickerLabel-{{ section.id }}">{{ s.bundle_heading }}</h2>
+          <p class="buy__sub">{%- if multi -%}{{ s.multi_sub }}{%- else -%}{{ s.bundle_sub }}{%- endif -%}</p>
+        </div>
+        <div class="plugs" role="group" aria-labelledby="PickerLabel-{{ section.id }}" data-plugs data-multi="{{ multi }}">
+          {%- for b in s.bundles -%}
+            {%- assign short = b.title | remove: product.title | remove_first: ' + ' | strip -%}
+            {%- assign bv = b.selected_or_first_available_variant -%}
+            {%- assign addon_price = bv.price | minus: base_price -%}
+            {%- assign addon_variant = nil -%}
+            {%- for a in s.addons -%}
+              {%- if a.title contains short -%}{%- assign addon_variant = a.selected_or_first_available_variant -%}{%- assign addon_price = addon_variant.price -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+            <label class="plug"{% unless bv.available %} aria-disabled="true"{% endunless %}>
+              <input type="checkbox" value="{{ b.handle }}" data-plug
+                data-short="{{ short | escape }}" data-price="{{ addon_price }}"
+                data-bundle-variant="{{ bv.id }}" data-bundle-price="{{ bv.price }}"
+                {%- if addon_variant %} data-addon-variant="{{ addon_variant.id }}"{% endif %}
+                {% unless bv.available %} disabled{% endunless %}>
+              {%- if b.featured_media -%}{{ b.featured_media | image_url: width: 240 | image_tag: loading: 'lazy', alt: '' }}{%- endif -%}
+              <span class="plug__name">{{ short }}</span>
+              <span class="plug__price yen">+{{ addon_price | money_without_trailing_zeros }}</span>
+            </label>
+          {%- endfor -%}
+        </div>
+        {%- if s.bundles.count > 3 -%}<button type="button" class="buy__more" data-plugs-more data-less="{{ s.less_label }}">{{ s.plugs_more_label | replace: '{n}', s.bundles.count }}</button>{%- endif -%}
+        <p class="picker-note"><span data-plug-count>{{ s.plug_none }}</span>{%- if s.bundle_help_url != blank -%}<a href="{{ s.bundle_help_url }}">{{ s.bundle_help_link }} →</a>{%- endif -%}</p>
+      {%- endif -%}
+
+      {%- if s.show_accessories and s.accessories.count > 0 -%}
+        <hr>
+        <h2 class="buy__h">{{ s.acc_heading }}</h2>
+        <div class="acc" data-acc>
+          {%- for a in s.accessories -%}
+            {%- assign av = a.selected_or_first_available_variant -%}
+            <label>
+              <input type="checkbox" value="{{ av.id }}" data-acc-price="{{ av.price }}" data-acc-name="{{ a.title | escape }}"{% unless av.available %} disabled{% endunless %}>
+              {% render 'nd-product-thumb', product: a, width: 400 %}
+              <b>{{ a.title }}</b>
+              <span class="yen">+{{ av.price | money_without_trailing_zeros }}</span>
+            </label>
+          {%- endfor -%}
+        </div>
+        {%- if s.acc_note != blank -%}<p class="acc-note">{{ s.acc_note }}</p>{%- endif -%}
+      {%- endif -%}
+
+      <hr>
+      <div class="total"><span>{{ s.total_label }}</span><strong class="yen" data-total>{{ base_price | money_without_trailing_zeros }}</strong></div>
+      <p class="total-break" data-total-break></p>
+
+      {%- form 'product', product, class: 'buy__form', data-buy-form: '' -%}
+        <input type="hidden" name="id" value="{{ current_variant.id }}" data-variant-input>
+        <div class="buy__row">
+          <div class="qty" data-qty>
+            <button type="button" data-step="-" aria-label="{{ 'products.qty_down' | t }}">−</button>
+            <output aria-live="polite">1</output>
+            <button type="button" data-step="+" aria-label="{{ 'products.qty_up' | t }}">＋</button>
+          </div>
+          <button class="btn buy__add btn--nochev" type="submit" name="add" data-add{% unless current_variant.available %} disabled{% endunless %}>
+            {%- if current_variant.available -%}{{ s.add_label }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
+          </button>
+        </div>
+        <button class="btn btn--primary buy__cta" type="button" data-buy-now{% unless current_variant.available %} disabled{% endunless %}>{{ s.buy_label }}</button>
+        {{ form | payment_button }}
+        <p class="buy__err" role="alert" data-error hidden></p>
+      {%- endform -%}
+
+      {%- if s.show_trial -%}
+        <button type="button" class="btn btn--ext buy__trial" data-dialog-open="TrialDialog">{{ s.trial_label }}</button>
+      {%- endif -%}
+
+      <ul class="trust">
+        {%- if s.badge_1 != blank -%}<li>{{ s.badge_1 }}</li>{%- endif -%}
+        {%- if s.badge_2 != blank -%}<li>{{ s.badge_2 }}</li>{%- endif -%}
+        {%- if s.badge_3 != blank -%}<li>{{ s.badge_3 }}</li>{%- endif -%}
+      </ul>
+      <ul class="payment-icons payment-icons--small" aria-label="{{ 'general.payment_methods' | t }}">
+        {%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag }}</li>{%- endfor -%}
+      </ul>
+    </aside>
+  </div>
+
+  <div class="sticky-buy" data-sticky inert>
+    <div class="container sticky-buy__inner">
+      {% render 'nd-product-thumb', product: product, width: 160 %}
+      <div class="meta"><b data-sticky-title>{{ product.title }}</b><small data-sticky-meta></small></div>
+      <div class="sum"><span>{{ s.total_label }}</span><strong class="yen" data-total>{{ base_price | money_without_trailing_zeros }}</strong></div>
+      <button class="btn btn--primary" type="button" data-buy-now>{{ s.buy_label }}</button>
+    </div>
+  </div>
+
+  <script type="application/json" data-product-json>
+    {
+      "id": {{ product.id }},
+      "title": {{ product.title | json }},
+      "basePrice": {{ base_price }},
+      "variants": {{ product.variants | json }},
+      "strings": {
+        "taxLabel": {{ s.tax_label | json }},
+        "setTaxLabel": {{ s.set_tax_label | json }},
+        "plugNone": {{ s.plug_none | json }},
+        "plugCount": {{ s.plug_count | json }},
+        "oneOnly": {{ s.one_only | json }},
+        "base": {{ 'products.base' | t | json }},
+        "set": {{ 'products.set' | t | json }},
+        "noAccessories": {{ 'products.no_accessories' | t | json }},
+        "selected": {{ 'products.selected' | t | json }},
+        "viewPlugin": {{ 'products.view_plugin' | t | json }}
+      }
+    }
+  </script>
+</div>
+
+<script type="module" src="{{ 'nd-product.js' | asset_url }}"></script>
+{%- if section.settings.media_mode == '3d' -%}<script type="module" src="{{ 'nd-3d.js' | asset_url }}"></script>{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product information",
+  "tag": "section",
+  "class": "section-main-product",
+  "settings": [
+    { "type": "text", "id": "tax_label", "label": "Tax label", "default": "税込" },
+    { "type": "text", "id": "set_tax_label", "label": "Bundle tax label", "default": "セット・税込" },
+    { "type": "text", "id": "shipping_label", "label": "Shipping label", "default": "送料無料" },
+    { "type": "text", "id": "more_label", "label": "Read more", "default": "もっと見る" },
+    { "type": "text", "id": "less_label", "label": "Read less", "default": "閉じる" },
+    { "type": "text", "id": "plugs_more_label", "label": "Show all plugins", "default": "すべてのプラグインを表示（{n}）" },
+    { "type": "header", "content": "Media" },
+    { "type": "select", "id": "media_mode", "label": "Left column", "default": "gallery", "options": [
+      { "value": "gallery", "label": "Photo gallery" }, { "value": "3d", "label": "3D model + photos" }
+    ] },
+    { "type": "select", "id": "model", "label": "3D model", "default": "qc", "options": [
+      { "value": "qc", "label": "Quad Cortex" }, { "value": "mini", "label": "Quad Cortex mini" }, { "value": "nano", "label": "Nano Cortex" }
+    ] },
+    { "type": "text", "id": "view_labels", "label": "3D view buttons (comma separated)", "default": "全体,上面,入力と出力,正面" },
+    { "type": "textarea", "id": "view_titles", "label": "3D view titles (separated by |)" },
+    { "type": "textarea", "id": "view_captions", "label": "3D view captions (separated by |)" },
+    { "type": "header", "content": "Plugin pages: choose the hardware" },
+    { "type": "product_list", "id": "hardware_choices", "label": "Same plugin with each hardware", "limit": 4, "info": "e.g. Quad Cortex + Gojira X and Quad Cortex mini + Gojira X. Customers switch between them here." },
+    { "type": "text", "id": "hardware_heading", "label": "Heading", "default": "本体を選ぶ" },
+    { "type": "text", "id": "hardware_sub", "label": "Sub text", "default": "プラグインは Quad Cortex または Quad Cortex mini とのセットでご購入いただけます。" },
+    { "type": "text", "id": "photos_label", "label": "Photos button", "default": "写真" },
+    { "type": "text", "id": "film_label", "label": "Film button", "default": "▶ フル動画を見る" },
+    { "type": "text", "id": "film_url", "label": "Film (YouTube URL)", "info": "Plays in place of the 3D model, like a canvas swapping to the full video." },
+    { "type": "text", "id": "photo_assets", "label": "Photos from theme assets", "info": "Comma-separated transparent photos shipped with the theme (e.g. qc-photo-1.webp). When set, 写真 shows these instead of the Shopify product images." },
+    { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
+    { "type": "header", "content": "Plugins" },
+    { "type": "checkbox", "id": "show_bundles", "label": "Show plugin picker", "default": false },
+    { "type": "product_list", "id": "bundles", "label": "Bundle products (one per plugin)", "limit": 24 },
+    { "type": "product_list", "id": "addons", "label": "Plugin add-on products (enables buying several plugins)", "limit": 24, "info": "One plugin-only product per plugin; its title must contain the plugin name, e.g. 'Archetype: Gojira X（追加プラグイン）'." },
+    { "type": "text", "id": "multi_sub", "label": "Sub text (several plugins)", "default": "本体のみも選べます。プラグインは複数選択できます。" },
+    { "type": "text", "id": "plug_none", "label": "Nothing selected", "default": "プラグイン未選択（本体のみ）" },
+    { "type": "text", "id": "plug_count", "label": "Selected count", "default": "{n}本のプラグインを選択中" },
+    { "type": "text", "id": "one_only", "label": "One-plugin notice", "default": "現在、セットにできるプラグインは1本です。" },
+    { "type": "text", "id": "bundle_heading", "label": "Heading", "default": "プラグインを追加（任意）" },
+    { "type": "text", "id": "bundle_sub", "label": "Sub text (one plugin)", "default": "本体のみも選べます。セットにできるプラグインは1本です。" },
+    { "type": "text", "id": "bundle_placeholder", "label": "Placeholder", "default": "プラグインを選択" },
+    { "type": "text", "id": "bundle_none", "label": "No-plugin option", "default": "プラグインなし（本体のみ）" },
+    { "type": "text", "id": "bundle_help", "label": "Help text", "default": "どれを選べばいいか迷ったら" },
+    { "type": "text", "id": "bundle_help_link", "label": "Help link label", "default": "サウンドを聴いて選ぶ" },
+    { "type": "text", "id": "bundle_help_url", "label": "Help link URL", "default": "/#plugins" },
+    { "type": "header", "content": "Accessories" },
+    { "type": "checkbox", "id": "show_accessories", "label": "Show accessories", "default": false },
+    { "type": "product_list", "id": "accessories", "label": "Accessory products", "limit": 4 },
+    { "type": "text", "id": "acc_heading", "label": "Heading", "default": "アクセサリーを追加（任意）" },
+    { "type": "text", "id": "acc_note", "label": "Note", "default": "本体には電源アダプターが付属します。" },
+    { "type": "header", "content": "Buttons" },
+    { "type": "text", "id": "total_label", "label": "Total label", "default": "合計（税込）" },
+    { "type": "text", "id": "add_label", "label": "Add to cart", "default": "カートに追加する" },
+    { "type": "text", "id": "buy_label", "label": "Buy now", "default": "購入する" },
+    { "type": "checkbox", "id": "show_trial", "label": "Show 14-day trial button", "default": false },
+    { "type": "text", "id": "trial_label", "label": "Trial button label", "default": "14日間無料体験" },
+    { "type": "header", "content": "Badges" },
+    { "type": "text", "id": "badge_1", "label": "Badge 1", "default": "送料無料" },
+    { "type": "text", "id": "badge_2", "label": "Badge 2", "default": "14日以内返品可" },
+    { "type": "text", "id": "badge_3", "label": "Badge 3", "default": "3年保証" }
+  ],
+  "blocks": [{ "type": "@app" }]
+}
+{% endschema %}

@@ -1,0 +1,75 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-pet (product-quadcortex-petrucci-x) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "petrucci_hero": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/5YkUhRzSPSci70gETEUTKX/ae9777b99bc290031e6b14b3c13b7c5d/a_jp-background-video.mp4",
+        "title": "Quad Cortex + Archetype: Petrucci X",
+        "subtitle": "繊細なクリーンから、重厚で力強いリードトーンまで。John Petrucci のシグネチャーサウンドを自在に。",
+        "film_url": "https://youtu.be/XD5mratZFWE",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-pet",
+          "quadcortex-mini-plugin-bundle-pet"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "petrucci_about": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Archetype: Petrucci Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-petrucci",
+        "body": "<p>John Petrucciは、何十年にもわたりプログレッシブミュージックとギター音楽の最前線に立ち、現代のギタリストに求められるものを再定義してきました。その卓越したテクニックと音楽的センスによって生み出される楽曲は、何世代ものミュージシャンに影響を与え、これまで可能だと考えられてきた表現の限界を押し広げ続けています。</p><p>その輝かしいキャリアとサウンドを、John自身が求めるレベルのソフトウェアツールへと凝縮することは、Neural DSPにとってこれまでで最も困難な挑戦のひとつでした。</p><p>Johnのトーンのあらゆるニュアンスを追求した4種類のアンプをはじめ、Wah、Compressor、Overdrive、Phaser/Vibe、Chorus、Flanger、Stereo Delay、Reverbなど、多彩なサウンドメイキングツールを搭載。さらにTranspose &amp; Doublerなど、演奏や制作の可能性を広げる機能も備えています。</p><p>誇りを持ってご紹介します。<br/><strong>Archetype: Petrucci X。</strong></p>"
+      }
+    },
+    "petrucci_sysreq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/petrucci-system-requirements.webp?v=1788856974",
+        "image_alt": "Archetype: Petrucci X システム要件",
+        "heading": "システム要件",
+        "body": "<p>Archetype: Petrucci X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSとの互換性に対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "petrucci_gs": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    }
+  },
+  "order": [
+    "petrucci_hero",
+    "main",
+    "petrucci_about",
+    "petrucci_sysreq",
+    "petrucci_gs"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "nav_source": "blocks",
+        "menu": "main-menu",
+        "region": "JAPAN"
+      },
+      "blocks": {
+        "hw": {
+          "type": "group",
+          "settings": {
+            "label": "ハードウェア",
+            "children": "Quad Cortex|/products/quad-cortex\nQuad Cortex mini|/products/quad-cortex-mini\nNano Cortex|/products/nano-cortex"
+          }
+        },
+        "plugin": {
+          "type": "link",
+          "settings": {
+            "label": "Plugin",
+            "url": "/pages/quad-cortex-and-plugin-bundle"
+          }
+        },
+        "cloud": {
+          "type": "link",
+          "settings": {
+            "label": "Cortex Cloud",
+            "url": "/pages/neuraldsp-account"
+          }
+        },
+        "news": {
+          "type": "link",
+          "settings": {
+            "label": "Latest News",
+            "url": "/blogs/news"
+          }
+        },
+        "support": {
+          "type": "link",
+          "settings": {
+            "label": "サポート",
+            "url": "/pages/shopping-guide"
+          }
+        },
+        "acc": {
+          "type": "group",
+          "settings": {
+            "label": "アクセサリー",
+            "children": "Gig Case|/products/gig-case\n電源アダプター（PSU）|/products/quad-cortex-psu"
+          }
+        }
+      },
+      "block_order": [
+        "hw",
+        "acc",
+        "plugin",
+        "cloud",
+        "news",
+        "support"
+      ]
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

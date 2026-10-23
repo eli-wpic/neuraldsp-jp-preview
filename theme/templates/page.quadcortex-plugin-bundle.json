@@ -1,0 +1,359 @@
+/*
+ * Simplified: plugin discovery for this hardware (live text for plugin descriptions and the global-store note).
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": ""
+      }
+    },
+    "single_image_ltrqdb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/1334_x_1258_294ca7c4-c1a5-4885-b9d5-d3aa54ab2710.jpg?v=1790739781",
+        "image_alt": ""
+      }
+    },
+    "multicolumn_lez77y": {
+      "type": "nd-columns",
+      "settings": {
+        "columns": 3
+      },
+      "blocks": {
+        "column_0": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Archetype-John-Mayer-X-Product-Card.jpg?v=1788768470",
+            "title": "Quad Cortex + Archetype: John Mayer X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-joh"
+          }
+        },
+        "column_1": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Misha-Mansoor-X-Product-Card_1.jpg?v=1788773478",
+            "title": "Quad Cortex + Archetype: Misha Mansoor X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-mis"
+          }
+        },
+        "column_2": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/55c591b501d0ddb14b480b77856d547f.jpg?v=1788838438",
+            "title": "Quad Cortex + Archetype: Tim Henson X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-tim"
+          }
+        },
+        "column_3": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/9af3667a0933776db0244a4b452d72bc.jpg?v=1788830585",
+            "title": "Quad Cortex + Archetype: Rabea X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-rab"
+          }
+        },
+        "column_4": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/f656a5e79934a383da0fd0f4da9b8861.jpg?v=1788852132",
+            "title": "Quad Cortex + Archetype: Petrucci X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-pet"
+          }
+        },
+        "column_5": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Archetype-Gojira-X-Product-Card.jpg?v=1771216438",
+            "title": "Quad Cortex + Archetype: Gojira X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-goj"
+          }
+        },
+        "column_6": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Fortin-Nameless-Suite-X-Product-Card.jpg?v=1771216356",
+            "title": "Quad Cortex + Fortin Nameless Suite X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-for"
+          }
+        },
+        "column_7": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Archetype-Nolly-X-Product-Card.jpg?v=1771216135",
+            "title": "Quad Cortex + Archetype: Nolly X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-nol"
+          }
+        },
+        "column_8": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Parallax-X-Product-Card.jpg?v=1771216094",
+            "title": "Quad Cortex + Parallax X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-par"
+          }
+        },
+        "column_9": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Archetype-Plini-X-Product-Card.jpg?v=1771216010",
+            "title": "Quad Cortex + Archetype: Plini X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-pli"
+          }
+        },
+        "column_10": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Soldano-SLO-100-X-Product-Card.jpg?v=1771215906",
+            "title": "Quad Cortex + Soldano SLO-100 X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-slo"
+          }
+        },
+        "column_11": {
+          "type": "column",
+          "settings": {
+            "image_url": "https://neuraldsp.jp/cdn/shop/files/Neural-DSP-Quad-Cortex-Archetype-Cory-Wong-X-Product-Card.jpg?v=1771216396",
+            "title": "Quad Cortex + Archetype: Cory Wong X",
+            "link_label": "詳しく見る",
+            "link_url": "/products/quadcortex-plugin-bundle-cor"
+          }
+        }
+      },
+      "block_order": [
+        "column_0",
+        "column_1",
+        "column_2",
+        "column_3",
+        "column_4",
+        "column_5",
+        "column_6",
+        "column_7",
+        "column_8",
+        "column_9",
+        "column_10",
+        "column_11"
+      ]
+    },
+    "image_with_text_tgufdw": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/plugin_page_global.png?v=1768978671",
+        "image_alt": "",
+        "heading": "さらに多くのプラグインをお探しの方へ",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins",
+        "body": "<p>Neural DSP グローバル公式サイトでは、より多くの種類のプラグインを単品でご購入いただけます。</p>"
+      }
+    },
+    "plugins": {
+      "type": "nd-plugin-discovery",
+      "settings": {
+        "anchor": "plugins",
+        "eyebrow": "Sound Discovery",
+        "heading": "あなたの音を、見つけよう。",
+        "body": "<p>プラグインは、PC / Mac でギターやベースの音を作るソフトウェアです。対応プラグインは Quad Cortex / Quad Cortex mini にも読み込めます（Nano Cortex は非対応）。</p>",
+        "trial_note": "無料体験は PC / Mac 版。neuraldsp.com のダウンロードページからインストールします。",
+        "browse_label": "さらに多くのプラグインをお探しの方へ",
+        "browse_url": "https://neuraldsp.com/plugins"
+      },
+      "blocks": {
+        "plugin_0": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-pli",
+            "name": "Archetype: Plini X",
+            "headline": "透明感から、\n歌うリードまで。",
+            "description": "それを生み出したアーティストと共に、優雅に作り上げられた、真に多用途なプラグイン。",
+            "genres": "PROGRESSIVE / FUSION / AMBIENT",
+            "tones": "clean,crunch,ambient",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/plinix-product-card.png",
+            "youtube_id": "iiU1MQy-sUU",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-plini"
+          }
+        },
+        "plugin_1": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-goj",
+            "name": "Archetype: Gojira X",
+            "headline": "重厚なリフ。\n鮮明な輪郭。",
+            "description": "メタル界で最も破壊力のあるギタリストの一人、Gojira のジョー・デュプランティエによる、誰もが求めるトーンがすべて詰め込まれています。",
+            "genres": "METAL / HIGH GAIN / EXPERIMENTAL",
+            "tones": "highgain",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/a-gojira-x-product-card_cfb2c9e8-e68e-493b-b7ff-4ab47441172f.png",
+            "youtube_id": "MhnkGMBn1tw",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-gojira"
+          }
+        },
+        "plugin_2": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-cor",
+            "name": "Archetype: Cory Wong X",
+            "headline": "キレのある、\nクリーントーン。",
+            "description": "完璧なクリーン・トーンやエッジ・オブ・ブレイクアップ・トーンを求めるプレイヤーのために、幅広いサウンドオプションを備えた非常に多用途なプラグイン。",
+            "genres": "FUNK / CLEAN / EDGE OF BREAKUP",
+            "tones": "clean,crunch",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/cwx-product-card.png",
+            "youtube_id": "Zy9uFDh9I6o",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-cory-wong"
+          }
+        },
+        "plugin_3": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-joh",
+            "name": "Archetype: John Mayer X",
+            "description": "JohnMayerを象徴するクリーントーンから、豊かな倍音を備えたオーバードライブまで幅広く対応。",
+            "genres": "BLUES / POP / CLEAN",
+            "tones": "clean,crunch",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-john-mayer-x-product-card_3cfebe92-ef46-421f-a63d-ad279b159d9e.png?width=800",
+            "youtube_id": "qXxagV9Smcw",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-john-mayer"
+          }
+        },
+        "plugin_4": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-mis",
+            "name": "Archetype: Misha Mansoor X",
+            "description": "ハイゲインなモダンメタルトーンからクリアでアーティキュレートなサウンド、GlitchやLaserなどの実験的なエフェクトまで幅広く対応。",
+            "genres": "DJENT / PROGRESSIVE",
+            "tones": "highgain,clean",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-misha-mansoor-x-product-card.png?width=800",
+            "youtube_id": "ZyMbzakf2G8",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-misha-mansoor"
+          }
+        },
+        "plugin_5": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-tim",
+            "name": "Archetype: Tim Henson X",
+            "description": "きらびやかなクリーンから温かみのあるクランチ、ヘヴィなリズムやリードまで幅広く対応し、象徴的なMultivoicerによる重層的なハーモニー表現も可能。",
+            "genres": "MATH ROCK / CLEAN / FINGERSTYLE",
+            "tones": "clean,crunch,ambient",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-tim-henson-x-product-card.png?width=800",
+            "youtube_id": "Mz1uL3K75pY",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-tim-henson"
+          }
+        },
+        "plugin_6": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-rab",
+            "name": "Archetype: Rabea X",
+            "description": "きらびやかなクリーンからクランチ、力強いモダンハイゲインまで幅広く対応し、革新的なOverlordモノシンセによってギターの表現力をさらに拡張。",
+            "genres": "MODERN METAL / AMBIENT",
+            "tones": "highgain,ambient",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-rabea-x-product-card.png?width=800",
+            "youtube_id": "ZS5Swq-FPy8",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-rabea"
+          }
+        },
+        "plugin_7": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-pet",
+            "name": "Archetype: Petrucci X",
+            "description": "豊かで明瞭なクリーンから、重厚で力強いリードトーンまで幅広く対応し、4種類のアンプと多彩なエフェクトで自在なサウンドメイクが可能。",
+            "genres": "PROGRESSIVE METAL / LEAD",
+            "tones": "highgain,crunch",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-petrucci-x-product-card.png?width=800",
+            "youtube_id": "XD5mratZFWE",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-petrucci"
+          }
+        },
+        "plugin_8": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-nol",
+            "name": "Archetype: Nolly X",
+            "description": "QuadCortex®の高精度モデリングによって、プロレベルのギタートーンと緻密な音作りを実現します。",
+            "genres": "PROGRESSIVE / PRODUCTION",
+            "tones": "highgain,clean",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nolly-x-product-card.png?width=800",
+            "youtube_id": "bpod5JnymrA",
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-nolly"
+          }
+        },
+        "plugin_9": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-slo",
+            "name": "Soldano SLO-100 X",
+            "description": "クラシックでありながら現代的なハイゲイントーンを備え、アメリカン・ハイゲインの源流を求めるプレイヤーに最適です。",
+            "genres": "ROCK / CLASSIC HIGH GAIN",
+            "tones": "crunch,highgain",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/soldano-slo-100-x-product-card.png?width=800",
+            "youtube_id": "hNEJM997cYM",
+            "plugin_url": "https://neuraldsp.com/plugins/soldano-slo-100"
+          }
+        },
+        "plugin_10": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-for",
+            "name": "Fortin Nameless Suite X",
+            "description": "圧倒的な歪みと凶悪なゲインに特化し、メタルからハードロックまで重厚なディストーションを求めるプレイヤーに最適です。",
+            "genres": "METAL / HIGH GAIN",
+            "tones": "highgain",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nameless-x-product-card_3.png?width=800",
+            "youtube_id": "rE7e61rS9pE",
+            "plugin_url": "https://neuraldsp.com/plugins/fortin-nameless-suite"
+          }
+        },
+        "plugin_11": {
+          "type": "plugin",
+          "settings": {
+            "product": "quadcortex-plugin-bundle-par",
+            "name": "Parallax X",
+            "description": "パラレルプロセッシングにより明瞭さと重厚感を両立し、タイトで存在感のある低域を求めるベーシストに最適です。",
+            "genres": "BASS",
+            "tones": "highgain",
+            "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/parallax-x-product-card.png?width=800",
+            "youtube_id": "VHpBHTmskDo",
+            "plugin_url": "https://neuraldsp.com/plugins/parallax"
+          }
+        }
+      },
+      "block_order": [
+        "plugin_0",
+        "plugin_1",
+        "plugin_2",
+        "plugin_3",
+        "plugin_4",
+        "plugin_5",
+        "plugin_6",
+        "plugin_7",
+        "plugin_8",
+        "plugin_9",
+        "plugin_10",
+        "plugin_11"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "plugins",
+    "image_with_text_tgufdw"
+  ]
+}

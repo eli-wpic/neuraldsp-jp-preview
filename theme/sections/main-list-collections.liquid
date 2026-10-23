@@ -1,0 +1,12 @@
+<section class="nd-page-head"><div class="container"><h1>{{ 'collections.all' | t }}</h1></div></section>
+<section class="nd-collection"><div class="container nd-grid">
+  {%- for collection in collections -%}
+    <a class="nd-card" href="{{ collection.url }}">
+      <span class="nd-card__media">{%- if collection.featured_image -%}{{ collection.featured_image | image_url: width: 900 | image_tag: loading: 'lazy', widths: '360, 600, 900', alt: collection.title }}{%- endif -%}</span>
+      <span class="nd-card__title">{{ collection.title }}</span>
+    </a>
+  {%- endfor -%}
+</div></section>
+{% schema %}
+{ "name": "Collections list", "tag": "section", "settings": [] }
+{% endschema %}

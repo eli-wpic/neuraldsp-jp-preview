@@ -1,0 +1,20 @@
+{%- comment -%} Long-form content carried over from the old theme (legal pages, guides, comparison tables). {%- endcomment -%}
+<section class="nd-html nd-html--{{ section.settings.width }}">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}<h2 class="nd-html__title">{{ section.settings.heading }}</h2>{%- endif -%}
+    <div class="nd-prose nd-prose--table">{{ section.settings.html }}</div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Text / HTML",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "html", "id": "html", "label": "Content (HTML)" },
+    { "type": "select", "id": "width", "label": "Width", "default": "narrow", "options": [
+      { "value": "narrow", "label": "Reading width" }, { "value": "wide", "label": "Wide" }
+    ] }
+  ],
+  "presets": [{ "name": "ND · Text / HTML" }]
+}
+{% endschema %}

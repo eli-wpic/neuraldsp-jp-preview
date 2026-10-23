@@ -1,0 +1,75 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-mis (product-quadcortex-misha-mansoor-x) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "jmx_hero": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://videos.ctfassets.net/8puu65w27ud0/6mJbiOH4ZEZLO2ex5KAZR2/a9efd73943c697aab91931f5a5d35108/mm-hero-bg.mp4",
+        "title": "Quad Cortex + Archetype: Misha Mansoor X",
+        "subtitle": "現代メタルの開拓者 Misha Mansoor のシグネチャートーンを、究極のツールキットに。",
+        "film_url": "https://youtu.be/ZyMbzakf2G8",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-mis",
+          "quadcortex-mini-plugin-bundle-mis"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "jmx_about": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Archetype: Misha Mansoor Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-misha-mansoor",
+        "body": "<p>現代メタルを体現するギタリストとして、Misha Mansoor ほど象徴的な存在は多くありません。Periphery の創設を支えた中心人物として、彼のビジョンと創造性は一世代のサウンドを形作ってきました。その影響はリフやソロにとどまらず、ヘヴィミュージックの作曲、制作、演奏のあり方を再定義するほどに及んでいます。</p><p>Misha は、プレイヤーであると同時にイノベーターでもあります。アンプ設計の限界を押し広げ、画期的なペダルを生み出すことで、彼は常に新たな可能性を切り開くツールを追求してきました。その探求心は、このプラグインのあらゆる細部にまで反映されています。</p><p>Archetype: Misha Mansoor X は、彼のアイコニックなトーンを単に拡張したものではありません。実験的なエフェクト、ユニークなアンプ、そして彼と同じ飽くなき探求心を持つプレイヤーのために設計されたツールキットを備え、予想外のサウンドの可能性を探求するために生まれました。</p><p>誇りを持ってご紹介します。<br/><strong>Archetype: Misha Mansoor X。</strong></p>"
+      }
+    },
+    "jmx_sysreq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/misha-system-requirements.webp?v=1788859209",
+        "image_alt": "Archetype: Misha Mansoor X システム要件",
+        "heading": "システム要件",
+        "body": "<p>Archetype: Misha Mansoor X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "jmx_gs": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    }
+  },
+  "order": [
+    "jmx_hero",
+    "main",
+    "jmx_about",
+    "jmx_sysreq",
+    "jmx_gs"
+  ]
+}

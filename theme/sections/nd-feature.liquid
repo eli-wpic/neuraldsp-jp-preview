@@ -1,0 +1,84 @@
+{%- comment -%}
+  General content section (replaces the old theme's rich text / image with text / single image blocks).
+  Layouts: center (text only), media-left / media-right (two columns), media-top (text over wide media), media (media only).
+{%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign has_media = false
+  if s.image != blank or s.image_url != blank or s.video_url != blank or s.youtube_id != blank
+    assign has_media = true
+  endif
+  assign layout = s.layout
+  if has_media == false
+    assign layout = 'center'
+  endif
+-%}
+<section class="nd-feature nd-feature--{{ layout }}{% if s.tight %} nd-feature--tight{% endif %}">
+  <div class="container nd-feature__grid">
+    {%- unless layout == 'media' -%}
+      <div class="nd-feature__copy">
+        {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+        {%- if s.heading != blank -%}<h2 class="nd-feature__title">{{ s.heading | newline_to_br }}</h2>{%- endif -%}
+        {%- if s.subheading != blank -%}<p class="nd-feature__sub">{{ s.subheading | newline_to_br }}</p>{%- endif -%}
+        {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
+        {%- if s.button_label != blank or s.button2_label != blank -%}
+          <div class="nd-feature__ctas">
+            {%- if s.button_label != blank -%}<a class="btn btn--primary" href="{{ s.button_url | default: '#' }}"{% if s.button_url contains 'http' %}{% unless s.button_url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ s.button_label }}</a>{%- endif -%}
+            {%- if s.button2_label != blank -%}<a class="btn" href="{{ s.button2_url | default: '#' }}"{% if s.button2_url contains 'http' %}{% unless s.button2_url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ s.button2_label }}</a>{%- endif -%}
+          </div>
+        {%- endif -%}
+        {%- if s.note != blank -%}<div class="nd-feature__note">{{ s.note }}</div>{%- endif -%}
+      </div>
+    {%- endunless -%}
+    {%- if has_media -%}
+      <div class="nd-feature__media">
+        {%- if s.link_url != blank -%}<a href="{{ s.link_url }}">{%- endif -%}
+        {%- if s.youtube_id != blank or s.video_url != blank -%}
+          {% render 'nd-video', youtube: s.youtube_id, url: s.video_url, autoplay: s.video_autoplay, title: s.heading %}
+        {%- elsif s.mobile_image_url != blank -%}
+          <picture>
+            <source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">
+            {% render 'nd-media', image: s.image, url: s.image_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
+          </picture>
+        {%- else -%}
+          {% render 'nd-media', image: s.image, url: s.image_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
+        {%- endif -%}
+        {%- if s.link_url != blank -%}</a>{%- endif -%}
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ND · Feature",
+  "settings": [
+    { "type": "select", "id": "layout", "label": "Layout", "default": "media-right", "options": [
+      { "value": "center", "label": "Centered text" },
+      { "value": "media-left", "label": "Media left" },
+      { "value": "media-right", "label": "Media right" },
+      { "value": "media-top", "label": "Text above wide media" },
+      { "value": "media", "label": "Media only" }
+    ] },
+    { "type": "checkbox", "id": "tight", "label": "Less vertical spacing", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "textarea", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "subheading", "label": "Subheading" },
+    { "type": "html", "id": "body", "label": "Body (HTML)" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "text", "id": "button_url", "label": "Button URL" },
+    { "type": "text", "id": "button2_label", "label": "Second button label" },
+    { "type": "text", "id": "button2_url", "label": "Second button URL" },
+    { "type": "html", "id": "note", "label": "Small print (HTML)" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_url", "label": "Image URL" },
+    { "type": "text", "id": "mobile_image_url", "label": "Phone image URL (optional)" },
+    { "type": "text", "id": "image_alt", "label": "Image alt text" },
+    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
+    { "type": "checkbox", "id": "video_autoplay", "label": "Autoplay muted loop", "default": true },
+    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
+    { "type": "text", "id": "link_url", "label": "Media link URL" }
+  ],
+  "presets": [{ "name": "ND · Feature" }]
+}
+{% endschema %}

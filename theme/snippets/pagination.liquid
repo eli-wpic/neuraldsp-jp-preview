@@ -1,0 +1,7 @@
+{%- if paginate.pages > 1 -%}
+  <nav class="nd-pagination" aria-label="{{ 'general.pagination' | t }}">
+    {%- if paginate.previous -%}<a class="btn btn--small" href="{{ paginate.previous.url }}">{{ 'general.previous' | t }}</a>{%- endif -%}
+    <span>{{ paginate.current_page }} / {{ paginate.pages }}</span>
+    {%- if paginate.next -%}<a class="btn btn--small" href="{{ paginate.next.url }}">{{ 'general.next' | t }}</a>{%- endif -%}
+  </nav>
+{%- endif -%}

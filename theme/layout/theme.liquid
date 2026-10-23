@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}" class="no-js">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0b0c">
+  <link rel="canonical" href="{{ canonical_url }}">
+  {%- if settings.favicon != blank -%}
+    <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
+  {%- endif -%}
+  <title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
+  {% render 'meta-tags' %}
+
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {{ 'nd-base.css' | asset_url | stylesheet_tag }}
+  {{ 'nd-sections.css' | asset_url | stylesheet_tag }}
+  {{ 'nd-home.css' | asset_url | stylesheet_tag }}
+  {%- if template.name == 'index' or template.name == 'product' -%}
+    {{ 'nd-qc3d.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+  {%- if template.name == 'product' -%}
+    {{ 'nd-product.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+  <script>
+    window.ndTheme = {
+      routes: { cart: {{ routes.cart_url | json }}, cartAdd: {{ routes.cart_add_url | append: '.js' | json }}, root: {{ routes.root_url | json }} },
+      strings: { addError: {{ 'cart.add_error' | t | json }} }
+    };
+  </script>
+  {{ content_for_header }}
+</head>
+<body class="template-{{ template | handleize }}">
+  <a class="visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
+  {% sections 'header-group' %}
+  <main id="MainContent" role="main" tabindex="-1">
+    {{ content_for_layout }}
+  </main>
+  {% sections 'footer-group' %}
+  <script type="module" src="{{ 'core.js' | asset_url }}"></script>
+</body>
+</html>

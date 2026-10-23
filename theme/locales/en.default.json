@@ -1,0 +1,108 @@
+{
+  "general": {
+    "page": "Page {{ page }}",
+    "home": "Home",
+    "search": "Search",
+    "menu": "Menu",
+    "main_menu": "Main menu",
+    "mobile_menu": "Mobile menu",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next",
+    "pagination": "Pagination",
+    "play_video": "Play video",
+    "payment_methods": "Payment methods",
+    "language": "Language",
+    "country": "Country/region",
+    "required": "Required",
+    "password": "Password",
+    "enter": "Enter",
+    "404_title": "Page not found",
+    "404_text": "The page you were looking for may have moved."
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content"
+  },
+  "cart": {
+    "title": "Cart",
+    "add_error": "Could not add to cart. Please try again.",
+    "quantity": "Quantity",
+    "remove": "Remove",
+    "subtotal": "Subtotal",
+    "taxes_shipping": "Tax included. Free shipping.",
+    "update": "Update",
+    "checkout": "Check out",
+    "empty": "Your cart is empty.",
+    "continue": "Continue shopping"
+  },
+  "products": {
+    "sold_out": "Sold out",
+    "gallery": "Image gallery",
+    "plugin_info": "About the selected plugin",
+    "plugin_clear": "Clear plugin",
+    "qty_down": "Decrease quantity",
+    "qty_up": "Increase quantity",
+    "base": "Unit",
+    "set": "Bundle",
+    "no_accessories": "No accessories",
+    "selected": "selected",
+    "view_plugin": "View product"
+  },
+  "collections": {
+    "count": "{{ count }} products",
+    "sort_by": "Sort by",
+    "empty": "No products.",
+    "all": "All collections"
+  },
+  "search": {
+    "placeholder": "Search",
+    "results": "{{ count }} results for \"{{ terms }}\"",
+    "none": "No results."
+  },
+  "blogs": {
+    "read_more": "Read more",
+    "back": "Back to news"
+  },
+  "contact": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Message",
+    "send": "Send",
+    "success": "Thanks for contacting us."
+  },
+  "customer": {
+    "log_in": "Log in",
+    "log_out": "Log out",
+    "account": "Account",
+    "register": "Create account",
+    "forgot": "Forgot your password?",
+    "recover_sent": "We sent you a reset email.",
+    "send": "Send",
+    "first_name": "First name",
+    "last_name": "Last name",
+    "orders": "Orders",
+    "order": "Order",
+    "date": "Date",
+    "status": "Status",
+    "no_orders": "No orders yet.",
+    "addresses": "Addresses",
+    "add_address": "Add address",
+    "zip": "Postal code",
+    "province": "Prefecture",
+    "city": "City",
+    "address1": "Address",
+    "address2": "Apartment, suite",
+    "save": "Save",
+    "product": "Product",
+    "total": "Total",
+    "shipping": "Shipping address",
+    "activate": "Activate account",
+    "reset": "Reset password",
+    "password_confirm": "Confirm password"
+  },
+  "gift_card": {
+    "title": "Gift card",
+    "expired": "This gift card has expired."
+  }
+}

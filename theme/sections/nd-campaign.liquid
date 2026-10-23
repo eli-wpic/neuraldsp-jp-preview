@@ -1,0 +1,25 @@
+<section class="nd-campaign">
+  <div class="container">
+    <a class="nd-campaign__link" href="{{ section.settings.url | default: '#' }}">
+      <picture>
+        {%- if section.settings.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image_url | split: '?' | first }}?width=900">{%- endif -%}
+        {% render 'nd-media', image: section.settings.image, url: section.settings.image_url, alt: section.settings.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1200px' %}
+      </picture>
+    </a>
+    {%- if section.settings.button_label != blank -%}<a class="btn btn--primary nd-campaign__btn" href="{{ section.settings.url }}">{{ section.settings.button_label }}</a>{%- endif -%}
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Campaign banner",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_url", "label": "Image URL" },
+    { "type": "text", "id": "mobile_image_url", "label": "Mobile image URL" },
+    { "type": "text", "id": "alt", "label": "Alt text" },
+    { "type": "text", "id": "url", "label": "Link URL" },
+    { "type": "text", "id": "button_label", "label": "Button label", "default": "詳しく見る" }
+  ],
+  "presets": [{ "name": "ND · Campaign banner" }]
+}
+{% endschema %}

@@ -1,0 +1,77 @@
+/*
+ * Generated from the live /products/quadcortex-plugin-bundle-joh (product-archetype-john-mayer-x) by tools/convert_live_to_theme.py.
+ * Text, links and media are carried over verbatim from neuraldsp.jp.
+ */
+{
+  "sections": {
+    "jmx_hero": {
+      "type": "nd-hero",
+      "settings": {
+        "show_buy": true,
+        "video_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/jmx-bg-video.mp4?v=1788765617",
+        "title": "Quad Cortex + Archetype: John Mayer X",
+        "subtitle": "John Mayerのアイコニックなトーンを、ひとつの決定版プラグインに。",
+        "film_url": "https://youtu.be/qXxagV9Smcw",
+        "film_label": "▶ フル動画を見る"
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": false,
+        "show_accessories": false,
+        "show_trial": true,
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "",
+        "view_captions": "",
+        "hardware_choices": [
+          "quadcortex-plugin-bundle-joh",
+          "quadcortex-mini-plugin-bundle-joh"
+        ]
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "jmx_about": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/jmx-overview-all-clean.png?v=1788765610",
+        "image_alt": "Archetype: John Mayer X プラグインUI全体",
+        "heading": "Archetype: John Mayer Xについて",
+        "button_label": "詳しく見る",
+        "button_url": "https://neuraldsp.com/plugins/archetype-john-mayer",
+        "body": "<p>John Mayerのように、何十年もかけて唯一無二の音楽的な声を磨き続けてきたアーティストにとって、すべての細部が重要です。タッチ、フレージング、抑制、そしてトーン——それらは長年にわたる作曲、レコーディング、パフォーマンスを通じて、音楽そのものと不可分のものとなっていきます。</p><p>その探求の結果として生まれたのは、現存するギター機材コレクションの中でも、最も広範かつ丁寧にキュレーションされたもののひとつです。Johnのコレクションには希少で歴史的価値の高い機材が数多く存在します。その中から、本能的に手を伸ばし、絶え間ない使用によって磨き続けてきた特別なツールが選び抜かれています。</p><p>Johnはロサンゼルスにある自身のレコーディングスタジオの扉を開き、彼のサウンドの中心を担う大切なツールを私たちに委ねてくれました。その世界をひとつの妥協なきプラグインに凝縮することは、私たちがこれまで取り組んできた中でも、最も困難で、そして最もやりがいのあるコラボレーションのひとつとなりました。</p><p>Johnの信頼とビジョンに心より感謝を込めて、誇りを持ってご紹介します。<br/><b>Archetype: John Mayer X。</b></p>"
+      }
+    },
+    "jmx_sysreq": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/t/23/assets/jmx-system-requirements-3.webp?v=1788836429",
+        "image_alt": "Archetype: John Mayer X システム要件 — アンプ＆機材スタック",
+        "heading": "システム要件",
+        "body": "<p>Archetype: John Mayer X は、以下の形式で提供されています：</p><p>64ビット VST2 / VST3 / AU / AAX / スタンドアロン（Standalone）</p><p>Windows および Mac の最新OSに対応しており、Apple Silicon（ネイティブ対応）でも動作します。</p><p>システム要件の詳細については、<a href=\"https://support.neuraldsp.com/help\" rel=\"noopener\" target=\"_blank\">サポートページ</a>をご覧ください。</p><p>使用には 無料の <a href=\"https://www.ilok.com/#!license-manager\" rel=\"noopener\" target=\"_blank\">iLok License Manager</a> および iLok アカウント が必要です。</p>"
+      }
+    },
+    "jmx_gs": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "プラグインを始めましょう！",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/plugin-beginners-guide",
+        "body": "<p>「はじめての方へ」ガイドでは、<br/>プラグインの使い方に必要なすべての基本を学ぶことができます。</p>"
+      }
+    }
+  },
+  "order": [
+    "jmx_hero",
+    "main",
+    "jmx_about",
+    "jmx_sysreq",
+    "jmx_gs"
+  ]
+}

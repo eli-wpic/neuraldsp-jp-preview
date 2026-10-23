@@ -1,0 +1,665 @@
+/*
+ * Generated from the live site (see tools/convert_live_to_theme.py); FAQ anchored at #faq.
+ */
+{
+  "sections": {
+    "custom_liquid_6bnyff": {
+      "type": "nd-awards",
+      "blocks": {
+        "award_0": {
+          "type": "award",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_1_no_text.png?v=1776156200",
+            "line1": "2026年 ベスト・マルチエフェクター・ペダル",
+            "line2": "2025‐2026年 ベスト・アンプモデラー"
+          }
+        },
+        "award_1": {
+          "type": "award",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_2_no_text.png?v=1776156204",
+            "line1": "2024年 ベスト・マルチエフェクター・ペダル",
+            "line2": "2021年 ギア・オブ・ザ・イヤー受賞"
+          }
+        },
+        "award_2": {
+          "type": "award",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_3_no_text.png?v=1776156211",
+            "line1": "2021‐2025年 ベスト・アンプモデラー",
+            "line2": "2025年 ベスト・ペダル・アンプ"
+          }
+        },
+        "award_3": {
+          "type": "award",
+          "settings": {
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_4_no_text.png?v=1776156217",
+            "line1": "2024‐2025年 ベスト・アンプモデラー",
+            "line2": "2021‐2025年 ベスト・マルチエフェクター・ペダル"
+          }
+        }
+      },
+      "block_order": [
+        "award_0",
+        "award_1",
+        "award_2",
+        "award_3"
+      ]
+    },
+    "main": {
+      "type": "main-product",
+      "settings": {
+        "show_bundles": true,
+        "show_accessories": true,
+        "show_trial": false,
+        "bundles": [
+          "quadcortex-plugin-bundle-joh",
+          "quadcortex-plugin-bundle-mis",
+          "quadcortex-plugin-bundle-tim",
+          "quadcortex-plugin-bundle-rab",
+          "quadcortex-plugin-bundle-pet",
+          "quadcortex-plugin-bundle-goj",
+          "quadcortex-plugin-bundle-for",
+          "quadcortex-plugin-bundle-nol",
+          "quadcortex-plugin-bundle-par",
+          "quadcortex-plugin-bundle-pli",
+          "quadcortex-plugin-bundle-slo",
+          "quadcortex-plugin-bundle-cor"
+        ],
+        "addons": [
+          "plugin-addon-archetype-john-mayer-x",
+          "plugin-addon-archetype-misha-mansoor-x",
+          "plugin-addon-archetype-tim-henson-x",
+          "plugin-addon-archetype-rabea-x",
+          "plugin-addon-archetype-petrucci-x",
+          "plugin-addon-archetype-gojira-x",
+          "plugin-addon-fortin-nameless-suite-x",
+          "plugin-addon-archetype-nolly-x",
+          "plugin-addon-parallax-x",
+          "plugin-addon-archetype-plini-x",
+          "plugin-addon-soldano-slo-100-x",
+          "plugin-addon-archetype-cory-wong-x"
+        ],
+        "accessories": [
+          "gig-case",
+          "quad-cortex-psu",
+          "quad-cortex-mini-psu"
+        ],
+        "media_mode": "3d",
+        "model": "qc",
+        "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
+        "view_titles": "世界最高峰のフロア型アンプモデラー|モデラーの新たな可能性を切り拓く|11基のステンレス製ストンプ＋ロータリーアクチュエーター|入力と出力|7インチのタッチディスプレイと圧倒的な処理能力により、自由かつ直感的なトーン設計を実現します。",
+        "view_captions": "Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。|巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。|スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。|デュアルコンボ入力 TS、TRS、XLR対応、可変インピーダンス＆レベルコントロール内蔵、マイクプリアンプ搭載、ファンタム電源対応。 デュアルエフェクトループ 外部のモノラル/ステレオエフェクトをシグナルチェーンに組み込むのに最適。 XLR|",
+        "film_url": "https://www.youtube.com/watch?v=SNq7D7Y4zfs",
+        "film_label": "▶ フル動画を見る",
+        "photo_assets": "qc-photo-1.webp,qc-photo-2.webp,qc-photo-3.webp,qc-photo-4.webp,qc-photo-5.webp"
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "product_newsletter_popup_qjp3np": {
+      "type": "nd-newsletter",
+      "settings": {
+        "style": "popup",
+        "heading": "メルマガに登録する",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "tags": "newsletter, popup-product",
+        "submit": "登録する",
+        "popup_button": "メルマガに登録する"
+      }
+    },
+    "custom_liquid_jamdvc": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/Quad-Cortex-CorOS-3-2-0.webp?v=1754634894",
+        "image_alt": "",
+        "heading": "CorOS 4.1.0 を公開しました",
+        "button_label": "詳しく見る",
+        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
+        "body": "<h3>4.1.0 の新機能</h3><ul><li>5つのX対応プラグインが新たにPlugin Compatibilityに対応：Archetype: John Mayer X、Archetype: Petrucci X、Archetype: Misha Mansoor X、Archetype: Rabea X、Archetype: Tim Henson X</li><li>2,000種類以上のFactory Device Presetsを追加</li><li>MultivoicerやGlitchなど、8種類の新しいVirtual Deviceを追加</li><li>Device、I/O Settings、Global EQのPreset保存・呼び出しに対応</li><li>Cortex Controlで複数のQuad Cortex / Quad Cortex miniを管理可能に</li><li>Dual Footswitch Assignmentsなど、操作性・ワークフローを改善</li></ul>"
+      }
+    },
+    "rich_text_6pwqvc": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "圧倒的な処理能力",
+        "body": "<p>Quad Cortex は、世界最高峰のフロア型アンプモデラーです。6つのコアを搭載した圧倒的な処理能力が、無限のサウンドデザインを可能にします。</p>"
+      }
+    },
+    "single_image_lgwrmz": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/quad_cortex_promo.1fa79dd0.webp?v=1741324189",
+        "image_alt": ""
+      }
+    },
+    "custom_liquid_bz3bhn": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QuadGuitarPromo_1280_LE_upscale_balanced_x2_bd469e9f-ae79-484a-a561-1ea354925815.jpg?v=1741769630",
+        "image_alt": "Quad Cortex Image",
+        "body": "<p>4つのアンプモデル、ステレオリバーブ、そして多数のエフェクトを同時に走らせたい？<br/><br/>Quad Cortexなら可能です。</p>"
+      }
+    },
+    "single_image_ahaieh": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/neural_capture.ec3828a8_7f6245d8-6f15-4887-9a28-577a6745b772.webp?v=1741582136",
+        "image_alt": ""
+      }
+    },
+    "rich_text_4vbhpb": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/capture-v1-img.png?v=1769068336",
+        "image_alt": "Neural Capture Version 1",
+        "heading": "Neural Capture™",
+        "button_label": "▶ ニューラルキャプチャの詳細",
+        "button_url": "https://www.youtube.com/watch?v=qCypGW1qMdM",
+        "body": "<p>お気に入りのリグのサウンドをキャプチャ、共有、ダウンロード。</p><p>Neural DSP 独自の生体模倣型 AI 技術を搭載した Quad Cortex は、あらゆる物理アンプ・オーバードライブ・キャビネットの音響特性を前例のない精度で学習・再現することができます。</p><p>他に類を見ない高度なニューラルネットワークアルゴリズムにより、人間の聴覚に近い形でサウンドを認識し、世界で最も自然なサウンドを再現するキャプチャソリューションを実現します。</p><p>一流のプロデューサーやサウンドデザイナーと協力し、フルサーキットモデルに加えて、無料のリグキャプチャを随時提供し続けます。</p><p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。</p><p>日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p><p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。 ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現します。</p><p>ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、 ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+      }
+    },
+    "image_with_text_gqqlkf": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/e175eed0f9874ed5b94a45e5730fa370/e175eed0f9874ed5b94a45e5730fa370.HD-1080p-2.5Mbps-43894975.mp4?v=0",
+        "heading": "モデラーの新たな可能性を切り拓く",
+        "body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>"
+      }
+    },
+    "custom_liquid_cypaxf": {
+      "type": "nd-stats",
+      "settings": {
+        "heading": "常に拡張され続ける\nギター＆ベースアルゴリズムのライブラリ",
+        "link_label": "全デバイスリスト",
+        "link_url": "https://neuraldsp.com/device-list"
+      },
+      "blocks": {
+        "stat_0": {
+          "type": "stat",
+          "settings": {
+            "value": "90+",
+            "label": "アンプ"
+          }
+        },
+        "stat_1": {
+          "type": "stat",
+          "settings": {
+            "value": "100+",
+            "label": "エフェクト"
+          }
+        },
+        "stat_2": {
+          "type": "stat",
+          "settings": {
+            "value": "1000+",
+            "label": "IRs"
+          }
+        }
+      },
+      "block_order": [
+        "stat_0",
+        "stat_1",
+        "stat_2"
+      ]
+    },
+    "custom_liquid_qbqcpw": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "驚異のコンパクトボディ",
+        "body": "<p>最先端の機械設計と製造技術を駆使することで、<br/>世界最高峰のフロア型モデラー／マルチエフェクトプロセッサーを、<br/>驚くほどコンパクトなサイズに凝縮することに成功しました。</p><h3>サイズ</h3><p><strong>29 × 19.5 × 6.9cm / 11.4” × 7.7” × 2.7”</strong></p><h3>重量</h3><p><strong>1.95kg / 4.2lbs</strong></p>"
+      }
+    },
+    "custom_liquid_tpwyqn": {
+      "type": "nd-numbered",
+      "settings": {
+        "heading": "入力と出力",
+        "subheading": "",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qc_io_2540.c0620137.webp?v=1744257005"
+      },
+      "blocks": {
+        "item_0": {
+          "type": "item",
+          "settings": {
+            "number": "1",
+            "title": "デュアルコンボ入力",
+            "text": "<p>TS、TRS、XLR対応、可変インピーダンス＆レベルコントロール内蔵、マイクプリアンプ搭載、ファンタム電源対応。</p>"
+          }
+        },
+        "item_1": {
+          "type": "item",
+          "settings": {
+            "number": "2",
+            "title": "デュアルエフェクトループ",
+            "text": "<p>外部のモノラル/ステレオエフェクトをシグナルチェーンに組み込むのに最適。追加の入出力ジャックとしても使用可能。</p>"
+          }
+        },
+        "item_2": {
+          "type": "item",
+          "settings": {
+            "number": "3",
+            "title": "1/4” 出力ジャック",
+            "text": "<p>2つのモノラル・バランス（TRS）出力で、クリアな音質と最適なノイズ性能を実現。</p>"
+          }
+        },
+        "item_3": {
+          "type": "item",
+          "settings": {
+            "number": "4",
+            "title": "XLR 出力ジャック",
+            "text": "<p>2つのモノラル・バランスXLR出力ジャック。</p>"
+          }
+        },
+        "item_4": {
+          "type": "item",
+          "settings": {
+            "number": "5",
+            "title": "ヘッドフォン出力",
+            "text": "<p>静かな環境での練習に最適。</p>"
+          }
+        },
+        "item_5": {
+          "type": "item",
+          "settings": {
+            "number": "6",
+            "title": "MIDI 入力/出力（Thru）",
+            "text": "<p>MIDIメッセージを送受信し、Quad Cortex内のすべてのパラメーターの切り替え・制御、他機器のコントロールが可能。</p>"
+          }
+        },
+        "item_6": {
+          "type": "item",
+          "settings": {
+            "number": "7",
+            "title": "デュアルエクスプレッション入力",
+            "text": "<p>最大2つのエクスプレッションペダルを接続可能。ワウ、ボリューム、ピッチシフトなどをコントロール可能。</p>"
+          }
+        },
+        "item_7": {
+          "type": "item",
+          "settings": {
+            "number": "8",
+            "title": "USB",
+            "text": "<p>超低遅延オーディオ伝送、ファームウェア更新、MIDI通信などに対応。</p>"
+          }
+        },
+        "item_8": {
+          "type": "item",
+          "settings": {
+            "number": "9",
+            "title": "11基のステンレス製ストンプ＋ロータリーアクチュエーター",
+            "text": "<p>スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。すべてのオーディオコネクターはNeutrik®製。</p>"
+          }
+        },
+        "item_9": {
+          "type": "item",
+          "settings": {
+            "number": "10",
+            "title": "Neural Capture出力",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "item_0",
+        "item_1",
+        "item_2",
+        "item_3",
+        "item_4",
+        "item_5",
+        "item_6",
+        "item_7",
+        "item_8",
+        "item_9"
+      ]
+    },
+    "rich_text_dgvea3": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-right",
+        "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-cortex_cloud_img.webp?v=1742889867",
+        "image_alt": "",
+        "heading": "Cortex Cloud",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/neuraldsp-account",
+        "body": "<p>iOS と Android 対応の Cortex Mobile アプリを使って、ユーザー、プリセット、Neural Capture を発見しましょう。</p><p>Neural DSP アカウントを Quad Cortex にリンクすることで、バックアップの作成、コンテンツの共有、他のユーザーからのアイテムのダウンロードが可能になります。</p><p>さらに、インパルスレスポンス（IR）ライブラリも利用できるようになり、IR を Quad Cortex に転送したり、アカウントに保存された IR を管理することもできます。</p>"
+      }
+    },
+    "custom_liquid_aieqim": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "media-left",
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/cc-laptop-group_a93cb64d-6c1f-4331-b2cb-fda349d503ff.webp?v=1744699177",
+        "image_alt": "",
+        "heading": "Cortex Control™",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/neuraldsp-account",
+        "body": "<p>Quad Cortex のあらゆる機能と設定を、洗練された直感的なデスクトップ<br/>インターフェースで簡単に操作。</p><p>*Cortex Control™ および Cortex Cloud™ をご利用いただくには、専用のアカウントが必要となります。</p>"
+      }
+    },
+    "collapsible_content_qcfaq1": {
+      "type": "nd-faq",
+      "settings": {
+        "eyebrow": "FAQs",
+        "heading": "よくあるご質問",
+        "anchor": "faq"
+      },
+      "blocks": {
+        "qa_0": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortex にはいくつのデバイスが搭載されていますか？",
+            "answer": "<p>現時点で、Quad Cortex には90以上のアンプ、100以上のエフェクト、1,000以上のIRが搭載されています。この数は将来のCorOSアップデートによってさらに増えていきます。</p>"
+          }
+        },
+        "qa_1": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural DSP プラグインと比べて、音質やパフォーマンスはどうですか？",
+            "answer": "<p>私たちは、プラグインで成功を収めたのと同じモデリング手法を使用しています。Quad Cortex では、それらが大量かつ増え続ける形で、ツアーにも対応できるフォーマットにまとめられています。</p>"
+          }
+        },
+        "qa_2": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural Capture とは何ですか？",
+            "answer": "<p>他社もアナログ機材の音をデジタルでキャプチャする技術を持っていますが、機械学習と組み込み処理技術の進化により、私たちはこの分野に大きく貢献できると考えました。私たちの生体模倣的アプローチは、先進的な機械学習技術と神経科学を組み合わせており、人間の耳と同じように音を「聴く」AIを訓練する方法を開発しました。<br/><br/>Quad Cortex のニューラルネットワークは、ユーザーと同じように音を認識し、非常に高精度かつ詳細なキャプチャを実現します。その結果得られるデジタルリグは、現在市場で最も正確かつ強力です。</p>"
+          }
+        },
+        "qa_3": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural DSP プラグインを購入済みの場合、QCで使えますか？",
+            "answer": "<p>CorOS 3.0.0 のリリースにより、待望の Plugin Compatibility（PCOM）機能がQuad Cortexで使用可能になりました。これにより、人気プラグインのデバイスがQC内の豊富なデバイスライブラリと統合され、新たな音作りの可能性が広がります。<br/><br/>現在QCに対応しているプラグインには「COMPATIBLE」バッジが付いています。他のプラグインも、対応するCorOSバージョンがリリースされ次第、順次対応予定です。<br/>詳細は <a href=\"https://neuraldsp.com/news\" rel=\"noopener\" target=\"_blank\">PCOMページ</a> をご覧ください。</p>"
+          }
+        },
+        "qa_4": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural DSP プラグインのプリセットはQCに読み込めますか？",
+            "answer": "<p>現時点ではできませんが、将来のアップデートで、デスクトップ用コントローラー「Cortex Control」を通じて対応予定です。このツールでは、プラグインのプリセットフォルダをスキャンし、QC対応のプリセットを自動解析・インポートできるようになります。</p>"
+          }
+        },
+        "qa_5": {
+          "type": "qa",
+          "settings": {
+            "question": "他のプラグインはQCで動作しますか？",
+            "answer": "<p>いいえ、動作しません。</p>"
+          }
+        },
+        "qa_6": {
+          "type": "qa",
+          "settings": {
+            "question": "デスクトップ用コントローラーはありますか？",
+            "answer": "<p>はい。「Cortex Control」を使えば、QCのすべての機能と設定を直感的なインターフェースで管理できます。</p>"
+          }
+        },
+        "qa_7": {
+          "type": "qa",
+          "settings": {
+            "question": "QCがなくてもデスクトップコントローラーは使えますか？",
+            "answer": "<p>いいえ、使えません。</p>"
+          }
+        },
+        "qa_8": {
+          "type": "qa",
+          "settings": {
+            "question": "QCを使うのにモバイルアプリは必要ですか？",
+            "answer": "<p>アプリは必須ではありません。QCは、外部デバイスなしでも簡単に操作・設定できるように設計されています。ただし、アプリを使えば、他ユーザーのプリセットを閲覧・共有できるため、新しい音作りやコミュニティとのつながりに役立ちます。</p>"
+          }
+        },
+        "qa_9": {
+          "type": "qa",
+          "settings": {
+            "question": "QCには専用ケースは付属していますか？",
+            "answer": "<p>いいえ、付属していません。Gig Caseは別売りです。</p>"
+          }
+        },
+        "qa_10": {
+          "type": "qa",
+          "settings": {
+            "question": "自分のIRをQCに読み込むことはできますか？",
+            "answer": "<p>もちろん可能です。サードパーティーのIRも読み込めます。</p>"
+          }
+        },
+        "qa_11": {
+          "type": "qa",
+          "settings": {
+            "question": "QCはUSBオーディオインターフェースとして使えますか？",
+            "answer": "<p>はい。Cirrus Logicのコーデックと超低遅延USB伝送を備えており、オーディオインターフェースとしても高性能です。</p>"
+          }
+        },
+        "qa_12": {
+          "type": "qa",
+          "settings": {
+            "question": "QCはプラグインのトリガー用ハードウェア以上の存在ですが、その違いは？",
+            "answer": "<p>QCは単なるプラグイントリガーではありません。商用PC以上の処理能力を持ち、同時に多数のモデルを実行可能です。高品質なインターフェースとして、安定した変換とダイナミクス性能を提供します。また、自己完結型の設計により、すべての機能が一体化されており、Neural Captureなどプラグインでは得られない革新的な機能も搭載しています。</p>"
+          }
+        },
+        "qa_13": {
+          "type": "qa",
+          "settings": {
+            "question": "コンパクトに見えますが、ツアーなどにも耐えられますか？",
+            "answer": "<p>はい。堅牢なアルマイト加工のアルミボディを採用し、ロータリーアクチュエーターもステンレス製のカスタムデザインです。非常に耐久性の高い作りになっています。</p>"
+          }
+        },
+        "qa_14": {
+          "type": "qa",
+          "settings": {
+            "question": "ストンプノブが壊れる心配はありますか？",
+            "answer": "<p>まったく心配いりません。ステンレス製の外装と、ABS製の内部構造により、非常に高い耐久性を実現しています。踏んで使えるだけでなく、回して操作も可能な、最高のフットスイッチです。</p>"
+          }
+        },
+        "qa_15": {
+          "type": "qa",
+          "settings": {
+            "question": "ノブを踏むとパラメータが変わることはありますか？",
+            "answer": "<p>いいえ。ソフトウェアが誤作動を防止しています。</p>"
+          }
+        },
+        "qa_16": {
+          "type": "qa",
+          "settings": {
+            "question": "同時にいくつのバーチャルリグを動かせますか？",
+            "answer": "<p>構成によりますが、2〜4個のリグを同時に実行可能です。Neural Capture ベースのアンプはCPU負荷が低いため、より多くのリグを動作させることができます。</p>"
+          }
+        },
+        "qa_17": {
+          "type": "qa",
+          "settings": {
+            "question": "QCに接続できる楽器の数は？",
+            "answer": "<p>最大で4台まで接続可能です。FXループのSend/Returnを追加の入出力として使用できます。</p>"
+          }
+        },
+        "qa_18": {
+          "type": "qa",
+          "settings": {
+            "question": "ボーカルやシンセにも使えますか？",
+            "answer": "<p>もちろん可能です。インプット1・2には高品位マイクプリアンプ、ファンタム電源、可変インピーダンスが搭載されています。</p>"
+          }
+        },
+        "qa_19": {
+          "type": "qa",
+          "settings": {
+            "question": "今後、アンプ・IR・エフェクトは増えますか？",
+            "answer": "<p>はい。私たちは継続的にデバイスライブラリを拡充することをお約束します。Wi-Fiによる簡単なファームウェア更新で、常に最新の状態を保てます。</p>"
+          }
+        },
+        "qa_20": {
+          "type": "qa",
+          "settings": {
+            "question": "他のハードウェア機器と組み合わせて使えますか？",
+            "answer": "<p>はい。2つのモノラルFXループとエクスプレッション入力を備えており、外部ペダルなどと組み合わせて使用可能です。</p>"
+          }
+        },
+        "qa_21": {
+          "type": "qa",
+          "settings": {
+            "question": "プラグインと併用できますか？",
+            "answer": "<p>はい。多くのスタジオユーザーがDAW内の他のプラグインと併用しています。</p>"
+          }
+        },
+        "qa_22": {
+          "type": "qa",
+          "settings": {
+            "question": "ソフトウェア会社なのに、なぜハードウェアも得意なの？",
+            "answer": "<p>当初からソフトとハードを両立することを目指しており、プラグインより開発に時間がかかっただけです。CEOのDoug CastroはDarkglass Electronicsの創業者で、10年以上にわたり信頼性の高いハードウェアを設計・製造してきました。ハードウェアエンジニアチームも50年近い開発経験があります。</p>"
+          }
+        },
+        "qa_23": {
+          "type": "qa",
+          "settings": {
+            "question": "プリセット／バンクは何個ありますか？",
+            "answer": "<p>10のセットリストにそれぞれ32バンク、1バンクに8プリセット、合計2560のプリセットが保存可能です。ファクトリープリセットはユーザープリセット枠を使用しません。</p>"
+          }
+        },
+        "qa_24": {
+          "type": "qa",
+          "settings": {
+            "question": "シーン／プリセットの切替はシームレスですか？",
+            "answer": "<p>プリセット切替時には一時的なギャップが発生します。シーンモードやストンプモードを使えば、ディレイトレイルを維持したまま音色変更が可能です。</p>"
+          }
+        },
+        "qa_25": {
+          "type": "qa",
+          "settings": {
+            "question": "ディレイ／リバーブのトレイルは保持されますか？",
+            "answer": "<p>シーンまたはストンプモードでオン／オフする際にはトレイルが保持されます。</p>"
+          }
+        },
+        "qa_26": {
+          "type": "qa",
+          "settings": {
+            "question": "プリセットを共有するWebサイトはありますか？",
+            "answer": "<p>Cortex Cloudアプリを使用して、プリセットの共有・ダウンロードが可能です。</p>"
+          }
+        },
+        "qa_27": {
+          "type": "qa",
+          "settings": {
+            "question": "DIを使ってリアンプできますか？",
+            "answer": "<p>はい、可能です。</p>"
+          }
+        },
+        "qa_28": {
+          "type": "qa",
+          "settings": {
+            "question": "コンピューターやMIDIコントローラーでQCを操作できますか？",
+            "answer": "<p>はい。QCにはMIDI INおよびMIDI Thru/Out端子があり、USB経由のMIDIにも対応しています。</p>"
+          }
+        },
+        "qa_29": {
+          "type": "qa",
+          "settings": {
+            "question": "アンドゥ機能はありますか？",
+            "answer": "<p>はい、あります。</p>"
+          }
+        },
+        "qa_30": {
+          "type": "qa",
+          "settings": {
+            "question": "ライブではどのように使いますか？",
+            "answer": "<p>メイン出力をソリッドステートパワーアンプ、FRFRキャビネット、またはミキサーに送って使用します。</p>"
+          }
+        },
+        "qa_31": {
+          "type": "qa",
+          "settings": {
+            "question": "FOHやインイヤーモニター用に別ミックスを送れますか？",
+            "answer": "<p>はい。QCのセカンド出力を設定し、出力内容を指定することで可能です。</p>"
+          }
+        },
+        "qa_32": {
+          "type": "qa",
+          "settings": {
+            "question": "多様なインピーダンスの楽器入力に対応していますか？",
+            "answer": "<p>はい。インプット1と2ではインピーダンスとゲインを調整可能です。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "qa_0",
+        "qa_1",
+        "qa_2",
+        "qa_3",
+        "qa_4",
+        "qa_5",
+        "qa_6",
+        "qa_7",
+        "qa_8",
+        "qa_9",
+        "qa_10",
+        "qa_11",
+        "qa_12",
+        "qa_13",
+        "qa_14",
+        "qa_15",
+        "qa_16",
+        "qa_17",
+        "qa_18",
+        "qa_19",
+        "qa_20",
+        "qa_21",
+        "qa_22",
+        "qa_23",
+        "qa_24",
+        "qa_25",
+        "qa_26",
+        "qa_27",
+        "qa_28",
+        "qa_29",
+        "qa_30",
+        "qa_31",
+        "qa_32"
+      ]
+    },
+    "1778490479652c548e": {
+      "type": "apps",
+      "settings": {},
+      "blocks": {},
+      "block_order": []
+    },
+    "custom_liquid_ewjyyk": {
+      "type": "nd-specs",
+      "blocks": {
+        "card_0": {
+          "type": "card",
+          "settings": {
+            "label": "製品アップデート",
+            "url": "/blogs/news"
+          }
+        }
+      },
+      "block_order": [
+        "card_0"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_6bnyff",
+    "product_newsletter_popup_qjp3np",
+    "custom_liquid_jamdvc",
+    "rich_text_6pwqvc",
+    "single_image_lgwrmz",
+    "custom_liquid_bz3bhn",
+    "single_image_ahaieh",
+    "rich_text_4vbhpb",
+    "image_with_text_gqqlkf",
+    "custom_liquid_cypaxf",
+    "custom_liquid_qbqcpw",
+    "custom_liquid_tpwyqn",
+    "rich_text_dgvea3",
+    "custom_liquid_aieqim",
+    "collapsible_content_qcfaq1",
+    "1778490479652c548e",
+    "custom_liquid_ewjyyk"
+  ]
+}

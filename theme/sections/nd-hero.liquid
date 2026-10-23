@@ -1,0 +1,82 @@
+{%- comment -%} Full-height product/page hero: background video or image, centred product cut-out, title, buy + film links. {%- endcomment -%}
+{%- liquid
+  assign s = section.settings
+  assign buy_product = product
+  if s.product != blank
+    assign buy_product = s.product
+  endif
+-%}
+<section class="nd-hero" data-hero style="--overlay: {{ s.overlay | divided_by: 100.0 }}">
+  <div class="nd-hero__film" data-hero-film-stage hidden></div>
+  <div class="nd-hero__bg" aria-hidden="true">
+    {%- if s.bg_youtube != blank -%}
+      <iframe class="nd-hero__yt" src="https://www.youtube-nocookie.com/embed/{{ s.bg_youtube }}?autoplay=1&mute=1&loop=1&playlist={{ s.bg_youtube }}&controls=0&showinfo=0&modestbranding=1&playsinline=1&rel=0&disablekb=1" title="" tabindex="-1" allow="autoplay; encrypted-media"></iframe>
+    {%- elsif s.video_url != blank -%}
+      <video src="{{ s.video_url }}" autoplay muted loop playsinline></video>
+    {%- elsif s.bg_image != blank or s.bg_image_url != blank -%}
+      {% render 'nd-media', image: s.bg_image, url: s.bg_image_url, loading: 'eager' %}
+    {%- endif -%}
+  </div>
+  {%- if s.asset_image != blank -%}
+    <div class="nd-hero__product nd-hero__product--asset"><img src="{{ s.asset_image | asset_url }}" alt="{{ s.title | escape }}" width="1600" height="1100" fetchpriority="high"></div>
+  {%- elsif s.image != blank or s.image_url != blank -%}
+    <div class="nd-hero__product">{% render 'nd-media', image: s.image, url: s.image_url, alt: s.title, loading: 'eager', sizes: '(max-width: 760px) 90vw, 620px' %}</div>
+  {%- endif -%}
+  <div class="nd-hero__copy container">
+    {%- if s.title != blank -%}<h1 class="nd-hero__title">{{ s.title }}</h1>{%- endif -%}
+    {%- if s.subtitle != blank -%}<p class="nd-hero__sub">{{ s.subtitle }}</p>{%- endif -%}
+    <div class="nd-hero__ctas">
+      {%- if s.show_buy and buy_product != blank -%}
+        <button class="btn btn--primary" type="button" data-buy-now="{{ buy_product.selected_or_first_available_variant.id }}"{% unless buy_product.available %} disabled{% endunless %}>{{ s.buy_label }}</button>
+      {%- endif -%}
+      {%- if s.film_url != blank -%}
+        {%- liquid
+          assign film_id = ''
+          if s.film_url contains 'youtu'
+            if s.film_url contains 'v='
+              assign film_id = s.film_url | split: 'v=' | last | split: '&' | first
+            else
+              assign film_id = s.film_url | split: '?' | first | split: '/' | last
+            endif
+          endif
+        -%}
+        {%- if film_id != blank -%}
+          <button class="btn btn--nochev" type="button" data-hero-film="{{ film_id }}" data-close="{{ s.film_close }}" aria-pressed="false">{{ s.film_label }}</button>
+        {%- else -%}
+          <a class="btn btn--ext" href="{{ s.film_url }}">{{ s.film_label }}</a>
+        {%- endif -%}
+      {%- endif -%}
+      {%- if s.button_label != blank and s.button_url != blank -%}
+        <a class="btn" href="{{ s.button_url }}">{{ s.button_label }}</a>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "ND · Hero",
+  "tag": "div",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "textarea", "id": "subtitle", "label": "Subtitle" },
+    { "type": "text", "id": "video_url", "label": "Background video URL (mp4)" },
+    { "type": "image_picker", "id": "bg_image", "label": "Background image" },
+    { "type": "text", "id": "bg_image_url", "label": "Background image URL" },
+    { "type": "text", "id": "asset_image", "label": "Product cut-out (theme asset file name)" },
+    { "type": "image_picker", "id": "image", "label": "Product cut-out" },
+    { "type": "text", "id": "image_url", "label": "Product cut-out URL" },
+    { "type": "range", "id": "overlay", "label": "Darken background", "min": 0, "max": 90, "step": 5, "unit": "%", "default": 45 },
+    { "type": "checkbox", "id": "show_buy", "label": "Show buy button", "default": true },
+    { "type": "product", "id": "product", "label": "Product for buy button (defaults to this page's product)" },
+    { "type": "text", "id": "buy_label", "label": "Buy button label", "default": "購入する" },
+    { "type": "text", "id": "film_label", "label": "Film link label", "default": "▶ フル動画を見る" },
+    { "type": "text", "id": "bg_youtube", "label": "Background YouTube video ID (muted loop)", "info": "Used when there is no mp4 background video." },
+    { "type": "text", "id": "film_url", "label": "Film (YouTube URL plays in place; other links open normally)" },
+    { "type": "text", "id": "film_close", "label": "Close film label", "default": "✕ 閉じる" },
+    { "type": "text", "id": "button_label", "label": "Extra button label" },
+    { "type": "text", "id": "button_url", "label": "Extra button URL" }
+  ],
+  "presets": [{ "name": "ND · Hero" }]
+}
+{% endschema %}

@@ -1,0 +1,8 @@
+{%- comment -%} Params: product {%- endcomment -%}
+<a class="nd-card" href="{{ product.url }}">
+  <span class="nd-card__media">
+    {% render 'nd-product-thumb', product: product, width: 900 %}
+  </span>
+  <span class="nd-card__title">{{ product.title }}</span>
+  <span class="nd-card__price">{% render 'nd-price', price: product.price %}{% unless product.available %} <small>{{ 'products.sold_out' | t }}</small>{% endunless %}</span>
+</a>
