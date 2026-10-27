@@ -183,6 +183,27 @@ function initFaqMore() {
   });
 }
 
+/* FAQ search: filters questions and answers as you type (shows every match, even beyond the first five) */
+function initFaqSearch() {
+  document.querySelectorAll('[data-faq-search]').forEach((input) => {
+    const sec = input.closest('section');
+    const list = sec.querySelector('[data-faq]');
+    const items = [...list.querySelectorAll('details')];
+    const none = sec.querySelector('[data-faq-none]');
+    const toggle = sec.querySelector('[data-faq-toggle]');
+    const norm = (t) => t.toLowerCase().normalize('NFKC');
+    const text = items.map((d) => norm(d.textContent));
+    input.addEventListener('input', () => {
+      const q = norm(input.value.trim());
+      if (!q) { items.forEach((d) => (d.hidden = false)); list.classList.toggle('is-clipped', toggle?.getAttribute('aria-expanded') !== 'true'); if (toggle) toggle.hidden = false; none.hidden = true; return; }
+      const words = q.split(/\s+/);
+      let n = 0;
+      items.forEach((d, i) => { const hit = words.every((w) => text[i].includes(w)); d.hidden = !hit; n += hit; });
+      list.classList.remove('is-clipped'); if (toggle) toggle.hidden = true; none.hidden = n > 0;
+    });
+  });
+}
+
 /* Accordions: every <details> (FAQs, specs, mobile menu) opens and closes with the same height glide */
 function initAccordions(root = document) {
   root.querySelectorAll('details:not([data-acc-ready])').forEach((d) => {
@@ -235,6 +256,7 @@ initNewsletter();
 initTrial();
 initKeepPlace();
 initFaqMore();
+initFaqSearch();
 initAccordions();
 initHeroFilm();
 tagSections();

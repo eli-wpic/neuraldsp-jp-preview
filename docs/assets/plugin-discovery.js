@@ -103,7 +103,22 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     count.textContent = id === 'all' ? fmt(cfg.countAll, total) : fmt(cfg.countSome, n);
   };
   rows.forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
-  new ToneRail(bar, cfg.tones, apply);
+  const rail = new ToneRail(bar, cfg.tones, apply);
+
+  // While scrolling the list on すべて, the slider follows the plugin in view (its tones light up, the handle moves to its main tone)
+  const labels = [...bar.querySelectorAll('.rail__labels button')];
+  const ids = cfg.tones.map((t) => t.id);
+  let current = null;
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) current = e.target; });
+    if (!current || rail.i !== 0) { labels.forEach((l) => l.classList.remove('is-lit')); return; }
+    const tones = (current.dataset.tones || '').split(/[\s,]+/).filter(Boolean);
+    labels.forEach((l, k) => l.classList.toggle('is-lit', k > 0 && tones.includes(ids[k])));
+    const first = ids.indexOf(tones[0]);
+    if (first > 0) rail.place(first); else rail.place(0);
+  }, { rootMargin: '-45% 0px -45% 0px' });
+  rows.forEach((r) => spy.observe(r));
+  root.addEventListener('pointerdown', () => { if (rail.i === 0) rail.place(0); });
 
   // 14日間無料体験: open this plugin's download card
   const dlg = root.querySelector('[data-trial-dialog]');

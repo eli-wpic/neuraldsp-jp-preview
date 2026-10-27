@@ -11,7 +11,7 @@
 .plugins .section-head h2 { font-size: var(--fs-2xl); }
 
 /* Tone slider: a plain line with stops (no box, no glow) — drag or click; only matching plugins stay */
-.tone { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; padding: 8px 0 28px; border-bottom: 1px solid var(--line); scroll-margin-top: 84px; }
+.tone { position: sticky; top: 64px; z-index: 5; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: 32px; padding: 14px 0 26px; background: var(--bg); border-bottom: 1px solid var(--line); scroll-margin-top: 84px; } /* stays in view while scrolling the plugins */
 .tone__label { font-size: var(--fs-s); font-weight: 600; color: var(--text); }
 .tone__count { font-size: var(--fs-s); color: var(--text-3); text-align: right; min-width: 9em; }
 .tone__empty { padding: 24px 0; color: var(--text-3); font-size: var(--fs-s); }
@@ -214,3 +214,5 @@
   .vs__price small { display: none; }
   .vs .compare__col { padding: 20px 4px 12px; }
 }
+.rail__labels button.is-lit { color: var(--text); }
+.rail__labels button.is-lit span::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent); }

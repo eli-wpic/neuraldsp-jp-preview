@@ -5,6 +5,12 @@
       {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
     </header>
     {%- assign visible = section.settings.visible | default: 5 -%}
+    {%- if section.blocks.size > visible -%}
+      <div class="faq-search">
+        <input type="search" placeholder="{{ section.settings.search_placeholder }}" aria-label="{{ section.settings.search_placeholder | escape }}" data-faq-search>
+        <p class="faq-search__none" data-faq-none hidden>{{ section.settings.search_none }}</p>
+      </div>
+    {%- endif -%}
     <div class="faq{% if section.blocks.size > visible %} is-clipped{% endif %}" data-faq style="--visible: {{ visible }}">
       {%- for block in section.blocks -%}
         <details{% if forloop.index > visible %} data-faq-more{% endif %} {{ block.shopify_attributes }}>
@@ -25,6 +31,8 @@
     { "type": "text", "id": "anchor", "label": "Anchor id (for links like #faq)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQs" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "よくあるご質問" },
+    { "type": "text", "id": "search_placeholder", "label": "Search placeholder", "default": "質問をキーワードで検索（例：電源、プラグイン）" },
+    { "type": "text", "id": "search_none", "label": "No results", "default": "該当する質問が見つかりませんでした。" },
     { "type": "number", "id": "visible", "label": "Questions shown before the button", "default": 5 },
     { "type": "text", "id": "more_label", "label": "Show-all button", "default": "すべての質問を見る（{n}）" },
     { "type": "text", "id": "less_label", "label": "Show-fewer button", "default": "閉じる" }

@@ -113,10 +113,12 @@
               <ul class="chapter__awards" aria-label="{{ s.awards_label | escape }}">
                 {%- for line in award_lines -%}
                   {%- assign a = line | strip | split: '|' -%}
-                  {%- if a.size > 1 -%}
-                    <li style="--i: {{ forloop.index0 }}">
-                      <img src="{{ a[0] | strip }}" alt="" width="128" height="52" loading="lazy">
-                      <span>{{ a[1] | strip }}{%- if a[2] != blank -%}<br>{{ a[2] | strip }}{%- endif -%}</span>
+                  {%- assign src = a[0] | strip -%}
+                  {%- if src contains 'asset:' -%}{%- assign src = src | remove: 'asset:' | asset_url -%}{%- endif -%}
+                  {%- if src != blank -%}
+                    <li style="--i: {{ forloop.index0 }}"{% if a.size < 2 %} class="is-strip"{% endif %}>
+                      <img src="{{ src }}" alt="" width="112" height="40" loading="lazy">
+                      {%- if a.size > 1 -%}<span>{{ a[1] | strip }}{%- if a[2] != blank -%}<br>{{ a[2] | strip }}{%- endif -%}</span>{%- endif -%}
                     </li>
                   {%- endif -%}
                 {%- endfor -%}
@@ -251,7 +253,7 @@
         { "type": "html", "id": "c3_body", "label": "03 body (HTML)" },
         { "type": "header", "content": "04 · Choose" },
         { "type": "text", "id": "c4_label", "label": "Label", "default": "選ぶ" },
-        { "type": "textarea", "id": "awards", "label": "Awards (shown on the last screen)", "info": "One per line: badge image URL|line 1|line 2" },
+        { "type": "textarea", "id": "awards", "label": "Awards (shown on the last screen)", "info": "One per line: badge image URL|line 1|line 2. A line with only an image (or asset:file.webp) shows as one wide strip." },
         { "type": "textarea", "id": "c4_body", "label": "Body" }
       ]
     }

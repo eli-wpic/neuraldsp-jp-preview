@@ -61,7 +61,8 @@
             "c3_title": "シンプルな接続。\n自由なセットアップ。",
             "c3_body": "<ul class=\"chapter__list\"><li><b>INPUT 2 / CAPTURE INPUT</b>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。</li><li><b>DUAL EFFECTS LOOPS</b>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。</li><li><b>XLR OUTPUTS</b>2系統のモノラル・バランスXLR出力。</li><li><b>USB-C</b>マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。</li></ul>",
             "c4_label": "選ぶ",
-            "c4_body": "小さなボディ。大きなサウンド。"
+            "c4_body": "小さなボディ。大きなサウンド。",
+            "awards": "asset:mini-awards.webp"
           }
         },
         "nano": {
@@ -98,18 +99,6 @@
         "skip_target": "plugins",
         "buy_label": "購入する",
         "more_label": "詳しく見る"
-      }
-    },
-    "mini": {
-      "type": "nd-feature",
-      "settings": {
-        "layout": "media-top",
-        "heading": "Quad Cortex mini",
-        "body": "<p>妥協ゼロ。ただ、コンパクト。</p>",
-        "button_label": "詳しく見る",
-        "button_url": "/products/quad-cortex-mini",
-        "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-home-section-bg.webp?v=1769591434",
-        "image_alt": "Quad Cortex mini"
       }
     },
     "plugins": {
@@ -402,7 +391,6 @@
   },
   "order": [
     "qc3d",
-    "mini",
     "plugins",
     "compare",
     "cortex_control",
