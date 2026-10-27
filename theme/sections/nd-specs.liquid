@@ -1,21 +1,17 @@
-{%- comment -%} Cards that open a spec sheet dialog or link out (ハードウェア仕様 / マニュアル / 製品アップデート). {%- endcomment -%}
+{%- comment -%} A row of buttons that open a spec sheet dialog or link out (ハードウェア仕様 / マニュアル / 製品アップデート). {%- endcomment -%}
 <section class="nd-specs">
   <div class="container nd-specs__row">
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
       {%- if b.modal_html != blank -%}
-        <button type="button" class="nd-specs__card" data-dialog-open="Spec-{{ block.id }}" {{ block.shopify_attributes }}>
-          {%- if b.video_url != blank -%}{% render 'nd-video', url: b.video_url, autoplay: true %}{%- else -%}{% render 'nd-media', image: b.image, url: b.image_url, alt: '' %}{%- endif -%}<span>{{ b.label }}</span>
-        </button>
+        <button type="button" class="btn" data-dialog-open="Spec-{{ block.id }}" {{ block.shopify_attributes }}>{{ b.label }}</button>
         <dialog class="nd-dialog" id="Spec-{{ block.id }}" aria-label="{{ b.label | escape }}">
           <button type="button" class="nd-dialog__close" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
           <h2>{{ b.label }}</h2>
           <div class="nd-prose nd-prose--table">{{ b.modal_html }}</div>
         </dialog>
       {%- else -%}
-        <a class="nd-specs__card" href="{{ b.url }}"{% if b.url contains 'http' %}{% unless b.url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %} {{ block.shopify_attributes }}>
-          {%- if b.video_url != blank -%}{% render 'nd-video', url: b.video_url, autoplay: true %}{%- else -%}{% render 'nd-media', image: b.image, url: b.image_url, alt: '' %}{%- endif -%}<span>{{ b.label }}</span>
-        </a>
+        <a class="btn{% if b.url contains 'http' %}{% unless b.url contains request.host %} btn--ext{% endunless %}{% endif %}" href="{{ b.url }}"{% if b.url contains 'http' %}{% unless b.url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %} {{ block.shopify_attributes }}>{{ b.label }}</a>
       {%- endif -%}
     {%- endfor -%}
   </div>

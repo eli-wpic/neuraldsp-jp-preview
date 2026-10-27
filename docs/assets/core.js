@@ -166,6 +166,23 @@ function initKeepPlace() {
   }
 }
 
+/* FAQs: the first few questions show; the button reveals the rest (and scrolls back when closing) */
+function initFaqMore() {
+  document.querySelectorAll('[data-faq-toggle]').forEach((btn) => {
+    const list = btn.previousElementSibling;
+    const more = btn.textContent;
+    btn.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') !== 'true';
+      btn.setAttribute('aria-expanded', String(open));
+      list.classList.toggle('is-clipped', !open);
+      btn.textContent = open ? btn.dataset.less : more;
+      btn.classList.toggle('btn--down', !open);
+      if (open) list.querySelectorAll('[data-faq-more]').forEach((d, i) => d.animate?.([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, delay: i * 30, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
+      else list.scrollIntoView({ block: 'start', behavior: reducedMotion() ? 'auto' : 'smooth' });
+    });
+  });
+}
+
 /* Accordions: every <details> (FAQs, specs, mobile menu) opens and closes with the same height glide */
 function initAccordions(root = document) {
   root.querySelectorAll('details:not([data-acc-ready])').forEach((d) => {
@@ -217,6 +234,7 @@ initBuyNow();
 initNewsletter();
 initTrial();
 initKeepPlace();
+initFaqMore();
 initAccordions();
 initHeroFilm();
 tagSections();

@@ -104,5 +104,14 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
   };
   rows.forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
   new ToneRail(bar, cfg.tones, apply);
+
+  // 14日間無料体験: open this plugin's download card
+  const dlg = root.querySelector('[data-trial-dialog]');
+  root.querySelectorAll('[data-trial-open]').forEach((b) => b.addEventListener('click', () => {
+    const tpl = document.getElementById(b.dataset.trialOpen);
+    if (!dlg || !tpl) return;
+    dlg.querySelector('[data-trial-body]').replaceChildren(tpl.content.cloneNode(true));
+    dlg.showModal();
+  }));
   count.textContent = fmt(cfg.countAll, total);
 });

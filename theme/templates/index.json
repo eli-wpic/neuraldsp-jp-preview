@@ -38,7 +38,8 @@
             "c4_label": "選ぶ",
             "c4_body": "7インチのタッチディスプレイと圧倒的な処理能力により、自由かつ直感的なトーン設計を実現します。",
             "c0_link_label": "プラグインの音を聴く",
-            "c0_link_url": "#plugins"
+            "c0_link_url": "#plugins",
+            "awards": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_1_no_text.png?v=1776156200|2026年 ベスト・マルチエフェクター・ペダル|2025‐2026年 ベスト・アンプモデラー\nhttps://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_2_no_text.png?v=1776156204|2024年 ベスト・マルチエフェクター・ペダル|2021年 ギア・オブ・ザ・イヤー受賞\nhttps://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_3_no_text.png?v=1776156211|2021‐2025年 ベスト・アンプモデラー|2025年 ベスト・ペダル・アンプ\nhttps://cdn.shopify.com/s/files/1/0747/8109/8202/files/QC_Accolade_4_no_text.png?v=1776156217|2024‐2025年 ベスト・アンプモデラー|2021‐2025年 ベスト・マルチエフェクター・ペダル"
           }
         },
         "mini": {
@@ -297,46 +298,6 @@
         "plugin_11"
       ]
     },
-    "videogrid": {
-      "type": "nd-video-grid",
-      "blocks": {
-        "tile_0": {
-          "type": "tile",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/b15b05ff79774c4384982ff3be83d0c6.mp4",
-            "title": "Nano Cortex",
-            "text": "ペダルボードに無限のアンプとペダル",
-            "link_label": "詳しく見る",
-            "link_url": "/products/nano-cortex"
-          }
-        },
-        "tile_1": {
-          "type": "tile",
-          "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/850a2016b0514a52a3e5448579317965.mp4",
-            "title": "Quad Cortex",
-            "text": "次世代のマルチエフェクター",
-            "link_label": "詳しく見る",
-            "link_url": "/products/quad-cortex"
-          }
-        },
-        "tile_2": {
-          "type": "tile",
-          "settings": {
-            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/Quad_Cortex_gigcase_photos_-_bannar_1.jpg?v=1742956018",
-            "title": "Gig Case",
-            "text": "ライブにも安心な専用ケース",
-            "link_label": "詳しく見る",
-            "link_url": "/products/gig-case"
-          }
-        }
-      },
-      "block_order": [
-        "tile_0",
-        "tile_1",
-        "tile_2"
-      ]
-    },
     "compare": {
       "type": "nd-compare",
       "settings": {
@@ -348,12 +309,7 @@
         "q2": "いちばん大事なのは？",
         "q2_features": "機能",
         "q2_portable": "持ち運び",
-        "q2_price": "価格",
-        "row1_label": "こんな人に",
-        "row2_label": "ディスプレイ",
-        "row3_label": "Neural Capture",
-        "row4_label": "プラグイン（PCOM）",
-        "row5_label": "サイズ"
+        "q2_price": "価格"
       },
       "blocks": {
         "m0": {
@@ -362,11 +318,13 @@
             "product": "quad-cortex",
             "role": "次世代のマルチエフェクター",
             "recommend_for": "features_yes,features_no",
-            "v1": "ライブ・スタジオで、すべてを一台にまとめたい人",
-            "v2": "7インチ タッチディスプレイ",
-            "v3": "対応",
-            "v4": "対応",
-            "v5": "29 × 19.5 × 6.9cm / 1.95kg"
+            "width_cm": 29,
+            "size_text": "29 × 19.5 cm",
+            "weight_g": 1950,
+            "switches": 11,
+            "screen": true,
+            "capture": true,
+            "plugins": true
           }
         },
         "m1": {
@@ -375,11 +333,13 @@
             "product": "quad-cortex-mini",
             "role": "妥協ゼロ。ただ、コンパクト。",
             "recommend_for": "portable_yes,price_yes",
-            "v1": "Quad Cortex の体験を、コンパクトに持ち運びたい人",
-            "v2": "7インチ マルチタッチ・ディスプレイ",
-            "v3": "対応",
-            "v4": "対応",
-            "v5": "コンパクト"
+            "width_cm": 22.8,
+            "size_text": "22.8 × 11.8 cm",
+            "weight_g": 1500,
+            "switches": 4,
+            "screen": true,
+            "capture": true,
+            "plugins": true
           }
         },
         "m2": {
@@ -388,11 +348,13 @@
             "product": "nano-cortex",
             "role": "ペダルボードに無限のアンプとペダル",
             "recommend_for": "portable_no,price_no",
-            "v1": "ペダルボードに、キャプチャーの音を足したい人",
-            "v2": "なし（ノブ操作＋アプリ）",
-            "v3": "対応",
-            "v4": "非対応",
-            "v5": "手のひらサイズ・620g"
+            "width_cm": 14.4,
+            "size_text": "14.4 × 10.3 cm",
+            "weight_g": 620,
+            "switches": 2,
+            "screen": false,
+            "capture": true,
+            "plugins": false
           }
         }
       },
@@ -442,7 +404,6 @@
     "qc3d",
     "mini",
     "plugins",
-    "videogrid",
     "compare",
     "cortex_control",
     "news",

@@ -2,7 +2,14 @@
 <section class="nd-html nd-html--{{ section.settings.width }}">
   <div class="container">
     {%- if section.settings.heading != blank -%}<h2 class="nd-html__title">{{ section.settings.heading }}</h2>{%- endif -%}
-    <div class="nd-prose nd-prose--table">{{ section.settings.html }}</div>
+    {%- if section.settings.collapsed_label != blank -%}
+      <details class="nd-more">
+        <summary class="btn btn--nochev">{{ section.settings.collapsed_label }}</summary>
+        <div class="nd-prose nd-prose--table">{{ section.settings.html }}</div>
+      </details>
+    {%- else -%}
+      <div class="nd-prose nd-prose--table">{{ section.settings.html }}</div>
+    {%- endif -%}
   </div>
 </section>
 {% schema %}
@@ -11,6 +18,7 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading" },
     { "type": "html", "id": "html", "label": "Content (HTML)" },
+    { "type": "text", "id": "collapsed_label", "label": "Hide behind a button (label)", "info": "When set, the content stays closed until this button is pressed." },
     { "type": "select", "id": "width", "label": "Width", "default": "narrow", "options": [
       { "value": "narrow", "label": "Reading width" }, { "value": "wide", "label": "Wide" }
     ] }

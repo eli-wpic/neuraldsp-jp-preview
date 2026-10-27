@@ -108,6 +108,20 @@
               {%- if p != blank -%}<button class="btn btn--primary" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>{%- endif -%}
               <a class="btn" href="{{ more_url | default: '#' }}">{{ s.more_label }}</a>
             </div>
+            {%- if b.awards != blank -%}
+              {%- assign award_lines = b.awards | newline_to_br | split: '<br />' -%}
+              <ul class="chapter__awards" aria-label="{{ s.awards_label | escape }}">
+                {%- for line in award_lines -%}
+                  {%- assign a = line | strip | split: '|' -%}
+                  {%- if a.size > 1 -%}
+                    <li style="--i: {{ forloop.index0 }}">
+                      <img src="{{ a[0] | strip }}" alt="" width="128" height="52" loading="lazy">
+                      <span>{{ a[1] | strip }}{%- if a[2] != blank -%}<br>{{ a[2] | strip }}{%- endif -%}</span>
+                    </li>
+                  {%- endif -%}
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
           </article>
           <nav class="qc3d__nav" aria-label="{{ p.title | escape }}">
             <button type="button" data-goto="0">00</button>
@@ -176,6 +190,7 @@
     { "type": "text", "id": "more_label", "label": "Details button", "default": "詳しく見る" },
     { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
     { "type": "text", "id": "canvas_label", "label": "3D description (screen readers)", "default": "製品の3Dモデル。左右にドラッグすると回転します。" },
+    { "type": "text", "id": "awards_label", "label": "Awards label (screen readers)", "default": "受賞歴" },
     { "type": "text", "id": "skip_label", "label": "Skip label", "default": "スキップ" },
     { "type": "text", "id": "skip_target", "label": "Skip to section id", "default": "plugins" }
   ],
@@ -236,6 +251,7 @@
         { "type": "html", "id": "c3_body", "label": "03 body (HTML)" },
         { "type": "header", "content": "04 · Choose" },
         { "type": "text", "id": "c4_label", "label": "Label", "default": "選ぶ" },
+        { "type": "textarea", "id": "awards", "label": "Awards (shown on the last screen)", "info": "One per line: badge image URL|line 1|line 2" },
         { "type": "textarea", "id": "c4_body", "label": "Body" }
       ]
     }

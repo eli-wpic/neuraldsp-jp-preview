@@ -98,3 +98,14 @@ for f in list(T.glob('*.json')) + list((THEME / 'sections').glob('*.json')):
         s = s.replace(a, b)
     if s != o:
         f.write_text(s)
+
+# mini page: the visual comparison (same as the homepage, without the chooser) before the full table, which sits behind a button
+head, m = load('product.quad-cortex-mini')
+_, home = load('index')
+if 'compare' not in m['order'] and 'compare' in home['sections'] and 'rich_text_ewyvb6' in m['order']:
+    comp = json.loads(json.dumps(home['sections']['compare']))
+    comp['settings'].update(show_chooser=False, eyebrow='Compare', heading='Quad Cortex mini と比べる', body='')
+    m['sections']['compare'] = comp
+    m['order'].insert(m['order'].index('rich_text_ewyvb6'), 'compare')
+    m['sections']['rich_text_ewyvb6']['settings']['collapsed_label'] = '詳しい比較表を見る（機能・入出力）'
+    save('product.quad-cortex-mini', head, m)

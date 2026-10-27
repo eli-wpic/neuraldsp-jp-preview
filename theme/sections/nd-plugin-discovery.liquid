@@ -53,11 +53,22 @@
             {%- if b.genres != blank -%}<p class="genres">{{ b.genres }}</p>{%- endif -%}
             <p class="compat">{{ s.compat_label }}：Quad Cortex ／ Quad Cortex mini <span>（Nano Cortex {{ s.not_supported }}）</span></p>
             <div class="plugin-actions">
-              <a class="btn btn--ext" href="{{ b.trial_url | default: s.trial_url }}" target="_blank" rel="noopener">{{ s.trial_label }}</a>
+              <button type="button" class="btn btn--nochev" data-trial-open="TrialTpl-{{ block.id }}">{{ s.trial_label }}</button>
               {%- if bp != blank -%}<a class="btn btn--primary" href="{{ bp.url }}">{{ s.details_label }}</a>{%- endif -%}
             </div>
             {%- if s.trial_note != blank -%}<p class="trial-note">{{ s.trial_note }}{%- if b.plugin_url != blank -%} <a class="ext" href="{{ b.plugin_url }}" target="_blank" rel="noopener">{{ s.site_label }}</a>{%- endif -%}</p>{%- endif -%}
           </div>
+          <template id="TrialTpl-{{ block.id }}">
+            {%- liquid
+              assign art = ''
+              if b.image_url != blank
+                assign art = b.image_url
+              elsif bp.featured_image
+                assign art = bp.featured_image | image_url: width: 900
+              endif
+            -%}
+            {% render 'nd-trial-panel', name: b.name, image: b.image, image_url: art, version: b.version, win: b.win_url, mac: b.mac_url, manual: b.manual_url, changelog: b.changelog_url, past: b.past_url %}
+          </template>
         </article>
       {%- endfor -%}
       <p class="tone__empty" data-tone-empty hidden>{{ s.empty_label }}</p>
@@ -93,6 +104,10 @@
       </div>
     {%- endif -%}
   </div>
+<dialog class="nd-dialog nd-trial" data-trial-dialog aria-label="{{ s.trial_label | escape }}">
+  <button type="button" class="nd-dialog__close" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
+  <div data-trial-body></div>
+</dialog>
 </section>
 <script type="module" src="{{ 'plugin-discovery.js' | asset_url }}"></script>
 {% schema %}
@@ -138,7 +153,14 @@
     { "type": "text", "id": "image_url", "label": "Artwork URL" },
     { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
     { "type": "text", "id": "plugin_url", "label": "Plugin page (neuraldsp.com)" },
-    { "type": "text", "id": "trial_url", "label": "Trial URL override" }
+    { "type": "text", "id": "trial_url", "label": "Trial URL override (legacy)" },
+    { "type": "header", "content": "14-day trial downloads (blank = 準備中)" },
+    { "type": "text", "id": "version", "label": "Version line" },
+    { "type": "url", "id": "win_url", "label": "Windows installer" },
+    { "type": "url", "id": "mac_url", "label": "macOS installer" },
+    { "type": "url", "id": "manual_url", "label": "Manual" },
+    { "type": "url", "id": "changelog_url", "label": "Changelog" },
+    { "type": "url", "id": "past_url", "label": "Past releases" }
   ] }],
   "presets": [{ "name": "ND · Plugin discovery" }]
 }

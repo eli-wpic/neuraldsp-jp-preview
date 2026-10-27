@@ -104,5 +104,14 @@
   "gift_card": {
     "title": "ギフトカード",
     "expired": "このギフトカードは有効期限が切れています。"
+  },
+  "trial": {
+    "installers": "インストーラー",
+    "soon": "準備中",
+    "manual": "マニュアル",
+    "changelog": "変更履歴",
+    "past": "過去のリリース",
+    "version_soon": "ダウンロードは近日公開予定です",
+    "free": "14日間無料体験"
   }
 }

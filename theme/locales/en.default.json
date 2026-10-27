@@ -104,5 +104,14 @@
   "gift_card": {
     "title": "Gift card",
     "expired": "This gift card has expired."
+  },
+  "trial": {
+    "installers": "Installers",
+    "soon": "Coming soon",
+    "manual": "Manual",
+    "changelog": "Changelog",
+    "past": "Past releases",
+    "version_soon": "Downloads coming soon",
+    "free": "14-day free trial"
   }
 }

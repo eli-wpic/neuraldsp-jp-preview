@@ -287,7 +287,8 @@
       "type": "nd-html",
       "settings": {
         "width": "wide",
-        "html": "<h3>Quad Cortex との比較</h3><img alt=\"\" loading=\"lazy\" src=\"https://neuraldsp.jp/cdn/shop/files/9789b00a3d5a31041fb594ab2f8ca442_8f43fc47-0ab2-48a9-b1f4-d03c30af6efb.svg?v=1769153054\"/><p>CorOS 機能一覧</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>バーチャル・デバイス・ライブラリ</th><td>200</td><td>200</td></tr><tr><th>Neural Capture ライブラリ</th><td>1500</td><td>1500</td></tr><tr><th>インパルス・レスポンス（IR）ライブラリ</th><td>1000</td><td>1000</td></tr><tr><th>ユーザー・プリセット保存数</th><td>3072</td><td>3072</td></tr><tr><th>ユーザー・キャプチャ保存数</th><td>2048</td><td>2048</td></tr><tr><th>ユーザー IR 保存数</th><td>2048</td><td>2048</td></tr><tr><th>プラグイン互換性</th><td>対応</td><td>対応</td></tr><tr><th>パラメーター・エンコーダー割り当て</th><td>対応*</td><td>対応（最大10同時）</td></tr><tr><th>SCENE &amp; STOMP モード</th><td>対応**</td><td>対応（1プリセットあたり8）</td></tr><tr><th>HYBRID モード</th><td>対応***</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 1</th><td>対応</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 2</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Cloud™ アクセス</th><td>対応</td><td>対応</td></tr><tr><th>クラウドバックアップ</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Control™ アプリ</th><td>対応</td><td>対応</td></tr><tr><th>グローバル EQ</th><td>対応</td><td>対応</td></tr><tr><th>ルーパー</th><td>対応</td><td>対応</td></tr><tr><th>モメンタリー・フットスイッチ割り当て</th><td>非対応</td><td>対応</td></tr></tbody></table><p>*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。</p><p>**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。</p><p>***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。</p><p>ハードウェア I/O</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>オーディオ入力</th><td>1× 1/4インチ TS（入力 1）<br/>1× コンボ XLR + 1/4インチ TRS（入力 2）<br/>1× 1/4インチ TRS（リターン 1/2）*</td><td>2× コンボ XLR + 1/4インチ TRS（入力 1/2）<br/>2× 1/4インチ TRS（リターン 1/2）</td></tr><tr><th>オーディオ出力</th><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TS（アウト 3/4）<br/>1× 1/4インチ TRS（センド 1/2）*<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/8インチ TRS（ヘッドフォン）</td><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TRS（アウト 3/4）<br/>2× 1/4インチ TRS（センド 1/2）<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/4インチ TRS（ヘッドフォン）</td></tr><tr><th>ヘッドフォン</th><td>対応（1/8インチ TRS）</td><td>対応（1/4インチ TRS）</td></tr><tr><th>USB オーディオ</th><td>対応（USB-C）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td><td>対応（USB-A）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td></tr><tr><th>MIDI</th><td>MIDI 入力（1/8インチ TRS Type-A）<br/>MIDI 出力（1/8インチ TRS Type-A）<br/>MIDI Over USB 対応</td><td>MIDI 入力（DIN）<br/>MIDI 出力（DIN）<br/>MIDI Over USB 対応</td></tr><tr><th>エクスプレッション・ペダル</th><td>Expression 1：1/4インチ TRS<br/>Expression 2：MIDI</td><td>Expression 1：1/4インチ TRS<br/>Expression 2：1/4インチ TRS</td></tr><tr><th>電源</th><td>12V DC 1.2A<br/>センターネガティブ<br/>2.1 / 5.5mm DC ロッキングコネクター<br/>電源アダプター付属</td><td>12V DC 3A<br/>センターネガティブ<br/>2.1 / 5.5mm DC 標準コネクター 電源アダプター付属</td></tr></tbody></table><p>*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。</p><p>その他</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>ワイヤレス接続</th><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）<br/></td><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）</td></tr><tr><th>電源スイッチ</th><td>あり</td><td>あり</td></tr><tr><th>マスターボリューム</th><td>あり（＋／− ボタン）</td><td>あり（ノブ）</td></tr><tr><th>フットスイッチ</th><td>ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ</td><td>ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ</td></tr><tr><th>ディスプレイ</th><td>7インチ カラータッチスクリーン</td><td>7インチ カラータッチスクリーン</td></tr><tr><th>シャーシ</th><td>アルマイト加工アルミニウム</td><td>アルマイト加工アルミニウム</td></tr><tr><th>外形寸法</th><td>22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）</td><td>29 × 19.5 cm（11.4 × 7.7インチ）</td></tr><tr><th>重量</th><td>1.5 kg（3.3 lbs）</td><td>1.95 kg（4.2 lbs）</td></tr><tr><th>価格</th><td>¥219,000</td><td>¥279,000</td></tr></tbody></table>"
+        "html": "<h3>Quad Cortex との比較</h3><img alt=\"\" loading=\"lazy\" src=\"https://neuraldsp.jp/cdn/shop/files/9789b00a3d5a31041fb594ab2f8ca442_8f43fc47-0ab2-48a9-b1f4-d03c30af6efb.svg?v=1769153054\"/><p>CorOS 機能一覧</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>バーチャル・デバイス・ライブラリ</th><td>200</td><td>200</td></tr><tr><th>Neural Capture ライブラリ</th><td>1500</td><td>1500</td></tr><tr><th>インパルス・レスポンス（IR）ライブラリ</th><td>1000</td><td>1000</td></tr><tr><th>ユーザー・プリセット保存数</th><td>3072</td><td>3072</td></tr><tr><th>ユーザー・キャプチャ保存数</th><td>2048</td><td>2048</td></tr><tr><th>ユーザー IR 保存数</th><td>2048</td><td>2048</td></tr><tr><th>プラグイン互換性</th><td>対応</td><td>対応</td></tr><tr><th>パラメーター・エンコーダー割り当て</th><td>対応*</td><td>対応（最大10同時）</td></tr><tr><th>SCENE &amp; STOMP モード</th><td>対応**</td><td>対応（1プリセットあたり8）</td></tr><tr><th>HYBRID モード</th><td>対応***</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 1</th><td>対応</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 2</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Cloud™ アクセス</th><td>対応</td><td>対応</td></tr><tr><th>クラウドバックアップ</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Control™ アプリ</th><td>対応</td><td>対応</td></tr><tr><th>グローバル EQ</th><td>対応</td><td>対応</td></tr><tr><th>ルーパー</th><td>対応</td><td>対応</td></tr><tr><th>モメンタリー・フットスイッチ割り当て</th><td>非対応</td><td>対応</td></tr></tbody></table><p>*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。</p><p>**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。</p><p>***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。</p><p>ハードウェア I/O</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>オーディオ入力</th><td>1× 1/4インチ TS（入力 1）<br/>1× コンボ XLR + 1/4インチ TRS（入力 2）<br/>1× 1/4インチ TRS（リターン 1/2）*</td><td>2× コンボ XLR + 1/4インチ TRS（入力 1/2）<br/>2× 1/4インチ TRS（リターン 1/2）</td></tr><tr><th>オーディオ出力</th><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TS（アウト 3/4）<br/>1× 1/4インチ TRS（センド 1/2）*<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/8インチ TRS（ヘッドフォン）</td><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TRS（アウト 3/4）<br/>2× 1/4インチ TRS（センド 1/2）<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/4インチ TRS（ヘッドフォン）</td></tr><tr><th>ヘッドフォン</th><td>対応（1/8インチ TRS）</td><td>対応（1/4インチ TRS）</td></tr><tr><th>USB オーディオ</th><td>対応（USB-C）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td><td>対応（USB-A）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td></tr><tr><th>MIDI</th><td>MIDI 入力（1/8インチ TRS Type-A）<br/>MIDI 出力（1/8インチ TRS Type-A）<br/>MIDI Over USB 対応</td><td>MIDI 入力（DIN）<br/>MIDI 出力（DIN）<br/>MIDI Over USB 対応</td></tr><tr><th>エクスプレッション・ペダル</th><td>Expression 1：1/4インチ TRS<br/>Expression 2：MIDI</td><td>Expression 1：1/4インチ TRS<br/>Expression 2：1/4インチ TRS</td></tr><tr><th>電源</th><td>12V DC 1.2A<br/>センターネガティブ<br/>2.1 / 5.5mm DC ロッキングコネクター<br/>電源アダプター付属</td><td>12V DC 3A<br/>センターネガティブ<br/>2.1 / 5.5mm DC 標準コネクター 電源アダプター付属</td></tr></tbody></table><p>*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。</p><p>その他</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>ワイヤレス接続</th><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）<br/></td><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）</td></tr><tr><th>電源スイッチ</th><td>あり</td><td>あり</td></tr><tr><th>マスターボリューム</th><td>あり（＋／− ボタン）</td><td>あり（ノブ）</td></tr><tr><th>フットスイッチ</th><td>ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ</td><td>ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ</td></tr><tr><th>ディスプレイ</th><td>7インチ カラータッチスクリーン</td><td>7インチ カラータッチスクリーン</td></tr><tr><th>シャーシ</th><td>アルマイト加工アルミニウム</td><td>アルマイト加工アルミニウム</td></tr><tr><th>外形寸法</th><td>22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）</td><td>29 × 19.5 cm（11.4 × 7.7インチ）</td></tr><tr><th>重量</th><td>1.5 kg（3.3 lbs）</td><td>1.95 kg（4.2 lbs）</td></tr><tr><th>価格</th><td>¥219,000</td><td>¥279,000</td></tr></tbody></table>",
+        "collapsed_label": "詳しい比較表を見る（機能・入出力）"
       }
     },
     "custom_liquid_gqvxw7": {
@@ -572,6 +573,74 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/QC_Minis_flow.png?v=1769064771",
         "image_alt": ""
       }
+    },
+    "compare": {
+      "type": "nd-compare",
+      "settings": {
+        "heading": "Quad Cortex mini と比べる",
+        "body": "",
+        "q1": "プラグインを使いたい？",
+        "q1_yes": "使いたい",
+        "q1_no": "こだわらない",
+        "q2": "いちばん大事なのは？",
+        "q2_features": "機能",
+        "q2_portable": "持ち運び",
+        "q2_price": "価格",
+        "show_chooser": false,
+        "eyebrow": "Compare"
+      },
+      "blocks": {
+        "m0": {
+          "type": "model",
+          "settings": {
+            "product": "quad-cortex",
+            "role": "次世代のマルチエフェクター",
+            "recommend_for": "features_yes,features_no",
+            "width_cm": 29,
+            "size_text": "29 × 19.5 cm",
+            "weight_g": 1950,
+            "switches": 11,
+            "screen": true,
+            "capture": true,
+            "plugins": true
+          }
+        },
+        "m1": {
+          "type": "model",
+          "settings": {
+            "product": "quad-cortex-mini",
+            "role": "妥協ゼロ。ただ、コンパクト。",
+            "recommend_for": "portable_yes,price_yes",
+            "width_cm": 22.8,
+            "size_text": "22.8 × 11.8 cm",
+            "weight_g": 1500,
+            "switches": 4,
+            "screen": true,
+            "capture": true,
+            "plugins": true
+          }
+        },
+        "m2": {
+          "type": "model",
+          "settings": {
+            "product": "nano-cortex",
+            "role": "ペダルボードに無限のアンプとペダル",
+            "recommend_for": "portable_no,price_no",
+            "width_cm": 14.4,
+            "size_text": "14.4 × 10.3 cm",
+            "weight_g": 620,
+            "switches": 2,
+            "screen": false,
+            "capture": true,
+            "plugins": false
+          }
+        }
+      },
+      "block_order": [
+        "m0",
+        "m1",
+        "m2"
+      ]
     }
   },
   "order": [
@@ -589,6 +658,7 @@
     "custom_liquid_tpwyqn",
     "single_image_ahaieh",
     "rich_text_w4egmi",
+    "compare",
     "rich_text_ewyvb6",
     "custom_liquid_gqvxw7",
     "collapsible_content_rqxwrm",

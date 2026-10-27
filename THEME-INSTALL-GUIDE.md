@@ -151,3 +151,11 @@ Open **Customize → Home page → ND · Hero 3D + campaign**. The hero holds a 
 - **Cortex Control / Cortex Cloud:** the hero has the Cortex Control film looping behind it, and ▶ フル動画を見る plays it in place.
 - **Awards:** every badge sits in the same-size box above its text.
 - **Found on the live store, not the theme:** the article 「quad-cortex-pluginfree-campaign」 shows five plugin images that no longer exist on Shopify's CDN (404 on the live site too). Re-upload them in the blog post.
+
+## 13. Trial downloads, comparison, FAQs (latest round)
+
+- **14日間無料体験 opens a download card** for that plugin: Windows / macOS installers, マニュアル, 変更履歴, 過去のリリース. Until the packages arrive every button shows 準備中. Add the links per plugin in **Customize → plugin section → each plugin → "14-day trial downloads"**, and on each plugin page in **ND · 14-day trial dialog**.
+- **Pricing:** the bundle prices in `202610_Plugin_Bundle_Pricing.xlsx` (list price) already match the live store, so no price changes were needed.
+- **Homepage:** the Nano Cortex / Quad Cortex / Gig Case video tiles are removed. The Quad Cortex story shows its 4 award badges on its last screen (add awards for other products in the hero's product item → Awards).
+- **Comparison:** Quad Cortex, mini and Nano drawn to real scale, with size, weight bars, footswitch dots and ✓ for touchscreen / Neural Capture / plugins. The mini page shows the same chart; the full feature table is behind 「詳しい比較表を見る」.
+- **FAQs** show 5 questions, then 「すべての質問を見る」. **Spec / manual** links are now plain buttons (the empty boxes are gone).

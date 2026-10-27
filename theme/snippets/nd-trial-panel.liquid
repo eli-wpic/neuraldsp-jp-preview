@@ -1,0 +1,35 @@
+{%- comment -%}
+  14-day trial download card (one plugin): artwork, name, installers (Windows / macOS) and links.
+  Any link left blank shows as 準備中 (not clickable) until the download is added.
+  Params: name, image_url, image, version, win, mac, manual, changelog, past
+{%- endcomment -%}
+<div class="trial-card">
+  <div class="trial-card__art">
+    {%- if image != blank -%}{{ image | image_url: width: 900 | image_tag: alt: '', loading: 'lazy' }}
+    {%- elsif image_url != blank -%}<img src="{{ image_url }}" alt="" loading="lazy" width="900" height="560">{%- endif -%}
+  </div>
+  <div class="trial-card__body">
+    <p class="trial-card__eyebrow">{{ 'trial.free' | t }}</p>
+    <h2 class="trial-card__name">{{ name }}</h2>
+    <p class="trial-card__h">{{ 'trial.installers' | t }}</p>
+    <p class="trial-card__ver">{%- if version != blank -%}{{ version }}{%- else -%}{{ 'trial.version_soon' | t }}{%- endif -%}</p>
+    <div class="trial-card__os">
+      {%- for os in (1..2) -%}
+        {%- if os == 1 -%}{%- assign url = win -%}{%- assign label = 'Windows' -%}{%- else -%}{%- assign url = mac -%}{%- assign label = 'macOS' -%}{%- endif -%}
+        {%- if url != blank -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>
+        {%- else -%}<span class="btn btn--primary btn--nochev is-soon" aria-disabled="true">{{ label }} <small>{{ 'trial.soon' | t }}</small></span>{%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="trial-card__links">
+      {%- for n in (1..3) -%}
+        {%- case n -%}
+          {%- when 1 -%}{%- assign url = manual -%}{%- assign label = 'trial.manual' | t -%}
+          {%- when 2 -%}{%- assign url = changelog -%}{%- assign label = 'trial.changelog' | t -%}
+          {%- else -%}{%- assign url = past -%}{%- assign label = 'trial.past' | t -%}
+        {%- endcase -%}
+        {%- if url != blank -%}<a class="btn btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>
+        {%- else -%}<span class="btn btn--nochev is-soon" aria-disabled="true">{{ label }} <small>{{ 'trial.soon' | t }}</small></span>{%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>

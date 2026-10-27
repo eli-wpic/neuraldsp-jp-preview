@@ -4,14 +4,18 @@
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
       {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
     </header>
-    <div class="faq">
+    {%- assign visible = section.settings.visible | default: 5 -%}
+    <div class="faq{% if section.blocks.size > visible %} is-clipped{% endif %}" data-faq style="--visible: {{ visible }}">
       {%- for block in section.blocks -%}
-        <details {{ block.shopify_attributes }}>
+        <details{% if forloop.index > visible %} data-faq-more{% endif %} {{ block.shopify_attributes }}>
           <summary>{{ block.settings.question }}</summary>
           <div class="nd-prose">{{ block.settings.answer }}</div>
         </details>
       {%- endfor -%}
     </div>
+    {%- if section.blocks.size > visible -%}
+      <button type="button" class="btn btn--down nd-faq__more" data-faq-toggle aria-expanded="false" data-less="{{ section.settings.less_label }}">{{ section.settings.more_label | replace: '{n}', section.blocks.size }}</button>
+    {%- endif -%}
   </div>
 </section>
 {% schema %}
@@ -20,7 +24,10 @@
   "settings": [
     { "type": "text", "id": "anchor", "label": "Anchor id (for links like #faq)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQs" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "よくあるご質問" }
+    { "type": "text", "id": "heading", "label": "Heading", "default": "よくあるご質問" },
+    { "type": "number", "id": "visible", "label": "Questions shown before the button", "default": 5 },
+    { "type": "text", "id": "more_label", "label": "Show-all button", "default": "すべての質問を見る（{n}）" },
+    { "type": "text", "id": "less_label", "label": "Show-fewer button", "default": "閉じる" }
   ],
   "blocks": [{ "type": "qa", "name": "Question", "settings": [
     { "type": "text", "id": "question", "label": "Question" },

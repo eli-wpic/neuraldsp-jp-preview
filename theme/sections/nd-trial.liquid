@@ -1,25 +1,12 @@
 {%- comment -%}
-  14-day trial dialog for plugin bundles. Opened by any element with [data-trial-open] (the product form shows one).
-  The live store's version pointed the form at a placeholder URL (example.com); here the trial button sends people to the
-  plugin's official download page, as agreed.
+  14-day trial dialog for plugin bundle pages: a download card with Windows / macOS installers, manual, changelog
+  and past releases. Blank links show as 準備中 until the packages are added.
 {%- endcomment -%}
 {%- assign s = section.settings -%}
-<dialog class="nd-dialog nd-trial" id="TrialDialog" aria-labelledby="TrialTitle">
+{%- assign plugin_name = s.plugin_name | default: s.title | split: 'を' | first | strip -%}
+<dialog class="nd-dialog nd-trial" id="TrialDialog" aria-label="{{ plugin_name | escape }}">
   <button type="button" class="nd-dialog__close" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
-  {%- if s.image != blank or s.image_url != blank -%}<div class="nd-trial__img">{% render 'nd-media', image: s.image, url: s.image_url, alt: '' %}</div>{%- endif -%}
-  <h2 id="TrialTitle">{{ s.title | newline_to_br }}</h2>
-  <p class="nd-trial__sub"><span>{{ s.subline }}</span></p>
-  <p class="nd-trial__desc">{{ s.description }}</p>
-  <form class="nd-trial__form" action="{{ s.trial_url }}" method="get" target="_blank" data-trial-form>
-    <label class="visually-hidden" for="TrialEmail">{{ s.placeholder }}</label>
-    <input id="TrialEmail" type="email" name="email" placeholder="{{ s.placeholder }}" autocomplete="email">
-    <button class="btn btn--primary btn--ext" type="submit">{{ s.submit }}</button>
-  </form>
-  <div class="nd-trial__or"><span>OR</span></div>
-  <div class="nd-trial__alt">
-    <a class="btn btn--ext" href="{{ s.login_url }}" target="_blank" rel="noopener">{{ s.login_label }}</a>
-    <a class="btn btn--ext" href="{{ s.register_url }}" target="_blank" rel="noopener">{{ s.register_label }}</a>
-  </div>
+  {% render 'nd-trial-panel', name: plugin_name, image: s.image, image_url: s.image_url, version: s.version, win: s.win_url, mac: s.mac_url, manual: s.manual_url, changelog: s.changelog_url, past: s.past_url %}
 </dialog>
 {% schema %}
 {
@@ -27,7 +14,14 @@
   "settings": [
     { "type": "image_picker", "id": "image", "label": "Plugin image" },
     { "type": "text", "id": "image_url", "label": "Plugin image URL" },
-    { "type": "textarea", "id": "title", "label": "Title" },
+    { "type": "text", "id": "plugin_name", "label": "Plugin name (defaults to the title)" },
+    { "type": "textarea", "id": "title", "label": "Title (legacy)" },
+    { "type": "text", "id": "version", "label": "Version line (e.g. 1.0.0 - 2026年11月1日)" },
+    { "type": "url", "id": "win_url", "label": "Windows installer URL" },
+    { "type": "url", "id": "mac_url", "label": "macOS installer URL" },
+    { "type": "url", "id": "manual_url", "label": "Manual URL" },
+    { "type": "url", "id": "changelog_url", "label": "Changelog URL" },
+    { "type": "url", "id": "past_url", "label": "Past releases URL" },
     { "type": "text", "id": "subline", "label": "Subline", "default": "14日間無料体験" },
     { "type": "text", "id": "description", "label": "Description", "default": "メールアドレスを入力して無料体験を始めましょう！" },
     { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "メールアドレスを入力する" },
