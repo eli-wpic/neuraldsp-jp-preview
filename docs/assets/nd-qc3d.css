@@ -1,7 +1,7 @@
 /* Pinned 3D hero. Shopify: assets/nd-qc3d.css with sections/nd-qc3d.liquid */
 
 
-.qc3d { position: relative; height: 400svh; margin-top: -64px; background: #050506; } /* slides under the translucent sticky header */
+.qc3d { position: relative; height: 480svh; margin-top: -64px; background: #050506; } /* slides under the translucent sticky header */
 .qc3d__sticky { position: sticky; top: 0; height: 100svh; overflow: hidden; }
 
 /* studio backdrop: soft key pool + faint warm floor bounce */
@@ -42,7 +42,7 @@
   display: grid; gap: 18px; align-content: center;
 }
 .chapter.is-active { pointer-events: auto; }
-.chapter--right { left: auto; right: var(--gutter); }
+.chapter--right { left: auto; right: calc(var(--gutter) + 64px); } /* clear of the 00–04 buttons */
 .chapter--hero { width: min(600px, 46vw); }
 
 .display {

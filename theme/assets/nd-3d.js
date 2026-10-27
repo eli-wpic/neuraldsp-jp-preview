@@ -43,7 +43,7 @@ const MODELS = {
       { pos: [-0.6, 5.4, 2.2], tgt: [0, 0.5, -0.05], ox: -0.24 },
       { pos: [3.4, 2.8, 3.6], tgt: [0.2, 0.35, 0.2], ox: -0.2 },
       { pos: [2.9, 1.8, -5.2], tgt: [0, 0.3, -0.3], ox: -0.22 },
-      { pos: [4.4, 3.6, 5.4], tgt: [0, 0.25, 0], ox: 0.19 },
+      { pos: [5.1, 3.9, 6.3], tgt: [0, 0.42, 0], ox: 0.2 },
     ],
     views: [
       { pos: [-4.4, 4.0, 5.6], tgt: [0, 0.25, 0], ox: 0 },
@@ -446,7 +446,9 @@ function initScroll(sec) {
     pills = [...cur.querySelectorAll('[data-goto]')];
     n = Math.max(0, chapters.length - 1);
   };
-  const progress = () => { if (!n) return 0; const r = sec.getBoundingClientRect(); return Math.max(0, Math.min(1, -r.top / Math.max(1, r.height - innerHeight))) * n; };
+  // the story finishes at HOLD of the scroll length; the rest keeps the last screen (04, awards) on screen before the page moves on
+  const HOLD = 0.8;
+  const progress = () => { if (!n) return 0; const r = sec.getBoundingClientRect(); return Math.max(0, Math.min(1, -r.top / Math.max(1, (r.height - innerHeight) * HOLD))) * n; };
   const update = () => {
     const p = progress(); view?.setProgress(p);
     const active = Math.round(p);
@@ -459,7 +461,7 @@ function initScroll(sec) {
     sec.dataset.chapter = active;
     sec.style.setProperty('--p', n ? p / n : 0);
   };
-  const goto = (i, behavior) => { const r = sec.getBoundingClientRect(); scrollTo({ top: scrollY + r.top + (n ? (i / n) * (r.height - innerHeight) : 0) + (i ? 2 : 0), behavior }); };
+  const goto = (i, behavior) => { const r = sec.getBoundingClientRect(); scrollTo({ top: scrollY + r.top + (n ? (i / n) * (r.height - innerHeight) * HOLD : 0) + (i ? 2 : 0), behavior }); };
   sec.addEventListener('click', (e) => { const b = e.target.closest('[data-goto]'); if (b) goto(+b.dataset.goto, reduced ? 'auto' : 'smooth'); });
 
   const showMedia = (id) => {
