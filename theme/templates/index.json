@@ -61,8 +61,7 @@
             "c3_title": "シンプルな接続。\n自由なセットアップ。",
             "c3_body": "<ul class=\"chapter__list\"><li><b>INPUT 2 / CAPTURE INPUT</b>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。</li><li><b>DUAL EFFECTS LOOPS</b>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。</li><li><b>XLR OUTPUTS</b>2系統のモノラル・バランスXLR出力。</li><li><b>USB-C</b>マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。</li></ul>",
             "c4_label": "選ぶ",
-            "c4_body": "小さなボディ。大きなサウンド。",
-            "awards": "asset:mini-awards.webp"
+            "c4_body": "小さなボディ。大きなサウンド。"
           }
         },
         "nano": {
@@ -84,7 +83,8 @@
             "c3_title": "入力と出力",
             "c3_body": "<ul class=\"chapter__list\"><li><b>1/4\" instrument input</b>ギターやベース用。</li><li><b>Dual 1/4\" TRS outputs</b>スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。</li><li><b>USB-C</b>録音や電源供給に対応。</li><li><b>Capture input (XLR & TS)</b>Neural Captureを作成するための入力端子。</li></ul>",
             "c4_label": "選ぶ",
-            "c4_body": "300種類の高品質IR、25種類のプリセットキャプチャーを搭載。"
+            "c4_body": "300種類の高品質IR、25種類のプリセットキャプチャーを搭載。",
+            "awards": "asset:nano-awards.webp"
           }
         }
       },
