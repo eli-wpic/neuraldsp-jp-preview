@@ -174,3 +174,20 @@ body.show-buy .qc3d__buybar { opacity: 1; translate: 0 0; pointer-events: auto; 
 .chapter.is-active .chapter__awards li { opacity: 1; transform: none; }
 @media (max-width: 860px), (max-aspect-ratio: 1/1) { .chapter__awards { gap: 8px; } .chapter__awards span { display: none; } .chapter__awards img { height: 28px; } }
 @media (prefers-reduced-motion: reduce) { .chapter__awards li { opacity: 1; transform: none; transition: none; } }
+
+/* dock: tabs keep their full size (never squeezed); compact on mid-size screens; scrolls sideways as a last resort */
+@media (min-width: 861px) and (min-aspect-ratio: 1/1) {
+  .qc3d__dock { overflow-x: auto; scrollbar-width: none; }
+  .qc3d__dock::-webkit-scrollbar { display: none; }
+  .qc3d__dock-item { flex: none; }
+}
+@media (min-width: 861px) and (max-width: 1360px) and (min-aspect-ratio: 1/1) {
+  .qc3d__dock { gap: 4px; padding: 5px; }
+  .qc3d__dock-item { gap: 10px; min-height: 52px; padding: 4px 18px 4px 6px; }
+  .qc3d__dock-item img { width: 48px; height: 34px; }
+  .qc3d__skip { bottom: 96px; }
+}
+/* centred with left:50%, an absolutely positioned bar only gets half the screen to size into — give it its own width */
+@media (min-width: 861px) and (min-aspect-ratio: 1/1) { .qc3d__dock { width: max-content; max-width: calc(100% - 2 * var(--gutter) - 260px); } }
+@media (min-width: 861px) and (max-width: 1360px) and (min-aspect-ratio: 1/1) { .qc3d__dock { max-width: calc(100% - 2 * var(--gutter)); } }
+@media (min-width: 861px) and (max-width: 1040px) and (min-aspect-ratio: 1/1) { .qc3d__dock-text small { display: none; } .qc3d__dock-item { padding: 4px 14px 4px 6px; } .qc3d__dock-item img { width: 40px; height: 28px; } }
