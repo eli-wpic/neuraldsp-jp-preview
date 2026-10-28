@@ -417,3 +417,9 @@ body.in-3d .nd-nl-fab { opacity: 0; translate: 0 10px; pointer-events: none; }
   .step { min-height: 0; opacity: 1; padding: 28px 0; border-top: 1px solid var(--line); }
   .step__img-inline { display: block; width: 100%; border-radius: 10px; margin-top: 8px; }
 }
+
+/* step guide: scrolling settles on one step at a time, centred next to its screenshot */
+@media (min-width: 901px) {
+  html.has-steps { scroll-snap-type: y proximity; }
+  .step { scroll-snap-align: center; min-height: 72vh; }
+}

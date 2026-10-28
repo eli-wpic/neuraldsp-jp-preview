@@ -1,4 +1,5 @@
-/* Step guide: the step in the middle of the screen becomes active; its screenshot glides in on the sticky stage. */
+/* Step guide: the step nearest the middle of the screen is active (scrolling snaps each step to the centre);
+   its screenshot glides in on the sticky stage. */
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('[data-steps]').forEach((root) => {
   const steps = [...root.querySelectorAll('[data-step]')];
@@ -20,8 +21,18 @@ document.querySelectorAll('[data-steps]').forEach((root) => {
     from?.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: `translateY(${-dir * 24}px) scale(0.97)` }], { duration: 380, easing: 'cubic-bezier(0.65, 0, 0.35, 1)' });
     to.animate([{ opacity: 0, transform: `translateY(${dir * 32}px) scale(0.97)` }, { opacity: 1, transform: 'none' }], { duration: 560, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', delay: 60, fill: 'backwards' });
   };
-  const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) set(+e.target.dataset.step); }), { rootMargin: '-45% 0px -50% 0px' });
-  steps.forEach((s) => io.observe(s));
+  // the active step is always the one nearest the middle of the screen, so text and screenshot never disagree
+  let raf = 0;
+  const pick = () => {
+    raf = 0;
+    const mid = innerHeight / 2;
+    let best = 0, dist = Infinity;
+    steps.forEach((st, k) => { const r = st.getBoundingClientRect(); const d = Math.abs(r.top + r.height / 2 - mid); if (d < dist) { dist = d; best = k; } });
+    set(best);
+  };
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(pick); }, { passive: true });
+  addEventListener('resize', pick);
+  document.documentElement.classList.add('has-steps');
   btns.forEach((b) => b.addEventListener('click', () => steps[+b.dataset.stepGo].scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' })));
   if (bar) bar.style.width = `${100 / steps.length}%`;
 });
