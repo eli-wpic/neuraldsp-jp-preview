@@ -162,7 +162,8 @@ Open **Customize → Home page → ND · Hero 3D + campaign**. The hero holds a 
 
 ## 14. Trial guide page (マニュアルを見る)
 
-- The 14日間無料体験 card now has **Windows / macOS** (準備中 until the packages arrive) and **マニュアルを見る**, which opens the trial guide.
-- **Create the page in Shopify:** Online Store → Pages → Add page, title 「プラグイン無料体験の始め方」, handle **trial-guide**, template **page.trial-guide**.
+- The 14日間無料体験 card has **Windows / macOS** installer buttons and **マニュアルを見る**, which opens the trial guide. Each button shows 準備中 until its link is added.
+- **Adding the installers:** upload each plugin's Windows and macOS installer in Shopify admin → **Content → Files**, copy each file's link, and paste it into the plugin's **Windows installer** / **macOS installer** fields (homepage plugin section → each plugin, and each plugin page's ND · 14-day trial dialog).
+- **The page:** create it in Shopify with handle **trial-guide** and template **page.trial-guide** (Online Store → Pages → Add page). Step 1 shows this site's own trial window.
 - The guide has 10 steps in three parts (体験版を始める / 製品版をアクティベートする / オーディオ設定). The text is translated from the trial manual (Chinese) into Japanese, and the screenshots are `assets/trial-step-1…10.webp` (the Chinese labels on them were removed). Please have a native speaker check the wording.
 - As you scroll, the screenshot stays in place and changes to the step you are reading, with numbers 01–10 to jump between steps.

@@ -106,10 +106,10 @@
     "expired": "This gift card has expired."
   },
   "trial": {
-    "installers": "Installers",
     "soon": "Coming soon",
     "version_soon": "Downloads coming soon",
     "free": "14-day free trial",
-    "view_manual": "View manual"
+    "view_manual": "View manual",
+    "installers": "Installers"
   }
 }

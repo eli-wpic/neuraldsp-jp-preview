@@ -1,7 +1,7 @@
 {%- comment -%}
   14-day trial download card (one plugin): artwork, name, installers (Windows / macOS) and links.
   Any link left blank shows as 準備中 (not clickable) until the download is added.
-  Params: name, image_url, image, version, win, mac, guide (step guide page, default /pages/trial-guide)
+  Params: name, image_url, image, version, win, mac (installer files uploaded to Shopify Files), guide (default /pages/trial-guide)
 {%- endcomment -%}
 <div class="trial-card">
   <div class="trial-card__art">
@@ -16,7 +16,7 @@
     <div class="trial-card__os">
       {%- for os in (1..2) -%}
         {%- if os == 1 -%}{%- assign url = win -%}{%- assign label = 'Windows' -%}{%- else -%}{%- assign url = mac -%}{%- assign label = 'macOS' -%}{%- endif -%}
-        {%- if url != blank -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>
+        {%- if url != blank -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" download>{{ label }}</a>
         {%- else -%}<span class="btn btn--primary btn--nochev is-soon" aria-disabled="true">{{ label }} <small>{{ 'trial.soon' | t }}</small></span>{%- endif -%}
       {%- endfor -%}
     </div>

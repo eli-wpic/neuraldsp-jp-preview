@@ -106,10 +106,10 @@
     "expired": "このギフトカードは有効期限が切れています。"
   },
   "trial": {
-    "installers": "インストーラー",
     "soon": "準備中",
     "version_soon": "ダウンロードは近日公開予定です",
     "free": "14日間無料体験",
-    "view_manual": "マニュアルを見る"
+    "view_manual": "マニュアルを見る",
+    "installers": "インストーラー"
   }
 }

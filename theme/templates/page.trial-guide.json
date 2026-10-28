@@ -17,8 +17,8 @@
           "type": "step",
           "settings": {
             "group": "体験版を始める",
-            "title": "プラグインをダウンロード",
-            "body": "<p>Neural DSP 公式サイト（<a href=\"https://neuraldsp.com/plugins\" target=\"_blank\" rel=\"noopener\">neuraldsp.com</a>）で、お好きなプラグインの下にある「Free Trial（無料体験）」をクリックします。</p><p>表示されたウィンドウで、お使いのパソコンに合ったバージョンを選びます。Windows は「PC」、Mac は「macOS」。クリックするとダウンロードが始まります。</p>",
+            "title": "インストーラーをダウンロード",
+            "body": "<p>お好きなプラグインの「14日間無料体験」をクリックします。</p><p>表示されたウィンドウで、お使いのパソコンに合ったインストーラーを選びます。Windows は「Windows」、Mac は「macOS」。クリックするとダウンロードが始まります。</p>",
             "asset": "trial-step-1.webp"
           }
         },
