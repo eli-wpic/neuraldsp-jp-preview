@@ -109,3 +109,20 @@ if 'compare' not in m['order'] and 'compare' in home['sections'] and 'rich_text_
     m['order'].insert(m['order'].index('rich_text_ewyvb6'), 'compare')
     m['sections']['rich_text_ewyvb6']['settings']['collapsed_label'] = '詳しい比較表を見る（機能・入出力）'
     save('product.quad-cortex-mini', head, m)
+
+# product pages end the same way: no closing photo on the mini page, no 製品アップデート button anywhere
+for f in sorted(T.glob('product.*.json')):
+    head, d = load(f.stem)
+    changed = False
+    if f.stem == 'product.quad-cortex-mini' and 'single_image_g7kzr7' in d['order']:
+        d['order'].remove('single_image_g7kzr7'); d['sections'].pop('single_image_g7kzr7', None); changed = True
+    for k in d['order']:
+        sec = d['sections'][k]
+        if sec['type'] != 'nd-specs':
+            continue
+        drop = [b for b, blk in sec.get('blocks', {}).items() if '製品アップデート' in blk.get('settings', {}).get('label', '')]
+        for b in drop:
+            sec['blocks'].pop(b); sec['block_order'] = [x for x in sec.get('block_order', []) if x != b]; changed = True
+    if changed:
+        save(f.stem, head, d)
+        print('cleaned', f.stem)

@@ -478,20 +478,11 @@
             "video_url": "https://cdn.shopify.com/videos/c/o/v/26969da01e1648fb98680ff3f5356853.mp4",
             "modal_html": "<p><h2>ハードウェア仕様</h2>×</p><p><strong>インストゥルメント入力</strong><br/>コネクタ：1/4インチ TRS-F<br/>インピーダンス：1MΩ<br/>最大入力レベル：+10dBu</p><p><strong>コンボキャプチャ入力</strong><br/>コネクタ：XLR-F + 1/4インチ TRS-F<br/>TSインピーダンス：1MΩ<br/>XLRインピーダンス：45kΩ<br/>最大入力レベル：+10dBu<br/>ブーストゲイン：+26dB</p><p><strong>TRS出力 1L/2R</strong><br/>コネクタ：（2）1/4インチ TRS-F<br/>インピーダンス：560Ω<br/>最大出力レベル：+10dBu（アンバランス） / +16dBu（バランス）</p><p><strong>ヘッドフォン出力</strong><br/>コネクタ：3.5mm TRS-F<br/>最大出力：55mW（20Ω負荷時）</p><p><strong>EXP / MIDI入力</strong><br/>エクスプレッションコネクタ：1/4インチ TRS-F<br/>MIDIコネクタ：MIDI TRSタイプA</p><p><strong>USBオーディオ</strong><br/>フォーマット：USBオーディオクラス2.0準拠<br/>チャンネル数：7（入力4 / 出力3）<br/>オーディオクロック：48kHz（固定）</p><p><strong>一般仕様</strong><br/>外装：アルマイト処理アルミニウムユニボディ<br/>操作系：<br/>・ステンレス製ストンプ + ロータリーフットスイッチ ×2<br/>・ノブ ×7<br/>・アナログスイッチ ×2<br/>・デジタルスイッチ ×5</p><p><strong>寸法</strong><br/>14.4 x 10.3 x 6.2 cm / 5.6 x 4.0 x 2.4インチ</p><p><strong>重量</strong><br/>620g / 1.36ポンド</p><p><strong>電源入力</strong><br/>9–12V DC、600mA（センターマイナス）<br/>USB-C：5V、1.5A以上</p><p><strong>環境情報</strong><br/>動作温度：0～50°C（32～122°F）<br/>保存温度：-10～70°C（14～158°F）<br/>湿度：最大結露なし</p>"
           }
-        },
-        "card_2": {
-          "type": "card",
-          "settings": {
-            "label": "製品アップデート",
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/93fca4dac0f341f7978c30f577e0e2a8.mp4",
-            "url": "/blogs/news"
-          }
         }
       },
       "block_order": [
         "card_0",
-        "card_1",
-        "card_2"
+        "card_1"
       ]
     }
   },

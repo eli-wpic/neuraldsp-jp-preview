@@ -628,18 +628,8 @@
     },
     "custom_liquid_ewjyyk": {
       "type": "nd-specs",
-      "blocks": {
-        "card_0": {
-          "type": "card",
-          "settings": {
-            "label": "製品アップデート",
-            "url": "/blogs/news"
-          }
-        }
-      },
-      "block_order": [
-        "card_0"
-      ]
+      "blocks": {},
+      "block_order": []
     }
   },
   "order": [

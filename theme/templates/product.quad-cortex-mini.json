@@ -566,14 +566,6 @@
         "card_0"
       ]
     },
-    "single_image_g7kzr7": {
-      "type": "nd-feature",
-      "settings": {
-        "layout": "media",
-        "image_url": "https://neuraldsp.jp/cdn/shop/files/QC_Minis_flow.png?v=1769064771",
-        "image_alt": ""
-      }
-    },
     "compare": {
       "type": "nd-compare",
       "settings": {
@@ -662,7 +654,6 @@
     "rich_text_ewyvb6",
     "custom_liquid_gqvxw7",
     "collapsible_content_rqxwrm",
-    "custom_liquid_ewjyyk",
-    "single_image_g7kzr7"
+    "custom_liquid_ewjyyk"
   ]
 }
