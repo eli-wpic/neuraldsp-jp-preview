@@ -5,6 +5,8 @@ from pathlib import Path
 
 src, out, repo = Path(sys.argv[1]), Path(sys.argv[2]), sys.argv[3]
 base = f'/{repo}/'
+if not (src / 'index.html').is_file():
+    sys.exit(f'{src} is empty or missing; render the preview first (nothing was changed)')
 if out.exists():
     shutil.rmtree(out)
 shutil.copytree(src, out)
