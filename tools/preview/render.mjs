@@ -3,10 +3,11 @@
 import { Liquid } from 'liquidjs';
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 const THEME = process.argv[2];
 const OUT = process.argv[3];
-const DATA = path.join(path.dirname(new URL(import.meta.url).pathname), 'data');
+const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const ja = JSON.parse(fs.readFileSync(path.join(THEME, 'locales/ja.json'), 'utf8'));
 
 const stripComment = (s) => s.replace(/^\s*\/\*[\s\S]*?\*\/\s*/, '');

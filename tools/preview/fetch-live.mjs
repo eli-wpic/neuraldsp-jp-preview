@@ -1,7 +1,8 @@
 // Refresh local preview data from the live store's public JSON (read-only GETs).
 import fs from 'node:fs';
 import path from 'node:path';
-const DATA = path.join(path.dirname(new URL(import.meta.url).pathname), 'data');
+import { fileURLToPath } from 'node:url';
+const DATA = path.join(path.dirname(fileURLToPath(import.meta.url)), 'data');
 const BASE = 'https://neuraldsp.jp';
 const get = async (u, type = 'json') => { const r = await fetch(BASE + u, { headers: { 'User-Agent': 'theme-preview' } }); if (!r.ok) throw new Error(u + ' ' + r.status); return type === 'json' ? r.json() : r.text(); };
 fs.mkdirSync(DATA, { recursive: true });
