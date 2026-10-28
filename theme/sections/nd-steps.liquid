@@ -1,0 +1,86 @@
+{%- comment -%}
+  Step-by-step guide (e.g. 14日間無料体験の始め方). Scroll through the steps: the screenshot on the right stays in place
+  and changes to the step you are reading (same feel as the homepage 3D story); the numbers jump to a step.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<section class="steps" data-steps>
+  <div class="container">
+    <header class="steps__head">
+      {%- if s.eyebrow != blank -%}<p class="chapter__eyebrow"><i></i>{{ s.eyebrow }}</p>{%- endif -%}
+      <h1 class="steps__title">{{ s.heading }}</h1>
+      {%- if s.intro != blank -%}<p class="steps__intro">{{ s.intro }}</p>{%- endif -%}
+    </header>
+    <div class="steps__grid">
+      <ol class="steps__list">
+        {%- assign group = '' -%}
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          {%- liquid
+            assign img = ''
+            if b.image != blank
+              assign img = b.image | image_url: width: 1400
+            elsif b.asset != blank
+              assign img = b.asset | asset_url
+            elsif b.image_url != blank
+              assign img = b.image_url
+            endif
+          -%}
+          <li class="step{% if forloop.first %} is-active{% endif %}" data-step="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+            {%- if b.group != blank and b.group != group -%}<p class="step__group">{{ b.group }}</p>{%- assign group = b.group -%}{%- endif -%}
+            <p class="step__num">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</p>
+            <h2 class="step__title">{{ b.title }}</h2>
+            <div class="step__body">{{ b.body }}</div>
+            {%- if b.note != blank -%}<p class="step__note">{{ b.note }}</p>{%- endif -%}
+            {%- if img != '' -%}<img class="step__img-inline" src="{{ img }}" alt="{{ b.title | escape }}" width="1200" height="860" loading="lazy">{%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ol>
+      <div class="steps__stage" aria-hidden="true">
+        <div class="steps__frame">
+          {%- for block in section.blocks -%}
+            {%- assign b = block.settings -%}
+            {%- liquid
+              assign img = ''
+              if b.image != blank
+                assign img = b.image | image_url: width: 1400
+              elsif b.asset != blank
+                assign img = b.asset | asset_url
+              elsif b.image_url != blank
+                assign img = b.image_url
+              endif
+            -%}
+            {%- if img != '' -%}<img src="{{ img }}" alt="" width="1200" height="860" data-step-img="{{ forloop.index0 }}"{% if forloop.first %} class="is-active"{% endif %} loading="{% if forloop.index < 3 %}eager{% else %}lazy{% endif %}">{%- endif -%}
+          {%- endfor -%}
+        </div>
+        <nav class="steps__nav">
+          {%- for block in section.blocks -%}<button type="button" data-step-go="{{ forloop.index0 }}"{% if forloop.first %} aria-current="true"{% endif %}>{{ forloop.index | prepend: '0' | slice: -2, 2 }}</button>{%- endfor -%}
+        </nav>
+        <i class="steps__bar"><b></b></i>
+      </div>
+    </div>
+    {%- if s.button_label != blank -%}<p class="steps__cta"><a class="btn btn--primary" href="{{ s.button_url }}">{{ s.button_label }}</a></p>{%- endif -%}
+  </div>
+</section>
+<script type="module" src="{{ 'nd-steps.js' | asset_url }}"></script>
+{% schema %}
+{
+  "name": "ND · Step guide",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "textarea", "id": "intro", "label": "Intro" },
+    { "type": "text", "id": "button_label", "label": "Button at the end" },
+    { "type": "text", "id": "button_url", "label": "Button URL" }
+  ],
+  "blocks": [{ "type": "step", "name": "Step", "settings": [
+    { "type": "text", "id": "group", "label": "Group label (shown when it changes)" },
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "richtext", "id": "body", "label": "Text" },
+    { "type": "text", "id": "note", "label": "Warning (optional)" },
+    { "type": "image_picker", "id": "image", "label": "Screenshot" },
+    { "type": "text", "id": "asset", "label": "Screenshot from theme assets (file name)" },
+    { "type": "text", "id": "image_url", "label": "Screenshot URL" }
+  ] }],
+  "presets": [{ "name": "ND · Step guide" }]
+}
+{% endschema %}

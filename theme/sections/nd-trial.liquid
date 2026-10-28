@@ -6,7 +6,7 @@
 {%- assign plugin_name = s.plugin_name | default: s.title | split: 'を' | first | strip -%}
 <dialog class="nd-dialog nd-trial" id="TrialDialog" aria-label="{{ plugin_name | escape }}">
   <button type="button" class="nd-dialog__close" data-dialog-close aria-label="{{ 'general.close' | t }}">{% render 'icon', name: 'close' %}</button>
-  {% render 'nd-trial-panel', name: plugin_name, image: s.image, image_url: s.image_url, version: s.version, win: s.win_url, mac: s.mac_url, manual: s.manual_url, changelog: s.changelog_url, past: s.past_url %}
+  {% render 'nd-trial-panel', name: plugin_name, image: s.image, image_url: s.image_url, version: s.version, win: s.win_url, mac: s.mac_url %}
 </dialog>
 {% schema %}
 {
@@ -19,9 +19,6 @@
     { "type": "text", "id": "version", "label": "Version line (e.g. 1.0.0 - 2026年11月1日)" },
     { "type": "url", "id": "win_url", "label": "Windows installer URL" },
     { "type": "url", "id": "mac_url", "label": "macOS installer URL" },
-    { "type": "url", "id": "manual_url", "label": "Manual URL" },
-    { "type": "url", "id": "changelog_url", "label": "Changelog URL" },
-    { "type": "url", "id": "past_url", "label": "Past releases URL" },
     { "type": "text", "id": "subline", "label": "Subline", "default": "14日間無料体験" },
     { "type": "text", "id": "description", "label": "Description", "default": "メールアドレスを入力して無料体験を始めましょう！" },
     { "type": "text", "id": "placeholder", "label": "Email placeholder", "default": "メールアドレスを入力する" },

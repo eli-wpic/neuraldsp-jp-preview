@@ -159,3 +159,10 @@ Open **Customize → Home page → ND · Hero 3D + campaign**. The hero holds a 
 - **Homepage:** the Nano Cortex / Quad Cortex / Gig Case video tiles are removed. The Quad Cortex story shows its 4 award badges on its last screen (add awards for other products in the hero's product item → Awards).
 - **Comparison:** Quad Cortex, mini and Nano drawn to real scale, with size, weight bars, footswitch dots and ✓ for touchscreen / Neural Capture / plugins. The mini page shows the same chart; the full feature table is behind 「詳しい比較表を見る」.
 - **FAQs** show 5 questions, then 「すべての質問を見る」. **Spec / manual** links are now plain buttons (the empty boxes are gone).
+
+## 14. Trial guide page (マニュアルを見る)
+
+- The 14日間無料体験 card now has **Windows / macOS** (準備中 until the packages arrive) and **マニュアルを見る**, which opens the trial guide.
+- **Create the page in Shopify:** Online Store → Pages → Add page, title 「プラグイン無料体験の始め方」, handle **trial-guide**, template **page.trial-guide**.
+- The guide has 10 steps in three parts (体験版を始める / 製品版をアクティベートする / オーディオ設定). The text is translated from the trial manual (Chinese) into Japanese, and the screenshots are `assets/trial-step-1…10.webp` (the Chinese labels on them were removed). Please have a native speaker check the wording.
+- As you scroll, the screenshot stays in place and changes to the step you are reading, with numbers 01–10 to jump between steps.

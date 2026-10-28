@@ -67,7 +67,7 @@
                 assign art = bp.featured_image | image_url: width: 900
               endif
             -%}
-            {% render 'nd-trial-panel', name: b.name, image: b.image, image_url: art, version: b.version, win: b.win_url, mac: b.mac_url, manual: b.manual_url, changelog: b.changelog_url, past: b.past_url %}
+            {% render 'nd-trial-panel', name: b.name, image: b.image, image_url: art, version: b.version, win: b.win_url, mac: b.mac_url %}
           </template>
         </article>
       {%- endfor -%}
@@ -157,10 +157,7 @@
     { "type": "header", "content": "14-day trial downloads (blank = 準備中)" },
     { "type": "text", "id": "version", "label": "Version line" },
     { "type": "url", "id": "win_url", "label": "Windows installer" },
-    { "type": "url", "id": "mac_url", "label": "macOS installer" },
-    { "type": "url", "id": "manual_url", "label": "Manual" },
-    { "type": "url", "id": "changelog_url", "label": "Changelog" },
-    { "type": "url", "id": "past_url", "label": "Past releases" }
+    { "type": "url", "id": "mac_url", "label": "macOS installer" }
   ] }],
   "presets": [{ "name": "ND · Plugin discovery" }]
 }

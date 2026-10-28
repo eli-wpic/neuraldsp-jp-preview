@@ -1,7 +1,7 @@
 {%- comment -%}
   14-day trial download card (one plugin): artwork, name, installers (Windows / macOS) and links.
   Any link left blank shows as 準備中 (not clickable) until the download is added.
-  Params: name, image_url, image, version, win, mac, manual, changelog, past
+  Params: name, image_url, image, version, win, mac, guide (step guide page, default /pages/trial-guide)
 {%- endcomment -%}
 <div class="trial-card">
   <div class="trial-card__art">
@@ -21,15 +21,7 @@
       {%- endfor -%}
     </div>
     <div class="trial-card__links">
-      {%- for n in (1..3) -%}
-        {%- case n -%}
-          {%- when 1 -%}{%- assign url = manual -%}{%- assign label = 'trial.manual' | t -%}
-          {%- when 2 -%}{%- assign url = changelog -%}{%- assign label = 'trial.changelog' | t -%}
-          {%- else -%}{%- assign url = past -%}{%- assign label = 'trial.past' | t -%}
-        {%- endcase -%}
-        {%- if url != blank -%}<a class="btn btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>
-        {%- else -%}<span class="btn btn--nochev is-soon" aria-disabled="true">{{ label }} <small>{{ 'trial.soon' | t }}</small></span>{%- endif -%}
-      {%- endfor -%}
+      <a class="btn btn--nochev" href="{{ guide | default: '/pages/trial-guide' }}">{{ 'trial.view_manual' | t }}</a>
     </div>
   </div>
 </div>

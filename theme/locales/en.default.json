@@ -108,10 +108,8 @@
   "trial": {
     "installers": "Installers",
     "soon": "Coming soon",
-    "manual": "Manual",
-    "changelog": "Changelog",
-    "past": "Past releases",
     "version_soon": "Downloads coming soon",
-    "free": "14-day free trial"
+    "free": "14-day free trial",
+    "view_manual": "View manual"
   }
 }

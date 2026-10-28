@@ -195,6 +195,7 @@ for (const url of Object.keys(INV).filter((u) => u.startsWith('/pages/'))) {
   const content = t === 'page' ? text.slice(1).map((p) => `<p>${p}</p>`).join('') : '';
   pages.push([t, `${url.slice(1)}.html`, { page: { title: cleanTitle(v.title) || text[0] || url, content }, title: cleanTitle(v.title), form: {} }]);
 }
+pages.push(['page.trial-guide', 'pages/trial-guide.html', { page: { title: 'プラグイン無料体験の始め方', content: '' }, title: 'プラグイン無料体験の始め方' }]);
 pages.push(['list-collections', 'collections.html', { title: 'コレクション' }]);
 for (const c of Object.values(collections)) pages.push(['collection', `collections/${c.handle}.html`, { collection: c, title: c.title }]);
 pages.push(['blog', 'blogs/news.html', { blog: blogs.news, title: blogs.news.title }]);
