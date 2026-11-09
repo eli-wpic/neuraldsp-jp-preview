@@ -55,14 +55,14 @@
             {%- for l in v_labels -%}
               <button type="button" class="nd-viewer__btn" data-view="{{ forloop.index0 }}" data-title="{{ v_titles[forloop.index0] | strip | escape }}" data-caption="{{ v_caps[forloop.index0] | strip | escape }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ l | strip }}</button>
             {%- endfor -%}
-            {%- if film_id != blank -%}
-              <button type="button" class="nd-viewer__btn nd-viewer__btn--film" data-film="{{ film_id }}" aria-pressed="false">{{ s.film_label }}</button>
+            {%- if film_id != blank or s.film_mp4 != blank -%}
+              <button type="button" class="nd-viewer__btn nd-viewer__btn--film" data-film="{{ film_id }}" data-film-mp4="{{ s.film_mp4 }}" aria-pressed="false">{{ s.film_label }}</button>
             {%- endif -%}
             {%- if product.media.size > 0 or s.photo_assets != blank -%}
               <button type="button" class="nd-viewer__btn nd-viewer__btn--photos" data-photos-toggle aria-expanded="false" aria-controls="Gallery-{{ section.id }}">{{ s.photos_label }}</button>
             {%- endif -%}
           </div>
-          {%- if film_id != blank -%}<div class="pdp-film" data-film-stage hidden></div>{%- endif -%}
+          {%- if film_id != blank or s.film_mp4 != blank -%}<div class="pdp-film" data-film-stage data-yt-label="{{ 'products.open_youtube' | t | escape }}" hidden></div>{%- endif -%}
         </div>
       {%- endif -%}
       <div class="gallery{% if s.media_mode == '3d' %} gallery--overlay{% endif %}" id="Gallery-{{ section.id }}" data-gallery{% if s.media_mode == '3d' %} hidden{% endif %}>
@@ -210,7 +210,9 @@
           <h2 class="buy__h" id="PickerLabel-{{ section.id }}">{{ s.bundle_heading }}</h2>
           <p class="buy__sub">{%- if multi -%}{{ s.multi_sub }}{%- else -%}{{ s.bundle_sub }}{%- endif -%}</p>
         </div>
-        <div class="plugs" role="group" aria-labelledby="PickerLabel-{{ section.id }}" data-plugs data-multi="{{ multi }}">
+        <details class="plug-drop" data-plug-drop>
+          <summary class="plug-drop__btn"><span data-plug-summary>{{ s.plug_pick }}</span><i aria-hidden="true"></i></summary>
+        <div class="plugs is-open" role="group" aria-labelledby="PickerLabel-{{ section.id }}" data-plugs data-multi="{{ multi }}">
           {%- for b in s.bundles -%}
             {%- assign short = b.title | remove: product.title | remove_first: ' + ' | strip -%}
             {%- assign bv = b.selected_or_first_available_variant -%}
@@ -231,7 +233,7 @@
             </label>
           {%- endfor -%}
         </div>
-        {%- if s.bundles.count > 3 -%}<button type="button" class="buy__more" data-plugs-more data-less="{{ s.less_label }}">{{ s.plugs_more_label | replace: '{n}', s.bundles.count }}</button>{%- endif -%}
+        </details>
         <p class="picker-note"><span data-plug-count>{{ s.plug_none }}</span>{%- if s.bundle_help_url != blank -%}<a href="{{ s.bundle_help_url }}">{{ s.bundle_help_link }} →</a>{%- endif -%}</p>
       {%- endif -%}
 
@@ -333,6 +335,7 @@
     { "type": "text", "id": "shipping_label", "label": "Shipping label", "default": "送料無料" },
     { "type": "text", "id": "more_label", "label": "Read more", "default": "もっと見る" },
     { "type": "text", "id": "less_label", "label": "Read less", "default": "閉じる" },
+    { "type": "text", "id": "plug_pick", "label": "Plugin dropdown label", "default": "プラグインを選ぶ" },
     { "type": "text", "id": "plugs_more_label", "label": "Show all plugins", "default": "すべてのプラグインを表示（{n}）" },
     { "type": "header", "content": "Media" },
     { "type": "select", "id": "media_mode", "label": "Left column", "default": "gallery", "options": [
@@ -353,6 +356,7 @@
     { "type": "text", "id": "photos_label", "label": "Photos button", "default": "写真" },
     { "type": "text", "id": "film_label", "label": "Film button", "default": "▶ フル動画を見る" },
     { "type": "text", "id": "film_url", "label": "Film (YouTube URL)", "info": "Plays in place of the 3D model, like a canvas swapping to the full video." },
+    { "type": "text", "id": "film_mp4", "label": "Film (Shopify-hosted mp4, plays in place; used before YouTube)" },
     { "type": "text", "id": "photo_assets", "label": "Photos from theme assets", "info": "Comma-separated transparent photos shipped with the theme (e.g. qc-photo-1.webp). When set, 写真 shows these instead of the Shopify product images." },
     { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
     { "type": "header", "content": "Plugins" },

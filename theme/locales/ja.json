@@ -47,7 +47,8 @@
     "no_accessories": "アクセサリーなし",
     "selected": "選択中",
     "view_plugin": "商品ページを見る",
-    "price_tbd": "価格未定"
+    "price_tbd": "価格未定",
+    "open_youtube": "YouTubeで開く"
   },
   "collections": {
     "count": "{{ count }} 商品",

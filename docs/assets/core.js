@@ -144,7 +144,7 @@ function initHeroFilm() {
       hero.classList.toggle('is-film', open);
       stage.hidden = !open;
       hero.querySelectorAll('.nd-hero__bg video').forEach((v) => (open ? v.pause() : v.play().catch(() => {})));
-      stage.innerHTML = open ? `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.heroFilm}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${label.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>` : '';
+      stage.innerHTML = open ? `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.heroFilm}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${label.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe><a class="pdp-film__out ext" href="https://www.youtube.com/watch?v=${btn.dataset.heroFilm}" target="_blank" rel="noopener">YouTubeで開く</a>` : '';
     });
   });
 }

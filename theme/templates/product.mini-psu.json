@@ -9,7 +9,7 @@
         "show_bundles": false,
         "show_accessories": false,
         "show_trial": false,
-        "photo_assets": "minipsu-photo-1.webp,minipsu-photo-2.webp,minipsu-photo-3.webp,minipsu-photo-4.webp,minipsu-photo-5.webp,minipsu-photo-6.webp,minipsu-photo-7.webp,minipsu-photo-8.webp,minipsu-photo-9.webp",
+        "photo_assets": "minipsu-photo-1.webp,minipsu-photo-2.webp,minipsu-photo-4.webp,minipsu-photo-5.webp,minipsu-photo-7.webp",
         "hardware_choices": [
           "quad-cortex-psu",
           "quad-cortex-mini-psu"

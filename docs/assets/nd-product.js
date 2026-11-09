@@ -78,7 +78,10 @@ function initFilm(root) {
     stage.hidden = !open;
     if (open) {
       $$('[data-view]', root).forEach((b) => b.setAttribute('aria-pressed', 'false'));
-      stage.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.film}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${btn.textContent.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+      // Shopify-hosted film plays directly; otherwise YouTube, with a link out in case YouTube blocks the embed
+      stage.innerHTML = btn.dataset.filmMp4
+        ? `<video src="${btn.dataset.filmMp4}" controls autoplay playsinline></video>`
+        : `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.film}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${btn.textContent.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe><a class="pdp-film__out ext" href="https://www.youtube.com/watch?v=${btn.dataset.film}" target="_blank" rel="noopener">${stage.dataset.ytLabel}</a>`;
     } else stage.innerHTML = '';
   };
   btn.addEventListener('click', () => set(btn.getAttribute('aria-pressed') !== 'true'));
@@ -206,6 +209,8 @@ function init(root) {
     $('[data-sticky-title]', root).textContent = names.length ? `${data.title} + ${names.join(' + ')}` : data.title;
     $('[data-sticky-meta]', root).textContent = state.acc.size ? `${[...state.acc].map((cb) => cb.dataset.accName).join('・')} ${S.selected}` : S.noAccessories;
     if (plugCount && !plugCount.classList.contains('is-warn')) plugCount.textContent = names.length ? S.plugCount.replace('{n}', names.length) : S.plugNone;
+    const sum = $('[data-plug-summary]', root);
+    if (sum) { sum.dataset.pick ??= sum.textContent; sum.textContent = names.length ? names.join('、') : sum.dataset.pick; sum.closest('summary').classList.toggle('has-pick', names.length > 0); }
     $('[data-variant-input]', root).value = !p.length || multi ? state.variant.id : p[0].dataset.bundleVariant;
     const avail = state.variant.available && state.variant.price > 0 && p.every((cb) => !cb.disabled);
     $$('[data-add], [data-buy-now]', root).forEach((x) => (x.disabled = !avail));

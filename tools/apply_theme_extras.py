@@ -9,7 +9,7 @@ from pathlib import Path
 THEME = Path(sys.argv[1])
 T = THEME / 'templates'
 PHOTOS = {'product.quad-cortex': ('qc', 5), 'product.quad-cortex-mini': ('mini', 4), 'product.nano-cortex': ('nano', 5),
-          'product.psu': ('psu', 4), 'product.mini-psu': ('minipsu', 9)}
+          'product.psu': ('psu', 4)}
 ACCESSORIES = {'product.quad-cortex': ['gig-case', 'quad-cortex-psu', 'quad-cortex-mini-psu'],
                'product.quad-cortex-mini': ['quad-cortex-psu', 'quad-cortex-mini-psu'],
                'product.nano-cortex': ['quad-cortex-psu', 'quad-cortex-mini-psu']}
@@ -59,7 +59,7 @@ hero = next((k for k in psu['order'] if psu['sections'][k]['type'] == 'nd-hero')
 if hero:
     psu['sections'][hero]['settings'].update(title='Quad Cortex mini 電源アダプター（PSU）', asset_image='minipsu-photo-1.webp',
         subtitle='Quad Cortex mini用電源アダプターです。Quad Cortex・Nano Cortexでもご使用いただけます。')
-psu['sections']['main']['settings']['photo_assets'] = ','.join(f'minipsu-photo-{i}.webp' for i in range(1, 10))
+psu['sections']['main']['settings']['photo_assets'] = ','.join(f'minipsu-photo-{i}.webp' for i in (1, 2, 4, 5, 7))
 save('product.mini-psu', '/*\n * Mini PSU: create the product (handle quad-cortex-mini-psu) and assign this template. Hero copy is a draft to confirm.\n */\n', psu)
 print('ok')
 
@@ -205,5 +205,14 @@ if 'custom_liquid_qmu8mb' in d['sections'] and d['sections']['custom_liquid_qmu8
 # menu: the page covers Cortex Control and Cortex Cloud
 p = THEME / 'sections' / 'header-group.json'
 s = p.read_text()
-p.write_text(s.replace('"label": "Cortex Cloud"', '"label": "Cortex Control / Cloud"'))
+p.write_text(s.replace('"label": "Cortex Cloud"', '"label": "Cortex Control"').replace('"label": "Cortex Control / Cloud"', '"label": "Cortex Control"'))
 print('review round ok')
+
+# Quad Cortex: the full film Shopify already hosts plays in place (no YouTube embed needed)
+head, d = load('product.quad-cortex')
+d['sections']['main']['settings']['film_mp4'] = 'https://cdn.shopify.com/videos/c/o/v/850a2016b0514a52a3e5448579317965.mp4'
+save('product.quad-cortex', head, d)
+# mini PSU: five distinct photos (no repeats)
+head, d = load('product.mini-psu')
+d['sections']['main']['settings']['photo_assets'] = ','.join(f'minipsu-photo-{i}.webp' for i in (1, 2, 4, 5, 7))
+save('product.mini-psu', head, d)

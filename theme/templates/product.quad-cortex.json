@@ -92,7 +92,8 @@
         "view_captions": "Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。|巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。|スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。|デュアルコンボ入力 TS、TRS、XLR対応、可変インピーダンス＆レベルコントロール内蔵、マイクプリアンプ搭載、ファンタム電源対応。 デュアルエフェクトループ 外部のモノラル/ステレオエフェクトをシグナルチェーンに組み込むのに最適。 XLR|",
         "film_url": "https://www.youtube.com/watch?v=SNq7D7Y4zfs",
         "film_label": "▶ フル動画を見る",
-        "photo_assets": "qc-photo-1.webp,qc-photo-2.webp,qc-photo-3.webp,qc-photo-4.webp,qc-photo-5.webp"
+        "photo_assets": "qc-photo-1.webp,qc-photo-2.webp,qc-photo-3.webp,qc-photo-4.webp,qc-photo-5.webp",
+        "film_mp4": "https://cdn.shopify.com/videos/c/o/v/850a2016b0514a52a3e5448579317965.mp4"
       },
       "blocks": {},
       "block_order": []

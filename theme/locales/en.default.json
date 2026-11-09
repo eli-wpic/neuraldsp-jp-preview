@@ -47,7 +47,8 @@
     "no_accessories": "No accessories",
     "selected": "selected",
     "view_plugin": "View product",
-    "price_tbd": "Price TBA"
+    "price_tbd": "Price TBA",
+    "open_youtube": "Open on YouTube"
   },
   "collections": {
     "count": "{{ count }} products",

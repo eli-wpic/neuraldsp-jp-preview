@@ -226,3 +226,8 @@
 .tone__tabs button[aria-selected="true"]::after { transform: scaleX(1); }
 .tone { align-items: end; }
 @media (max-width: 760px) { .tone__tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 22px; } .tone__tabs button { white-space: nowrap; font-size: var(--fs-s); } }
+
+/* genre tabs: one underline that slides to the chosen tab */
+.tone__tabs { position: relative; }
+.tone__tabs button::after { display: none; }
+.tone__ink { position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; background: var(--accent); transition: transform .4s var(--ease-out), width .4s var(--ease-out); pointer-events: none; }
