@@ -46,7 +46,8 @@
     "set": "セット",
     "no_accessories": "アクセサリーなし",
     "selected": "選択中",
-    "view_plugin": "商品ページを見る"
+    "view_plugin": "商品ページを見る",
+    "price_tbd": "価格未定"
   },
   "collections": {
     "count": "{{ count }} 商品",

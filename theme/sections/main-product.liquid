@@ -195,7 +195,7 @@
             <span class="plug plug--link plug--soon" aria-disabled="true">
               {%- if s.soon_image != blank -%}<img src="{{ s.soon_image | asset_url }}" alt="" width="72" height="45" loading="lazy">{%- endif -%}
               <span class="plug__name">{{ s.soon_label }}</span>
-              <span class="plug__price">{{ 'trial.soon' | t }}</span>
+              <span class="plug__price">{{ 'products.price_tbd' | t }}</span>
               <i class="plug__tick" aria-hidden="true"></i>
             </span>
           {%- endif -%}
@@ -253,7 +253,7 @@
       {%- endif -%}
 
       <hr>
-      <div class="total"><span>{{ s.total_label }}</span><strong class="yen" data-total>{{ base_price | money_without_trailing_zeros }}</strong></div>
+      <div class="total"><span>{{ s.total_label }}</span><strong class="yen" data-total>{% if base_price > 0 %}{{ base_price | money_without_trailing_zeros }}{% else %}{{ 'products.price_tbd' | t }}{% endif %}</strong></div>
       <p class="total-break" data-total-break></p>
 
       {%- form 'product', product, class: 'buy__form', data-buy-form: '' -%}
@@ -264,11 +264,11 @@
             <output aria-live="polite">1</output>
             <button type="button" data-step="+" aria-label="{{ 'products.qty_up' | t }}">＋</button>
           </div>
-          <button class="btn buy__add btn--nochev" type="submit" name="add" data-add{% unless current_variant.available %} disabled{% endunless %}>
+          <button class="btn buy__add btn--nochev" type="submit" name="add" data-add{% unless current_variant.available and current_variant.price > 0 %} disabled{% endunless %}>
             {%- if current_variant.available -%}{{ s.add_label }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
           </button>
         </div>
-        <button class="btn btn--primary buy__cta" type="button" data-buy-now{% unless current_variant.available %} disabled{% endunless %}>{{ s.buy_label }}</button>
+        <button class="btn btn--primary buy__cta" type="button" data-buy-now{% unless current_variant.available and current_variant.price > 0 %} disabled{% endunless %}>{{ s.buy_label }}</button>
         {{ form | payment_button }}
         <p class="buy__err" role="alert" data-error hidden></p>
       {%- endform -%}

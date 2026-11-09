@@ -186,7 +186,8 @@ async function renderPage(tplName, outFile, extra = {}) {
 /* every page the live store has: products, pages, collections, blog + articles, and the system templates */
 const INV = JSON.parse(fs.readFileSync(path.join(THEME, '..', 'site', 'live-content-inventory.json'), 'utf8'));
 const hasTpl = (t) => fs.existsSync(path.join(THEME, 'templates', t + '.json'));
-const tplFor = (url, base) => { const t = (INV[url]?.template || '').replace(/^(product|page|collection|blog|article)-/, '$1.'); return t && hasTpl(t) ? t : base; };
+const PREVIEW_TEMPLATES = { '/products/quad-cortex-mini-psu': 'product.mini-psu' }; // products not on the live store yet
+const tplFor = (url, base) => { if (PREVIEW_TEMPLATES[url]) return PREVIEW_TEMPLATES[url]; const t = (INV[url]?.template || '').replace(/^(product|page|collection|blog|article)-/, '$1.'); return t && hasTpl(t) ? t : base; };
 const cleanTitle = (t) => String(t || '').split('–')[0].replace(/\s+/g, ' ').trim();
 const pages = [['index', 'index.html']];
 for (const h of Object.keys(products)) pages.push([tplFor('/products/' + h, 'product'), `products/${h}.html`, { product: products[h], title: products[h].title }]);

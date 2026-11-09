@@ -207,14 +207,14 @@ function init(root) {
     $('[data-sticky-meta]', root).textContent = state.acc.size ? `${[...state.acc].map((cb) => cb.dataset.accName).join('・')} ${S.selected}` : S.noAccessories;
     if (plugCount && !plugCount.classList.contains('is-warn')) plugCount.textContent = names.length ? S.plugCount.replace('{n}', names.length) : S.plugNone;
     $('[data-variant-input]', root).value = !p.length || multi ? state.variant.id : p[0].dataset.bundleVariant;
-    const avail = state.variant.available && p.every((cb) => !cb.disabled);
+    const avail = state.variant.available && state.variant.price > 0 && p.every((cb) => !cb.disabled);
     $$('[data-add], [data-buy-now]', root).forEach((x) => (x.disabled = !avail));
     const u = new URL(location.href);
     if (p.length) u.searchParams.set('plugin', p.map((cb) => cb.value).join(','));
     else u.searchParams.delete('plugin');
     history.replaceState(null, '', u);
   }
-  render();
+  if (state.variant.price > 0) render(); // no price yet (価格未定): keep the server-rendered labels
 
   /* sticky bar when the main CTA leaves the viewport */
   const bar = $('[data-sticky]', root);

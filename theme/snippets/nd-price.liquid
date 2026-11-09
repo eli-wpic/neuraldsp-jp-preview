@@ -1,2 +1,2 @@
-{%- comment -%} Params: price (cents) {%- endcomment -%}
-<span class="yen">{{ price | money_without_trailing_zeros }}</span>
+{%- comment -%} Params: price (cents). A price of 0 means it isn't set yet and shows 価格未定. {%- endcomment -%}
+{%- if price == blank or price == 0 -%}<span class="yen is-tbd">{{ 'products.price_tbd' | t }}</span>{%- else -%}<span class="yen">{{ price | money_without_trailing_zeros }}</span>{%- endif -%}

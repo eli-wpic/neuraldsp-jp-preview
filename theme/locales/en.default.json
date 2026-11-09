@@ -46,7 +46,8 @@
     "set": "Bundle",
     "no_accessories": "No accessories",
     "selected": "selected",
-    "view_plugin": "View product"
+    "view_plugin": "View product",
+    "price_tbd": "Price TBA"
   },
   "collections": {
     "count": "{{ count }} products",
