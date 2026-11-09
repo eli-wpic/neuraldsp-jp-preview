@@ -2,6 +2,9 @@
 import http.server, os, sys, urllib.parse
 ROOT = sys.argv[1]
 class H(http.server.SimpleHTTPRequestHandler):
+    def end_headers(self):
+        self.send_header('Cache-Control', 'no-store')  # always serve the latest build
+        super().end_headers()
     def __init__(self, *a, **k): super().__init__(*a, directory=ROOT, **k)
     def send_head(self):
         path = urllib.parse.unquote(urllib.parse.urlsplit(self.path).path)
