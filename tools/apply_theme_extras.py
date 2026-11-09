@@ -176,7 +176,8 @@ for name in ('product.psu', 'product.mini-psu'):
 
 # Gig Case: real photos instead of renders
 head, d = load('product.gig-case')
-d['sections']['main']['settings']['photo_assets'] = ','.join(f'gigcase-photo-{i}.webp' for i in range(1, 14))
+# five distinct real photos: angled with strap, front, open with a Quad Cortex, packed with cables, side
+d['sections']['main']['settings']['photo_assets'] = ','.join(f'gigcase-photo-{i}.webp' for i in (10, 1, 4, 6, 11))
 save('product.gig-case', head, d)
 
 # Nano Cortex signal chain: vertical tabs (category list → devices + chain picture) instead of one long text block
