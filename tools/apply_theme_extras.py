@@ -171,7 +171,8 @@ for name in ('page.cortex-control', 'page.neuraldsp-account'):
 for name in ('product.psu', 'product.mini-psu'):
     head, d = load(name)
     d['sections']['main']['settings'].update(hardware_choices=['quad-cortex-psu', 'quad-cortex-mini-psu'], hardware_heading='タイプを選ぶ',
-        hardware_sub='どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。')
+        hardware_sub='どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。',
+        soon_label='Quad Cortex mini 電源アダプター（PSU）', soon_image='minipsu-photo-1.webp')
     save(name, head, d)
 
 # Gig Case: real photos instead of renders

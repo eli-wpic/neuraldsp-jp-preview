@@ -16,7 +16,9 @@
           "quad-cortex-mini-psu"
         ],
         "hardware_heading": "タイプを選ぶ",
-        "hardware_sub": "どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。"
+        "hardware_sub": "どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。",
+        "soon_label": "Quad Cortex mini 電源アダプター（PSU）",
+        "soon_image": "minipsu-photo-1.webp"
       },
       "blocks": {},
       "block_order": []

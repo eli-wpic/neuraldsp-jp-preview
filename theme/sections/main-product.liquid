@@ -160,7 +160,7 @@
         </div>
       {%- endunless -%}
 
-      {%- if s.hardware_choices.count > 1 -%}
+      {%- if s.hardware_choices.count > 1 or s.hardware_choices.count == 1 and s.soon_label != blank -%}
         <hr>
         <div>
           <h2 class="buy__h" id="HwLabel-{{ section.id }}">{{ s.hardware_heading }}</h2>
@@ -191,6 +191,14 @@
               <i class="plug__tick" aria-hidden="true"></i>
             </a>
           {%- endfor -%}
+          {%- if s.hardware_choices.count < 2 and s.soon_label != blank -%}
+            <span class="plug plug--link plug--soon" aria-disabled="true">
+              {%- if s.soon_image != blank -%}<img src="{{ s.soon_image | asset_url }}" alt="" width="72" height="45" loading="lazy">{%- endif -%}
+              <span class="plug__name">{{ s.soon_label }}</span>
+              <span class="plug__price">{{ 'trial.soon' | t }}</span>
+              <i class="plug__tick" aria-hidden="true"></i>
+            </span>
+          {%- endif -%}
         </nav>
       {%- endif -%}
 
@@ -338,6 +346,8 @@
     { "type": "textarea", "id": "view_captions", "label": "3D view captions (separated by |)" },
     { "type": "header", "content": "Plugin pages: choose the hardware" },
     { "type": "product_list", "id": "hardware_choices", "label": "Same plugin with each hardware", "limit": 4, "info": "e.g. Quad Cortex + Gojira X and Quad Cortex mini + Gojira X. Customers switch between them here." },
+    { "type": "text", "id": "soon_label", "label": "Coming-soon option (shown until the second product exists)" },
+    { "type": "text", "id": "soon_image", "label": "Coming-soon option photo (theme asset)" },
     { "type": "text", "id": "hardware_heading", "label": "Heading", "default": "本体を選ぶ" },
     { "type": "text", "id": "hardware_sub", "label": "Sub text", "default": "プラグインは Quad Cortex または Quad Cortex mini とのセットでご購入いただけます。" },
     { "type": "text", "id": "photos_label", "label": "Photos button", "default": "写真" },
