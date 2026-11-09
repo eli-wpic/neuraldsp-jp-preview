@@ -39,7 +39,7 @@
           {%- if max_w > 0 and b.width_cm != blank -%}{%- assign scale = b.width_cm | times: 100.0 | divided_by: max_w | round -%}{%- endif -%}
           <article class="vs__unit compare__col" data-rec="{{ b.recommend_for }}" data-name="{{ p.title | escape }}" {{ block.shopify_attributes }}>
             <span class="compare__badge">{{ s.badge }}</span>
-            <div class="vs__img"><div style="width: {{ scale }}%">{% render 'nd-product-thumb', product: p, width: 600 %}</div></div>
+            <div class="vs__img"><div style="width: {{ scale }}%">{%- if b.image_asset != blank -%}<img src="{{ b.image_asset | asset_url }}" alt="{{ p.title | escape }}" width="600" height="400" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: p, width: 600 %}{%- endif -%}</div></div>
             <h3>{{ p.title }}</h3>
             <p class="vs__role">{{ b.role }}</p>
             <p class="vs__price">{% render 'nd-price', price: p.price %}<small>{{ s.tax_label }}</small></p>
@@ -125,6 +125,7 @@
     { "type": "product", "id": "product", "label": "Product" },
     { "type": "text", "id": "role", "label": "Role" },
     { "type": "text", "id": "recommend_for", "label": "Recommend for", "info": "Comma list of: features_yes, features_no, portable_yes, portable_no, price_yes, price_no" },
+    { "type": "text", "id": "image_asset", "label": "Front-facing photo (theme asset file name)" },
     { "type": "number", "id": "width_cm", "label": "Width (cm) — draws the product to scale" },
     { "type": "text", "id": "size_text", "label": "Size text" },
     { "type": "number", "id": "weight_g", "label": "Weight (g)" },

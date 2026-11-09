@@ -167,3 +167,13 @@ Open **Customize → Home page → ND · Hero 3D + campaign**. The hero holds a 
 - **The page:** create it in Shopify with handle **trial-guide** and template **page.trial-guide** (Online Store → Pages → Add page). Step 1 shows this site's own trial window.
 - The guide has 10 steps in three parts (体験版を始める / 製品版をアクティベートする / オーディオ設定). The text is translated from the trial manual (Chinese) into Japanese, and the screenshots are `assets/trial-step-1…10.webp` (the Chinese labels on them were removed). Please have a native speaker check the wording.
 - As you scroll, the screenshot stays in place and changes to the step you are reading, with numbers 01–10 to jump between steps.
+
+## 15. Client review round (Pastel, Nov 2026)
+
+- **Homepage hero:** the copy now starts on the same line as the logo and page content.
+- **Comparison:** front-facing photos for all three (qc-photo-1, mini-photo-2, nano-photo-1).
+- **Cortex Control / Cloud:** the menu item is renamed to match the page. The hero uses a still picture; the muted YouTube loop was replaced because some browsers showed YouTube's "Sign in to confirm you're not a bot" screen. ▶ フル動画を見る still plays the film.
+- **PSU pages:** 「タイプを選ぶ」 switches between the Quad Cortex PSU and the mini PSU (the mini PSU appears once its product exists).
+- **Nano Cortex:** the signal-chain block is now vertical tabs (Neural Capture / IR / エフェクト / Pre / Post / EQ / インプットゲート), each with its chain picture.
+- **Plugin pages:** genre tabs replace the slider: Progressive / ACG / Versatile / Old school / Bass. The genre of each plugin is a first guess and needs confirming (Customize → plugin section → each plugin → Genres). The page title is now 「プラグインセット」 with a note that plugins are sold only with a Quad Cortex or Quad Cortex mini.
+- **Gig Case:** the gallery uses the 13 real photos (assets/gigcase-photo-*.webp) instead of renders.

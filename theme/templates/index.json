@@ -120,7 +120,7 @@
             "headline": "透明感から、\n歌うリードまで。",
             "description": "それを生み出したアーティストと共に、優雅に作り上げられた、真に多用途なプラグイン。",
             "genres": "PROGRESSIVE / FUSION / AMBIENT",
-            "tones": "clean,crunch,ambient",
+            "tones": "progressive,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/plinix-product-card.png",
             "youtube_id": "iiU1MQy-sUU",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-plini"
@@ -134,7 +134,7 @@
             "headline": "重厚なリフ。\n鮮明な輪郭。",
             "description": "メタル界で最も破壊力のあるギタリストの一人、Gojira のジョー・デュプランティエによる、誰もが求めるトーンがすべて詰め込まれています。",
             "genres": "METAL / HIGH GAIN / EXPERIMENTAL",
-            "tones": "highgain",
+            "tones": "acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/a-gojira-x-product-card_cfb2c9e8-e68e-493b-b7ff-4ab47441172f.png",
             "youtube_id": "MhnkGMBn1tw",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-gojira"
@@ -148,7 +148,7 @@
             "headline": "キレのある、\nクリーントーン。",
             "description": "完璧なクリーン・トーンやエッジ・オブ・ブレイクアップ・トーンを求めるプレイヤーのために、幅広いサウンドオプションを備えた非常に多用途なプラグイン。",
             "genres": "FUNK / CLEAN / EDGE OF BREAKUP",
-            "tones": "clean,crunch",
+            "tones": "versatile,oldschool",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/cwx-product-card.png",
             "youtube_id": "Zy9uFDh9I6o",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-cory-wong"
@@ -161,7 +161,7 @@
             "name": "Archetype: John Mayer X",
             "description": "JohnMayerを象徴するクリーントーンから、豊かな倍音を備えたオーバードライブまで幅広く対応。",
             "genres": "BLUES / POP / CLEAN",
-            "tones": "clean,crunch",
+            "tones": "oldschool,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-john-mayer-x-product-card_3cfebe92-ef46-421f-a63d-ad279b159d9e.png?width=800",
             "youtube_id": "qXxagV9Smcw",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-john-mayer"
@@ -174,7 +174,7 @@
             "name": "Archetype: Misha Mansoor X",
             "description": "ハイゲインなモダンメタルトーンからクリアでアーティキュレートなサウンド、GlitchやLaserなどの実験的なエフェクトまで幅広く対応。",
             "genres": "DJENT / PROGRESSIVE",
-            "tones": "highgain,clean",
+            "tones": "progressive,acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-misha-mansoor-x-product-card.png?width=800",
             "youtube_id": "ZyMbzakf2G8",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-misha-mansoor"
@@ -187,7 +187,7 @@
             "name": "Archetype: Tim Henson X",
             "description": "きらびやかなクリーンから温かみのあるクランチ、ヘヴィなリズムやリードまで幅広く対応し、象徴的なMultivoicerによる重層的なハーモニー表現も可能。",
             "genres": "MATH ROCK / CLEAN / FINGERSTYLE",
-            "tones": "clean,crunch,ambient",
+            "tones": "progressive,acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-tim-henson-x-product-card.png?width=800",
             "youtube_id": "Mz1uL3K75pY",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-tim-henson"
@@ -200,7 +200,7 @@
             "name": "Archetype: Rabea X",
             "description": "きらびやかなクリーンからクランチ、力強いモダンハイゲインまで幅広く対応し、革新的なOverlordモノシンセによってギターの表現力をさらに拡張。",
             "genres": "MODERN METAL / AMBIENT",
-            "tones": "highgain,ambient",
+            "tones": "acg,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-rabea-x-product-card.png?width=800",
             "youtube_id": "ZS5Swq-FPy8",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-rabea"
@@ -213,7 +213,7 @@
             "name": "Archetype: Petrucci X",
             "description": "豊かで明瞭なクリーンから、重厚で力強いリードトーンまで幅広く対応し、4種類のアンプと多彩なエフェクトで自在なサウンドメイクが可能。",
             "genres": "PROGRESSIVE METAL / LEAD",
-            "tones": "highgain,crunch",
+            "tones": "progressive,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-petrucci-x-product-card.png?width=800",
             "youtube_id": "XD5mratZFWE",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-petrucci"
@@ -226,7 +226,7 @@
             "name": "Archetype: Nolly X",
             "description": "QuadCortex®の高精度モデリングによって、プロレベルのギタートーンと緻密な音作りを実現します。",
             "genres": "PROGRESSIVE / PRODUCTION",
-            "tones": "highgain,clean",
+            "tones": "progressive",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nolly-x-product-card.png?width=800",
             "youtube_id": "bpod5JnymrA",
             "plugin_url": "https://neuraldsp.com/plugins/archetype-nolly"
@@ -239,7 +239,7 @@
             "name": "Soldano SLO-100 X",
             "description": "クラシックでありながら現代的なハイゲイントーンを備え、アメリカン・ハイゲインの源流を求めるプレイヤーに最適です。",
             "genres": "ROCK / CLASSIC HIGH GAIN",
-            "tones": "crunch,highgain",
+            "tones": "oldschool",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/soldano-slo-100-x-product-card.png?width=800",
             "youtube_id": "hNEJM997cYM",
             "plugin_url": "https://neuraldsp.com/plugins/soldano-slo-100"
@@ -252,7 +252,7 @@
             "name": "Fortin Nameless Suite X",
             "description": "圧倒的な歪みと凶悪なゲインに特化し、メタルからハードロックまで重厚なディストーションを求めるプレイヤーに最適です。",
             "genres": "METAL / HIGH GAIN",
-            "tones": "highgain",
+            "tones": "acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nameless-x-product-card_3.png?width=800",
             "youtube_id": "rE7e61rS9pE",
             "plugin_url": "https://neuraldsp.com/plugins/fortin-nameless-suite"
@@ -265,7 +265,7 @@
             "name": "Parallax X",
             "description": "パラレルプロセッシングにより明瞭さと重厚感を両立し、タイトで存在感のある低域を求めるベーシストに最適です。",
             "genres": "BASS",
-            "tones": "highgain",
+            "tones": "bass",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/parallax-x-product-card.png?width=800",
             "youtube_id": "VHpBHTmskDo",
             "plugin_url": "https://neuraldsp.com/plugins/parallax"
@@ -313,7 +313,8 @@
             "switches": 11,
             "screen": true,
             "capture": true,
-            "plugins": true
+            "plugins": true,
+            "image_asset": "qc-photo-1.webp"
           }
         },
         "m1": {
@@ -328,7 +329,8 @@
             "switches": 4,
             "screen": true,
             "capture": true,
-            "plugins": true
+            "plugins": true,
+            "image_asset": "mini-photo-2.webp"
           }
         },
         "m2": {
@@ -343,7 +345,8 @@
             "switches": 2,
             "screen": false,
             "capture": true,
-            "plugins": false
+            "plugins": false,
+            "image_asset": "nano-photo-1.webp"
           }
         }
       },

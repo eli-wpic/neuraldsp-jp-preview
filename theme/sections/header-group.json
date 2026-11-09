@@ -27,7 +27,7 @@
         "cloud": {
           "type": "link",
           "settings": {
-            "label": "Cortex Cloud",
+            "label": "Cortex Control / Cloud",
             "url": "/pages/neuraldsp-account"
           }
         },

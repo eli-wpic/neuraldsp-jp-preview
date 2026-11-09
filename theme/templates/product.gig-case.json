@@ -9,7 +9,8 @@
       "settings": {
         "show_bundles": false,
         "show_accessories": false,
-        "show_trial": false
+        "show_trial": false,
+        "photo_assets": "gigcase-photo-1.webp,gigcase-photo-2.webp,gigcase-photo-3.webp,gigcase-photo-4.webp,gigcase-photo-5.webp,gigcase-photo-6.webp,gigcase-photo-7.webp,gigcase-photo-8.webp,gigcase-photo-9.webp,gigcase-photo-10.webp,gigcase-photo-11.webp,gigcase-photo-12.webp,gigcase-photo-13.webp"
       },
       "blocks": {},
       "block_order": []

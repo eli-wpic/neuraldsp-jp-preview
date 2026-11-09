@@ -126,3 +126,82 @@ for f in sorted(T.glob('product.*.json')):
     if changed:
         save(f.stem, head, d)
         print('cleaned', f.stem)
+
+# ---- client review round (Nov 2026) ----
+GENRES = {'pli': 'progressive,versatile', 'goj': 'acg', 'cor': 'versatile,oldschool', 'joh': 'oldschool,versatile',
+          'mis': 'progressive,acg', 'tim': 'progressive,acg', 'rab': 'acg,versatile', 'pet': 'progressive,versatile',
+          'nol': 'progressive', 'slo': 'oldschool', 'for': 'acg', 'par': 'bass'}
+for name in ('index', 'page.quadcortex-plugin-bundle', 'page.quadcortex-mini-plugin-bundle'):
+    head, d = load(name)
+    sec = d['sections'].get('plugins')
+    if sec:
+        for b in sec['blocks'].values():
+            code = b['settings'].get('product', '')[-3:]
+            if code in GENRES:
+                b['settings']['tones'] = GENRES[code]
+        st = sec['settings']
+        for k in ('tone_clean', 'tone_crunch', 'tone_highgain', 'tone_ambient', 'tone_map'):
+            st.pop(k, None)
+    if name != 'index' and 'main' in d['sections']:
+        d['sections']['main'].setdefault('settings', {}).update(
+            title_override='プラグインセット',
+            subtitle='プラグインは Quad Cortex または Quad Cortex mini とのセットでのみご購入いただけます。お好きなプラグインを選び、本体と一緒にお求めください。')
+    save(name, head, d)
+
+# comparison: front-facing photos for every product
+FRONT = {'quad-cortex': 'qc-photo-1.webp', 'quad-cortex-mini': 'mini-photo-2.webp', 'nano-cortex': 'nano-photo-1.webp'}
+for name in ('index', 'product.quad-cortex-mini'):
+    head, d = load(name)
+    if 'compare' in d['sections']:
+        for b in d['sections']['compare']['blocks'].values():
+            b['settings']['image_asset'] = FRONT.get(b['settings'].get('product'), '')
+        save(name, head, d)
+
+# Cortex Control / Cloud: still picture behind the title (a muted YouTube loop shows a bot check in some browsers); the film still plays on click
+for name in ('page.cortex-control', 'page.neuraldsp-account'):
+    head, d = load(name)
+    hero = next((k for k in d['order'] if d['sections'][k]['type'] == 'nd-hero'), None)
+    if hero:
+        hs = d['sections'][hero]['settings']
+        hs.pop('bg_youtube', None)
+        hs['bg_image_url'] = 'https://cdn.shopify.com/s/files/1/0747/8109/8202/files/hero_1_7da1ff2b-0c59-4f40-ba10-c336e631ad91.webp?v=1743734645'
+        save(name, head, d)
+
+# PSU pages: choose between the Quad Cortex PSU and the mini PSU
+for name in ('product.psu', 'product.mini-psu'):
+    head, d = load(name)
+    d['sections']['main']['settings'].update(hardware_choices=['quad-cortex-psu', 'quad-cortex-mini-psu'], hardware_heading='タイプを選ぶ',
+        hardware_sub='どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。')
+    save(name, head, d)
+
+# Gig Case: real photos instead of renders
+head, d = load('product.gig-case')
+d['sections']['main']['settings']['photo_assets'] = ','.join(f'gigcase-photo-{i}.webp' for i in range(1, 14))
+save('product.gig-case', head, d)
+
+# Nano Cortex signal chain: vertical tabs (category list → devices + chain picture) instead of one long text block
+head, d = load('product.nano-cortex')
+if 'custom_liquid_qmu8mb' in d['sections'] and d['sections']['custom_liquid_qmu8mb']['type'] == 'nd-feature':
+    src = d['sections']['custom_liquid_qmu8mb']['settings']
+    parts = re.split(r'<h2>(.*?)</h2>', src.get('body', ''))
+    chunks = [(src.get('heading', 'Neural Capture'), parts[0])] + list(zip(parts[1::2], parts[2::2]))
+    link = re.search(r'<p>\s*<a href="([^"]+)"[^>]*>\s*([^<]+?)\s*</a>\s*</p>\s*$', chunks[-1][1])
+    if link:
+        chunks[-1] = (chunks[-1][0], chunks[-1][1][:link.start()])
+    img = {'Neural Capture': 'capture', 'Impulse Responses': 'cab', 'Pre Effects': 'pre', 'Post Effects': 'post', 'EQ（イコライザー）': 'eq', 'インプットゲート': 'input-gate'}
+    base = 'https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-{}-chain.webp'
+    blocks = {}
+    for i, (label, body) in enumerate(chunks):
+        st = {'label': label.strip(), 'body': body.strip()}
+        if label.strip() in img:
+            st['image_url'] = base.format(img[label.strip()])
+        blocks[f'tab_{i}'] = {'type': 'tab', 'settings': st}
+    d['sections']['custom_liquid_qmu8mb'] = {'type': 'nd-tabs', 'settings': {'heading': 'シグナルチェーン',
+        **({'link_label': link.group(2), 'link_url': link.group(1)} if link else {})}, 'blocks': blocks, 'block_order': list(blocks)}
+    save('product.nano-cortex', head, d)
+
+# menu: the page covers Cortex Control and Cortex Cloud
+p = THEME / 'sections' / 'header-group.json'
+s = p.read_text()
+p.write_text(s.replace('"label": "Cortex Cloud"', '"label": "Cortex Control / Cloud"'))
+print('review round ok')

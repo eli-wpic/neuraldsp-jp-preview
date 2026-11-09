@@ -1,12 +1,17 @@
 <section class="nd-page-head">
   <div class="container">
-    <p class="crumbs"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / {{ page.title }}</p>
-    <h1>{{ page.title }}</h1>
+    {%- assign head_title = section.settings.title_override | default: page.title -%}
+    <p class="crumbs"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / {{ head_title }}</p>
+    <h1>{{ head_title }}</h1>
+    {%- if section.settings.subtitle != blank -%}<p class="nd-page-head__sub">{{ section.settings.subtitle }}</p>{%- endif -%}
   </div>
 </section>
 {%- if page.content != blank -%}
   <section class="nd-html nd-html--narrow"><div class="container"><div class="nd-prose nd-prose--table">{{ page.content }}</div></div></section>
 {%- endif -%}
 {% schema %}
-{ "name": "Page", "tag": "section", "class": "section-main-page", "settings": [] }
+{ "name": "Page", "tag": "section", "class": "section-main-page", "settings": [
+  { "type": "text", "id": "title_override", "label": "Heading (defaults to the page title)" },
+  { "type": "textarea", "id": "subtitle", "label": "Text under the heading" }
+] }
 {% endschema %}

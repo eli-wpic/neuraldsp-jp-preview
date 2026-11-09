@@ -428,3 +428,22 @@ body.in-3d .nd-nl-fab { opacity: 0; translate: 0 10px; pointer-events: none; }
 .nd-faq-section .container { max-width: calc(860px + 2 * var(--gutter)); }
 .nd-faq-section .section-head { text-align: center; justify-items: center; margin-left: auto; margin-right: auto; }
 .nd-faq-section .faq, .nd-faq-section .faq-search { max-width: 860px; margin-left: auto; margin-right: auto; }
+
+/* vertical tabs (Nano Cortex signal chain): categories on the left, devices + chain picture on the right */
+.nd-tabs { padding: clamp(56px, 7vw, 96px) 0; border-top: 1px solid var(--line); }
+.nd-tabs__grid { display: grid; grid-template-columns: minmax(180px, 260px) minmax(0, 1fr); gap: clamp(24px, 4vw, 64px); align-items: start; }
+.nd-tabs__list { display: grid; position: sticky; top: 96px; border-left: 1px solid var(--line); }
+.nd-tabs__list button { text-align: left; padding: 14px 18px; margin-left: -1px; border: 0; border-left: 2px solid transparent; background: none; color: var(--text-3); font: 600 var(--fs-m)/1.4 var(--font); cursor: pointer; transition: color .2s, border-color .2s; }
+.nd-tabs__list button:hover { color: var(--text-2); }
+.nd-tabs__list button[aria-selected="true"] { color: var(--text); border-left-color: var(--accent); }
+.nd-tabs__panel { display: grid; gap: 16px; }
+.nd-tabs__img img { width: 100%; height: auto; border-radius: 12px; }
+.nd-tabs__panel h3 { font-size: var(--fs-xl); }
+.nd-tabs__more { margin-top: 32px; }
+@media (max-width: 760px) {
+  .nd-tabs__grid { grid-template-columns: 1fr; }
+  .nd-tabs__list { position: static; display: flex; overflow-x: auto; border-left: 0; border-bottom: 1px solid var(--line); scrollbar-width: none; }
+  .nd-tabs__list button { white-space: nowrap; border-left: 0; border-bottom: 2px solid transparent; margin: 0 0 -1px; padding: 12px 14px; font-size: var(--fs-s); }
+  .nd-tabs__list button[aria-selected="true"] { border-bottom-color: var(--accent); }
+}
+.nd-page-head__sub { margin-top: 12px; color: var(--text-2); font-size: var(--fs-m); max-width: 40em; }

@@ -10,7 +10,13 @@
         "show_bundles": false,
         "show_accessories": false,
         "show_trial": false,
-        "photo_assets": "psu-photo-1.webp,psu-photo-2.webp,psu-photo-3.webp,psu-photo-4.webp"
+        "photo_assets": "psu-photo-1.webp,psu-photo-2.webp,psu-photo-3.webp,psu-photo-4.webp",
+        "hardware_choices": [
+          "quad-cortex-psu",
+          "quad-cortex-mini-psu"
+        ],
+        "hardware_heading": "タイプを選ぶ",
+        "hardware_sub": "どちらの電源アダプターも Quad Cortex・Quad Cortex mini・Nano Cortex でご使用いただけます。"
       },
       "blocks": {},
       "block_order": []

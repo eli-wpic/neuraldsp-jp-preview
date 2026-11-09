@@ -169,6 +169,10 @@
         <nav class="plugs plugs--hw is-open" aria-labelledby="HwLabel-{{ section.id }}">
           {%- for h in s.hardware_choices -%}
             {%- liquid
+              assign is_bundle = false
+              if h.handle contains 'plugin-bundle'
+                assign is_bundle = true
+              endif
               if h.handle contains 'mini'
                 assign hw_name = 'Quad Cortex mini'
                 assign hw_img = 'mini-three-quarter-1600.webp'
@@ -176,9 +180,12 @@
                 assign hw_name = 'Quad Cortex'
                 assign hw_img = 'qc-three-quarter-800.webp'
               endif
+              unless is_bundle
+                assign hw_name = h.title
+              endunless
             -%}
             <a class="plug plug--link" href="{{ h.url }}" data-keep-place{% if h.id == product.id %} aria-current="page"{% endif %}>
-              <img src="{{ hw_img | asset_url }}" alt="" width="72" height="45" loading="lazy">
+              {%- if is_bundle -%}<img src="{{ hw_img | asset_url }}" alt="" width="72" height="45" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: h, width: 160 %}{%- endif -%}
               <span class="plug__name">{{ hw_name }}</span>
               <span class="plug__price yen">{% render 'nd-price', price: h.price %}</span>
               <i class="plug__tick" aria-hidden="true"></i>

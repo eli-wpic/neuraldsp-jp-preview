@@ -1,0 +1,60 @@
+{%- comment -%}
+  Vertical tabs: a list of categories on the left (e.g. Neural Capture / IR / Pre Effects …); choosing one shows its
+  devices and picture on the right. Used for the Nano Cortex signal chain.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<section class="nd-tabs" data-tabs>
+  <div class="container">
+    {%- if s.heading != blank -%}<header class="section-head"><h2>{{ s.heading }}</h2>{%- if s.intro != blank -%}<p>{{ s.intro }}</p>{%- endif -%}</header>{%- endif -%}
+    <div class="nd-tabs__grid">
+      <div class="nd-tabs__list" role="tablist" aria-orientation="vertical">
+        {%- for block in section.blocks -%}
+          <button type="button" role="tab" id="Tab-{{ block.id }}" aria-controls="Panel-{{ block.id }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}" {{ block.shopify_attributes }}>{{ block.settings.label }}</button>
+        {%- endfor -%}
+      </div>
+      <div class="nd-tabs__panels">
+        {%- for block in section.blocks -%}
+          {%- assign b = block.settings -%}
+          <div class="nd-tabs__panel" role="tabpanel" id="Panel-{{ block.id }}" aria-labelledby="Tab-{{ block.id }}"{% unless forloop.first %} hidden{% endunless %}>
+            {%- if b.image != blank or b.image_url != blank -%}<div class="nd-tabs__img">{% render 'nd-media', image: b.image, url: b.image_url, alt: b.label %}</div>{%- endif -%}
+            <h3>{{ b.label }}</h3>
+            <div class="nd-prose">{{ b.body }}</div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+    {%- if s.link_label != blank -%}<p class="nd-tabs__more"><a class="btn btn--ext" href="{{ s.link_url }}" target="_blank" rel="noopener">{{ s.link_label }}</a></p>{%- endif -%}
+  </div>
+</section>
+<script>
+document.querySelectorAll('[data-tabs]:not([data-tabs-ready])').forEach((root) => {
+  root.dataset.tabsReady = '';
+  const tabs = [...root.querySelectorAll('[role="tab"]')];
+  const show = (t, focus) => {
+    tabs.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1; const p = document.getElementById(x.getAttribute('aria-controls')); p.hidden = !on; if (on && p.animate) p.animate([{ opacity: 0, transform: 'translateY(8px)' }, { opacity: 1, transform: 'none' }], { duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }); });
+    if (focus) t.focus();
+  };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => show(t));
+    t.addEventListener('keydown', (e) => { const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key]; if (k) { e.preventDefault(); show(tabs[(i + k + tabs.length) % tabs.length], true); } });
+  });
+});
+</script>
+{% schema %}
+{
+  "name": "ND · Vertical tabs",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "intro", "label": "Intro" },
+    { "type": "text", "id": "link_label", "label": "Link below" },
+    { "type": "text", "id": "link_url", "label": "Link URL" }
+  ],
+  "blocks": [{ "type": "tab", "name": "Tab", "settings": [
+    { "type": "text", "id": "label", "label": "Tab label" },
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "image_url", "label": "Image URL" },
+    { "type": "html", "id": "body", "label": "Content (HTML)" }
+  ] }],
+  "presets": [{ "name": "ND · Vertical tabs" }]
+}
+{% endschema %}

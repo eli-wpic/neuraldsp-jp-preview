@@ -121,14 +121,78 @@
       }
     },
     "custom_liquid_qmu8mb": {
-      "type": "nd-feature",
+      "type": "nd-tabs",
       "settings": {
-        "layout": "media-left",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-capture-chain.webp?v=1745905053",
-        "image_alt": "Neural Capture Image",
-        "heading": "Neural Capture",
-        "body": "<p>お気に入りのアンプを手のひらで簡単に操作できる夢を見たことはありませんか？Nano Cortexには、 <em>Mesa Boogie® JP2C®, Fender® Princeton® 65, Diezel® VH4®,</em> and <em>Ampeg® SVT Classic®</em>. などの名高いモデルを含む25種類のNeural Captureがプリインストールされています。</p><p>&gt; さらに、Cortex Cloudでは、現存する最も希少で高価なアンプを含む、日々増え続ける数千のCaptureに無料でアクセスできます。また、お気に入りの機材のNeural Captureを数分で作成し、完全に自分だけのパーソナライズされたリグを作ることもできます。</p><p>プリインストールされたNeural Captureに加えて、最大256種類のNeural Captureを保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p><h2>Impulse Responses</h2><p>キャビネットがトーン作りに与える影響は非常に大きいと言えます。高品質なキャビネットシミュレーションは、音に深み、個性、そしてリアルさを加え、サウンドに大きな違いをもたらします。</p><p>Nano Cortexには、300種類のスタジオ品質のインパルスレスポンス（IR）がプリインストールされたIRローダーが搭載されており、それぞれに5つの異なるマイクオプションと6つのマイクポジションが用意されています。これにより、非常に詳細でカスタマイズ可能なキャビネットシミュレーションモジュールが提供され、無限のトーンシェイピングの可能性が広がります。</p><p>プリインストールされたIRに加えて、自分自身のIRを最大256個まで保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p><h2>エフェクト</h2><p>NanOS 2.0.0により、Nano Cortexにはカスタマイズ可能なプリエフェクトスロットとポストエフェクトスロットが追加され、50種類以上のエフェクトとユーティリティが搭載されました。</p><h2>Pre Effects</h2><p><strong>アダプティブゲート:</strong> 不要なノイズを低減し、クリーンな信号を提供します。</p><p><strong>トランスポーズ:</strong> 遅延を感じることなく、楽器のチューニングを変更できます。</p><h2>Post Effects</h2><p><strong>コーラス:</strong> 豊かで贅沢なモジュレーション効果で知られる、Boss® DC-2W® コーラスの高品質なエミュレーション。</p><p><strong>アナログディレイ:</strong> BBDスタイルのエコーを再現した、暖かみのあるヴィンテージスタイルのディレイ。</p><p><strong>マインドホールリバーブ:</strong> 伝説的なLexicon® 224® リバーブの高品質なエミュレーションで、広範囲なリバーブ効果を提供します。小さな部屋のアンビエンスから広大なホールエフェクトまで対応。</p><h2>EQ（イコライザー）</h2><p><ol>• パラメトリック3バンド</ol><ol>• ローカット・ハイカット</ol><ol>• グラフィック9バンド</ol></p><h2>インプットゲート</h2><p>NanOS 2.0.0では、シグナルチェーンの最初にインプットゲートが標準搭載され、ノイズゲート用にエフェクトスロットを使わずに不要なノイズを除去できるようになりました。</p><p><a href=\"https://neuraldsp.com/nano-cortex-device-list\" rel=\"noopener\" target=\"_blank\"> デバイス一覧を見る </a></p>"
-      }
+        "heading": "シグナルチェーン",
+        "link_label": "デバイス一覧を見る",
+        "link_url": "https://neuraldsp.com/nano-cortex-device-list"
+      },
+      "blocks": {
+        "tab_0": {
+          "type": "tab",
+          "settings": {
+            "label": "Neural Capture",
+            "body": "<p>お気に入りのアンプを手のひらで簡単に操作できる夢を見たことはありませんか？Nano Cortexには、 <em>Mesa Boogie® JP2C®, Fender® Princeton® 65, Diezel® VH4®,</em> and <em>Ampeg® SVT Classic®</em>. などの名高いモデルを含む25種類のNeural Captureがプリインストールされています。</p><p>&gt; さらに、Cortex Cloudでは、現存する最も希少で高価なアンプを含む、日々増え続ける数千のCaptureに無料でアクセスできます。また、お気に入りの機材のNeural Captureを数分で作成し、完全に自分だけのパーソナライズされたリグを作ることもできます。</p><p>プリインストールされたNeural Captureに加えて、最大256種類のNeural Captureを保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-capture-chain.webp"
+          }
+        },
+        "tab_1": {
+          "type": "tab",
+          "settings": {
+            "label": "Impulse Responses",
+            "body": "<p>キャビネットがトーン作りに与える影響は非常に大きいと言えます。高品質なキャビネットシミュレーションは、音に深み、個性、そしてリアルさを加え、サウンドに大きな違いをもたらします。</p><p>Nano Cortexには、300種類のスタジオ品質のインパルスレスポンス（IR）がプリインストールされたIRローダーが搭載されており、それぞれに5つの異なるマイクオプションと6つのマイクポジションが用意されています。これにより、非常に詳細でカスタマイズ可能なキャビネットシミュレーションモジュールが提供され、無限のトーンシェイピングの可能性が広がります。</p><p>プリインストールされたIRに加えて、自分自身のIRを最大256個まで保存し、Cortex Cloudアプリを使ってシームレスに管理することができます。</p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-cab-chain.webp"
+          }
+        },
+        "tab_2": {
+          "type": "tab",
+          "settings": {
+            "label": "エフェクト",
+            "body": "<p>NanOS 2.0.0により、Nano Cortexにはカスタマイズ可能なプリエフェクトスロットとポストエフェクトスロットが追加され、50種類以上のエフェクトとユーティリティが搭載されました。</p>"
+          }
+        },
+        "tab_3": {
+          "type": "tab",
+          "settings": {
+            "label": "Pre Effects",
+            "body": "<p><strong>アダプティブゲート:</strong> 不要なノイズを低減し、クリーンな信号を提供します。</p><p><strong>トランスポーズ:</strong> 遅延を感じることなく、楽器のチューニングを変更できます。</p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-pre-chain.webp"
+          }
+        },
+        "tab_4": {
+          "type": "tab",
+          "settings": {
+            "label": "Post Effects",
+            "body": "<p><strong>コーラス:</strong> 豊かで贅沢なモジュレーション効果で知られる、Boss® DC-2W® コーラスの高品質なエミュレーション。</p><p><strong>アナログディレイ:</strong> BBDスタイルのエコーを再現した、暖かみのあるヴィンテージスタイルのディレイ。</p><p><strong>マインドホールリバーブ:</strong> 伝説的なLexicon® 224® リバーブの高品質なエミュレーションで、広範囲なリバーブ効果を提供します。小さな部屋のアンビエンスから広大なホールエフェクトまで対応。</p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-post-chain.webp"
+          }
+        },
+        "tab_5": {
+          "type": "tab",
+          "settings": {
+            "label": "EQ（イコライザー）",
+            "body": "<p><ol>• パラメトリック3バンド</ol><ol>• ローカット・ハイカット</ol><ol>• グラフィック9バンド</ol></p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-eq-chain.webp"
+          }
+        },
+        "tab_6": {
+          "type": "tab",
+          "settings": {
+            "label": "インプットゲート",
+            "body": "<p>NanOS 2.0.0では、シグナルチェーンの最初にインプットゲートが標準搭載され、ノイズゲート用にエフェクトスロットを使わずに不要なノイズを除去できるようになりました。</p>",
+            "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/nc-input-gate-chain.webp"
+          }
+        }
+      },
+      "block_order": [
+        "tab_0",
+        "tab_1",
+        "tab_2",
+        "tab_3",
+        "tab_4",
+        "tab_5",
+        "tab_6"
+      ]
     },
     "single_image_z4r3uf": {
       "type": "nd-feature",

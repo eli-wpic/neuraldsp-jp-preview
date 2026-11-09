@@ -216,3 +216,13 @@
 }
 .rail__labels button.is-lit { color: var(--text); }
 .rail__labels button.is-lit span::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent); }
+
+/* genre tabs (replace the slider): an embedded tab strip with an underline on the chosen genre */
+.tone__tabs { display: flex; flex-wrap: wrap; gap: 4px 28px; border-bottom: 1px solid var(--line); }
+.tone__tabs button { position: relative; padding: 12px 0 14px; border: 0; background: none; color: var(--text-3); font: 600 var(--fs-m)/1 var(--font); cursor: pointer; transition: color .2s; }
+.tone__tabs button:hover { color: var(--text-2); }
+.tone__tabs button[aria-selected="true"] { color: var(--text); }
+.tone__tabs button::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: var(--accent); transform: scaleX(0); transition: transform .3s var(--ease-out); }
+.tone__tabs button[aria-selected="true"]::after { transform: scaleX(1); }
+.tone { align-items: end; }
+@media (max-width: 760px) { .tone__tabs { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; gap: 22px; } .tone__tabs button { white-space: nowrap; font-size: var(--fs-s); } }

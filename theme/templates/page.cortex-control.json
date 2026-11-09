@@ -13,8 +13,8 @@
         "button_url": "https://downloads.neuraldsp.com/file/cortex-control-installers/v_4.1.0/windows/Cortex%20Control%20v4.1.0.exe",
         "film_url": "https://youtu.be/Dw01UVeM-Fs",
         "film_label": "▶ フル動画を見る",
-        "bg_youtube": "Dw01UVeM-Fs",
-        "overlay": 55
+        "overlay": 55,
+        "bg_image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/hero_1_7da1ff2b-0c59-4f40-ba10-c336e631ad91.webp?v=1743734645"
       }
     },
     "a_rich_text_hkrcam": {

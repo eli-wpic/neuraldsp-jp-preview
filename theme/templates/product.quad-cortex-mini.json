@@ -594,7 +594,8 @@
             "switches": 11,
             "screen": true,
             "capture": true,
-            "plugins": true
+            "plugins": true,
+            "image_asset": "qc-photo-1.webp"
           }
         },
         "m1": {
@@ -609,7 +610,8 @@
             "switches": 4,
             "screen": true,
             "capture": true,
-            "plugins": true
+            "plugins": true,
+            "image_asset": "mini-photo-2.webp"
           }
         },
         "m2": {
@@ -624,7 +626,8 @@
             "switches": 2,
             "screen": false,
             "capture": true,
-            "plugins": false
+            "plugins": false,
+            "image_asset": "nano-photo-1.webp"
           }
         }
       },

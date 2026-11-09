@@ -1,71 +1,6 @@
-/* "Find your sound": tone slider. Click a label, drag the thumb between stops, or use arrow keys.
-   Choosing a tone hides the plugins that don't match (featured rows and the grid), counts what's left,
-   and stops any playing video. "すべて" shows everything again. */
+/* "Find your sound": genre tabs (Progressive / ACG / Versatile / Old school / Bass). Choosing a tab shows only the
+   plugins in that genre (featured rows and the grid), counts them, and stops any playing video. */
 import { readJSON, reducedMotion } from './core.js';
-
-class ToneRail {
-  constructor(root, tones, onChange) {
-    this.root = root; this.tones = tones; this.onChange = onChange; this.i = 0;
-    const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
-    root.innerHTML = `
-      <div class="rail__track" data-track>
-        <div class="rail__ticks" aria-hidden="true">${tones.map((_, k) => (k ? '<i class="minor"></i><i class="minor"></i><i class="minor"></i>' : '') + '<i></i>').join('')}</div>
-        <div class="rail__fill" aria-hidden="true"></div>
-        <span class="rail__thumb" aria-hidden="true"></span>
-      </div>
-      <div class="rail__labels" role="radiogroup" aria-label="${esc(root.closest('.tone')?.querySelector('b')?.textContent || '')}">
-        ${tones.map((t, k) => `<button type="button" role="radio" aria-checked="${k === 0}" tabindex="${k === 0 ? 0 : -1}" data-i="${k}"><span>${esc(t.label)}</span></button>`).join('')}
-      </div>`;
-    this.track = root.querySelector('[data-track]');
-    this.thumb = root.querySelector('.rail__thumb');
-    this.fill = root.querySelector('.rail__fill');
-    this.btns = [...root.querySelectorAll('[role="radio"]')];
-    this.place(0);
-    this.bind();
-  }
-  pct(i) { return (i / (this.tones.length - 1)) * 100; }
-  place(i, raw) { const p = raw ?? this.pct(i); this.thumb.style.left = `${p}%`; this.fill.style.width = `${p}%`; }
-  set(i, focus) {
-    i = Math.max(0, Math.min(this.tones.length - 1, i));
-    const changed = i !== this.i;
-    this.i = i; this.place(i);
-    this.btns.forEach((b, k) => { b.setAttribute('aria-checked', String(k === i)); b.tabIndex = k === i ? 0 : -1; });
-    if (focus) this.btns[i].focus();
-    if (changed) this.onChange(this.tones[i]);
-  }
-  bind() {
-    this.btns.forEach((b) => b.addEventListener('click', () => this.set(+b.dataset.i)));
-    this.root.querySelector('[role="radiogroup"]').addEventListener('keydown', (e) => {
-      const map = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
-      if (e.key in map) { e.preventDefault(); this.set(this.i + map[e.key], true); }
-      if (e.key === 'Home') { e.preventDefault(); this.set(0, true); }
-      if (e.key === 'End') { e.preventDefault(); this.set(this.tones.length - 1, true); }
-    });
-    let id = null, sx = 0, sy = 0, mode = null;
-    const toPct = (x) => { const r = this.track.getBoundingClientRect(); return Math.max(0, Math.min(100, ((x - r.left) / r.width) * 100)); };
-    const nearest = (p) => Math.round((p / 100) * (this.tones.length - 1));
-    this.track.addEventListener('pointerdown', (e) => { id = e.pointerId; sx = e.clientX; sy = e.clientY; mode = 'pending'; });
-    this.track.addEventListener('pointermove', (e) => {
-      if (e.pointerId !== id) return;
-      if (mode === 'pending') {
-        const dx = Math.abs(e.clientX - sx), dy = Math.abs(e.clientY - sy);
-        if (dx > 4 && dx > dy) { mode = 'drag'; this.track.setPointerCapture(id); this.root.classList.add('is-dragging'); }
-        else if (dy > 8) { mode = null; id = null; return; } else return;
-      }
-      const p = toPct(e.clientX);
-      this.place(0, p);
-      const n = nearest(p);
-      this.btns.forEach((b, k) => b.setAttribute('aria-checked', String(k === n)));
-    });
-    this.track.addEventListener('pointerup', (e) => {
-      if (e.pointerId !== id) return;
-      this.root.classList.remove('is-dragging'); id = null; mode = null;
-      this.set(nearest(toPct(e.clientX)));
-      this.place(this.i);
-    });
-    this.track.addEventListener('pointercancel', () => { this.root.classList.remove('is-dragging'); id = null; mode = null; this.place(this.i); });
-  }
-}
 
 function hoverTilt(frame) {
   if (!frame || reducedMotion() || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
@@ -90,8 +25,11 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
   const fmt = (t, n) => t.replace('{n}', n).replace('{total}', total);
   rows.forEach((r) => hoverTilt(r.querySelector('.plugin-media__frame')));
 
-  const apply = (tone) => {
-    const id = tone.id;
+  const esc = (t) => String(t).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  bar.innerHTML = cfg.tones.map((t, k) => `<button type="button" role="tab" aria-selected="${k === 0}" tabindex="${k === 0 ? 0 : -1}" data-tone="${esc(t.id)}">${esc(t.label)}</button>`).join('');
+  const tabs = [...bar.querySelectorAll('[role="tab"]')];
+
+  const apply = (id) => {
     root.querySelectorAll('.nd-yt iframe').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
     const test = (el) => id === 'all' || (el.dataset.tones || '').split(/[\s,]+/).includes(id);
     let n = 0, nMini = 0;
@@ -100,25 +38,15 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     rows.filter((r) => !r.hidden).forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
     if (moreHead) moreHead.hidden = !nMini;
     if (empty) empty.hidden = n > 0;
+    tabs.forEach((t) => { const on = t.dataset.tone === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
     count.textContent = id === 'all' ? fmt(cfg.countAll, total) : fmt(cfg.countSome, n);
   };
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => apply(t.dataset.tone));
+    t.addEventListener('keydown', (e) => { const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (k) { e.preventDefault(); const nx = tabs[(i + k + tabs.length) % tabs.length]; nx.focus(); apply(nx.dataset.tone); } });
+  });
   rows.forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
-  const rail = new ToneRail(bar, cfg.tones, apply);
-
-  // While scrolling the list on すべて, the slider follows the plugin in view (its tones light up, the handle moves to its main tone)
-  const labels = [...bar.querySelectorAll('.rail__labels button')];
-  const ids = cfg.tones.map((t) => t.id);
-  let current = null;
-  const spy = new IntersectionObserver((entries) => {
-    entries.forEach((e) => { if (e.isIntersecting) current = e.target; });
-    if (!current || rail.i !== 0) { labels.forEach((l) => l.classList.remove('is-lit')); return; }
-    const tones = (current.dataset.tones || '').split(/[\s,]+/).filter(Boolean);
-    labels.forEach((l, k) => l.classList.toggle('is-lit', k > 0 && tones.includes(ids[k])));
-    const first = ids.indexOf(tones[0]);
-    if (first > 0) rail.place(first); else rail.place(0);
-  }, { rootMargin: '-45% 0px -45% 0px' });
-  rows.forEach((r) => spy.observe(r));
-  root.addEventListener('pointerdown', () => { if (rail.i === 0) rail.place(0); });
+  count.textContent = fmt(cfg.countAll, total);
 
   // 14日間無料体験: open this plugin's download card
   const dlg = root.querySelector('[data-trial-dialog]');
@@ -128,5 +56,4 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     dlg.querySelector('[data-trial-body]').replaceChildren(tpl.content.cloneNode(true));
     dlg.showModal();
   }));
-  count.textContent = fmt(cfg.countAll, total);
 });
