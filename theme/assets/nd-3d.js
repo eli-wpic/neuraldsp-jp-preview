@@ -363,6 +363,7 @@ export class ND3D {
     if (portrait) s.radius *= Math.max(1.2, 0.9 / aspect);
     else if (this.mode === 'viewer') s.radius *= Math.max(0.92, 1.15 / aspect);
     this.camera.position.setFromSpherical(s).add(tgt);
+    this._tgt = tgt;
     this.camera.lookAt(tgt);
     const { w, h } = this.size || { w: 1, h: 1 };
     const ox = portrait || this.mode === 'viewer' ? 0 : (a.ox || 0) + ((b.ox || 0) - (a.ox || 0)) * f;
@@ -403,6 +404,18 @@ export class ND3D {
 
   setProgress(p) { this.progress = p; }
 
+  /** which preset view is closest to where the visitor has turned the product (spin + tilt), so the view buttons follow the drag */
+  reportView() {
+    if (!this._tgt || !this.views) return;
+    const dir = this.camera.position.clone().sub(this._tgt).normalize().applyAxisAngle(new THREE.Vector3(0, 1, 0), -this.spin);
+    let best = 0, bestDot = -2;
+    this.views.forEach((v, i) => {
+      const d = new THREE.Vector3().fromArray(v.pos).sub(new THREE.Vector3().fromArray(v.tgt)).normalize().dot(dir);
+      if (d > bestDot) { bestDot = d; best = i; }
+    });
+    if (best !== this._reported) { this._reported = best; this.onOrient(best); }
+  }
+
   loop() {
     if (this._raf) return;
     const tick = () => {
@@ -417,6 +430,7 @@ export class ND3D {
       }
       if (this.model) this.model.rotation.y = this.spin;
       this.tilt += (this.tiltTo - this.tilt) * (reduced ? 1 : Math.min(1, dt * 8));
+      if (this.mode === 'viewer' && this.onOrient && (this.dragging || Math.abs(this.spinVel) > 0.0005 || Math.abs(this.tiltTo - this.tilt) > 0.002)) this.reportView();
       const near = (c) => Math.max(0, 1 - Math.abs(this.shown - c) * 1.6);
       if (this.screenMat) this.screenMat.color.setScalar(0.86 + near(1) * 0.14);
       const chase = this.mode === 'scroll' ? near(2) : 0;
@@ -521,8 +535,16 @@ function initViewer(sec) {
   const btns = [...sec.querySelectorAll('[data-view]')];
   const caption = sec.querySelector('[data-view-caption]');
   let view = null, cur = 0;
+  const mark = (i) => {
+    btns.forEach((b, k) => { if (b.dataset.view !== undefined) b.setAttribute('aria-pressed', String(k === i)); });
+    if (caption) {
+      const t = caption.querySelector('[data-view-title]'), x = caption.querySelector('[data-view-text]');
+      if (t || x) { if (t) t.textContent = btns[i]?.dataset.title || ''; if (x) x.textContent = btns[i]?.dataset.caption || ''; }
+      else caption.textContent = btns[i]?.dataset.caption || '';
+    }
+  };
   const set = (i) => {
-    cur = i; view?.setProgress(i); if (view) { view.spin *= 0.0; view.tiltTo = 0; }
+    cur = i; view?.setProgress(i); if (view) { view.spin *= 0.0; view.tiltTo = 0; view._reported = i; }
     btns.forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
     if (caption) {
       const t = caption.querySelector('[data-view-title]'), x = caption.querySelector('[data-view-text]');
@@ -534,6 +556,7 @@ function initViewer(sec) {
   if (!webgl) { stage.classList.add('is-fallback'); return; }
   const start = () => new ND3D(stage, stage.dataset.model, 'viewer').load().then((v) => {
     view = v; set(cur);
+    v.onOrient = (i) => { if (!sec.matches('.is-photos, .is-film') && i < btns.length) mark(i); };
     v.onFirstDrag = () => sec.querySelector('[data-drag-hint]')?.classList.add('is-used');
     requestAnimationFrame(() => stage.classList.add('is-ready'));
   }).catch((e) => { console.error(e); stage.classList.add('is-fallback'); });
