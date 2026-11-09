@@ -51,6 +51,32 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
   });
   rows.forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
   count.textContent = fmt(cfg.countAll, total);
+
+  // slim floating pill: once the tabs scroll away, a small copy floats at the top while the plugin list is on screen
+  const pill = document.createElement('div');
+  pill.className = 'tone-pill'; pill.setAttribute('aria-hidden', 'true');
+  pill.innerHTML = tabs.map((t) => `<button type="button" tabindex="-1" data-tone="${t.dataset.tone}">${t.textContent}</button>`).join('');
+  document.body.appendChild(pill);
+  const pillBtns = [...pill.querySelectorAll('button')];
+  const syncPill = () => pillBtns.forEach((b) => b.classList.toggle('is-on', bar.querySelector(`[data-tone="${b.dataset.tone}"]`).getAttribute('aria-selected') === 'true'));
+  pillBtns.forEach((b) => b.addEventListener('click', () => {
+    apply(b.dataset.tone); syncPill();
+    const list = root.querySelector('.plugin-list');
+    scrollTo({ top: list.getBoundingClientRect().top + scrollY - 140, behavior: reducedMotion() ? 'auto' : 'smooth' });
+  }));
+  tabs.forEach((t) => t.addEventListener('click', syncPill)); syncPill();
+  // checked on every scroll (a fast jump can skip straight past the tabs, which an observer would miss)
+  const list = root.querySelector('.plugin-list');
+  let raf = 0;
+  const showPill = () => {
+    raf = 0;
+    const barGone = bar.getBoundingClientRect().bottom < 64;
+    const L = list?.getBoundingClientRect();
+    const listOn = !!L && L.top < innerHeight * 0.6 && L.bottom > 160;
+    pill.classList.toggle('is-in', barGone && listOn);
+  };
+  addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(showPill); }, { passive: true });
+  showPill();
   requestAnimationFrame(() => moveInk(tabs[0])); addEventListener('resize', () => moveInk(tabs.find((t) => t.getAttribute('aria-selected') === 'true') || tabs[0]));
 
   // 14日間無料体験: open this plugin's download card

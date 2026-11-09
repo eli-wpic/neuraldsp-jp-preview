@@ -244,10 +244,10 @@
           {%- for a in s.accessories -%}
             {%- assign av = a.selected_or_first_available_variant -%}
             <label>
-              <input type="checkbox" value="{{ av.id }}" data-acc-price="{{ av.price }}" data-acc-name="{{ a.title | escape }}"{% unless av.available %} disabled{% endunless %}>
+              <input type="checkbox" value="{{ av.id }}" data-acc-price="{{ av.price }}" data-acc-name="{{ a.title | escape }}"{% unless av.available and av.price > 0 %} disabled{% endunless %}>
               {% render 'nd-product-thumb', product: a, width: 400 %}
               <b>{{ a.title }}</b>
-              <span class="yen">+{{ av.price | money_without_trailing_zeros }}</span>
+              {%- if av.price > 0 -%}<span class="yen">+{{ av.price | money_without_trailing_zeros }}</span>{%- else -%}{% render 'nd-price', price: 0 %}{%- endif -%}
             </label>
           {%- endfor -%}
         </div>

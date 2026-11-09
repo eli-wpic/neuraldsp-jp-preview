@@ -1,7 +1,7 @@
 {%- comment -%}
   Product thumbnail on a transparent background. Hardware and accessories use the cut-out renders shipped
   with the theme (Shopify's own product photos have white backgrounds); everything else uses its featured image.
-  Params: product, width (default 400), loading (default 'lazy')
+  Params: product, width (default 400), loading (default 'lazy'), front (true = straight-on photo, as in the menu and comparison)
 {%- endcomment -%}
 {%- liquid
   assign w = width | default: 400
@@ -9,10 +9,19 @@
   case product.handle
     when 'quad-cortex'
       assign cut = 'qc-three-quarter-800.webp'
+      if front
+        assign cut = 'qc-photo-1.webp'
+      endif
     when 'quad-cortex-mini'
       assign cut = 'mini-three-quarter-1600.webp'
+      if front
+        assign cut = 'mini-photo-2.webp'
+      endif
     when 'nano-cortex'
       assign cut = 'nano-three-quarter-1600.webp'
+      if front
+        assign cut = 'nano-photo-1.webp'
+      endif
     when 'quad-cortex-mini-psu'
       assign cut = 'minipsu-photo-1.webp'
     else

@@ -371,3 +371,7 @@
 .pdp-film, .nd-hero__film { flex-direction: column; }
 .pdp-film__out { margin-top: 10px; font-size: var(--fs-s); color: var(--text-2); text-decoration: underline; text-underline-offset: 3px; }
 .pdp-film video { width: 100%; max-height: 100%; border-radius: 14px; background: #000; }
+
+/* product 3D: dragging in any direction turns the unit (spin left/right, tilt up/down) */
+.pdp-3d__stage.nd-viewer__stage { touch-action: none; }
+.acc label:has(input:disabled) { opacity: .5; cursor: default; }

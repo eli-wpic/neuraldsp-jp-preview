@@ -31,7 +31,7 @@
                     {%- assign kid_handle = parts[1] | strip | split: '/products/' | last -%}
                     {%- assign kid = all_products[kid_handle] -%}
                     <a href="{{ parts[1] | strip }}">
-                      {%- if parts[1] contains '/products/' and kid != blank -%}{% render 'nd-product-thumb', product: kid, width: 240 %}{%- endif -%}
+                      {%- if parts[1] contains '/products/' and kid != blank -%}{% render 'nd-product-thumb', product: kid, width: 240, front: true %}{%- endif -%}
                       <strong>{{ parts[0] | strip }}</strong>
                       {%- if parts[1] contains '/products/' and kid.price -%}<span>{% render 'nd-price', price: kid.price %}</span>{%- endif -%}
                     </a>

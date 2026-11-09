@@ -216,6 +216,7 @@ export class ND3D {
     this.camera = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
     this.progress = 0; this.shown = 0;
     this.spin = 0; this.spinVel = 0; this.dragging = false;
+    this.tilt = 0; this.tiltTo = 0; // product pages: drag up/down to look down at the screen or across at the sides
     this.clock = new THREE.Clock();
     this.visible = true;
     this.key = modelKey;
@@ -357,6 +358,7 @@ export class ND3D {
     const sb = new THREE.Spherical().setFromVector3(v3(b.pos).sub(v3(b.tgt)));
     let dT = sb.theta - sa.theta; if (dT > Math.PI) dT -= Math.PI * 2; if (dT < -Math.PI) dT += Math.PI * 2;
     const s = new THREE.Spherical(sa.radius + (sb.radius - sa.radius) * f, sa.phi + (sb.phi - sa.phi) * f, sa.theta + dT * f);
+    if (this.tilt) s.phi = Math.max(0.08, Math.min(1.45, s.phi - this.tilt)); // up/down drag: from straight above to eye level
     const aspect = this.camera.aspect, portrait = aspect < 1.05;
     if (portrait) s.radius *= Math.max(1.2, 0.9 / aspect);
     else if (this.mode === 'viewer') s.radius *= Math.max(0.92, 1.15 / aspect);
@@ -380,18 +382,20 @@ export class ND3D {
     new ResizeObserver(() => this.resize()).observe(this.el);
     new IntersectionObserver(([e]) => { this.visible = e.isIntersecting; if (this.visible) this.loop(); }).observe(this.el);
     this.canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this.el.classList.add('is-fallback'); });
-    let sx = 0, sy = 0, lx = 0, lt = 0, mode = null, id = null;
+    let sx = 0, sy = 0, lx = 0, ly = 0, lt = 0, mode = null, id = null;
     const el = this.el;
     el.addEventListener('pointerdown', (e) => { if (e.button !== 0 || e.target.closest('a,button')) return; sx = lx = e.clientX; sy = e.clientY; lt = performance.now(); mode = 'pending'; id = e.pointerId; });
     el.addEventListener('pointermove', (e) => {
       if (e.pointerId !== id || !mode) return;
       const dx = e.clientX - sx, dy = e.clientY - sy;
       if (mode === 'pending') {
-        if (Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy) * 1.2) { mode = 'drag'; this.dragging = true; el.setPointerCapture(id); el.classList.add('is-dragging'); this.onFirstDrag?.(); }
+        const free = this.mode === 'viewer'; // product pages turn freely; the homepage keeps vertical drags for page scrolling
+        if ((Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy) * 1.2) || (free && Math.abs(dy) > 6)) { mode = 'drag'; this.dragging = true; el.setPointerCapture(id); el.classList.add('is-dragging'); this.onFirstDrag?.(); ly = e.clientY; }
         else if (Math.abs(dy) > 10) { mode = null; return; } else return;
       }
       const now = performance.now(), step = (e.clientX - lx) * 0.008;
       this.spin += step; this.spinVel = (step / Math.max(1, now - lt)) * 16; lx = e.clientX; lt = now;
+      if (this.mode === 'viewer') { this.tiltTo = Math.max(-0.9, Math.min(0.75, this.tiltTo + (e.clientY - ly) * -0.006)); ly = e.clientY; }
     });
     const end = (e) => { if (e.pointerId !== id) return; mode = null; id = null; this.dragging = false; el.classList.remove('is-dragging'); };
     el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
@@ -412,6 +416,7 @@ export class ND3D {
         if (Math.abs(this.progress - this.shown) > 0.01 && Math.abs(this.spinVel) < 0.001) this.spin *= 0.9;
       }
       if (this.model) this.model.rotation.y = this.spin;
+      this.tilt += (this.tiltTo - this.tilt) * (reduced ? 1 : Math.min(1, dt * 8));
       const near = (c) => Math.max(0, 1 - Math.abs(this.shown - c) * 1.6);
       if (this.screenMat) this.screenMat.color.setScalar(0.86 + near(1) * 0.14);
       const chase = this.mode === 'scroll' ? near(2) : 0;
@@ -517,7 +522,7 @@ function initViewer(sec) {
   const caption = sec.querySelector('[data-view-caption]');
   let view = null, cur = 0;
   const set = (i) => {
-    cur = i; view?.setProgress(i); if (view) view.spin *= 0.0;
+    cur = i; view?.setProgress(i); if (view) { view.spin *= 0.0; view.tiltTo = 0; }
     btns.forEach((b, k) => b.setAttribute('aria-pressed', String(k === i)));
     if (caption) {
       const t = caption.querySelector('[data-view-title]'), x = caption.querySelector('[data-view-text]');
