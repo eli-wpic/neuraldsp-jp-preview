@@ -37,8 +37,7 @@
         {%- assign b = block.settings -%}
         {%- assign bp = b.product -%}
         {%- assign featured_handles = featured_handles | append: bp.handle | append: ',' -%}
-        {%- assign flip = forloop.index0 | modulo: 2 -%}
-        <article class="plugin-row reveal{% if flip == 1 %} is-flip{% endif %}" data-tones="{{ b.tones | replace: ',', ' ' }}" {{ block.shopify_attributes }}>
+        <article class="plugin-row reveal" data-tones="{{ b.tones | replace: ',', ' ' }}" {{ block.shopify_attributes }}>
           <div class="plugin-media">
             <div class="plugin-media__frame">
               {%- if b.youtube_id != blank -%}

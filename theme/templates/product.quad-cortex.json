@@ -343,7 +343,8 @@
         "button_label": "詳しく見る",
         "button_url": "/pages/neuraldsp-account",
         "body": "<p>Quad Cortex のあらゆる機能と設定を、洗練された直感的なデスクトップ<br/>インターフェースで簡単に操作。</p><p>*Cortex Control™ および Cortex Cloud™ をご利用いただくには、専用のアカウントが必要となります。</p>"
-      }
+      },
+      "disabled": true
     },
     "collapsible_content_qcfaq1": {
       "type": "nd-faq",

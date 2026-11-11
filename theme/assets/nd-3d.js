@@ -194,13 +194,22 @@ function knob(k, rubber, mark) {
   return g;
 }
 
+/* top-down camera (review: 全体 on product pages and the end of the homepage move look straight down at the top) */
+function viewsFor(M, mode) {
+  const V = (M.scrollViews || M.views).map((v) => ({ ...v }));
+  const a = V[0], d = Math.hypot(a.pos[0] - a.tgt[0], a.pos[1] - a.tgt[1], a.pos[2] - a.tgt[2]);
+  const top = (ox) => ({ pos: [0, a.tgt[1] + d * 0.985, d * 0.17], tgt: [0, a.tgt[1], 0], ox });
+  if (mode === 'viewer') V[0] = top(0); else V[V.length - 1] = top(V[V.length - 1].ox || 0);
+  return V;
+}
+
 /* ---------------------------------------------------------------- scene */
 export class ND3D {
   constructor(container, modelKey, mode) {
     this.el = container;
     this.M = MODELS[modelKey] || MODELS.qc;
     this.mode = mode;
-    this.views = this.M.scrollViews || this.M.views; // same camera moves on the homepage and product pages
+    this.views = viewsFor(this.M, mode); // same camera moves on the homepage and product pages
     this.canvas = container.querySelector('canvas');
     this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
     this.renderer.setPixelRatio(Math.min(devicePixelRatio, innerWidth < 760 ? 1.6 : 2));
@@ -342,7 +351,7 @@ export class ND3D {
       this.model.traverse((o) => { o.geometry?.dispose(); [].concat(o.material || []).forEach((m) => { m.map?.dispose(); m.dispose(); }); });
     }
     this.model = group; this.scene.add(group);
-    Object.assign(this, { M, G, key, views: M.scrollViews || M.views, screenMat, leds, spin: 0, spinVel: 0 });
+    Object.assign(this, { M, G, key, views: viewsFor(M, this.mode), screenMat, leds, spin: 0, spinVel: 0 });
     requestAnimationFrame(() => this.el.classList.remove('is-swapping'));
   }
 

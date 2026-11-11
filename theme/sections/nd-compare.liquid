@@ -82,7 +82,7 @@
       {%- endfor -%}
       <div class="vs__row vs__row--cta">
         <span class="vs__label"></span>
-        {%- for block in section.blocks -%}<span class="vs__val"><a class="btn btn--small{% if forloop.first %} btn--primary{% endif %}" href="{{ block.settings.product.url }}">{{ s.button }}</a></span>{%- endfor -%}
+        {%- for block in section.blocks -%}<span class="vs__val"><a class="btn btn--small" href="{{ block.settings.product.url }}">{{ s.button }}</a></span>{%- endfor -%}
       </div>
     </div>
   </div>

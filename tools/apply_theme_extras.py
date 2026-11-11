@@ -216,3 +216,54 @@ save('product.quad-cortex', head, d)
 head, d = load('product.mini-psu')
 d['sections']['main']['settings']['photo_assets'] = ','.join(f'minipsu-photo-{i}.webp' for i in (1, 2, 4, 5, 7))
 save('product.mini-psu', head, d)
+
+# ---- client review round 2 (Nov 2026) ----
+# Cortex Control hidden for now: menu tab, homepage section, Quad Cortex page section.
+# "disabled": true is Shopify's own hide switch, so each one comes back with the eye icon in the theme editor (or by deleting the flag).
+for name, key in (('index', 'cortex_control'), ('product.quad-cortex', 'custom_liquid_aieqim')):
+    head, d = load(name)
+    if key in d['sections']:
+        d['sections'][key]['disabled'] = True
+        save(name, head, d)
+MANUALS = ('Quad Cortex マニュアル|https://neuraldsp.com/manual/quad-cortex\n'
+           'Quad Cortex mini マニュアル|https://neuraldsp.com/manual/quad-cortex-mini\n'
+           'Nano Cortex マニュアル|https://neuraldsp.com/manual/nano-cortex')
+for grp in ('header-group', 'footer-group'):
+    p = THEME / 'sections' / f'{grp}.json'
+    g = json.loads(p.read_text())
+    sec = next(iter(g['sections'].values()))
+    for b in sec['blocks'].values():
+        st = b['settings']
+        if grp == 'header-group' and st.get('url') == '/pages/neuraldsp-account':
+            b['disabled'] = True
+        if grp == 'footer-group':
+            if st.get('title') == 'コミュニティ':
+                b['disabled'] = True  # community column hidden (review); unhide in the editor if wanted
+            if st.get('title') == 'サポート':
+                st['links'] = re.sub(r'^ユーザーマニュアル\|[^\n]*', MANUALS, st['links'], flags=re.M)
+            if st.get('title') == '製品':  # the Cortex Cloud link goes to the hidden Cortex Control / Cloud page
+                st['links'] = '\n'.join(l for l in st['links'].split('\n') if not l.endswith('/pages/neuraldsp-account'))
+    if grp == 'footer-group':
+        sec['settings']['legal'] = ('Neural DSP®, Neural Capture®, Capture®, Quad Cortex®, Archetype®, Algorithmically Perfect®, and Nameless® '
+                                    'are registered trademarks of Neural DSP Technologies Oy.')
+    p.write_text(json.dumps(g, ensure_ascii=False, indent=2))
+# plugin list: no download note under the buttons
+for name in ('index', 'page.quadcortex-plugin-bundle', 'page.quadcortex-mini-plugin-bundle'):
+    head, d = load(name)
+    if 'plugins' in d['sections']:
+        d['sections']['plugins']['settings']['trial_note'] = ''
+        save(name, head, d)
+# Nano Cortex: 360° film centred on white; the Yo Onitan sound demo hidden
+head, d = load('product.nano-cortex')
+if 'custom_liquid_d6ym6c' in d['sections']:
+    d['sections']['custom_liquid_d6ym6c']['settings'].update(layout='media', light=True)
+if 'video_89yj6x' in d['sections']:
+    d['sections']['video_89yj6x']['disabled'] = True
+save('product.nano-cortex', head, d)
+# shopping guide: smaller type, left-aligned
+head, d = load('page.shopping-guide')
+for k, sec in d['sections'].items():
+    if sec['type'] in ('nd-faq', 'main-page'):
+        sec.setdefault('settings', {})['compact'] = True
+save('page.shopping-guide', head, d)
+print('review round 2 ok')

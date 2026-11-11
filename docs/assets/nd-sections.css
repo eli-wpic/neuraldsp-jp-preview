@@ -173,7 +173,7 @@ a.nd-columns__media:hover img { transform: scale(1.03); }
 /* posts --------------------------------------------------------------- */
 .nd-posts { padding: clamp(56px, 7vw, 96px) 0; border-top: 1px solid var(--line); }
 .nd-posts__head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 24px; }
-.nd-posts__head h2 { font-family: var(--display); font-weight: 700; font-size: var(--fs-xl); }
+.nd-posts__head h2 { font-family: var(--font); font-weight: 700; font-size: var(--fs-xl); }
 .nd-posts__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2.4vw, 28px); }
 .nd-post { display: grid; gap: 8px; text-decoration: none; align-content: start; }
 .nd-post__media { aspect-ratio: 16 / 10; border-radius: 12px; overflow: hidden; background: var(--bg-raised); }
@@ -447,3 +447,17 @@ body.in-3d .nd-nl-fab { opacity: 0; translate: 0 10px; pointer-events: none; }
   .nd-tabs__list button[aria-selected="true"] { border-bottom-color: var(--accent); }
 }
 .nd-page-head__sub { margin-top: 12px; color: var(--text-2); font-size: var(--fs-m); max-width: 40em; }
+
+/* review round 2 */
+.nd-feature--light { background: #fff; color: #0b0b0b; }
+.nd-feature--light.nd-feature--media .nd-feature__media { max-width: 880px; margin: 0 auto; background: none; border-radius: 0; box-shadow: none; }
+.nd-feature--light .nd-feature__media video, .nd-feature--light .nd-feature__media img { background: #fff; }
+.nd-faq-section--left .container { max-width: var(--container, 1280px); }
+.nd-faq-section--left .section-head { text-align: left; justify-items: start; margin-left: 0; }
+.nd-faq-section--left .section-head h2 { font-size: var(--fs-l); }
+.nd-faq-section--left .faq, .nd-faq-section--left .faq-search { margin-left: 0; }
+.nd-faq-section--left .faq summary { font-size: var(--fs-s); padding: 14px 0; }
+.nd-faq-section--left { padding: clamp(32px, 4vw, 56px) 0; }
+.nd-page-head--compact h1 { font-size: var(--fs-xl); }
+main:has(.nd-page-head--compact) .section-head { text-align: left; justify-items: start; margin-left: 0; }
+main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }

@@ -37,7 +37,7 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     let n = 0, nMini = 0;
     rows.forEach((r) => { const m = test(r); n += m; r.hidden = !m; r.classList.add('is-in'); });
     minis.forEach((c) => { const m = test(c); n += m; nMini += m; c.hidden = !m; });
-    rows.filter((r) => !r.hidden).forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
+    
     if (moreHead) moreHead.hidden = !nMini;
     if (empty) empty.hidden = n > 0;
     tabs.forEach((t) => { const on = t.dataset.tone === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on) moveInk(t); });
@@ -49,7 +49,7 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     t.addEventListener('click', () => apply(t.dataset.tone));
     t.addEventListener('keydown', (e) => { const k = { ArrowRight: 1, ArrowLeft: -1 }[e.key]; if (k) { e.preventDefault(); const nx = tabs[(i + k + tabs.length) % tabs.length]; nx.focus(); apply(nx.dataset.tone); } });
   });
-  rows.forEach((r, k) => r.classList.toggle('is-flip', k % 2 === 1));
+  
   count.textContent = fmt(cfg.countAll, total);
 
   // slim floating pill: once the tabs scroll away, a small copy floats at the top while the plugin list is on screen

@@ -1,4 +1,4 @@
-<section class="nd-page-head">
+<section class="nd-page-head{% if section.settings.compact %} nd-page-head--compact{% endif %}">
   <div class="container">
     {%- assign head_title = section.settings.title_override | default: page.title -%}
     <p class="crumbs"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / {{ head_title }}</p>
@@ -11,6 +11,7 @@
 {%- endif -%}
 {% schema %}
 { "name": "Page", "tag": "section", "class": "section-main-page", "settings": [
+  { "type": "checkbox", "id": "compact", "label": "Smaller heading", "default": false },
   { "type": "text", "id": "title_override", "label": "Heading (defaults to the page title)" },
   { "type": "textarea", "id": "subtitle", "label": "Text under the heading" }
 ] }

@@ -8,14 +8,15 @@
         "x_url": "https://x.com/NeuraldspJapan",
         "youtube_url": "https://www.youtube.com/channel/UCjLErxPQl71bralJAH8K_9w",
         "line_url": "https://lin.ee/Ayk4amH7",
-        "copyright": "© 2026 Neural DSP 日本公式オンラインストア, All rights reserved."
+        "copyright": "© 2026 Neural DSP 日本公式オンラインストア, All rights reserved.",
+        "legal": "Neural DSP®, Neural Capture®, Capture®, Quad Cortex®, Archetype®, Algorithmically Perfect®, and Nameless® are registered trademarks of Neural DSP Technologies Oy."
       },
       "blocks": {
         "col_0": {
           "type": "column",
           "settings": {
             "title": "製品",
-            "links": "Nano Cortex|/products/nano-cortex\nQuad Cortex|/products/quad-cortex\nQuad Cortex mini|/products/quad-cortex-mini\nQuad Cortex + Plugin|/pages/quad-cortex-and-plugin-bundle\nQuad Cortex mini + Plugin|/pages/quad-cortex-mini-plugin\nAccessory|/pages/accessory\nCortex Cloud|/pages/neuraldsp-account"
+            "links": "Nano Cortex|/products/nano-cortex\nQuad Cortex|/products/quad-cortex\nQuad Cortex mini|/products/quad-cortex-mini\nQuad Cortex + Plugin|/pages/quad-cortex-and-plugin-bundle\nQuad Cortex mini + Plugin|/pages/quad-cortex-mini-plugin\nAccessory|/pages/accessory"
           }
         },
         "col_1": {
@@ -23,13 +24,14 @@
           "settings": {
             "title": "コミュニティ",
             "links": "Artists|https://neuraldsp.com/artists\nDiscord|https://discord.com/invite/7c9RZ9Tp36\nForum|https://shorturl.at/m98Y0"
-          }
+          },
+          "disabled": true
         },
         "col_2": {
           "type": "column",
           "settings": {
             "title": "サポート",
-            "links": "ユーザーマニュアル|/a/support/getting-started/user-manuals\nお買い物ガイド|/a/support/support-category/shopping-guide\nQuad Cortex® F.A.Q.|/a/support/quad-cortex/quad-cortex-faq\nNano Cortex® F.A.Q.|/a/support/nano-cortex/nano-cortex-faq\nトラブルシューティング|/a/support/support-category/troubleshooting\nお問い合わせ|/pages/contact"
+            "links": "Quad Cortex マニュアル|https://neuraldsp.com/manual/quad-cortex\nQuad Cortex mini マニュアル|https://neuraldsp.com/manual/quad-cortex-mini\nNano Cortex マニュアル|https://neuraldsp.com/manual/nano-cortex\nお買い物ガイド|/a/support/support-category/shopping-guide\nQuad Cortex® F.A.Q.|/a/support/quad-cortex/quad-cortex-faq\nNano Cortex® F.A.Q.|/a/support/nano-cortex/nano-cortex-faq\nトラブルシューティング|/a/support/support-category/troubleshooting\nお問い合わせ|/pages/contact"
           }
         },
         "col_3": {

@@ -5,13 +5,16 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "settings": {}
+      "settings": {
+        "compact": true
+      }
     },
     "collapsible_content_upwnpm": {
       "type": "nd-faq",
       "settings": {
         "eyebrow": "",
-        "heading": "ご注文について"
+        "heading": "ご注文について",
+        "compact": true
       },
       "blocks": {
         "qa_0": {
@@ -54,7 +57,8 @@
       "type": "nd-faq",
       "settings": {
         "eyebrow": "",
-        "heading": "お支払い方法について"
+        "heading": "お支払い方法について",
+        "compact": true
       },
       "blocks": {
         "qa_0": {
@@ -97,7 +101,8 @@
       "type": "nd-faq",
       "settings": {
         "eyebrow": "",
-        "heading": "配送・送料について"
+        "heading": "配送・送料について",
+        "compact": true
       },
       "blocks": {
         "qa_0": {

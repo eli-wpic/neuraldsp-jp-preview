@@ -130,11 +130,12 @@ function settingsFor(defs = [], vals = {}) {
   return out;
 }
 async function renderSection(id, conf, globals) {
+  if (conf.disabled) return ''; // hidden in the theme editor
   const file = path.join(THEME, 'sections', conf.type + '.liquid');
   let src = fs.readFileSync(file, 'utf8').replace(/{%-?\s*render block\s*-?%}/g, '');
   const schema = schemaOf(src);
   const settings = settingsFor(schema.settings, conf.settings || {});
-  const blocks = (conf.block_order || Object.keys(conf.blocks || {})).map((bid) => {
+  const blocks = (conf.block_order || Object.keys(conf.blocks || {})).filter((bid) => !conf.blocks[bid].disabled).map((bid) => {
     const b = conf.blocks[bid];
     const def = (schema.blocks || []).find((x) => x.type === b.type) || {};
     return { id: bid, type: b.type, settings: settingsFor(def.settings, b.settings || {}), shopify_attributes: '' };

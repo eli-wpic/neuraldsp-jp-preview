@@ -107,7 +107,7 @@
         "eyebrow": "Sound Discovery",
         "heading": "あなたの音を、見つけよう。",
         "body": "<p>プラグインは、PC / Mac でギターやベースの音を作るソフトウェアです。対応プラグインは Quad Cortex / Quad Cortex mini にも読み込めます（Nano Cortex は非対応）。</p>",
-        "trial_note": "無料体験は PC / Mac 版。neuraldsp.com のダウンロードページからインストールします。",
+        "trial_note": "",
         "browse_label": "さらに多くのプラグインをお探しの方へ",
         "browse_url": "https://neuraldsp.com/plugins"
       },
@@ -366,7 +366,8 @@
         "button_label": "詳しく見る",
         "button_url": "/pages/neuraldsp-account",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/cc-laptop-group_fffa5154-7870-44e3-8407-107c1566f29a.webp?v=1743736347"
-      }
+      },
+      "disabled": true
     },
     "news": {
       "type": "nd-blog-posts",

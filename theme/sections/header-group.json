@@ -29,7 +29,8 @@
           "settings": {
             "label": "Cortex Control",
             "url": "/pages/neuraldsp-account"
-          }
+          },
+          "disabled": true
         },
         "news": {
           "type": "link",

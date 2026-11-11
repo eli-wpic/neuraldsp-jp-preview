@@ -1,4 +1,4 @@
-<section class="nd-faq-section"{% if section.settings.anchor != blank %} id="{{ section.settings.anchor }}"{% endif %}>
+<section class="nd-faq-section{% if section.settings.compact %} nd-faq-section--left{% endif %}"{% if section.settings.anchor != blank %} id="{{ section.settings.anchor }}"{% endif %}>
   <div class="container">
     <header class="section-head">
       {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
@@ -28,6 +28,7 @@
 {
   "name": "ND · FAQ",
   "settings": [
+    { "type": "checkbox", "id": "compact", "label": "Smaller, left-aligned", "default": false },
     { "type": "text", "id": "anchor", "label": "Anchor id (for links like #faq)" },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "FAQs" },
     { "type": "text", "id": "heading", "label": "Heading", "default": "よくあるご質問" },
