@@ -263,3 +263,5 @@ details > summary::-webkit-details-marker { display: none; }
 
 /* review round 2 */
 .site-footer__legal { margin-top: 14px; font-size: var(--fs-xs); color: var(--text-3); line-height: 1.7; max-width: 60em; }
+.logo__region { font-weight: 700; color: var(--text); }
+@media (min-width: 990px) { .site-header__inner > .logo { margin-right: 28px; } }

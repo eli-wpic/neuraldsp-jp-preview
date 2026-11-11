@@ -61,6 +61,7 @@ const MODELS = {
       { u: 0.118, v: 0.19, r: 0.15, h: 0.3 }, { u: 0.859, v: 0.19, r: 0.15, h: 0.3 },
       { u: 0.223, v: 0.386, r: 0.135, h: 0.28 }, { u: 0.4, v: 0.386, r: 0.135, h: 0.28 }, { u: 0.573, v: 0.392, r: 0.135, h: 0.28 }, { u: 0.755, v: 0.386, r: 0.135, h: 0.28 },
     ],
+    scrollScale: 1.45,
     buttons: [[0.309, 0.196], [0.486, 0.196], [0.664, 0.196], [0.091, 0.411], [0.882, 0.411]],
     leds: [],
     scrollViews: [
@@ -199,7 +200,9 @@ function viewsFor(M, mode) {
   const V = (M.scrollViews || M.views).map((v) => ({ ...v }));
   const a = V[0], d = Math.hypot(a.pos[0] - a.tgt[0], a.pos[1] - a.tgt[1], a.pos[2] - a.tgt[2]);
   const top = (ox) => ({ pos: [0, a.tgt[1] + d * 0.985, d * 0.17], tgt: [0, a.tgt[1], 0], ox });
-  if (mode === 'viewer') V[0] = top(0); else V[V.length - 1] = top(V[V.length - 1].ox || 0);
+  if (mode === 'viewer') V[0] = top(0); else V[V.length - 1] = top((V[V.length - 1].ox || 0) + 0.05);
+  const k = mode === 'viewer' ? 1 : (M.scrollScale || 1); // camera pulled back so the small Nano reads smaller on the homepage
+  if (k !== 1) V.forEach((v) => { v.pos = v.pos.map((p, j) => v.tgt[j] + (p - v.tgt[j]) * k); });
   return V;
 }
 
