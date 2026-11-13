@@ -273,7 +273,7 @@ print('review round 2 ok')
 # hardware pages: photos are the key visual (the 3D viewer stays in the theme: set Left column back to "3D model + photos" to return it)
 for name in ('product.quad-cortex', 'product.quad-cortex-mini', 'product.nano-cortex'):
     head, d = load(name)
-    d['sections']['main']['settings']['media_mode'] = 'gallery'
+    d['sections']['main']['settings']['media_mode'] = '3d' if name == 'product.quad-cortex' else 'gallery'  # Quad Cortex keeps the 3D viewer (Eli, Nov 13)
     if name == 'product.nano-cortex':
         d['sections']['main']['settings']['acc_note'] = '本体には USB-C ケーブルが付属します（電源アダプターは付属しません）。USB-C ケーブルからの給電でもご使用いただけます。'
     save(name, head, d)
