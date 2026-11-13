@@ -375,3 +375,10 @@
 /* product 3D: dragging in any direction turns the unit (spin left/right, tilt up/down) */
 .pdp-3d__stage.nd-viewer__stage { touch-action: none; }
 .acc label:has(input:disabled) { opacity: .5; cursor: default; }
+
+/* review: bigger price in the buy column */
+.buy .price { font-size: clamp(28px, 2.4vw, 36px); line-height: 1.2; }
+.buy .price small { font-size: var(--fs-s); }
+/* review: smaller key-visual photos, whole product always visible */
+.pdp:not(.pdp--3d) .gallery__slide img { width: 70%; height: 74%; object-fit: contain; }
+.pdp:not(.pdp--3d) .gallery__main { max-height: min(62vh, 560px); }

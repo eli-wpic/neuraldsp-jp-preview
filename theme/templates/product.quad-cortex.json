@@ -82,10 +82,9 @@
         ],
         "accessories": [
           "gig-case",
-          "quad-cortex-psu",
-          "quad-cortex-mini-psu"
+          "quad-cortex-psu"
         ],
-        "media_mode": "3d",
+        "media_mode": "gallery",
         "model": "qc",
         "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
         "view_titles": "世界最高峰のフロア型アンプモデラー|モデラーの新たな可能性を切り拓く|11基のステンレス製ストンプ＋ロータリーアクチュエーター|入力と出力|7インチのタッチディスプレイと圧倒的な処理能力により、自由かつ直感的なトーン設計を実現します。",
@@ -172,7 +171,8 @@
         "layout": "media-left",
         "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/e175eed0f9874ed5b94a45e5730fa370/e175eed0f9874ed5b94a45e5730fa370.HD-1080p-2.5Mbps-43894975.mp4?v=0",
         "heading": "モデラーの新たな可能性を切り拓く",
-        "body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>"
+        "body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
+        "clip_white": true
       }
     },
     "custom_liquid_cypaxf": {

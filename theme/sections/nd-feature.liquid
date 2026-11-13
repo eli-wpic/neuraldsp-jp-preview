@@ -13,7 +13,7 @@
     assign layout = 'center'
   endif
 -%}
-<section class="nd-feature nd-feature--{{ layout }}{% if s.tight %} nd-feature--tight{% endif %}{% if s.light %} nd-feature--light{% endif %}">
+<section class="nd-feature nd-feature--{{ layout }}{% if s.tight %} nd-feature--tight{% endif %}{% if s.light %} nd-feature--light{% endif %}{% if s.clip_white %} nd-feature--clip{% endif %}">
   <div class="container nd-feature__grid">
     {%- unless layout == 'media' -%}
       <div class="nd-feature__copy">
@@ -62,6 +62,7 @@
     ] },
     { "type": "checkbox", "id": "tight", "label": "Less vertical spacing", "default": false },
     { "type": "checkbox", "id": "light", "label": "White background", "default": false },
+    { "type": "checkbox", "id": "clip_white", "label": "Trim white edges around the product (Quad Cortex top-view film)", "default": false },
     { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
     { "type": "textarea", "id": "heading", "label": "Heading" },
     { "type": "textarea", "id": "subheading", "label": "Subheading" },

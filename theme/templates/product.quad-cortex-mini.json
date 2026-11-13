@@ -38,10 +38,9 @@
           "plugin-addon-archetype-cory-wong-x"
         ],
         "accessories": [
-          "quad-cortex-psu",
           "quad-cortex-mini-psu"
         ],
-        "media_mode": "3d",
+        "media_mode": "gallery",
         "model": "mini",
         "view_labels": "全体,The Grid,フットスイッチ,入力と出力,正面",
         "view_titles": "妥協ゼロ。ただ、コンパクト。|リグ全体をひと目で把握。|タッチスクリーン &ロータリーフットスイッチ|シンプルな接続。自由なセットアップ。|小さなボディ。大きなサウンド。",

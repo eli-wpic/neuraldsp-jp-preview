@@ -461,3 +461,5 @@ body.in-3d .nd-nl-fab { opacity: 0; translate: 0 10px; pointer-events: none; }
 .nd-page-head--compact h1 { font-size: var(--fs-xl); }
 main:has(.nd-page-head--compact) .section-head { text-align: left; justify-items: start; margin-left: 0; }
 main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
+.nd-feature--clip .nd-feature__media video, .nd-feature--clip .nd-feature__media img { clip-path: inset(5.6% 1.9% 2.6% 1.5% round 4% / 6%); background: transparent; }
+.nd-feature--clip .nd-feature__media { background: none; box-shadow: none; }

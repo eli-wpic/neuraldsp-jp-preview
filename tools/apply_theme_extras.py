@@ -10,9 +10,10 @@ THEME = Path(sys.argv[1])
 T = THEME / 'templates'
 PHOTOS = {'product.quad-cortex': ('qc', 5), 'product.quad-cortex-mini': ('mini', 4), 'product.nano-cortex': ('nano', 5),
           'product.psu': ('psu', 4)}
-ACCESSORIES = {'product.quad-cortex': ['gig-case', 'quad-cortex-psu', 'quad-cortex-mini-psu'],
-               'product.quad-cortex-mini': ['quad-cortex-psu', 'quad-cortex-mini-psu'],
-               'product.nano-cortex': ['quad-cortex-psu', 'quad-cortex-mini-psu']}
+# review: each product offers only its own PSU (Nano uses the Quad Cortex PSU; it ships with a USB-C cable only)
+ACCESSORIES = {'product.quad-cortex': ['gig-case', 'quad-cortex-psu'],
+               'product.quad-cortex-mini': ['quad-cortex-mini-psu'],
+               'product.nano-cortex': ['quad-cortex-psu']}
 CODE = {'corywongx': 'cor', 'fortin-nameless-suite-x': 'for', 'gojirax': 'goj', 'misha-mansoor-x': 'mis', 'nollyx': 'nol',
         'parallaxx': 'par', 'petrucci-x': 'pet', 'plinix': 'pli', 'rabea-x': 'rab', 'soldano-slo-100x': 'slo', 'tim-henson-x': 'tim'}
 
@@ -267,3 +268,18 @@ for k, sec in d['sections'].items():
         sec.setdefault('settings', {})['compact'] = True
 save('page.shopping-guide', head, d)
 print('review round 2 ok')
+
+# ---- client review round 3 (Nov 2026) ----
+# hardware pages: photos are the key visual (the 3D viewer stays in the theme: set Left column back to "3D model + photos" to return it)
+for name in ('product.quad-cortex', 'product.quad-cortex-mini', 'product.nano-cortex'):
+    head, d = load(name)
+    d['sections']['main']['settings']['media_mode'] = 'gallery'
+    if name == 'product.nano-cortex':
+        d['sections']['main']['settings']['acc_note'] = '本体には USB-C ケーブルが付属します（電源アダプターは付属しません）。USB-C ケーブルからの給電でもご使用いただけます。'
+    save(name, head, d)
+# Quad Cortex: the touchscreen film has a white background baked in around the unit; clip it to the unit's outline
+head, d = load('product.quad-cortex')
+if 'image_with_text_gqqlkf' in d['sections']:
+    d['sections']['image_with_text_gqqlkf']['settings']['clip_white'] = True
+    save('product.quad-cortex', head, d)
+print('review round 3 ok')

@@ -10,17 +10,17 @@
         "show_accessories": true,
         "show_trial": false,
         "accessories": [
-          "quad-cortex-psu",
-          "quad-cortex-mini-psu"
+          "quad-cortex-psu"
         ],
-        "media_mode": "3d",
+        "media_mode": "gallery",
         "model": "nano",
         "view_labels": "全体,コントロール,フットスイッチ,入力と出力,正面",
         "view_titles": "あなたのトーン。あなたのリグ。どこでもプレイ|手のひらに収まる、超強力なリグ|軽快に移動、圧倒的なサウンド|入力と出力|300種類の高品質IR、25種類のプリセットキャプチャーを搭載。",
         "view_captions": "Nano Cortex® は、Neural DSP が開発した手のひらサイズのデジタルアンプ & エフェクトプロセッサーです。|Bass, Mid, Treble トーンを調整するためのコントロール。 Gain Neural Captureに適用されるサチュレーションのレベルを調整します。 Capture Neural Captureプロセスを開始します。|Nano Cortexは、2つのスタンダードなストンプボックスペダルを並べた幅と同じで、重さはわずか620g（1.36lbs）。ギグバッグやバックパックに簡単に収まります。|1/4\" instrument input ギターやベース用。 Dual 1/4\" TRS outputs スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。 USB-C 録音や電源供給に対応。 Capture inpu|",
         "film_url": "https://youtu.be/CJ3qnwxDecE?si=83w4mqq3CtZAOtTO",
         "film_label": "▶ フル動画を見る",
-        "photo_assets": "nano-photo-1.webp,nano-photo-2.webp,nano-photo-3.webp,nano-photo-4.webp,nano-photo-5.webp"
+        "photo_assets": "nano-photo-1.webp,nano-photo-2.webp,nano-photo-3.webp,nano-photo-4.webp,nano-photo-5.webp",
+        "acc_note": "本体には USB-C ケーブルが付属します（電源アダプターは付属しません）。USB-C ケーブルからの給電でもご使用いただけます。"
       },
       "blocks": {},
       "block_order": []
