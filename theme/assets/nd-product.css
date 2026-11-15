@@ -387,3 +387,15 @@
 .pdp:not(.pdp--3d) .gallery__slide img { max-height: calc(var(--ph) * .78); max-width: 78%; width: auto; height: auto; }
 .pdp:not(.pdp--3d) { max-width: 1760px; margin-inline: auto; }
 @media (max-width: 989px) { .pdp:not(.pdp--3d) { --ph: min(75vw, 520px); } }
+
+/* plugin dropdown: the list opens inside the same box and scrolls there (review Nov 16) */
+.plug-drop { overflow: hidden; background: rgba(239,235,228,.02); }
+.plug-drop .plugs { max-height: 312px; padding: 0 6px 0 14px; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(239,235,228,.28) transparent; }
+.plug-drop .plugs::-webkit-scrollbar { width: 6px; }
+.plug-drop .plugs::-webkit-scrollbar-track { background: transparent; margin: 8px 0; }
+.plug-drop .plugs::-webkit-scrollbar-thumb { background: rgba(239,235,228,.28); border-radius: 3px; }
+.plug-drop .plug { padding: 8px 4px; grid-template-columns: 60px 1fr auto 20px; gap: 12px; }
+.plug-drop .plug img { width: 60px; height: 38px; }
+.plug-drop .plug input { width: 20px; height: 20px; border-radius: 5px; } /* square: several plugins can be picked */
+.plug-drop .plug:has(input:checked) { background: rgba(239,235,228,.05); }
+.plug-drop[open] .plug-drop__btn { border-bottom: 0; }
