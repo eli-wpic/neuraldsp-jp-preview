@@ -335,3 +335,9 @@ input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select, t
 html[data-scheme="light"] .nd-update__badge, html[data-scheme="campaign"] .nd-update__badge { background: var(--badge-bg) !important; color: var(--badge-fg) !important; }
 .nd-sep::after { background: var(--sep) !important; }
 .nd-yt__play { background: #fff !important; color: #0b0b0b !important; } /* sits on video artwork: always white */
+
+/* ===== buttons and badges: only white or black, whichever contrasts with the page (review Nov 16) ===== */
+:root { --badge-bg: var(--btn1-bg); --badge-fg: var(--btn1-fg); }
+html[data-scheme="light"] { --badge-bg: var(--btn1-bg); --badge-fg: var(--btn1-fg); }
+.compare__badge, .header-cart__count { background: var(--btn1-bg) !important; color: var(--btn1-fg) !important; }
+.qc3d__dock-item.is-campaign b::before { background: currentColor; }

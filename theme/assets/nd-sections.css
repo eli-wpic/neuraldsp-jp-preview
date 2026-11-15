@@ -684,3 +684,36 @@ img.nd-scaled { object-position: center center !important; }
 .nd-nl__banner img { max-height: 420px; width: 100%; object-fit: cover; }
 .pdp__left .gallery--overlay .gallery__slide img { width: 64% !important; height: 64% !important; }
 .nd-update__media { max-width: 640px; }
+
+/* ===== review Nov 16 (2) ===== */
+/* comparisons: units stay modest; the scale between them is kept */
+.vs .vs__img, .nd-versus__img { max-width: 340px; margin-inline: auto; }
+/* feature cards: text on the card, no popup */
+.nd-popcards__card { cursor: default; align-content: start; gap: 12px; min-height: 0; }
+.nd-popcards__card:hover { transform: none; }
+.nd-popcards__card h3 { font-size: var(--fs-l); }
+.nd-popcards__card .nd-prose { font-size: var(--fs-s); color: var(--text-2); line-height: 1.8; }
+.nd-popcards__card .nd-prose p { margin: 0 0 8px; }
+.nd-popcards__card .nd-prose strong { color: var(--text); }
+/* hero step dots: solid, never see-through */
+.qc3d__nav button { background: var(--bg) !important; }
+.qc3d__nav button[aria-current="true"] { background: var(--paper) !important; }
+/* selected dock item: price readable on the selected fill in every scheme */
+.qc3d__dock-item[aria-selected="true"] small { color: color-mix(in srgb, var(--on-paper) 68%, var(--paper)) !important; }
+/* press feedback on everything clickable */
+.qc3d__dock-item, .qc3d__nav button, .nd-viewer__btn, .nd-versus__tabs button, .plug, .acc label, .gallery__thumbs button, .gallery__nav, .mega a, .nd-card, .mini-card, .faq summary, .plug-drop__btn, .qty button, .nd-colorbar button, .nd-pin, .nd-yt, [data-genre], .tone__tab, .steps__nav button { transition: scale .15s var(--ease-out), background-color .25s, color .25s, border-color .25s; }
+:is(.qc3d__dock-item, .qc3d__nav button, .nd-viewer__btn, .nd-versus__tabs button, .plug, .acc label, .gallery__thumbs button, .gallery__nav, .mega a, .nd-card, .mini-card, .faq summary, .plug-drop__btn, .qty button, .nd-colorbar button, .nd-yt, [data-genre], .tone__tab, .steps__nav button):active { scale: .97; }
+
+/* ===== white scheme: photos sit on the page, not in grey boxes; logos stay visible ===== */
+html[data-scheme="light"] :is(.nd-feature__media, .nd-numbered__media, .gallery__main, .nd-capv__card ~ *, .nd-update__media) { background: transparent !important; box-shadow: none !important; }
+html[data-scheme="light"] .nd-feature__media { border-radius: 0; }
+html[data-scheme="light"] :is(.nd-awards__item img, .chapter__awards img) { filter: invert(1) hue-rotate(180deg); }
+html[data-scheme="light"] .nd-capv__card { background: var(--bg-panel); }
+html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
+
+/* ===== colour bar: same type as the header menu, no boxed buttons ===== */
+.nd-colorbar { height: 36px; gap: 22px; font-size: var(--fs-s); font-weight: 500; color: var(--text-3); background: var(--bg); }
+.nd-colorbar button { height: 36px; padding: 0 2px; border: 0 !important; border-radius: 0; background: none !important; font-size: var(--fs-s); font-weight: 500; color: var(--text-2); box-shadow: inset 0 -2px 0 transparent; }
+.nd-colorbar button:hover { color: var(--text); }
+.nd-colorbar button[aria-pressed="true"] { color: var(--text); box-shadow: inset 0 -2px 0 var(--text); }
+.nd-colorbar button i { width: 10px; height: 10px; }

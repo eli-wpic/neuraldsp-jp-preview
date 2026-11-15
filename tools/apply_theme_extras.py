@@ -570,3 +570,12 @@ for b in [b for b in io['block_order'] if b.startswith('hl_')]:
 io['block_order'] = [b for b in io['block_order'] if not b.startswith('hl_')]
 save('product.quad-cortex-mini', head, d)
 print('round 9 ok')
+
+# ---- round 10: QC rear panel = transparent photo + numbered markers (works on dark and white) ----
+QC_IO_PINS = {'1': (9.2, 56), '2': (25.7, 33), '3': (37.8, 33), '4': (51.7, 59), '5': (43.9, 71), '6': (69.1, 65), '7': (82.6, 33), '8': (89.4, 74), '10': (43.9, 33)}
+head, d = load('product.quad-cortex')
+io = d['sections']['custom_liquid_tpwyqn']
+io['settings'].update(image_url='', image_asset='qc-rear.webp', media_max=1100, show_numbers=True)
+pins(io, QC_IO_PINS)
+save('product.quad-cortex', head, d)
+print('round 10 ok')

@@ -1,25 +1,18 @@
 {%- comment -%}
-  Feature cards with 詳しく見る: each card opens a dialog with its detail text (neuraldsp.com/quad-cortex: Cab block & EQ, Switching Modes…).
+  Feature cards: title and detail text shown on the card (no popups — review Nov 16) (neuraldsp.com/quad-cortex: Cab block & EQ, Switching Modes…).
 {%- endcomment -%}
 <section class="section nd-popcards">
   <div class="container">
     {%- if section.settings.heading != blank -%}<header class="section-head"><h2>{{ section.settings.heading }}</h2></header>{%- endif -%}
     <div class="nd-popcards__grid" data-stagger>
       {%- for block in section.blocks -%}
-        <button type="button" class="nd-popcards__card" style="--i: {{ forloop.index0 }}" data-dialog-open="Pop-{{ block.id }}" {{ block.shopify_attributes }}>
-          <b>{{ block.settings.title }}</b>
-          <span>{{ section.settings.more_label }} <i aria-hidden="true">+</i></span>
-        </button>
+        <article class="nd-popcards__card" style="--i: {{ forloop.index0 }}" {{ block.shopify_attributes }}>
+          <h3>{{ block.settings.title }}</h3>
+          <div class="nd-prose">{{ block.settings.text }}</div>
+        </article>
       {%- endfor -%}
     </div>
   </div>
-  {%- for block in section.blocks -%}
-    <dialog class="nd-pop" id="Pop-{{ block.id }}" aria-label="{{ block.settings.title | escape }}">
-      <button type="button" class="nd-pop__close" data-dialog-close aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
-      <h3>{{ block.settings.title }}</h3>
-      <div class="nd-prose">{{ block.settings.text }}</div>
-    </dialog>
-  {%- endfor -%}
 </section>
 {% schema %}
 {
