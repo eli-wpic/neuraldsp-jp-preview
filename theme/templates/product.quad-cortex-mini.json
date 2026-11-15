@@ -63,7 +63,8 @@
         "tags": "newsletter, popup-product",
         "submit": "登録する",
         "popup_button": "メルマガに登録する"
-      }
+      },
+      "disabled": true
     },
     "rich_text_krypv3": {
       "type": "nd-feature",

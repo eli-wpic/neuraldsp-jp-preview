@@ -617,3 +617,11 @@ for name, photo in FRONT_ONLY.items():
     st['film_url'] = ''; st['film_mp4'] = ''
     save(name, head, d)
 print('round 14 ok')
+
+# ---- round 15: match the global pages — QC page has no QC-vs-mini table; no newsletter popup button on QC / mini (hidden, switch back on in the editor) ----
+for name, keys in (('product.quad-cortex', ('versus', 'product_newsletter_popup_qjp3np')), ('product.quad-cortex-mini', ('product_newsletter_popup_qjp3np',))):
+    head, d = load(name)
+    for k in keys:
+        if k in d['sections']: d['sections'][k]['disabled'] = True
+    save(name, head, d)
+print('round 15 ok')

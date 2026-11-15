@@ -107,7 +107,8 @@
         "tags": "newsletter, popup-product",
         "submit": "登録する",
         "popup_button": "メルマガに登録する"
-      }
+      },
+      "disabled": true
     },
     "custom_liquid_jamdvc": {
       "type": "nd-feature",
@@ -1057,7 +1058,8 @@
         "row_37",
         "row_38",
         "row_39"
-      ]
+      ],
+      "disabled": true
     },
     "coros_update": {
       "type": "nd-update",
