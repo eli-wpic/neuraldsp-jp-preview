@@ -47,6 +47,7 @@
         {%- if s.link_url != blank -%}</a>{%- endif -%}
       </div>
     {%- endif -%}
+    {%- if s.body_after != blank -%}<div class="nd-feature__after nd-prose">{{ s.body_after }}</div>{%- endif -%}
   </div>
 </section>
 
@@ -61,6 +62,7 @@
       { "value": "media-top", "label": "Text above wide media" },
       { "value": "media", "label": "Media only" }
     ] },
+    { "type": "html", "id": "body_after", "label": "Text under the photo (HTML)", "info": "Shown below the photo, as on neuraldsp.com" },
     { "type": "checkbox", "id": "tight", "label": "Less vertical spacing", "default": false },
     { "type": "checkbox", "id": "light", "label": "White background", "default": false },
     { "type": "checkbox", "id": "clip_white", "label": "Trim white edges around the product (Quad Cortex top-view film)", "default": false },

@@ -521,3 +521,16 @@ for i, (q, a) in enumerate(NANO_FAQ):
     f['block_order'].append(k)
 save('product.nano-cortex', head, d)
 print('round 7 ok')
+
+# Nano intro: as on neuraldsp.com — heading + first paragraph, the photo, then the Neural Capture paragraphs under it
+head, d = load('product.nano-cortex')
+sec = d['sections'].get('custom_liquid_hjp4qe')
+if sec and '<p>Neural Captureは登場以来' in sec['settings'].get('body', ''):
+    b = sec['settings']['body']; i = b.index('<p>Neural Captureは登場以来')
+    sec['settings']['body'] = b[:i]
+    sec['settings']['body_after'] = ('<p>Neural Captureは登場以来、アンプやキャビネット、ドライブペダルのキャプチャと再現において他に類を見ない精度を実現し、演奏時のリアルさとレスポンスの良さはアーティストやエンジニアから高く評価されてきました。</p>'
+                                     '<p>そして今、その革新的なテクノロジーは、いつでもどこでもインスピレーションを形にできる、現場対応型のポータブルユニットに凝縮されています。</p>'
+                                     '<p>ポータブルかつプロフェッショナルなトーンの未来へようこそ。</p>')
+    sec['settings']['layout'] = 'media-top'
+    save('product.nano-cortex', head, d)
+print('nano intro ok')

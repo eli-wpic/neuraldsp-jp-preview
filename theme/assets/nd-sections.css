@@ -656,3 +656,5 @@ img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; mar
 @media (max-width: 480px) { .nd-popcards__grid { grid-template-columns: 1fr; } .nd-popcards__card { min-height: 0; } }
 .sticky-buy img.nd-scaled { width: 72px !important; margin-inline: 0; }
 .mega--list a:has(img.nd-scaled) { justify-items: center; text-align: center; }
+.nd-feature__after { grid-column: 1 / -1; max-width: 46em; margin: clamp(24px, 3vw, 40px) auto 0; text-align: center; color: var(--text-2); }
+.nd-feature--media-top .nd-feature__media { max-width: 960px; width: 100%; justify-self: center; margin-inline: auto; }
