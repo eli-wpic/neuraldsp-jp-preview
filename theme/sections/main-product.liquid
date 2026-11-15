@@ -134,7 +134,7 @@
       <div class="buy__head">
         <p class="chapter__eyebrow"><i></i>Neural DSP ／ {{ product.title }}</p>
         <h1 class="buy__title" id="Title-{{ section.id }}">{{ product.title }}</h1>
-        <p class="price"><span data-unit-price>{% render 'nd-price', price: base_price %}</span> <small data-unit-note>{{ s.tax_label }}</small></p>
+        <p class="price"><span data-unit-price>{% render 'nd-price', price: base_price, compare: product.selected_or_first_available_variant.compare_at_price %}</span> <small data-unit-note>{{ s.tax_label }}</small></p>
         <p class="buy__price-note">{{ s.shipping_label }}</p>
         {%- for block in section.blocks -%}
           {%- if block.type == '@app' -%}<div class="buy__app">{% render block %}</div>{%- endif -%}
@@ -187,7 +187,7 @@
             <a class="plug plug--link" href="{{ h.url }}" data-keep-place{% if h.id == product.id %} aria-current="page"{% endif %}>
               {%- if is_bundle -%}<img src="{{ hw_img | asset_url }}" alt="" width="72" height="45" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: h, width: 160 %}{%- endif -%}
               <span class="plug__name">{{ hw_name }}</span>
-              <span class="plug__price yen">{% render 'nd-price', price: h.price %}</span>
+              <span class="plug__price yen">{% render 'nd-price', price: h.price, compare: h.compare_at_price %}</span>
               <i class="plug__tick" aria-hidden="true"></i>
             </a>
           {%- endfor -%}

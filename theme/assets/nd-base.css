@@ -341,3 +341,18 @@ html[data-scheme="light"] .nd-update__badge, html[data-scheme="campaign"] .nd-up
 html[data-scheme="light"] { --badge-bg: var(--btn1-bg); --badge-fg: var(--btn1-fg); }
 .compare__badge, .header-cart__count { background: var(--btn1-bg) !important; color: var(--btn1-fg) !important; }
 .qc3d__dock-item.is-campaign b::before { background: currentColor; }
+
+/* ===== campaign look (all colours come from Theme settings → Colours → campaign; nothing here is campaign-specific) ===== */
+.nd-strip { position: relative; z-index: 61; background: var(--strip-bg, #111); border-bottom: 1px solid var(--accent); }
+.nd-strip > a, .nd-strip > div { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 6px 16px; min-height: 44px; padding: 6px var(--gutter); color: var(--text); text-decoration: none; font-size: var(--fs-s); font-weight: 500; }
+.nd-strip__name { color: var(--accent); font-family: var(--display); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125; font-size: var(--fs-l); letter-spacing: .02em; line-height: 1; } /* large + bold: accent passes 3:1 */
+.nd-strip__count { color: var(--text-2); }
+.nd-strip__count time { color: var(--text); font-variant-numeric: tabular-nums; font-weight: 600; margin-left: 4px; }
+.nd-strip > a:hover .nd-strip__text { text-decoration: underline; text-underline-offset: 3px; }
+html[data-scheme="campaign"] body { background-image: radial-gradient(60% 40% at 80% 18%, var(--campaign-glow, transparent), transparent 70%), radial-gradient(50% 35% at 10% 85%, var(--campaign-glow, transparent), transparent 70%); background-attachment: fixed; }
+html[data-scheme="campaign"] :is(.qc3d__stage, .pdp-3d__stage, .nd-versus__img, .vs__img, .gallery__main) { background-image: radial-gradient(45% 45% at 50% 55%, var(--campaign-glow, transparent), transparent 72%); }
+html[data-scheme="campaign"] .qc3d__copy[data-kind="campaign"] .display { font-family: var(--display); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125; text-transform: uppercase; font-size: var(--fs-display); line-height: .92; letter-spacing: -.01em; text-shadow: 0 0 60px var(--campaign-glow, transparent); }
+html[data-scheme="campaign"] .section-head h2::after, html[data-scheme="campaign"] .nd-tabs [aria-selected="true"] { border-color: var(--accent); }
+/* sale price (Shopify compare-at price) */
+.yen-was { color: var(--text-3); font-weight: 400; font-size: .72em; margin-right: 6px; text-decoration-thickness: 1.5px; }
+.sale-tag { display: inline-block; margin-left: 8px; padding: 2px 8px; border-radius: 4px; background: var(--btn1-bg); color: var(--btn1-fg); font-size: var(--fs-xs); font-weight: 700; vertical-align: middle; letter-spacing: .02em; }

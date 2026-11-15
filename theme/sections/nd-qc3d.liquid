@@ -22,6 +22,14 @@
     {%- assign live = true -%}
     {%- if block.type == 'campaign' -%}
       {%- if b.enabled == false -%}{%- assign live = false -%}{%- endif -%}
+      {%- if b.follow_site -%}
+        {%- assign live = false -%}
+        {%- if settings.campaign_on -%}
+          {%- assign live = true -%}
+          {%- if settings.campaign_start != blank and today < settings.campaign_start -%}{%- assign live = false -%}{%- endif -%}
+          {%- if settings.campaign_end != blank and today > settings.campaign_end -%}{%- assign live = false -%}{%- endif -%}
+        {%- endif -%}
+      {%- endif -%}
       {%- if b.start_date != blank and today < b.start_date -%}{%- assign live = false -%}{%- endif -%}
       {%- if b.end_date != blank and today > b.end_date -%}{%- assign live = false -%}{%- endif -%}
     {%- endif -%}
@@ -83,7 +91,7 @@
             <p class="chapter__lead">{{ b.c0_lead }}</p>
             {%- if b.c0_body != blank -%}<p class="chapter__body">{{ b.c0_body }}</p>{%- endif -%}
             <div class="chapter__buy">
-              {%- if p != blank -%}<p class="price">{% render 'nd-price', price: p.price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
+              {%- if p != blank -%}<p class="price">{% render 'nd-price', price: p.price, compare: p.compare_at_price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
               {%- if p != blank -%}<button class="btn btn--primary" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>{%- endif -%}
               <a class="btn" href="{{ more_url | default: '#' }}">{{ s.more_label }}</a>
             </div>
@@ -102,7 +110,7 @@
           <article class="chapter chapter--right" data-chapter>
             <p class="chapter__num">04 <span>{{ b.c4_label }}</span></p>
             <h2 class="chapter__title">{{ p.title }}</h2>
-            {%- if p != blank -%}<p class="price price--xl">{% render 'nd-price', price: p.price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
+            {%- if p != blank -%}<p class="price price--xl">{% render 'nd-price', price: p.price, compare: p.compare_at_price %} <small>{{ s.tax_label }}</small></p>{%- endif -%}
             {%- if b.c4_body != blank -%}<p class="chapter__body">{{ b.c4_body }}</p>{%- endif -%}
             <div class="chapter__buy">
               {%- if p != blank -%}<button class="btn btn--primary" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>{%- endif -%}
@@ -135,7 +143,7 @@
           {%- if p != blank -%}
             <div class="qc3d__buybar">
               <span class="qc3d__buybar-name">{{ p.title }}</span>
-              <span class="qc3d__buybar-price">{% render 'nd-price', price: p.price %}</span>
+              <span class="qc3d__buybar-price">{% render 'nd-price', price: p.price, compare: p.compare_at_price %}</span>
               <button class="btn btn--primary btn--small" type="button" data-buy-now="{{ p.selected_or_first_available_variant.id }}"{% unless p.available %} disabled{% endunless %}>{{ s.buy_label }}</button>
             </div>
           {%- endif -%}
@@ -202,6 +210,7 @@
       "name": "Campaign",
       "settings": [
         { "type": "checkbox", "id": "enabled", "label": "Show this campaign", "default": false, "info": "Off: the hero opens on Quad Cortex. Turn on (and set dates) for the yearly campaign." },
+        { "type": "checkbox", "id": "follow_site", "label": "Show during the site campaign", "default": false, "info": "On: appears and disappears with Theme settings → Colours → campaign (same switch and dates)." },
         { "type": "text", "id": "start_date", "label": "Start date (YYYY-MM-DD, optional)" },
         { "type": "text", "id": "end_date", "label": "End date (YYYY-MM-DD, optional)" },
         { "type": "text", "id": "dock_label", "label": "Dock label", "default": "キャンペーン" },

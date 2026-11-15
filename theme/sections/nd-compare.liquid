@@ -42,7 +42,7 @@
             <div class="vs__img"><div style="width: {{ scale }}%">{%- if b.image_asset != blank -%}<img src="{{ b.image_asset | asset_url }}" alt="{{ p.title | escape }}" width="600" height="400" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: p, width: 600 %}{%- endif -%}</div></div>
             <h3>{{ p.title }}</h3>
             <p class="vs__role">{{ b.role }}</p>
-            <p class="vs__price">{% render 'nd-price', price: p.price %}<small>{{ s.tax_label }}</small></p>
+            <p class="vs__price">{% render 'nd-price', price: p.price, compare: p.compare_at_price %}<small>{{ s.tax_label }}</small></p>
           </article>
         {%- endfor -%}
       </div>

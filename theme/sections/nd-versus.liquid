@@ -26,7 +26,7 @@
           <div class="nd-versus__img"><div style="width: {{ sc }}%">
             {%- if img != blank -%}<img src="{{ img | asset_url }}" alt="{{ p.title | escape }}" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: p, width: 700 %}{%- endif -%}
           </div></div>
-          <figcaption><b>{{ p.title }}</b>{%- if p.price -%}<span>{% render 'nd-price', price: p.price %}<small>{{ s.tax_label }}</small></span>{%- endif -%}</figcaption>
+          <figcaption><b>{{ p.title }}</b>{%- if p.price -%}<span>{% render 'nd-price', price: p.price, compare: p.compare_at_price %}<small>{{ s.tax_label }}</small></span>{%- endif -%}</figcaption>
           {%- if p.url -%}<a class="btn btn--small" href="{{ p.url }}">{{ s.cta_label }}</a>{%- endif -%}
         </figure>
       {%- endfor -%}

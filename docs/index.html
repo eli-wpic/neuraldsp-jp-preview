@@ -23,6 +23,7 @@
         color-scheme: dark;
       }
       html[data-scheme="campaign"] body { background: #050505; }
+      html[data-scheme="campaign"] { --campaign-glow: color-mix(in srgb, #cb2b1e 14%, transparent); --strip-bg: #111111; }html[data-scheme="campaign"] body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
       .nd-colorbar button[data-scheme-set="campaign"] i { background: #cb2b1e; }
     </style><script>(function(){var h=document.documentElement,live=true;if(live)h.dataset.scheme='campaign';try{var s=localStorage.getItem('nd-scheme');if(s==='light'||s==='dark'||(s==='campaign'&&live))h.dataset.scheme=s}catch(e){}h.dataset.campaign=live?'live':''})()</script><link rel="stylesheet" href="/neuraldsp-jp-preview/assets/nd-base.css">
   <link rel="stylesheet" href="/neuraldsp-jp-preview/assets/nd-sections.css">
@@ -35,7 +36,9 @@
   </script>
   
 </head>
-<body class="template-object-object"><div class="nd-colorbar" role="group" aria-label="サイトの色">
+<body class="template-object-object"><div class="nd-strip" data-strip><div><b class="nd-strip__name">BLACK FRIDAY</b><span class="nd-strip__text">開催日程は近日公開</span><span class="nd-strip__count" data-countdown="2026-12-01T23:59:59+09:00">終了まで <time></time></span></div></div>
+    <script>(function(){var el=document.querySelector('[data-countdown]');if(!el)return;var end=new Date(el.dataset.countdown).getTime(),t=el.querySelector('time');function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000));if(!s){var strip=el.closest('[data-strip]');if(strip)strip.remove();return}var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;t.textContent=(d?d+'日 ':'')+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');setTimeout(tick,1000)}tick()})();</script>
+    <style>html:not([data-scheme="campaign"]) .nd-strip { display: none; }</style><div class="nd-colorbar" role="group" aria-label="サイトの色">
       <span>カラー</span>
       <button type="button" data-scheme-set="dark" aria-pressed="false"><i aria-hidden="true"></i>ダーク</button>
       <button type="button" data-scheme-set="light" aria-pressed="false"><i aria-hidden="true"></i>ホワイト</button><button type="button" data-scheme-set="campaign" aria-pressed="false"><i aria-hidden="true"></i>BLACK FRIDAY</button></div>
@@ -65,11 +68,11 @@
 
 </div>
   <main id="MainContent" role="main" tabindex="-1">
-    <div id="shopify-section-qc3d" class="shopify-section"><section class="qc3d" id="hardware" data-qc3d data-3d="scroll" aria-label="Neural DSP">
+    <div id="shopify-section-qc3d" class="shopify-section"><section class="qc3d is-single" id="hardware" data-qc3d data-3d="scroll" aria-label="Neural DSP">
   <div class="qc3d__sticky">
     <div class="qc3d__stage" data-qc3d-stage data-3d-stage data-model="qc" data-textures="{&#34;qc&#34;:{&#34;top&#34;:&#34;/neuraldsp-jp-preview/assets/qc-top.webp&#34;,&#34;screen&#34;:&#34;/neuraldsp-jp-preview/assets/qc-screen.webp&#34;,&#34;rear&#34;:&#34;/neuraldsp-jp-preview/assets/qc-rear.webp&#34;},   &#34;mini&#34;:{&#34;top&#34;:&#34;/neuraldsp-jp-preview/assets/mini-top.webp&#34;,&#34;rear&#34;:&#34;/neuraldsp-jp-preview/assets/mini-rear.webp&#34;},   &#34;nano&#34;:{&#34;top&#34;:&#34;/neuraldsp-jp-preview/assets/nano-top.webp&#34;,&#34;rear&#34;:&#34;/neuraldsp-jp-preview/assets/nano-rear.webp&#34;,&#34;front&#34;:&#34;/neuraldsp-jp-preview/assets/nano-front.webp&#34;,&#34;left&#34;:&#34;/neuraldsp-jp-preview/assets/nano-left.webp&#34;,&#34;right&#34;:&#34;/neuraldsp-jp-preview/assets/nano-right.webp&#34;}}"><img class="qc3d__poster" src="/neuraldsp-jp-preview/assets/qc-three-quarter-1600.webp" sizes="100vw" alt="" width="1600" height="1000" fetchpriority="high"><canvas aria-label="製品の3Dモデル。左右にドラッグすると回転します。" role="img"></canvas>
     </div>
-    <span class="qc3d__hint" data-drag-hint aria-hidden="true"><svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h22M5 2 1 6l4 4M19 2l4 4-4 4"/></svg>ドラッグで回転</span><div class="qc3d__copy" data-item="1" data-kind="product" data-model="qc" ><article class="chapter chapter--hero" data-chapter>
+    <span class="qc3d__hint" data-drag-hint aria-hidden="true"><svg viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6h22M5 2 1 6l4 4M19 2l4 4-4 4"/></svg>ドラッグで回転</span><div class="qc3d__copy" data-item="0" data-kind="campaign" data-model="qc" ><article class="chapter chapter--hero" data-chapter><p class="chapter__eyebrow"><i></i>Neural DSP ／ 期間限定キャンペーン</p><h1 class="display">BLACK<br />FRIDAY</h1><div class="chapter__buy"><a class="btn btn--primary" href="/neuraldsp-jp-preview/collections/all">キャンペーン対象を見る</a></div></article></div><div class="qc3d__copy" data-item="2" data-kind="product" data-model="qc" hidden ><article class="chapter chapter--hero" data-chapter>
             <p class="chapter__eyebrow"><i></i>Neural DSP ／ Quad Cortex®</p>
             <h1 class="display">Quad<br />Cortex</h1>
             <p class="chapter__lead">世界最高峰のフロア型アンプモデラー</p><p class="chapter__body">Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。</p><div class="chapter__buy"><p class="price"><span class="yen">¥279,000</span> <small>税込</small></p><button class="btn btn--primary" type="button" data-buy-now="46963776487642">購入する</button><a class="btn" href="/neuraldsp-jp-preview/products/quad-cortex">詳しく見る</a>
@@ -103,7 +106,7 @@
               <span class="qc3d__buybar-name">Quad Cortex</span>
               <span class="qc3d__buybar-price"><span class="yen">¥279,000</span></span>
               <button class="btn btn--primary btn--small" type="button" data-buy-now="46963776487642">購入する</button>
-            </div></div><div class="qc3d__copy" data-item="2" data-kind="product" data-model="mini" hidden ><article class="chapter chapter--hero" data-chapter>
+            </div></div><div class="qc3d__copy" data-item="3" data-kind="product" data-model="mini" hidden ><article class="chapter chapter--hero" data-chapter>
             <p class="chapter__eyebrow"><i></i>Neural DSP ／ Quad Cortex mini</p>
             <h1 class="display">Quad Cortex<br />mini</h1>
             <p class="chapter__lead">妥協ゼロ。ただ、コンパクト。</p><p class="chapter__body">Quad Cortex mini は、Neural DSP が誇るフラッグシップ Quad Cortex の体験を、コンパクトで使いやすいフォーマットに凝縮した次世代フロア型アンプモデラー＆マルチエフェクターです。</p><div class="chapter__buy"><p class="price"><span class="yen">¥219,000</span> <small>税込</small></p><button class="btn btn--primary" type="button" data-buy-now="47337202254042">購入する</button><a class="btn" href="/neuraldsp-jp-preview/products/quad-cortex-mini">詳しく見る</a>
@@ -133,7 +136,7 @@
               <span class="qc3d__buybar-name">Quad Cortex mini</span>
               <span class="qc3d__buybar-price"><span class="yen">¥219,000</span></span>
               <button class="btn btn--primary btn--small" type="button" data-buy-now="47337202254042">購入する</button>
-            </div></div><div class="qc3d__copy" data-item="3" data-kind="product" data-model="nano" hidden ><article class="chapter chapter--hero" data-chapter>
+            </div></div><div class="qc3d__copy" data-item="4" data-kind="product" data-model="nano" hidden ><article class="chapter chapter--hero" data-chapter>
             <p class="chapter__eyebrow"><i></i>Neural DSP ／ Nano Cortex®</p>
             <h1 class="display">Nano<br />Cortex</h1>
             <p class="chapter__lead">あなたのトーン。あなたのリグ。どこでもプレイ</p><p class="chapter__body">Nano Cortex® は、Neural DSP が開発した手のひらサイズのデジタルアンプ & エフェクトプロセッサーです。</p><div class="chapter__buy"><p class="price"><span class="yen">¥89,800</span> <small>税込</small></p><button class="btn btn--primary" type="button" data-buy-now="46262406283482">購入する</button><a class="btn" href="/neuraldsp-jp-preview/products/nano-cortex">詳しく見る</a>
@@ -164,11 +167,13 @@
               <span class="qc3d__buybar-name">Nano Cortex</span>
               <span class="qc3d__buybar-price"><span class="yen">¥89,800</span></span>
               <button class="btn btn--primary btn--small" type="button" data-buy-now="46262406283482">購入する</button>
-            </div></div><div class="qc3d__dock" role="tablist" aria-label="表示する製品を選ぶ"><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="1" aria-selected="true"><img class="nd-scaled" style="--s: 1" src="/neuraldsp-jp-preview/assets/qc-photo-1.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
+            </div></div><div class="qc3d__dock" role="tablist" aria-label="表示する製品を選ぶ"><button type="button" class="qc3d__dock-item is-campaign" role="tab" data-dock-item="0" aria-selected="true"><img class="nd-scaled" style="--s: 1" src="/neuraldsp-jp-preview/assets/qc-photo-1.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
+              <b>BLACK FRIDAY</b><small>期間限定</small></span>
+          </button><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="2" aria-selected="false"><img class="nd-scaled" style="--s: 1" src="/neuraldsp-jp-preview/assets/qc-photo-1.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
               <b>Quad Cortex</b><small><span class="yen">¥279,000</span></small></span>
-          </button><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="2" aria-selected="false"><img class="nd-scaled" style="--s: 0.79" src="/neuraldsp-jp-preview/assets/mini-photo-2.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
+          </button><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="3" aria-selected="false"><img class="nd-scaled" style="--s: 0.79" src="/neuraldsp-jp-preview/assets/mini-photo-2.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
               <b>Quad Cortex mini</b><small><span class="yen">¥219,000</span></small></span>
-          </button><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="3" aria-selected="false"><img class="nd-scaled" style="--s: 0.5" src="/neuraldsp-jp-preview/assets/nano-photo-1.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
+          </button><button type="button" class="qc3d__dock-item" role="tab" data-dock-item="4" aria-selected="false"><img class="nd-scaled" style="--s: 0.5" src="/neuraldsp-jp-preview/assets/nano-photo-1.webp" alt="" width="96" height="60" loading="lazy"><span class="qc3d__dock-text">
               <b>Nano Cortex</b><small><span class="yen">¥89,800</span></small></span>
           </button></div><a class="qc3d__skip btn btn--small btn--down" href="#plugins">スキップ</a>
     <i class="qc3d__bar" aria-hidden="true"></i>

@@ -112,6 +112,64 @@
         "type": "text",
         "id": "campaign_bg_image_url",
         "label": "Background image URL (optional)"
+      },
+      {
+        "type": "header",
+        "content": "Campaign strip (top of every page)"
+      },
+      {
+        "type": "checkbox",
+        "id": "campaign_strip",
+        "label": "Show the campaign strip",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "campaign_strip_text",
+        "label": "Strip text",
+        "info": "e.g. 11/28（金）〜12/1（月）。The campaign name shows in the accent colour before it."
+      },
+      {
+        "type": "url",
+        "id": "campaign_strip_link",
+        "label": "Strip link"
+      },
+      {
+        "type": "checkbox",
+        "id": "campaign_countdown",
+        "label": "Countdown to the end date",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "campaign_countdown_label",
+        "label": "Countdown label",
+        "default": "終了まで"
+      },
+      {
+        "type": "color",
+        "id": "campaign_strip_bg",
+        "label": "Strip background",
+        "default": "#111111"
+      },
+      {
+        "type": "header",
+        "content": "Campaign atmosphere"
+      },
+      {
+        "type": "range",
+        "id": "campaign_glow",
+        "label": "Accent glow behind products (%)",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "default": 14
+      },
+      {
+        "type": "checkbox",
+        "id": "campaign_grain",
+        "label": "Film grain texture",
+        "default": true
       }
     ]
   },

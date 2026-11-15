@@ -4,5 +4,5 @@
     {% render 'nd-product-thumb', product: product, width: 900 %}
   </span>
   <span class="nd-card__title">{{ product.title }}</span>
-  <span class="nd-card__price">{% render 'nd-price', price: product.price %}{% unless product.available %} <small>{{ 'products.sold_out' | t }}</small>{% endunless %}</span>
+  <span class="nd-card__price">{% render 'nd-price', price: product.price, compare: product.compare_at_price %}{% unless product.available %} <small>{{ 'products.sold_out' | t }}</small>{% endunless %}</span>
 </a>

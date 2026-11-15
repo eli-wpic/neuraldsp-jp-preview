@@ -23,6 +23,7 @@
         color-scheme: dark;
       }
       html[data-scheme="campaign"] body { background: #050505; }
+      html[data-scheme="campaign"] { --campaign-glow: color-mix(in srgb, #cb2b1e 14%, transparent); --strip-bg: #111111; }html[data-scheme="campaign"] body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
       .nd-colorbar button[data-scheme-set="campaign"] i { background: #cb2b1e; }
     </style><script>(function(){var h=document.documentElement,live=true;if(live)h.dataset.scheme='campaign';try{var s=localStorage.getItem('nd-scheme');if(s==='light'||s==='dark'||(s==='campaign'&&live))h.dataset.scheme=s}catch(e){}h.dataset.campaign=live?'live':''})()</script><link rel="stylesheet" href="/neuraldsp-jp-preview/assets/nd-base.css">
   <link rel="stylesheet" href="/neuraldsp-jp-preview/assets/nd-sections.css">
@@ -35,7 +36,9 @@
   </script>
   
 </head>
-<body class="template-object-object"><div class="nd-colorbar" role="group" aria-label="サイトの色">
+<body class="template-object-object"><div class="nd-strip" data-strip><div><b class="nd-strip__name">BLACK FRIDAY</b><span class="nd-strip__text">開催日程は近日公開</span><span class="nd-strip__count" data-countdown="2026-12-01T23:59:59+09:00">終了まで <time></time></span></div></div>
+    <script>(function(){var el=document.querySelector('[data-countdown]');if(!el)return;var end=new Date(el.dataset.countdown).getTime(),t=el.querySelector('time');function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000));if(!s){var strip=el.closest('[data-strip]');if(strip)strip.remove();return}var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;t.textContent=(d?d+'日 ':'')+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');setTimeout(tick,1000)}tick()})();</script>
+    <style>html:not([data-scheme="campaign"]) .nd-strip { display: none; }</style><div class="nd-colorbar" role="group" aria-label="サイトの色">
       <span>カラー</span>
       <button type="button" data-scheme-set="dark" aria-pressed="false"><i aria-hidden="true"></i>ダーク</button>
       <button type="button" data-scheme-set="light" aria-pressed="false"><i aria-hidden="true"></i>ホワイト</button><button type="button" data-scheme-set="campaign" aria-pressed="false"><i aria-hidden="true"></i>BLACK FRIDAY</button></div>
@@ -349,21 +352,21 @@
 </section>
 
 
-</div><div id="shopify-section-custom_liquid_tpwyqn" class="shopify-section"><section class="nd-numbered nd-numbered--stacked nd-numbered--plain" data-numbered>
+</div><div id="shopify-section-custom_liquid_tpwyqn" class="shopify-section"><section class="nd-numbered nd-numbered--stacked" data-numbered>
   <div class="container"><header class="section-head nd-numbered__head has-sep"><h2>入力と出力</h2><span class="nd-sep" aria-hidden="true"></span><p>シンプルな接続。自由なセットアップ。</p></header><div class="nd-numbered__media">
-        <div class="nd-numbered__frame"><img src="/neuraldsp-jp-preview/assets/mini-rear.webp" alt="入力と出力" loading="lazy"></div>
-      </div><div class="nd-numbered__grid"><ol class="nd-numbered__list" data-stagger><li style="--i: 0" data-n="1" ><div><b>INPUT 2 / CAPTURE INPUT</b><div class="nd-prose"><p>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 楽器やマイクを接続できます。また、この入力は Neural Capture の作成にも使用されます。</p></div></div>
-            </li><li style="--i: 1" data-n="2" ><div><b>INPUT 1</b><div class="nd-prose"><p>楽器接続用の 1/4インチ TS入力。</p></div></div>
-            </li><li style="--i: 2" data-n="3" ><div><b>DUAL EFFECTS LOOPS</b><div class="nd-prose"><p>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。 ループ1には標準のTRSケーブルを、2系統のFXループ両方を使用する場合は TRSインサートケーブル（TRS → デュアルTS） を使用してください。</p></div></div>
-            </li><li style="--i: 3" data-n="4" ><div><b>EXPRESSION INPUT</b><div class="nd-prose"><p>ボリューム、ワウ、ピッチ、エフェクトなどのパラメーターをリアルタイムでコントロールするための、 1/4インチ TRS エクスプレッションペダル入力。2系統目のエクスプレッション入力は MIDI経由で利用可能です。</p></div></div>
-            </li><li style="--i: 4" data-n="5" ><div><b>XLR OUTPUTS</b><div class="nd-prose"><p>2系統のモノラル・バランスXLR出力。</p></div></div>
-            </li><li style="--i: 5" data-n="6" ><div><b>MIDI IN & OUT / THRU</b><div class="nd-prose"><p>MIDIメッセージの送受信に対応した 1/8インチ TRS MIDI Type-A 端子。 プリセット切替や対応パラメーターの自動制御、他のMIDI機器のコントロールが可能です。</p></div></div>
-            </li><li style="--i: 6" data-n="7" ><div><b>USB-C</b><div class="nd-prose"><p>コンピューターに接続し、マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。 レコーディングやリアンプにも対応します。</p></div></div>
-            </li><li style="--i: 7" data-n="8" ><div><b>HEADPHONES OUTPUT</b><div class="nd-prose"><p>静かな環境での練習やモニタリングに最適な、1/8インチ TRS ヘッドフォン出力。</p></div></div>
-            </li><li style="--i: 8" data-n="9" ><div><b>POWER SWITCH</b><div class="nd-prose"><p>メカニカル方式の電源スイッチ。</p></div></div>
-            </li><li style="--i: 9" data-n="10" ><div><b>TS OUTPUTS</b><div class="nd-prose"><p>柔軟なルーティングが可能な、2系統の 1/4インチ TS 出力。</p></div></div>
-            </li><li style="--i: 10" data-n="11" ><div><b>CAPTURE OUTPUT</b><div class="nd-prose"><p>Neural Capture作成専用のアウトプット。</p></div></div>
-            </li><li style="--i: 11" data-n="12" ><div><b>POWER INPUT</b><div class="nd-prose"><p>12V DC / 1.2A、センターマイナス仕様の ロック式 2.1 / 5.5mm DC電源入力。 電源アダプターが付属し、一般的なペダルボード用電源と互換性のある 非ロック式アダプターも同梱。 電源投入動作は、接続時に自動で起動する設定、または電源スイッチによる手動起動のいずれかを選択できます。</p></div></div>
+        <div class="nd-numbered__frame"><img src="/neuraldsp-jp-preview/assets/mini-rear.webp" alt="入力と出力" loading="lazy"><button type="button" class="nd-pin" data-n="1" style="left: 2.2%; top: 52%; --i: 1" aria-label="1 INPUT 2 / CAPTURE INPUT">1</button><button type="button" class="nd-pin" data-n="2" style="left: 10.2%; top: 70.7%; --i: 2" aria-label="2 INPUT 1">2</button><button type="button" class="nd-pin" data-n="3" style="left: 18.7%; top: 70.7%; --i: 3" aria-label="3 DUAL EFFECTS LOOPS">3</button><button type="button" class="nd-pin" data-n="4" style="left: 27.3%; top: 70.7%; --i: 4" aria-label="4 EXPRESSION INPUT">4</button><button type="button" class="nd-pin" data-n="5" style="left: 37.0%; top: 58.5%; --i: 5" aria-label="5 XLR OUTPUTS">5</button><button type="button" class="nd-pin" data-n="6" style="left: 58.8%; top: 41%; --i: 6" aria-label="6 MIDI IN &amp; OUT / THRU">6</button><button type="button" class="nd-pin" data-n="7" style="left: 75.9%; top: 41%; --i: 7" aria-label="7 USB-C">7</button><button type="button" class="nd-pin" data-n="8" style="left: 84.4%; top: 41%; --i: 8" aria-label="8 HEADPHONES OUTPUT">8</button><button type="button" class="nd-pin" data-n="9" style="left: 91.7%; top: 41%; --i: 9" aria-label="9 POWER SWITCH">9</button><button type="button" class="nd-pin" data-n="10" style="left: 58.8%; top: 70.7%; --i: 10" aria-label="10 TS OUTPUTS">10</button><button type="button" class="nd-pin" data-n="11" style="left: 75.9%; top: 70.7%; --i: 11" aria-label="11 CAPTURE OUTPUT">11</button><button type="button" class="nd-pin" data-n="12" style="left: 91.7%; top: 70.7%; --i: 12" aria-label="12 POWER INPUT">12</button></div>
+      </div><div class="nd-numbered__grid"><ol class="nd-numbered__list" data-stagger><li style="--i: 0" data-n="1" ><span class="nd-numbered__n">1</span><div><b>INPUT 2 / CAPTURE INPUT</b><div class="nd-prose"><p>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 楽器やマイクを接続できます。また、この入力は Neural Capture の作成にも使用されます。</p></div></div>
+            </li><li style="--i: 1" data-n="2" ><span class="nd-numbered__n">2</span><div><b>INPUT 1</b><div class="nd-prose"><p>楽器接続用の 1/4インチ TS入力。</p></div></div>
+            </li><li style="--i: 2" data-n="3" ><span class="nd-numbered__n">3</span><div><b>DUAL EFFECTS LOOPS</b><div class="nd-prose"><p>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。 ループ1には標準のTRSケーブルを、2系統のFXループ両方を使用する場合は TRSインサートケーブル（TRS → デュアルTS） を使用してください。</p></div></div>
+            </li><li style="--i: 3" data-n="4" ><span class="nd-numbered__n">4</span><div><b>EXPRESSION INPUT</b><div class="nd-prose"><p>ボリューム、ワウ、ピッチ、エフェクトなどのパラメーターをリアルタイムでコントロールするための、 1/4インチ TRS エクスプレッションペダル入力。2系統目のエクスプレッション入力は MIDI経由で利用可能です。</p></div></div>
+            </li><li style="--i: 4" data-n="5" ><span class="nd-numbered__n">5</span><div><b>XLR OUTPUTS</b><div class="nd-prose"><p>2系統のモノラル・バランスXLR出力。</p></div></div>
+            </li><li style="--i: 5" data-n="6" ><span class="nd-numbered__n">6</span><div><b>MIDI IN & OUT / THRU</b><div class="nd-prose"><p>MIDIメッセージの送受信に対応した 1/8インチ TRS MIDI Type-A 端子。 プリセット切替や対応パラメーターの自動制御、他のMIDI機器のコントロールが可能です。</p></div></div>
+            </li><li style="--i: 6" data-n="7" ><span class="nd-numbered__n">7</span><div><b>USB-C</b><div class="nd-prose"><p>コンピューターに接続し、マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。 レコーディングやリアンプにも対応します。</p></div></div>
+            </li><li style="--i: 7" data-n="8" ><span class="nd-numbered__n">8</span><div><b>HEADPHONES OUTPUT</b><div class="nd-prose"><p>静かな環境での練習やモニタリングに最適な、1/8インチ TRS ヘッドフォン出力。</p></div></div>
+            </li><li style="--i: 8" data-n="9" ><span class="nd-numbered__n">9</span><div><b>POWER SWITCH</b><div class="nd-prose"><p>メカニカル方式の電源スイッチ。</p></div></div>
+            </li><li style="--i: 9" data-n="10" ><span class="nd-numbered__n">10</span><div><b>TS OUTPUTS</b><div class="nd-prose"><p>柔軟なルーティングが可能な、2系統の 1/4インチ TS 出力。</p></div></div>
+            </li><li style="--i: 10" data-n="11" ><span class="nd-numbered__n">11</span><div><b>CAPTURE OUTPUT</b><div class="nd-prose"><p>Neural Capture作成専用のアウトプット。</p></div></div>
+            </li><li style="--i: 11" data-n="12" ><span class="nd-numbered__n">12</span><div><b>POWER INPUT</b><div class="nd-prose"><p>12V DC / 1.2A、センターマイナス仕様の ロック式 2.1 / 5.5mm DC電源入力。 電源アダプターが付属し、一般的なペダルボード用電源と互換性のある 非ロック式アダプターも同梱。 電源投入動作は、接続時に自動で起動する設定、または電源スイッチによる手動起動のいずれかを選択できます。</p></div></div>
             </li></ol>
     </div>
   </div>

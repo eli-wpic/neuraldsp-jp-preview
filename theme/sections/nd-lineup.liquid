@@ -17,7 +17,7 @@
           {%- endif -%}
           <span class="lineup__name">{{ block.settings.title | default: p.title }}</span>
           <span class="lineup__role">{{ block.settings.text }}</span>
-          {%- if p != blank -%}<span class="lineup__price">{% render 'nd-price', price: p.price %}</span>{%- endif -%}
+          {%- if p != blank -%}<span class="lineup__price">{% render 'nd-price', price: p.price, compare: p.compare_at_price %}</span>{%- endif -%}
         </a>
       {%- endfor -%}
     </div>

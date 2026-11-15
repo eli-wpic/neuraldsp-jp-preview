@@ -579,3 +579,24 @@ io['settings'].update(image_url='', image_asset='qc-rear.webp', media_max=1100, 
 pins(io, QC_IO_PINS)
 save('product.quad-cortex', head, d)
 print('round 10 ok')
+
+# ---- round 11: Black Friday hero item — follows Theme settings → Colours → campaign (switch + dates) ----
+head, d = load('index')
+q = d['sections']['qc3d']
+if 'bf' not in q['blocks']:
+    q['blocks']['bf'] = {'type': 'campaign', 'settings': {'enabled': True, 'follow_site': True, 'dock_label': 'BLACK FRIDAY', 'dock_sub': '期間限定',
+        'model': 'qc', 'eyebrow': 'Neural DSP ／ 期間限定キャンペーン', 'title': 'BLACK\nFRIDAY', 'lead': '',
+        'button_label': 'キャンペーン対象を見る', 'button_url': '/collections/all'}}
+    q['block_order'].insert(0, 'bf')
+save('index', head, d)
+print('round 11 ok')
+
+# ---- round 12: mini rear panel gets numbered markers too, so hovering a description lights its jack ----
+MINI_IO_PINS = {'1': (2.2, 52), '2': (10.2, 70.7), '3': (18.7, 70.7), '4': (27.3, 70.7), '5': (37.0, 58.5), '6': (58.8, 41), '7': (75.9, 41),
+                '8': (84.4, 41), '9': (91.7, 41), '10': (58.8, 70.7), '11': (75.9, 70.7), '12': (91.7, 70.7)}
+head, d = load('product.quad-cortex-mini')
+io = d['sections']['custom_liquid_tpwyqn']
+io['settings']['show_numbers'] = True
+pins(io, MINI_IO_PINS)
+save('product.quad-cortex-mini', head, d)
+print('round 12 ok')

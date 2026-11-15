@@ -47,6 +47,8 @@
         color-scheme: dark;
       }
       html[data-scheme="campaign"] body { background: {{ settings.campaign_bg }}{% if cbg != blank %} url("{{ cbg }}") center top / cover fixed{% endif %}; }
+      html[data-scheme="campaign"] { --campaign-glow: color-mix(in srgb, {{ settings.campaign_accent }} {{ settings.campaign_glow | default: 14 }}%, transparent); --strip-bg: {{ settings.campaign_strip_bg | default: '#111111' }}; }
+      {%- if settings.campaign_grain %}html[data-scheme="campaign"] body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }{% endif %}
       .nd-colorbar button[data-scheme-set="campaign"] i { background: {{ settings.campaign_accent }}; }
     </style>
   {%- endif -%}
@@ -70,6 +72,18 @@
   {{ content_for_header }}
 </head>
 <body class="template-{{ template | handleize }}">
+  {%- if campaign_live and settings.campaign_strip -%}
+    {%- capture strip_inner -%}
+      <b class="nd-strip__name">{{ settings.campaign_label }}</b>
+      {%- if settings.campaign_strip_text != blank -%}<span class="nd-strip__text">{{ settings.campaign_strip_text }}</span>{%- endif -%}
+      {%- if settings.campaign_countdown and settings.campaign_end != blank -%}<span class="nd-strip__count" data-countdown="{{ settings.campaign_end }}T23:59:59+09:00">{{ settings.campaign_countdown_label }} <time></time></span>{%- endif -%}
+    {%- endcapture -%}
+    <div class="nd-strip" data-strip>
+      {%- if settings.campaign_strip_link != blank -%}<a href="{{ settings.campaign_strip_link }}">{{ strip_inner }}</a>{%- else -%}<div>{{ strip_inner }}</div>{%- endif -%}
+    </div>
+    <script>(function(){var el=document.querySelector('[data-countdown]');if(!el)return;var end=new Date(el.dataset.countdown).getTime(),t=el.querySelector('time');function tick(){var s=Math.max(0,Math.floor((end-Date.now())/1000));if(!s){var strip=el.closest('[data-strip]');if(strip)strip.remove();return}var d=Math.floor(s/86400),h=Math.floor(s%86400/3600),m=Math.floor(s%3600/60),x=s%60;t.textContent=(d?d+'日 ':'')+String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(x).padStart(2,'0');setTimeout(tick,1000)}tick()})();</script>
+    <style>html:not([data-scheme="campaign"]) .nd-strip { display: none; }</style>
+  {%- endif -%}
   {%- if settings.color_bar -%}
     <div class="nd-colorbar" role="group" aria-label="サイトの色">
       <span>カラー</span>

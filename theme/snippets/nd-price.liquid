@@ -1,2 +1,13 @@
-{%- comment -%} Params: price (cents). A price of 0 means it isn't set yet and shows 価格未定. {%- endcomment -%}
-{%- if price == blank or price == 0 -%}<span class="yen is-tbd">{{ 'products.price_tbd' | t }}</span>{%- else -%}<span class="yen">{{ price | money_without_trailing_zeros }}</span>{%- endif -%}
+{%- comment -%}
+  Params: price (cents), compare (optional compare-at price, cents).
+  A price of 0 means it isn't set yet and shows 価格未定. When Shopify has a compare-at price above the price,
+  the old price is struck through and a −XX% tag shows (sale pricing comes only from Shopify data, never typed into the theme).
+{%- endcomment -%}
+{%- if price == blank or price == 0 -%}<span class="yen is-tbd">{{ 'products.price_tbd' | t }}</span>
+{%- else -%}
+  {%- assign cmp = compare | default: 0 | plus: 0 -%}
+  {%- if cmp > price -%}
+    {%- assign off = cmp | minus: price | times: 100 | divided_by: cmp | floor -%}
+    <s class="yen-was">{{ cmp | money_without_trailing_zeros }}</s> <span class="yen is-sale">{{ price | money_without_trailing_zeros }}</span> <span class="sale-tag">−{{ off }}%</span>
+  {%- else -%}<span class="yen">{{ price | money_without_trailing_zeros }}</span>{%- endif -%}
+{%- endif -%}

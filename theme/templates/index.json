@@ -86,9 +86,25 @@
             "c4_body": "300種類の高品質IR、25種類のプリセットキャプチャーを搭載。",
             "awards": "asset:nano-awards.webp"
           }
+        },
+        "bf": {
+          "type": "campaign",
+          "settings": {
+            "enabled": false,
+            "follow_site": true,
+            "dock_label": "BLACK FRIDAY",
+            "dock_sub": "期間限定",
+            "model": "qc",
+            "eyebrow": "Neural DSP ／ 期間限定キャンペーン",
+            "title": "BLACK\nFRIDAY",
+            "lead": "",
+            "button_label": "キャンペーン対象を見る",
+            "button_url": "/collections/all"
+          }
         }
       },
       "block_order": [
+        "bf",
         "campaign",
         "qc",
         "mini",
