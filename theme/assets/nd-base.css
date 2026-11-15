@@ -321,3 +321,17 @@ html[data-scheme="light"] .nd-update__badge { color: #8a6a00; background: rgba(2
 html[data-scheme="campaign"] .nd-sep::after { background: var(--accent); }
 html[data-scheme="campaign"] .nd-update__badge { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
 html[data-scheme="campaign"] .site-header { background: color-mix(in srgb, var(--bg) 88%, transparent); }
+
+/* ===== UX colour pass (WCAG AA): tokens for links, form outlines, badges — per scheme ===== */
+:root { --accent-text: var(--accent); --field-line: #5f656c; --badge-bg: #ffd236; --badge-fg: #1a1400; --sep: #ffd236; }
+html[data-scheme="light"] { --text-3: #666b72; --field-line: #8a8f96; }
+/* links and accent-coloured text use the readable tint */
+.picker-note a, .faq a, .nd-prose a:not(.btn), .nd-numbered__n, .site-footer a:hover { color: var(--accent-text); }
+/* form controls: outline at least 3:1 against the page */
+input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]), select, textarea, .qty, .plug-drop, .picker__btn, .faq-search input { border-color: var(--field-line) !important; }
+/* badges: solid fill, no outline (MAJOR UPDATE, 必須, labels) */
+.nd-update__badge, .badge, .badge--req { background: var(--badge-bg) !important; color: var(--badge-fg) !important; border: 0 !important; }
+.nd-update__badge { padding: 5px 16px; }
+html[data-scheme="light"] .nd-update__badge, html[data-scheme="campaign"] .nd-update__badge { background: var(--badge-bg) !important; color: var(--badge-fg) !important; }
+.nd-sep::after { background: var(--sep) !important; }
+.nd-yt__play { background: #fff !important; color: #0b0b0b !important; } /* sits on video artwork: always white */

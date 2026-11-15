@@ -95,7 +95,7 @@
         "type": "color",
         "id": "campaign_accent",
         "label": "Accent (buttons, highlights)",
-        "default": "#ff3b30"
+        "default": "#cb2b1e"
       },
       {
         "type": "color",
