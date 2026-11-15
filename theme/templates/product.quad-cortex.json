@@ -1104,28 +1104,59 @@
           "type": "card",
           "settings": {
             "title": "キャビネットブロック & EQ",
-            "text": "<p><strong>キャビネットブロック</strong></p><p>1,000 種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p><p><strong>パワフルなパラメトリック EQ</strong></p><p>すべてを指先でコントロール。7 インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>"
+            "card_media": "https://videos.ctfassets.net/8puu65w27ud0/7IXeF3b8LSB7uh2Yp2aWi9/0bc8c0ec08625a5438082a13c3fd33aa/QC_cabblock-eq_24.mp4",
+            "tab1_name": "キャビネットブロック",
+            "tab1_media": "https://videos.ctfassets.net/8puu65w27ud0/1z5U9odsd84k6Ugv8jL6qO/1847c3464d6315945264b7e41ec9001c/Cabsim-1.m4v",
+            "tab1_title": "キャビネットブロック",
+            "tab1_text": "<p>1,000 種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p>",
+            "tab2_name": "パワフルなパラメトリック EQ",
+            "tab2_media": "https://videos.ctfassets.net/8puu65w27ud0/7umy5uz9KUZr0fbRgZlo8B/d3e940f043793780f7ea27a1c12e6a37/Eq-1.m4v",
+            "tab2_title": "パワフルなパラメトリック EQ",
+            "tab2_text": "<p>すべてを指先でコントロール。7 インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>"
           }
         },
         "k1": {
           "type": "card",
           "settings": {
             "title": "比類のない直感性と柔軟性",
-            "text": "<p><strong>ドラッグ＆ドロップ</strong></p><p>ブロックをドラッグ＆ドロップするだけで、順番やルーティングを数秒で変更できます。</p><p><strong>入力と出力</strong></p><p>ワンスワイプで入出力の設定を確認・調整できます。</p>"
+            "card_media": "https://videos.ctfassets.net/8puu65w27ud0/2jvB5BKciF0iXv7Gs8U3aM/313e0a05b43a11af1869a6adc6e226b7/QC_unparalleled-intuitiveness_24.mp4",
+            "tab1_name": "ドラッグ＆ドロップ",
+            "tab1_media": "https://videos.ctfassets.net/8puu65w27ud0/6A2RrNp6wvgCIurDxzD8hw/048b08e6fac4f94f37970bdc8679c6ba/drag_drop_Render_3_2-drag_And_Drop.m4v",
+            "tab1_title": "ドラッグ＆ドロップ",
+            "tab1_text": "<p>ブロックをドラッグ＆ドロップするだけで、順番やルーティングを数秒で変更できます。</p>",
+            "tab2_name": "入力と出力",
+            "tab2_media": "https://videos.ctfassets.net/8puu65w27ud0/4UQS1qkgZAoLJPDNJt0Exl/00456fad6eebea79a19b69d6fb972442/inputs_outputsRender_3_3-io_Settings.m4v",
+            "tab2_title": "入力と出力",
+            "tab2_text": "<p>ワンスワイプで入出力の設定を確認・調整できます。</p>"
           }
         },
         "k2": {
           "type": "card",
           "settings": {
             "title": "スイッチングモード",
-            "text": "<p>モードの切り替えはとても簡単。機能へのアクセスやスイッチのカスタマイズも自在です。</p><p><strong>Stomp モード</strong></p><p>アナログのペダルボードのように、リグ内の好きなブロックをフットスイッチに割り当ててオン／オフできます。</p><p><strong>Scene モード</strong></p><p>フットスイッチ 1 つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p><p><strong>Preset モード</strong></p><p>8 つのバーチャルリグに瞬時にアクセスできます。</p>"
+            "card_media": "https://images.ctfassets.net/8puu65w27ud0/50k3sK4DG491nj29A0ytwy/29eecb713b5d0b5e43550b1c18d16847/QC_switching-modes.png",
+            "intro": "<p>モードの切り替えはとても簡単。機能へのアクセスやスイッチのカスタマイズも自在です。</p>",
+            "tab1_name": "Stomp モード",
+            "tab1_media": "https://videos.ctfassets.net/8puu65w27ud0/3d665e8dQZ4tuLDF4TjmMn/071d218fa2659358e7a6f2369d4a5062/Stomp_mode.m4v",
+            "tab1_title": "Stomp モード",
+            "tab1_text": "<p>アナログのペダルボードのように、リグ内の好きなブロックをフットスイッチに割り当ててオン／オフできます。</p>",
+            "tab2_name": "Scene モード",
+            "tab2_media": "https://videos.ctfassets.net/8puu65w27ud0/1g6okMCwrIIn8ClDbrm25n/fa23ab616b774089174bd444dd8b5cc4/Scene_Mode.m4v",
+            "tab2_title": "Scene モード",
+            "tab2_text": "<p>フットスイッチ 1 つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p>",
+            "tab3_name": "Preset モード",
+            "tab3_media": "https://videos.ctfassets.net/8puu65w27ud0/6wPExdLEVlIC7fBHX3Srlc/aa73c2a0aadee1d53de3fda33c8b8b46/Preset_Mode.m4v",
+            "tab3_title": "Preset モード",
+            "tab3_text": "<p>8 つのバーチャルリグに瞬時にアクセスできます。</p>"
           }
         },
         "k3": {
           "type": "card",
           "settings": {
             "title": "コンポーネント",
-            "text": "<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ 1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>"
+            "card_media": "https://videos.ctfassets.net/8puu65w27ud0/5CbaYNIYCjCidmVOqZc6OP/7b00b0aa95d84a8ffc3fef69cfef5731/QC_components_24.mp4",
+            "intro": "<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ 1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>",
+            "detail_html": "<img src=\"https://images.ctfassets.net/8puu65w27ud0/5btw1Q95bBvjXJxulUs0ln/5d4faed3b83eac3382321be23e03607a/QC_components_front_image.png\" alt=\"Quad Cortex 正面\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>マルチタッチセンサー搭載の 7 インチディスプレイ</li><li>進化し続ける、超リアルなバーチャルデバイスのコレクション</li><li>Neural Capture™</li><li>独自開発のステンレス製ストンプ＋ロータリー・アクチュエーター</li></ul><img src=\"https://images.ctfassets.net/8puu65w27ud0/4dq6ChkkbQ1h18pxK07sIa/b4ad9b5b20ee8ab978f7bcb8c6f89349/QC_components_back_image.png\" alt=\"Quad Cortex 内部\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>500MHz で動作する SHARC+ ×4 と ARM コア ×2</li><li>ワイヤレスでのプリセット共有、クラウドバックアップ、OTA ファームウェア更新などに対応する Wi-Fi モジュール</li><li>アルマイト加工アルミニウム・ユニボディ</li><li>Cirrus Logic 製コーデックと超低レイテンシーの USB オーディオ伝送で、高音質オーディオインターフェースとしても使用可能</li></ul>"
           }
         }
       },

@@ -1,81 +1,116 @@
 {%- comment -%}
-  Feature cards: title and detail text shown on the card (no popups — review Nov 16) (neuraldsp.com/quad-cortex: Cab block & EQ, Switching Modes…).
+  Feature cards exactly as on neuraldsp.com/quad-cortex: large dark cards with a looping video (or photo) behind the title and a + button.
+  Clicking a card opens a white dialog: optional intro, then tabs (each with its own video/photo, heading and text),
+  or a free layout (Detail HTML) for cards like Components.
 {%- endcomment -%}
 <section class="section nd-popcards{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container">
     {%- if section.settings.heading != blank -%}<header class="section-head"><h2>{{ section.settings.heading }}</h2></header>{%- endif -%}
     <div class="nd-popcards__grid" data-stagger>
       {%- for block in section.blocks -%}
-        <article class="nd-popcards__card" style="--i: {{ forloop.index0 }}" {{ block.shopify_attributes }}>
-          <h3>{{ block.settings.title }}</h3>
-          <div class="nd-prose">{{ block.settings.text }}</div>
-        </article>
+        {%- assign b = block.settings -%}
+        <button type="button" class="nd-popcards__card" style="--i: {{ forloop.index0 }}" data-dialog-open="Pop-{{ block.id }}" aria-haspopup="dialog" {{ block.shopify_attributes }}>
+          {%- if b.card_media != blank -%}
+            {%- if b.card_media contains '.mp4' or b.card_media contains '.m4v' -%}
+              <video class="nd-popcards__bg" src="{{ b.card_media }}" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+            {%- else -%}
+              <img class="nd-popcards__bg" src="{{ b.card_media }}" alt="" loading="lazy">
+            {%- endif -%}
+          {%- endif -%}
+          <b>{{ b.title }}</b>
+          <i class="nd-popcards__plus" aria-hidden="true"></i>
+          <span class="visually-hidden">{{ section.settings.more_label }}</span>
+        </button>
       {%- endfor -%}
     </div>
   </div>
+  {%- for block in section.blocks -%}
+    {%- assign b = block.settings -%}
+    <dialog class="nd-pop" id="Pop-{{ block.id }}" aria-labelledby="PopT-{{ block.id }}" data-pop>
+      <header class="nd-pop__head">
+        <h3 id="PopT-{{ block.id }}">{{ b.title }}</h3>
+        <button type="button" class="nd-pop__close" data-dialog-close aria-label="閉じる"></button>
+      </header>
+      <div class="nd-pop__body">
+        {%- if b.intro != blank -%}<div class="nd-pop__intro nd-prose">{{ b.intro }}</div>{%- endif -%}
+        {%- assign ntabs = 0 -%}
+        {%- if b.tab1_name != blank -%}{%- assign ntabs = ntabs | plus: 1 -%}{%- endif -%}
+        {%- if b.tab2_name != blank -%}{%- assign ntabs = ntabs | plus: 1 -%}{%- endif -%}
+        {%- if b.tab3_name != blank -%}{%- assign ntabs = ntabs | plus: 1 -%}{%- endif -%}
+        {%- if ntabs > 0 -%}
+          {%- if ntabs > 1 -%}
+            <div class="nd-pop__tabs" role="tablist">
+              {%- for n in (1..3) -%}
+                {%- capture key -%}tab{{ n }}_name{%- endcapture -%}
+                {%- if b[key] != blank -%}<button type="button" role="tab" aria-selected="{% if n == 1 %}true{% else %}false{% endif %}" data-pop-tab="{{ n }}">{{ b[key] }}</button>{%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+          {%- for n in (1..3) -%}
+            {%- capture kn -%}tab{{ n }}_name{%- endcapture -%}{%- capture km -%}tab{{ n }}_media{%- endcapture -%}{%- capture kt -%}tab{{ n }}_title{%- endcapture -%}{%- capture kx -%}tab{{ n }}_text{%- endcapture -%}
+            {%- if b[kn] != blank -%}
+              <div class="nd-pop__panel" data-pop-panel="{{ n }}"{% unless n == 1 %} hidden{% endunless %}>
+                {%- if b[km] != blank -%}
+                  {%- if b[km] contains '.mp4' or b[km] contains '.m4v' -%}<video src="{{ b[km] }}" muted loop playsinline preload="none"></video>
+                  {%- else -%}<img src="{{ b[km] }}" alt="" loading="lazy">{%- endif -%}
+                {%- endif -%}
+                {%- if b[kt] != blank -%}<h4>{{ b[kt] }}</h4>{%- endif -%}
+                {%- if b[kx] != blank -%}<div class="nd-prose">{{ b[kx] }}</div>{%- endif -%}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        {%- endif -%}
+        {%- if b.detail_html != blank -%}<div class="nd-pop__detail">{{ b.detail_html }}</div>{%- endif -%}
+      </div>
+    </dialog>
+  {%- endfor -%}
 </section>
+<script>
+  (() => {
+    const root = document.currentScript.previousElementSibling;
+    root.querySelectorAll('[data-pop]').forEach((d) => {
+      const play = () => d.querySelectorAll('.nd-pop__panel:not([hidden]) video').forEach((v) => v.play().catch(() => {}));
+      const stop = () => d.querySelectorAll('video').forEach((v) => v.pause());
+      new MutationObserver(() => (d.open ? play() : stop())).observe(d, { attributes: true, attributeFilter: ['open'] });
+      d.addEventListener('click', (e) => {
+        if (e.target === d || e.target.closest('[data-dialog-close]')) { d.close(); return; }
+        const t = e.target.closest('[data-pop-tab]');
+        if (!t) return;
+        d.querySelectorAll('[data-pop-tab]').forEach((x) => x.setAttribute('aria-selected', x === t));
+        d.querySelectorAll('[data-pop-panel]').forEach((p) => { p.hidden = p.dataset.popPanel !== t.dataset.popTab; });
+        stop(); play();
+      });
+    });
+  })();
+</script>
 {% schema %}
 {
   "name": "ND · Feature cards",
   "settings": [
-    {
-      "type": "select",
-      "id": "band",
-      "label": "Band (as on neuraldsp.com)",
-      "default": "",
-      "options": [
-        {
-          "value": "",
-          "label": "Page colour"
-        },
-        {
-          "value": "dark",
-          "label": "Black band"
-        },
-        {
-          "value": "light",
-          "label": "White band"
-        },
-        {
-          "value": "card",
-          "label": "Rounded dark card"
-        }
-      ]
-    },
-    {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading"
-    },
-    {
-      "type": "text",
-      "id": "more_label",
-      "label": "Card link label",
-      "default": "詳しく見る"
-    }
+    { "type": "select", "id": "band", "label": "Band (as on neuraldsp.com)", "default": "", "options": [
+      { "value": "", "label": "Page colour" }, { "value": "dark", "label": "Black band" }, { "value": "light", "label": "White band" }, { "value": "card", "label": "Rounded dark card" }
+    ] },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "more_label", "label": "Card label (screen readers)", "default": "詳しく見る" }
   ],
-  "blocks": [
-    {
-      "type": "card",
-      "name": "Card",
-      "settings": [
-        {
-          "type": "text",
-          "id": "title",
-          "label": "Title"
-        },
-        {
-          "type": "richtext",
-          "id": "text",
-          "label": "Detail (opens in a dialog)"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "ND · Feature cards"
-    }
-  ]
+  "blocks": [{ "type": "card", "name": "Card", "settings": [
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "text", "id": "card_media", "label": "Card background (mp4 or image URL)" },
+    { "type": "richtext", "id": "intro", "label": "Dialog intro" },
+    { "type": "text", "id": "tab1_name", "label": "Tab 1 name" },
+    { "type": "text", "id": "tab1_media", "label": "Tab 1 video/photo URL" },
+    { "type": "text", "id": "tab1_title", "label": "Tab 1 heading" },
+    { "type": "richtext", "id": "tab1_text", "label": "Tab 1 text" },
+    { "type": "text", "id": "tab2_name", "label": "Tab 2 name" },
+    { "type": "text", "id": "tab2_media", "label": "Tab 2 video/photo URL" },
+    { "type": "text", "id": "tab2_title", "label": "Tab 2 heading" },
+    { "type": "richtext", "id": "tab2_text", "label": "Tab 2 text" },
+    { "type": "text", "id": "tab3_name", "label": "Tab 3 name" },
+    { "type": "text", "id": "tab3_media", "label": "Tab 3 video/photo URL" },
+    { "type": "text", "id": "tab3_title", "label": "Tab 3 heading" },
+    { "type": "richtext", "id": "tab3_text", "label": "Tab 3 text" },
+    { "type": "html", "id": "detail_html", "label": "Detail HTML (free layout, e.g. Components)" }
+  ] }],
+  "presets": [{ "name": "ND · Feature cards" }]
 }
 {% endschema %}
