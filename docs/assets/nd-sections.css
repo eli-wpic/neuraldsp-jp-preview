@@ -614,7 +614,7 @@ main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
    Each slot keeps the Quad Cortex width (--tw); smaller units get a narrower image, centred and standing on the same baseline. */
 img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; margin-inline: calc(var(--tw) * (1 - var(--s, 1)) / 2); object-fit: contain; object-position: center bottom !important; }
 .qc3d__dock-item img.nd-scaled { --tw: 64px; height: 44px; }
-.mega img.nd-scaled { --tw: 76px; height: 52px; margin-left: 0; margin-right: calc(76px * (1 - var(--s, 1))); }
+.mega img.nd-scaled { --tw: 76px; height: 52px; justify-self: center; margin-inline: auto; }
 .sticky-buy img.nd-scaled { --tw: 72px; height: 48px; }
 @media (max-width: 760px) { .qc3d__dock-item img.nd-scaled { --tw: 48px; height: 34px; } }
 @media (max-width: 480px) { .qc3d__dock-item img.nd-scaled { --tw: 44px; height: 28px; } }
@@ -655,3 +655,4 @@ img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; mar
 @media (max-width: 900px) { .nd-popcards__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 480px) { .nd-popcards__grid { grid-template-columns: 1fr; } .nd-popcards__card { min-height: 0; } }
 .sticky-buy img.nd-scaled { width: 72px !important; margin-inline: 0; }
+.mega--list a:has(img.nd-scaled) { justify-items: center; text-align: center; }
