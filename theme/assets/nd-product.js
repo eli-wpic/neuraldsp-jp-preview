@@ -79,8 +79,8 @@ function initFilm(root) {
     if (open) {
       $$('[data-view]', root).forEach((b) => b.setAttribute('aria-pressed', 'false'));
       // Shopify-hosted film plays directly; otherwise YouTube, with a link out in case YouTube blocks the embed
-      stage.innerHTML = btn.dataset.filmMp4
-        ? `<video src="${btn.dataset.filmMp4}" controls autoplay playsinline></video>`
+      stage.innerHTML = (btn.dataset.filmMp4 || '').trim()
+        ? `<video src="${btn.dataset.filmMp4.trim()}" controls autoplay playsinline></video>`
         : `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.film}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${btn.textContent.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe><a class="pdp-film__out ext" href="https://www.youtube.com/watch?v=${btn.dataset.film}" target="_blank" rel="noopener">${stage.dataset.ytLabel}</a>`;
     } else stage.innerHTML = '';
   };

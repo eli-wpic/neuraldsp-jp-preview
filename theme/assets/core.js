@@ -70,13 +70,39 @@ function initDialogs() {
   });
 }
 
+/* Video lightbox: buttons that pointed at YouTube play the self-hosted copy here instead --------- */
+function initVideoLightbox() {
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('[data-nd-video]');
+    if (!a) return;
+    e.preventDefault();
+    const d = document.createElement('dialog');
+    d.className = 'nd-lightbox';
+    d.innerHTML = `<button type="button" class="nd-lightbox__close" aria-label="閉じる">×</button><video src="${a.dataset.ndVideo.trim()}" controls autoplay playsinline></video>`;
+    document.body.appendChild(d);
+    const close = () => { d.querySelector('video').pause(); d.close(); d.remove(); };
+    d.addEventListener('click', (ev) => { if (ev.target === d || ev.target.closest('.nd-lightbox__close')) close(); });
+    d.addEventListener('cancel', (ev) => { ev.preventDefault(); close(); });
+    d.showModal();
+  });
+}
+
 /* Lazy YouTube ------------------------------------------------------- */
 function initYouTube() {
   document.addEventListener('click', (e) => {
     const box = e.target.closest('.nd-yt');
-    if (!box || box.querySelector('iframe')) return;
-    document.querySelectorAll('.nd-yt iframe').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
+    if (!box || box.querySelector('iframe, video')) return;
+    document.querySelectorAll('.nd-yt iframe, .nd-yt video').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
     document.querySelectorAll('audio, video:not([autoplay])').forEach((m) => m.pause());
+    if (box.dataset.mp4) { // self-hosted copy: plays in place, no YouTube player or ads
+      const v = document.createElement('video');
+      Object.assign(v, { src: box.dataset.mp4.trim(), controls: true, autoplay: true, playsInline: true });
+      v.className = 'nd-yt__video';
+      box.classList.add('is-playing');
+      box.appendChild(v);
+      v.play().catch(() => {});
+      return;
+    }
     const f = document.createElement('iframe');
     f.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&rel=0&hl=ja`;
     f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
@@ -144,7 +170,7 @@ function initHeroFilm() {
       hero.classList.toggle('is-film', open);
       stage.hidden = !open;
       hero.querySelectorAll('.nd-hero__bg video').forEach((v) => (open ? v.pause() : v.play().catch(() => {})));
-      stage.innerHTML = open ? `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.heroFilm}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${label.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe><a class="pdp-film__out ext" href="https://www.youtube.com/watch?v=${btn.dataset.heroFilm}" target="_blank" rel="noopener">YouTubeで開く</a>` : '';
+      stage.innerHTML = open && (btn.dataset.heroFilmMp4 || '').trim() ? `<video src="${btn.dataset.heroFilmMp4.trim()}" controls autoplay playsinline></video>` : open ? `<iframe src="https://www.youtube-nocookie.com/embed/${btn.dataset.heroFilm}?autoplay=1&rel=0&hl=ja&playsinline=1" title="${label.trim()}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe><a class="pdp-film__out ext" href="https://www.youtube.com/watch?v=${btn.dataset.heroFilm}" target="_blank" rel="noopener">YouTubeで開く</a>` : '';
     });
   });
 }
@@ -251,6 +277,7 @@ export function readJSON(el) {
 initHeader();
 initDialogs();
 initYouTube();
+initVideoLightbox();
 initBuyNow();
 initNewsletter();
 initTrial();

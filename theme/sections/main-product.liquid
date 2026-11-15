@@ -56,7 +56,7 @@
               <button type="button" class="nd-viewer__btn" data-view="{{ forloop.index0 }}" data-title="{{ v_titles[forloop.index0] | strip | escape }}" data-caption="{{ v_caps[forloop.index0] | strip | escape }}" aria-pressed="{% if forloop.first %}true{% else %}false{% endif %}">{{ l | strip }}</button>
             {%- endfor -%}
             {%- if film_id != blank or s.film_mp4 != blank -%}
-              <button type="button" class="nd-viewer__btn nd-viewer__btn--film" data-film="{{ film_id }}" data-film-mp4="{{ s.film_mp4 }}" aria-pressed="false">{{ s.film_label }}</button>
+              <button type="button" class="nd-viewer__btn nd-viewer__btn--film" data-film="{{ film_id }}" data-film-mp4="{% if s.film_mp4 != blank %}{{ s.film_mp4 }}{% else %}{% render 'nd-video-src', id: film_id %}{% endif %}" aria-pressed="false">{{ s.film_label }}</button>
             {%- endif -%}
             {%- if product.media.size > 0 or s.photo_assets != blank -%}
               <button type="button" class="nd-viewer__btn nd-viewer__btn--photos" data-photos-toggle aria-expanded="false" aria-controls="Gallery-{{ section.id }}">{{ s.photos_label }}</button>

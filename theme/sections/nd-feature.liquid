@@ -23,7 +23,8 @@
         {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
         {%- if s.button_label != blank or s.button2_label != blank -%}
           <div class="nd-feature__ctas">
-            {%- if s.button_label != blank -%}<a class="btn btn--primary" href="{{ s.button_url | default: '#' }}"{% if s.button_url contains 'http' %}{% unless s.button_url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ s.button_label }}</a>{%- endif -%}
+            {%- assign btn_mp4 = '' -%}{%- if s.button_url contains 'youtu' -%}{%- if s.button_url contains 'v=' -%}{%- assign btn_yt = s.button_url | split: 'v=' | last | split: '&' | first -%}{%- else -%}{%- assign btn_yt = s.button_url | split: '?' | first | split: '/' | last -%}{%- endif -%}{%- capture btn_mp4 -%}{% render 'nd-video-src', id: btn_yt %}{%- endcapture -%}{%- assign btn_mp4 = btn_mp4 | strip -%}{%- endif -%}
+            {%- if s.button_label != blank -%}<a class="btn btn--primary" href="{{ s.button_url | default: '#' }}"{% if btn_mp4 != blank %} data-nd-video="{{ btn_mp4 }}"{% endif %}{% if s.button_url contains 'http' %}{% unless s.button_url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ s.button_label }}</a>{%- endif -%}
             {%- if s.button2_label != blank -%}<a class="btn" href="{{ s.button2_url | default: '#' }}"{% if s.button2_url contains 'http' %}{% unless s.button2_url contains request.host %} target="_blank" rel="noopener"{% endunless %}{% endif %}>{{ s.button2_label }}</a>{%- endif -%}
           </div>
         {%- endif -%}

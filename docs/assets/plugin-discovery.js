@@ -32,7 +32,7 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
   const moveInk = (t) => { ink.style.width = `${t.offsetWidth}px`; ink.style.transform = `translateX(${t.offsetLeft}px)`; };
 
   const apply = (id) => {
-    root.querySelectorAll('.nd-yt iframe').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
+    root.querySelectorAll('.nd-yt iframe, .nd-yt video').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
     const test = (el) => id === 'all' || (el.dataset.tones || '').split(/[\s,]+/).includes(id);
     let n = 0, nMini = 0;
     rows.forEach((r) => { const m = test(r); n += m; r.hidden = !m; r.classList.add('is-in'); });

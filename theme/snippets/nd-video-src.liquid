@@ -1,0 +1,16 @@
+{%- comment -%}
+  Self-hosted copy of a YouTube video (no ads, no YouTube player). Theme settings → Videos holds one line per video:
+  YouTubeID|https://cdn.shopify.com/videos/....mp4   — outputs the mp4 URL for `id`, or nothing.
+  Usage: {% capture mp4 %}{% render 'nd-video-src', id: video_id %}{% endcapture %}
+{%- endcomment -%}
+{%- if id != blank and settings.video_files != blank -%}
+  {%- assign vlines = settings.video_files | newline_to_br | split: '<br />' -%}
+  {%- for vl in vlines -%}
+    {%- assign vparts = vl | strip | split: '|' -%}
+    {%- if vparts.size > 1 -%}
+      {%- assign vid = vparts[0] | strip -%}
+      {%- assign vurl = vparts[1] | strip -%}
+      {%- if vid == id and vurl != blank -%}{{ vurl }}{%- break -%}{%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

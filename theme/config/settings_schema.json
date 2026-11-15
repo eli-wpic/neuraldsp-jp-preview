@@ -16,5 +16,20 @@
         "label": "Favicon"
       }
     ]
+  },
+  {
+    "name": "Videos",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Self-hosted copies of the YouTube videos (no ads, no YouTube player). Upload each mp4 in Content → Files, copy its link, and paste it after the matching YouTube ID. One per line: YouTubeID|https://cdn.shopify.com/videos/…mp4. A video without a link keeps using YouTube."
+      },
+      {
+        "type": "textarea",
+        "id": "video_files",
+        "label": "Video files",
+        "default": ""
+      }
+    ]
   }
 ]

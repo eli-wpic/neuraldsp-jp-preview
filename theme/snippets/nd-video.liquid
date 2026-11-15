@@ -1,5 +1,12 @@
 {%- comment -%} Params: url (mp4), youtube (id), poster, class, autoplay (bool), title {%- endcomment -%}
-{%- if youtube != blank -%}
+{%- capture self_mp4 -%}{%- if youtube != blank -%}{% render 'nd-video-src', id: youtube %}{%- endif -%}{%- endcapture -%}
+{%- assign self_mp4 = self_mp4 | strip -%}
+{%- if self_mp4 != blank -%}
+  <div class="nd-yt nd-yt--self{% if class %} {{ class }}{% endif %}" data-mp4="{{ self_mp4 }}">
+    <img src="https://i.ytimg.com/vi/{{ youtube }}/hqdefault.jpg" width="480" height="360" alt="{{ title | escape }}" loading="lazy">
+    <button type="button" class="nd-yt__play" aria-label="{{ 'general.play_video' | t }}{% if title %}: {{ title | escape }}{% endif %}">{% render 'icon', name: 'play' %}</button>
+  </div>
+{%- elsif youtube != blank -%}
   <div class="nd-yt{% if class %} {{ class }}{% endif %}" data-yt="{{ youtube }}">
     <img src="https://i.ytimg.com/vi/{{ youtube }}/hqdefault.jpg" width="480" height="360" alt="{{ title | escape }}" loading="lazy">
     <button type="button" class="nd-yt__play" aria-label="{{ 'general.play_video' | t }}{% if title %}: {{ title | escape }}{% endif %}">{% render 'icon', name: 'play' %}</button>
