@@ -29,10 +29,10 @@
   "settings": [
     { "type": "checkbox", "id": "follow_site", "label": "Show during the site campaign only", "default": true, "info": "Appears and disappears with Theme settings → Colours → campaign." },
     { "type": "checkbox", "id": "full_width", "label": "Full width", "default": false },
-    { "type": "header", "content": "Finished banner (one image)" },
+    { "type": "header", "content": "Finished banner (one image) — when set, it is used instead of the layers" },
     { "type": "image_picker", "id": "image", "label": "Banner image" },
     { "type": "text", "id": "image_url", "label": "Banner image URL" },
-    { "type": "text", "id": "mobile_image_url", "label": "Phone banner URL (optional)" },
+    { "type": "text", "id": "mobile_image_url", "label": "Phone banner URL (optional)", "info": "A taller 4:5 version reads better on phones; without it the wide banner is used." },
     { "type": "header", "content": "Or build it from layers (animates each piece)" },
     { "type": "text", "id": "layer_bg", "label": "Background image URL (empty = animated accent waves)" },
     { "type": "text", "id": "layer_product", "label": "Product cut-out (URL or theme asset, e.g. qc-three-quarter-1600.webp)" },

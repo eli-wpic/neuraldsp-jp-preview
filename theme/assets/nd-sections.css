@@ -903,3 +903,8 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 .nd-numbered__list li.is-hot .nd-numbered__n { box-shadow: none !important; outline: 2px solid var(--text-2); outline-offset: 2px; }
 .nd-banner__product { top: 14%; }
 @media (max-width: 760px) { .nd-banner__product { top: 52%; } }
+/* one-image banner: keep the designer's proportions, never crop text */
+.nd-banner:not(.nd-banner--layered) { aspect-ratio: auto; max-height: none; }
+.nd-banner:not(.nd-banner--layered) .nd-banner__flat, .nd-banner:not(.nd-banner--layered) .nd-banner__flat picture { position: relative; inset: auto; display: block; height: auto; }
+.nd-banner:not(.nd-banner--layered) .nd-banner__flat img { position: relative; inset: auto; display: block; width: 100%; height: auto; object-fit: contain; }
+@keyframes nd-bn-push { from { transform: scale(1.0); } to { transform: scale(1.04); } }

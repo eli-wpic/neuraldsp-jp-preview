@@ -1,12 +1,12 @@
 {%- comment -%}
   Animated campaign banner. Params: s (section/block settings).
   Flat mode: one finished banner image (s.image / s.image_url, optional s.mobile_image_url) with motion presets.
-  Layered mode (when s.layer_product or s.title_text is set): background waves, product photo, title, ribbon, text — each animates in on its own.
+  Layered mode (only when no banner image is set, and s.layer_product or s.title_text is set): background waves, product photo, title, ribbon, text — each animates in on its own.
   Motion: s.motion = calm (push-in + sheen) | zoom | sheen | none; s.glow adds an accent glow; s.parallax follows the mouse.
   Everything stops for visitors who ask for reduced motion.
 {%- endcomment -%}
 {%- assign layered = false -%}
-{%- if s.layer_product != blank or s.title_text != blank -%}{%- assign layered = true -%}{%- endif -%}
+{%- if s.image == blank and s.image_url == blank -%}{%- if s.layer_product != blank or s.title_text != blank -%}{%- assign layered = true -%}{%- endif -%}{%- endif -%}
 <div class="nd-banner{% if layered %} nd-banner--layered{% endif %}" data-banner data-motion="{{ s.motion | default: 'calm' }}"{% if s.glow %} data-glow{% endif %}{% if s.parallax != false %} data-parallax{% endif %}>
   {%- if layered -%}
     <div class="nd-banner__bg" data-depth="0.02" aria-hidden="true">
