@@ -642,3 +642,58 @@ for f in sorted(T.glob('product*.json')):
                 st['photo_assets'] = front; changed = True
     if changed: save(name, head, d)
 print('round 16 ok')
+
+# ---- round 17 (Pastel #64 "use official page as ref"): every section mapped to the band and layout neuraldsp.com uses ----
+# value: (band, layout or None, extra settings)
+LAYOUT_MAP = {
+  'product.quad-cortex': {
+    'custom_liquid_6bnyff': ('dark', None, {}), 'coros_update': ('dark', None, {}),
+    'rich_text_6pwqvc': ('light', None, {}), 'single_image_lgwrmz': ('light', 'bleed', {}),          # Vulgar Display of Power
+    'custom_liquid_bz3bhn': ('card', 'media-top', {}),                                                    # Want to run four amplifier models…
+    'single_image_ahaieh': ('dark', 'bleed', {}), 'rich_text_4vbhpb': ('dark', 'stack', {}),           # Neural Capture
+    'capture_versions': ('dark', None, {}),
+    'image_with_text_gqqlkf': ('light', 'media-left', {}),                                                # We figured out a better way
+    'custom_liquid_cypaxf': ('dark', None, {}), 'feature_cards': ('light', None, {}), 'custom_liquid_qbqcpw': ('light', None, {}),
+    'custom_liquid_tpwyqn': ('dark', None, {}),
+    'plugin_compat': ('card', None, {'card_image_url': ''}),
+    'rich_text_dgvea3': ('light', 'stack', {}),                                                            # Cortex Cloud
+    'collapsible_content_qcfaq1': ('light', None, {}), 'custom_liquid_ewjyyk': ('light', None, {}),
+  },
+  'product.quad-cortex-mini': {
+    'coros_update': ('dark', None, {}),
+    'rich_text_krypv3': ('dark', 'stack', {}), 'first_look': ('dark', None, {}),                         # Looks small. Plays big.
+    'rich_text_6pwqvc': ('light', 'stack', {}),                                                            # Arena-level performance
+    'rich_text_dzy9mb': ('dark', 'stack', {}), 'toolkit_stats': ('dark', None, {}),                      # A complete creative toolkit
+    'single_image_tpda8j': ('dark', 'bleed', {}), 'rich_text_4vbhpb': ('dark', 'stack', {}), 'capture_versions': ('dark', None, {}),
+    'rich_text_dgvea3': ('light', 'stack', {}),                                                            # Cortex Cloud
+    'custom_liquid_88nkjy': ('dark', 'stack', {}),                                                         # The Grid
+    'single_image_gffdxp': ('dark', 'bleed', {}), 'rich_text_gh63bm': ('dark', 'stack', {}), 'mini_controls': ('dark', None, {}),
+    'custom_liquid_tpwyqn': ('dark', None, {}),
+    'single_image_ahaieh': ('dark', 'bleed', {}), 'rich_text_w4egmi': ('light', 'stack', {}),            # Use cases
+    'versus': ('light', None, {}), 'custom_liquid_gqvxw7': ('dark', 'stack', {}),
+    'collapsible_content_rqxwrm': ('light', None, {}), 'custom_liquid_ewjyyk': ('light', None, {}),
+  },
+  'product.nano-cortex': {
+    'custom_liquid_hjp4qe': ('dark', None, {}), 'nanos_update': ('card', None, {'badge': ''}),
+    'custom_liquid_d6ym6c': ('light', None, {}), 'multicolumn_34lwl7': ('light', None, {}),
+    'rich_text_wrphyg': ('dark', 'media-top', {}),                                                         # Neural Capture
+    'image_with_text_tkrdtf': ('light', 'media-left', {}), 'custom_liquid_qmu8mb': ('light', None, {}),
+    'single_image_z4r3uf': ('dark', 'bleed', {}), 'rich_text_vhphgl': ('dark', 'stack', {}),            # Travel light
+    'background_video_wqmbwc': ('dark', 'bleed', {}),                                                       # Play anywhere
+    'rich_text_qkpgfd': ('dark', None, {}), 'rich_text_ae8n7g': ('dark', None, {}),
+    'rich_text_w8yrhb': ('card', 'stack', {}),                                                              # Cortex Cloud
+    'players': ('light', None, {}), 'use_cases': ('dark', None, {}),
+    'collapsible_content_xx4f6y': ('light', None, {}), 'custom_liquid_wu4vmx': ('light', None, {}),
+  },
+}
+for name, m in LAYOUT_MAP.items():
+    head, d = load(name)
+    for k, (band, layout, extra) in m.items():
+        sec = d['sections'].get(k)
+        if not sec: print('missing', name, k); continue
+        st = sec.setdefault('settings', {})
+        st['band'] = band
+        if layout: st['layout'] = layout
+        st.update(extra)
+    save(name, head, d)
+print('round 17 ok')

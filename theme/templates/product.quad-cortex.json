@@ -44,7 +44,10 @@
         "award_1",
         "award_2",
         "award_3"
-      ]
+      ],
+      "settings": {
+        "band": "dark"
+      }
     },
     "main": {
       "type": "main-product",
@@ -128,44 +131,49 @@
       "settings": {
         "layout": "center",
         "heading": "圧倒的な処理能力",
-        "body": "<p>Quad Cortex は、世界最高峰のフロア型アンプモデラーです。6つのコアを搭載した圧倒的な処理能力が、無限のサウンドデザインを可能にします。</p>"
+        "body": "<p>Quad Cortex は、世界最高峰のフロア型アンプモデラーです。6つのコアを搭載した圧倒的な処理能力が、無限のサウンドデザインを可能にします。</p>",
+        "band": "light"
       }
     },
     "single_image_lgwrmz": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/quad_cortex_promo.1fa79dd0.webp?v=1741324189",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "light"
       }
     },
     "custom_liquid_bz3bhn": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-left",
+        "layout": "media-top",
         "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QuadGuitarPromo_1280_LE_upscale_balanced_x2_bd469e9f-ae79-484a-a561-1ea354925815.jpg?v=1741769630",
         "image_alt": "Quad Cortex Image",
-        "body": "<p>4つのアンプモデル、ステレオリバーブ、そして多数のエフェクトを同時に走らせたい？<br/><br/>Quad Cortexなら可能です。</p>"
+        "body": "<p>4つのアンプモデル、ステレオリバーブ、そして多数のエフェクトを同時に走らせたい？<br/><br/>Quad Cortexなら可能です。</p>",
+        "band": "card"
       }
     },
     "single_image_ahaieh": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/neural_capture.ec3828a8_7f6245d8-6f15-4887-9a28-577a6745b772.webp?v=1741582136",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "dark"
       }
     },
     "rich_text_4vbhpb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "image_url": "",
         "image_alt": "Neural Capture Version 1",
         "heading": "Neural Capture™",
         "button_label": "▶ ニューラルキャプチャの詳細",
         "button_url": "https://www.youtube.com/watch?v=qCypGW1qMdM",
-        "body": "<p>お気に入りのリグのサウンドをキャプチャ、共有、ダウンロード。</p><p>Neural DSP 独自の生体模倣型 AI 技術を搭載した Quad Cortex は、あらゆる物理アンプ・オーバードライブ・キャビネットの音響特性を前例のない精度で学習・再現することができます。</p><p>他に類を見ない高度なニューラルネットワークアルゴリズムにより、人間の聴覚に近い形でサウンドを認識し、世界で最も自然なサウンドを再現するキャプチャソリューションを実現します。</p><p>一流のプロデューサーやサウンドデザイナーと協力し、フルサーキットモデルに加えて、無料のリグキャプチャを随時提供し続けます。</p>"
+        "body": "<p>お気に入りのリグのサウンドをキャプチャ、共有、ダウンロード。</p><p>Neural DSP 独自の生体模倣型 AI 技術を搭載した Quad Cortex は、あらゆる物理アンプ・オーバードライブ・キャビネットの音響特性を前例のない精度で学習・再現することができます。</p><p>他に類を見ない高度なニューラルネットワークアルゴリズムにより、人間の聴覚に近い形でサウンドを認識し、世界で最も自然なサウンドを再現するキャプチャソリューションを実現します。</p><p>一流のプロデューサーやサウンドデザイナーと協力し、フルサーキットモデルに加えて、無料のリグキャプチャを随時提供し続けます。</p>",
+        "band": "dark"
       }
     },
     "image_with_text_gqqlkf": {
@@ -175,7 +183,8 @@
         "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/e175eed0f9874ed5b94a45e5730fa370/e175eed0f9874ed5b94a45e5730fa370.HD-1080p-2.5Mbps-43894975.mp4?v=0",
         "heading": "モデラーの新たな可能性を切り拓く",
         "body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
-        "clip_white": true
+        "clip_white": true,
+        "band": "light"
       }
     },
     "custom_liquid_cypaxf": {
@@ -183,7 +192,8 @@
       "settings": {
         "heading": "常に拡張され続ける\nギター＆ベースアルゴリズムのライブラリ",
         "link_label": "全デバイスリスト",
-        "link_url": "https://neuraldsp.com/device-list"
+        "link_url": "https://neuraldsp.com/device-list",
+        "band": "dark"
       },
       "blocks": {
         "stat_0": {
@@ -219,7 +229,8 @@
       "settings": {
         "layout": "center",
         "heading": "驚異のコンパクトボディ",
-        "body": "<p>最先端の機械設計と製造技術を駆使することで、<br/>世界最高峰のフロア型モデラー／マルチエフェクトプロセッサーを、<br/>驚くほどコンパクトなサイズに凝縮することに成功しました。</p><h3>サイズ</h3><p><strong>29 × 19.5 × 6.9cm / 11.4” × 7.7” × 2.7”</strong></p><h3>重量</h3><p><strong>1.95kg / 4.2lbs</strong></p>"
+        "body": "<p>最先端の機械設計と製造技術を駆使することで、<br/>世界最高峰のフロア型モデラー／マルチエフェクトプロセッサーを、<br/>驚くほどコンパクトなサイズに凝縮することに成功しました。</p><h3>サイズ</h3><p><strong>29 × 19.5 × 6.9cm / 11.4” × 7.7” × 2.7”</strong></p><h3>重量</h3><p><strong>1.95kg / 4.2lbs</strong></p>",
+        "band": "light"
       }
     },
     "custom_liquid_tpwyqn": {
@@ -233,7 +244,8 @@
         "head_position": "below",
         "separator": true,
         "image_asset": "qc-rear.webp",
-        "media_max": 1100
+        "media_max": 1100,
+        "band": "dark"
       },
       "blocks": {
         "item_0": {
@@ -351,13 +363,14 @@
     "rich_text_dgvea3": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
+        "layout": "stack",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-cortex_cloud_img.webp?v=1742889867",
         "image_alt": "",
         "heading": "Cortex Cloud",
         "button_label": "詳しく見る",
         "button_url": "/pages/neuraldsp-account",
-        "body": "<p>iOS と Android 対応の Cortex Mobile アプリを使って、ユーザー、プリセット、Neural Capture を発見しましょう。</p><p>Neural DSP アカウントを Quad Cortex にリンクすることで、バックアップの作成、コンテンツの共有、他のユーザーからのアイテムのダウンロードが可能になります。</p><p>さらに、インパルスレスポンス（IR）ライブラリも利用できるようになり、IR を Quad Cortex に転送したり、アカウントに保存された IR を管理することもできます。</p>"
+        "body": "<p>iOS と Android 対応の Cortex Mobile アプリを使って、ユーザー、プリセット、Neural Capture を発見しましょう。</p><p>Neural DSP アカウントを Quad Cortex にリンクすることで、バックアップの作成、コンテンツの共有、他のユーザーからのアイテムのダウンロードが可能になります。</p><p>さらに、インパルスレスポンス（IR）ライブラリも利用できるようになり、IR を Quad Cortex に転送したり、アカウントに保存された IR を管理することもできます。</p>",
+        "band": "light"
       }
     },
     "custom_liquid_aieqim": {
@@ -378,7 +391,8 @@
       "settings": {
         "eyebrow": "FAQs",
         "heading": "よくあるご質問",
-        "anchor": "faq"
+        "anchor": "faq",
+        "band": "light"
       },
       "blocks": {
         "qa_0": {
@@ -658,14 +672,18 @@
     "custom_liquid_ewjyyk": {
       "type": "nd-specs",
       "blocks": {},
-      "block_order": []
+      "block_order": [],
+      "settings": {
+        "band": "light"
+      }
     },
     "capture_versions": {
       "type": "nd-capture-versions",
       "settings": {
         "eyebrow": "",
         "heading": "",
-        "body": ""
+        "body": "",
+        "band": "dark"
       },
       "blocks": {
         "v1": {
@@ -1070,14 +1088,16 @@
         "list_heading": "4.1.0 の新機能",
         "body": "<ul><li>X 対応プラグイン 5 種類が新たに Quad Cortex に対応し、合計 70 種類以上の新しいバーチャルデバイスを追加</li><li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8 種類の新しいバーチャルデバイス</li><li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li><li>Neural DSP チームによる 2,000 種類以上のファクトリー Device Presets</li><li>お気に入り／最近使った項目メニューを刷新</li></ul>",
         "button_label": "変更履歴をすべて見る",
-        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F"
+        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
+        "band": "dark"
       }
     },
     "feature_cards": {
       "type": "nd-popcards",
       "settings": {
         "heading": "",
-        "more_label": "詳しく見る"
+        "more_label": "詳しく見る",
+        "band": "light"
       },
       "blocks": {
         "k0": {
@@ -1123,7 +1143,9 @@
         "heading": "Plugin Compatibility",
         "body": "<p>Neural DSP のプラグインを Quad Cortex に読み込んで、新たな可能性を広げましょう。</p>",
         "button_label": "詳しく見る",
-        "button_url": "/pages/quad-cortex-and-plugin-bundle"
+        "button_url": "/pages/quad-cortex-and-plugin-bundle",
+        "band": "card",
+        "card_image_url": ""
       }
     }
   },

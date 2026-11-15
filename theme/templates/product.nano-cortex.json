@@ -42,7 +42,8 @@
         "image_alt": "Nano Cortexの使用イメージ",
         "heading": "手のひらに収まる、超強力なリグ",
         "body": "<p>手のひらサイズに収まる超強力なリグ、Nano Cortexはスタジオ級のサウンド、自由にカスタマイズできるシグナルチェーン、充実のエフェクト群、そして革新的なNeural Captureテクノロジーを搭載し、ステージでもスタジオでも、あらゆる場面で理想のトーンを即座に引き出します。</p>",
-        "body_after": "<p>Neural Captureは登場以来、アンプやキャビネット、ドライブペダルのキャプチャと再現において他に類を見ない精度を実現し、演奏時のリアルさとレスポンスの良さはアーティストやエンジニアから高く評価されてきました。</p><p>そして今、その革新的なテクノロジーは、いつでもどこでもインスピレーションを形にできる、現場対応型のポータブルユニットに凝縮されています。</p><p>ポータブルかつプロフェッショナルなトーンの未来へようこそ。</p>"
+        "body_after": "<p>Neural Captureは登場以来、アンプやキャビネット、ドライブペダルのキャプチャと再現において他に類を見ない精度を実現し、演奏時のリアルさとレスポンスの良さはアーティストやエンジニアから高く評価されてきました。</p><p>そして今、その革新的なテクノロジーは、いつでもどこでもインスピレーションを形にできる、現場対応型のポータブルユニットに凝縮されています。</p><p>ポータブルかつプロフェッショナルなトーンの未来へようこそ。</p>",
+        "band": "dark"
       }
     },
     "custom_liquid_6hmybr": {
@@ -63,14 +64,16 @@
       "settings": {
         "layout": "media",
         "video_url": "https://videos.ctfassets.net/8puu65w27ud0/6GRfFl5cj6tF4mmJUtAAMB/9fc2699e9a09714f622a18505e008a3a/NC-360-vid-white.mp4",
-        "light": true
+        "light": true,
+        "band": "light"
       }
     },
     "multicolumn_34lwl7": {
       "type": "nd-columns",
       "settings": {
         "columns": 4,
-        "heading": "主な特徴"
+        "heading": "主な特徴",
+        "band": "light"
       },
       "blocks": {
         "column_0": {
@@ -108,21 +111,23 @@
     "rich_text_wrphyg": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-left",
+        "layout": "media-top",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Nano_Cortex_-_Web_assets_5_0619dfb6-2139-4c8a-a44b-dcb28447e297.jpg?v=1741847925",
         "image_alt": "",
         "heading": "Neural Capture",
-        "body": "<p><strong>追加のツールやアプリを使わず、フラッグシップモデルQuad Cortexと同じ解像度で、デバイス上で数分以内にNeural Captureを作成できます。</strong></p><p>Nano Cortexは、あらゆる物理的なアンプ、オーバードライブ、キャビネットの音響特性を、これまでにない精度で学習し、再現することができます</p><p>機器を接続し、Captureボタンを押すだけで、わずか数分で本物とほぼ見分けがつかないデジタル版が作成できます。コンピューターやインターネット、Cortex Cloudアプリに接続する必要はありません。シンプルで素早く、これ一台で完結します。</p><p>自分の機材をキャプチャしたくない場合でも、Cortex Cloudで他のユーザーが作成した数千のNeural Captureに無料でアクセスでき、音作りの可能性が無限に広がります。</p>"
+        "body": "<p><strong>追加のツールやアプリを使わず、フラッグシップモデルQuad Cortexと同じ解像度で、デバイス上で数分以内にNeural Captureを作成できます。</strong></p><p>Nano Cortexは、あらゆる物理的なアンプ、オーバードライブ、キャビネットの音響特性を、これまでにない精度で学習し、再現することができます</p><p>機器を接続し、Captureボタンを押すだけで、わずか数分で本物とほぼ見分けがつかないデジタル版が作成できます。コンピューターやインターネット、Cortex Cloudアプリに接続する必要はありません。シンプルで素早く、これ一台で完結します。</p><p>自分の機材をキャプチャしたくない場合でも、Cortex Cloudで他のユーザーが作成した数千のNeural Captureに無料でアクセスでき、音作りの可能性が無限に広がります。</p>",
+        "band": "dark"
       }
     },
     "image_with_text_tkrdtf": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
+        "layout": "media-left",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-full-rig-screen.webp?v=1745902891",
         "image_alt": "",
         "heading": "ギターまたはベースの完全なリグを手のひらサイズで",
-        "body": "<p>Nano Cortexは、スタジオグレードのサウンド、完全にカスタマイズ可能なシグナルチェーン、充実したエフェクトスイート、そして革新的なNeural Capture技術を、コンパクトで超ポータブルなペダルにすべて搭載しています。ステージでも、スタジオでも、その間のどこにいても、理想のトーンにすぐに手が届きます。</p><p>Neural Captureはリリース以来、トーンへのアプローチを一新し、アンプ、キャビネット、ドライブペダルの音をこれまでにない精度でキャプチャして再現してきました。アーティストやエンジニアからも、そのリアルさとレスポンスの良さが高く評価されています。</p><p>そして今、その画期的な技術が、どこでもインスピレーションを形にできるよう、現場での使用を想定して設計された持ち運びに便利なユニットに凝縮されました。</p><p>ポータブルかつプロフェッショナルグレードのトーンの未来へようこそ。</p>"
+        "body": "<p>Nano Cortexは、スタジオグレードのサウンド、完全にカスタマイズ可能なシグナルチェーン、充実したエフェクトスイート、そして革新的なNeural Capture技術を、コンパクトで超ポータブルなペダルにすべて搭載しています。ステージでも、スタジオでも、その間のどこにいても、理想のトーンにすぐに手が届きます。</p><p>Neural Captureはリリース以来、トーンへのアプローチを一新し、アンプ、キャビネット、ドライブペダルの音をこれまでにない精度でキャプチャして再現してきました。アーティストやエンジニアからも、そのリアルさとレスポンスの良さが高く評価されています。</p><p>そして今、その画期的な技術が、どこでもインスピレーションを形にできるよう、現場での使用を想定して設計された持ち運びに便利なユニットに凝縮されました。</p><p>ポータブルかつプロフェッショナルグレードのトーンの未来へようこそ。</p>",
+        "band": "light"
       }
     },
     "custom_liquid_qmu8mb": {
@@ -130,7 +135,8 @@
       "settings": {
         "heading": "シグナルチェーン",
         "link_label": "デバイス一覧を見る",
-        "link_url": "https://neuraldsp.com/nano-cortex-device-list"
+        "link_url": "https://neuraldsp.com/nano-cortex-device-list",
+        "band": "light"
       },
       "blocks": {
         "tab_0": {
@@ -202,24 +208,27 @@
     "single_image_z4r3uf": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Nano_Cortex_-_Web_assets_1_0de6066c-6833-40ed-9da4-ccffe6025a27.jpg?v=1745917820",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "dark"
       }
     },
     "rich_text_vhphgl": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "heading": "軽快に移動、圧倒的なサウンド",
-        "body": "<p>Nano Cortexは、2つのスタンダードなストンプボックスペダルを並べた幅と同じで、重さはわずか620g（1.36lbs）。ギグバッグやバックパックに簡単に収まります。</p><p>コンパクトなデザインにもかかわらず、フルギター/ベースリグの性能と多機能性を備えており、ステージ、スタジオ、または外出先でも完璧に対応します。</p>"
+        "body": "<p>Nano Cortexは、2つのスタンダードなストンプボックスペダルを並べた幅と同じで、重さはわずか620g（1.36lbs）。ギグバッグやバックパックに簡単に収まります。</p><p>コンパクトなデザインにもかかわらず、フルギター/ベースリグの性能と多機能性を備えており、ステージ、スタジオ、または外出先でも完璧に対応します。</p>",
+        "band": "dark"
       }
     },
     "background_video_wqmbwc": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
-        "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/db7fa8dd437b4ca9a13f2905d85ce84c/db7fa8dd437b4ca9a13f2905d85ce84c.SD-480p-1.5Mbps-46731224.mp4?v=0"
+        "layout": "bleed",
+        "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/db7fa8dd437b4ca9a13f2905d85ce84c/db7fa8dd437b4ca9a13f2905d85ce84c.SD-480p-1.5Mbps-46731224.mp4?v=0",
+        "band": "dark"
       }
     },
     "rich_text_qkpgfd": {
@@ -233,7 +242,8 @@
         "head_position": "above",
         "separator": true,
         "image_asset": "nano-top.webp",
-        "media_max": 600
+        "media_max": 600,
+        "band": "dark"
       },
       "blocks": {
         "item_0": {
@@ -383,7 +393,8 @@
         "head_position": "above",
         "separator": true,
         "image_asset": "nano-rear.webp",
-        "media_max": 820
+        "media_max": 820,
+        "band": "dark"
       },
       "blocks": {
         "item_0": {
@@ -499,13 +510,14 @@
     "rich_text_w8yrhb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
+        "layout": "stack",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/nc-cortex_cloud_img.webp?v=1742889867",
         "image_alt": "",
         "heading": "Cortex Cloud",
         "button_label": "詳しく見る",
         "button_url": "/pages/neuraldsp-account",
-        "body": "<p>指先ひとつで広がる、進化し続ける音色コレクション</p><p>Cortex Cloud で、Cortex Cloudで、進化し続ける膨大な音色コレクションに即アクセスしましょう。他のユーザーや有名アーティスト、プロデューサーが作成した数千ものCaptureを探索できます。</p><p>Cortex Cloud アプリを使えば、Capture をブラウズ・検索・ワイヤレスで Nano Cortex に直接ダウンロード可能。</p><p>他のユーザーがキャプチャーしたアンプ、キャビネット、ペダルの音を即座に利用できます。</p><p>伝説のヴィンテージトーンから超レアなドライブペダル、最新のハイゲインサウンドまで、Cortex Cloud があなたの求める音を提供します。</p><p>世界中のクリエイターが集う活気あるコミュニティに参加して、自分の Capture を共有しましょう。</p>"
+        "body": "<p>指先ひとつで広がる、進化し続ける音色コレクション</p><p>Cortex Cloud で、Cortex Cloudで、進化し続ける膨大な音色コレクションに即アクセスしましょう。他のユーザーや有名アーティスト、プロデューサーが作成した数千ものCaptureを探索できます。</p><p>Cortex Cloud アプリを使えば、Capture をブラウズ・検索・ワイヤレスで Nano Cortex に直接ダウンロード可能。</p><p>他のユーザーがキャプチャーしたアンプ、キャビネット、ペダルの音を即座に利用できます。</p><p>伝説のヴィンテージトーンから超レアなドライブペダル、最新のハイゲインサウンドまで、Cortex Cloud があなたの求める音を提供します。</p><p>世界中のクリエイターが集う活気あるコミュニティに参加して、自分の Capture を共有しましょう。</p>",
+        "band": "card"
       }
     },
     "collapsible_content_xx4f6y": {
@@ -513,7 +525,8 @@
       "settings": {
         "eyebrow": "FAQs",
         "heading": "よくあるご質問",
-        "anchor": "faq"
+        "anchor": "faq",
+        "band": "light"
       },
       "blocks": {
         "qa_0": {
@@ -868,17 +881,21 @@
       "block_order": [
         "card_0",
         "card_1"
-      ]
+      ],
+      "settings": {
+        "band": "light"
+      }
     },
     "nanos_update": {
       "type": "nd-update",
       "settings": {
-        "badge": "UPDATE",
+        "badge": "",
         "heading": "NanOS 2.3.0 を公開しました",
         "list_heading": "2.3.0 の新機能",
         "body": "<p>新しいエフェクト 5 種類</p><ul><li>Blossom (ST)（Strymon® BigSky® の Bloom モードにインスパイア）</li><li>Shimmer</li><li>Poly Octaver（Electro-Harmonix® POG® にインスパイア）</li><li>Wham（DigiTech® Whammy® にインスパイア）</li><li>Chief OC2（BOSS® OC-2 にインスパイア）</li></ul><p>メトロノーム</p>",
         "button_label": "変更履歴をすべて見る（英語）",
-        "button_url": "https://neuraldsp.com/nano-cortex-updates/nanos-2-3-0-is-now-available"
+        "button_url": "https://neuraldsp.com/nano-cortex-updates/nanos-2-3-0-is-now-available",
+        "band": "card"
       }
     },
     "players": {
@@ -886,7 +903,8 @@
       "settings": {
         "heading": "あらゆるプレイヤーに。あらゆるセットアップに。",
         "body": "<p>あらゆるレベルのギタリスト、ベーシストのために。経験豊富なプロも、スタジオ中心のクリエイターも、これから始める方も、Nano Cortex なら手間なく世界最高峰のトーンが手に入ります。</p>",
-        "columns": 3
+        "columns": 3,
+        "band": "light"
       },
       "blocks": {
         "c0": {
@@ -922,7 +940,8 @@
       "settings": {
         "heading": "1 台で、無限の可能性。",
         "body": "<p>Nano Cortex は、オールインワンのリグであり、アンプとキャビネットの代わりであり、パワフルなマルチエフェクターでもあります。しかもギグバッグに収まるサイズです。</p>",
-        "columns": 3
+        "columns": 3,
+        "band": "dark"
       },
       "blocks": {
         "c0": {

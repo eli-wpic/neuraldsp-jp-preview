@@ -3,7 +3,7 @@
   then the video or photo on the left and "what's new" with a changelog button on the right.
 {%- endcomment -%}
 {%- assign s = section.settings -%}
-<section class="section nd-update">
+<section class="section nd-update{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container">
     <header class="nd-update__head">
       {%- if s.badge != blank -%}<span class="nd-update__badge">{{ s.badge }}</span>{%- endif -%}
@@ -27,17 +27,87 @@
 {
   "name": "ND · Update",
   "settings": [
-    { "type": "text", "id": "badge", "label": "Badge", "default": "MAJOR UPDATE" },
-    { "type": "text", "id": "heading", "label": "Title" },
-    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
-    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
-    { "type": "image_picker", "id": "image", "label": "Photo (when there is no video)" },
-    { "type": "text", "id": "image_url", "label": "Photo URL" },
-    { "type": "text", "id": "list_heading", "label": "List heading" },
-    { "type": "richtext", "id": "body", "label": "What's new" },
-    { "type": "text", "id": "button_label", "label": "Button", "default": "変更履歴をすべて見る" },
-    { "type": "text", "id": "button_url", "label": "Button URL" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge",
+      "default": "MAJOR UPDATE"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "youtube_id",
+      "label": "YouTube video ID"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (mp4)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Photo (when there is no video)"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Photo URL"
+    },
+    {
+      "type": "text",
+      "id": "list_heading",
+      "label": "List heading"
+    },
+    {
+      "type": "richtext",
+      "id": "body",
+      "label": "What's new"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button",
+      "default": "変更履歴をすべて見る"
+    },
+    {
+      "type": "text",
+      "id": "button_url",
+      "label": "Button URL"
+    }
   ],
-  "presets": [{ "name": "ND · Update" }]
+  "presets": [
+    {
+      "name": "ND · Update"
+    }
+  ]
 }
 {% endschema %}

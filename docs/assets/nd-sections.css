@@ -731,3 +731,46 @@ html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 .nd-post strong { font-size: var(--fs-l); font-weight: 700; }
 .nd-post__more { display: none; }
 .nd-post:active { scale: .98; }
+
+/* ===================== neuraldsp.com product-page system =====================
+   Bands: black / white / rounded dark card. Layouts: stack (photo on top, text in a left column), bleed (photo edge to edge). */
+.nd-band { border-top: 0 !important; }
+.nd-band--dark { background: #000; }
+.nd-band--light {
+  background: #fff; color: #111214;
+  --bg: #fff; --bg-raised: #f6f6f7; --bg-panel: #f1f2f4; --bg-inset: #f6f7f8;
+  --text: #111214; --text-2: #484c53; --text-3: #666b72; --text-hi: #000;
+  --line: #e2e4e7; --line-strong: #c9ccd1; --line-2: rgba(17,18,20,.14); --field-line: #8a8f96;
+  --paper: #111214; --on-paper: #fff; --ink-rgb: 17, 18, 20; --bg-rgb: 255, 255, 255;
+  --btn1-bg: #111214; --btn1-fg: #fff; --btn1-hover: #000; --btn2-bg: #e7e8ea; --btn2-fg: #111214; --btn2-hover: #dadbde;
+  --badge-bg: #111214; --badge-fg: #fff; --accent-text: #1d6fd8;
+  --dk-0d0e10: #f3f4f5; --dk-16181b: #eef0f2; --dk-1d1e20: #f1f2f4;
+}
+.nd-band--card {
+  margin: 8px; border-radius: 16px; overflow: hidden; position: relative; isolation: isolate;
+  background: radial-gradient(80% 70% at 50% 0%, rgba(255,255,255,.06), transparent 60%), #0b0c0e;
+}
+.nd-band--card[style*="--card-img"]::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--card-img) center / cover no-repeat; opacity: .55; }
+.nd-band--card[style*="--card-img"]::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.2) 60%, rgba(0,0,0,.6)); }
+.nd-band--card .nd-feature__copy { text-align: center; justify-items: center; margin-inline: auto; max-width: 720px; }
+.nd-band--card .nd-sep { margin-inline: auto; }
+/* white scheme: black bands follow the page */
+html[data-scheme="light"] .nd-band--dark { background: var(--bg); }
+
+/* stack: photo on top, text in a left-aligned column (neuraldsp.com "Neural Capture", "Cortex Cloud", "Looks small. Plays big.") */
+.nd-feature--stack .nd-feature__grid { grid-template-columns: 1fr; gap: clamp(28px, 4vw, 48px); }
+.nd-feature--stack .nd-feature__media { order: -1; max-width: 900px; width: 100%; margin-inline: auto; background: none; border-radius: 0; }
+.nd-feature--stack .nd-feature__copy { width: 100%; max-width: 680px; margin-inline: auto; text-align: left; justify-items: start; }
+.nd-feature--stack .nd-sep, .nd-feature--media-left .nd-sep, .nd-feature--media-right .nd-sep { margin-inline: 0; }
+.nd-feature--stack .nd-feature__title { font-size: var(--fs-xl); }
+.nd-feature--stack .nd-prose strong:first-child { display: block; margin-bottom: 4px; }
+/* bleed: photo edge to edge */
+.nd-feature--bleed { padding: 0 !important; }
+.nd-feature--bleed .nd-feature__grid { max-width: none; padding: 0; }
+.nd-feature--bleed .nd-feature__media { max-width: none !important; width: 100%; border-radius: 0; background: none; }
+.nd-feature--bleed .nd-feature__media img, .nd-feature--bleed .nd-feature__media video { width: 100% !important; max-height: 760px !important; object-fit: cover; }
+.nd-band--card.nd-feature--bleed .nd-feature__media img { max-height: 560px !important; }
+/* centred heading sections get the separator centred */
+.nd-feature--center .nd-sep, .nd-feature--media-top .nd-sep { margin-inline: auto; }
+/* left/right with photo: separator left */
+.nd-feature--media-left .nd-feature__copy, .nd-feature--media-right .nd-feature__copy { text-align: left; }

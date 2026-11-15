@@ -13,12 +13,12 @@
     assign layout = 'center'
   endif
 -%}
-<section class="nd-feature nd-feature--{{ layout }}{% if s.tight %} nd-feature--tight{% endif %}{% if s.light %} nd-feature--light{% endif %}{% if s.clip_white %} nd-feature--clip{% endif %}">
+<section{% if s.card_image_url != blank %} style="--card-img: url('{{ s.card_image_url }}')"{% endif %} class="nd-feature nd-feature--{{ layout }}{% if s.tight %} nd-feature--tight{% endif %}{% if s.light %} nd-feature--light{% endif %}{% if s.clip_white %} nd-feature--clip{% endif %}{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container nd-feature__grid">
     {%- unless layout == 'media' -%}
       <div class="nd-feature__copy">
         {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
-        {%- if s.heading != blank -%}<h2 class="nd-feature__title">{{ s.heading | newline_to_br }}</h2>{%- endif -%}
+        {%- if s.heading != blank -%}<h2 class="nd-feature__title">{{ s.heading | newline_to_br }}</h2>{%- if s.separator != false and layout != 'center' or s.separator != false and s.band != blank -%}<span class="nd-sep" aria-hidden="true"></span>{%- endif -%}{%- endif -%}
         {%- if s.subheading != blank -%}<p class="nd-feature__sub">{{ s.subheading | newline_to_br }}</p>{%- endif -%}
         {%- if s.body != blank -%}<div class="nd-prose">{{ s.body }}</div>{%- endif -%}
         {%- if s.button_label != blank or s.button2_label != blank -%}
@@ -55,35 +55,192 @@
 {
   "name": "ND · Feature",
   "settings": [
-    { "type": "select", "id": "layout", "label": "Layout", "default": "media-right", "options": [
-      { "value": "center", "label": "Centered text" },
-      { "value": "media-left", "label": "Media left" },
-      { "value": "media-right", "label": "Media right" },
-      { "value": "media-top", "label": "Text above wide media" },
-      { "value": "media", "label": "Media only" }
-    ] },
-    { "type": "html", "id": "body_after", "label": "Text under the photo (HTML)", "info": "Shown below the photo, as on neuraldsp.com" },
-    { "type": "checkbox", "id": "tight", "label": "Less vertical spacing", "default": false },
-    { "type": "checkbox", "id": "light", "label": "White background", "default": false },
-    { "type": "checkbox", "id": "clip_white", "label": "Trim white edges around the product (Quad Cortex top-view film)", "default": false },
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-    { "type": "textarea", "id": "heading", "label": "Heading" },
-    { "type": "textarea", "id": "subheading", "label": "Subheading" },
-    { "type": "html", "id": "body", "label": "Body (HTML)" },
-    { "type": "text", "id": "button_label", "label": "Button label" },
-    { "type": "text", "id": "button_url", "label": "Button URL" },
-    { "type": "text", "id": "button2_label", "label": "Second button label" },
-    { "type": "text", "id": "button2_url", "label": "Second button URL" },
-    { "type": "html", "id": "note", "label": "Small print (HTML)" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "image_url", "label": "Image URL" },
-    { "type": "text", "id": "mobile_image_url", "label": "Phone image URL (optional)" },
-    { "type": "text", "id": "image_alt", "label": "Image alt text" },
-    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
-    { "type": "checkbox", "id": "video_autoplay", "label": "Autoplay muted loop", "default": true },
-    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
-    { "type": "text", "id": "link_url", "label": "Media link URL" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "separator",
+      "label": "Yellow separator under the heading",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "card_image_url",
+      "label": "Card background photo URL (Rounded dark card)"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Layout",
+      "default": "media-right",
+      "options": [
+        {
+          "value": "center",
+          "label": "Centered text"
+        },
+        {
+          "value": "media-left",
+          "label": "Media left"
+        },
+        {
+          "value": "media-right",
+          "label": "Media right"
+        },
+        {
+          "value": "media-top",
+          "label": "Text above wide media"
+        },
+        {
+          "value": "media",
+          "label": "Media only"
+        },
+        {
+          "value": "stack",
+          "label": "Photo on top, text in a left column (neuraldsp.com)"
+        },
+        {
+          "value": "bleed",
+          "label": "Photo full width, edge to edge"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "id": "body_after",
+      "label": "Text under the photo (HTML)",
+      "info": "Shown below the photo, as on neuraldsp.com"
+    },
+    {
+      "type": "checkbox",
+      "id": "tight",
+      "label": "Less vertical spacing",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "light",
+      "label": "White background",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "clip_white",
+      "label": "Trim white edges around the product (Quad Cortex top-view film)",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow"
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading"
+    },
+    {
+      "type": "html",
+      "id": "body",
+      "label": "Body (HTML)"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    },
+    {
+      "type": "text",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button2_label",
+      "label": "Second button label"
+    },
+    {
+      "type": "text",
+      "id": "button2_url",
+      "label": "Second button URL"
+    },
+    {
+      "type": "html",
+      "id": "note",
+      "label": "Small print (HTML)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Image URL"
+    },
+    {
+      "type": "text",
+      "id": "mobile_image_url",
+      "label": "Phone image URL (optional)"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text"
+    },
+    {
+      "type": "text",
+      "id": "video_url",
+      "label": "Video URL (mp4)"
+    },
+    {
+      "type": "checkbox",
+      "id": "video_autoplay",
+      "label": "Autoplay muted loop",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "youtube_id",
+      "label": "YouTube video ID"
+    },
+    {
+      "type": "text",
+      "id": "link_url",
+      "label": "Media link URL"
+    }
   ],
-  "presets": [{ "name": "ND · Feature" }]
+  "presets": [
+    {
+      "name": "ND · Feature"
+    }
+  ]
 }
 {% endschema %}

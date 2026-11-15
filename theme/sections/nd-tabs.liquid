@@ -3,7 +3,7 @@
   devices and picture on the right. Used for the Nano Cortex signal chain.
 {%- endcomment -%}
 {%- assign s = section.settings -%}
-<section class="nd-tabs" data-tabs>
+<section class="nd-tabs{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}" data-tabs>
   <div class="container">
     {%- if s.heading != blank -%}<header class="section-head"><h2>{{ s.heading }}</h2>{%- if s.intro != blank -%}<p>{{ s.intro }}</p>{%- endif -%}</header>{%- endif -%}
     <div class="nd-tabs__grid">
@@ -44,17 +44,83 @@ document.querySelectorAll('[data-tabs]:not([data-tabs-ready])').forEach((root) =
 {
   "name": "ND · Vertical tabs",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading" },
-    { "type": "text", "id": "intro", "label": "Intro" },
-    { "type": "text", "id": "link_label", "label": "Link below" },
-    { "type": "text", "id": "link_url", "label": "Link URL" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "intro",
+      "label": "Intro"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link below"
+    },
+    {
+      "type": "text",
+      "id": "link_url",
+      "label": "Link URL"
+    }
   ],
-  "blocks": [{ "type": "tab", "name": "Tab", "settings": [
-    { "type": "text", "id": "label", "label": "Tab label" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "image_url", "label": "Image URL" },
-    { "type": "html", "id": "body", "label": "Content (HTML)" }
-  ] }],
-  "presets": [{ "name": "ND · Vertical tabs" }]
+  "blocks": [
+    {
+      "type": "tab",
+      "name": "Tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Tab label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Image URL"
+        },
+        {
+          "type": "html",
+          "id": "body",
+          "label": "Content (HTML)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ND · Vertical tabs"
+    }
+  ]
 }
 {% endschema %}

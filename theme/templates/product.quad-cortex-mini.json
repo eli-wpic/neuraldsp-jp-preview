@@ -69,84 +69,93 @@
     "rich_text_krypv3": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-top",
+        "layout": "stack",
         "youtube_id": "SPL1EWAVGis",
         "heading": "小さなボディ。大きなサウンド。",
-        "body": "<p>Quad Cortex mini は、一切の妥協をすることなく、Quad Cortex のフル体験をこれまでで最もコンパクトかつ実用的なフォーマットに凝縮しました。<br/><br/>処理能力、音質、Neural Capture テクノロジー、そして 7インチのタッチスクリーンまで、Quad Cortex と同等の性能を搭載。ペダルボードやモダンなリグ、デスクトップ環境にも自然にフィットします。<br/><br/>そのサイズと価格帯からは想像できないほどの高いパフォーマンスを実現。世界水準のサウンドを素早く作り込み、膨大なアンプ、エフェクト、Capture を自在に探求し、場所を選ばずクリエイティブなリグ構築が可能です。<br/><br/>Quad Cortex プラットフォームに初めて触れる方にも、すでに使い慣れている方にも。Quad Cortex mini は同じプラットフォームとワークフローを共有し、最初の一音から直感的で、深く没入できる音作り体験を提供します。</p>"
+        "body": "<p>Quad Cortex mini は、一切の妥協をすることなく、Quad Cortex のフル体験をこれまでで最もコンパクトかつ実用的なフォーマットに凝縮しました。<br/><br/>処理能力、音質、Neural Capture テクノロジー、そして 7インチのタッチスクリーンまで、Quad Cortex と同等の性能を搭載。ペダルボードやモダンなリグ、デスクトップ環境にも自然にフィットします。<br/><br/>そのサイズと価格帯からは想像できないほどの高いパフォーマンスを実現。世界水準のサウンドを素早く作り込み、膨大なアンプ、エフェクト、Capture を自在に探求し、場所を選ばずクリエイティブなリグ構築が可能です。<br/><br/>Quad Cortex プラットフォームに初めて触れる方にも、すでに使い慣れている方にも。Quad Cortex mini は同じプラットフォームとワークフローを共有し、最初の一音から直感的で、深く没入できる音作り体験を提供します。</p>",
+        "band": "dark"
       }
     },
     "rich_text_6pwqvc": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-left",
+        "layout": "stack",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-top.webp?v=1769062513",
         "image_alt": "",
         "heading": "アリーナ級のパフォーマンス。すぐに使えるコンパクトサイズ。",
-        "body": "<p>驚くほどコンパクトな筐体に、ギター／ベース用の完全なリグを凝縮。スタジオからステージまで、ペダルボードやモダンなリグ、デスクトップ環境に自然にフィットするよう設計されています。</p><p>わずか <strong>22.8 × 11.8 cm</strong> のフットプリント、重量 <strong>1.5 kg</strong>。Quad Cortex mini は、設置しやすく、持ち運びやすく、既存のリグにもシンプルに組み込める形状で、フラッグシップ級のパフォーマンスを提供します。</p><p>外形寸法</p><p>22.8 × 11.8 × 6.5 cm<br/>/ 8.9” × 4.6” × 2.5”</p><p>重量</p><p>1.5 kg / 3.3 lbs</p>"
+        "body": "<p>驚くほどコンパクトな筐体に、ギター／ベース用の完全なリグを凝縮。スタジオからステージまで、ペダルボードやモダンなリグ、デスクトップ環境に自然にフィットするよう設計されています。</p><p>わずか <strong>22.8 × 11.8 cm</strong> のフットプリント、重量 <strong>1.5 kg</strong>。Quad Cortex mini は、設置しやすく、持ち運びやすく、既存のリグにもシンプルに組み込める形状で、フラッグシップ級のパフォーマンスを提供します。</p><p>外形寸法</p><p>22.8 × 11.8 × 6.5 cm<br/>/ 8.9” × 4.6” × 2.5”</p><p>重量</p><p>1.5 kg / 3.3 lbs</p>",
+        "band": "light"
       }
     },
     "rich_text_dzy9mb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "image_url": "",
         "image_alt": "90+",
         "heading": "すぐに演奏できる、完結したクリエイティブ・ツールキット",
-        "body": "<p>Quad Cortex mini には、厳選されたアンプ、エフェクト、キャビネットがあらかじめ搭載されています。接続したその瞬間から、インスピレーションあふれるギター／ベース用リグを構築するために必要なすべてが揃っています。</p><p>ヴィンテージテイストからモダンなアンプ、スタジオクオリティのエフェクト、柔軟なキャビネットシミュレーションまで、すべてのバーチャルデバイスは演奏に自然に反応し、シームレスに連携するよう設計されています。</p>"
+        "body": "<p>Quad Cortex mini には、厳選されたアンプ、エフェクト、キャビネットがあらかじめ搭載されています。接続したその瞬間から、インスピレーションあふれるギター／ベース用リグを構築するために必要なすべてが揃っています。</p><p>ヴィンテージテイストからモダンなアンプ、スタジオクオリティのエフェクト、柔軟なキャビネットシミュレーションまで、すべてのバーチャルデバイスは演奏に自然に反応し、シームレスに連携するよう設計されています。</p>",
+        "band": "dark"
       }
     },
     "single_image_tpda8j": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-capture-image_f8e5771e-ffb6-474c-b749-098e84abadaa.webp?v=1769734660",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "dark"
       }
     },
     "rich_text_4vbhpb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "image_url": "",
         "image_alt": "Neural Capture Version 1",
         "heading": "Neural Capture",
-        "body": "<p><strong>実機をキャプチャ。どこでも演奏。<br/></strong><br/>Neural Capture は、実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルモデルとして再現します。世界中のプレイヤーやアーティストが作成した何千もの Capture から選ぶことも、あなた自身の機材を手軽にキャプチャすることも可能です。</p><p>音色だけでなく、ダイナミクスやタッチ、弾き心地までもが忠実にキャプチャされるため、演奏への反応は常に自然。ギターのボリュームを絞る、強くピッキングする――どんな操作にも、音楽的で馴染みのあるレスポンスが返ってきます。</p><p>あなたが信頼するサウンドは、演奏する場所を選ばず、常にあなたと共にあります。</p><p>Quad Cortex mini には、2,000以上の高品質なファクトリー Neural Capture があらかじめ収録されており、箱から出してすぐに、インスピレーションあふれるスタジオクオリティのサウンドを演奏できます。</p>"
+        "body": "<p><strong>実機をキャプチャ。どこでも演奏。<br/></strong><br/>Neural Capture は、実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルモデルとして再現します。世界中のプレイヤーやアーティストが作成した何千もの Capture から選ぶことも、あなた自身の機材を手軽にキャプチャすることも可能です。</p><p>音色だけでなく、ダイナミクスやタッチ、弾き心地までもが忠実にキャプチャされるため、演奏への反応は常に自然。ギターのボリュームを絞る、強くピッキングする――どんな操作にも、音楽的で馴染みのあるレスポンスが返ってきます。</p><p>あなたが信頼するサウンドは、演奏する場所を選ばず、常にあなたと共にあります。</p><p>Quad Cortex mini には、2,000以上の高品質なファクトリー Neural Capture があらかじめ収録されており、箱から出してすぐに、インスピレーションあふれるスタジオクオリティのサウンドを演奏できます。</p>",
+        "band": "dark"
       }
     },
     "rich_text_dgvea3": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
+        "layout": "stack",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-cortex_cloud_img.webp?v=1769062013",
         "image_alt": "",
         "heading": "Cortex Cloud",
-        "body": "<p><strong>成長し続けるトーンの世界</strong><br/><br/>Cortex Cloud は、Quad Cortex mini を、世界中のアーティストやプレイヤーによって作成された Neural Capture<strong> </strong>やプリセットのライブラリへと接続します。このライブラリは、常に拡張され続けています。</p><p>他のユーザーがキャプチャしたアンプ、キャビネット、ペダルを発見し、それらを自分のリグへ即座に取り込むことが可能です。サウンドは高速に読み込まれ、シームレスに統合されるため、インスピレーションを途切れさせることはありません。</p><p>自分自身の Neural Capture を共有し、新たなアイデアを探求しながら、サウンドを継続的に進化させていくことができます。</p>"
+        "body": "<p><strong>成長し続けるトーンの世界</strong><br/><br/>Cortex Cloud は、Quad Cortex mini を、世界中のアーティストやプレイヤーによって作成された Neural Capture<strong> </strong>やプリセットのライブラリへと接続します。このライブラリは、常に拡張され続けています。</p><p>他のユーザーがキャプチャしたアンプ、キャビネット、ペダルを発見し、それらを自分のリグへ即座に取り込むことが可能です。サウンドは高速に読み込まれ、シームレスに統合されるため、インスピレーションを途切れさせることはありません。</p><p>自分自身の Neural Capture を共有し、新たなアイデアを探求しながら、サウンドを継続的に進化させていくことができます。</p>",
+        "band": "light"
       }
     },
     "custom_liquid_88nkjy": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-left",
+        "layout": "stack",
         "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qcm-the-grid.webp?v=1769072792",
         "image_alt": "Quad Cortex mini - The Grid",
         "heading": "The Grid",
-        "body": "<p>リグ全体をひと目で把握。</p><p>The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。 シグナルチェインの構築・理解・編集を直感的に行えるよう設計されており、 メニューを深く潜ったり、隠れた階層を探したりする必要はありません。</p><p>バーチャル・デバイスのブロックを、明快なグリッドベースのシグナルフロー上に配置してリグを作成できます。 ブロックは自由に並べ替えられ、信号を並列パスへ分岐させたり、 チェイン内の任意のポイントを別の出力へルーティングしたりも、確かな精度と自信をもって行えます。</p><p>複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。 すべてが「あるべき場所」にきちんと収まります。</p>"
+        "body": "<p>リグ全体をひと目で把握。</p><p>The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。 シグナルチェインの構築・理解・編集を直感的に行えるよう設計されており、 メニューを深く潜ったり、隠れた階層を探したりする必要はありません。</p><p>バーチャル・デバイスのブロックを、明快なグリッドベースのシグナルフロー上に配置してリグを作成できます。 ブロックは自由に並べ替えられ、信号を並列パスへ分岐させたり、 チェイン内の任意のポイントを別の出力へルーティングしたりも、確かな精度と自信をもって行えます。</p><p>複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。 すべてが「あるべき場所」にきちんと収まります。</p>",
+        "band": "dark"
       }
     },
     "single_image_gffdxp": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/qcm-beauty-wide.webp?v=1769072536",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "dark"
       }
     },
     "rich_text_gh63bm": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "heading": "速く、直感的な操作性のための設計",
-        "body": "<p><strong>タッチスクリーン &amp; ロータリーフットスイッチ</strong><br/><br/>7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。サウンドの編集時でも、パフォーマンス中でも、確かな操作感を提供します。</p><p><strong>パラメータ・フォーカス・システム<br/></strong><br/>ブロックを選択すると、ロータリーフットスイッチは自動的に最も関連性の高いパラメータへ割り当てられます。これにより、音を“耳で聴きながら”素早く調整でき、メニュー操作に気を取られることなく演奏に集中できます。</p><p><strong>柔軟なスイッチング・モード</strong><br/><br/>あなたの演奏スタイルに合わせて操作方法を選択できます。<br/><br/><strong>・プリセット・モード</strong>：完成したリグ同士を切り替え<br/><br/><strong>・シーン・モード</strong>：1つのプリセット内でシームレスに音色を切り替え<br/><br/><strong>・ストンプ・モード</strong>：ペダルボード感覚の操作<br/><br/><strong>・ハイブリッド・モード</strong>：フットスイッチ列ごとにモードを組み合わせ可能</p><p><strong>ギグ・ビュー</strong><br/><br/>大きな文字と明確なビジュアルフィードバックを備えた、高コントラストでライブ向きのレイアウト。「Opposite Page Preview」により、もう一方のページに割り当てられた内容もひと目で確認でき、演奏中に迷うことはありません。</p>"
+        "body": "<p><strong>タッチスクリーン &amp; ロータリーフットスイッチ</strong><br/><br/>7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。サウンドの編集時でも、パフォーマンス中でも、確かな操作感を提供します。</p><p><strong>パラメータ・フォーカス・システム<br/></strong><br/>ブロックを選択すると、ロータリーフットスイッチは自動的に最も関連性の高いパラメータへ割り当てられます。これにより、音を“耳で聴きながら”素早く調整でき、メニュー操作に気を取られることなく演奏に集中できます。</p><p><strong>柔軟なスイッチング・モード</strong><br/><br/>あなたの演奏スタイルに合わせて操作方法を選択できます。<br/><br/><strong>・プリセット・モード</strong>：完成したリグ同士を切り替え<br/><br/><strong>・シーン・モード</strong>：1つのプリセット内でシームレスに音色を切り替え<br/><br/><strong>・ストンプ・モード</strong>：ペダルボード感覚の操作<br/><br/><strong>・ハイブリッド・モード</strong>：フットスイッチ列ごとにモードを組み合わせ可能</p><p><strong>ギグ・ビュー</strong><br/><br/>大きな文字と明確なビジュアルフィードバックを備えた、高コントラストでライブ向きのレイアウト。「Opposite Page Preview」により、もう一方のページに割り当てられた内容もひと目で確認でき、演奏中に迷うことはありません。</p>",
+        "band": "dark"
       }
     },
     "custom_liquid_tpwyqn": {
@@ -159,7 +168,8 @@
         "show_numbers": true,
         "image_asset": "mini-rear.webp",
         "head_position": "above",
-        "separator": true
+        "separator": true,
+        "band": "dark"
       },
       "blocks": {
         "item_0": {
@@ -301,17 +311,19 @@
     "single_image_ahaieh": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media",
+        "layout": "bleed",
         "image_url": "https://neuraldsp.jp/cdn/shop/files/QC-Mini-Clean-Angle-web.webp?v=1769053428",
-        "image_alt": ""
+        "image_alt": "",
+        "band": "dark"
       }
     },
     "rich_text_w4egmi": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "heading": "使用シーン",
-        "body": "<h3>ライブ・パフォーマンス</h3><p>ステージのために設計された、ギター／ベース用の完全なリグ。 Quad Cortex mini は、ライブ環境において安定したサウンド、 素早い切り替え、そして自信をもって操作できるコントロール性を提供します。</p><h3>スタジオ &amp; レコーディング</h3><p>ギターやベースのレコーディング／リアンプに対応する、 パワフルなオールインワン・ツール。 Quad Cortex mini はマルチチャンネル対応の USB-C オーディオインターフェースとしても機能し、 現代的な DAW ワークフローに自然に組み込めます。</p><h3>練習 &amp; ソングライティング</h3><p>ヘッドフォンを使った静かな練習、内蔵メトロノームによるタイムキープ、 そしてクリエイティブな流れを止めることなく、 サウンドの作成・調整・保存を素早く行えます。</p><h3>コンパクトなツアーセットアップ</h3><p>省スペースを重視したツアーやプロフェッショナルなステージリグに最適。 Quad Cortex mini は、驚くほどコンパクトな筐体で フルステージ級の機能を提供します。</p>"
+        "body": "<h3>ライブ・パフォーマンス</h3><p>ステージのために設計された、ギター／ベース用の完全なリグ。 Quad Cortex mini は、ライブ環境において安定したサウンド、 素早い切り替え、そして自信をもって操作できるコントロール性を提供します。</p><h3>スタジオ &amp; レコーディング</h3><p>ギターやベースのレコーディング／リアンプに対応する、 パワフルなオールインワン・ツール。 Quad Cortex mini はマルチチャンネル対応の USB-C オーディオインターフェースとしても機能し、 現代的な DAW ワークフローに自然に組み込めます。</p><h3>練習 &amp; ソングライティング</h3><p>ヘッドフォンを使った静かな練習、内蔵メトロノームによるタイムキープ、 そしてクリエイティブな流れを止めることなく、 サウンドの作成・調整・保存を素早く行えます。</p><h3>コンパクトなツアーセットアップ</h3><p>省スペースを重視したツアーやプロフェッショナルなステージリグに最適。 Quad Cortex mini は、驚くほどコンパクトな筐体で フルステージ級の機能を提供します。</p>",
+        "band": "light"
       }
     },
     "rich_text_ewyvb6": {
@@ -326,9 +338,10 @@
     "custom_liquid_gqvxw7": {
       "type": "nd-feature",
       "settings": {
-        "layout": "center",
+        "layout": "stack",
         "heading": "Quad Cortex エコシステム",
-        "body": "<h3>進化し続ける設計</h3><p>Quad Cortex mini は Quad Cortex プラットフォームの一部で、継続的な CorOS アップデートとともに成長するよう設計されています。 新機能やデバイス、ワークフローの改善が時間とともに追加されるため、演奏を始めた後もセットアップは拡張し続けます。</p><h3>Cortex Control</h3><p>Cortex Control はデバイスを管理するためのデスクトップ用コンパニオンアプリです。 プリセットの編集、コンテンツの整理とバックアップ、ライブラリ管理をコンピューター上で効率的に行えます。</p><h3>プラグイン互換性</h3><p>対応する Neural DSP プラグインを Quad Cortex mini と一緒に使用できます。 ソフトウェアとハードウェアのワークフローをつなぎ、慣れ親しんだサウンドをライブやスタンドアローンのセットアップへ簡単に持ち込めます。</p><h3>Wi-Fi とクラウド連携</h3><p>内蔵 Wi-Fi により Quad Cortex mini は常に接続された状態を保てます。 Cortex Cloud からのコンテンツダウンロード、CorOS ファームウェアの更新、デバイス管理をワイヤレスで行えるため、 常に最新の状態を手間なく維持できます。</p>"
+        "body": "<h3>進化し続ける設計</h3><p>Quad Cortex mini は Quad Cortex プラットフォームの一部で、継続的な CorOS アップデートとともに成長するよう設計されています。 新機能やデバイス、ワークフローの改善が時間とともに追加されるため、演奏を始めた後もセットアップは拡張し続けます。</p><h3>Cortex Control</h3><p>Cortex Control はデバイスを管理するためのデスクトップ用コンパニオンアプリです。 プリセットの編集、コンテンツの整理とバックアップ、ライブラリ管理をコンピューター上で効率的に行えます。</p><h3>プラグイン互換性</h3><p>対応する Neural DSP プラグインを Quad Cortex mini と一緒に使用できます。 ソフトウェアとハードウェアのワークフローをつなぎ、慣れ親しんだサウンドをライブやスタンドアローンのセットアップへ簡単に持ち込めます。</p><h3>Wi-Fi とクラウド連携</h3><p>内蔵 Wi-Fi により Quad Cortex mini は常に接続された状態を保てます。 Cortex Cloud からのコンテンツダウンロード、CorOS ファームウェアの更新、デバイス管理をワイヤレスで行えるため、 常に最新の状態を手間なく維持できます。</p>",
+        "band": "dark"
       }
     },
     "collapsible_content_rqxwrm": {
@@ -336,7 +349,8 @@
       "settings": {
         "eyebrow": "FAQs",
         "heading": "よくあるご質問",
-        "anchor": "faq"
+        "anchor": "faq",
+        "band": "light"
       },
       "blocks": {
         "qa_0": {
@@ -596,7 +610,10 @@
       },
       "block_order": [
         "card_0"
-      ]
+      ],
+      "settings": {
+        "band": "light"
+      }
     },
     "compare": {
       "type": "nd-compare",
@@ -683,7 +700,8 @@
         "width_b": 29,
         "feature_label": "機能",
         "tax_label": "税込",
-        "cta_label": "詳しく見る"
+        "cta_label": "詳しく見る",
+        "band": "light"
       },
       "blocks": {
         "group_0": {
@@ -1041,7 +1059,8 @@
       "settings": {
         "eyebrow": "",
         "heading": "",
-        "body": ""
+        "body": "",
+        "band": "dark"
       },
       "blocks": {
         "v1": {
@@ -1079,7 +1098,8 @@
         "list_heading": "4.1.0 の新機能",
         "body": "<ul><li>X 対応プラグイン 5 種類が新たに Quad Cortex に対応し、合計 70 種類以上の新しいバーチャルデバイスを追加</li><li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8 種類の新しいバーチャルデバイス</li><li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li><li>Neural DSP チームによる 2,000 種類以上のファクトリー Device Presets</li><li>お気に入り／最近使った項目メニューを刷新</li></ul>",
         "button_label": "変更履歴をすべて見る",
-        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F"
+        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
+        "band": "dark"
       }
     },
     "mini_controls": {
@@ -1087,7 +1107,8 @@
       "settings": {
         "heading": "",
         "body": "",
-        "columns": 4
+        "columns": 4,
+        "band": "dark"
       },
       "blocks": {
         "c0": {
@@ -1131,7 +1152,8 @@
       "settings": {
         "heading": "",
         "link_label": "全デバイスリスト",
-        "link_url": "https://neuraldsp.com/device-list"
+        "link_url": "https://neuraldsp.com/device-list",
+        "band": "dark"
       },
       "blocks": {
         "s0": {
@@ -1167,7 +1189,8 @@
       "settings": {
         "heading": "",
         "body": "",
-        "columns": 4
+        "columns": 4,
+        "band": "dark"
       },
       "blocks": {
         "c0": {

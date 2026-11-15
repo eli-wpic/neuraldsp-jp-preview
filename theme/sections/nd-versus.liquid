@@ -10,7 +10,7 @@
 {%- assign sa = 100 -%}{%- assign sb = 100 -%}
 {%- if mw > 0 -%}{%- assign sa = wa | times: 100.0 | divided_by: mw | round -%}{%- assign sb = wb | times: 100.0 | divided_by: mw | round -%}{%- endif -%}
 {%- assign groups = section.blocks | where: 'type', 'group' -%}
-<section class="section nd-versus" data-versus>
+<section class="section nd-versus{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}" data-versus>
   <div class="container">
     <header class="section-head nd-versus__head">
       {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
@@ -99,27 +99,141 @@
 {
   "name": "ND · QC vs mini table",
   "settings": [
-    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Compare" },
-    { "type": "text", "id": "heading", "label": "Heading", "default": "Quad Cortex と比べる" },
-    { "type": "product", "id": "product_a", "label": "Product A" },
-    { "type": "text", "id": "image_a", "label": "Product A image (theme asset)" },
-    { "type": "number", "id": "width_a", "label": "Product A width (cm)" },
-    { "type": "product", "id": "product_b", "label": "Product B" },
-    { "type": "text", "id": "image_b", "label": "Product B image (theme asset)" },
-    { "type": "number", "id": "width_b", "label": "Product B width (cm)" },
-    { "type": "text", "id": "feature_label", "label": "First column heading", "default": "機能" },
-    { "type": "text", "id": "tax_label", "label": "Tax label", "default": "税込" },
-    { "type": "text", "id": "cta_label", "label": "Button label", "default": "詳しく見る" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow",
+      "default": "Compare"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Quad Cortex と比べる"
+    },
+    {
+      "type": "product",
+      "id": "product_a",
+      "label": "Product A"
+    },
+    {
+      "type": "text",
+      "id": "image_a",
+      "label": "Product A image (theme asset)"
+    },
+    {
+      "type": "number",
+      "id": "width_a",
+      "label": "Product A width (cm)"
+    },
+    {
+      "type": "product",
+      "id": "product_b",
+      "label": "Product B"
+    },
+    {
+      "type": "text",
+      "id": "image_b",
+      "label": "Product B image (theme asset)"
+    },
+    {
+      "type": "number",
+      "id": "width_b",
+      "label": "Product B width (cm)"
+    },
+    {
+      "type": "text",
+      "id": "feature_label",
+      "label": "First column heading",
+      "default": "機能"
+    },
+    {
+      "type": "text",
+      "id": "tax_label",
+      "label": "Tax label",
+      "default": "税込"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Button label",
+      "default": "詳しく見る"
+    }
   ],
   "blocks": [
-    { "type": "group", "name": "Group (tab)", "settings": [{ "type": "text", "id": "title", "label": "Tab title" }] },
-    { "type": "row", "name": "Row", "settings": [
-      { "type": "text", "id": "label", "label": "Feature" },
-      { "type": "textarea", "id": "a", "label": "Product A value", "info": "Type 対応 or 非対応 to show a tick or a dash" },
-      { "type": "textarea", "id": "b", "label": "Product B value" }
-    ] },
-    { "type": "note", "name": "Footnote", "settings": [{ "type": "textarea", "id": "text", "label": "Text" }] }
+    {
+      "type": "group",
+      "name": "Group (tab)",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab title"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Feature"
+        },
+        {
+          "type": "textarea",
+          "id": "a",
+          "label": "Product A value",
+          "info": "Type 対応 or 非対応 to show a tick or a dash"
+        },
+        {
+          "type": "textarea",
+          "id": "b",
+          "label": "Product B value"
+        }
+      ]
+    },
+    {
+      "type": "note",
+      "name": "Footnote",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
   ],
-  "presets": [{ "name": "ND · QC vs mini table" }]
+  "presets": [
+    {
+      "name": "ND · QC vs mini table"
+    }
+  ]
 }
 {% endschema %}

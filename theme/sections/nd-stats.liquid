@@ -1,4 +1,4 @@
-<section class="nd-stats">
+<section class="nd-stats{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container">
     {%- if section.settings.heading != blank -%}<h2 class="nd-stats__title">{{ section.settings.heading | newline_to_br }}</h2>{%- endif -%}
     <div class="nd-stats__row">
@@ -13,14 +13,68 @@
 {
   "name": "ND · Stats",
   "settings": [
-    { "type": "textarea", "id": "heading", "label": "Heading" },
-    { "type": "text", "id": "link_label", "label": "Link label" },
-    { "type": "text", "id": "link_url", "label": "Link URL" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "link_label",
+      "label": "Link label"
+    },
+    {
+      "type": "text",
+      "id": "link_url",
+      "label": "Link URL"
+    }
   ],
-  "blocks": [{ "type": "stat", "name": "Stat", "settings": [
-    { "type": "text", "id": "value", "label": "Value" },
-    { "type": "text", "id": "label", "label": "Label" }
-  ] }],
-  "presets": [{ "name": "ND · Stats" }]
+  "blocks": [
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ND · Stats"
+    }
+  ]
 }
 {% endschema %}

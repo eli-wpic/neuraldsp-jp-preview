@@ -1,4 +1,4 @@
-<section class="nd-awards">
+<section class="nd-awards{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container nd-awards__row">
     {%- for block in section.blocks -%}
       <div class="nd-awards__item" {{ block.shopify_attributes }}>
@@ -20,13 +20,59 @@
       "type": "award",
       "name": "Award",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Badge" },
-        { "type": "text", "id": "image_url", "label": "Badge URL" },
-        { "type": "text", "id": "line1", "label": "Line 1" },
-        { "type": "text", "id": "line2", "label": "Line 2" }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Badge"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Badge URL"
+        },
+        {
+          "type": "text",
+          "id": "line1",
+          "label": "Line 1"
+        },
+        {
+          "type": "text",
+          "id": "line2",
+          "label": "Line 2"
+        }
       ]
     }
   ],
-  "presets": [{ "name": "ND · Awards" }]
+  "presets": [
+    {
+      "name": "ND · Awards"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

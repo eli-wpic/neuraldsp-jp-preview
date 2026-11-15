@@ -1,5 +1,5 @@
 {%- comment -%} A row of buttons that open a spec sheet dialog or link out (ハードウェア仕様 / マニュアル / 製品アップデート). {%- endcomment -%}
-<section class="nd-specs">
+<section class="nd-specs{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container nd-specs__row">
     {%- for block in section.blocks -%}
       {%- assign b = block.settings -%}
@@ -19,14 +19,74 @@
 {% schema %}
 {
   "name": "ND · Spec cards",
-  "blocks": [{ "type": "card", "name": "Card", "settings": [
-    { "type": "text", "id": "label", "label": "Label" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "image_url", "label": "Image URL" },
-    { "type": "text", "id": "video_url", "label": "Background video URL (mp4)" },
-    { "type": "text", "id": "url", "label": "Link URL (when there's no dialog)" },
-    { "type": "html", "id": "modal_html", "label": "Dialog content (HTML)" }
-  ] }],
-  "presets": [{ "name": "ND · Spec cards" }]
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Image URL"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Background video URL (mp4)"
+        },
+        {
+          "type": "text",
+          "id": "url",
+          "label": "Link URL (when there's no dialog)"
+        },
+        {
+          "type": "html",
+          "id": "modal_html",
+          "label": "Dialog content (HTML)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ND · Spec cards"
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    }
+  ]
 }
 {% endschema %}

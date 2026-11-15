@@ -1,7 +1,7 @@
 {%- comment -%}
   Feature cards: title and detail text shown on the card (no popups — review Nov 16) (neuraldsp.com/quad-cortex: Cab block & EQ, Switching Modes…).
 {%- endcomment -%}
-<section class="section nd-popcards">
+<section class="section nd-popcards{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container">
     {%- if section.settings.heading != blank -%}<header class="section-head"><h2>{{ section.settings.heading }}</h2></header>{%- endif -%}
     <div class="nd-popcards__grid" data-stagger>
@@ -18,13 +18,64 @@
 {
   "name": "ND · Feature cards",
   "settings": [
-    { "type": "text", "id": "heading", "label": "Heading" },
-    { "type": "text", "id": "more_label", "label": "Card link label", "default": "詳しく見る" }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Card link label",
+      "default": "詳しく見る"
+    }
   ],
-  "blocks": [{ "type": "card", "name": "Card", "settings": [
-    { "type": "text", "id": "title", "label": "Title" },
-    { "type": "richtext", "id": "text", "label": "Detail (opens in a dialog)" }
-  ] }],
-  "presets": [{ "name": "ND · Feature cards" }]
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Detail (opens in a dialog)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "ND · Feature cards"
+    }
+  ]
 }
 {% endschema %}

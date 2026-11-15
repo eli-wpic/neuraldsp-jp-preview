@@ -1,4 +1,4 @@
-<section class="nd-columns">
+<section class="nd-columns{% if section.settings.band != blank %} nd-band nd-band--{{ section.settings.band }}{% endif %}">
   <div class="container">
     {%- if section.settings.heading != blank or section.settings.body != blank -%}
       <header class="section-head">
@@ -28,24 +28,92 @@
 {
   "name": "ND · Columns",
   "settings": [
-    { "type": "textarea", "id": "heading", "label": "Heading" },
-    { "type": "html", "id": "body", "label": "Intro (HTML)" },
-    { "type": "range", "id": "columns", "label": "Columns on desktop", "min": 1, "max": 4, "step": 1, "default": 3 }
+    {
+      "type": "select",
+      "id": "band",
+      "label": "Band (as on neuraldsp.com)",
+      "default": "",
+      "options": [
+        {
+          "value": "",
+          "label": "Page colour"
+        },
+        {
+          "value": "dark",
+          "label": "Black band"
+        },
+        {
+          "value": "light",
+          "label": "White band"
+        },
+        {
+          "value": "card",
+          "label": "Rounded dark card"
+        }
+      ]
+    },
+    {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading"
+    },
+    {
+      "type": "html",
+      "id": "body",
+      "label": "Intro (HTML)"
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "label": "Columns on desktop",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 3
+    }
   ],
   "blocks": [
     {
       "type": "column",
       "name": "Column",
       "settings": [
-        { "type": "image_picker", "id": "image", "label": "Image" },
-        { "type": "text", "id": "image_url", "label": "Image URL" },
-        { "type": "text", "id": "title", "label": "Title" },
-        { "type": "html", "id": "text", "label": "Text (HTML)" },
-        { "type": "text", "id": "link_label", "label": "Link label" },
-        { "type": "text", "id": "link_url", "label": "Link URL" }
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Image URL"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "html",
+          "id": "text",
+          "label": "Text (HTML)"
+        },
+        {
+          "type": "text",
+          "id": "link_label",
+          "label": "Link label"
+        },
+        {
+          "type": "text",
+          "id": "link_url",
+          "label": "Link URL"
+        }
       ]
     }
   ],
-  "presets": [{ "name": "ND · Columns" }]
+  "presets": [
+    {
+      "name": "ND · Columns"
+    }
+  ]
 }
 {% endschema %}
