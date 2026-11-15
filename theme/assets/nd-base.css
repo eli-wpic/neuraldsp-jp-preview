@@ -271,3 +271,16 @@ html:lang(ja) { line-break: strict; }
 :lang(ja) :is(h1, h2, h3, h4, p, li, dt, dd, summary, figcaption, blockquote, .btn, .eyebrow) { word-break: auto-phrase; }
 :is(h1, h2, h3, h4, .nd-feature__title, .eyebrow) { text-wrap: balance; }
 :is(p, li, dd, summary) { text-wrap: pretty; }
+
+/* ===== buttons as on neuraldsp.com (review Nov 16): pills without arrows —
+   primary = white (購入する), secondary = solid grey (カートに追加 / 詳しく見る), outline = trial ===== */
+.btn { background: #55585b; border-color: transparent; color: #fff; backdrop-filter: none; -webkit-backdrop-filter: none; font-weight: 500; padding: 0 28px; }
+.btn::after { display: none; }
+.btn--down::after { display: block; }
+@media (hover: hover) { .btn:hover { background: #64686b; } }
+.btn--primary { background: #fff; color: #0b0b0b; }
+@media (hover: hover) { .btn--primary:hover { background: #e9e9e9; } }
+.btn.buy__trial, .btn[data-trial-open], .btn.trial-cta, .btn[href*="trial-guide"], .btn--outline { background: transparent; border: 1px solid rgba(255, 255, 255, .32); color: #fff; }
+@media (hover: hover) { .btn.buy__trial:hover, .btn[data-trial-open]:hover, .btn.trial-cta:hover, .btn[href*="trial-guide"]:hover, .btn--outline:hover { background: rgba(255, 255, 255, .08); border-color: rgba(255, 255, 255, .5); } }
+.btn--small { padding: 0 20px; }
+@media (max-width: 760px) { .btn { padding: 0 22px; } }
