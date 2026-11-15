@@ -1,0 +1,37 @@
+{%- comment -%}
+  Animated campaign banner. Params: s (section/block settings).
+  Flat mode: one finished banner image (s.image / s.image_url, optional s.mobile_image_url) with motion presets.
+  Layered mode (when s.layer_product or s.title_text is set): background waves, product photo, title, ribbon, text — each animates in on its own.
+  Motion: s.motion = calm (push-in + sheen) | zoom | sheen | none; s.glow adds an accent glow; s.parallax follows the mouse.
+  Everything stops for visitors who ask for reduced motion.
+{%- endcomment -%}
+{%- assign layered = false -%}
+{%- if s.layer_product != blank or s.title_text != blank -%}{%- assign layered = true -%}{%- endif -%}
+<div class="nd-banner{% if layered %} nd-banner--layered{% endif %}" data-banner data-motion="{{ s.motion | default: 'calm' }}"{% if s.glow %} data-glow{% endif %}{% if s.parallax != false %} data-parallax{% endif %}>
+  {%- if layered -%}
+    <div class="nd-banner__bg" data-depth="0.02" aria-hidden="true">
+      {%- if s.layer_bg != blank -%}<img src="{{ s.layer_bg }}" alt="" loading="eager">{%- else -%}<i class="nd-banner__waves"></i><i class="nd-banner__waves nd-banner__waves--2"></i>{%- endif -%}
+    </div>
+    {%- if s.layer_product != blank -%}
+      <div class="nd-banner__product" data-depth="0.05"><img src="{% if s.layer_product contains '/' %}{{ s.layer_product }}{% else %}{{ s.layer_product | asset_url }}{% endif %}" alt="{{ s.alt | escape }}" loading="eager"></div>
+    {%- endif -%}
+    <div class="nd-banner__copy" data-depth="0.03">
+      {%- if s.title_text != blank -%}
+        {%- assign tl = s.title_text | newline_to_br | split: '<br />' -%}
+        <p class="nd-banner__title">{%- for l in tl -%}<span style="--i: {{ forloop.index0 }}">{{ l | strip }}</span>{%- endfor -%}</p>
+      {%- endif -%}
+      {%- if s.script_text != blank -%}<p class="nd-banner__script">{{ s.script_text }}</p>{%- endif -%}
+      {%- if s.ribbon_text != blank -%}<p class="nd-banner__ribbon"><span>{{ s.ribbon_text }}</span></p>{%- endif -%}
+      {%- if s.body_text != blank -%}<p class="nd-banner__body">{{ s.body_text | newline_to_br }}</p>{%- endif -%}
+    </div>
+    {%- if s.layer_extra != blank -%}<div class="nd-banner__extra" data-depth="0.07"><img src="{{ s.layer_extra }}" alt="" loading="lazy"></div>{%- endif -%}
+  {%- else -%}
+    <div class="nd-banner__flat" data-depth="0.02">
+      <picture>
+        {%- if s.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">{%- endif -%}
+        {% render 'nd-media', image: s.image, url: s.image_url, alt: s.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1400px' %}
+      </picture>
+    </div>
+  {%- endif -%}
+  <i class="nd-banner__sheen" aria-hidden="true"></i>
+</div>

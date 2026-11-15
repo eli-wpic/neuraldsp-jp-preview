@@ -733,3 +733,19 @@ fc['block_order'] = list(fc['blocks'])
 fc['settings']['band'] = 'light'
 save('product.quad-cortex', head, d)
 print('round 18 ok')
+
+# ---- round 19: animated campaign banner on the homepage (shows only during the site campaign); demo built from layers ----
+head, d = load('index')
+if 'campaign_banner' not in d['sections']:
+    d['sections']['campaign_banner'] = {'type': 'nd-campaign', 'settings': {'follow_site': True, 'full_width': False,
+        'layer_product': 'qc-three-quarter-1600.webp', 'title_text': 'BLACK\nFRIDAY', 'script_text': 'Sale', 'ribbon_text': '11.20 - 12.03',
+        'body_text': 'ハードウェア全品対象！豪華特典プレゼント！\nさらに、Pluginセット購入でPluginが無料！',
+        'motion': 'calm', 'glow': True, 'parallax': True, 'alt': 'BLACK FRIDAY Sale', 'url': '/collections/all'}}
+    d['order'].insert(d['order'].index('qc3d') + 1, 'campaign_banner')
+save('index', head, d)
+# accessory note: the PSU can still be bought — say one comes in the box
+for name in ('product.quad-cortex', 'product.quad-cortex-mini'):
+    head, d = load(name)
+    d['sections']['main']['settings']['acc_note'] = '本体には電源アダプターが 1 つ付属します。予備や追加用としてもご購入いただけます。'
+    save(name, head, d)
+print('round 19 ok')

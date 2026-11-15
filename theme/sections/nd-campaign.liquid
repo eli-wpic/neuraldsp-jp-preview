@@ -1,24 +1,56 @@
-<section class="nd-campaign">
+{%- comment -%}
+  Campaign banner with motion (see snippets/nd-banner.liquid). Upload the finished banner as one image, or the pieces as layers.
+  "Show during the site campaign" ties it to Theme settings → Colours → campaign (same switch and dates).
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+{%- assign show = true -%}
+{%- if s.follow_site -%}
+  {%- assign today = 'now' | date: '%Y-%m-%d' -%}
+  {%- assign show = false -%}
+  {%- if settings.campaign_on -%}
+    {%- assign show = true -%}
+    {%- if settings.campaign_start != blank and today < settings.campaign_start -%}{%- assign show = false -%}{%- endif -%}
+    {%- if settings.campaign_end != blank and today > settings.campaign_end -%}{%- assign show = false -%}{%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+{%- if show -%}
+<section class="nd-campaign{% if s.full_width %} nd-campaign--full{% endif %}">
   <div class="container">
-    <a class="nd-campaign__link" href="{{ section.settings.url | default: '#' }}">
-      <picture>
-        {%- if section.settings.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ section.settings.mobile_image_url | split: '?' | first }}?width=900">{%- endif -%}
-        {% render 'nd-media', image: section.settings.image, url: section.settings.image_url, alt: section.settings.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1200px' %}
-      </picture>
-    </a>
-    {%- if section.settings.button_label != blank -%}<a class="btn btn--primary nd-campaign__btn" href="{{ section.settings.url }}">{{ section.settings.button_label }}</a>{%- endif -%}
+    {%- if s.url != blank -%}<a class="nd-campaign__link" href="{{ s.url }}" aria-label="{{ s.alt | escape }}">{%- else -%}<div class="nd-campaign__link">{%- endif -%}
+      {% render 'nd-banner', s: s %}
+    {%- if s.url != blank -%}</a>{%- else -%}</div>{%- endif -%}
+    {%- if s.button_label != blank and s.url != blank -%}<a class="btn btn--primary nd-campaign__btn" href="{{ s.url }}">{{ s.button_label }}</a>{%- endif -%}
   </div>
 </section>
+{%- endif -%}
 {% schema %}
 {
   "name": "ND · Campaign banner",
   "settings": [
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "image_url", "label": "Image URL" },
-    { "type": "text", "id": "mobile_image_url", "label": "Mobile image URL" },
+    { "type": "checkbox", "id": "follow_site", "label": "Show during the site campaign only", "default": true, "info": "Appears and disappears with Theme settings → Colours → campaign." },
+    { "type": "checkbox", "id": "full_width", "label": "Full width", "default": false },
+    { "type": "header", "content": "Finished banner (one image)" },
+    { "type": "image_picker", "id": "image", "label": "Banner image" },
+    { "type": "text", "id": "image_url", "label": "Banner image URL" },
+    { "type": "text", "id": "mobile_image_url", "label": "Phone banner URL (optional)" },
+    { "type": "header", "content": "Or build it from layers (animates each piece)" },
+    { "type": "text", "id": "layer_bg", "label": "Background image URL (empty = animated accent waves)" },
+    { "type": "text", "id": "layer_product", "label": "Product cut-out (URL or theme asset, e.g. qc-three-quarter-1600.webp)" },
+    { "type": "textarea", "id": "title_text", "label": "Title (one line per row)", "info": "e.g. BLACK / FRIDAY" },
+    { "type": "text", "id": "script_text", "label": "Script word (e.g. Sale)" },
+    { "type": "text", "id": "ribbon_text", "label": "Ribbon (e.g. dates)" },
+    { "type": "textarea", "id": "body_text", "label": "Text" },
+    { "type": "text", "id": "layer_extra", "label": "Extra cut-out (e.g. gift items) URL" },
+    { "type": "header", "content": "Motion" },
+    { "type": "select", "id": "motion", "label": "Motion", "default": "calm", "options": [
+      { "value": "calm", "label": "Slow push-in + light sheen" }, { "value": "zoom", "label": "Slow push-in" }, { "value": "sheen", "label": "Light sheen only" }, { "value": "none", "label": "None" }
+    ] },
+    { "type": "checkbox", "id": "glow", "label": "Accent glow", "default": true },
+    { "type": "checkbox", "id": "parallax", "label": "Follow the mouse (depth)", "default": true },
+    { "type": "header", "content": "Link" },
     { "type": "text", "id": "alt", "label": "Alt text" },
     { "type": "text", "id": "url", "label": "Link URL" },
-    { "type": "text", "id": "button_label", "label": "Button label", "default": "詳しく見る" }
+    { "type": "text", "id": "button_label", "label": "Button label" }
   ],
   "presets": [{ "name": "ND · Campaign banner" }]
 }

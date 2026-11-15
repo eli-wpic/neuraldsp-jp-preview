@@ -278,6 +278,7 @@ initHeader();
 initDialogs();
 initYouTube();
 initVideoLightbox();
+initBanners();
 initBuyNow();
 initNewsletter();
 initTrial();
@@ -289,3 +290,17 @@ initHeroFilm();
 tagSections();
 observeReveal();
 document.addEventListener('shopify:section:load', (e) => { initAccordions(e.target); observeReveal(e.target); });
+
+/* Campaign banners: entrance when on screen, depth follows the mouse */
+function initBanners() {
+  const banners = document.querySelectorAll('[data-banner]');
+  if (!banners.length) return;
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.25 }) : null;
+  banners.forEach((b) => {
+    if (io && !reducedMotion()) io.observe(b); else b.classList.add('is-in');
+    if (!b.hasAttribute('data-parallax') || reducedMotion() || !matchMedia('(hover: hover)').matches) return;
+    b.querySelectorAll('[data-depth]').forEach((l) => { if (!l.style.getPropertyValue('--d')) l.style.setProperty('--d', String(parseFloat(l.dataset.depth) * 200)); });
+    b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); b.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3)); b.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3)); });
+    b.addEventListener('pointerleave', () => { b.style.setProperty('--px', 0); b.style.setProperty('--py', 0); });
+  });
+}
