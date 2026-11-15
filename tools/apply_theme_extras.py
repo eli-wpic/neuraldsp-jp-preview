@@ -749,3 +749,13 @@ for name in ('product.quad-cortex', 'product.quad-cortex-mini'):
     d['sections']['main']['settings']['acc_note'] = '本体には電源アダプターが 1 つ付属します。予備や追加用としてもご購入いただけます。'
     save(name, head, d)
 print('round 19 ok')
+
+# ---- round 20: the Black Friday hero item IS the animated banner (top of the homepage); separate banner section hidden ----
+head, d = load('index')
+bf = d['sections']['qc3d']['blocks'].get('bf')
+if bf:
+    bf['settings'].update(model='none', banner=True, layer_product='qc-three-quarter-1600.webp', title_text='BLACK\nFRIDAY', script_text='Sale',
+        ribbon_text='11.20 - 12.03', body_text='ハードウェア全品対象！豪華特典プレゼント！\nさらに、Pluginセット購入でPluginが無料！', motion='calm', glow=True, parallax=True)
+if 'campaign_banner' in d['sections']: d['sections']['campaign_banner']['disabled'] = True
+save('index', head, d)
+print('round 20 ok')

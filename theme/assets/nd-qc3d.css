@@ -198,3 +198,32 @@ body.show-buy .qc3d__buybar { opacity: 1; translate: 0 0; pointer-events: auto; 
   .chapter--right { left: auto; right: max(calc(var(--gutter) + 64px), calc((100vw - var(--maxw)) / 2 + var(--gutter) + 64px)); }
   .qc3d__nav { right: max(var(--gutter), calc((100vw - var(--maxw)) / 2 + var(--gutter) - 52px)); }
 }
+
+/* hero campaign item as an animated banner (top of the homepage) */
+.qc3d__media:has(.qc3d__banner)::after { display: none; }
+.qc3d__banner { position: absolute; inset: 0; display: grid; place-items: center; padding: 90px var(--gutter) 150px; }
+.qc3d__banner .nd-banner { width: min(1280px, 100%); max-height: calc(100svh - 260px); }
+.qc3d__banner .nd-banner:not(.nd-banner--layered) { max-height: none; width: min(1280px, 100%, calc((100svh - 260px) * 16 / 9)); }
+.qc3d__copy[data-banner-item] { left: 0; right: 0; top: auto; bottom: 118px; max-width: none; display: flex; justify-content: center; text-align: center; pointer-events: none; }
+.qc3d__copy[data-banner-item] .chapter > :not(.chapter__buy, h1) { display: none !important; }
+.qc3d__copy[data-banner-item] .chapter h1 { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* the banner carries the title; kept for search and screen readers */
+.qc3d__copy[data-banner-item] .chapter { display: flex; justify-content: center; }
+.qc3d__copy[data-banner-item] :is(a, button) { pointer-events: auto; }
+.qc3d__dock-badge { display: grid; place-content: center; width: 64px; height: 44px; border-radius: 8px; background: #0b0b0c; line-height: .9; font-family: var(--display); font-weight: 900; font-stretch: 125%; font-variation-settings: "wdth" 125; font-style: italic; font-size: 10px; letter-spacing: .02em; text-align: center; }
+.qc3d__dock-badge b:first-child { color: var(--accent, #cb2b1e); }
+.qc3d__dock-badge b + b { color: #fff; }
+@media (max-width: 760px) {
+  .qc3d__banner { padding: 80px var(--gutter) 170px; }
+  .qc3d__copy[data-banner-item] { bottom: 120px; }
+  .qc3d__dock-badge { width: 44px; height: 28px; font-size: 7px; }
+}
+/* banner item: the banner itself is the link; no separate button colliding with the dock */
+.qc3d__copy[data-banner-item] { display: none !important; }
+a.qc3d__banner { text-decoration: none; color: inherit; cursor: pointer; }
+a.qc3d__banner .nd-banner { transition: scale .4s var(--ease-out); }
+a.qc3d__banner:hover .nd-banner { scale: 1.01; }
+.qc3d__stage.is-media { z-index: 2; }
+.qc3d__dock-badge b:first-child { color: var(--campaign-accent, #cb2b1e) !important; }
+.qc3d__dock-item.is-campaign b::before { background: var(--campaign-accent, #cb2b1e) !important; }
+/* step dots sit at the screen edge so the 3D unit never slides under them on wide screens */
+@media (min-width: 761px) { .qc3d__nav { right: var(--gutter) !important; } }

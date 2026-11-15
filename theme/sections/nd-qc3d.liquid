@@ -53,7 +53,9 @@
       {%- for block in section.blocks -%}
         {%- if block.type == 'campaign' and block.settings.model == 'none' -%}
           <div class="qc3d__media" data-media="{{ forloop.index0 }}"{% if forloop.index0 != first_id %} hidden{% endif %}>
-            {%- if block.settings.video_url != blank -%}
+            {%- if block.settings.banner -%}
+              <{% if block.settings.button_url != blank %}a href="{{ block.settings.button_url }}" aria-label="{{ block.settings.button_label | default: block.settings.title | escape }}"{% else %}div{% endif %} class="qc3d__banner">{% render 'nd-banner', s: block.settings %}</{% if block.settings.button_url != blank %}a{% else %}div{% endif %}>
+            {%- elsif block.settings.video_url != blank -%}
               <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
             {%- else -%}
               {% render 'nd-media', image: block.settings.image, url: block.settings.image_url, alt: block.settings.title, loading: 'eager' %}
@@ -71,7 +73,7 @@
       {%- assign b = block.settings -%}
       {%- assign p = b.product -%}
       {%- assign more_url = b.more_url | default: p.url -%}
-      <div class="qc3d__copy" data-item="{{ forloop.index0 }}" data-kind="{{ block.type }}" data-model="{{ b.model }}"{% if forloop.index0 != first_id %} hidden{% endif %} {{ block.shopify_attributes }}>
+      <div class="qc3d__copy" data-item="{{ forloop.index0 }}" data-kind="{{ block.type }}" data-model="{{ b.model }}"{% if b.banner and b.model == 'none' %} data-banner-item{% endif %}{% if forloop.index0 != first_id %} hidden{% endif %} {{ block.shopify_attributes }}>
         {%- if block.type == 'campaign' -%}
           <article class="chapter chapter--hero" data-chapter>
             {%- if b.eyebrow != blank -%}<p class="chapter__eyebrow"><i></i>{{ b.eyebrow }}</p>{%- endif -%}
@@ -171,6 +173,7 @@
           -%}
           <button type="button" class="qc3d__dock-item{% if block.type == 'campaign' %} is-campaign{% endif %}" role="tab" data-dock-item="{{ forloop.index0 }}" aria-selected="{% if forloop.index0 == first_id %}true{% else %}false{% endif %}">
             {%- if b.thumb != blank -%}{{ b.thumb | image_url: width: 200 | image_tag: alt: '', loading: 'lazy' }}
+            {%- elsif block.type == 'campaign' and b.banner -%}{%- assign dw = b.dock_label | default: s.campaign_label | split: ' ' -%}<span class="qc3d__dock-badge" aria-hidden="true">{%- for w in dw -%}<b>{{ w }}</b>{%- endfor -%}</span>
             {%- elsif thumb != '' -%}<img class="nd-scaled" style="--s: {% case b.model %}{% when 'mini' %}0.79{% when 'nano' %}0.5{% else %}1{% endcase %}" src="{{ thumb | asset_url }}" alt="" width="96" height="60" loading="lazy">
             {%- elsif b.image_url != blank -%}<img src="{{ b.image_url | split: '?' | first }}?width=200" alt="" width="96" height="60" loading="lazy">{%- endif -%}
             <span class="qc3d__dock-text">
@@ -192,82 +195,442 @@
 {
   "name": "ND · Hero 3D + campaign",
   "settings": [
-    { "type": "text", "id": "label", "label": "Section label (screen readers)", "default": "Neural DSP" },
-    { "type": "text", "id": "dock_label", "label": "Dock label (screen readers)", "default": "表示する製品を選ぶ" },
-    { "type": "text", "id": "campaign_label", "label": "Default campaign dock label", "default": "キャンペーン" },
-    { "type": "text", "id": "tax_label", "label": "Tax label", "default": "税込" },
-    { "type": "text", "id": "buy_label", "label": "Buy button", "default": "購入する" },
-    { "type": "text", "id": "more_label", "label": "Details button", "default": "詳しく見る" },
-    { "type": "text", "id": "drag_label", "label": "Drag hint", "default": "ドラッグで回転" },
-    { "type": "text", "id": "canvas_label", "label": "3D description (screen readers)", "default": "製品の3Dモデル。左右にドラッグすると回転します。" },
-    { "type": "text", "id": "awards_label", "label": "Awards label (screen readers)", "default": "受賞歴" },
-    { "type": "text", "id": "skip_label", "label": "Skip label", "default": "スキップ" },
-    { "type": "text", "id": "skip_target", "label": "Skip to section id", "default": "plugins" }
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Section label (screen readers)",
+      "default": "Neural DSP"
+    },
+    {
+      "type": "text",
+      "id": "dock_label",
+      "label": "Dock label (screen readers)",
+      "default": "表示する製品を選ぶ"
+    },
+    {
+      "type": "text",
+      "id": "campaign_label",
+      "label": "Default campaign dock label",
+      "default": "キャンペーン"
+    },
+    {
+      "type": "text",
+      "id": "tax_label",
+      "label": "Tax label",
+      "default": "税込"
+    },
+    {
+      "type": "text",
+      "id": "buy_label",
+      "label": "Buy button",
+      "default": "購入する"
+    },
+    {
+      "type": "text",
+      "id": "more_label",
+      "label": "Details button",
+      "default": "詳しく見る"
+    },
+    {
+      "type": "text",
+      "id": "drag_label",
+      "label": "Drag hint",
+      "default": "ドラッグで回転"
+    },
+    {
+      "type": "text",
+      "id": "canvas_label",
+      "label": "3D description (screen readers)",
+      "default": "製品の3Dモデル。左右にドラッグすると回転します。"
+    },
+    {
+      "type": "text",
+      "id": "awards_label",
+      "label": "Awards label (screen readers)",
+      "default": "受賞歴"
+    },
+    {
+      "type": "text",
+      "id": "skip_label",
+      "label": "Skip label",
+      "default": "スキップ"
+    },
+    {
+      "type": "text",
+      "id": "skip_target",
+      "label": "Skip to section id",
+      "default": "plugins"
+    }
   ],
   "blocks": [
     {
       "type": "campaign",
       "name": "Campaign",
       "settings": [
-        { "type": "checkbox", "id": "enabled", "label": "Show this campaign", "default": false, "info": "Off: the hero opens on Quad Cortex. Turn on (and set dates) for the yearly campaign." },
-        { "type": "checkbox", "id": "follow_site", "label": "Show during the site campaign", "default": false, "info": "On: appears and disappears with Theme settings → Colours → campaign (same switch and dates)." },
-        { "type": "text", "id": "start_date", "label": "Start date (YYYY-MM-DD, optional)" },
-        { "type": "text", "id": "end_date", "label": "End date (YYYY-MM-DD, optional)" },
-        { "type": "text", "id": "dock_label", "label": "Dock label", "default": "キャンペーン" },
-        { "type": "text", "id": "dock_sub", "label": "Dock sub text" },
-        { "type": "select", "id": "model", "label": "Visual", "default": "mini", "options": [
-          { "value": "qc", "label": "3D Quad Cortex" }, { "value": "mini", "label": "3D Quad Cortex mini" }, { "value": "nano", "label": "3D Nano Cortex" }, { "value": "none", "label": "Banner photo or video" }
-        ] },
-        { "type": "image_picker", "id": "image", "label": "Photo (when Visual = photo or video)" },
-        { "type": "text", "id": "image_url", "label": "Photo URL" },
-        { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
-        { "type": "image_picker", "id": "thumb", "label": "Dock thumbnail (optional)" },
-        { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
-        { "type": "textarea", "id": "title", "label": "Title" },
-        { "type": "text", "id": "lead", "label": "Lead" },
-        { "type": "textarea", "id": "body", "label": "Body" },
-        { "type": "text", "id": "button_label", "label": "Button" },
-        { "type": "text", "id": "button_url", "label": "Button URL" },
-        { "type": "text", "id": "button2_label", "label": "Second button" },
-        { "type": "text", "id": "button2_url", "label": "Second button URL" },
-        { "type": "text", "id": "note", "label": "Small print" }
+        {
+          "type": "checkbox",
+          "id": "enabled",
+          "label": "Show this campaign",
+          "default": false,
+          "info": "Off: the hero opens on Quad Cortex. Turn on (and set dates) for the yearly campaign."
+        },
+        {
+          "type": "checkbox",
+          "id": "follow_site",
+          "label": "Show during the site campaign",
+          "default": false,
+          "info": "On: appears and disappears with Theme settings → Colours → campaign (same switch and dates)."
+        },
+        {
+          "type": "text",
+          "id": "start_date",
+          "label": "Start date (YYYY-MM-DD, optional)"
+        },
+        {
+          "type": "text",
+          "id": "end_date",
+          "label": "End date (YYYY-MM-DD, optional)"
+        },
+        {
+          "type": "text",
+          "id": "dock_label",
+          "label": "Dock label",
+          "default": "キャンペーン"
+        },
+        {
+          "type": "text",
+          "id": "dock_sub",
+          "label": "Dock sub text"
+        },
+        {
+          "type": "select",
+          "id": "model",
+          "label": "Visual",
+          "default": "mini",
+          "options": [
+            {
+              "value": "qc",
+              "label": "3D Quad Cortex"
+            },
+            {
+              "value": "mini",
+              "label": "3D Quad Cortex mini"
+            },
+            {
+              "value": "nano",
+              "label": "3D Nano Cortex"
+            },
+            {
+              "value": "none",
+              "label": "Banner photo or video"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Photo (when Visual = photo or video)"
+        },
+        {
+          "type": "text",
+          "id": "image_url",
+          "label": "Photo URL"
+        },
+        {
+          "type": "text",
+          "id": "video_url",
+          "label": "Video URL (mp4)"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumb",
+          "label": "Dock thumbnail (optional)"
+        },
+        {
+          "type": "text",
+          "id": "eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "lead",
+          "label": "Lead"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "text",
+          "id": "button2_label",
+          "label": "Second button"
+        },
+        {
+          "type": "text",
+          "id": "button2_url",
+          "label": "Second button URL"
+        },
+        {
+          "type": "text",
+          "id": "note",
+          "label": "Small print"
+        },
+        {
+          "type": "header",
+          "content": "Animated banner (Visual = Banner photo or video)"
+        },
+        {
+          "type": "checkbox",
+          "id": "banner",
+          "label": "Show as an animated banner",
+          "default": false,
+          "info": "Fills the hero with the banner; upload the finished banner as one image, or build it from the layer fields below."
+        },
+        {
+          "type": "text",
+          "id": "mobile_image_url",
+          "label": "Phone banner URL (optional, 4:5)"
+        },
+        {
+          "type": "text",
+          "id": "layer_bg",
+          "label": "Layer: background image URL (empty = animated waves)"
+        },
+        {
+          "type": "text",
+          "id": "layer_product",
+          "label": "Layer: product cut-out (URL or theme asset)"
+        },
+        {
+          "type": "textarea",
+          "id": "title_text",
+          "label": "Layer: title (one line per row)"
+        },
+        {
+          "type": "text",
+          "id": "script_text",
+          "label": "Layer: script word"
+        },
+        {
+          "type": "text",
+          "id": "ribbon_text",
+          "label": "Layer: ribbon (e.g. dates)"
+        },
+        {
+          "type": "textarea",
+          "id": "body_text",
+          "label": "Layer: text"
+        },
+        {
+          "type": "text",
+          "id": "layer_extra",
+          "label": "Layer: extra cut-out URL"
+        },
+        {
+          "type": "select",
+          "id": "motion",
+          "label": "Motion",
+          "default": "calm",
+          "options": [
+            {
+              "value": "calm",
+              "label": "Slow push-in + light sheen"
+            },
+            {
+              "value": "zoom",
+              "label": "Slow push-in"
+            },
+            {
+              "value": "sheen",
+              "label": "Light sheen only"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ]
+        },
+        {
+          "type": "checkbox",
+          "id": "glow",
+          "label": "Accent glow",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "parallax",
+          "label": "Follow the mouse (depth)",
+          "default": true
+        }
       ]
     },
     {
       "type": "product",
       "name": "Product 3D story",
       "settings": [
-        { "type": "product", "id": "product", "label": "Product" },
-        { "type": "select", "id": "model", "label": "3D model", "default": "qc", "options": [
-          { "value": "qc", "label": "Quad Cortex" }, { "value": "mini", "label": "Quad Cortex mini" }, { "value": "nano", "label": "Nano Cortex" }
-        ] },
-        { "type": "text", "id": "more_url", "label": "Details link (defaults to the product page)" },
-        { "type": "image_picker", "id": "thumb", "label": "Dock thumbnail (optional; defaults to the render)" },
-        { "type": "header", "content": "00 · Overview" },
-        { "type": "text", "id": "c0_eyebrow", "label": "Eyebrow" },
-        { "type": "textarea", "id": "c0_title", "label": "Title" },
-        { "type": "text", "id": "c0_lead", "label": "Lead" },
-        { "type": "textarea", "id": "c0_body", "label": "Body" },
-        { "type": "text", "id": "c0_link_label", "label": "Text link" },
-        { "type": "text", "id": "c0_link_url", "label": "Text link URL" },
-        { "type": "header", "content": "01–03" },
-        { "type": "text", "id": "c1_label", "label": "01 label" },
-        { "type": "textarea", "id": "c1_title", "label": "01 title" },
-        { "type": "html", "id": "c1_body", "label": "01 body (HTML)" },
-        { "type": "text", "id": "c2_label", "label": "02 label" },
-        { "type": "textarea", "id": "c2_title", "label": "02 title" },
-        { "type": "html", "id": "c2_body", "label": "02 body (HTML)" },
-        { "type": "text", "id": "c3_label", "label": "03 label" },
-        { "type": "textarea", "id": "c3_title", "label": "03 title" },
-        { "type": "html", "id": "c3_body", "label": "03 body (HTML)" },
-        { "type": "header", "content": "04 · Choose" },
-        { "type": "text", "id": "c4_label", "label": "Label", "default": "選ぶ" },
-        { "type": "textarea", "id": "awards", "label": "Awards (shown on the last screen)", "info": "One per line: badge image URL|line 1|line 2. A line with only an image (or asset:file.webp) shows as one wide strip." },
-        { "type": "textarea", "id": "c4_body", "label": "Body" }
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "select",
+          "id": "model",
+          "label": "3D model",
+          "default": "qc",
+          "options": [
+            {
+              "value": "qc",
+              "label": "Quad Cortex"
+            },
+            {
+              "value": "mini",
+              "label": "Quad Cortex mini"
+            },
+            {
+              "value": "nano",
+              "label": "Nano Cortex"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "more_url",
+          "label": "Details link (defaults to the product page)"
+        },
+        {
+          "type": "image_picker",
+          "id": "thumb",
+          "label": "Dock thumbnail (optional; defaults to the render)"
+        },
+        {
+          "type": "header",
+          "content": "00 · Overview"
+        },
+        {
+          "type": "text",
+          "id": "c0_eyebrow",
+          "label": "Eyebrow"
+        },
+        {
+          "type": "textarea",
+          "id": "c0_title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "c0_lead",
+          "label": "Lead"
+        },
+        {
+          "type": "textarea",
+          "id": "c0_body",
+          "label": "Body"
+        },
+        {
+          "type": "text",
+          "id": "c0_link_label",
+          "label": "Text link"
+        },
+        {
+          "type": "text",
+          "id": "c0_link_url",
+          "label": "Text link URL"
+        },
+        {
+          "type": "header",
+          "content": "01–03"
+        },
+        {
+          "type": "text",
+          "id": "c1_label",
+          "label": "01 label"
+        },
+        {
+          "type": "textarea",
+          "id": "c1_title",
+          "label": "01 title"
+        },
+        {
+          "type": "html",
+          "id": "c1_body",
+          "label": "01 body (HTML)"
+        },
+        {
+          "type": "text",
+          "id": "c2_label",
+          "label": "02 label"
+        },
+        {
+          "type": "textarea",
+          "id": "c2_title",
+          "label": "02 title"
+        },
+        {
+          "type": "html",
+          "id": "c2_body",
+          "label": "02 body (HTML)"
+        },
+        {
+          "type": "text",
+          "id": "c3_label",
+          "label": "03 label"
+        },
+        {
+          "type": "textarea",
+          "id": "c3_title",
+          "label": "03 title"
+        },
+        {
+          "type": "html",
+          "id": "c3_body",
+          "label": "03 body (HTML)"
+        },
+        {
+          "type": "header",
+          "content": "04 · Choose"
+        },
+        {
+          "type": "text",
+          "id": "c4_label",
+          "label": "Label",
+          "default": "選ぶ"
+        },
+        {
+          "type": "textarea",
+          "id": "awards",
+          "label": "Awards (shown on the last screen)",
+          "info": "One per line: badge image URL|line 1|line 2. A line with only an image (or asset:file.webp) shows as one wide strip."
+        },
+        {
+          "type": "textarea",
+          "id": "c4_body",
+          "label": "Body"
+        }
       ]
     }
   ],
   "max_blocks": 6,
-  "presets": [{ "name": "ND · Hero 3D + campaign" }]
+  "presets": [
+    {
+      "name": "ND · Hero 3D + campaign"
+    }
+  ]
 }
 {% endschema %}

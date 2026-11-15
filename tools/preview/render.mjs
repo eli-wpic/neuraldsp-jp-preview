@@ -170,7 +170,7 @@ async function renderPage(tplName, outFile, extra = {}) {
     localization: { available_countries: [], available_languages: [] },
     settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip: true, campaign_strip_text: '開催日程は近日公開', campaign_countdown: true, campaign_countdown_label: '終了まで', campaign_end: '2026-12-01', campaign_strip_bg: '#111111', campaign_glow: 14, campaign_grain: true }, linklists, collections, blogs, all_products: products,
     template: { name: tplName.split('.')[0], suffix: tplName.split('.')[1] || '' },
-    canonical_url: '/', page_title: extra.title || 'Neural DSP Japan', ...extra,
+    canonical_url: '/', current_page: 1, page_title: extra.title || 'Neural DSP Japan', ...extra,
   };
   let main = '';
   for (const id of tpl.order) main += await renderSection(id, tpl.sections[id], globals);

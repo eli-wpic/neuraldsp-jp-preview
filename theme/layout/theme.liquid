@@ -9,7 +9,7 @@
   {%- if settings.favicon != blank -%}
     <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 64, height: 64 }}">
   {%- endif -%}
-  <title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
+  <title>{{ page_title }}{% if current_tags %} &ndash; {{ current_tags | join: ', ' }}{% endif %}{% if current_page and current_page != 1 %} &ndash; {{ 'general.page' | t: page: current_page }}{% endif %}{% unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless %}</title>
   {%- if page_description -%}<meta name="description" content="{{ page_description | escape }}">{%- endif -%}
   {% render 'meta-tags' %}
 
@@ -49,6 +49,7 @@
       html[data-scheme="campaign"] body { background: {{ settings.campaign_bg }}{% if cbg != blank %} url("{{ cbg }}") center top / cover fixed{% endif %}; }
       html[data-scheme="campaign"] { --campaign-glow: color-mix(in srgb, {{ settings.campaign_accent }} {{ settings.campaign_glow | default: 14 }}%, transparent); --strip-bg: {{ settings.campaign_strip_bg | default: '#111111' }}; }
       {%- if settings.campaign_grain %}html[data-scheme="campaign"] body::before { content: ""; position: fixed; inset: 0; z-index: 9999; pointer-events: none; opacity: .07; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }{% endif %}
+      :root { --campaign-accent: {{ settings.campaign_accent }}; }
       .nd-colorbar button[data-scheme-set="campaign"] i { background: {{ settings.campaign_accent }}; }
     </style>
   {%- endif -%}
