@@ -64,7 +64,7 @@ const linklists = {
 };
 
 /* ---------- engine ---------- */
-const engine = new Liquid({ root: [path.join(THEME, 'snippets')], extname: '.liquid', strictFilters: false, strictVariables: false, jsTruthy: false, globals: { settings: { video_files: process.env.VIDEO_FILES || '' } } }); // settings are global in Shopify, also inside {% render %}
+const engine = new Liquid({ root: [path.join(THEME, 'snippets')], extname: '.liquid', strictFilters: false, strictVariables: false, jsTruthy: false, globals: { settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#ff3b30', campaign_accent_text: '#ffffff' } } }); // settings are global in Shopify, also inside {% render %}
 const yen = (c) => '¥' + Math.round(Number(c || 0) / 100).toLocaleString('ja-JP');
 const kw = (args) => Object.fromEntries(args.filter(Array.isArray));
 const imgSrc = (o, w) => {
@@ -168,7 +168,7 @@ async function renderPage(tplName, outFile, extra = {}) {
     request: { host: 'localhost', locale: { iso_code: 'ja' }, page_type: tplName.split('.')[0] },
     cart: { item_count: 0, currency: { iso_code: 'JPY' } },
     localization: { available_countries: [], available_languages: [] },
-    settings: { video_files: process.env.VIDEO_FILES || '' }, linklists, collections, blogs, all_products: products,
+    settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#ff3b30', campaign_accent_text: '#ffffff' }, linklists, collections, blogs, all_products: products,
     template: { name: tplName.split('.')[0], suffix: tplName.split('.')[1] || '' },
     canonical_url: '/', page_title: extra.title || 'Neural DSP Japan', ...extra,
   };

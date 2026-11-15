@@ -18,6 +18,104 @@
     ]
   },
   {
+    "name": "Colours",
+    "settings": [
+      {
+        "type": "select",
+        "id": "color_scheme",
+        "label": "Site colour",
+        "default": "dark",
+        "options": [
+          {
+            "value": "dark",
+            "label": "Dark"
+          },
+          {
+            "value": "light",
+            "label": "White"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "color_bar",
+        "label": "Show the colour bar at the top",
+        "default": true,
+        "info": "Lets visitors switch between dark and white. Turn off to lock the site to the colour above."
+      },
+      {
+        "type": "header",
+        "content": "Campaign colours (e.g. Black Friday)"
+      },
+      {
+        "type": "paragraph",
+        "content": "A third colour scheme for seasonal campaigns. Between the start and end dates it becomes the default, and the colour bar gains a campaign button. Outside the dates it disappears."
+      },
+      {
+        "type": "checkbox",
+        "id": "campaign_on",
+        "label": "Use the campaign colours",
+        "default": false
+      },
+      {
+        "type": "text",
+        "id": "campaign_label",
+        "label": "Campaign name (colour bar)",
+        "default": "BLACK FRIDAY"
+      },
+      {
+        "type": "text",
+        "id": "campaign_start",
+        "label": "Start date (YYYY-MM-DD)"
+      },
+      {
+        "type": "text",
+        "id": "campaign_end",
+        "label": "End date (YYYY-MM-DD)"
+      },
+      {
+        "type": "color",
+        "id": "campaign_bg",
+        "label": "Background",
+        "default": "#050505"
+      },
+      {
+        "type": "color",
+        "id": "campaign_surface",
+        "label": "Cards and panels",
+        "default": "#141414"
+      },
+      {
+        "type": "color",
+        "id": "campaign_text",
+        "label": "Text",
+        "default": "#ffffff"
+      },
+      {
+        "type": "color",
+        "id": "campaign_accent",
+        "label": "Accent (buttons, highlights)",
+        "default": "#ff3b30"
+      },
+      {
+        "type": "color",
+        "id": "campaign_accent_text",
+        "label": "Text on accent",
+        "default": "#ffffff"
+      },
+      {
+        "type": "image_picker",
+        "id": "campaign_bg_image",
+        "label": "Background image (optional)"
+      },
+      {
+        "type": "text",
+        "id": "campaign_bg_image_url",
+        "label": "Background image URL (optional)"
+      }
+    ]
+  },
+  {
     "name": "Videos",
     "settings": [
       {

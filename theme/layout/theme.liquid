@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}" class="no-js">
+<html lang="{{ request.locale.iso_code }}" class="no-js" data-scheme="{{ settings.color_scheme | default: 'dark' }}">
 <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
 <head>
   <meta charset="utf-8">
@@ -17,6 +17,38 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,900&family=IBM+Plex+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+  {%- liquid
+    assign today = 'now' | date: '%Y-%m-%d'
+    assign campaign_live = false
+    if settings.campaign_on
+      assign campaign_live = true
+      if settings.campaign_start != blank and today < settings.campaign_start
+        assign campaign_live = false
+      endif
+      if settings.campaign_end != blank and today > settings.campaign_end
+        assign campaign_live = false
+      endif
+    endif
+  -%}
+  {%- if campaign_live -%}
+    {%- capture cbg -%}{%- if settings.campaign_bg_image != blank -%}{{ settings.campaign_bg_image | image_url: width: 2400 }}{%- elsif settings.campaign_bg_image_url != blank -%}{{ settings.campaign_bg_image_url }}{%- endif -%}{%- endcapture -%}
+    <style>
+      html[data-scheme="campaign"] {
+        --bg: {{ settings.campaign_bg }}; --bg-raised: {{ settings.campaign_surface }}; --bg-panel: {{ settings.campaign_surface }}; --bg-inset: {{ settings.campaign_bg }};
+        --text: {{ settings.campaign_text }}; --text-hi: {{ settings.campaign_text }};
+        --text-2: color-mix(in srgb, {{ settings.campaign_text }} 72%, {{ settings.campaign_bg }}); --text-3: color-mix(in srgb, {{ settings.campaign_text }} 52%, {{ settings.campaign_bg }});
+        --line: color-mix(in srgb, {{ settings.campaign_text }} 14%, {{ settings.campaign_bg }}); --line-strong: color-mix(in srgb, {{ settings.campaign_text }} 26%, {{ settings.campaign_bg }});
+        --accent: {{ settings.campaign_accent }}; --accent-soft: color-mix(in srgb, {{ settings.campaign_accent }} 16%, transparent);
+        --paper: {{ settings.campaign_accent }}; --on-paper: {{ settings.campaign_accent_text }};
+        --btn1-bg: {{ settings.campaign_accent }}; --btn1-fg: {{ settings.campaign_accent_text }}; --btn1-hover: color-mix(in srgb, {{ settings.campaign_accent }} 85%, #fff);
+        --btn2-bg: color-mix(in srgb, {{ settings.campaign_text }} 18%, {{ settings.campaign_bg }}); --btn2-fg: {{ settings.campaign_text }}; --btn2-hover: color-mix(in srgb, {{ settings.campaign_text }} 26%, {{ settings.campaign_bg }});
+        color-scheme: dark;
+      }
+      html[data-scheme="campaign"] body { background: {{ settings.campaign_bg }}{% if cbg != blank %} url("{{ cbg }}") center top / cover fixed{% endif %}; }
+      .nd-colorbar button[data-scheme-set="campaign"] i { background: {{ settings.campaign_accent }}; }
+    </style>
+  {%- endif -%}
+  {%- if settings.color_bar or campaign_live -%}<script>(function(){var h=document.documentElement,live={{ campaign_live | json }};if(live)h.dataset.scheme='campaign';{% if settings.color_bar %}try{var s=localStorage.getItem('nd-scheme');if(s==='light'||s==='dark'||(s==='campaign'&&live))h.dataset.scheme=s}catch(e){}{% endif %}h.dataset.campaign=live?'live':''})()</script>{%- endif -%}
   {{ 'nd-base.css' | asset_url | stylesheet_tag }}
   {{ 'nd-sections.css' | asset_url | stylesheet_tag }}
   {{ 'nd-home.css' | asset_url | stylesheet_tag }}
@@ -36,6 +68,15 @@
   {{ content_for_header }}
 </head>
 <body class="template-{{ template | handleize }}">
+  {%- if settings.color_bar -%}
+    <div class="nd-colorbar" role="group" aria-label="サイトの色">
+      <span>カラー</span>
+      <button type="button" data-scheme-set="dark" aria-pressed="false"><i aria-hidden="true"></i>ダーク</button>
+      <button type="button" data-scheme-set="light" aria-pressed="false"><i aria-hidden="true"></i>ホワイト</button>
+      {%- if campaign_live -%}<button type="button" data-scheme-set="campaign" aria-pressed="false"><i aria-hidden="true"></i>{{ settings.campaign_label | default: 'CAMPAIGN' }}</button>{%- endif -%}
+    </div>
+    <script>(function(){var h=document.documentElement,b=document.querySelectorAll('[data-scheme-set]');function sync(){b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.schemeSet===h.dataset.scheme)})}b.forEach(function(x){x.addEventListener('click',function(){h.dataset.scheme=x.dataset.schemeSet;try{localStorage.setItem('nd-scheme',x.dataset.schemeSet)}catch(e){}sync();document.dispatchEvent(new CustomEvent('nd:scheme'))})});sync()})();</script>
+  {%- endif -%}
   <a class="visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
   {% sections 'header-group' %}
   <main id="MainContent" role="main" tabindex="-1">
