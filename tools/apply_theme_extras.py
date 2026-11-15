@@ -773,3 +773,31 @@ if cb:
     cb['settings'].update(image_asset='campaign-banner-demo.jpg')
 save('index', head, d)
 print('round 21 ok')
+
+# ---- round 22 (QA pass): Japanese copy cleanup on every template ----
+# no half-width space between digits and Japanese ("1 つ" -> "1つ"), so lines don't break between them;
+# "<br/><br/>" paragraph gaps in product copy become real paragraphs (spacing then follows the type scale).
+JA = '　-ヿ㐀-鿿＀-￯'
+_r1 = re.compile(r'(?<=[0-9]) (?=[' + JA + '])'); _r2 = re.compile(r'(?<=[' + JA + ']) (?=[0-9])')
+_br = re.compile(r'(?:<br ?/?>\s*){2,}')
+def _clean(v, prod):
+    if isinstance(v, str):
+        v = _r2.sub('', _r1.sub('', v))
+        if prod and '<p>' in v: v = _br.sub('</p><p>', v)
+        return v
+    if isinstance(v, list): return [_clean(x, prod) for x in v]
+    if isinstance(v, dict): return {k: _clean(x, prod) for k, x in v.items()}
+    return v
+for path in sorted(T.glob('*.json')):
+    name = path.stem
+    head, d = load(name)
+    d2 = _clean(d, name.startswith('product.') or name == 'index')
+    if d2 != d: save(name, head, d2)
+print('round 22 ok')
+
+# ---- round 23: the real Black Friday key visual (KV-5-5.png from the team), used exactly as supplied ----
+head, d = load('index')
+for blk in (d['sections']['qc3d']['blocks'].get('bf'), d['sections'].get('campaign_banner')):
+    if blk: blk['settings']['image_asset'] = 'campaign-banner-bf.png'; blk['settings'].setdefault('alt', 'BLACK FRIDAY Sale 11.20 - 12.03')
+save('index', head, d)
+print('round 23 ok')

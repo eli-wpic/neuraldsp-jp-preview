@@ -404,3 +404,10 @@
 .buy__desc { line-height: 1.9; }
 .buy__desc-inner { max-height: 5.7em; max-height: 3lh; -webkit-mask-image: none; mask-image: none; }
 .buy__desc-inner > :first-child { margin-top: 0; }
+
+/* QA pass: the view tabs scroll sideways instead of cutting off the last tab; the "listen" link wraps as one piece */
+.pdp-3d__views { max-width: 100%; overflow-x: auto; scrollbar-width: none; overscroll-behavior-x: contain; }
+.pdp-3d__views::-webkit-scrollbar { display: none; }
+.pdp-3d__views > * { flex: none; }
+.picker-note { flex-wrap: wrap; column-gap: 16px; row-gap: 6px; }
+.picker-note a { white-space: nowrap; }

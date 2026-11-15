@@ -10,7 +10,7 @@
     {%- if s.image != blank or s.image_url != blank -%}
       {% render 'nd-media', image: s.image, url: s.image_url, alt: s.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1400px' %}
     {%- elsif s.image_asset != blank -%}
-      <img src="{{ s.image_asset | asset_url }}" alt="{{ s.alt | escape }}" width="1600" height="900" loading="eager">
+      <img src="{{ s.image_asset | asset_url }}" alt="{{ s.alt | escape }}" width="1920" height="1080" loading="eager">
     {%- endif -%}
   </picture>
   <i class="nd-banner__fx nd-banner__glow" aria-hidden="true"></i>

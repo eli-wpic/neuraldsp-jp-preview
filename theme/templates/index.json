@@ -28,7 +28,7 @@
             "c0_body": "Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。",
             "c1_label": "タッチスクリーン",
             "c1_title": "モデラーの新たな\n可能性を切り拓く",
-            "c1_body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
+            "c1_body": "<p>巨大な7インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
             "c2_label": "フットスイッチ",
             "c2_title": "11基のステンレス製\nストンプ＋ロータリー\nアクチュエーター",
             "c2_body": "<p>スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。</p>",
@@ -59,7 +59,7 @@
             "c2_body": "<p>7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。</p>",
             "c3_label": "入力と出力",
             "c3_title": "シンプルな接続。\n自由なセットアップ。",
-            "c3_body": "<ul class=\"chapter__list\"><li><b>INPUT 2 / CAPTURE INPUT</b>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。</li><li><b>DUAL EFFECTS LOOPS</b>SEND 1/2 および RETURN 1/2 は、それぞれ 1/4インチ TRS 端子を共有しています。</li><li><b>XLR OUTPUTS</b>2系統のモノラル・バランスXLR出力。</li><li><b>USB-C</b>マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。</li></ul>",
+            "c3_body": "<ul class=\"chapter__list\"><li><b>INPUT 2 / CAPTURE INPUT</b>専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。</li><li><b>DUAL EFFECTS LOOPS</b>SEND 1/2および RETURN 1/2は、それぞれ1/4インチ TRS 端子を共有しています。</li><li><b>XLR OUTPUTS</b>2系統のモノラル・バランスXLR出力。</li><li><b>USB-C</b>マルチチャンネル（8イン／8アウト）USBオーディオインターフェースとして使用可能。</li></ul>",
             "c4_label": "選ぶ",
             "c4_body": "小さなボディ。大きなサウンド。"
           }
@@ -101,12 +101,13 @@
             "button_label": "キャンペーン対象を見る",
             "button_url": "/collections/all",
             "banner": true,
-            "image_asset": "campaign-banner-demo.jpg",
+            "image_asset": "campaign-banner-bf.png",
             "fx_sheen": true,
             "fx_glow": true,
             "fx_sparks": true,
             "fx_grain": false,
-            "fx_push": false
+            "fx_push": false,
+            "alt": "BLACK FRIDAY Sale 11.20 - 12.03"
           }
         }
       },
@@ -425,7 +426,7 @@
         "full_width": false,
         "alt": "BLACK FRIDAY Sale",
         "url": "/collections/all",
-        "image_asset": "campaign-banner-demo.jpg"
+        "image_asset": "campaign-banner-bf.png"
       },
       "disabled": true
     }

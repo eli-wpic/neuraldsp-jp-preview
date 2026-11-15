@@ -114,14 +114,14 @@
           "type": "column",
           "settings": {
             "title": "Windows最小動作環境",
-            "text": "<p>Intel Core i3 プロセッサ（i3-4130 / i5-2500以上）</p><p>AMD クアッドコアプロセッサ（R5 2200G以上）</p><p>RAM 8GB以上</p><p>Windows 10以上</p><p>※ Cortex Controlの動作には最新のCorOSおよびWindows USBオーディオドライバーが必要です。</p>"
+            "text": "<p>Intel Core i3プロセッサ（i3-4130 / i5-2500以上）</p><p>AMD クアッドコアプロセッサ（R5 2200G以上）</p><p>RAM 8GB以上</p><p>Windows 10以上</p><p>※ Cortex Controlの動作には最新のCorOSおよびWindows USBオーディオドライバーが必要です。</p>"
           }
         },
         "column_1": {
           "type": "column",
           "settings": {
             "title": "macOS最小動作環境",
-            "text": "<p>Intel Core i3 プロセッサ（i3-4130 / i5-2500以上）</p><p>または Apple Silicon（M1以上）</p><p>RAM 8GB以上</p><p>macOS 11 Big Sur以上</p><p>※ Cortex Controlの動作には最新のCorOSが必要です。</p>"
+            "text": "<p>Intel Core i3プロセッサ（i3-4130 / i5-2500以上）</p><p>または Apple Silicon（M1以上）</p><p>RAM 8GB以上</p><p>macOS 11 Big Sur以上</p><p>※ Cortex Controlの動作には最新のCorOSが必要です。</p>"
           }
         }
       },

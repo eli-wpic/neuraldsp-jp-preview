@@ -260,14 +260,23 @@ function tagSections(root = document) {
   secs.forEach((s, i) => {
     if (i === 0 && root === document) return; // the hero is already on screen
     const el = s.firstElementChild;
-    if (el && !el.matches('[data-qc3d], .pdp-wrap, script, style') && !el.classList.contains('reveal')) el.classList.add('reveal');
+    if (!el || el.matches('[data-qc3d], .pdp-wrap, script, style') || el.classList.contains('reveal')) return;
+    // already on screen at load: show it as-is (no fade-out-then-in flicker)
+    if (root === document && el.getBoundingClientRect().top < innerHeight) el.classList.add('reveal', 'is-in');
+    else el.classList.add('reveal');
   });
 }
 export function observeReveal(root = document) {
   const els = root.querySelectorAll('.reveal:not(.is-in)');
   if (reducedMotion() || !('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('is-in')); return; }
-  const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  const show = (el) => { el.classList.add('is-in'); io.unobserve(el); };
+  const io = new IntersectionObserver((entries) => entries.forEach((en) => { if (en.isIntersecting) show(en.target); }), { rootMargin: '0px 0px -8% 0px' });
   els.forEach((el) => io.observe(el));
+  // safety net: anything already scrolled past (fast scroll, anchor jump, End key) is shown, so content never stays hidden
+  let queued = false;
+  const sweep = () => { queued = false; root.querySelectorAll('.reveal:not(.is-in)').forEach((el) => { if (el.getBoundingClientRect().top < innerHeight) show(el); }); };
+  addEventListener('scroll', () => { if (!queued) { queued = true; requestAnimationFrame(sweep); } }, { passive: true });
+  addEventListener('load', sweep);
 }
 
 export function readJSON(el) {
@@ -287,6 +296,7 @@ initFaqMore();
 initFaqSearch();
 initAccordions();
 initHeroFilm();
+initDarkPhotos();
 tagSections();
 observeReveal();
 document.addEventListener('shopify:section:load', (e) => { initAccordions(e.target); observeReveal(e.target); });
@@ -304,4 +314,35 @@ function initBanners() {
     b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); b.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3)); b.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3)); });
     b.addEventListener('pointerleave', () => { b.style.setProperty('--px', 0); b.style.setProperty('--py', 0); });
   });
+}
+
+/* Dark photos in the white/campaign schemes: a section whose photo has a dark background becomes a black band,
+   so a black studio shot never floats in white. Reads the photo's outer edge once it has loaded (transparent = light). */
+function initDarkPhotos() {
+  const SEC = '.nd-feature, .nd-numbered, .nd-update, .nd-capv';
+  const html = document.documentElement;
+  const apply = (sec) => sec.classList.toggle('is-dark-photo', sec.dataset.photoTone === 'dark' && html.dataset.scheme !== 'dark');
+  const edge = (src) => {
+    const cv = document.createElement('canvas'); cv.width = cv.height = 24; // fresh canvas each time: one cross-origin draw taints it for good
+    const cx = cv.getContext('2d', { willReadFrequently: true }); cx.drawImage(src, 0, 0, 24, 24);
+    const d = cx.getImageData(0, 0, 24, 24).data; let sum = 0, n = 0;
+    for (let y = 0; y < 24; y++) for (let x = 0; x < 24; x++) {
+      if (x > 1 && x < 22 && y > 1 && y < 22) continue;
+      const i = (y * 24 + x) * 4; sum += d[i + 3] < 200 ? 255 : 0.2126 * d[i] + 0.7152 * d[i + 1] + 0.0722 * d[i + 2]; n++;
+    }
+    return sum / n < 56 ? 'dark' : 'light';
+  };
+  const test = (img, sec) => {
+    try { sec.dataset.photoTone = edge(img); apply(sec); return; } catch (e) { /* other-origin photo: read a small CORS copy */ }
+    const u = (img.currentSrc || img.src).split('?')[0];
+    fetch(/\/cdn\/shop\/|cdn\.shopify\.com/.test(u) ? u + '?width=64' : (img.currentSrc || img.src), { mode: 'cors' })
+      .then((r) => r.blob()).then((b) => createImageBitmap(b)).then((bmp) => { sec.dataset.photoTone = edge(bmp); apply(sec); }).catch(() => {});
+  };
+  document.querySelectorAll('main :is(.nd-feature__media, .nd-numbered__frame, .nd-update__media) img').forEach((img) => {
+    const sec = img.closest(SEC);
+    if (!sec || sec.matches('.nd-band--dark, .nd-band--card, .nd-feature--clip') || sec.dataset.photoTone) return;
+    sec.dataset.photoTone = 'pending';
+    if (img.complete && img.naturalWidth) test(img, sec); else img.addEventListener('load', () => test(img, sec), { once: true });
+  });
+  new MutationObserver(() => document.querySelectorAll('[data-photo-tone]').forEach(apply)).observe(html, { attributes: true, attributeFilter: ['data-scheme'] });
 }

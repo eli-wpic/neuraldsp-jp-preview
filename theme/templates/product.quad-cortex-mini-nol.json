@@ -40,7 +40,7 @@
       "settings": {
         "style": "popup",
         "heading": "メルマガに登録する",
-        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の20%OFF クーポン】</strong> をメールでお送りします。</p>",
         "tags": "newsletter, popup-product",
         "submit": "登録する",
         "popup_button": "メルマガに登録する"

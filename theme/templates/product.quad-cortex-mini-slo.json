@@ -40,7 +40,7 @@
       "settings": {
         "style": "popup",
         "heading": "メルマガに登録する",
-        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の20%OFF クーポン】</strong> をメールでお送りします。</p>",
         "tags": "newsletter, popup-product",
         "submit": "登録する",
         "popup_button": "メルマガに登録する"
@@ -55,7 +55,7 @@
         "heading": "Soldano SLO-100 Xについて",
         "button_label": "詳しく見る",
         "button_url": "https://neuraldsp.com/plugins/soldano-slo-100",
-        "body": "<p>ギターアンプの歴史において、Soldano SLO-100 ほど深い敬意と畏敬を集める名は多くありません。Mike Soldano が生み出した独自の回路設計は、SLO-100 を単なるアイコンにしただけでなく、現代音楽において今なお広く使われている “アメリカン・ハイゲイン・サウンド” の源流そのものとなりました。</p><p>この卓越したアンプのあらゆるニュアンスを再現することは、非常に大きな責任であり、私たちも慎重に取り組みました。そして 2021年、Soldano SLO-100 プラグインが誕生しました。</p><p>そして 2024年、私たちはこの“トーンの巨人”を再び見つめ直し、最新かつ最高峰のプラグイン技術でアップデートできることを嬉しく思います。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Soldano SLO-100 X</strong></p>"
+        "body": "<p>ギターアンプの歴史において、Soldano SLO-100ほど深い敬意と畏敬を集める名は多くありません。Mike Soldano が生み出した独自の回路設計は、SLO-100を単なるアイコンにしただけでなく、現代音楽において今なお広く使われている “アメリカン・ハイゲイン・サウンド” の源流そのものとなりました。</p><p>この卓越したアンプのあらゆるニュアンスを再現することは、非常に大きな責任であり、私たちも慎重に取り組みました。そして2021年、Soldano SLO-100プラグインが誕生しました。</p><p>そして2024年、私たちはこの“トーンの巨人”を再び見つめ直し、最新かつ最高峰のプラグイン技術でアップデートできることを嬉しく思います。</p><p>私たちは誇りをもってご紹介します。</p><p><strong>Soldano SLO-100 X</strong></p>"
       }
     },
     "custom_liquid_video_yt": {

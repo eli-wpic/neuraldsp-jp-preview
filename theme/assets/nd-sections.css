@@ -625,7 +625,7 @@ img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; mar
 .nd-versus__img img, .vs__img img { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain; }
 
 /* ===== firmware update block (neuraldsp.com: badge, centred title, video + what's new) ===== */
-.nd-update { padding: clamp(56px, 7vw, 104px) 0; background: radial-gradient(70% 60% at 50% 100%, rgba(160, 60, 20, .22), transparent 70%); }
+.nd-update { padding: clamp(56px, 7vw, 104px) 0; background-image: radial-gradient(70% 60% at 50% 100%, rgba(160, 60, 20, .22), transparent 70%); }
 .nd-update__head { text-align: center; margin-bottom: clamp(32px, 4vw, 56px); }
 .nd-update__badge { display: inline-block; padding: 4px 16px; border: 1px solid #b8932b; border-radius: 999px; background: rgba(255, 210, 54, .1); color: #ffd236; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; margin-bottom: 18px; }
 .nd-update__head h2 { font-size: var(--fs-2xl); }
@@ -756,7 +756,7 @@ html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 .nd-band--card .nd-sep { margin-inline: auto; }
 /* white scheme: black bands follow the page */
 /* black bands stay black in every scheme, so dark photos sit on black (review Nov 16) */
-.nd-band--dark, .nd-band--card {
+.nd-band--dark, .nd-band--card, .nd-hero, .is-dark-photo {
   background-color: #000; color: #f3f2ef;
   --bg: #000; --bg-raised: #111315; --bg-panel: #16181b; --bg-inset: #0d0e10;
   --text: #f3f2ef; --text-2: #b9bcc0; --text-3: #868b91; --text-hi: #fff;
@@ -837,9 +837,8 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 .nd-banner { --fx: var(--campaign-accent, var(--accent)); position: relative; overflow: hidden; isolation: isolate; border-radius: 16px; background: #050505; width: 100%; }
 .nd-campaign--full .nd-banner { border-radius: 0; }
 .nd-banner__img, .nd-banner__img img { display: block; width: 100%; height: auto; }
-.js .nd-banner .nd-banner__img { opacity: 0; transition: opacity .9s ease; }
-.js .nd-banner.is-in .nd-banner__img { opacity: 1; }
-.nd-banner[data-fx-push].is-in .nd-banner__img img { animation: nd-bn-push 20s ease-in-out infinite alternate; transform-origin: 55% 45%; }
+.js .nd-banner .nd-banner__img { opacity: 1; } /* the uploaded banner is always shown exactly as supplied */
+.nd-banner[data-fx-push] .nd-banner__img img { animation: nd-bn-push 20s ease-in-out infinite alternate; transform-origin: 55% 45%; }
 @keyframes nd-bn-push { from { transform: scale(1); } to { transform: scale(1.035); } }
 .nd-banner__fx { position: absolute; inset: 0; pointer-events: none; display: none; }
 /* glow pulse */
@@ -857,6 +856,58 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 @keyframes nd-bn-grain { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -1%); } }
 /* light sweep */
 .nd-banner[data-fx-sheen] .nd-banner__sheen { display: block; inset: -20% auto -20% -40%; width: 28%; background: linear-gradient(100deg, transparent, rgba(255,255,255,.14) 45%, rgba(255,255,255,.04) 55%, transparent); transform: skewX(-18deg); opacity: 0; }
-.nd-banner[data-fx-sheen].is-in .nd-banner__sheen { animation: nd-bn-sheen 7s 1.4s ease-in-out infinite; }
+.nd-banner[data-fx-sheen] .nd-banner__sheen { animation: nd-bn-sheen 7s 1.4s ease-in-out infinite; }
 @keyframes nd-bn-sheen { 0% { left: -40%; opacity: 0; } 8% { opacity: 1; } 28% { left: 130%; opacity: 0; } 100% { left: 130%; opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .nd-banner *, .nd-banner::before { animation: none !important; } .nd-banner__sparks, .nd-banner__sheen { display: none !important; } .js .nd-banner .nd-banner__img { opacity: 1; } }
+
+/* ===================== QA pass (Nov 16): one motion system, band fixes, layout fixes ===================== */
+/* Motion tokens — every scroll reveal, stagger and line draw uses these */
+:root { --t-reveal: 640ms; --t-reveal-lg: 900ms; --motion-dist: 16px; --motion-stagger: 70ms; --motion-delay: 100ms; }
+.js .reveal { transform: translateY(var(--motion-dist)); transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out); }
+.js .reveal.is-in { transform: none; }
+.js .reveal [data-stagger] > * { transform: translateY(var(--motion-dist)); transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out); transition-delay: calc(min(var(--i, 0), 8) * var(--motion-stagger) + var(--motion-delay)); }
+.js .reveal .nd-numbered--stacked .nd-numbered__media, .js .nd-numbered--stacked.reveal .nd-numbered__media { transform: translateY(calc(var(--motion-dist) * 1.5)); transition: opacity var(--t-reveal-lg) var(--ease-out), transform var(--t-reveal-lg) var(--ease-out); }
+.js .reveal.is-in .nd-numbered--stacked .nd-numbered__media, .js .nd-numbered--stacked.reveal.is-in .nd-numbered__media { transform: none; }
+.js .nd-versus__panel tbody[data-stagger] > * { transform: translateY(calc(var(--motion-dist) * .6)); transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out); transition-delay: calc(min(var(--i, 0), 12) * var(--motion-stagger) / 2); }
+.js .reveal .nd-sep::after { transition: transform var(--t-reveal-lg) var(--ease-out) var(--motion-delay); }
+.chapter__awards li { transform: translateY(var(--motion-dist)); transition: opacity var(--t-reveal) var(--ease-out), transform var(--t-reveal) var(--ease-out); transition-delay: calc(var(--i, 0) * var(--motion-stagger) + var(--motion-delay)); }
+/* reduced motion: everything is simply there, nothing moves or loops */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; transition-delay: 0s !important; scroll-behavior: auto !important; }
+  .js .reveal, .js .reveal [data-stagger] > *, .js .reveal .nd-numbered__media, .js .reveal .nd-pin, .chapter__awards li { opacity: 1 !important; transform: none !important; }
+  .nd-banner__sparks, .nd-banner__sheen { display: none; }
+}
+
+/* Hero: a photo/video hero is always dark, in every colour scheme (no black photo fading into white) */
+.nd-hero::after { background: linear-gradient(to top, #000, transparent); }
+/* sections whose photo has a dark background become black bands in the white/campaign schemes (set by core.js) */
+.is-dark-photo .nd-feature__media, .is-dark-photo .nd-numbered__media { background: #000 !important; }
+
+/* Hero dock: the campaign tile already says the campaign name — no second label, no dot on the tile */
+.qc3d__dock-badge b::before { content: none !important; }
+.qc3d__dock-badge + .qc3d__dock-text b { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* Rounded dark card with a statement and no title (e.g. 「4つのアンプモデル…」): statement type, photo fills the card */
+.nd-band--card .nd-feature__copy:not(:has(.nd-feature__title)) .nd-prose { font-size: var(--fs-xl); line-height: 1.55; font-weight: 600; color: var(--text-hi); max-width: 30em; }
+.nd-band--card .nd-feature__copy:not(:has(.nd-feature__title)) .nd-prose p + p { margin-top: .35em; color: var(--text-2); }
+.nd-band--card.nd-feature--media-top .nd-feature__media { max-width: 1100px; background: none; border-radius: 12px; }
+.nd-band--card.nd-feature--media-top .nd-feature__media img, .nd-band--card.nd-feature--media-top .nd-feature__media video { width: 100%; max-height: none; object-fit: cover; }
+
+/* Prices never break between the number and 税込 */
+.price, .yen, .nd-price { white-space: nowrap; }
+.price { white-space: normal; }
+.price > * { white-space: nowrap; }
+
+/* Japanese: phrases stay whole, but a phrase longer than its column may break rather than overflow (e.g. ロータリーエンコーダー in 4 columns) */
+:lang(ja) :is(h1, h2, h3, h4, p, li, dt, dd, figcaption, blockquote) { overflow-wrap: anywhere; }
+
+/* colour bar fits a phone: tighter gaps, the "カラー" label drops, smaller type */
+@media (max-width: 560px) {
+  .nd-colorbar { gap: 14px; font-size: var(--fs-xs); padding-inline: 12px; }
+  .nd-colorbar > :not(button) { display: none; }
+  .nd-colorbar button { font-size: var(--fs-xs); gap: 5px; white-space: nowrap; }
+}
+
+/* shared wrapping: headings and eyebrows balance their lines, body text avoids a lone last word */
+:is(h1, h2, h3, h4, [class*="eyebrow"], .section-head p) { text-wrap: balance; }
+:is(p, li, dd) { text-wrap: pretty; }

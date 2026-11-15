@@ -91,13 +91,13 @@
         "model": "qc",
         "view_labels": "全体,タッチスクリーン,フットスイッチ,入力と出力,正面",
         "view_titles": "世界最高峰のフロア型アンプモデラー|モデラーの新たな可能性を切り拓く|11基のステンレス製ストンプ＋ロータリーアクチュエーター|入力と出力|7インチのタッチディスプレイと圧倒的な処理能力により、自由かつ直感的なトーン設計を実現します。",
-        "view_captions": "Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。|巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。|スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。|デュアルコンボ入力 TS、TRS、XLR対応、可変インピーダンス＆レベルコントロール内蔵、マイクプリアンプ搭載、ファンタム電源対応。 デュアルエフェクトループ 外部のモノラル/ステレオエフェクトをシグナルチェーンに組み込むのに最適。 XLR|",
+        "view_captions": "Quad Cortex® は、Neural DSP が開発した最先端のフロア型アンプモデラー & マルチエフェクターです。|巨大な7インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。|スイッチ操作と回転制御が可能。従来のフットスイッチ＆ノブのような操作感ながら、壊れにくい設計。|デュアルコンボ入力 TS、TRS、XLR対応、可変インピーダンス＆レベルコントロール内蔵、マイクプリアンプ搭載、ファンタム電源対応。 デュアルエフェクトループ 外部のモノラル/ステレオエフェクトをシグナルチェーンに組み込むのに最適。 XLR|",
         "film_url": "",
         "film_label": "▶ フル動画を見る",
         "photo_assets": "qc-photo-1.webp",
         "film_mp4": "",
         "bundle_help_url": "/pages/quad-cortex-and-plugin-bundle#plugins",
-        "acc_note": "本体には電源アダプターが 1 つ付属します。予備や追加用としてもご購入いただけます。"
+        "acc_note": "本体には電源アダプターが1つ付属します。予備や追加用としてもご購入いただけます。"
       },
       "blocks": {},
       "block_order": []
@@ -107,7 +107,7 @@
       "settings": {
         "style": "popup",
         "heading": "メルマガに登録する",
-        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の 20%OFF クーポン】</strong> をメールでお送りします。</p>",
+        "body": "<p>Neural DSP Japan 公式メルマガにご登録いただいた方へ、<br/><strong>【Quad Cortex 専用 Gig Case の20%OFF クーポン】</strong> をメールでお送りします。</p>",
         "tags": "newsletter, popup-product",
         "submit": "登録する",
         "popup_button": "メルマガに登録する"
@@ -120,10 +120,10 @@
         "layout": "media-right",
         "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/Quad-Cortex-CorOS-3-2-0.webp?v=1754634894",
         "image_alt": "",
-        "heading": "CorOS 4.1.0 を公開しました",
+        "heading": "CorOS 4.1.0を公開しました",
         "button_label": "詳しく見る",
         "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
-        "body": "<h3>4.1.0 の新機能</h3><ul><li>5つのX対応プラグインが新たにPlugin Compatibilityに対応：Archetype: John Mayer X、Archetype: Petrucci X、Archetype: Misha Mansoor X、Archetype: Rabea X、Archetype: Tim Henson X</li><li>2,000種類以上のFactory Device Presetsを追加</li><li>MultivoicerやGlitchなど、8種類の新しいVirtual Deviceを追加</li><li>Device、I/O Settings、Global EQのPreset保存・呼び出しに対応</li><li>Cortex Controlで複数のQuad Cortex / Quad Cortex miniを管理可能に</li><li>Dual Footswitch Assignmentsなど、操作性・ワークフローを改善</li></ul>"
+        "body": "<h3>4.1.0の新機能</h3><ul><li>5つのX対応プラグインが新たにPlugin Compatibilityに対応：Archetype: John Mayer X、Archetype: Petrucci X、Archetype: Misha Mansoor X、Archetype: Rabea X、Archetype: Tim Henson X</li><li>2,000種類以上のFactory Device Presetsを追加</li><li>MultivoicerやGlitchなど、8種類の新しいVirtual Deviceを追加</li><li>Device、I/O Settings、Global EQのPreset保存・呼び出しに対応</li><li>Cortex Controlで複数のQuad Cortex / Quad Cortex miniを管理可能に</li><li>Dual Footswitch Assignmentsなど、操作性・ワークフローを改善</li></ul>"
       },
       "disabled": true
     },
@@ -151,7 +151,7 @@
         "layout": "media-top",
         "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/QuadGuitarPromo_1280_LE_upscale_balanced_x2_bd469e9f-ae79-484a-a561-1ea354925815.jpg?v=1741769630",
         "image_alt": "Quad Cortex Image",
-        "body": "<p>4つのアンプモデル、ステレオリバーブ、そして多数のエフェクトを同時に走らせたい？<br/><br/>Quad Cortexなら可能です。</p>",
+        "body": "<p>4つのアンプモデル、ステレオリバーブ、そして多数のエフェクトを同時に走らせたい？</p><p>Quad Cortexなら可能です。</p>",
         "band": "card"
       }
     },
@@ -183,7 +183,7 @@
         "layout": "media-left",
         "video_url": "https://neuraldsp.jp/cdn/shop/videos/c/vp/e175eed0f9874ed5b94a45e5730fa370/e175eed0f9874ed5b94a45e5730fa370.HD-1080p-2.5Mbps-43894975.mp4?v=0",
         "heading": "モデラーの新たな可能性を切り拓く",
-        "body": "<p>巨大な 7 インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
+        "body": "<p>巨大な7インチタッチスクリーンを搭載した Quad Cortex は、驚くほど直感的に操作できます。どれほど複雑なシグナルパスも、手間なく構築可能です。</p>",
         "clip_white": true,
         "band": "light"
       }
@@ -414,14 +414,14 @@
           "type": "qa",
           "settings": {
             "question": "Neural Capture とは何ですか？",
-            "answer": "<p>他社もアナログ機材の音をデジタルでキャプチャする技術を持っていますが、機械学習と組み込み処理技術の進化により、私たちはこの分野に大きく貢献できると考えました。私たちの生体模倣的アプローチは、先進的な機械学習技術と神経科学を組み合わせており、人間の耳と同じように音を「聴く」AIを訓練する方法を開発しました。<br/><br/>Quad Cortex のニューラルネットワークは、ユーザーと同じように音を認識し、非常に高精度かつ詳細なキャプチャを実現します。その結果得られるデジタルリグは、現在市場で最も正確かつ強力です。</p>"
+            "answer": "<p>他社もアナログ機材の音をデジタルでキャプチャする技術を持っていますが、機械学習と組み込み処理技術の進化により、私たちはこの分野に大きく貢献できると考えました。私たちの生体模倣的アプローチは、先進的な機械学習技術と神経科学を組み合わせており、人間の耳と同じように音を「聴く」AIを訓練する方法を開発しました。</p><p>Quad Cortex のニューラルネットワークは、ユーザーと同じように音を認識し、非常に高精度かつ詳細なキャプチャを実現します。その結果得られるデジタルリグは、現在市場で最も正確かつ強力です。</p>"
           }
         },
         "qa_3": {
           "type": "qa",
           "settings": {
             "question": "Neural DSP プラグインを購入済みの場合、QCで使えますか？",
-            "answer": "<p>CorOS 3.0.0 のリリースにより、待望の Plugin Compatibility（PCOM）機能がQuad Cortexで使用可能になりました。これにより、人気プラグインのデバイスがQC内の豊富なデバイスライブラリと統合され、新たな音作りの可能性が広がります。<br/><br/>現在QCに対応しているプラグインには「COMPATIBLE」バッジが付いています。他のプラグインも、対応するCorOSバージョンがリリースされ次第、順次対応予定です。<br/>詳細は <a href=\"https://neuraldsp.com/news\" rel=\"noopener\" target=\"_blank\">PCOMページ</a> をご覧ください。</p>"
+            "answer": "<p>CorOS 3.0.0のリリースにより、待望の Plugin Compatibility（PCOM）機能がQuad Cortexで使用可能になりました。これにより、人気プラグインのデバイスがQC内の豊富なデバイスライブラリと統合され、新たな音作りの可能性が広がります。</p><p>現在QCに対応しているプラグインには「COMPATIBLE」バッジが付いています。他のプラグインも、対応するCorOSバージョンがリリースされ次第、順次対応予定です。<br/>詳細は <a href=\"https://neuraldsp.com/news\" rel=\"noopener\" target=\"_blank\">PCOMページ</a> をご覧ください。</p>"
           }
         },
         "qa_4": {
@@ -694,7 +694,7 @@
             "version": "Version 1",
             "color": "#7cc4f5",
             "where": "デバイス上で処理",
-            "text": "<p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p>"
+            "text": "<p>高速・効率的で、完全にオフライン対応。Neural Capture V1は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p>"
           }
         },
         "v2": {
@@ -704,7 +704,7 @@
             "version": "Version 2",
             "color": "#f5cf3d",
             "where": "クラウドで処理",
-            "text": "<p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現。ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+            "text": "<p>Neural Capture V2は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現。ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
           }
         }
       },
@@ -818,7 +818,7 @@
         "row_11": {
           "type": "row",
           "settings": {
-            "label": "Neural Capture™ バージョン 1",
+            "label": "Neural Capture™ バージョン1",
             "a": "対応",
             "b": "対応"
           }
@@ -826,7 +826,7 @@
         "row_12": {
           "type": "row",
           "settings": {
-            "label": "Neural Capture™ バージョン 2",
+            "label": "Neural Capture™ バージョン2",
             "a": "対応",
             "b": "対応"
           }
@@ -907,16 +907,16 @@
           "type": "row",
           "settings": {
             "label": "オーディオ入力",
-            "a": "1× 1/4インチ TS（入力 1）\n1× コンボ XLR + 1/4インチ TRS（入力 2）\n1× 1/4インチ TRS（リターン 1/2）*",
-            "b": "2× コンボ XLR + 1/4インチ TRS（入力 1/2）\n2× 1/4インチ TRS（リターン 1/2）"
+            "a": "1× 1/4インチ TS（入力1）\n1× コンボ XLR + 1/4インチ TRS（入力2）\n1× 1/4インチ TRS（リターン1/2）*",
+            "b": "2× コンボ XLR + 1/4インチ TRS（入力1/2）\n2× 1/4インチ TRS（リターン1/2）"
           }
         },
         "row_24": {
           "type": "row",
           "settings": {
             "label": "オーディオ出力",
-            "a": "2× XLR（アウト 1/2）\n2× 1/4インチ TS（アウト 3/4）\n1× 1/4インチ TRS（センド 1/2）*\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/8インチ TRS（ヘッドフォン）",
-            "b": "2× XLR（アウト 1/2）\n2× 1/4インチ TRS（アウト 3/4）\n2× 1/4インチ TRS（センド 1/2）\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/4インチ TRS（ヘッドフォン）"
+            "a": "2× XLR（アウト1/2）\n2× 1/4インチ TS（アウト3/4）\n1× 1/4インチ TRS（センド1/2）*\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/8インチ TRS（ヘッドフォン）",
+            "b": "2× XLR（アウト1/2）\n2× 1/4インチ TRS（アウト3/4）\n2× 1/4インチ TRS（センド1/2）\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/4インチ TRS（ヘッドフォン）"
           }
         },
         "row_25": {
@@ -962,7 +962,7 @@
         "note_30": {
           "type": "note",
           "settings": {
-            "text": "*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。"
+            "text": "*Quad Cortex mini は、TRS センド／リターン端子を共有する2系統のエフェクトループを搭載しています。SEND 1/2または RETURN 1/2に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。"
           }
         },
         "group_31": {
@@ -999,8 +999,8 @@
           "type": "row",
           "settings": {
             "label": "フットスイッチ",
-            "a": "ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ",
-            "b": "ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ"
+            "a": "ステンレス製フットスイッチ ×4＋ ロータリーフットスイッチ",
+            "b": "ステンレス製フットスイッチ ×11＋ ロータリーフットスイッチ"
           }
         },
         "row_36": {
@@ -1084,10 +1084,10 @@
       "type": "nd-update",
       "settings": {
         "badge": "MAJOR UPDATE",
-        "heading": "CorOS 4.1.0 を公開しました",
+        "heading": "CorOS 4.1.0を公開しました",
         "youtube_id": "NSDRgQ0qxz0",
-        "list_heading": "4.1.0 の新機能",
-        "body": "<ul><li>X 対応プラグイン 5 種類が新たに Quad Cortex に対応し、合計 70 種類以上の新しいバーチャルデバイスを追加</li><li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8 種類の新しいバーチャルデバイス</li><li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li><li>Neural DSP チームによる 2,000 種類以上のファクトリー Device Presets</li><li>お気に入り／最近使った項目メニューを刷新</li></ul>",
+        "list_heading": "4.1.0の新機能",
+        "body": "<ul><li>X 対応プラグイン5種類が新たに Quad Cortex に対応し、合計70種類以上の新しいバーチャルデバイスを追加</li><li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8種類の新しいバーチャルデバイス</li><li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li><li>Neural DSP チームによる2,000種類以上のファクトリー Device Presets</li><li>お気に入り／最近使った項目メニューを刷新</li></ul>",
         "button_label": "変更履歴をすべて見る",
         "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
         "band": "dark"
@@ -1109,11 +1109,11 @@
             "tab1_name": "キャビネットブロック",
             "tab1_media": "https://videos.ctfassets.net/8puu65w27ud0/1z5U9odsd84k6Ugv8jL6qO/1847c3464d6315945264b7e41ec9001c/Cabsim-1.m4v",
             "tab1_title": "キャビネットブロック",
-            "tab1_text": "<p>1,000 種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p>",
+            "tab1_text": "<p>1,000種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p>",
             "tab2_name": "パワフルなパラメトリック EQ",
             "tab2_media": "https://videos.ctfassets.net/8puu65w27ud0/7umy5uz9KUZr0fbRgZlo8B/d3e940f043793780f7ea27a1c12e6a37/Eq-1.m4v",
             "tab2_title": "パワフルなパラメトリック EQ",
-            "tab2_text": "<p>すべてを指先でコントロール。7 インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>"
+            "tab2_text": "<p>すべてを指先でコントロール。7インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>"
           }
         },
         "k1": {
@@ -1144,11 +1144,11 @@
             "tab2_name": "Scene モード",
             "tab2_media": "https://videos.ctfassets.net/8puu65w27ud0/1g6okMCwrIIn8ClDbrm25n/fa23ab616b774089174bd444dd8b5cc4/Scene_Mode.m4v",
             "tab2_title": "Scene モード",
-            "tab2_text": "<p>フットスイッチ 1 つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p>",
+            "tab2_text": "<p>フットスイッチ1つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p>",
             "tab3_name": "Preset モード",
             "tab3_media": "https://videos.ctfassets.net/8puu65w27ud0/6wPExdLEVlIC7fBHX3Srlc/aa73c2a0aadee1d53de3fda33c8b8b46/Preset_Mode.m4v",
             "tab3_title": "Preset モード",
-            "tab3_text": "<p>8 つのバーチャルリグに瞬時にアクセスできます。</p>"
+            "tab3_text": "<p>8つのバーチャルリグに瞬時にアクセスできます。</p>"
           }
         },
         "k3": {
@@ -1156,8 +1156,8 @@
           "settings": {
             "title": "コンポーネント",
             "card_media": "https://videos.ctfassets.net/8puu65w27ud0/5CbaYNIYCjCidmVOqZc6OP/7b00b0aa95d84a8ffc3fef69cfef5731/QC_components_24.mp4",
-            "intro": "<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ 1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>",
-            "detail_html": "<img src=\"https://images.ctfassets.net/8puu65w27ud0/5btw1Q95bBvjXJxulUs0ln/5d4faed3b83eac3382321be23e03607a/QC_components_front_image.png\" alt=\"Quad Cortex 正面\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>マルチタッチセンサー搭載の 7 インチディスプレイ</li><li>進化し続ける、超リアルなバーチャルデバイスのコレクション</li><li>Neural Capture™</li><li>独自開発のステンレス製ストンプ＋ロータリー・アクチュエーター</li></ul><img src=\"https://images.ctfassets.net/8puu65w27ud0/4dq6ChkkbQ1h18pxK07sIa/b4ad9b5b20ee8ab978f7bcb8c6f89349/QC_components_back_image.png\" alt=\"Quad Cortex 内部\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>500MHz で動作する SHARC+ ×4 と ARM コア ×2</li><li>ワイヤレスでのプリセット共有、クラウドバックアップ、OTA ファームウェア更新などに対応する Wi-Fi モジュール</li><li>アルマイト加工アルミニウム・ユニボディ</li><li>Cirrus Logic 製コーデックと超低レイテンシーの USB オーディオ伝送で、高音質オーディオインターフェースとしても使用可能</li></ul>"
+            "intro": "<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>",
+            "detail_html": "<img src=\"https://images.ctfassets.net/8puu65w27ud0/5btw1Q95bBvjXJxulUs0ln/5d4faed3b83eac3382321be23e03607a/QC_components_front_image.png\" alt=\"Quad Cortex 正面\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>マルチタッチセンサー搭載の7インチディスプレイ</li><li>進化し続ける、超リアルなバーチャルデバイスのコレクション</li><li>Neural Capture™</li><li>独自開発のステンレス製ストンプ＋ロータリー・アクチュエーター</li></ul><img src=\"https://images.ctfassets.net/8puu65w27ud0/4dq6ChkkbQ1h18pxK07sIa/b4ad9b5b20ee8ab978f7bcb8c6f89349/QC_components_back_image.png\" alt=\"Quad Cortex 内部\" loading=\"lazy\"><ul class=\"nd-pop__rows\"><li>500MHz で動作する SHARC+ ×4と ARM コア ×2</li><li>ワイヤレスでのプリセット共有、クラウドバックアップ、OTA ファームウェア更新などに対応する Wi-Fi モジュール</li><li>アルマイト加工アルミニウム・ユニボディ</li><li>Cirrus Logic 製コーデックと超低レイテンシーの USB オーディオ伝送で、高音質オーディオインターフェースとしても使用可能</li></ul>"
           }
         }
       },

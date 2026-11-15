@@ -308,7 +308,7 @@ html[data-scheme="light"] {
 html[data-scheme="light"] body { background: var(--bg); color: var(--text); }
 html[data-scheme="light"] .logo img, html[data-scheme="light"] .site-footer__brand img { filter: invert(1); }
 html[data-scheme="light"] .btn.buy__trial, html[data-scheme="light"] .btn[data-trial-open], html[data-scheme="light"] .btn--outline { color: var(--text); border-color: rgba(17, 18, 20, .3); }
-html[data-scheme="light"] .nd-update { background: radial-gradient(70% 60% at 50% 100%, rgba(255, 160, 90, .16), transparent 70%); }
+html[data-scheme="light"] .nd-update { background-image: radial-gradient(70% 60% at 50% 100%, rgba(255, 160, 90, .16), transparent 70%); }
 html[data-scheme="light"] .nd-update__badge { color: #8a6a00; background: rgba(255, 210, 54, .2); }
 
 /* colour bar */
