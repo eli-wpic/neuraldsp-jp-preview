@@ -607,3 +607,13 @@ if 'news' in d['sections']: d['sections']['news']['disabled'] = False
 if 'compare' in d['sections']: d['sections']['compare']['disabled'] = True
 save('index', head, d)
 print('round 13 ok')
+
+# ---- round 14 (Pastel #77, Alan): 写真 = one front photo only, no film button on hardware pages ----
+FRONT_ONLY = {'product.quad-cortex': 'qc-photo-1.webp', 'product.quad-cortex-mini': 'mini-photo-2.webp', 'product.nano-cortex': 'nano-photo-1.webp'}
+for name, photo in FRONT_ONLY.items():
+    head, d = load(name)
+    st = d['sections']['main']['settings']
+    st['photo_assets'] = photo
+    st['film_url'] = ''; st['film_mp4'] = ''
+    save(name, head, d)
+print('round 14 ok')

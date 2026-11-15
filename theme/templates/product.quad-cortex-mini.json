@@ -45,10 +45,11 @@
         "view_labels": "全体,The Grid,フットスイッチ,入力と出力,正面",
         "view_titles": "妥協ゼロ。ただ、コンパクト。|リグ全体をひと目で把握。|タッチスクリーン &ロータリーフットスイッチ|シンプルな接続。自由なセットアップ。|小さなボディ。大きなサウンド。",
         "view_captions": "Quad Cortex mini は、Neural DSP が誇るフラッグシップ Quad Cortex の体験を、コンパクトで使いやすいフォーマットに凝縮した次世代フロア型アンプモデラー＆マルチエフェクターです。|The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。|7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。|INPUT 2 / CAPTURE INPUT 専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 DUAL EFFECTS LOOPS SEND 1/2 および RETURN 1/2 は、それぞれ |",
-        "film_url": "https://youtu.be/9HzXdhslnRw",
+        "film_url": "",
         "film_label": "▶ フル動画を見る",
-        "photo_assets": "mini-photo-2.webp,mini-photo-1.webp,mini-photo-3.webp,mini-photo-4.webp",
-        "bundle_help_url": "/pages/quad-cortex-mini-plugin#plugins"
+        "photo_assets": "mini-photo-2.webp",
+        "bundle_help_url": "/pages/quad-cortex-mini-plugin#plugins",
+        "film_mp4": ""
       },
       "blocks": {},
       "block_order": []
