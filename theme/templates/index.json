@@ -101,14 +101,12 @@
             "button_label": "キャンペーン対象を見る",
             "button_url": "/collections/all",
             "banner": true,
-            "layer_product": "qc-three-quarter-1600.webp",
-            "title_text": "BLACK\nFRIDAY",
-            "script_text": "Sale",
-            "ribbon_text": "11.20 - 12.03",
-            "body_text": "ハードウェア全品対象！豪華特典プレゼント！\nさらに、Pluginセット購入でPluginが無料！",
-            "motion": "calm",
-            "glow": true,
-            "parallax": true
+            "image_asset": "campaign-banner-demo.jpg",
+            "fx_sheen": true,
+            "fx_glow": true,
+            "fx_sparks": true,
+            "fx_grain": false,
+            "fx_push": false
           }
         }
       },
@@ -425,16 +423,9 @@
       "settings": {
         "follow_site": true,
         "full_width": false,
-        "layer_product": "qc-three-quarter-1600.webp",
-        "title_text": "BLACK\nFRIDAY",
-        "script_text": "Sale",
-        "ribbon_text": "11.20 - 12.03",
-        "body_text": "ハードウェア全品対象！豪華特典プレゼント！\nさらに、Pluginセット購入でPluginが無料！",
-        "motion": "calm",
-        "glow": true,
-        "parallax": true,
         "alt": "BLACK FRIDAY Sale",
-        "url": "/collections/all"
+        "url": "/collections/all",
+        "image_asset": "campaign-banner-demo.jpg"
       },
       "disabled": true
     }

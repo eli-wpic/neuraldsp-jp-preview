@@ -202,8 +202,7 @@ body.show-buy .qc3d__buybar { opacity: 1; translate: 0 0; pointer-events: auto; 
 /* hero campaign item as an animated banner (top of the homepage) */
 .qc3d__media:has(.qc3d__banner)::after { display: none; }
 .qc3d__banner { position: absolute; inset: 0; display: grid; place-items: center; padding: 90px var(--gutter) 150px; }
-.qc3d__banner .nd-banner { width: min(1280px, 100%); max-height: calc(100svh - 260px); }
-.qc3d__banner .nd-banner:not(.nd-banner--layered) { max-height: none; width: min(1280px, 100%, calc((100svh - 260px) * 16 / 9)); }
+.qc3d__banner .nd-banner { width: min(1280px, 100%, calc((100svh - 260px) * 16 / 9)); }
 .qc3d__copy[data-banner-item] { left: 0; right: 0; top: auto; bottom: 118px; max-width: none; display: flex; justify-content: center; text-align: center; pointer-events: none; }
 .qc3d__copy[data-banner-item] .chapter > :not(.chapter__buy, h1) { display: none !important; }
 .qc3d__copy[data-banner-item] .chapter h1 { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } /* the banner carries the title; kept for search and screen readers */

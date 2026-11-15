@@ -759,3 +759,17 @@ if bf:
 if 'campaign_banner' in d['sections']: d['sections']['campaign_banner']['disabled'] = True
 save('index', head, d)
 print('round 20 ok')
+
+# ---- round 21: campaign banner = one uploaded image + effect layers on top (no per-element animation). Demo = the Black Friday mock flattened to one image. ----
+LAYER_KEYS = ('layer_bg', 'layer_product', 'title_text', 'script_text', 'ribbon_text', 'body_text', 'layer_extra', 'motion', 'glow', 'parallax')
+head, d = load('index')
+bf = d['sections']['qc3d']['blocks'].get('bf')
+if bf:
+    for k in LAYER_KEYS: bf['settings'].pop(k, None)
+    bf['settings'].update(model='none', banner=True, image_asset='campaign-banner-demo.jpg', fx_sheen=True, fx_glow=True, fx_sparks=True, fx_grain=False, fx_push=False)
+cb = d['sections'].get('campaign_banner')
+if cb:
+    for k in LAYER_KEYS: cb['settings'].pop(k, None)
+    cb['settings'].update(image_asset='campaign-banner-demo.jpg')
+save('index', head, d)
+print('round 21 ok')

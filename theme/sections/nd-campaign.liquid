@@ -1,5 +1,5 @@
 {%- comment -%}
-  Campaign banner with motion (see snippets/nd-banner.liquid). Upload the finished banner as one image, or the pieces as layers.
+  Campaign banner with motion (see snippets/nd-banner.liquid). Upload the finished banner as one image; effects play on top of it.
   "Show during the site campaign" ties it to Theme settings → Colours → campaign (same switch and dates).
 {%- endcomment -%}
 {%- assign s = section.settings -%}
@@ -27,31 +27,99 @@
 {
   "name": "ND · Campaign banner",
   "settings": [
-    { "type": "checkbox", "id": "follow_site", "label": "Show during the site campaign only", "default": true, "info": "Appears and disappears with Theme settings → Colours → campaign." },
-    { "type": "checkbox", "id": "full_width", "label": "Full width", "default": false },
-    { "type": "header", "content": "Finished banner (one image) — when set, it is used instead of the layers" },
-    { "type": "image_picker", "id": "image", "label": "Banner image" },
-    { "type": "text", "id": "image_url", "label": "Banner image URL" },
-    { "type": "text", "id": "mobile_image_url", "label": "Phone banner URL (optional)", "info": "A taller 4:5 version reads better on phones; without it the wide banner is used." },
-    { "type": "header", "content": "Or build it from layers (animates each piece)" },
-    { "type": "text", "id": "layer_bg", "label": "Background image URL (empty = animated accent waves)" },
-    { "type": "text", "id": "layer_product", "label": "Product cut-out (URL or theme asset, e.g. qc-three-quarter-1600.webp)" },
-    { "type": "textarea", "id": "title_text", "label": "Title (one line per row)", "info": "e.g. BLACK / FRIDAY" },
-    { "type": "text", "id": "script_text", "label": "Script word (e.g. Sale)" },
-    { "type": "text", "id": "ribbon_text", "label": "Ribbon (e.g. dates)" },
-    { "type": "textarea", "id": "body_text", "label": "Text" },
-    { "type": "text", "id": "layer_extra", "label": "Extra cut-out (e.g. gift items) URL" },
-    { "type": "header", "content": "Motion" },
-    { "type": "select", "id": "motion", "label": "Motion", "default": "calm", "options": [
-      { "value": "calm", "label": "Slow push-in + light sheen" }, { "value": "zoom", "label": "Slow push-in" }, { "value": "sheen", "label": "Light sheen only" }, { "value": "none", "label": "None" }
-    ] },
-    { "type": "checkbox", "id": "glow", "label": "Accent glow", "default": true },
-    { "type": "checkbox", "id": "parallax", "label": "Follow the mouse (depth)", "default": true },
-    { "type": "header", "content": "Link" },
-    { "type": "text", "id": "alt", "label": "Alt text" },
-    { "type": "text", "id": "url", "label": "Link URL" },
-    { "type": "text", "id": "button_label", "label": "Button label" }
+    {
+      "type": "checkbox",
+      "id": "follow_site",
+      "label": "Show during the site campaign only",
+      "default": true,
+      "info": "Appears and disappears with Theme settings → Colours → campaign."
+    },
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full width",
+      "default": false
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Banner image"
+    },
+    {
+      "type": "text",
+      "id": "image_url",
+      "label": "Banner image URL"
+    },
+    {
+      "type": "text",
+      "id": "mobile_image_url",
+      "label": "Phone banner URL (optional)",
+      "info": "A taller 4:5 version reads better on phones; without it the wide banner is used."
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Theme asset file (fallback)",
+      "info": "Used only when no banner image is set."
+    },
+    {
+      "type": "header",
+      "content": "Effects on top of the banner (the banner itself is never changed)"
+    },
+    {
+      "type": "checkbox",
+      "id": "fx_sheen",
+      "label": "Light sweep",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "fx_glow",
+      "label": "Glow pulse (campaign colour)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "fx_sparks",
+      "label": "Drifting sparks (campaign colour)",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "fx_grain",
+      "label": "Film grain",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "fx_push",
+      "label": "Gentle push-in of the whole banner",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Link"
+    },
+    {
+      "type": "text",
+      "id": "alt",
+      "label": "Alt text"
+    },
+    {
+      "type": "text",
+      "id": "url",
+      "label": "Link URL"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Button label"
+    }
   ],
-  "presets": [{ "name": "ND · Campaign banner" }]
+  "presets": [
+    {
+      "name": "ND · Campaign banner"
+    }
+  ]
 }
 {% endschema %}

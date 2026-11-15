@@ -392,15 +392,11 @@
           "label": "Small print"
         },
         {
-          "type": "header",
-          "content": "Animated banner (Visual = Banner photo or video)"
-        },
-        {
           "type": "checkbox",
           "id": "banner",
           "label": "Show as an animated banner",
           "default": false,
-          "info": "Fills the hero with the banner; upload the finished banner as one image, or build it from the layer fields below."
+          "info": "Fills the top of the homepage with the banner image above (Photo / Photo URL); the whole banner links to the button URL."
         },
         {
           "type": "text",
@@ -409,74 +405,42 @@
         },
         {
           "type": "text",
-          "id": "layer_bg",
-          "label": "Layer: background image URL (empty = animated waves)"
+          "id": "image_asset",
+          "label": "Theme asset file (fallback)"
         },
         {
-          "type": "text",
-          "id": "layer_product",
-          "label": "Layer: product cut-out (URL or theme asset)"
-        },
-        {
-          "type": "textarea",
-          "id": "title_text",
-          "label": "Layer: title (one line per row)"
-        },
-        {
-          "type": "text",
-          "id": "script_text",
-          "label": "Layer: script word"
-        },
-        {
-          "type": "text",
-          "id": "ribbon_text",
-          "label": "Layer: ribbon (e.g. dates)"
-        },
-        {
-          "type": "textarea",
-          "id": "body_text",
-          "label": "Layer: text"
-        },
-        {
-          "type": "text",
-          "id": "layer_extra",
-          "label": "Layer: extra cut-out URL"
-        },
-        {
-          "type": "select",
-          "id": "motion",
-          "label": "Motion",
-          "default": "calm",
-          "options": [
-            {
-              "value": "calm",
-              "label": "Slow push-in + light sheen"
-            },
-            {
-              "value": "zoom",
-              "label": "Slow push-in"
-            },
-            {
-              "value": "sheen",
-              "label": "Light sheen only"
-            },
-            {
-              "value": "none",
-              "label": "None"
-            }
-          ]
+          "type": "header",
+          "content": "Effects on top of the banner (the banner itself is never changed)"
         },
         {
           "type": "checkbox",
-          "id": "glow",
-          "label": "Accent glow",
+          "id": "fx_sheen",
+          "label": "Light sweep",
           "default": true
         },
         {
           "type": "checkbox",
-          "id": "parallax",
-          "label": "Follow the mouse (depth)",
+          "id": "fx_glow",
+          "label": "Glow pulse (campaign colour)",
           "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "fx_sparks",
+          "label": "Drifting sparks (campaign colour)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "fx_grain",
+          "label": "Film grain",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "fx_push",
+          "label": "Gentle push-in of the whole banner",
+          "default": false
         }
       ]
     },

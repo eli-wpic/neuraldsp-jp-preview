@@ -298,6 +298,7 @@ function initBanners() {
   const io = 'IntersectionObserver' in window ? new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } }), { threshold: 0.25 }) : null;
   banners.forEach((b) => {
     if (io && !reducedMotion()) io.observe(b); else b.classList.add('is-in');
+    const setH = () => b.style.setProperty('--h', b.offsetHeight + 'px'); setH(); addEventListener('resize', setH);
     if (!b.hasAttribute('data-parallax') || reducedMotion() || !matchMedia('(hover: hover)').matches) return;
     b.querySelectorAll('[data-depth]').forEach((l) => { if (!l.style.getPropertyValue('--d')) l.style.setProperty('--d', String(parseFloat(l.dataset.depth) * 200)); });
     b.addEventListener('pointermove', (e) => { const r = b.getBoundingClientRect(); b.style.setProperty('--px', ((e.clientX - r.left) / r.width - 0.5).toFixed(3)); b.style.setProperty('--py', ((e.clientY - r.top) / r.height - 0.5).toFixed(3)); });

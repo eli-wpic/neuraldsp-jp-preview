@@ -1,37 +1,20 @@
 {%- comment -%}
-  Animated campaign banner. Params: s (section/block settings).
-  Flat mode: one finished banner image (s.image / s.image_url, optional s.mobile_image_url) with motion presets.
-  Layered mode (only when no banner image is set, and s.layer_product or s.title_text is set): background waves, product photo, title, ribbon, text — each animates in on its own.
-  Motion: s.motion = calm (push-in + sheen) | zoom | sheen | none; s.glow adds an accent glow; s.parallax follows the mouse.
-  Everything stops for visitors who ask for reduced motion.
+  Campaign banner = ONE uploaded image, shown exactly as designed (never cropped, nothing inside it is moved).
+  Optional effect layers sit on top of it: light sweep, accent glow, drifting sparks, film grain, gentle push-in of the whole image.
+  Params: s (settings): image / image_url / image_asset, mobile_image_url, alt, fx_sheen, fx_glow, fx_sparks, fx_grain, fx_push.
+  Effects use the campaign colour (Theme settings → Colours) and stop for visitors who ask for reduced motion.
 {%- endcomment -%}
-{%- assign layered = false -%}
-{%- if s.image == blank and s.image_url == blank -%}{%- if s.layer_product != blank or s.title_text != blank -%}{%- assign layered = true -%}{%- endif -%}{%- endif -%}
-<div class="nd-banner{% if layered %} nd-banner--layered{% endif %}" data-banner data-motion="{{ s.motion | default: 'calm' }}"{% if s.glow %} data-glow{% endif %}{% if s.parallax != false %} data-parallax{% endif %}>
-  {%- if layered -%}
-    <div class="nd-banner__bg" data-depth="0.02" aria-hidden="true">
-      {%- if s.layer_bg != blank -%}<img src="{{ s.layer_bg }}" alt="" loading="eager">{%- else -%}<i class="nd-banner__waves"></i><i class="nd-banner__waves nd-banner__waves--2"></i>{%- endif -%}
-    </div>
-    {%- if s.layer_product != blank -%}
-      <div class="nd-banner__product" data-depth="0.05"><img src="{% if s.layer_product contains '/' %}{{ s.layer_product }}{% else %}{{ s.layer_product | asset_url }}{% endif %}" alt="{{ s.alt | escape }}" loading="eager"></div>
+<div class="nd-banner" data-banner{% if s.fx_sheen != false %} data-fx-sheen{% endif %}{% if s.fx_glow != false %} data-fx-glow{% endif %}{% if s.fx_sparks != false %} data-fx-sparks{% endif %}{% if s.fx_grain %} data-fx-grain{% endif %}{% if s.fx_push %} data-fx-push{% endif %}>
+  <picture class="nd-banner__img">
+    {%- if s.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">{%- endif -%}
+    {%- if s.image != blank or s.image_url != blank -%}
+      {% render 'nd-media', image: s.image, url: s.image_url, alt: s.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1400px' %}
+    {%- elsif s.image_asset != blank -%}
+      <img src="{{ s.image_asset | asset_url }}" alt="{{ s.alt | escape }}" width="1600" height="900" loading="eager">
     {%- endif -%}
-    <div class="nd-banner__copy" data-depth="0.03">
-      {%- if s.title_text != blank -%}
-        {%- assign tl = s.title_text | newline_to_br | split: '<br />' -%}
-        <p class="nd-banner__title">{%- for l in tl -%}<span style="--i: {{ forloop.index0 }}">{{ l | strip }}</span>{%- endfor -%}</p>
-      {%- endif -%}
-      {%- if s.script_text != blank -%}<p class="nd-banner__script">{{ s.script_text }}</p>{%- endif -%}
-      {%- if s.ribbon_text != blank -%}<p class="nd-banner__ribbon"><span>{{ s.ribbon_text }}</span></p>{%- endif -%}
-      {%- if s.body_text != blank -%}<p class="nd-banner__body">{{ s.body_text | newline_to_br }}</p>{%- endif -%}
-    </div>
-    {%- if s.layer_extra != blank -%}<div class="nd-banner__extra" data-depth="0.07"><img src="{{ s.layer_extra }}" alt="" loading="lazy"></div>{%- endif -%}
-  {%- else -%}
-    <div class="nd-banner__flat" data-depth="0.02">
-      <picture>
-        {%- if s.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">{%- endif -%}
-        {% render 'nd-media', image: s.image, url: s.image_url, alt: s.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1400px' %}
-      </picture>
-    </div>
-  {%- endif -%}
-  <i class="nd-banner__sheen" aria-hidden="true"></i>
+  </picture>
+  <i class="nd-banner__fx nd-banner__glow" aria-hidden="true"></i>
+  <i class="nd-banner__fx nd-banner__sparks" aria-hidden="true">{%- for n in (1..18) -%}<b style="--x: {{ n | times: 53 | modulo: 100 }}%; --t: {{ n | times: 7 | modulo: 11 | plus: 7 }}s; --dl: {{ n | times: 13 | modulo: 9 }}s; --sz: {{ n | modulo: 3 | plus: 2 }}px"></b>{%- endfor -%}</i>
+  <i class="nd-banner__fx nd-banner__grain" aria-hidden="true"></i>
+  <i class="nd-banner__fx nd-banner__sheen" aria-hidden="true"></i>
 </div>
