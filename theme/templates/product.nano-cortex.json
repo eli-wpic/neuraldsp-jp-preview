@@ -224,8 +224,13 @@
       "settings": {
         "heading": "コントロール",
         "subheading": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486",
-        "show_numbers": true
+        "image_url": "",
+        "show_numbers": true,
+        "layout": "stacked",
+        "head_position": "above",
+        "separator": true,
+        "image_asset": "nano-top.webp",
+        "media_max": 1040
       },
       "blocks": {
         "item_0": {
@@ -233,7 +238,9 @@
           "settings": {
             "number": "1",
             "title": "Bass, Mid, Treble",
-            "text": "<p>トーンを調整するためのコントロール。</p>"
+            "text": "<p>トーンを調整するためのコントロール。</p>",
+            "x": "39.8",
+            "y": "36.8"
           }
         },
         "item_1": {
@@ -241,7 +248,9 @@
           "settings": {
             "number": "2",
             "title": "Amount",
-            "text": "<p>信号チェーン内で選択したエフェクトの強さを調整します。</p>"
+            "text": "<p>信号チェーン内で選択したエフェクトの強さを調整します。</p>",
+            "x": "75.3",
+            "y": "36.8"
           }
         },
         "item_2": {
@@ -249,7 +258,9 @@
           "settings": {
             "number": "3",
             "title": "Gain",
-            "text": "<p>Neural Captureに適用されるサチュレーションのレベルを調整します。</p>"
+            "text": "<p>Neural Captureに適用されるサチュレーションのレベルを調整します。</p>",
+            "x": "11.5",
+            "y": "16.0"
           }
         },
         "item_3": {
@@ -257,7 +268,9 @@
           "settings": {
             "number": "4",
             "title": "Level",
-            "text": "<p>出力信号全体のレベルを調整します。</p>"
+            "text": "<p>出力信号全体のレベルを調整します。</p>",
+            "x": "85.8",
+            "y": "16.0"
           }
         },
         "item_4": {
@@ -265,7 +278,9 @@
           "settings": {
             "number": "5",
             "title": "Exit",
-            "text": "<p>現在の機能を終了し、前のモードに戻ります。</p>"
+            "text": "<p>現在の機能を終了し、前のモードに戻ります。</p>",
+            "x": "31.0",
+            "y": "16.0"
           }
         },
         "item_5": {
@@ -273,7 +288,9 @@
           "settings": {
             "number": "6",
             "title": "Capture",
-            "text": "<p>Capture: Neural Captureプロセスを開始します。</p>"
+            "text": "<p>Capture: Neural Captureプロセスを開始します。</p>",
+            "x": "48.6",
+            "y": "16.0"
           }
         },
         "item_6": {
@@ -281,7 +298,9 @@
           "settings": {
             "number": "7",
             "title": "Save",
-            "text": "<p>設定やプリセットを調整後に保存します。</p>"
+            "text": "<p>設定やプリセットを調整後に保存します。</p>",
+            "x": "66.3",
+            "y": "16.0"
           }
         },
         "item_7": {
@@ -289,7 +308,9 @@
           "settings": {
             "number": "8",
             "title": "Capture Banks",
-            "text": "<p>異なるNeural Captureのバンクを切り替えます。</p>"
+            "text": "<p>異なるNeural Captureのバンクを切り替えます。</p>",
+            "x": "9.1",
+            "y": "39.3"
           }
         },
         "item_8": {
@@ -297,7 +318,9 @@
           "settings": {
             "number": "9",
             "title": "FX Blocks",
-            "text": "<p>エフェクトスロット: シグナルチェーン内のエフェクトスロットを切り替えます。</p>"
+            "text": "<p>エフェクトスロット: シグナルチェーン内のエフェクトスロットを切り替えます。</p>",
+            "x": "88.1",
+            "y": "39.3"
           }
         },
         "item_9": {
@@ -305,7 +328,9 @@
           "settings": {
             "number": "10",
             "title": "Capture Slots",
-            "text": "<p>フットスイッチIを回して利用可能なNeural Captureスロットをスクロールします。</p>"
+            "text": "<p>フットスイッチIを回して利用可能なNeural Captureスロットをスクロールします。</p>",
+            "x": "9.3",
+            "y": "62.6"
           }
         },
         "item_10": {
@@ -313,7 +338,9 @@
           "settings": {
             "number": "11",
             "title": "IR Loader Slots",
-            "text": "<p>フットスイッチIIを回して利用可能なインパルスレスポンスをスクロールします。</p>"
+            "text": "<p>フットスイッチIIを回して利用可能なインパルスレスポンスをスクロールします。</p>",
+            "x": "88.1",
+            "y": "62.6"
           }
         },
         "item_11": {
@@ -321,7 +348,9 @@
           "settings": {
             "number": "12",
             "title": "Footswitches I and II",
-            "text": "<p>これらのステンレス鋼製フットスイッチは、精密なコントロールが可能なロータリーノブとしても機能し、プリセット、FXブロック、またはバイパスモード間で手を使わずに切り替えることができます。</p>"
+            "text": "<p>これらのステンレス鋼製フットスイッチは、精密なコントロールが可能なロータリーノブとしても機能し、プリセット、FXブロック、またはバイパスモード間で手を使わずに切り替えることができます。</p>",
+            "x": "9.0",
+            "y": "87.4"
           }
         }
       },
@@ -345,8 +374,13 @@
       "settings": {
         "heading": "入力と出力",
         "subheading": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486",
-        "show_numbers": true
+        "image_url": "",
+        "show_numbers": true,
+        "layout": "stacked",
+        "head_position": "above",
+        "separator": true,
+        "image_asset": "nano-rear.webp",
+        "media_max": 1400
       },
       "blocks": {
         "item_0": {
@@ -354,7 +388,9 @@
           "settings": {
             "number": "1",
             "title": "1/4\" instrument input",
-            "text": "<p>ギターやベース用。</p>"
+            "text": "<p>ギターやベース用。</p>",
+            "x": "13.6",
+            "y": "67"
           }
         },
         "item_1": {
@@ -362,7 +398,9 @@
           "settings": {
             "number": "2",
             "title": "Dual 1/4\" TRS outputs",
-            "text": "<p>スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。</p>"
+            "text": "<p>スタジオモニター、PAシステム、FRFRキャビネット用のステレオ出力。</p>",
+            "x": "27.5",
+            "y": "67"
           }
         },
         "item_2": {
@@ -370,7 +408,9 @@
           "settings": {
             "number": "3",
             "title": "Ground lift switch",
-            "text": "<p>グラウンドループによるノイズを軽減します。</p>"
+            "text": "<p>グラウンドループによるノイズを軽減します。</p>",
+            "x": "51.0",
+            "y": "70.8"
           }
         },
         "item_3": {
@@ -378,7 +418,9 @@
           "settings": {
             "number": "4",
             "title": "TRS expression & MIDI input",
-            "text": "<p>MIDIコントローラー、エクスプレッションペダル、フットスイッチなどを接続してコントロールオプションを拡張できます。</p>"
+            "text": "<p>MIDIコントローラー、エクスプレッションペダル、フットスイッチなどを接続してコントロールオプションを拡張できます。</p>",
+            "x": "60.9",
+            "y": "67"
           }
         },
         "item_4": {
@@ -386,7 +428,9 @@
           "settings": {
             "number": "5",
             "title": "3.5mm headphone output",
-            "text": "<p>深夜練習に最適な静音出力。</p>"
+            "text": "<p>深夜練習に最適な静音出力。</p>",
+            "x": "72.9",
+            "y": "70.3"
           }
         },
         "item_5": {
@@ -394,7 +438,9 @@
           "settings": {
             "number": "6",
             "title": "Headphones level knob",
-            "text": "<p>ヘッドフォン音量の調整ノブ。</p>"
+            "text": "<p>ヘッドフォン音量の調整ノブ。</p>",
+            "x": "80.1",
+            "y": "26.4"
           }
         },
         "item_6": {
@@ -402,7 +448,9 @@
           "settings": {
             "number": "7",
             "title": "USB-C",
-            "text": "<p>録音や電源供給に対応。</p>"
+            "text": "<p>録音や電源供給に対応。</p>",
+            "x": "80.5",
+            "y": "72.5"
           }
         },
         "item_7": {
@@ -410,7 +458,9 @@
           "settings": {
             "number": "8",
             "title": "Power Input",
-            "text": "<p>9-12V DC センターネガティブ。</p>"
+            "text": "<p>9-12V DC センターネガティブ。</p>",
+            "x": "87.9",
+            "y": "70.3"
           }
         },
         "item_8": {

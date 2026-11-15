@@ -154,7 +154,9 @@
         "image_url": "",
         "layout": "stacked",
         "show_numbers": false,
-        "image_asset": "mini-rear.webp"
+        "image_asset": "mini-rear.webp",
+        "head_position": "above",
+        "separator": true
       },
       "blocks": {
         "item_0": {

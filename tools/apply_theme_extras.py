@@ -397,3 +397,34 @@ for name in ('product.quad-cortex', 'product.quad-cortex-mini'):
             f['settings']['layout'] = 'center'
     save(name, head, d)
 print('round 4 capture text ok')
+
+# ---- round 5 (Nov 16): hardware sections laid out like neuraldsp.com (heading + yellow separator, photo full width, list in columns) ----
+# The old image_url on the Nano controls / I/O and the mini I/O was neuraldsp.jp's yellow heading separator, not a photo.
+NANO_CTRL_PINS = {'1': (39.8, 36.8), '2': (75.3, 36.8), '3': (11.5, 16.0), '4': (85.8, 16.0), '5': (31.0, 16.0), '6': (48.6, 16.0),
+                  '7': (66.3, 16.0), '8': (9.1, 39.3), '9': (88.1, 39.3), '10': (9.3, 62.6), '11': (88.1, 62.6), '12': (9.0, 87.4)}
+NANO_IO_PINS = {'1': (13.6, 67), '2': (27.5, 67), '3': (51.0, 70.8), '4': (60.9, 67), '5': (72.9, 70.3), '6': (80.1, 26.4), '7': (80.5, 72.5), '8': (87.9, 70.3)}
+def pins(sec, table):
+    for b in sec['block_order']:
+        st = sec['blocks'][b]['settings']
+        if sec['blocks'][b]['type'] != 'item': continue
+        xy = table.get(str(st.get('number', '')))
+        if xy: st['x'], st['y'] = str(xy[0]), str(xy[1])
+        else: st.pop('x', None); st.pop('y', None)
+
+head, d = load('product.nano-cortex')
+c = d['sections']['rich_text_qkpgfd']
+c['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-top.webp', media_max=1040)
+pins(c, NANO_CTRL_PINS)
+io = d['sections']['rich_text_ae8n7g']
+io['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-rear.webp', media_max=1400)
+pins(io, NANO_IO_PINS)
+save('product.nano-cortex', head, d)
+
+head, d = load('product.quad-cortex-mini')
+d['sections']['custom_liquid_tpwyqn']['settings'].update(head_position='above', separator=True, image_url='')
+save('product.quad-cortex-mini', head, d)
+
+head, d = load('product.quad-cortex')
+d['sections']['custom_liquid_tpwyqn']['settings'].update(head_position='below', separator=True)
+save('product.quad-cortex', head, d)
+print('round 5 hardware sections ok')

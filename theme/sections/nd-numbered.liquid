@@ -1,28 +1,47 @@
 {%- comment -%}
-  Numbered list with an image — used for inputs/outputs and controls.
-  Layout "stacked" follows neuraldsp.com: the rear panel full width, the heading, then the list in columns
-  (and optional big highlight columns, as on the Quad Cortex mini page). "side" keeps the image beside the list.
+  Hardware sections (controls, inputs & outputs) laid out like neuraldsp.com:
+  heading + yellow separator, the product photo full width, then the list in columns.
+  Items can carry a marker position (x / y in % of the photo): a numbered marker is drawn on the photo,
+  and hovering a marker or a list item lights up its pair. "side" layout keeps the photo beside the list.
 {%- endcomment -%}
+{%- assign img_url = section.settings.image_url -%}
+{%- if img_url contains 'download_1.svg' or img_url contains '9789b00a3d5a31041fb594ab2f8ca442' -%}{%- assign img_url = '' -%}{%- endif -%}
 {%- assign has_img = false -%}
-{%- if section.settings.image != blank or section.settings.image_url != blank or section.settings.image_asset != blank -%}{%- assign has_img = true -%}{%- endif -%}
+{%- if section.settings.image != blank or img_url != blank or section.settings.image_asset != blank -%}{%- assign has_img = true -%}{%- endif -%}
 {%- assign stacked = false -%}{%- if section.settings.layout == 'stacked' -%}{%- assign stacked = true -%}{%- endif -%}
-<section class="nd-numbered{% if stacked %} nd-numbered--stacked{% endif %}{% unless section.settings.show_numbers %} nd-numbered--plain{% endunless %}">
+{%- assign head_below = false -%}{%- if stacked and section.settings.head_position == 'below' -%}{%- assign head_below = true -%}{%- endif -%}
+<section class="nd-numbered{% if stacked %} nd-numbered--stacked{% endif %}{% unless section.settings.show_numbers %} nd-numbered--plain{% endunless %}" data-numbered>
   <div class="container">
     {%- capture head -%}
-      <header class="section-head">
+      <header class="section-head nd-numbered__head{% if section.settings.separator %} has-sep{% endif %}">
         {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.separator -%}<span class="nd-sep" aria-hidden="true"></span>{%- endif -%}
         {%- if section.settings.subheading != blank -%}<p>{{ section.settings.subheading }}</p>{%- endif -%}
       </header>
     {%- endcapture -%}
     {%- capture media -%}
-      <div class="nd-numbered__media">
-        {%- if section.settings.image_asset != blank -%}
-          <img src="{{ section.settings.image_asset | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
-        {%- else -%}
-          {% render 'nd-media', image: section.settings.image, url: section.settings.image_url, alt: section.settings.heading, sizes: '(max-width: 900px) 100vw, 90vw' %}
-        {%- endif -%}
+      <div class="nd-numbered__media"{% if section.settings.media_max > 0 %} style="max-width: {{ section.settings.media_max }}px"{% endif %}>
+        <div class="nd-numbered__frame">
+          {%- if section.settings.image_asset != blank -%}
+            <img src="{{ section.settings.image_asset | asset_url }}" alt="{{ section.settings.heading | escape }}" loading="lazy">
+          {%- else -%}
+            {% render 'nd-media', image: section.settings.image, url: img_url, alt: section.settings.heading, sizes: '(max-width: 900px) 100vw, 90vw' %}
+          {%- endif -%}
+          {%- if section.settings.show_numbers -%}
+            {%- assign k = 0 -%}
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'item' -%}
+                {%- assign k = k | plus: 1 -%}
+                {%- if block.settings.x != blank and block.settings.y != blank -%}
+                  <button type="button" class="nd-pin" data-n="{{ k }}" style="left: {{ block.settings.x }}%; top: {{ block.settings.y }}%; --i: {{ k }}" aria-label="{{ block.settings.number | default: k }} {{ block.settings.title | escape }}">{{ block.settings.number | default: k }}</button>
+                {%- endif -%}
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endif -%}
+        </div>
       </div>
     {%- endcapture -%}
+    {%- unless head_below -%}{{ head }}{%- endunless -%}
     {%- if stacked -%}
       {%- if has_img -%}{{ media }}{%- endif -%}
       {%- assign hl = section.blocks | where: 'type', 'highlight' -%}
@@ -33,45 +52,74 @@
           {%- endfor -%}
         </div>
       {%- endif -%}
+      {%- if head_below -%}{{ head }}{%- endif -%}
     {%- endif -%}
-    {{ head }}
     <div class="nd-numbered__grid{% unless has_img %} nd-numbered__grid--full{% endunless %}">
       {%- if has_img and stacked == false -%}{{ media }}{%- endif -%}
       <ol class="nd-numbered__list" data-stagger>
         {%- assign k = 0 -%}
         {%- for block in section.blocks -%}
           {%- if block.type == 'item' -%}
-            <li style="--i: {{ k }}" {{ block.shopify_attributes }}>
-              {%- if section.settings.show_numbers -%}<span class="nd-numbered__n">{{ block.settings.number | default: forloop.index }}</span>{%- endif -%}
+            {%- assign k = k | plus: 1 -%}
+            <li style="--i: {{ k | minus: 1 }}" data-n="{{ k }}" {{ block.shopify_attributes }}>
+              {%- if section.settings.show_numbers -%}<span class="nd-numbered__n">{{ block.settings.number | default: k }}</span>{%- endif -%}
               <div>{%- if block.settings.title != blank -%}<b>{{ block.settings.title }}</b>{%- endif -%}{%- if block.settings.text != blank -%}<div class="nd-prose">{{ block.settings.text }}</div>{%- endif -%}</div>
             </li>
-            {%- assign k = k | plus: 1 -%}
           {%- endif -%}
         {%- endfor -%}
       </ol>
     </div>
   </div>
 </section>
+<script>
+  (() => {
+    const root = document.currentScript.previousElementSibling;
+    const pins = root.querySelectorAll('.nd-pin');
+    if (!pins.length) return;
+    const lit = (n, on) => root.querySelectorAll(`[data-n="${n}"]`).forEach((el) => el.classList.toggle('is-hot', on));
+    root.querySelectorAll('[data-n]').forEach((el) => {
+      const n = el.dataset.n;
+      el.addEventListener('mouseenter', () => lit(n, true));
+      el.addEventListener('mouseleave', () => lit(n, false));
+      el.addEventListener('focus', () => lit(n, true));
+      el.addEventListener('blur', () => lit(n, false));
+    });
+    pins.forEach((p) => p.addEventListener('click', () => {
+      const li = root.querySelector(`li[data-n="${p.dataset.n}"]`);
+      if (!li) return;
+      li.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      lit(p.dataset.n, true); setTimeout(() => lit(p.dataset.n, false), 1600);
+    }));
+  })();
+</script>
 {% schema %}
 {
   "name": "ND · Numbered list",
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading" },
     { "type": "text", "id": "subheading", "label": "Subheading" },
+    { "type": "checkbox", "id": "separator", "label": "Yellow separator under the heading", "default": true },
     { "type": "select", "id": "layout", "label": "Layout", "default": "side", "options": [
-      { "value": "side", "label": "Image beside the list" },
-      { "value": "stacked", "label": "Image full width, list in columns below" }
+      { "value": "side", "label": "Photo beside the list" },
+      { "value": "stacked", "label": "Photo full width, list in columns below" }
     ] },
-    { "type": "checkbox", "id": "show_numbers", "label": "Show numbers", "default": true, "info": "Turn off when the image has no numbers on it" },
-    { "type": "image_picker", "id": "image", "label": "Image" },
-    { "type": "text", "id": "image_url", "label": "Image URL" },
-    { "type": "text", "id": "image_asset", "label": "Theme asset file name", "info": "e.g. mini-rear.webp" }
+    { "type": "select", "id": "head_position", "label": "Heading position (full-width layout)", "default": "above", "options": [
+      { "value": "above", "label": "Above the photo" },
+      { "value": "below", "label": "Below the photo" }
+    ] },
+    { "type": "checkbox", "id": "show_numbers", "label": "Show numbers", "default": true, "info": "Numbers in the list, and markers on the photo for items that have a marker position" },
+    { "type": "image_picker", "id": "image", "label": "Photo" },
+    { "type": "text", "id": "image_url", "label": "Photo URL" },
+    { "type": "text", "id": "image_asset", "label": "Theme asset file name", "info": "e.g. nano-top.webp" },
+    { "type": "number", "id": "media_max", "label": "Photo max width (px, 0 = full width)", "default": 0 }
   ],
   "blocks": [
     { "type": "item", "name": "Item", "settings": [
       { "type": "text", "id": "number", "label": "Number" },
       { "type": "text", "id": "title", "label": "Title" },
-      { "type": "html", "id": "text", "label": "Text (HTML)" }
+      { "type": "html", "id": "text", "label": "Text (HTML)" },
+      { "type": "text", "id": "x", "label": "Marker position across (%)", "info": "Leave empty for no marker on the photo" },
+      { "type": "text", "id": "y", "label": "Marker position down (%)" }
     ] },
     { "type": "highlight", "name": "Highlight column", "settings": [
       { "type": "text", "id": "title", "label": "Title" },

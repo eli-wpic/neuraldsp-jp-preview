@@ -226,7 +226,9 @@
         "subheading": "",
         "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qc_io_2540.c0620137.webp?v=1744257005",
         "layout": "stacked",
-        "show_numbers": true
+        "show_numbers": true,
+        "head_position": "below",
+        "separator": true
       },
       "blocks": {
         "item_0": {
