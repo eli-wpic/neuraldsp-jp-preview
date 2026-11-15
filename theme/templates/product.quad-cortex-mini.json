@@ -47,7 +47,8 @@
         "view_captions": "Quad Cortex mini は、Neural DSP が誇るフラッグシップ Quad Cortex の体験を、コンパクトで使いやすいフォーマットに凝縮した次世代フロア型アンプモデラー＆マルチエフェクターです。|The Grid は、Quad Cortex mini の中核となるビジュアル・ワークスペースです。複雑なセットアップでも読みやすく。シンプルなアイデアはそのままシンプルに。|7インチのマルチタッチ・ディスプレイと、4つのステンレス製ロータリーフットスイッチを組み合わせることで、指先でも足元でも、反応の良い直感的な操作が可能です。|INPUT 2 / CAPTURE INPUT 専用のレベルコントロールとファンタム電源を備えた、コンボXLR／1/4インチ TRS入力。 DUAL EFFECTS LOOPS SEND 1/2 および RETURN 1/2 は、それぞれ |",
         "film_url": "https://youtu.be/9HzXdhslnRw",
         "film_label": "▶ フル動画を見る",
-        "photo_assets": "mini-photo-1.webp,mini-photo-2.webp,mini-photo-3.webp,mini-photo-4.webp"
+        "photo_assets": "mini-photo-2.webp,mini-photo-1.webp,mini-photo-3.webp,mini-photo-4.webp",
+        "bundle_help_url": "/pages/quad-cortex-mini-plugin#plugins"
       },
       "blocks": {},
       "block_order": []
@@ -66,10 +67,10 @@
     "rich_text_krypv3": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
+        "layout": "media-top",
         "youtube_id": "SPL1EWAVGis",
         "heading": "小さなボディ。大きなサウンド。",
-        "body": "<p>Quad Cortex mini は、一切の妥協をすることなく、Quad Cortex のフル体験をこれまでで最もコンパクトかつ実用的なフォーマットに凝縮しました。<br/><br/>処理能力、音質、Neural Capture テクノロジー、そして 7インチのタッチスクリーンまで、Quad Cortex と同等の性能を搭載。ペダルボードやモダンなリグ、デスクトップ環境にも自然にフィットします。<br/><br/>そのサイズと価格帯からは想像できないほどの高いパフォーマンスを実現。世界水準のサウンドを素早く作り込み、膨大なアンプ、エフェクト、Capture を自在に探求し、場所を選ばずクリエイティブなリグ構築が可能です。<br/><br/>Quad Cortex プラットフォームに初めて触れる方にも、すでに使い慣れている方にも。Quad Cortex mini は同じプラットフォームとワークフローを共有し、最初の一音から直感的で、深く没入できる音作り体験を提供します。</p><h2>Quad Cortex mini のファーストルック</h2><h3>フル<br/>Quad Cortex<br/>プロセッシングパワー</h3><p>コンパクトな筐体に、フラッグシップ級のパフォーマンス</p><h3>直感的な<br/>ビジュアル<br/>ワークフロー</h3><p>グリッドベースのシグナルフローを備えた7インチ・タッチスクリーン</p><h3>Neural Capture<br/>テクノロジー</h3><p>実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを 超高精度なデジタルレプリカとして作成・演奏可能</p><h3>50%以上<br/>小型化された<br/>フットプリント</h3><p>Quad Cortexのすべてのパワーを、どこへでも</p>"
+        "body": "<p>Quad Cortex mini は、一切の妥協をすることなく、Quad Cortex のフル体験をこれまでで最もコンパクトかつ実用的なフォーマットに凝縮しました。<br/><br/>処理能力、音質、Neural Capture テクノロジー、そして 7インチのタッチスクリーンまで、Quad Cortex と同等の性能を搭載。ペダルボードやモダンなリグ、デスクトップ環境にも自然にフィットします。<br/><br/>そのサイズと価格帯からは想像できないほどの高いパフォーマンスを実現。世界水準のサウンドを素早く作り込み、膨大なアンプ、エフェクト、Capture を自在に探求し、場所を選ばずクリエイティブなリグ構築が可能です。<br/><br/>Quad Cortex プラットフォームに初めて触れる方にも、すでに使い慣れている方にも。Quad Cortex mini は同じプラットフォームとワークフローを共有し、最初の一音から直感的で、深く没入できる音作り体験を提供します。</p>"
       }
     },
     "rich_text_6pwqvc": {
@@ -85,11 +86,11 @@
     "rich_text_dzy9mb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/90-plus.png?v=1769063854",
+        "layout": "center",
+        "image_url": "",
         "image_alt": "90+",
         "heading": "すぐに演奏できる、完結したクリエイティブ・ツールキット",
-        "body": "<p>Quad Cortex mini には、厳選されたアンプ、エフェクト、キャビネットがあらかじめ搭載されています。接続したその瞬間から、インスピレーションあふれるギター／ベース用リグを構築するために必要なすべてが揃っています。</p><p>ヴィンテージテイストからモダンなアンプ、スタジオクオリティのエフェクト、柔軟なキャビネットシミュレーションまで、すべてのバーチャルデバイスは演奏に自然に反応し、シームレスに連携するよう設計されています。</p><p>classic / modern / contemporary を網羅する90種類以上のアンプ・モデル</p><p>完全なシグナルチェーン構築のための100種類以上のエフェクト＆ユーティリティ</p><p>柔軟なマイク配置に対応する1000種類以上のキャビネットIR</p>"
+        "body": "<p>Quad Cortex mini には、厳選されたアンプ、エフェクト、キャビネットがあらかじめ搭載されています。接続したその瞬間から、インスピレーションあふれるギター／ベース用リグを構築するために必要なすべてが揃っています。</p><p>ヴィンテージテイストからモダンなアンプ、スタジオクオリティのエフェクト、柔軟なキャビネットシミュレーションまで、すべてのバーチャルデバイスは演奏に自然に反応し、シームレスに連携するよう設計されています。</p>"
       }
     },
     "single_image_tpda8j": {
@@ -254,41 +255,9 @@
             "title": "POWER INPUT",
             "text": "<p>12V DC / 1.2A、センターマイナス仕様の ロック式 2.1 / 5.5mm DC電源入力。 電源アダプターが付属し、一般的なペダルボード用電源と互換性のある 非ロック式アダプターも同梱。 電源投入動作は、接続時に自動で起動する設定、または電源スイッチによる手動起動のいずれかを選択できます。</p>"
           }
-        },
-        "hl_0": {
-          "type": "highlight",
-          "settings": {
-            "title": "Quad Cortex の処理能力をそのまま",
-            "text": "フラッグシップの性能を、コンパクトなボディに。"
-          }
-        },
-        "hl_1": {
-          "type": "highlight",
-          "settings": {
-            "title": "直感的なビジュアル操作",
-            "text": "グリッド型のシグナルフローを備えた 7インチタッチスクリーン。"
-          }
-        },
-        "hl_2": {
-          "type": "highlight",
-          "settings": {
-            "title": "Neural Capture テクノロジー",
-            "text": "実機のアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルレプリカとして作成・演奏できます。"
-          }
-        },
-        "hl_3": {
-          "type": "highlight",
-          "settings": {
-            "title": "設置面積は 50% 以上コンパクト",
-            "text": "Quad Cortex のパワーを、どこへでも。"
-          }
         }
       },
       "block_order": [
-        "hl_0",
-        "hl_1",
-        "hl_2",
-        "hl_3",
         "item_0",
         "item_1",
         "item_2",
@@ -1130,6 +1099,86 @@
         "c2",
         "c3"
       ]
+    },
+    "toolkit_stats": {
+      "type": "nd-stats",
+      "settings": {
+        "heading": "",
+        "link_label": "全デバイスリスト",
+        "link_url": "https://neuraldsp.com/device-list"
+      },
+      "blocks": {
+        "s0": {
+          "type": "stat",
+          "settings": {
+            "value": "90+",
+            "label": "classic / modern / contemporary を網羅するアンプ・モデル"
+          }
+        },
+        "s1": {
+          "type": "stat",
+          "settings": {
+            "value": "100+",
+            "label": "完全なシグナルチェーンを組めるエフェクト＆ユーティリティ"
+          }
+        },
+        "s2": {
+          "type": "stat",
+          "settings": {
+            "value": "1000+",
+            "label": "柔軟なマイク配置に対応するキャビネット IR"
+          }
+        }
+      },
+      "block_order": [
+        "s0",
+        "s1",
+        "s2"
+      ]
+    },
+    "first_look": {
+      "type": "nd-columns",
+      "settings": {
+        "heading": "",
+        "body": "",
+        "columns": 4
+      },
+      "blocks": {
+        "c0": {
+          "type": "column",
+          "settings": {
+            "title": "Quad Cortex の処理能力をそのまま",
+            "text": "<p>フラッグシップの性能を、コンパクトなボディに。</p>"
+          }
+        },
+        "c1": {
+          "type": "column",
+          "settings": {
+            "title": "直感的なビジュアル操作",
+            "text": "<p>グリッド型のシグナルフローを備えた 7インチタッチスクリーン。</p>"
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "title": "Neural Capture テクノロジー",
+            "text": "<p>実機のアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルレプリカとして作成・演奏できます。</p>"
+          }
+        },
+        "c3": {
+          "type": "column",
+          "settings": {
+            "title": "設置面積は 50% 以上コンパクト",
+            "text": "<p>Quad Cortex のパワーを、どこへでも。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "c0",
+        "c1",
+        "c2",
+        "c3"
+      ]
     }
   },
   "order": [
@@ -1137,8 +1186,10 @@
     "product_newsletter_popup_qjp3np",
     "coros_update",
     "rich_text_krypv3",
+    "first_look",
     "rich_text_6pwqvc",
     "rich_text_dzy9mb",
+    "toolkit_stats",
     "single_image_tpda8j",
     "rich_text_4vbhpb",
     "capture_versions",

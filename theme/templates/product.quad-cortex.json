@@ -92,7 +92,8 @@
         "film_url": "https://www.youtube.com/watch?v=SNq7D7Y4zfs",
         "film_label": "▶ フル動画を見る",
         "photo_assets": "qc-photo-1.webp,qc-photo-2.webp,qc-photo-3.webp,qc-photo-4.webp,qc-photo-5.webp",
-        "film_mp4": "https://cdn.shopify.com/videos/c/o/v/850a2016b0514a52a3e5448579317965.mp4"
+        "film_mp4": "https://cdn.shopify.com/videos/c/o/v/850a2016b0514a52a3e5448579317965.mp4",
+        "bundle_help_url": "/pages/quad-cortex-and-plugin-bundle#plugins"
       },
       "blocks": {},
       "block_order": []

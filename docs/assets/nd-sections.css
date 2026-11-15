@@ -658,3 +658,19 @@ img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; mar
 .mega--list a:has(img.nd-scaled) { justify-items: center; text-align: center; }
 .nd-feature__after { grid-column: 1 / -1; max-width: 46em; margin: clamp(24px, 3vw, 40px) auto 0; text-align: center; color: var(--text-2); }
 .nd-feature--media-top .nd-feature__media { max-width: 960px; width: 100%; justify-self: center; margin-inline: auto; }
+
+/* review Nov 16: JAPAN sits on the logo's centre line; product icons centred in their slots (both directions) */
+.logo { align-items: center; }
+.logo > svg, .logo > img { display: block; }
+.logo__region { display: inline-flex; align-items: center; line-height: 1; height: 22px; margin-top: 1px; }
+img.nd-scaled { object-position: center center !important; }
+.qc3d__dock-item img.nd-scaled, .mega img.nd-scaled { align-self: center; }
+.mega--list a { justify-items: center; text-align: center; }
+.mega--list img { justify-self: center; margin-inline: auto; }
+.nd-feature--media-top .nd-feature__copy { max-width: 52em; margin-inline: auto; text-align: center; }
+.nd-feature--center .nd-prose, .nd-feature--media-top .nd-prose { max-width: 46em; margin-inline: auto; }
+.nd-stats__row { display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); width: 100%; max-width: 1100px; gap: clamp(20px, 4vw, 56px); }
+.nd-stats__item { justify-items: center; }
+.nd-stats__item span { max-width: 20em; text-wrap: balance; }
+@media (max-width: 600px) { .nd-stats__row { grid-template-columns: 1fr; } }
+.nd-stats__item span { word-break: auto-phrase; }

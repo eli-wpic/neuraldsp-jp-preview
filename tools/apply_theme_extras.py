@@ -534,3 +534,39 @@ if sec and '<p>Neural Captureは登場以来' in sec['settings'].get('body', '')
     sec['settings']['layout'] = 'media-top'
     save('product.nano-cortex', head, d)
 print('nano intro ok')
+
+# ---- round 8 (Nov 16): 写真 opens on the front photo; サウンドを聴いて選ぶ goes straight to the plugin list ----
+FRONT_FIRST = {'product.quad-cortex': 'qc-photo-1.webp,qc-photo-2.webp,qc-photo-3.webp,qc-photo-4.webp,qc-photo-5.webp',
+               'product.quad-cortex-mini': 'mini-photo-2.webp,mini-photo-1.webp,mini-photo-3.webp,mini-photo-4.webp',
+               'product.nano-cortex': 'nano-photo-1.webp,nano-photo-2.webp,nano-photo-3.webp,nano-photo-4.webp,nano-photo-5.webp'}
+for name, photos in FRONT_FIRST.items():
+    head, d = load(name)
+    st = d['sections']['main']['settings']
+    st['photo_assets'] = photos
+    if name == 'product.quad-cortex': st['bundle_help_url'] = '/pages/quad-cortex-and-plugin-bundle#plugins'
+    if name == 'product.quad-cortex-mini': st['bundle_help_url'] = '/pages/quad-cortex-mini-plugin#plugins'
+    save(name, head, d)
+print('round 8 ok')
+
+# ---- round 9: long text runs across the page instead of a narrow column beside a small image ----
+head, d = load('product.quad-cortex-mini')
+k = d['sections'].get('rich_text_dzy9mb')
+if k and '<p>classic' in k['settings'].get('body', ''):
+    b = k['settings']['body']; k['settings']['body'] = b[:b.index('<p>classic')]
+    k['settings']['layout'] = 'center'; k['settings']['image_url'] = ''
+    insert_after(d, 'rich_text_dzy9mb', 'toolkit_stats', {'type': 'nd-stats', 'settings': {'heading': '', 'link_label': '全デバイスリスト', 'link_url': 'https://neuraldsp.com/device-list'},
+        'blocks': {'s0': {'type': 'stat', 'settings': {'value': '90+', 'label': 'classic / modern / contemporary を網羅するアンプ・モデル'}},
+                   's1': {'type': 'stat', 'settings': {'value': '100+', 'label': '完全なシグナルチェーンを組めるエフェクト＆ユーティリティ'}},
+                   's2': {'type': 'stat', 'settings': {'value': '1000+', 'label': '柔軟なマイク配置に対応するキャビネット IR'}}},
+        'block_order': ['s0', 's1', 's2']})
+k = d['sections'].get('rich_text_krypv3')
+if k and '<h2>' in k['settings'].get('body', ''):
+    b = k['settings']['body']; k['settings']['body'] = b[:b.index('<h2>')]
+    k['settings']['layout'] = 'media-top'
+    insert_after(d, 'rich_text_krypv3', 'first_look', cols('', '', [(t, x) for t, x in MINI_HL], 4))
+io = d['sections']['custom_liquid_tpwyqn']  # the four highlights now sit under 小さなボディ。大きなサウンド。 — not repeated in 入力と出力
+for b in [b for b in io['block_order'] if b.startswith('hl_')]:
+    io['blocks'].pop(b, None)
+io['block_order'] = [b for b in io['block_order'] if not b.startswith('hl_')]
+save('product.quad-cortex-mini', head, d)
+print('round 9 ok')
