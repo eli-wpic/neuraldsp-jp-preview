@@ -214,6 +214,10 @@
   .vs__price small { display: none; }
   .vs .compare__col { padding: 20px 4px 12px; }
 }
+/* the old stacked-card phone rule (120px photo column) must not reach the side-by-side comparison: it pushed the page wider than the phone */
+.vs .compare__col { grid-template-columns: minmax(0, 1fr); min-width: 0; }
+.vs .compare__col img { grid-row: auto; }
+.vs h3, .vs__price { overflow-wrap: anywhere; }
 .rail__labels button.is-lit { color: var(--text); }
 .rail__labels button.is-lit span::after { content: ""; position: absolute; left: 50%; bottom: -6px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--accent); }
 
