@@ -103,11 +103,11 @@
     "rich_text_4vbhpb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-left",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/capture-v1-img.png?v=1769068336",
+        "layout": "center",
+        "image_url": "",
         "image_alt": "Neural Capture Version 1",
         "heading": "Neural Capture",
-        "body": "<p><strong>実機をキャプチャ。どこでも演奏。<br/></strong><br/>Neural Capture は、実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルモデルとして再現します。世界中のプレイヤーやアーティストが作成した何千もの Capture から選ぶことも、あなた自身の機材を手軽にキャプチャすることも可能です。</p><p>音色だけでなく、ダイナミクスやタッチ、弾き心地までもが忠実にキャプチャされるため、演奏への反応は常に自然。ギターのボリュームを絞る、強くピッキングする――どんな操作にも、音楽的で馴染みのあるレスポンスが返ってきます。</p><p>あなたが信頼するサウンドは、演奏する場所を選ばず、常にあなたと共にあります。</p><p>Quad Cortex mini には、2,000以上の高品質なファクトリー Neural Capture があらかじめ収録されており、箱から出してすぐに、インスピレーションあふれるスタジオクオリティのサウンドを演奏できます。<br/><br/></p><p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。</p><p>日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p><p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。 ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現します。</p><p>ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、 ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+        "body": "<p><strong>実機をキャプチャ。どこでも演奏。<br/></strong><br/>Neural Capture は、実在するアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルモデルとして再現します。世界中のプレイヤーやアーティストが作成した何千もの Capture から選ぶことも、あなた自身の機材を手軽にキャプチャすることも可能です。</p><p>音色だけでなく、ダイナミクスやタッチ、弾き心地までもが忠実にキャプチャされるため、演奏への反応は常に自然。ギターのボリュームを絞る、強くピッキングする――どんな操作にも、音楽的で馴染みのあるレスポンスが返ってきます。</p><p>あなたが信頼するサウンドは、演奏する場所を選ばず、常にあなたと共にあります。</p><p>Quad Cortex mini には、2,000以上の高品質なファクトリー Neural Capture があらかじめ収録されており、箱から出してすぐに、インスピレーションあふれるスタジオクオリティのサウンドを演奏できます。</p>"
       }
     },
     "rich_text_dgvea3": {
@@ -151,7 +151,10 @@
       "settings": {
         "heading": "入力と出力",
         "subheading": "シンプルな接続。自由なセットアップ。",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/9789b00a3d5a31041fb594ab2f8ca442.svg?v=1769051445"
+        "image_url": "",
+        "layout": "stacked",
+        "show_numbers": false,
+        "image_asset": "mini-rear.webp"
       },
       "blocks": {
         "item_0": {
@@ -249,9 +252,41 @@
             "title": "POWER INPUT",
             "text": "<p>12V DC / 1.2A、センターマイナス仕様の ロック式 2.1 / 5.5mm DC電源入力。 電源アダプターが付属し、一般的なペダルボード用電源と互換性のある 非ロック式アダプターも同梱。 電源投入動作は、接続時に自動で起動する設定、または電源スイッチによる手動起動のいずれかを選択できます。</p>"
           }
+        },
+        "hl_0": {
+          "type": "highlight",
+          "settings": {
+            "title": "Quad Cortex の処理能力をそのまま",
+            "text": "フラッグシップの性能を、コンパクトなボディに。"
+          }
+        },
+        "hl_1": {
+          "type": "highlight",
+          "settings": {
+            "title": "直感的なビジュアル操作",
+            "text": "グリッド型のシグナルフローを備えた 7インチタッチスクリーン。"
+          }
+        },
+        "hl_2": {
+          "type": "highlight",
+          "settings": {
+            "title": "Neural Capture テクノロジー",
+            "text": "実機のアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルレプリカとして作成・演奏できます。"
+          }
+        },
+        "hl_3": {
+          "type": "highlight",
+          "settings": {
+            "title": "設置面積は 50% 以上コンパクト",
+            "text": "Quad Cortex のパワーを、どこへでも。"
+          }
         }
       },
       "block_order": [
+        "hl_0",
+        "hl_1",
+        "hl_2",
+        "hl_3",
         "item_0",
         "item_1",
         "item_2",
@@ -288,7 +323,8 @@
         "width": "wide",
         "html": "<h3>Quad Cortex との比較</h3><img alt=\"\" loading=\"lazy\" src=\"https://neuraldsp.jp/cdn/shop/files/9789b00a3d5a31041fb594ab2f8ca442_8f43fc47-0ab2-48a9-b1f4-d03c30af6efb.svg?v=1769153054\"/><p>CorOS 機能一覧</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>バーチャル・デバイス・ライブラリ</th><td>200</td><td>200</td></tr><tr><th>Neural Capture ライブラリ</th><td>1500</td><td>1500</td></tr><tr><th>インパルス・レスポンス（IR）ライブラリ</th><td>1000</td><td>1000</td></tr><tr><th>ユーザー・プリセット保存数</th><td>3072</td><td>3072</td></tr><tr><th>ユーザー・キャプチャ保存数</th><td>2048</td><td>2048</td></tr><tr><th>ユーザー IR 保存数</th><td>2048</td><td>2048</td></tr><tr><th>プラグイン互換性</th><td>対応</td><td>対応</td></tr><tr><th>パラメーター・エンコーダー割り当て</th><td>対応*</td><td>対応（最大10同時）</td></tr><tr><th>SCENE &amp; STOMP モード</th><td>対応**</td><td>対応（1プリセットあたり8）</td></tr><tr><th>HYBRID モード</th><td>対応***</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 1</th><td>対応</td><td>対応</td></tr><tr><th>Neural Capture™ バージョン 2</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Cloud™ アクセス</th><td>対応</td><td>対応</td></tr><tr><th>クラウドバックアップ</th><td>対応</td><td>対応</td></tr><tr><th>Cortex Control™ アプリ</th><td>対応</td><td>対応</td></tr><tr><th>グローバル EQ</th><td>対応</td><td>対応</td></tr><tr><th>ルーパー</th><td>対応</td><td>対応</td></tr><tr><th>モメンタリー・フットスイッチ割り当て</th><td>非対応</td><td>対応</td></tr></tbody></table><p>*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。</p><p>**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。</p><p>***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。</p><p>ハードウェア I/O</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>オーディオ入力</th><td>1× 1/4インチ TS（入力 1）<br/>1× コンボ XLR + 1/4インチ TRS（入力 2）<br/>1× 1/4インチ TRS（リターン 1/2）*</td><td>2× コンボ XLR + 1/4インチ TRS（入力 1/2）<br/>2× 1/4インチ TRS（リターン 1/2）</td></tr><tr><th>オーディオ出力</th><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TS（アウト 3/4）<br/>1× 1/4インチ TRS（センド 1/2）*<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/8インチ TRS（ヘッドフォン）</td><td>2× XLR（アウト 1/2）<br/>2× 1/4インチ TRS（アウト 3/4）<br/>2× 1/4インチ TRS（センド 1/2）<br/>1× 1/4インチ TRS（キャプチャアウト）<br/>1× 1/4インチ TRS（ヘッドフォン）</td></tr><tr><th>ヘッドフォン</th><td>対応（1/8インチ TRS）</td><td>対応（1/4インチ TRS）</td></tr><tr><th>USB オーディオ</th><td>対応（USB-C）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td><td>対応（USB-A）<br/>USB Audio Class Compliant（24bit / 48kHz）<br/>8入力 / 8出力</td></tr><tr><th>MIDI</th><td>MIDI 入力（1/8インチ TRS Type-A）<br/>MIDI 出力（1/8インチ TRS Type-A）<br/>MIDI Over USB 対応</td><td>MIDI 入力（DIN）<br/>MIDI 出力（DIN）<br/>MIDI Over USB 対応</td></tr><tr><th>エクスプレッション・ペダル</th><td>Expression 1：1/4インチ TRS<br/>Expression 2：MIDI</td><td>Expression 1：1/4インチ TRS<br/>Expression 2：1/4インチ TRS</td></tr><tr><th>電源</th><td>12V DC 1.2A<br/>センターネガティブ<br/>2.1 / 5.5mm DC ロッキングコネクター<br/>電源アダプター付属</td><td>12V DC 3A<br/>センターネガティブ<br/>2.1 / 5.5mm DC 標準コネクター 電源アダプター付属</td></tr></tbody></table><p>*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。</p><p>その他</p><table><thead><tr><th>機能</th><th>QUAD CORTEX MINI</th><th>QUAD CORTEX</th></tr></thead><tbody><tr><th>ワイヤレス接続</th><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）<br/></td><td>対応<br/>IEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）</td></tr><tr><th>電源スイッチ</th><td>あり</td><td>あり</td></tr><tr><th>マスターボリューム</th><td>あり（＋／− ボタン）</td><td>あり（ノブ）</td></tr><tr><th>フットスイッチ</th><td>ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ</td><td>ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ</td></tr><tr><th>ディスプレイ</th><td>7インチ カラータッチスクリーン</td><td>7インチ カラータッチスクリーン</td></tr><tr><th>シャーシ</th><td>アルマイト加工アルミニウム</td><td>アルマイト加工アルミニウム</td></tr><tr><th>外形寸法</th><td>22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）</td><td>29 × 19.5 cm（11.4 × 7.7インチ）</td></tr><tr><th>重量</th><td>1.5 kg（3.3 lbs）</td><td>1.95 kg（4.2 lbs）</td></tr><tr><th>価格</th><td>¥219,000</td><td>¥279,000</td></tr></tbody></table>",
         "collapsed_label": "詳しい比較表を見る（機能・入出力）"
-      }
+      },
+      "disabled": true
     },
     "custom_liquid_gqvxw7": {
       "type": "nd-feature",
@@ -634,6 +670,407 @@
         "m0",
         "m1",
         "m2"
+      ],
+      "disabled": true
+    },
+    "versus": {
+      "type": "nd-versus",
+      "settings": {
+        "eyebrow": "Compare",
+        "heading": "Quad Cortex と比べる",
+        "product_a": "quad-cortex-mini",
+        "image_a": "mini-top.webp",
+        "width_a": 22.8,
+        "product_b": "quad-cortex",
+        "image_b": "qc-top.webp",
+        "width_b": 29,
+        "feature_label": "機能",
+        "tax_label": "税込",
+        "cta_label": "詳しく見る"
+      },
+      "blocks": {
+        "group_0": {
+          "type": "group",
+          "settings": {
+            "title": "CorOS 機能"
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "バーチャル・デバイス・ライブラリ",
+            "a": "200+",
+            "b": "200+"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture ライブラリ",
+            "a": "2000+",
+            "b": "2000+"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "インパルス・レスポンス（IR）ライブラリ",
+            "a": "1000+",
+            "b": "1000+"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー・プリセット保存数",
+            "a": "3072",
+            "b": "3072"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー・キャプチャー保存数",
+            "a": "2048",
+            "b": "2048"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー IR 保存数",
+            "a": "2048",
+            "b": "2048"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "label": "プラグイン互換性",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "label": "パラメーター・エンコーダー割り当て",
+            "a": "対応*",
+            "b": "対応（最大10個同時）"
+          }
+        },
+        "row_9": {
+          "type": "row",
+          "settings": {
+            "label": "SCENE & STOMP モード",
+            "a": "対応**",
+            "b": "対応（1プリセットあたり8）"
+          }
+        },
+        "row_10": {
+          "type": "row",
+          "settings": {
+            "label": "HYBRID モード",
+            "a": "対応***",
+            "b": "対応"
+          }
+        },
+        "row_11": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture™ バージョン 1",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_12": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture™ バージョン 2",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_13": {
+          "type": "row",
+          "settings": {
+            "label": "Cortex Cloud™ アクセス",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_14": {
+          "type": "row",
+          "settings": {
+            "label": "クラウドバックアップ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_15": {
+          "type": "row",
+          "settings": {
+            "label": "Cortex Control™ アプリ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_16": {
+          "type": "row",
+          "settings": {
+            "label": "グローバル EQ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_17": {
+          "type": "row",
+          "settings": {
+            "label": "ルーパー",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_18": {
+          "type": "row",
+          "settings": {
+            "label": "モメンタリー・フットスイッチ割り当て",
+            "a": "非対応",
+            "b": "対応"
+          }
+        },
+        "note_19": {
+          "type": "note",
+          "settings": {
+            "text": "*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。"
+          }
+        },
+        "note_20": {
+          "type": "note",
+          "settings": {
+            "text": "**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。"
+          }
+        },
+        "note_21": {
+          "type": "note",
+          "settings": {
+            "text": "***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。"
+          }
+        },
+        "group_22": {
+          "type": "group",
+          "settings": {
+            "title": "ハードウェア I/O"
+          }
+        },
+        "row_23": {
+          "type": "row",
+          "settings": {
+            "label": "オーディオ入力",
+            "a": "1× 1/4インチ TS（入力 1）\n1× コンボ XLR + 1/4インチ TRS（入力 2）\n1× 1/4インチ TRS（リターン 1/2）*",
+            "b": "2× コンボ XLR + 1/4インチ TRS（入力 1/2）\n2× 1/4インチ TRS（リターン 1/2）"
+          }
+        },
+        "row_24": {
+          "type": "row",
+          "settings": {
+            "label": "オーディオ出力",
+            "a": "2× XLR（アウト 1/2）\n2× 1/4インチ TS（アウト 3/4）\n1× 1/4インチ TRS（センド 1/2）*\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/8インチ TRS（ヘッドフォン）",
+            "b": "2× XLR（アウト 1/2）\n2× 1/4インチ TRS（アウト 3/4）\n2× 1/4インチ TRS（センド 1/2）\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/4インチ TRS（ヘッドフォン）"
+          }
+        },
+        "row_25": {
+          "type": "row",
+          "settings": {
+            "label": "ヘッドフォン",
+            "a": "対応（1/8インチ TRS）",
+            "b": "対応（1/4インチ TRS）"
+          }
+        },
+        "row_26": {
+          "type": "row",
+          "settings": {
+            "label": "USB オーディオ",
+            "a": "対応（USB-C）\nUSB Audio Class Compliant（24bit / 48kHz）\n8入力 / 8出力",
+            "b": "対応（USB-A）\nUSB Audio Class Compliant（24bit / 48kHz）\n8入力 / 8出力"
+          }
+        },
+        "row_27": {
+          "type": "row",
+          "settings": {
+            "label": "MIDI",
+            "a": "MIDI 入力（1/8インチ TRS Type-A）\nMIDI 出力（1/8インチ TRS Type-A）\nMIDI Over USB 対応",
+            "b": "MIDI 入力（DIN）\nMIDI 出力（DIN）\nMIDI Over USB 対応"
+          }
+        },
+        "row_28": {
+          "type": "row",
+          "settings": {
+            "label": "エクスプレッション・ペダル",
+            "a": "Expression 1：1/4インチ TRS\nExpression 2：MIDI",
+            "b": "Expression 1：1/4インチ TRS\nExpression 2：1/4インチ TRS"
+          }
+        },
+        "row_29": {
+          "type": "row",
+          "settings": {
+            "label": "電源",
+            "a": "12V DC 1.2A\nセンターネガティブ\n2.1 / 5.5mm DC ロッキングコネクター\n電源アダプター付属",
+            "b": "12V DC 3A\nセンターネガティブ\n2.1 / 5.5mm DC 標準コネクター 電源アダプター付属"
+          }
+        },
+        "note_30": {
+          "type": "note",
+          "settings": {
+            "text": "*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。"
+          }
+        },
+        "group_31": {
+          "type": "group",
+          "settings": {
+            "title": "その他"
+          }
+        },
+        "row_32": {
+          "type": "row",
+          "settings": {
+            "label": "ワイヤレス接続",
+            "a": "対応\nIEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）",
+            "b": "対応\nIEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）"
+          }
+        },
+        "row_33": {
+          "type": "row",
+          "settings": {
+            "label": "電源スイッチ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_34": {
+          "type": "row",
+          "settings": {
+            "label": "マスターボリューム",
+            "a": "あり（＋／− ボタン）",
+            "b": "あり（ノブ）"
+          }
+        },
+        "row_35": {
+          "type": "row",
+          "settings": {
+            "label": "フットスイッチ",
+            "a": "ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ",
+            "b": "ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ"
+          }
+        },
+        "row_36": {
+          "type": "row",
+          "settings": {
+            "label": "ディスプレイ",
+            "a": "7インチ カラータッチスクリーン",
+            "b": "7インチ カラータッチスクリーン"
+          }
+        },
+        "row_37": {
+          "type": "row",
+          "settings": {
+            "label": "シャーシ",
+            "a": "アルマイト加工アルミニウム",
+            "b": "アルマイト加工アルミニウム"
+          }
+        },
+        "row_38": {
+          "type": "row",
+          "settings": {
+            "label": "外形寸法",
+            "a": "22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）",
+            "b": "29 × 19.5 × 6.9 cm（11.4 × 7.7 × 2.7インチ）"
+          }
+        },
+        "row_39": {
+          "type": "row",
+          "settings": {
+            "label": "重量",
+            "a": "1.5 kg（3.3 lbs）",
+            "b": "1.95 kg（4.2 lbs）"
+          }
+        }
+      },
+      "block_order": [
+        "group_0",
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8",
+        "row_9",
+        "row_10",
+        "row_11",
+        "row_12",
+        "row_13",
+        "row_14",
+        "row_15",
+        "row_16",
+        "row_17",
+        "row_18",
+        "note_19",
+        "note_20",
+        "note_21",
+        "group_22",
+        "row_23",
+        "row_24",
+        "row_25",
+        "row_26",
+        "row_27",
+        "row_28",
+        "row_29",
+        "note_30",
+        "group_31",
+        "row_32",
+        "row_33",
+        "row_34",
+        "row_35",
+        "row_36",
+        "row_37",
+        "row_38",
+        "row_39"
+      ]
+    },
+    "capture_versions": {
+      "type": "nd-capture-versions",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "body": ""
+      },
+      "blocks": {
+        "v1": {
+          "type": "version",
+          "settings": {
+            "title": "Neural Capture",
+            "version": "Version 1",
+            "color": "#7cc4f5",
+            "where": "デバイス上で処理",
+            "text": "<p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p>"
+          }
+        },
+        "v2": {
+          "type": "version",
+          "settings": {
+            "title": "Neural Capture",
+            "version": "Version 2",
+            "color": "#f5cf3d",
+            "where": "クラウドで処理",
+            "text": "<p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現。ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2"
       ]
     }
   },
@@ -645,6 +1082,7 @@
     "rich_text_dzy9mb",
     "single_image_tpda8j",
     "rich_text_4vbhpb",
+    "capture_versions",
     "rich_text_dgvea3",
     "custom_liquid_88nkjy",
     "single_image_gffdxp",
@@ -652,6 +1090,7 @@
     "custom_liquid_tpwyqn",
     "single_image_ahaieh",
     "rich_text_w4egmi",
+    "versus",
     "compare",
     "rich_text_ewyvb6",
     "custom_liquid_gqvxw7",

@@ -156,13 +156,13 @@
     "rich_text_4vbhpb": {
       "type": "nd-feature",
       "settings": {
-        "layout": "media-right",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/capture-v1-img.png?v=1769068336",
+        "layout": "center",
+        "image_url": "",
         "image_alt": "Neural Capture Version 1",
         "heading": "Neural Capture™",
         "button_label": "▶ ニューラルキャプチャの詳細",
         "button_url": "https://www.youtube.com/watch?v=qCypGW1qMdM",
-        "body": "<p>お気に入りのリグのサウンドをキャプチャ、共有、ダウンロード。</p><p>Neural DSP 独自の生体模倣型 AI 技術を搭載した Quad Cortex は、あらゆる物理アンプ・オーバードライブ・キャビネットの音響特性を前例のない精度で学習・再現することができます。</p><p>他に類を見ない高度なニューラルネットワークアルゴリズムにより、人間の聴覚に近い形でサウンドを認識し、世界で最も自然なサウンドを再現するキャプチャソリューションを実現します。</p><p>一流のプロデューサーやサウンドデザイナーと協力し、フルサーキットモデルに加えて、無料のリグキャプチャを随時提供し続けます。</p><p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。</p><p>日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p><p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。 ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現します。</p><p>ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、 ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+        "body": "<p>お気に入りのリグのサウンドをキャプチャ、共有、ダウンロード。</p><p>Neural DSP 独自の生体模倣型 AI 技術を搭載した Quad Cortex は、あらゆる物理アンプ・オーバードライブ・キャビネットの音響特性を前例のない精度で学習・再現することができます。</p><p>他に類を見ない高度なニューラルネットワークアルゴリズムにより、人間の聴覚に近い形でサウンドを認識し、世界で最も自然なサウンドを再現するキャプチャソリューションを実現します。</p><p>一流のプロデューサーやサウンドデザイナーと協力し、フルサーキットモデルに加えて、無料のリグキャプチャを随時提供し続けます。</p>"
       }
     },
     "image_with_text_gqqlkf": {
@@ -224,7 +224,9 @@
       "settings": {
         "heading": "入力と出力",
         "subheading": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qc_io_2540.c0620137.webp?v=1744257005"
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/qc_io_2540.c0620137.webp?v=1744257005",
+        "layout": "stacked",
+        "show_numbers": true
       },
       "blocks": {
         "item_0": {
@@ -632,6 +634,406 @@
       "type": "nd-specs",
       "blocks": {},
       "block_order": []
+    },
+    "capture_versions": {
+      "type": "nd-capture-versions",
+      "settings": {
+        "eyebrow": "",
+        "heading": "",
+        "body": ""
+      },
+      "blocks": {
+        "v1": {
+          "type": "version",
+          "settings": {
+            "title": "Neural Capture",
+            "version": "Version 1",
+            "color": "#7cc4f5",
+            "where": "デバイス上で処理",
+            "text": "<p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p>"
+          }
+        },
+        "v2": {
+          "type": "version",
+          "settings": {
+            "title": "Neural Capture",
+            "version": "Version 2",
+            "color": "#f5cf3d",
+            "where": "クラウドで処理",
+            "text": "<p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現。ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "v1",
+        "v2"
+      ]
+    },
+    "versus": {
+      "type": "nd-versus",
+      "settings": {
+        "eyebrow": "Compare",
+        "heading": "Quad Cortex mini と比べる",
+        "product_a": "quad-cortex-mini",
+        "image_a": "mini-top.webp",
+        "width_a": 22.8,
+        "product_b": "quad-cortex",
+        "image_b": "qc-top.webp",
+        "width_b": 29,
+        "feature_label": "機能",
+        "tax_label": "税込",
+        "cta_label": "詳しく見る"
+      },
+      "blocks": {
+        "group_0": {
+          "type": "group",
+          "settings": {
+            "title": "CorOS 機能"
+          }
+        },
+        "row_1": {
+          "type": "row",
+          "settings": {
+            "label": "バーチャル・デバイス・ライブラリ",
+            "a": "200+",
+            "b": "200+"
+          }
+        },
+        "row_2": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture ライブラリ",
+            "a": "2000+",
+            "b": "2000+"
+          }
+        },
+        "row_3": {
+          "type": "row",
+          "settings": {
+            "label": "インパルス・レスポンス（IR）ライブラリ",
+            "a": "1000+",
+            "b": "1000+"
+          }
+        },
+        "row_4": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー・プリセット保存数",
+            "a": "3072",
+            "b": "3072"
+          }
+        },
+        "row_5": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー・キャプチャー保存数",
+            "a": "2048",
+            "b": "2048"
+          }
+        },
+        "row_6": {
+          "type": "row",
+          "settings": {
+            "label": "ユーザー IR 保存数",
+            "a": "2048",
+            "b": "2048"
+          }
+        },
+        "row_7": {
+          "type": "row",
+          "settings": {
+            "label": "プラグイン互換性",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_8": {
+          "type": "row",
+          "settings": {
+            "label": "パラメーター・エンコーダー割り当て",
+            "a": "対応*",
+            "b": "対応（最大10個同時）"
+          }
+        },
+        "row_9": {
+          "type": "row",
+          "settings": {
+            "label": "SCENE & STOMP モード",
+            "a": "対応**",
+            "b": "対応（1プリセットあたり8）"
+          }
+        },
+        "row_10": {
+          "type": "row",
+          "settings": {
+            "label": "HYBRID モード",
+            "a": "対応***",
+            "b": "対応"
+          }
+        },
+        "row_11": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture™ バージョン 1",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_12": {
+          "type": "row",
+          "settings": {
+            "label": "Neural Capture™ バージョン 2",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_13": {
+          "type": "row",
+          "settings": {
+            "label": "Cortex Cloud™ アクセス",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_14": {
+          "type": "row",
+          "settings": {
+            "label": "クラウドバックアップ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_15": {
+          "type": "row",
+          "settings": {
+            "label": "Cortex Control™ アプリ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_16": {
+          "type": "row",
+          "settings": {
+            "label": "グローバル EQ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_17": {
+          "type": "row",
+          "settings": {
+            "label": "ルーパー",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_18": {
+          "type": "row",
+          "settings": {
+            "label": "モメンタリー・フットスイッチ割り当て",
+            "a": "非対応",
+            "b": "対応"
+          }
+        },
+        "note_19": {
+          "type": "note",
+          "settings": {
+            "text": "*Quad Cortex mini® では、フットスイッチ・エンコーダー C および D が、画面上のパラメーターのフォーカスおよびコントロールに使用されます。"
+          }
+        },
+        "note_20": {
+          "type": "note",
+          "settings": {
+            "text": "**Quad Cortex mini® では、「フットスイッチ・ページ」機能を使用することで、8つすべての SCENE または STOMP 割り当てにアクセスできます。"
+          }
+        },
+        "note_21": {
+          "type": "note",
+          "settings": {
+            "text": "***Quad Cortex mini® は HYBRID モードに対応していますが、フットスイッチ配置の違いにより、Quad Cortex® とは構成が異なります。"
+          }
+        },
+        "group_22": {
+          "type": "group",
+          "settings": {
+            "title": "ハードウェア I/O"
+          }
+        },
+        "row_23": {
+          "type": "row",
+          "settings": {
+            "label": "オーディオ入力",
+            "a": "1× 1/4インチ TS（入力 1）\n1× コンボ XLR + 1/4インチ TRS（入力 2）\n1× 1/4インチ TRS（リターン 1/2）*",
+            "b": "2× コンボ XLR + 1/4インチ TRS（入力 1/2）\n2× 1/4インチ TRS（リターン 1/2）"
+          }
+        },
+        "row_24": {
+          "type": "row",
+          "settings": {
+            "label": "オーディオ出力",
+            "a": "2× XLR（アウト 1/2）\n2× 1/4インチ TS（アウト 3/4）\n1× 1/4インチ TRS（センド 1/2）*\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/8インチ TRS（ヘッドフォン）",
+            "b": "2× XLR（アウト 1/2）\n2× 1/4インチ TRS（アウト 3/4）\n2× 1/4インチ TRS（センド 1/2）\n1× 1/4インチ TRS（キャプチャアウト）\n1× 1/4インチ TRS（ヘッドフォン）"
+          }
+        },
+        "row_25": {
+          "type": "row",
+          "settings": {
+            "label": "ヘッドフォン",
+            "a": "対応（1/8インチ TRS）",
+            "b": "対応（1/4インチ TRS）"
+          }
+        },
+        "row_26": {
+          "type": "row",
+          "settings": {
+            "label": "USB オーディオ",
+            "a": "対応（USB-C）\nUSB Audio Class Compliant（24bit / 48kHz）\n8入力 / 8出力",
+            "b": "対応（USB-A）\nUSB Audio Class Compliant（24bit / 48kHz）\n8入力 / 8出力"
+          }
+        },
+        "row_27": {
+          "type": "row",
+          "settings": {
+            "label": "MIDI",
+            "a": "MIDI 入力（1/8インチ TRS Type-A）\nMIDI 出力（1/8インチ TRS Type-A）\nMIDI Over USB 対応",
+            "b": "MIDI 入力（DIN）\nMIDI 出力（DIN）\nMIDI Over USB 対応"
+          }
+        },
+        "row_28": {
+          "type": "row",
+          "settings": {
+            "label": "エクスプレッション・ペダル",
+            "a": "Expression 1：1/4インチ TRS\nExpression 2：MIDI",
+            "b": "Expression 1：1/4インチ TRS\nExpression 2：1/4インチ TRS"
+          }
+        },
+        "row_29": {
+          "type": "row",
+          "settings": {
+            "label": "電源",
+            "a": "12V DC 1.2A\nセンターネガティブ\n2.1 / 5.5mm DC ロッキングコネクター\n電源アダプター付属",
+            "b": "12V DC 3A\nセンターネガティブ\n2.1 / 5.5mm DC 標準コネクター 電源アダプター付属"
+          }
+        },
+        "note_30": {
+          "type": "note",
+          "settings": {
+            "text": "*Quad Cortex mini は、TRS センド／リターン端子を共有する 2系統のエフェクトループを搭載しています。SEND 1/2 または RETURN 1/2 に 標準TSケーブルを接続した場合、ループ1のみが使用されます。ループ1とループ2の両方を使用するには、TRSインサートケーブル（TRS → デュアルTS）を使用してください。"
+          }
+        },
+        "group_31": {
+          "type": "group",
+          "settings": {
+            "title": "その他"
+          }
+        },
+        "row_32": {
+          "type": "row",
+          "settings": {
+            "label": "ワイヤレス接続",
+            "a": "対応\nIEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）",
+            "b": "対応\nIEEE 802.11 b/g/n Wi-Fi モジュール（2.4GHz ISM バンド）"
+          }
+        },
+        "row_33": {
+          "type": "row",
+          "settings": {
+            "label": "電源スイッチ",
+            "a": "対応",
+            "b": "対応"
+          }
+        },
+        "row_34": {
+          "type": "row",
+          "settings": {
+            "label": "マスターボリューム",
+            "a": "あり（＋／− ボタン）",
+            "b": "あり（ノブ）"
+          }
+        },
+        "row_35": {
+          "type": "row",
+          "settings": {
+            "label": "フットスイッチ",
+            "a": "ステンレス製フットスイッチ ×4 ＋ ロータリーフットスイッチ",
+            "b": "ステンレス製フットスイッチ ×11 ＋ ロータリーフットスイッチ"
+          }
+        },
+        "row_36": {
+          "type": "row",
+          "settings": {
+            "label": "ディスプレイ",
+            "a": "7インチ カラータッチスクリーン",
+            "b": "7インチ カラータッチスクリーン"
+          }
+        },
+        "row_37": {
+          "type": "row",
+          "settings": {
+            "label": "シャーシ",
+            "a": "アルマイト加工アルミニウム",
+            "b": "アルマイト加工アルミニウム"
+          }
+        },
+        "row_38": {
+          "type": "row",
+          "settings": {
+            "label": "外形寸法",
+            "a": "22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）",
+            "b": "29 × 19.5 × 6.9 cm（11.4 × 7.7 × 2.7インチ）"
+          }
+        },
+        "row_39": {
+          "type": "row",
+          "settings": {
+            "label": "重量",
+            "a": "1.5 kg（3.3 lbs）",
+            "b": "1.95 kg（4.2 lbs）"
+          }
+        }
+      },
+      "block_order": [
+        "group_0",
+        "row_1",
+        "row_2",
+        "row_3",
+        "row_4",
+        "row_5",
+        "row_6",
+        "row_7",
+        "row_8",
+        "row_9",
+        "row_10",
+        "row_11",
+        "row_12",
+        "row_13",
+        "row_14",
+        "row_15",
+        "row_16",
+        "row_17",
+        "row_18",
+        "note_19",
+        "note_20",
+        "note_21",
+        "group_22",
+        "row_23",
+        "row_24",
+        "row_25",
+        "row_26",
+        "row_27",
+        "row_28",
+        "row_29",
+        "note_30",
+        "group_31",
+        "row_32",
+        "row_33",
+        "row_34",
+        "row_35",
+        "row_36",
+        "row_37",
+        "row_38",
+        "row_39"
+      ]
     }
   },
   "order": [
@@ -644,11 +1046,13 @@
     "custom_liquid_bz3bhn",
     "single_image_ahaieh",
     "rich_text_4vbhpb",
+    "capture_versions",
     "image_with_text_gqqlkf",
     "custom_liquid_cypaxf",
     "custom_liquid_qbqcpw",
     "custom_liquid_tpwyqn",
     "rich_text_dgvea3",
+    "versus",
     "custom_liquid_aieqim",
     "collapsible_content_qcfaq1",
     "1778490479652c548e",

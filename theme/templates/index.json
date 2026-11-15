@@ -291,7 +291,7 @@
       "type": "nd-compare",
       "settings": {
         "heading": "あなたに合う一台は？",
-        "body": "2つの質問に答えると、おすすめのモデルが分かります。",
+        "body": "2つの質問に答えると、Quad Cortex と Quad Cortex mini のどちらがおすすめか分かります。",
         "q1": "プラグインを使いたい？",
         "q1_yes": "使いたい",
         "q1_no": "こだわらない",
@@ -306,7 +306,7 @@
           "settings": {
             "product": "quad-cortex",
             "role": "次世代のマルチエフェクター",
-            "recommend_for": "features_yes,features_no",
+            "recommend_for": "features_yes,features_no,portable_no,price_no",
             "width_cm": 29,
             "size_text": "29 × 19.5 cm",
             "weight_g": 1950,
@@ -347,7 +347,8 @@
             "capture": true,
             "plugins": false,
             "image_asset": "nano-photo-1.webp"
-          }
+          },
+          "disabled": true
         }
       },
       "block_order": [

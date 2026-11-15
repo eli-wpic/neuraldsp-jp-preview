@@ -283,3 +283,117 @@ if 'image_with_text_gqqlkf' in d['sections']:
     d['sections']['image_with_text_gqqlkf']['settings']['clip_white'] = True
     save('product.quad-cortex', head, d)
 print('review round 3 ok')
+
+# ---- client review round 4 (Nov 16): follow neuraldsp.com/quad-cortex(-mini) for Neural Capture, I/O and the QC vs mini table ----
+import html as _html
+def insert_after(d, after, key, sec):
+    d['sections'][key] = sec
+    if key in d['order']: d['order'].remove(key)
+    i = d['order'].index(after) + 1 if after in d['order'] else len(d['order'])
+    d['order'].insert(i, key)
+
+CAPV = {'type': 'nd-capture-versions', 'settings': {'eyebrow': '', 'heading': '', 'body': ''},
+  'blocks': {
+    'v1': {'type': 'version', 'settings': {'title': 'Neural Capture', 'version': 'Version 1', 'color': '#7cc4f5', 'where': 'デバイス上で処理',
+      'text': '<p>高速・効率的で、完全にオフライン対応。Neural Capture V1 は本体上で直接動作し、多くのアンプ、キャビネット、オーバードライブペダルに対して正確なキャプチャ結果を提供します。日常的な使用や、透明感のあるゲインステージ、処理負荷を気にせず複雑なプリセットを構築したい場合に最適です。</p>'}},
+    'v2': {'type': 'version', 'settings': {'title': 'Neural Capture', 'version': 'Version 2', 'color': '#f5cf3d', 'where': 'クラウドで処理',
+      'text': '<p>Neural Capture V2 は Cortex Cloud を使用し、より高解像度なアルゴリズムで Capture を処理します。ファズやコンプレッサー、ダイナミクスの高いチューブアンプなど、タッチへの反応が重要な機材に対して、さらに高い精度を実現。ボリュームノブ操作によるクリーンアップ、アンプのサグやブルーム、速いトランジェント、ブレンドコントロールといった繊細な挙動まで、極めて正確にキャプチャします。</p>'}}},
+  'block_order': ['v1', 'v2']}
+
+def versus_from_table_html(h):
+    """Turn the old comparison HTML (three <table>s with footnotes between them) into nd-versus blocks."""
+    blocks, order = {}, []
+    def add(t, st):
+        k = f'{t}_{len(order)}'; blocks[k] = {'type': t, 'settings': st}; order.append(k)
+    titles = ['CorOS 機能', 'ハードウェア I/O', 'その他']
+    parts = re.split(r'(<table.*?</table>)', h, flags=re.S)
+    ti = 0
+    for part in parts:
+        if part.startswith('<table'):
+            add('group', {'title': titles[ti] if ti < len(titles) else f'表 {ti+1}'}); ti += 1
+            for tr in re.findall(r'<tbody>(.*?)</tbody>', part, re.S)[0].split('</tr>'):
+                m = re.search(r'<th>(.*?)</th><td>(.*?)</td><td>(.*?)</td>', tr, re.S)
+                if not m: continue
+                clean = lambda x: _html.unescape(re.sub(r'<br\s*/?>', '\n', x)).strip()
+                add('row', {'label': clean(m.group(1)), 'a': clean(m.group(2)), 'b': clean(m.group(3))})
+        elif ti:
+            for p in re.findall(r'<p>(\*.*?)</p>', part, re.S):
+                add('note', {'text': _html.unescape(p).strip()})
+    # numbers updated to the official table (neuraldsp.com/quad-cortex-mini, Nov 2026)
+    fix = {'バーチャル・デバイス・ライブラリ': ('200+', '200+'), 'Neural Capture ライブラリ': ('2000+', '2000+'),
+           'インパルス・レスポンス（IR）ライブラリ': ('1000+', '1000+'), 'ユーザー・キャプチャ保存数': None,
+           '外形寸法': ('22.8 × 11.8 × 6.5 cm（8.9 × 4.6 × 2.5インチ）', '29 × 19.5 × 6.9 cm（11.4 × 7.7 × 2.7インチ）'),
+           '電源スイッチ': ('対応', '対応'), 'パラメーター・エンコーダー割り当て': ('対応*', '対応（最大10個同時）')}
+    for k in order:
+        st = blocks[k]['settings']
+        if blocks[k]['type'] != 'row': continue
+        if st['label'] == 'ユーザー・キャプチャ保存数': st['label'] = 'ユーザー・キャプチャー保存数'
+        if fix.get(st['label']): st['a'], st['b'] = fix[st['label']]
+        if st['label'] == '価格': st['a'] = st['b'] = '__drop__'
+    order = [k for k in order if blocks[k]['settings'].get('a') != '__drop__']  # price is shown under each photo from the live product
+    blocks = {k: blocks[k] for k in order}
+    return blocks, order
+
+head, mini = load('product.quad-cortex-mini')
+old = mini['sections'].get('rich_text_ewyvb6', {}).get('settings', {}).get('html', '')
+vblocks, vorder = versus_from_table_html(old)
+def versus(heading):
+    return {'type': 'nd-versus', 'settings': {'eyebrow': 'Compare', 'heading': heading,
+        'product_a': 'quad-cortex-mini', 'image_a': 'mini-top.webp', 'width_a': 22.8,
+        'product_b': 'quad-cortex', 'image_b': 'qc-top.webp', 'width_b': 29,
+        'feature_label': '機能', 'tax_label': '税込', 'cta_label': '詳しく見る'},
+        'blocks': json.loads(json.dumps(vblocks)), 'block_order': list(vorder)}
+
+MINI_HL = [('Quad Cortex の処理能力をそのまま', 'フラッグシップの性能を、コンパクトなボディに。'),
+           ('直感的なビジュアル操作', 'グリッド型のシグナルフローを備えた 7インチタッチスクリーン。'),
+           ('Neural Capture テクノロジー', '実機のアンプ、キャビネット、ドライブペダル、コンプレッサーを、極めて高精度なデジタルレプリカとして作成・演奏できます。'),
+           ('設置面積は 50% 以上コンパクト', 'Quad Cortex のパワーを、どこへでも。')]
+# Quad Cortex mini
+if vorder:
+    insert_after(mini, 'rich_text_w4egmi', 'versus', versus('Quad Cortex と比べる'))
+    for k in ('compare', 'rich_text_ewyvb6'):
+        if k in mini['sections']: mini['sections'][k]['disabled'] = True  # replaced by "versus"; switch back on in the editor if needed
+insert_after(mini, 'rich_text_4vbhpb', 'capture_versions', json.loads(json.dumps(CAPV)))
+io = mini['sections']['custom_liquid_tpwyqn']
+io['settings'].update(layout='stacked', show_numbers=False, image_asset='mini-rear.webp', image_url='')
+for i, (t, x) in enumerate(MINI_HL):
+    io['blocks'][f'hl_{i}'] = {'type': 'highlight', 'settings': {'title': t, 'text': x}}
+io['block_order'] = [f'hl_{i}' for i in range(len(MINI_HL))] + [b for b in io['block_order'] if not b.startswith('hl_')]
+save('product.quad-cortex-mini', head, mini)
+
+# Quad Cortex
+head, qc = load('product.quad-cortex')
+insert_after(qc, 'rich_text_4vbhpb', 'capture_versions', json.loads(json.dumps(CAPV)))
+qc['sections']['custom_liquid_tpwyqn']['settings'].update(layout='stacked', show_numbers=True)
+if vorder: insert_after(qc, 'rich_text_dgvea3', 'versus', versus('Quad Cortex mini と比べる'))
+save('product.quad-cortex', head, qc)
+
+# Nano keeps its side-by-side list with numbers
+head, d = load('product.nano-cortex')
+for k, sec in d['sections'].items():
+    if sec['type'] == 'nd-numbered': sec['settings'].setdefault('show_numbers', True)
+save('product.nano-cortex', head, d)
+
+# comparisons are Quad Cortex and Quad Cortex mini only: Nano hidden in the homepage chooser (switch the block back on to return it)
+head, d = load('index')
+c = d['sections'].get('compare')
+if c and 'm2' in c['blocks']:
+    c['blocks']['m2']['disabled'] = True
+    c['blocks']['m0']['settings']['recommend_for'] = 'features_yes,features_no,portable_no,price_no'
+    c['settings']['body'] = '2つの質問に答えると、Quad Cortex と Quad Cortex mini のどちらがおすすめか分かります。'
+save('index', head, d)
+print('review round 4 ok', len(vorder), 'table blocks')
+
+# the Neural Capture text sections no longer carry the V1/V2 paragraphs and the English V1 card image: the cards below show them
+for name in ('product.quad-cortex', 'product.quad-cortex-mini'):
+    head, d = load(name)
+    f = d['sections'].get('rich_text_4vbhpb')
+    if f:
+        b = f['settings'].get('body', '')
+        if '高速・効率的で' in b:
+            f['settings']['body'] = re.sub(r'(<br/>)+</p>', '</p>', b[:b.index('<p>高速・効率的で')])
+        if 'capture-v1-img' in f['settings'].get('image_url', ''):
+            f['settings']['image_url'] = ''
+            f['settings']['layout'] = 'center'
+    save(name, head, d)
+print('round 4 capture text ok')

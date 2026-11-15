@@ -1,0 +1,124 @@
+{%- comment -%}
+  Quad Cortex mini vs Quad Cortex: both units drawn to scale, then the official comparison table
+  (neuraldsp.com/quad-cortex-mini "Compare with Quad Cortex") split into tabs: one tab per "Group" block.
+  Rows are "Row" blocks (label + value for each product); "Note" blocks print the footnotes under the current group.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+{%- assign pa = s.product_a -%}{%- assign pb = s.product_b -%}
+{%- assign wa = s.width_a | plus: 0 -%}{%- assign wb = s.width_b | plus: 0 -%}
+{%- assign mw = wa -%}{%- if wb > mw -%}{%- assign mw = wb -%}{%- endif -%}
+{%- assign sa = 100 -%}{%- assign sb = 100 -%}
+{%- if mw > 0 -%}{%- assign sa = wa | times: 100.0 | divided_by: mw | round -%}{%- assign sb = wb | times: 100.0 | divided_by: mw | round -%}{%- endif -%}
+{%- assign groups = section.blocks | where: 'type', 'group' -%}
+<section class="section nd-versus" data-versus>
+  <div class="container">
+    <header class="section-head nd-versus__head">
+      {%- if s.eyebrow != blank -%}<p class="eyebrow">{{ s.eyebrow }}</p>{%- endif -%}
+      {%- if s.heading != blank -%}<h2>{{ s.heading }}</h2>{%- endif -%}
+    </header>
+
+    <div class="nd-versus__units" data-stagger>
+      <span class="nd-versus__spacer" aria-hidden="true"></span>
+      {%- for side in (1..2) -%}
+        {%- if side == 1 -%}{%- assign p = pa -%}{%- assign img = s.image_a -%}{%- assign sc = sa -%}{%- else -%}{%- assign p = pb -%}{%- assign img = s.image_b -%}{%- assign sc = sb -%}{%- endif -%}
+        <figure class="nd-versus__unit" style="--i: {{ forloop.index0 }}">
+          <div class="nd-versus__img"><div style="width: {{ sc }}%">
+            {%- if img != blank -%}<img src="{{ img | asset_url }}" alt="{{ p.title | escape }}" loading="lazy">{%- else -%}{% render 'nd-product-thumb', product: p, width: 700 %}{%- endif -%}
+          </div></div>
+          <figcaption><b>{{ p.title }}</b>{%- if p.price -%}<span>{% render 'nd-price', price: p.price %}<small>{{ s.tax_label }}</small></span>{%- endif -%}</figcaption>
+          {%- if p.url -%}<a class="btn btn--small" href="{{ p.url }}">{{ s.cta_label }}</a>{%- endif -%}
+        </figure>
+      {%- endfor -%}
+    </div>
+
+    {%- if groups.size > 1 -%}
+      <div class="nd-versus__tabs" role="tablist" aria-label="{{ s.heading | escape }}">
+        {%- for g in groups -%}
+          <button type="button" role="tab" id="vs-{{ section.id }}-t{{ forloop.index }}" aria-controls="vs-{{ section.id }}-p{{ forloop.index }}" aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"{% unless forloop.first %} tabindex="-1"{% endunless %}>{{ g.settings.title }}</button>
+        {%- endfor -%}
+        <i class="nd-versus__ink" aria-hidden="true"></i>
+      </div>
+    {%- endif -%}
+
+    {%- assign gi = 0 -%}{%- assign open = false -%}{%- assign k = 0 -%}
+    {%- for block in section.blocks -%}
+      {%- if block.type == 'group' -%}
+        {%- if open -%}</tbody></table></div>{%- endif -%}
+        {%- assign gi = gi | plus: 1 -%}{%- assign open = true -%}{%- assign k = 0 -%}
+        <div class="nd-versus__panel" role="tabpanel" id="vs-{{ section.id }}-p{{ gi }}" aria-labelledby="vs-{{ section.id }}-t{{ gi }}"{% if gi > 1 %} data-hidden{% endif %} {{ block.shopify_attributes }}>
+          {%- if groups.size < 2 -%}<h3 class="nd-versus__gtitle">{{ block.settings.title }}</h3>{%- endif -%}
+          <table class="nd-versus__table">
+            <thead><tr><th scope="col">{{ s.feature_label }}</th><th scope="col">{{ pa.title }}</th><th scope="col">{{ pb.title }}</th></tr></thead>
+            <tbody data-stagger>
+      {%- elsif block.type == 'row' -%}
+        {%- unless open -%}{%- assign open = true -%}{%- assign gi = 1 -%}<div class="nd-versus__panel" role="tabpanel"><table class="nd-versus__table"><tbody data-stagger>{%- endunless -%}
+        <tr style="--i: {{ k }}" {{ block.shopify_attributes }}>
+          <th scope="row">{{ block.settings.label }}</th>
+          {%- for side in (1..2) -%}
+            {%- if side == 1 -%}{%- assign v = block.settings.a -%}{%- else -%}{%- assign v = block.settings.b -%}{%- endif -%}
+            {%- assign vs = v | strip -%}
+            <td>
+              {%- if vs == 'yes' or vs == '対応' -%}<span class="nd-versus__yes" title="対応"><i aria-hidden="true"></i><span class="visually-hidden">対応</span></span>
+              {%- elsif vs == 'no' or vs == '非対応' -%}<span class="nd-versus__no" title="非対応"><i aria-hidden="true"></i><span class="visually-hidden">非対応</span></span>
+              {%- else -%}{{ v | newline_to_br }}{%- endif -%}
+            </td>
+          {%- endfor -%}
+        </tr>
+        {%- assign k = k | plus: 1 -%}
+      {%- elsif block.type == 'note' and open -%}
+        <tr class="nd-versus__note" {{ block.shopify_attributes }}><td colspan="3">{{ block.settings.text }}</td></tr>
+      {%- endif -%}
+    {%- endfor -%}
+    {%- if open -%}</tbody></table></div>{%- endif -%}
+  </div>
+</section>
+<script>
+  (() => {
+    const root = document.currentScript.previousElementSibling;
+    const tabs = [...root.querySelectorAll('[role=tab]')];
+    if (!tabs.length) return;
+    const ink = root.querySelector('.nd-versus__ink');
+    const place = (t) => { if (ink) { ink.style.width = t.offsetWidth + 'px'; ink.style.transform = `translateX(${t.offsetLeft}px)`; } };
+    const pick = (t, focus) => {
+      tabs.forEach((x) => { const on = x === t; x.setAttribute('aria-selected', on); x.tabIndex = on ? 0 : -1;
+        const p = root.querySelector('#' + x.getAttribute('aria-controls')); if (!p) return;
+        if (on) { p.removeAttribute('data-hidden'); p.classList.remove('is-in'); requestAnimationFrame(() => requestAnimationFrame(() => p.classList.add('is-in'))); } else p.setAttribute('data-hidden', ''); });
+      place(t); if (focus) t.focus();
+    };
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => pick(t));
+      t.addEventListener('keydown', (e) => { const d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length], true); } });
+    });
+    const first = root.querySelector('.nd-versus__panel'); if (first) first.classList.add('is-in');
+    place(tabs[0]); addEventListener('resize', () => place(tabs.find((t) => t.getAttribute('aria-selected') === 'true')));
+    if (document.fonts) document.fonts.ready.then(() => place(tabs.find((t) => t.getAttribute('aria-selected') === 'true')));
+  })();
+</script>
+{% schema %}
+{
+  "name": "ND · QC vs mini table",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Compare" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Quad Cortex と比べる" },
+    { "type": "product", "id": "product_a", "label": "Product A" },
+    { "type": "text", "id": "image_a", "label": "Product A image (theme asset)" },
+    { "type": "number", "id": "width_a", "label": "Product A width (cm)" },
+    { "type": "product", "id": "product_b", "label": "Product B" },
+    { "type": "text", "id": "image_b", "label": "Product B image (theme asset)" },
+    { "type": "number", "id": "width_b", "label": "Product B width (cm)" },
+    { "type": "text", "id": "feature_label", "label": "First column heading", "default": "機能" },
+    { "type": "text", "id": "tax_label", "label": "Tax label", "default": "税込" },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "詳しく見る" }
+  ],
+  "blocks": [
+    { "type": "group", "name": "Group (tab)", "settings": [{ "type": "text", "id": "title", "label": "Tab title" }] },
+    { "type": "row", "name": "Row", "settings": [
+      { "type": "text", "id": "label", "label": "Feature" },
+      { "type": "textarea", "id": "a", "label": "Product A value", "info": "Type 対応 or 非対応 to show a tick or a dash" },
+      { "type": "textarea", "id": "b", "label": "Product B value" }
+    ] },
+    { "type": "note", "name": "Footnote", "settings": [{ "type": "textarea", "id": "text", "label": "Text" }] }
+  ],
+  "presets": [{ "name": "ND · QC vs mini table" }]
+}
+{% endschema %}

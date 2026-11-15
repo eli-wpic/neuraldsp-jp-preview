@@ -1,0 +1,53 @@
+{%- comment -%}
+  Neural Capture V1 / V2: two cards (title, version, where it is processed) with the description under each.
+  Follows the layout on neuraldsp.com/quad-cortex. The striped icon and contour lines are drawn here, no image needed.
+{%- endcomment -%}
+<section class="section nd-capv">
+  <div class="container">
+    {%- if section.settings.heading != blank or section.settings.body != blank -%}
+      <header class="section-head nd-capv__head">
+        {%- if section.settings.eyebrow != blank -%}<p class="eyebrow">{{ section.settings.eyebrow }}</p>{%- endif -%}
+        {%- if section.settings.heading != blank -%}<h2>{{ section.settings.heading }}</h2>{%- endif -%}
+        {%- if section.settings.body != blank -%}<div class="nd-prose">{{ section.settings.body }}</div>{%- endif -%}
+      </header>
+    {%- endif -%}
+    <div class="nd-capv__grid" data-stagger>
+      {%- for block in section.blocks -%}
+        <article class="nd-capv__item nd-capv__item--{{ forloop.index }}" style="--i: {{ forloop.index0 }}; --tone: {{ block.settings.color }}" {{ block.shopify_attributes }}>
+          {%- assign ci = forloop.index -%}
+          <div class="nd-capv__card">
+            <svg class="nd-capv__lines" viewBox="0 0 400 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              {%- for n in (1..9) -%}
+                {%- assign r = n | times: 26 | plus: 40 -%}
+                <ellipse cx="{% if ci == 1 %}10{% else %}390{% endif %}" cy="{% if ci == 1 %}120{% else %}-20{% endif %}" rx="{{ r }}" ry="{{ r | times: 62 | divided_by: 100 }}" style="--d: {{ n | times: 70 }}ms" />
+              {%- endfor -%}
+            </svg>
+            <span class="nd-capv__icon" aria-hidden="true">{%- assign ws = '30,62,82,94,100,94,82,62,30' | split: ',' -%}{%- for w in ws -%}<i style="--w: {{ w }}%; --d: {{ forloop.index0 | times: 60 }}ms"></i>{%- endfor -%}</span>
+            <h3 class="nd-capv__title">{{ block.settings.title }}</h3>
+            <p class="nd-capv__ver">{{ block.settings.version }}</p>
+            <p class="nd-capv__where">{{ block.settings.where }}</p>
+          </div>
+          {%- if block.settings.text != blank -%}<div class="nd-capv__text">{{ block.settings.text }}</div>{%- endif -%}
+        </article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Capture versions",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "richtext", "id": "body", "label": "Text" }
+  ],
+  "blocks": [{ "type": "version", "name": "Version card", "limit": 4, "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Neural Capture" },
+    { "type": "text", "id": "version", "label": "Version", "default": "Version 1" },
+    { "type": "color", "id": "color", "label": "Version colour", "default": "#7cc4f5" },
+    { "type": "text", "id": "where", "label": "Processed where" },
+    { "type": "richtext", "id": "text", "label": "Description" }
+  ] }],
+  "presets": [{ "name": "ND · Capture versions" }]
+}
+{% endschema %}

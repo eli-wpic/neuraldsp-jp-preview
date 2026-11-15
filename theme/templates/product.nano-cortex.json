@@ -224,7 +224,8 @@
       "settings": {
         "heading": "コントロール",
         "subheading": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486"
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486",
+        "show_numbers": true
       },
       "blocks": {
         "item_0": {
@@ -344,7 +345,8 @@
       "settings": {
         "heading": "入力と出力",
         "subheading": "",
-        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486"
+        "image_url": "https://cdn.shopify.com/s/files/1/0747/8109/8202/files/download_1.svg?v=1743047486",
+        "show_numbers": true
       },
       "blocks": {
         "item_0": {
