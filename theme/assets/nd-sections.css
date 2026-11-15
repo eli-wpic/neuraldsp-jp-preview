@@ -717,3 +717,4 @@ html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 .nd-colorbar button:hover { color: var(--text); }
 .nd-colorbar button[aria-pressed="true"] { color: var(--text); box-shadow: inset 0 -2px 0 var(--text); }
 .nd-colorbar button i { width: 10px; height: 10px; }
+.logo__region { box-sizing: border-box; height: 26px !important; margin-top: 0 !important; padding-top: 6px; align-self: center; } /* divider = logo height; JAPAN on the wordmark centre line */
