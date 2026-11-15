@@ -152,11 +152,11 @@
           {%- liquid
             case b.model
               when 'mini'
-                assign thumb = 'mini-three-quarter-1600.webp'
+                assign thumb = 'mini-photo-2.webp'
               when 'nano'
-                assign thumb = 'nano-three-quarter-1600.webp'
+                assign thumb = 'nano-photo-1.webp'
               when 'qc'
-                assign thumb = 'qc-three-quarter-800.webp'
+                assign thumb = 'qc-photo-1.webp'
               else
                 assign thumb = ''
             endcase
@@ -201,13 +201,13 @@
       "type": "campaign",
       "name": "Campaign",
       "settings": [
-        { "type": "checkbox", "id": "enabled", "label": "Show this campaign", "default": true },
+        { "type": "checkbox", "id": "enabled", "label": "Show this campaign", "default": false, "info": "Off: the hero opens on Quad Cortex. Turn on (and set dates) for the yearly campaign." },
         { "type": "text", "id": "start_date", "label": "Start date (YYYY-MM-DD, optional)" },
         { "type": "text", "id": "end_date", "label": "End date (YYYY-MM-DD, optional)" },
         { "type": "text", "id": "dock_label", "label": "Dock label", "default": "キャンペーン" },
         { "type": "text", "id": "dock_sub", "label": "Dock sub text" },
         { "type": "select", "id": "model", "label": "Visual", "default": "mini", "options": [
-          { "value": "qc", "label": "3D Quad Cortex" }, { "value": "mini", "label": "3D Quad Cortex mini" }, { "value": "nano", "label": "3D Nano Cortex" }, { "value": "none", "label": "Photo or video" }
+          { "value": "qc", "label": "3D Quad Cortex" }, { "value": "mini", "label": "3D Quad Cortex mini" }, { "value": "nano", "label": "3D Nano Cortex" }, { "value": "none", "label": "Banner photo or video" }
         ] },
         { "type": "image_picker", "id": "image", "label": "Photo (when Visual = photo or video)" },
         { "type": "text", "id": "image_url", "label": "Photo URL" },

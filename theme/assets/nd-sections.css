@@ -483,10 +483,10 @@ main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
 .nd-capv__icon { display: grid; justify-items: center; gap: 3px; width: 62px; margin-bottom: 26px; }
 .nd-capv__icon i { display: block; height: 2px; width: var(--w); background: linear-gradient(90deg, rgba(239,235,228,.25) 0 45%, #efebe4 45%); border-radius: 2px; transform-origin: right; animation: nd-capv-scan 2.8s var(--ease-out) var(--d, 0ms) infinite; }
 @keyframes nd-capv-scan { 0%, 60%, 100% { transform: scaleX(1); opacity: 1; } 30% { transform: scaleX(.55); opacity: .55; } }
-.nd-capv__title { font-size: clamp(26px, 2.6vw, 44px); font-weight: 600; letter-spacing: -.01em; }
-.nd-capv__ver { font-size: clamp(20px, 1.8vw, 30px); color: var(--tone, var(--accent)); }
+.nd-capv__title { font-size: var(--fs-2xl); font-weight: 600; letter-spacing: -.01em; }
+.nd-capv__ver { font-size: var(--fs-l); color: var(--tone, var(--accent)); }
 .nd-capv__where { margin-top: clamp(20px, 3vw, 52px); font-size: var(--fs-s); color: var(--text-3); }
-.nd-capv__text { margin-top: 26px; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.9; color: var(--text); }
+.nd-capv__text { margin-top: 26px; font-size: var(--fs-m); line-height: 1.9; color: var(--text); }
 .nd-capv__text p { margin: 0; }
 @media (max-width: 760px) {
   .nd-capv__grid { grid-template-columns: 1fr; gap: 44px; }
@@ -510,7 +510,7 @@ main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
 .nd-numbered--plain .nd-numbered__list li { grid-template-columns: 1fr; }
 .nd-numbered--plain .nd-numbered__list b { letter-spacing: .04em; font-size: var(--fs-s); }
 .nd-numbered__highlights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(24px, 3vw, 56px); margin: 0 0 clamp(56px, 7vw, 104px); }
-.nd-numbered__highlights h3 { font-size: clamp(22px, 2.2vw, 34px); line-height: 1.3; letter-spacing: -.01em; margin-bottom: 14px; }
+.nd-numbered__highlights h3 { font-size: var(--fs-xl); line-height: 1.3; letter-spacing: -.01em; margin-bottom: 14px; }
 .nd-numbered__highlights p { color: var(--text-2); font-size: var(--fs-m); line-height: 1.8; margin: 0; }
 @media (max-width: 1100px) { .nd-numbered--stacked .nd-numbered__list, .nd-numbered__highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) {

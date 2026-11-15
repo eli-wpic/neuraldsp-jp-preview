@@ -428,3 +428,23 @@ head, d = load('product.quad-cortex')
 d['sections']['custom_liquid_tpwyqn']['settings'].update(head_position='below', separator=True)
 save('product.quad-cortex', head, d)
 print('round 5 hardware sections ok')
+
+# ---- round 6 (Nov 16): campaign off by default (QC opens first), Latest News hidden (switch back on in the editor) ----
+head, d = load('index')
+q = d['sections'].get('qc3d')
+if q:
+    for b in q['blocks'].values():
+        if b['type'] == 'campaign': b['settings']['enabled'] = False
+if 'news' in d['sections']: d['sections']['news']['disabled'] = True
+save('index', head, d)
+for grp in ('header-group', 'footer-group'):
+    p = THEME / 'sections' / f'{grp}.json'
+    g = json.loads(p.read_text())
+    for sec in g['sections'].values():
+        for b in sec.get('blocks', {}).values():
+            st = b['settings']
+            if st.get('url') == '/blogs/news': b['disabled'] = True
+            if isinstance(st.get('links'), str) and '/blogs/news' in st['links']:
+                st['links'] = '\n'.join(l for l in st['links'].split('\n') if '/blogs/news' not in l)
+    p.write_text(json.dumps(g, ensure_ascii=False, indent=2))
+print('round 6 ok')

@@ -26,13 +26,13 @@
   --line-2: rgba(239, 235, 228, 0.18);
 
   /* type scale: every size on the site is one of these */
-  --fs-xs: 12px;
-  --fs-s: 14px;
-  --fs-m: 16px;
-  --fs-l: 20px;
-  --fs-xl: clamp(26px, 2.8vw, 36px);
-  --fs-2xl: clamp(28px, 3.2vw, 42px);
-  --fs-display: clamp(38px, 4.6vw, 68px);
+  --fs-xs: 13px;                          /* captions, labels, notes */
+  --fs-s: 15px;                           /* secondary copy, list text */
+  --fs-m: 16px;                           /* body */
+  --fs-l: 19px;                           /* item titles, prices in lists */
+  --fs-xl: clamp(22px, 1.9vw, 28px);      /* sub-headings, card titles */
+  --fs-2xl: clamp(28px, 2.8vw, 40px);     /* section headings, product name, main price */
+  --fs-display: clamp(36px, 4.4vw, 64px); /* hero titles only */
 
   --radius: 6px;
   --radius-lg: 10px;
@@ -216,7 +216,7 @@ p { margin: 0; }
 .social .icon-btn svg { width: 18px; height: 18px; }
 .legal { display: flex; flex-wrap: wrap; gap: 18px; }
 @media (max-width: 760px) {
-  .site-footer__grid { grid-template-columns: 1fr 1fr; }
+  .site-footer__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 20px; }
   .site-footer__brand { grid-column: 1 / -1; }
 }
 

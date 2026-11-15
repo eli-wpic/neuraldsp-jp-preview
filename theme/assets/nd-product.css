@@ -161,7 +161,7 @@
 @media (max-width: 1000px) {
   .pdp { grid-template-columns: 1fr; }
   .buy { position: static; }
-  .sticky-buy__inner { grid-template-columns: 1fr auto; gap: 12px; }
+  .sticky-buy__inner { grid-template-columns: minmax(0, 1fr) auto; gap: 12px; }
   .sticky-buy img, .sticky-buy .qty { display: none; }
   .sticky-buy .meta { grid-column: 1 / -1; display: none; }
   .sticky-buy .sum { border: 0; padding: 0; }
@@ -377,7 +377,7 @@
 .acc label:has(input:disabled) { opacity: .5; cursor: default; }
 
 /* review: bigger price in the buy column */
-.buy .price { font-size: clamp(28px, 2.4vw, 36px); line-height: 1.2; }
+.buy .price { font-size: var(--fs-2xl); line-height: 1.2; }
 .buy .price small { font-size: var(--fs-s); }
 /* review: smaller key-visual photos, whole product always visible */
 .pdp:not(.pdp--3d) .gallery__slide img { width: 70%; height: 74%; object-fit: contain; }

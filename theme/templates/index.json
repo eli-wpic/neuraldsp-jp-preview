@@ -6,7 +6,7 @@
         "campaign": {
           "type": "campaign",
           "settings": {
-            "enabled": true,
+            "enabled": false,
             "dock_label": "キャンペーン",
             "dock_sub": "mini + PLUGIN",
             "model": "mini",
@@ -378,7 +378,8 @@
         "view_all": "すべての投稿を見る",
         "read_more": "続きを読む",
         "count": 3
-      }
+      },
+      "disabled": true
     },
     "newsletter": {
       "type": "nd-newsletter",
