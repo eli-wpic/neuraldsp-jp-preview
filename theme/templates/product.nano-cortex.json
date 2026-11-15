@@ -230,7 +230,7 @@
         "head_position": "above",
         "separator": true,
         "image_asset": "nano-top.webp",
-        "media_max": 1040
+        "media_max": 600
       },
       "blocks": {
         "item_0": {
@@ -380,7 +380,7 @@
         "head_position": "above",
         "separator": true,
         "image_asset": "nano-rear.webp",
-        "media_max": 1400
+        "media_max": 820
       },
       "blocks": {
         "item_0": {

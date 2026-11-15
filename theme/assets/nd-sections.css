@@ -596,3 +596,9 @@ main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
 .nd-numbered__list li.is-hot { background: rgba(255,210,54,.07); }
 .nd-numbered__list li.is-hot .nd-numbered__n { background: #ffd236; color: #0b0b0b; }
 @media (prefers-reduced-motion: reduce) { .nd-pin::after { animation: none; } }
+
+/* ===== calmer sizes (review Nov 16: "everything is in your face") ===== */
+.nd-numbered--stacked .nd-numbered__media { max-width: min(100%, 900px); }
+.mega--list img, .mega img { height: 44px; margin-bottom: 4px; }
+.mega strong { font-size: var(--fs-s); font-weight: 600; }
+.mega--list { width: min(calc(var(--n, 3) * 200px), 80vw); }

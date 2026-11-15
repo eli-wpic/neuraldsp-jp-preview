@@ -413,10 +413,10 @@ def pins(sec, table):
 
 head, d = load('product.nano-cortex')
 c = d['sections']['rich_text_qkpgfd']
-c['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-top.webp', media_max=1040)
+c['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-top.webp', media_max=600)
 pins(c, NANO_CTRL_PINS)
 io = d['sections']['rich_text_ae8n7g']
-io['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-rear.webp', media_max=1400)
+io['settings'].update(layout='stacked', head_position='above', separator=True, show_numbers=True, image_url='', image_asset='nano-rear.webp', media_max=820)
 pins(io, NANO_IO_PINS)
 save('product.nano-cortex', head, d)
 

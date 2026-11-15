@@ -20,6 +20,8 @@ const MODELS = {
     tex: ['top', 'screen', 'rear'],
     screen: { u0: 0.2334, u1: 0.7666, v0: 0.0942, v1: 0.5495 },
     vents: true,
+    viewerScale: 1.15,
+    scrollScale: 1.12,
     switches: [[0.059, 0.695], [0.279, 0.695], [0.5, 0.695], [0.72, 0.695], [0.941, 0.695], [0.059, 0.933], [0.279, 0.933], [0.5, 0.933], [0.72, 0.933], [0.941, 0.933], [0.941, 0.316]],
     knobs: [{ u: 0.104, v: 0.294, r: 0.165, h: 0.13, mark: 0.82 }],
     leds: [[0.059, 0.634, '#f2f2f2'], [0.279, 0.634, '#ff9a1a'], [0.5, 0.634, '#ffc02e'], [0.72, 0.634, '#2f7bff'], [0.059, 0.875, '#ff3b2f'], [0.279, 0.875, '#ffe600'], [0.5, 0.875, '#e24cff'], [0.72, 0.875, '#3dffc0'], [0.941, 0.875, '#6dff4a']],
@@ -38,6 +40,8 @@ const MODELS = {
     screen: { u0: 0.145, u1: 0.842, v0: 0.118, v1: 0.86 },
     switches: [[0.073, 0.192], [0.914, 0.192], [0.073, 0.804], [0.914, 0.804]],
     knobs: [], leds: [],
+    viewerScale: 1.3,
+    scrollScale: 1.25,
     scrollViews: [
       { pos: [-4.4, 4.0, 5.6], tgt: [0, 0.25, 0], ox: -0.22 },
       { pos: [-0.6, 5.4, 2.2], tgt: [0, 0.5, -0.05], ox: -0.24 },
@@ -62,6 +66,7 @@ const MODELS = {
       { u: 0.223, v: 0.386, r: 0.135, h: 0.28 }, { u: 0.4, v: 0.386, r: 0.135, h: 0.28 }, { u: 0.573, v: 0.392, r: 0.135, h: 0.28 }, { u: 0.755, v: 0.386, r: 0.135, h: 0.28 },
     ],
     scrollScale: 1.45,
+    viewerScale: 1.5,
     buttons: [[0.309, 0.196], [0.486, 0.196], [0.664, 0.196], [0.091, 0.411], [0.882, 0.411]],
     leds: [],
     scrollViews: [
@@ -201,7 +206,7 @@ function viewsFor(M, mode) {
   const a = V[0], d = Math.hypot(a.pos[0] - a.tgt[0], a.pos[1] - a.tgt[1], a.pos[2] - a.tgt[2]);
   const top = (ox) => ({ pos: [0, a.tgt[1] + d * 0.985, d * 0.17], tgt: [0, a.tgt[1], 0], ox });
   if (mode === 'viewer') V[0] = top(0); else V[V.length - 1] = top((V[V.length - 1].ox || 0) + 0.05);
-  const k = mode === 'viewer' ? 1 : (M.scrollScale || 1); // camera pulled back so the small Nano reads smaller on the homepage
+  const k = mode === 'viewer' ? (M.viewerScale || 1) : (M.scrollScale || 1); // camera pulled back so the units sit smaller in the frame (review: sizes were too in-your-face)
   if (k !== 1) V.forEach((v) => { v.pos = v.pos.map((p, j) => v.tgt[j] + (p - v.tgt[j]) * k); });
   return V;
 }

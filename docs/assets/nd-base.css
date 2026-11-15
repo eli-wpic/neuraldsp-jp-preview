@@ -31,8 +31,8 @@
   --fs-m: 16px;
   --fs-l: 20px;
   --fs-xl: clamp(26px, 2.8vw, 36px);
-  --fs-2xl: clamp(32px, 4vw, 52px);
-  --fs-display: clamp(44px, 6.2vw, 92px);
+  --fs-2xl: clamp(28px, 3.2vw, 42px);
+  --fs-display: clamp(38px, 4.6vw, 68px);
 
   --radius: 6px;
   --radius-lg: 10px;
