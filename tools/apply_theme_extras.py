@@ -435,7 +435,7 @@ q = d['sections'].get('qc3d')
 if q:
     for b in q['blocks'].values():
         if b['type'] == 'campaign': b['settings']['enabled'] = False
-if 'news' in d['sections']: d['sections']['news']['disabled'] = True
+if 'news' in d['sections']: d['sections']['news']['disabled'] = False  # back on the homepage (global site has Latest news at the bottom)
 save('index', head, d)
 for grp in ('header-group', 'footer-group'):
     p = THEME / 'sections' / f'{grp}.json'
@@ -600,3 +600,10 @@ io['settings']['show_numbers'] = True
 pins(io, MINI_IO_PINS)
 save('product.quad-cortex-mini', head, d)
 print('round 12 ok')
+
+# ---- round 13: homepage follows neuraldsp.com — Latest news at the bottom; the two-question chooser is not on the global homepage (hidden, switch back on in the editor) ----
+head, d = load('index')
+if 'news' in d['sections']: d['sections']['news']['disabled'] = False
+if 'compare' in d['sections']: d['sections']['compare']['disabled'] = True
+save('index', head, d)
+print('round 13 ok')

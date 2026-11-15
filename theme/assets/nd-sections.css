@@ -725,3 +725,9 @@ html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 .nd-numbered__list li.is-hot .nd-numbered__n { background: var(--paper) !important; color: var(--on-paper) !important; box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px var(--text-2); }
 .nd-pin.is-hot, .nd-pin:hover, .nd-pin:focus-visible { background: var(--paper) !important; color: var(--on-paper) !important; box-shadow: 0 0 0 3px rgba(0,0,0,.55), 0 0 0 5px #fff; }
 .nd-numbered--plain .nd-numbered__list li { grid-template-columns: 34px 1fr; }
+
+/* Latest news: the Japanese thumbnails carry their own text, so the title sits under the image (global style corners and weight) */
+.nd-post__media { border-radius: 20px; }
+.nd-post strong { font-size: var(--fs-l); font-weight: 700; }
+.nd-post__more { display: none; }
+.nd-post:active { scale: .98; }
