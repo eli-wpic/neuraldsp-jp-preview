@@ -399,3 +399,8 @@
 .plug-drop .plug input { width: 20px; height: 20px; border-radius: 5px; } /* square: several plugins can be picked */
 .plug-drop .plug:has(input:checked) { background: rgba(239,235,228,.05); }
 .plug-drop[open] .plug-drop__btn { border-bottom: 0; }
+
+/* product description: three full lines readable when closed, no fade (review Nov 16) */
+.buy__desc { line-height: 1.9; }
+.buy__desc-inner { max-height: 5.7em; max-height: 3lh; -webkit-mask-image: none; mask-image: none; }
+.buy__desc-inner > :first-child { margin-top: 0; }
