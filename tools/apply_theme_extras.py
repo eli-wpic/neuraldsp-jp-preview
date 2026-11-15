@@ -625,3 +625,20 @@ for name, keys in (('product.quad-cortex', ('versus', 'product_newsletter_popup_
         if k in d['sections']: d['sections'][k]['disabled'] = True
     save(name, head, d)
 print('round 15 ok')
+
+# ---- round 16: the 写真 / no-film rule applies to EVERY product page with the viewer (bundles included), not just the three hardware pages ----
+for f in sorted(T.glob('product*.json')):
+    name = f.stem
+    head, d = load(name)
+    changed = False
+    for sec in d['sections'].values():
+        if sec.get('type') != 'main-product': continue
+        st = sec.setdefault('settings', {})
+        if st.get('film_url') or st.get('film_mp4'):
+            st['film_url'] = ''; st['film_mp4'] = ''; changed = True
+        if st.get('media_mode') == '3d' or 'plugin' in name or name.startswith('product.quadcortex') or name.startswith('product.archetype') or name.startswith('product.quad-cortex-mini-'):
+            front = 'mini-photo-2.webp' if ('mini' in name) else ('nano-photo-1.webp' if 'nano' in name else 'qc-photo-1.webp')
+            if st.get('photo_assets', '') != front:
+                st['photo_assets'] = front; changed = True
+    if changed: save(name, head, d)
+print('round 16 ok')

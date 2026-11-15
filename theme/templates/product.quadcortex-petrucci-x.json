@@ -29,7 +29,8 @@
         "hardware_choices": [
           "quadcortex-plugin-bundle-pet",
           "quadcortex-mini-plugin-bundle-pet"
-        ]
+        ],
+        "photo_assets": "qc-photo-1.webp"
       },
       "blocks": {},
       "block_order": []
