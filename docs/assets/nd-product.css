@@ -381,4 +381,9 @@
 .buy .price small { font-size: var(--fs-s); }
 /* review: smaller key-visual photos, whole product always visible */
 .pdp:not(.pdp--3d) .gallery__slide img { width: 70%; height: 74%; object-fit: contain; }
-.pdp:not(.pdp--3d) .gallery__main { max-height: min(62vh, 560px); }
+/* photo box spans the whole left column (a height cap with a 4:3 ratio shrank its width and left a gap before the buy column); the product itself stays smaller inside it */
+.pdp:not(.pdp--3d) { --ph: clamp(320px, 62vh, 620px); }
+.pdp:not(.pdp--3d) .gallery__main { width: 100%; aspect-ratio: auto; height: var(--ph); }
+.pdp:not(.pdp--3d) .gallery__slide img { max-height: calc(var(--ph) * .78); max-width: 78%; width: auto; height: auto; }
+.pdp:not(.pdp--3d) { max-width: 1760px; margin-inline: auto; }
+@media (max-width: 989px) { .pdp:not(.pdp--3d) { --ph: min(75vw, 520px); } }
