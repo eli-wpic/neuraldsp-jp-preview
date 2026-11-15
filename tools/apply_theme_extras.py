@@ -448,3 +448,76 @@ for grp in ('header-group', 'footer-group'):
                 st['links'] = '\n'.join(l for l in st['links'].split('\n') if '/blogs/news' not in l)
     p.write_text(json.dumps(g, ensure_ascii=False, indent=2))
 print('round 6 ok')
+
+# ---- round 7 (Nov 16): what the global pages have and ours didn't ----
+sys.path.insert(0, str(Path(__file__).parent))
+from nano_faq_ja import NANO_FAQ
+COROS_LIST = ('<ul><li>X 対応プラグイン 5 種類が新たに Quad Cortex に対応し、合計 70 種類以上の新しいバーチャルデバイスを追加</li>'
+              '<li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8 種類の新しいバーチャルデバイス</li>'
+              '<li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li>'
+              '<li>Neural DSP チームによる 2,000 種類以上のファクトリー Device Presets</li>'
+              '<li>お気に入り／最近使った項目メニューを刷新</li></ul>')
+def coros(url):
+    return {'type': 'nd-update', 'settings': {'badge': 'MAJOR UPDATE', 'heading': 'CorOS 4.1.0 を公開しました', 'youtube_id': 'NSDRgQ0qxz0',
+            'list_heading': '4.1.0 の新機能', 'body': COROS_LIST, 'button_label': '変更履歴をすべて見る', 'button_url': url}}
+def cols(heading, body, items, n=3):
+    blocks = {f'c{i}': {'type': 'column', 'settings': {'title': t, 'text': f'<p>{x}</p>'}} for i, (t, x) in enumerate(items)}
+    return {'type': 'nd-columns', 'settings': {'heading': heading, 'body': body, 'columns': n}, 'blocks': blocks, 'block_order': list(blocks)}
+
+# Quad Cortex: global-style CorOS block (with the official first-look video), the four feature cards, Plugin Compatibility
+head, d = load('product.quad-cortex')
+old = d['sections'].get('custom_liquid_jamdvc')
+if old:
+    insert_after(d, 'custom_liquid_jamdvc', 'coros_update', coros(old['settings'].get('button_url', '')))
+    old['disabled'] = True
+cards = [('キャビネットブロック & EQ', '<p><strong>キャビネットブロック</strong></p><p>1,000 種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p><p><strong>パワフルなパラメトリック EQ</strong></p><p>すべてを指先でコントロール。7 インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>'),
+         ('比類のない直感性と柔軟性', '<p><strong>ドラッグ＆ドロップ</strong></p><p>ブロックをドラッグ＆ドロップするだけで、順番やルーティングを数秒で変更できます。</p><p><strong>入力と出力</strong></p><p>ワンスワイプで入出力の設定を確認・調整できます。</p>'),
+         ('スイッチングモード', '<p>モードの切り替えはとても簡単。機能へのアクセスやスイッチのカスタマイズも自在です。</p><p><strong>Stomp モード</strong></p><p>アナログのペダルボードのように、リグ内の好きなブロックをフットスイッチに割り当ててオン／オフできます。</p><p><strong>Scene モード</strong></p><p>フットスイッチ 1 つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p><p><strong>Preset モード</strong></p><p>8 つのバーチャルリグに瞬時にアクセスできます。</p>'),
+         ('コンポーネント', '<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ 1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>')]
+pc = {f'k{i}': {'type': 'card', 'settings': {'title': t, 'text': x}} for i, (t, x) in enumerate(cards)}
+insert_after(d, 'custom_liquid_cypaxf', 'feature_cards', {'type': 'nd-popcards', 'settings': {'heading': '', 'more_label': '詳しく見る'}, 'blocks': pc, 'block_order': list(pc)})
+insert_after(d, 'custom_liquid_tpwyqn', 'plugin_compat', {'type': 'nd-feature', 'settings': {'layout': 'center', 'heading': 'Plugin Compatibility',
+    'body': '<p>Neural DSP のプラグインを Quad Cortex に読み込んで、新たな可能性を広げましょう。</p>', 'button_label': '詳しく見る', 'button_url': '/pages/quad-cortex-and-plugin-bundle'}})
+save('product.quad-cortex', head, d)
+
+# Quad Cortex mini: CorOS block near the top, and the control details under 速く、直感的な操作性のための設計
+head, d = load('product.quad-cortex-mini')
+qc_url = old['settings'].get('button_url', '') if old else ''
+insert_after(d, 'product_newsletter_popup_qjp3np', 'coros_update', coros(qc_url))
+gh = json.dumps(d['sections'].get('rich_text_gh63bm', {}), ensure_ascii=False)
+if 'Parameter Focus' not in gh:
+    insert_after(d, 'rich_text_gh63bm', 'mini_controls', cols('', '', [
+        ('タッチスクリーンとロータリーフットスイッチ', '7 インチのタッチスクリーンと 4 基のステンレス製ロータリーフットスイッチで、音作りでも演奏中でも、指先と足元で反応よく確かな操作が可能です。'),
+        ('Parameter Focus System', 'ブロックを選択すると、ロータリーフットスイッチが最も関連性の高いパラメーターに自動で割り当てられます。耳で音を作り込み、すばやく設定を変えられるので、メニュー操作ではなく演奏に集中できます。'),
+        ('柔軟なスイッチングモード', '演奏スタイルに合わせて操作方法を選べます。Preset モード：リグ全体を切り替え／Scene モード：1 つのプリセット内でシームレスに変化／Stomp モード：ペダルボード感覚で操作／Hybrid モード：フットスイッチの列ごとにモードを組み合わせ。'),
+        ('Gig View', '大きな文字とわかりやすい表示で、ライブに最適な高コントラストのレイアウト。Opposite Page Preview で反対側のページの割り当ても一目で確認でき、曲の途中で迷うことはありません。')], 4))
+save('product.quad-cortex-mini', head, d)
+
+# Nano Cortex: NanOS 2.3.0 (was 2.2.0), players and use cases, all 40 FAQs
+head, d = load('product.nano-cortex')
+o = d['sections'].get('custom_liquid_6hmybr')
+if o:
+    insert_after(d, 'custom_liquid_6hmybr', 'nanos_update', {'type': 'nd-update', 'settings': {'badge': 'UPDATE', 'heading': 'NanOS 2.3.0 を公開しました',
+        'list_heading': '2.3.0 の新機能',
+        'body': '<p>新しいエフェクト 5 種類</p><ul><li>Blossom (ST)（Strymon® BigSky® の Bloom モードにインスパイア）</li><li>Shimmer</li><li>Poly Octaver（Electro-Harmonix® POG® にインスパイア）</li><li>Wham（DigiTech® Whammy® にインスパイア）</li><li>Chief OC2（BOSS® OC-2 にインスパイア）</li></ul><p>メトロノーム</p>',
+        'button_label': '変更履歴をすべて見る（英語）', 'button_url': 'https://neuraldsp.com/nano-cortex-updates/nanos-2-3-0-is-now-available'}})
+    o['disabled'] = True
+insert_after(d, 'rich_text_w8yrhb', 'players', cols('あらゆるプレイヤーに。あらゆるセットアップに。',
+    '<p>あらゆるレベルのギタリスト、ベーシストのために。経験豊富なプロも、スタジオ中心のクリエイターも、これから始める方も、Nano Cortex なら手間なく世界最高峰のトーンが手に入ります。</p>', [
+    ('ツアーミュージシャン', '重いリグはもう必要ありません。スタジオグレードのサウンド、アンプとキャビネットの置き換え、ペダルボードへのシームレスな統合まで、ライブにそのまま使える完全なセットアップがギグバッグに収まります。内蔵の Transpose エフェクトでチューニングを瞬時に変え、FOH や FRFR キャビネットに直接接続して、毎晩どこでも安定したトーンを。'),
+    ('スタジオプレイヤー／プロデューサー', 'キャビネットのマイキングも、完璧なテイクを追いかける必要もありません。Nano Cortex は高品質な USB オーディオインターフェース（24bit / 48kHz、4 イン / 3 アウト）としても使え、お気に入りのアンプで録音したり、それをキャプチャーして持ち運んだりできます。クリーンで、速く、静か。現代のセッションのために。'),
+    ('これから始める方', 'デジタル機材が初めてでも大丈夫。箱から出してすぐに素晴らしいサウンドを作れ、Cortex Cloud の何千ものトーンを試しながら、高価なペダルやアンプを揃えなくてもリグを広げられます。ヘッドフォンで静かに練習したり、モニターにつないだり。ひらめいたときは、そのまま高音質でコンピューターに録音できます。')]))
+insert_after(d, 'players', 'use_cases', cols('1 台で、無限の可能性。',
+    '<p>Nano Cortex は、オールインワンのリグであり、アンプとキャビネットの代わりであり、パワフルなマルチエフェクターでもあります。しかもギグバッグに収まるサイズです。</p>', [
+    ('どこでも、完全なリグを', 'ステージでも、スタジオでも、リハーサルでも、自宅での曲作りでも、柔軟な入出力を備えた完全なシグナルチェーンを提供します。アンプ不要のギター／ベースリグ一式が、インスピレーションが湧いたその場で使えます。'),
+    ('妥協のないアンプ＆キャビネットの置き換え', '重い機材は家に置いていきましょう。お気に入りのアンプやキャビネットの Neural Capture を読み込むことも、自分で作成することもできます。内蔵の IR ローダーで好みのキャビネットに差し替えることも可能。既存のペダルボードに組み込み、PA システムや FRFR キャビネットに直接接続すれば、重い機材を運ぶ手間のない理想的なライブセットアップが完成します。'),
+    ('ストンプボックスにも、マルチエフェクターにも', '既存のセットアップに組み込めば、お気に入りのドライブペダルの極めて正確なレプリカを最大 256 個保存できるコンパクトなペダルに。さらに、音作りに使える充実したエフェクトも揃っています。')]))
+f = d['sections']['collapsible_content_xx4f6y']
+have = {b['settings'].get('question') for b in f['blocks'].values()}
+for i, (q, a) in enumerate(NANO_FAQ):
+    if q in have: continue
+    k = f'faq_{i + 8}'
+    f['blocks'][k] = {'type': 'qa', 'settings': {'question': q, 'answer': a}}
+    f['block_order'].append(k)
+save('product.nano-cortex', head, d)
+print('round 7 ok')

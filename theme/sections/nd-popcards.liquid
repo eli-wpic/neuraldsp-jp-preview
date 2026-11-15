@@ -1,0 +1,37 @@
+{%- comment -%}
+  Feature cards with 詳しく見る: each card opens a dialog with its detail text (neuraldsp.com/quad-cortex: Cab block & EQ, Switching Modes…).
+{%- endcomment -%}
+<section class="section nd-popcards">
+  <div class="container">
+    {%- if section.settings.heading != blank -%}<header class="section-head"><h2>{{ section.settings.heading }}</h2></header>{%- endif -%}
+    <div class="nd-popcards__grid" data-stagger>
+      {%- for block in section.blocks -%}
+        <button type="button" class="nd-popcards__card" style="--i: {{ forloop.index0 }}" data-dialog-open="Pop-{{ block.id }}" {{ block.shopify_attributes }}>
+          <b>{{ block.settings.title }}</b>
+          <span>{{ section.settings.more_label }} <i aria-hidden="true">+</i></span>
+        </button>
+      {%- endfor -%}
+    </div>
+  </div>
+  {%- for block in section.blocks -%}
+    <dialog class="nd-pop" id="Pop-{{ block.id }}" aria-label="{{ block.settings.title | escape }}">
+      <button type="button" class="nd-pop__close" data-dialog-close aria-label="閉じる" onclick="this.closest('dialog').close()">×</button>
+      <h3>{{ block.settings.title }}</h3>
+      <div class="nd-prose">{{ block.settings.text }}</div>
+    </dialog>
+  {%- endfor -%}
+</section>
+{% schema %}
+{
+  "name": "ND · Feature cards",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "text", "id": "more_label", "label": "Card link label", "default": "詳しく見る" }
+  ],
+  "blocks": [{ "type": "card", "name": "Card", "settings": [
+    { "type": "text", "id": "title", "label": "Title" },
+    { "type": "richtext", "id": "text", "label": "Detail (opens in a dialog)" }
+  ] }],
+  "presets": [{ "name": "ND · Feature cards" }]
+}
+{% endschema %}

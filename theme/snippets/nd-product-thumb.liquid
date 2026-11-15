@@ -1,18 +1,22 @@
 {%- comment -%}
   Product thumbnail on a transparent background. Hardware and accessories use the cut-out renders shipped
   with the theme (Shopify's own product photos have white backgrounds); everything else uses its featured image.
-  Params: product, width (default 400), loading (default 'lazy'). Hardware always shows the straight-on (front-facing) photo (review Nov 16).
+  Params: product, width (default 400), loading (default 'lazy'). Hardware always shows the straight-on (front-facing) photo, drawn to real relative size: QC 29 cm = 1, mini 22.8 cm = 0.79, Nano 14.4 cm = 0.5 (review Nov 16).
 {%- endcomment -%}
 {%- liquid
   assign w = width | default: 400
   assign cut = ''
+  assign scale = ''
   case product.handle
     when 'quad-cortex'
       assign cut = 'qc-photo-1.webp'
+      assign scale = '1'
     when 'quad-cortex-mini'
       assign cut = 'mini-photo-2.webp'
+      assign scale = '0.79'
     when 'nano-cortex'
       assign cut = 'nano-photo-1.webp'
+      assign scale = '0.5'
     when 'quad-cortex-mini-psu'
       assign cut = 'minipsu-photo-1.webp'
     else
@@ -24,7 +28,7 @@
   endcase
 -%}
 {%- if cut != '' -%}
-  <img class="nd-cutout" src="{{ cut | asset_url }}" alt="" width="{{ w }}" height="{{ w | times: 0.625 | round }}" loading="{{ loading | default: 'lazy' }}">
+  <img class="nd-cutout{% if scale != blank %} nd-scaled{% endif %}"{% if scale != blank %} style="--s: {{ scale }}"{% endif %} src="{{ cut | asset_url }}" alt="" width="{{ w }}" height="{{ w | times: 0.625 | round }}" loading="{{ loading | default: 'lazy' }}">
 {%- elsif product.featured_media -%}
   {{ product.featured_media | image_url: width: w | image_tag: loading: loading | default: 'lazy', alt: '' }}
 {%- endif -%}

@@ -163,7 +163,7 @@
           -%}
           <button type="button" class="qc3d__dock-item{% if block.type == 'campaign' %} is-campaign{% endif %}" role="tab" data-dock-item="{{ forloop.index0 }}" aria-selected="{% if forloop.index0 == first_id %}true{% else %}false{% endif %}">
             {%- if b.thumb != blank -%}{{ b.thumb | image_url: width: 200 | image_tag: alt: '', loading: 'lazy' }}
-            {%- elsif thumb != '' -%}<img src="{{ thumb | asset_url }}" alt="" width="96" height="60" loading="lazy">
+            {%- elsif thumb != '' -%}<img class="nd-scaled" style="--s: {% case b.model %}{% when 'mini' %}0.79{% when 'nano' %}0.5{% else %}1{% endcase %}" src="{{ thumb | asset_url }}" alt="" width="96" height="60" loading="lazy">
             {%- elsif b.image_url != blank -%}<img src="{{ b.image_url | split: '?' | first }}?width=200" alt="" width="96" height="60" loading="lazy">{%- endif -%}
             <span class="qc3d__dock-text">
               <b>{%- if block.type == 'campaign' -%}{{ b.dock_label | default: s.campaign_label }}{%- else -%}{{ b.product.title }}{%- endif -%}</b>

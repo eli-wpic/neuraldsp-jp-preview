@@ -118,7 +118,8 @@
         "button_label": "詳しく見る",
         "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F",
         "body": "<h3>4.1.0 の新機能</h3><ul><li>5つのX対応プラグインが新たにPlugin Compatibilityに対応：Archetype: John Mayer X、Archetype: Petrucci X、Archetype: Misha Mansoor X、Archetype: Rabea X、Archetype: Tim Henson X</li><li>2,000種類以上のFactory Device Presetsを追加</li><li>MultivoicerやGlitchなど、8種類の新しいVirtual Deviceを追加</li><li>Device、I/O Settings、Global EQのPreset保存・呼び出しに対応</li><li>Cortex Controlで複数のQuad Cortex / Quad Cortex miniを管理可能に</li><li>Dual Footswitch Assignmentsなど、操作性・ワークフローを改善</li></ul>"
-      }
+      },
+      "disabled": true
     },
     "rich_text_6pwqvc": {
       "type": "nd-feature",
@@ -1036,6 +1037,71 @@
         "row_38",
         "row_39"
       ]
+    },
+    "coros_update": {
+      "type": "nd-update",
+      "settings": {
+        "badge": "MAJOR UPDATE",
+        "heading": "CorOS 4.1.0 を公開しました",
+        "youtube_id": "NSDRgQ0qxz0",
+        "list_heading": "4.1.0 の新機能",
+        "body": "<ul><li>X 対応プラグイン 5 種類が新たに Quad Cortex に対応し、合計 70 種類以上の新しいバーチャルデバイスを追加</li><li>すべての Quad Cortex / Quad Cortex mini ユーザー向けに、8 種類の新しいバーチャルデバイス</li><li>Device Presets：より速く、より柔軟にリグを組める新しい方法</li><li>Neural DSP チームによる 2,000 種類以上のファクトリー Device Presets</li><li>お気に入り／最近使った項目メニューを刷新</li></ul>",
+        "button_label": "変更履歴をすべて見る",
+        "button_url": "/blogs/news/coros-4-1-0%E3%81%8A%E3%82%88%E3%81%B3cortex-control-4-1-0%E3%81%8C%E5%88%A9%E7%94%A8%E5%8F%AF%E8%83%BD%E3%81%AB%E3%81%AA%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F"
+      }
+    },
+    "feature_cards": {
+      "type": "nd-popcards",
+      "settings": {
+        "heading": "",
+        "more_label": "詳しく見る"
+      },
+      "blocks": {
+        "k0": {
+          "type": "card",
+          "settings": {
+            "title": "キャビネットブロック & EQ",
+            "text": "<p><strong>キャビネットブロック</strong></p><p>1,000 種類以上の完璧にキャプチャーされたインパルスレスポンスを収録した、世界でも屈指の IR コレクション。実際のスタジオのように、スピーカーの周りに配置できるバーチャルマイクを備えた唯一の製品です。サードパーティ製 IR も簡単に読み込めます。</p><p><strong>パワフルなパラメトリック EQ</strong></p><p>すべてを指先でコントロール。7 インチのマルチタッチディスプレイを最大限に活かした、直感的で楽しく使えるパラメトリック EQ です。</p>"
+          }
+        },
+        "k1": {
+          "type": "card",
+          "settings": {
+            "title": "比類のない直感性と柔軟性",
+            "text": "<p><strong>ドラッグ＆ドロップ</strong></p><p>ブロックをドラッグ＆ドロップするだけで、順番やルーティングを数秒で変更できます。</p><p><strong>入力と出力</strong></p><p>ワンスワイプで入出力の設定を確認・調整できます。</p>"
+          }
+        },
+        "k2": {
+          "type": "card",
+          "settings": {
+            "title": "スイッチングモード",
+            "text": "<p>モードの切り替えはとても簡単。機能へのアクセスやスイッチのカスタマイズも自在です。</p><p><strong>Stomp モード</strong></p><p>アナログのペダルボードのように、リグ内の好きなブロックをフットスイッチに割り当ててオン／オフできます。</p><p><strong>Scene モード</strong></p><p>フットスイッチ 1 つで、リグ内の複数のブロックの設定を瞬時に切り替えられます。</p><p><strong>Preset モード</strong></p><p>8 つのバーチャルリグに瞬時にアクセスできます。</p>"
+          }
+        },
+        "k3": {
+          "type": "card",
+          "settings": {
+            "title": "コンポーネント",
+            "text": "<p>美しいアルマイト加工のアルミニウム・ユニボディに、色あせないレーザー刻印のグラフィック。マルチタッチディスプレイは、厚さ 1.8mm の化学強化 Corning® 保護ガラスで守られています。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "k0",
+        "k1",
+        "k2",
+        "k3"
+      ]
+    },
+    "plugin_compat": {
+      "type": "nd-feature",
+      "settings": {
+        "layout": "center",
+        "heading": "Plugin Compatibility",
+        "body": "<p>Neural DSP のプラグインを Quad Cortex に読み込んで、新たな可能性を広げましょう。</p>",
+        "button_label": "詳しく見る",
+        "button_url": "/pages/quad-cortex-and-plugin-bundle"
+      }
     }
   },
   "order": [
@@ -1043,6 +1109,7 @@
     "custom_liquid_6bnyff",
     "product_newsletter_popup_qjp3np",
     "custom_liquid_jamdvc",
+    "coros_update",
     "rich_text_6pwqvc",
     "single_image_lgwrmz",
     "custom_liquid_bz3bhn",
@@ -1051,8 +1118,10 @@
     "capture_versions",
     "image_with_text_gqqlkf",
     "custom_liquid_cypaxf",
+    "feature_cards",
     "custom_liquid_qbqcpw",
     "custom_liquid_tpwyqn",
+    "plugin_compat",
     "rich_text_dgvea3",
     "versus",
     "custom_liquid_aieqim",

@@ -53,7 +53,8 @@
         "button_label": "詳しく見る",
         "button_url": "/blogs/news/nano-cortex-updates-nanos-2-2-0-is-now-available",
         "body": "<h3>2.2.0 の新機能</h3><ul><li>Neural Capture バージョン2 プレイヤー</li><li>新しいトレモロ・エフェクト</li><li>自動モノラル・サミング</li><li>Cortex Cloud オフラインモード</li><li>クラウドバックアップ</li><li>キャプチャの試聴機能</li></ul>"
-      }
+      },
+      "disabled": true
     },
     "custom_liquid_d6ym6c": {
       "type": "nd-feature",
@@ -561,6 +562,237 @@
             "question": "Nano Cortexの使い方に関するガイドはありますか？",
             "answer": "<p>はい、ユーザーマニュアルに加えて、「Getting Started」セクションにはNano Cortexを最大限に活用するための資料や動画も用意しています。</p>"
           }
+        },
+        "faq_8": {
+          "type": "qa",
+          "settings": {
+            "question": "アンプモデルとNeural Captureの違いは何ですか？",
+            "answer": "<p>プラグインや Quad Cortex に搭載されているアンプモデルは、アンプのさまざまな設定における全体的な挙動を詳細に分析・モデリングして作られています。コントロールの位置ごとにアンプからデータを収集し、機械学習によって全レンジにわたるサウンドと弾き心地を再現します。</p><p>一方、Neural Capture は、特定のアンプ、キャビネット、ペダルの「現在の設定」でのサウンドと弾き心地を正確に再現し、その個体ならではの細かな特性まで捉えます。</p><p>Neural Capture は Nano Cortex と Quad Cortex のどちらでもご自身で作成でき、お手持ちの機材を圧倒的なリアルさでデジタル化できます。</p>"
+          }
+        },
+        "faq_9": {
+          "type": "qa",
+          "settings": {
+            "question": "シグナルチェーンのNeural Captureスロットには何を読み込めますか？",
+            "answer": "<p>Nano Cortex の Neural Capture スロットには Neural Capture を読み込みます。Neural Capture は、アンプ、キャビネット、ドライブペダルをキャプチャーしたデジタルレプリカです。Cortex Cloud では何千もの Neural Capture を無料で利用でき、Cortex Cloud アプリからワイヤレスで Nano Cortex に読み込めます。</p><p>Nano Cortex にあらかじめ収録されている 25 種類の Neural Capture に加えて、最大 256 個の Neural Capture を保存し、Cortex Cloud アプリで管理できます。</p>"
+          }
+        },
+        "faq_10": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano CortexにはNeural Captureをいくつ保存できますか？",
+            "answer": "<p>Nano Cortex には最大 256 個の Neural Capture を保存できます。</p>"
+          }
+        },
+        "faq_11": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural Captureの作成にはどんな機材が必要ですか？",
+            "answer": "<p>キャプチャーする対象によって異なります。</p><ul><li>ドライブペダル：楽器用ケーブルのみで作成できます。</li><li>アンプ＋キャビネット、またはコンボアンプ：サウンドを収録するマイクが必要です。ダイナミックマイクは Nano Cortex に直接接続できます。コンデンサーマイクの場合は外部プリアンプが必要です。</li><li>スピーカーのないアンプヘッド：アンプヘッドをリアクティブロードボックスに接続し、その信号を Nano Cortex に送ってキャプチャーします。</li></ul><p>キャプチャーの処理はすべて本体だけで完結します。Neural Capture の作成にコンピューター、インターネット、Cortex Cloud アプリへの接続は必要ありません。</p>"
+          }
+        },
+        "faq_12": {
+          "type": "qa",
+          "settings": {
+            "question": "キャプチャー入力はコンデンサーマイク用のファンタム電源に対応していますか？",
+            "answer": "<p>いいえ。キャプチャー入力は 48V ファンタム電源を供給しません。コンデンサーマイクを使用する場合は外部プリアンプが必要です。</p>"
+          }
+        },
+        "faq_13": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano CortexとQuad Cortexで作成したNeural Captureに違いはありますか？",
+            "answer": "<p>Nano Cortex と Quad Cortex で作成した Neural Capture の解像度と品質は同じです。どちらも同じ技術で、アンプ、キャビネット、ペダルの本物のサウンドと弾き心地を捉えます。Nano Cortex で作成した Neural Capture は Quad Cortex に読み込むことができ、その逆も可能です。</p>"
+          }
+        },
+        "faq_14": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural Captureの作成にインターネット接続やコンピューターは必要ですか？",
+            "answer": "<p>いいえ。コンピューター、インターネット、Cortex Cloud アプリへの接続は不要です。処理はすべてペダル本体の中で完結します。</p>"
+          }
+        },
+        "faq_15": {
+          "type": "qa",
+          "settings": {
+            "question": "Neural Captureの作成にはどのくらい時間がかかりますか？",
+            "answer": "<p>Neural Capture の作成にかかる時間は約 5 分です。</p>"
+          }
+        },
+        "faq_16": {
+          "type": "qa",
+          "settings": {
+            "question": "どんな機材のNeural Captureを作成できますか？",
+            "answer": "<p>あらゆるアンプ、キャビネット、ドライブペダルの Neural Capture を作成できます。</p>"
+          }
+        },
+        "faq_17": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexにはどんなデバイスが収録されていますか？",
+            "answer": "<p>Nano Cortex には以下のデバイスが収録されています。</p><p><strong>Neural Capture</strong></p><ul><li>ギターアンプ 20 種類</li><li>ベースアンプ 5 種類</li></ul><p><strong>キャビネット</strong></p><ul><li>ギターキャビネット 8 種類</li><li>ベースキャビネット 2 種類</li></ul><p><strong>エフェクト／ユーティリティ</strong>：合計 50 種類以上。各デバイスはシグナルチェーン内の決まったスロットで使用できるよう設計されています。</p><p><strong>インプットゲート</strong></p><ul><li>インプットゲートはシグナルチェーンの先頭、プリエフェクトスロットの前にあります。プリエフェクトスロットを使わずにノイズゲートを使用できます。</li></ul><p><strong>すべてのプリ／ポストエフェクトスロットで使用可能</strong></p><ul><li>EQ（3）：Parametric-3、Low-High Cut、Graphic-9</li></ul><p><strong>プリエフェクトスロットで使用可能</strong></p><ul><li>Utility（3）：Adaptive Gate、Utility Gate、Volume</li><li>Compressor（4）：Legendary 87 (M) - Universal Audio® 1176® ベース、Solid State Comp (M) - SSL® Bus ベース、VCA Comp (M)、Opto Comp (M)</li><li>Wah（4）：Bubba Wah - Dunlop® Budda Budwah® ベース、Bass Wah、Crying Wah - Dunlop® Cry Baby® GCB-95® ベース、Crying Clyde Wah - Dunlop® Cry Baby® Clyde McCoy® ベース</li><li>Filter（2）：Love Meat - Lovetone® Meatball® ベース、Envelope Filter</li><li>Guitar Overdrive（9）：Obsessive Drive - Fulltone® OCD® ベース、OD250 - DOD® Overdrive Preamp 250® ベース、Rodent Drive - ProCo® Rat® ベース、Exotic - Xotic® BB Preamp® ベース、Chief OD1 - BOSS® OD-1® ベース、Chief BD2 - BOSS® BD-2® ベース、Facial Fuzz - Dunlop® Fuzzface® ベース、Exotic Z Boost - Xotic® RC Booster® ベース、Green 808 - Ibanez® TS808® ベース</li><li>Bass Overdrive（2）：Microtubes B3K - Darkglass® Microtubes B3K® ベース、Exotic Bass Z Boost - Xotic® RC Bass Booster® ベース</li></ul><p><strong>プリエフェクトスロット 1 のみ</strong></p><ul><li>Pitch（1）：Transpose</li></ul><p><strong>ポストエフェクトスロットで使用可能</strong></p><ul><li>Compressor（4）：Legendary 87 (ST) - Universal Audio® 1176® ベース、Solid State Comp (ST) - SSL® Bus ベース、VCA Comp (ST)、Opto Comp (ST)</li></ul><p><strong>ポストエフェクトスロット 1 のみ</strong></p><ul><li>Utility（1）：Doubler</li><li>Modulation（7）：MX Flanger - MXR® Flanger M117R® ベース、Dream Chorus (ST) - TC Electronic® Dreamscape® ベース、Chorus 229T - TC Electronic® TC-2290® ベース、Chief CE2W (ST) - BOSS® CE-2W® ベース、Chief DC2W (ST) - BOSS® DC-2W® Dimension ベース、MX Phase 95 - MXR® Phase 95® ベース、MX Vibes - MXR® UniVibe® ベース</li></ul><p><strong>ポストエフェクトスロット 2 のみ</strong></p><ul><li>Delay（6）：Tape Delay (ST)、Analog Delay (ST)、Digital Delay (ST)、Dual Delay、Dual Reverse Delay、Circular Delay</li></ul><p><strong>ポストエフェクトスロット 3 のみ</strong></p><ul><li>Reverb（6）：Room、Hall、Modulated、Ambience、Cave、Mind Hall - Lexicon® 224® ベース</li></ul><p>さらに Cortex Cloud を無料で利用でき、アンプ、キャビネット、ドライブペダルの何千ものキャプチャーを探して、ワイヤレスで読み込めます。</p>"
+          }
+        },
+        "faq_18": {
+          "type": "qa",
+          "settings": {
+            "question": "プリセットとは何ですか？",
+            "answer": "<p>Nano Cortex のプリセットは、シグナルチェーン全体の設定を保存するもので、お気に入りのトーンをすばやく簡単に呼び出せます。Nano Cortex には最大 64 個のプリセットを保存できます。初期設定の 4 プリセットモードでは、フットスイッチ I と II で 4 つのプリセットにすばやくアクセスできます。</p>"
+          }
+        },
+        "faq_19": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad CortexのプリセットをNano Cortexで読み込めますか？",
+            "answer": "<p>いいえ。Nano Cortex のシグナルチェーンは固定のため、Quad Cortex のプリセットとは互換性がありません。</p>"
+          }
+        },
+        "faq_20": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano CortexのIRローダーが業界屈指といわれる理由は？",
+            "answer": "<p>Nano Cortex の IR ローダーは、スタジオグレードの高品質なインパルスレスポンス（IR）と豊富なカスタマイズ性により、業界でも屈指の性能を備えています。</p><p>Nano Cortex には 10 種類のキャビネットモデルが搭載され、それぞれに複数の IR が用意されています。キャビネットごとに 5 種類のマイクと、マイクごとに 6 つのマイクポジションを選べるため、1 つのキャビネットモデルにつき 30 種類（5 マイク × 6 ポジション）の IR があります。10 モデルで合計 300 種類のスタジオ品質 IR となり、音作りの可能性は無限に広がります。</p><p>さらに最大 256 個のカスタム IR を保存でき、極めてリアルで自由度の高いキャビネットシミュレーションが可能です。</p>"
+          }
+        },
+        "faq_21": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexでギター／ベースのチューニングをデジタルで変更できますか？",
+            "answer": "<p>はい。内蔵の Transpose エフェクトで、体感できる遅延なしに瞬時にチューニングを変更できます。</p>"
+          }
+        },
+        "faq_22": {
+          "type": "qa",
+          "settings": {
+            "question": "サードパーティ製のインパルスレスポンス（IR）は使えますか？",
+            "answer": "<p>はい。あらかじめ収録された 300 種類の IR に加えて、最大 256 個のカスタム IR をアップロードして保存できます。</p>"
+          }
+        },
+        "faq_23": {
+          "type": "qa",
+          "settings": {
+            "question": "プリセット切り替え時に音切れはありますか？",
+            "answer": "<p>NanOS 2.0.0 以降、プリセット切り替え時にごく短い音切れが発生します。通常は約 60 ミリ秒とごくわずかで、ディレイやリバーブの残響は途切れず、プリセット間で自然に続きます。この変更により、シグナルチェーンの自由度が高まり、NanOS 2.0.0 で追加された新機能や新デバイスを搭載できるようになりました。</p>"
+          }
+        },
+        "faq_24": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexのノブやスイッチが反応しないのはなぜですか？",
+            "answer": "<p>ノブやスイッチを操作しても反応しない場合は、「Parameter Lock（パラメーターロック）」機能が有効になっている可能性があります。この機能はライブ中の誤操作を防ぐため、ノブとフットスイッチのロータリー操作を無効にします。</p><p>Parameter Lock のオン／オフは、EXIT ボタンを 3 秒間長押しして切り替えます。有効な間は EXIT の LED リングが点灯します。</p>"
+          }
+        },
+        "faq_25": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexはオーディオインターフェースとして使えますか？",
+            "answer": "<p>はい。Nano Cortex は本格的な低レイテンシーのオーディオインターフェースとして機能し、24bit / 48kHz、7 チャンネル（4 イン / 3 アウト）の USB オーディオに対応しています。</p>"
+          }
+        },
+        "faq_26": {
+          "type": "qa",
+          "settings": {
+            "question": "オーディオインターフェースとして対応しているDAWは？",
+            "answer": "<p>Nano Cortex は主要な DAW すべてに対応しています。</p><ul><li>Ableton Live（バージョン 10 以降）</li><li>Cakewalk（2018 以降）</li><li>Cubase（バージョン 6 以降）</li><li>GarageBand（バージョン 10 以降）</li><li>Logic Pro（バージョン 10 以降）</li><li>Pro Tools（バージョン 12 以降）</li><li>REAPER（バージョン 6 以降）</li><li>Studio One Artist（バージョン 5 以降）</li><li>Studio One Professional（バージョン 2 以降）</li><li>FL Studio（バージョン 21 以降）</li></ul>"
+          }
+        },
+        "faq_27": {
+          "type": "qa",
+          "settings": {
+            "question": "どんなモニター機器に接続できますか？",
+            "answer": "<p>Nano Cortex は、スタジオモニター、FRFR キャビネット、アンプ、ペダルボードなど、あらゆるセットアップに組み込めます。</p><ul><li>スタジオモニター、FRFR キャビネット、PA システム：OUTPUT 1L と OUTPUT 2R から接続します。</li><li>ギター／ベースアンプ：OUTPUT 1L をアンプの入力に接続するか、アンプのエフェクトループのリターンに接続します。</li><li>ギター／ベースキャビネット：外部パワーアンプを経由して接続します。</li><li>ペダル：1/4\" 入力と OUTPUT 1L / 2R を使ってペダルボードに組み込めます。</li></ul>"
+          }
+        },
+        "faq_28": {
+          "type": "qa",
+          "settings": {
+            "question": "IRローダーのグローバルバイパス機能とは？",
+            "answer": "<p>IR Loader Global Bypass 機能を使うと、すべてのプリセットで IR ローダーをまとめてバイパスできます。</p>"
+          }
+        },
+        "faq_29": {
+          "type": "qa",
+          "settings": {
+            "question": "XLRケーブルは使えますか？",
+            "answer": "<p>はい。Nano Cortex の出力はバランス TRS のため、TRS-XLR ケーブルを使っても XLR 同士で接続した場合と比べて音質が損なわれることはありません。XLR 出力が必要なセットアップでは、市販の TRS-XLR ケーブルで簡単に対応できます。</p>"
+          }
+        },
+        "faq_30": {
+          "type": "qa",
+          "settings": {
+            "question": "ペダルボードで使えますか？",
+            "answer": "<p>はい。Nano Cortex は既存のセットアップにシームレスに組み込めるよう設計されています。アンプとキャビネットの代わりとしても、ストンプボックス／マルチエフェクターとしても使用できます。1/4\" 入力と OUTPUT 1L / 2R を使って、シグナルチェーンの好きな位置に配置できます。</p>"
+          }
+        },
+        "faq_31": {
+          "type": "qa",
+          "settings": {
+            "question": "エフェクトループはありますか？",
+            "answer": "<p>いいえ。Nano Cortex には専用のエフェクトループはありません。ただし、1/4\" 楽器入力と OUTPUT 1L / 2R を使ってペダルボードに組み込むことができます。</p>"
+          }
+        },
+        "faq_32": {
+          "type": "qa",
+          "settings": {
+            "question": "ステレオで使えますか？",
+            "answer": "<p>Nano Cortex はモノラル入力・ステレオ出力のデバイスです。デュアル TRS 出力を備え、スタジオモニター、PA システム、FRFR キャビネットなどのステレオ環境に接続できます。</p>"
+          }
+        },
+        "faq_33": {
+          "type": "qa",
+          "settings": {
+            "question": "USB-Cから給電できますか？",
+            "answer": "<p>はい。Nano Cortex は USB-C（5V / 1.5A）から給電できます。付属の USB-C ケーブルで、コンピューターやモバイルバッテリーなど USB-C 対応の電源に接続してください。</p>"
+          }
+        },
+        "faq_34": {
+          "type": "qa",
+          "settings": {
+            "question": "Quad Cortexの電源アダプターでNano Cortexを使えますか？",
+            "answer": "<p>はい。Quad Cortex の電源アダプターは Nano Cortex に対応しています。</p>"
+          }
+        },
+        "faq_35": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortexをワイヤレスで操作できますか？",
+            "answer": "<p>はい。Cortex Cloud アプリからワイヤレスで操作できます。シグナルチェーン内のバーチャルデバイスのパラメーター調整や、Neural Capture、プリセット、IR、本体設定の管理が可能です。</p>"
+          }
+        },
+        "faq_36": {
+          "type": "qa",
+          "settings": {
+            "question": "Bluetoothでオーディオをストリーミングしたり、ワイヤレスヘッドフォンを使ったりできますか？",
+            "answer": "<p>いいえ。Bluetooth は Nano Cortex と Cortex Cloud アプリのペアリング専用です。</p>"
+          }
+        },
+        "faq_37": {
+          "type": "qa",
+          "settings": {
+            "question": "MIDI機器やエクスプレッションペダルで操作できますか？",
+            "answer": "<p>はい。MIDI TRS 入力から MIDI フットスイッチやエクスプレッションペダルを接続できます。</p>"
+          }
+        },
+        "faq_38": {
+          "type": "qa",
+          "settings": {
+            "question": "MIDIアウトに対応していますか？",
+            "answer": "<p>Nano Cortex は USB-C 経由で MIDI イン／アウトに対応しています。EXP/MIDI TRS 端子は MIDI イン専用です。</p>"
+          }
+        },
+        "faq_39": {
+          "type": "qa",
+          "settings": {
+            "question": "ファームウェアのアップデート方法は？",
+            "answer": "<p>Nano Cortex のファームウェアアップデートは Cortex Cloud アプリで行います。アップデートの確認から最新バージョンのワイヤレスインストールまで簡単に行えます。</p>"
+          }
+        },
+        "faq_40": {
+          "type": "qa",
+          "settings": {
+            "question": "Nano Cortex用のデスクトップアプリはありますか？",
+            "answer": "<p>Nano Cortex 用のデスクトップコントローラーは提供されていません。</p>"
+          }
         }
       },
       "block_order": [
@@ -570,7 +802,40 @@
         "qa_3",
         "qa_4",
         "qa_5",
-        "qa_6"
+        "qa_6",
+        "faq_8",
+        "faq_9",
+        "faq_10",
+        "faq_11",
+        "faq_12",
+        "faq_13",
+        "faq_14",
+        "faq_15",
+        "faq_16",
+        "faq_17",
+        "faq_18",
+        "faq_19",
+        "faq_20",
+        "faq_21",
+        "faq_22",
+        "faq_23",
+        "faq_24",
+        "faq_25",
+        "faq_26",
+        "faq_27",
+        "faq_28",
+        "faq_29",
+        "faq_30",
+        "faq_31",
+        "faq_32",
+        "faq_33",
+        "faq_34",
+        "faq_35",
+        "faq_36",
+        "faq_37",
+        "faq_38",
+        "faq_39",
+        "faq_40"
       ]
     },
     "17840000398609e130": {
@@ -602,6 +867,89 @@
         "card_0",
         "card_1"
       ]
+    },
+    "nanos_update": {
+      "type": "nd-update",
+      "settings": {
+        "badge": "UPDATE",
+        "heading": "NanOS 2.3.0 を公開しました",
+        "list_heading": "2.3.0 の新機能",
+        "body": "<p>新しいエフェクト 5 種類</p><ul><li>Blossom (ST)（Strymon® BigSky® の Bloom モードにインスパイア）</li><li>Shimmer</li><li>Poly Octaver（Electro-Harmonix® POG® にインスパイア）</li><li>Wham（DigiTech® Whammy® にインスパイア）</li><li>Chief OC2（BOSS® OC-2 にインスパイア）</li></ul><p>メトロノーム</p>",
+        "button_label": "変更履歴をすべて見る（英語）",
+        "button_url": "https://neuraldsp.com/nano-cortex-updates/nanos-2-3-0-is-now-available"
+      }
+    },
+    "players": {
+      "type": "nd-columns",
+      "settings": {
+        "heading": "あらゆるプレイヤーに。あらゆるセットアップに。",
+        "body": "<p>あらゆるレベルのギタリスト、ベーシストのために。経験豊富なプロも、スタジオ中心のクリエイターも、これから始める方も、Nano Cortex なら手間なく世界最高峰のトーンが手に入ります。</p>",
+        "columns": 3
+      },
+      "blocks": {
+        "c0": {
+          "type": "column",
+          "settings": {
+            "title": "ツアーミュージシャン",
+            "text": "<p>重いリグはもう必要ありません。スタジオグレードのサウンド、アンプとキャビネットの置き換え、ペダルボードへのシームレスな統合まで、ライブにそのまま使える完全なセットアップがギグバッグに収まります。内蔵の Transpose エフェクトでチューニングを瞬時に変え、FOH や FRFR キャビネットに直接接続して、毎晩どこでも安定したトーンを。</p>"
+          }
+        },
+        "c1": {
+          "type": "column",
+          "settings": {
+            "title": "スタジオプレイヤー／プロデューサー",
+            "text": "<p>キャビネットのマイキングも、完璧なテイクを追いかける必要もありません。Nano Cortex は高品質な USB オーディオインターフェース（24bit / 48kHz、4 イン / 3 アウト）としても使え、お気に入りのアンプで録音したり、それをキャプチャーして持ち運んだりできます。クリーンで、速く、静か。現代のセッションのために。</p>"
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "title": "これから始める方",
+            "text": "<p>デジタル機材が初めてでも大丈夫。箱から出してすぐに素晴らしいサウンドを作れ、Cortex Cloud の何千ものトーンを試しながら、高価なペダルやアンプを揃えなくてもリグを広げられます。ヘッドフォンで静かに練習したり、モニターにつないだり。ひらめいたときは、そのまま高音質でコンピューターに録音できます。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "c0",
+        "c1",
+        "c2"
+      ]
+    },
+    "use_cases": {
+      "type": "nd-columns",
+      "settings": {
+        "heading": "1 台で、無限の可能性。",
+        "body": "<p>Nano Cortex は、オールインワンのリグであり、アンプとキャビネットの代わりであり、パワフルなマルチエフェクターでもあります。しかもギグバッグに収まるサイズです。</p>",
+        "columns": 3
+      },
+      "blocks": {
+        "c0": {
+          "type": "column",
+          "settings": {
+            "title": "どこでも、完全なリグを",
+            "text": "<p>ステージでも、スタジオでも、リハーサルでも、自宅での曲作りでも、柔軟な入出力を備えた完全なシグナルチェーンを提供します。アンプ不要のギター／ベースリグ一式が、インスピレーションが湧いたその場で使えます。</p>"
+          }
+        },
+        "c1": {
+          "type": "column",
+          "settings": {
+            "title": "妥協のないアンプ＆キャビネットの置き換え",
+            "text": "<p>重い機材は家に置いていきましょう。お気に入りのアンプやキャビネットの Neural Capture を読み込むことも、自分で作成することもできます。内蔵の IR ローダーで好みのキャビネットに差し替えることも可能。既存のペダルボードに組み込み、PA システムや FRFR キャビネットに直接接続すれば、重い機材を運ぶ手間のない理想的なライブセットアップが完成します。</p>"
+          }
+        },
+        "c2": {
+          "type": "column",
+          "settings": {
+            "title": "ストンプボックスにも、マルチエフェクターにも",
+            "text": "<p>既存のセットアップに組み込めば、お気に入りのドライブペダルの極めて正確なレプリカを最大 256 個保存できるコンパクトなペダルに。さらに、音作りに使える充実したエフェクトも揃っています。</p>"
+          }
+        }
+      },
+      "block_order": [
+        "c0",
+        "c1",
+        "c2"
+      ]
     }
   },
   "order": [
@@ -609,6 +957,7 @@
     "video_89yj6x",
     "custom_liquid_hjp4qe",
     "custom_liquid_6hmybr",
+    "nanos_update",
     "custom_liquid_d6ym6c",
     "multicolumn_34lwl7",
     "rich_text_wrphyg",
@@ -620,6 +969,8 @@
     "rich_text_qkpgfd",
     "rich_text_ae8n7g",
     "rich_text_w8yrhb",
+    "players",
+    "use_cases",
     "collapsible_content_xx4f6y",
     "17840000398609e130",
     "custom_liquid_wu4vmx"

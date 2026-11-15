@@ -609,3 +609,49 @@ main:has(.nd-page-head--compact) .section-head h2 { font-size: var(--fs-l); }
 .nd-lightbox::backdrop { background: rgba(0,0,0,.82); backdrop-filter: blur(4px); }
 .nd-lightbox video { display: block; width: 100%; max-height: 90vh; border-radius: 14px; }
 .nd-lightbox__close { position: absolute; top: -44px; right: 0; width: 36px; height: 36px; border: 0; border-radius: 50%; background: var(--paper); color: #0b0b0b; font-size: 22px; line-height: 1; cursor: pointer; }
+
+/* ===== real relative size for hardware thumbnails (QC 1 : mini 0.79 : Nano 0.5) =====
+   Each slot keeps the Quad Cortex width (--tw); smaller units get a narrower image, centred and standing on the same baseline. */
+img.nd-scaled { --tw: 64px; width: calc(var(--tw) * var(--s, 1)) !important; margin-inline: calc(var(--tw) * (1 - var(--s, 1)) / 2); object-fit: contain; object-position: center bottom !important; }
+.qc3d__dock-item img.nd-scaled { --tw: 64px; height: 44px; }
+.mega img.nd-scaled { --tw: 76px; height: 52px; margin-left: 0; margin-right: calc(76px * (1 - var(--s, 1))); }
+.sticky-buy img.nd-scaled { --tw: 72px; height: 48px; }
+@media (max-width: 760px) { .qc3d__dock-item img.nd-scaled { --tw: 48px; height: 34px; } }
+@media (max-width: 480px) { .qc3d__dock-item img.nd-scaled { --tw: 44px; height: 28px; } }
+
+/* comparisons: every unit stands on one baseline inside a box shaped like the Quad Cortex photo; width carries the scale */
+.nd-versus__img, .vs__img { height: auto !important; aspect-ratio: 1800 / 1214; align-items: flex-end; }
+.nd-versus__img > div, .vs__img > div { height: auto !important; }
+.nd-versus__img img, .vs__img img { width: 100% !important; height: auto !important; max-height: none !important; object-fit: contain; }
+
+/* ===== firmware update block (neuraldsp.com: badge, centred title, video + what's new) ===== */
+.nd-update { padding: clamp(56px, 7vw, 104px) 0; background: radial-gradient(70% 60% at 50% 100%, rgba(160, 60, 20, .22), transparent 70%); }
+.nd-update__head { text-align: center; margin-bottom: clamp(32px, 4vw, 56px); }
+.nd-update__badge { display: inline-block; padding: 4px 16px; border: 1px solid #b8932b; border-radius: 999px; background: rgba(255, 210, 54, .1); color: #ffd236; font-size: var(--fs-xs); font-weight: 700; letter-spacing: .1em; margin-bottom: 18px; }
+.nd-update__head h2 { font-size: var(--fs-2xl); }
+.nd-update__grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 80px); align-items: start; }
+.nd-update__grid--text { grid-template-columns: minmax(0, 720px); justify-content: center; }
+.nd-update__media { border-radius: 12px; overflow: hidden; }
+.nd-update__body h3 { font-size: var(--fs-xl); margin-bottom: 18px; }
+.nd-update__body ul { margin: 0 0 28px; padding-left: 1.2em; display: grid; gap: 14px; color: var(--text); line-height: 1.7; }
+.nd-update__body .btn { margin-top: 4px; }
+@media (max-width: 860px) { .nd-update__grid { grid-template-columns: 1fr; } }
+
+/* ===== feature cards that open a dialog ===== */
+.nd-popcards { padding: clamp(40px, 5vw, 72px) 0; }
+.nd-popcards__grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.nd-popcards__card { display: grid; align-content: space-between; gap: 28px; min-height: 150px; padding: 22px; text-align: left; border: 1px solid var(--line); border-radius: 14px; background: rgba(239,235,228,.03); color: var(--text); font: inherit; cursor: pointer; transition: border-color .25s, background-color .25s, transform .35s var(--ease-out); }
+.nd-popcards__card:hover { border-color: var(--line-strong); background: rgba(239,235,228,.06); transform: translateY(-3px); }
+.nd-popcards__card b { font-size: var(--fs-l); line-height: 1.4; }
+.nd-popcards__card span { display: flex; justify-content: space-between; align-items: center; font-size: var(--fs-s); color: var(--text-2); }
+.nd-popcards__card i { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line-strong); font-style: normal; transition: transform .3s var(--ease-out); }
+.nd-popcards__card:hover i { transform: rotate(90deg); }
+.nd-pop { width: min(640px, 92vw); padding: clamp(24px, 4vw, 40px); border: 1px solid var(--line-strong); border-radius: 16px; background: #141517; color: var(--text); }
+.nd-pop::backdrop { background: rgba(0,0,0,.7); backdrop-filter: blur(4px); }
+.nd-pop h3 { font-size: var(--fs-xl); margin: 0 40px 16px 0; }
+.nd-pop .nd-prose { color: var(--text-2); line-height: 1.85; }
+.nd-pop .nd-prose h4 { color: var(--text); margin: 18px 0 4px; font-size: var(--fs-m); }
+.nd-pop__close { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border: 0; border-radius: 50%; background: rgba(239,235,228,.1); color: var(--text); font-size: 20px; cursor: pointer; }
+@media (max-width: 900px) { .nd-popcards__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) { .nd-popcards__grid { grid-template-columns: 1fr; } .nd-popcards__card { min-height: 0; } }
+.sticky-buy img.nd-scaled { width: 72px !important; margin-inline: 0; }

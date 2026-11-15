@@ -1,0 +1,43 @@
+{%- comment -%}
+  Firmware update block, laid out like neuraldsp.com: badge (e.g. MAJOR UPDATE), centred title,
+  then the video or photo on the left and "what's new" with a changelog button on the right.
+{%- endcomment -%}
+{%- assign s = section.settings -%}
+<section class="section nd-update">
+  <div class="container">
+    <header class="nd-update__head">
+      {%- if s.badge != blank -%}<span class="nd-update__badge">{{ s.badge }}</span>{%- endif -%}
+      <h2>{{ s.heading }}</h2>
+    </header>
+    <div class="nd-update__grid{% if s.youtube_id == blank and s.video_url == blank and s.image_url == blank and s.image == blank %} nd-update__grid--text{% endif %}" data-stagger>
+      {%- if s.youtube_id != blank or s.video_url != blank -%}
+        <div class="nd-update__media" style="--i: 0">{% render 'nd-video', youtube: s.youtube_id, url: s.video_url, title: s.heading %}</div>
+      {%- elsif s.image != blank or s.image_url != blank -%}
+        <div class="nd-update__media" style="--i: 0">{% render 'nd-media', image: s.image, url: s.image_url, alt: s.heading %}</div>
+      {%- endif -%}
+      <div class="nd-update__body" style="--i: 1">
+        {%- if s.list_heading != blank -%}<h3>{{ s.list_heading }}</h3>{%- endif -%}
+        <div class="nd-prose">{{ s.body }}</div>
+        {%- if s.button_label != blank -%}<a class="btn btn--primary" href="{{ s.button_url }}"{% if s.button_url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ s.button_label }}</a>{%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "ND · Update",
+  "settings": [
+    { "type": "text", "id": "badge", "label": "Badge", "default": "MAJOR UPDATE" },
+    { "type": "text", "id": "heading", "label": "Title" },
+    { "type": "text", "id": "youtube_id", "label": "YouTube video ID" },
+    { "type": "text", "id": "video_url", "label": "Video URL (mp4)" },
+    { "type": "image_picker", "id": "image", "label": "Photo (when there is no video)" },
+    { "type": "text", "id": "image_url", "label": "Photo URL" },
+    { "type": "text", "id": "list_heading", "label": "List heading" },
+    { "type": "richtext", "id": "body", "label": "What's new" },
+    { "type": "text", "id": "button_label", "label": "Button", "default": "変更履歴をすべて見る" },
+    { "type": "text", "id": "button_url", "label": "Button URL" }
+  ],
+  "presets": [{ "name": "ND · Update" }]
+}
+{% endschema %}
