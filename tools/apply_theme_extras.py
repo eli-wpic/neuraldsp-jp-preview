@@ -820,6 +820,7 @@ bf = d['sections']['qc3d']['blocks'].get('bf')
 if bf:
     bf['settings'].update(eyebrow='Neural DSP ／ 新生活キャンペーン', title='新しい部屋でも、\nフルボリュームで。',
         alt='新しい部屋でも、フルボリュームで。Nano Cortex とヘッドホンがあれば、夜中でも本気の音で弾ける。',
+        image_asset='campaign-demo-newroom.jpg', mobile_image_asset='campaign-demo-newroom-phone.jpg',
         fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
 save('index', head, d)
 print('round 25 ok')

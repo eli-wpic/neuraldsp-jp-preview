@@ -101,14 +101,14 @@
             "button_label": "Nano Cortex を見る",
             "button_url": "/products/nano-cortex",
             "banner": true,
-            "image_asset": "campaign-demo-spring.jpg",
+            "image_asset": "campaign-demo-newroom.jpg",
             "fx_sheen": true,
             "fx_glow": false,
             "fx_sparks": true,
             "fx_grain": false,
             "fx_push": true,
             "alt": "新しい部屋でも、フルボリュームで。Nano Cortex とヘッドホンがあれば、夜中でも本気の音で弾ける。",
-            "mobile_image_asset": "campaign-demo-spring-phone.jpg",
+            "mobile_image_asset": "campaign-demo-newroom-phone.jpg",
             "banner_bleed": true
           }
         }
