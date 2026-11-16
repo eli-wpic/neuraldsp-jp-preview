@@ -53,7 +53,7 @@
       .nd-colorbar button[data-scheme-set="campaign"] i { background: {{ settings.campaign_accent }}; }
     </style>
   {%- endif -%}
-  {%- if settings.color_bar or campaign_live -%}<script>(function(){var h=document.documentElement,live={{ campaign_live | json }};if(live)h.dataset.scheme='campaign';{% if settings.color_bar %}try{var s=localStorage.getItem('nd-scheme');if(s==='light'||s==='dark'||(s==='campaign'&&live))h.dataset.scheme=s}catch(e){}{% endif %}h.dataset.campaign=live?'live':''})()</script>{%- endif -%}
+  {%- if settings.color_bar or campaign_live -%}<script>(function(){var h=document.documentElement,live={{ campaign_live | json }};if(live)h.dataset.scheme='campaign';{% if settings.color_bar %}try{var s=live?sessionStorage.getItem('nd-scheme-c'):localStorage.getItem('nd-scheme');if(s==='light'||s==='dark'||(s==='campaign'&&live))h.dataset.scheme=s}catch(e){}{% endif %}h.dataset.campaign=live?'live':''})()</script>{%- endif -%}
   {{ 'nd-base.css' | asset_url | stylesheet_tag }}
   {{ 'nd-sections.css' | asset_url | stylesheet_tag }}
   {{ 'nd-home.css' | asset_url | stylesheet_tag }}
@@ -87,12 +87,11 @@
   {%- endif -%}
   {%- if settings.color_bar -%}
     <div class="nd-colorbar" role="group" aria-label="サイトの色">
-      <span>カラー</span>
-      <button type="button" data-scheme-set="dark" aria-pressed="false"><i aria-hidden="true"></i>ダーク</button>
-      <button type="button" data-scheme-set="light" aria-pressed="false"><i aria-hidden="true"></i>ホワイト</button>
-      {%- if campaign_live -%}<button type="button" data-scheme-set="campaign" aria-pressed="false"><i aria-hidden="true"></i>{{ settings.campaign_label | default: 'CAMPAIGN' }}</button>{%- endif -%}
+      <button type="button" data-scheme-set="dark" aria-pressed="false" aria-label="ダーク" title="ダーク"><i aria-hidden="true"></i></button>
+      <button type="button" data-scheme-set="light" aria-pressed="false" aria-label="ホワイト" title="ホワイト"><i aria-hidden="true"></i></button>
+      {%- if campaign_live -%}<button type="button" data-scheme-set="campaign" aria-pressed="false" aria-label="{{ settings.campaign_label | default: 'CAMPAIGN' | escape }}" title="{{ settings.campaign_label | default: 'CAMPAIGN' | escape }}"><i aria-hidden="true"></i></button>{%- endif -%}
     </div>
-    <script>(function(){var h=document.documentElement,b=document.querySelectorAll('[data-scheme-set]');function sync(){b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.schemeSet===h.dataset.scheme)})}b.forEach(function(x){x.addEventListener('click',function(){h.dataset.scheme=x.dataset.schemeSet;try{localStorage.setItem('nd-scheme',x.dataset.schemeSet)}catch(e){}sync();document.dispatchEvent(new CustomEvent('nd:scheme'))})});sync()})();</script>
+    <script>(function(){var h=document.documentElement,b=document.querySelectorAll('[data-scheme-set]');function sync(){b.forEach(function(x){x.setAttribute('aria-pressed',x.dataset.schemeSet===h.dataset.scheme)})}b.forEach(function(x){x.addEventListener('click',function(){h.dataset.scheme=x.dataset.schemeSet;try{if(h.dataset.campaign==='live')sessionStorage.setItem('nd-scheme-c',x.dataset.schemeSet);else localStorage.setItem('nd-scheme',x.dataset.schemeSet)}catch(e){}sync();document.dispatchEvent(new CustomEvent('nd:scheme'))})});sync()})();</script>
   {%- endif -%}
   <a class="visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>
   {% sections 'header-group' %}

@@ -911,3 +911,13 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 /* shared wrapping: headings and eyebrows balance their lines, body text avoids a lone last word */
 :is(h1, h2, h3, h4, [class*="eyebrow"], .section-head p) { text-wrap: balance; }
 :is(p, li, dd) { text-wrap: pretty; }
+
+/* colour bar = three clickable colour bars (dark / white / campaign colour), no text; names are tooltips + screen-reader labels */
+.nd-colorbar { height: 30px; gap: 8px; padding: 0; }
+.nd-colorbar button { width: 40px; height: 30px; padding: 0 !important; display: grid; place-items: center; box-shadow: none !important; cursor: pointer; }
+.nd-colorbar button i { width: 32px !important; height: 8px !important; border-radius: 4px !important; border: 1px solid rgba(var(--ink-rgb), .28) !important; transition: transform var(--t-press) var(--ease-out), height var(--t-press) var(--ease-out); }
+.nd-colorbar button:hover i { transform: scaleY(1.25); }
+.nd-colorbar button[aria-pressed="true"] i { height: 12px !important; box-shadow: 0 0 0 2px var(--bg), 0 0 0 3.5px var(--text); }
+.nd-colorbar button:focus-visible { outline: 2px solid var(--text); outline-offset: -2px; border-radius: 6px; }
+@media (max-width: 560px) { .nd-colorbar { gap: 6px; padding: 0; } .nd-colorbar button { width: 40px; } }
+.nd-colorbar button[data-scheme-set="dark"] i { border-color: rgba(var(--ink-rgb), .45) !important; }
