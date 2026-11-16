@@ -226,3 +226,10 @@ a.qc3d__banner:hover .nd-banner { scale: 1.01; }
 .qc3d__dock-item.is-campaign b::before { background: var(--campaign-accent, #cb2b1e) !important; }
 /* step dots sit at the screen edge so the 3D unit never slides under them on wide screens */
 @media (min-width: 761px) { .qc3d__nav { right: var(--gutter) !important; } }
+
+/* campaign banner, edge to edge: the photo fills the whole hero (cropped to the screen, centred); effects still play on top */
+.qc3d__banner--bleed { padding: 0 !important; }
+.qc3d__banner--bleed .nd-banner { width: 100% !important; height: 100%; border-radius: 0; }
+.qc3d__banner--bleed .nd-banner__img, .qc3d__banner--bleed .nd-banner__img img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+a.qc3d__banner--bleed:hover .nd-banner { scale: none; }
+.qc3d__media:has(.qc3d__banner--bleed) { inset: 0; }

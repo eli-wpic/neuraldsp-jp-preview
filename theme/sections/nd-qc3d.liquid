@@ -54,7 +54,7 @@
         {%- if block.type == 'campaign' and block.settings.model == 'none' -%}
           <div class="qc3d__media" data-media="{{ forloop.index0 }}"{% if forloop.index0 != first_id %} hidden{% endif %}>
             {%- if block.settings.banner -%}
-              <{% if block.settings.button_url != blank %}a href="{{ block.settings.button_url }}" aria-label="{{ block.settings.button_label | default: block.settings.title | escape }}"{% else %}div{% endif %} class="qc3d__banner">{% render 'nd-banner', s: block.settings %}</{% if block.settings.button_url != blank %}a{% else %}div{% endif %}>
+              <{% if block.settings.button_url != blank %}a href="{{ block.settings.button_url }}" aria-label="{{ block.settings.button_label | default: block.settings.title | escape }}"{% else %}div{% endif %} class="qc3d__banner{% if block.settings.banner_bleed %} qc3d__banner--bleed{% endif %}">{% render 'nd-banner', s: block.settings %}</{% if block.settings.button_url != blank %}a{% else %}div{% endif %}>
             {%- elsif block.settings.video_url != blank -%}
               <video src="{{ block.settings.video_url }}" autoplay muted loop playsinline></video>
             {%- else -%}
@@ -399,9 +399,21 @@
           "info": "Fills the top of the homepage with the banner image above (Photo / Photo URL); the whole banner links to the button URL."
         },
         {
+          "type": "checkbox",
+          "id": "banner_bleed",
+          "label": "Photo fills the whole top of the page (edge to edge)",
+          "default": false,
+          "info": "Use a 16:10 photo (2880 × 1800) and a tall version for phones and tablets (1170 × 2532, content in the middle half). Edges can crop on other screens, so keep text and products away from the outer 12% and the bottom 20% (the product bar sits there)."
+        },
+        {
           "type": "text",
           "id": "mobile_image_url",
           "label": "Phone banner URL (optional, 4:5)"
+        },
+        {
+          "type": "text",
+          "id": "mobile_image_asset",
+          "label": "Phone banner theme asset (fallback, 4:5)"
         },
         {
           "type": "text",

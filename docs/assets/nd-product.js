@@ -210,7 +210,7 @@ function init(root) {
     $('[data-sticky-meta]', root).textContent = state.acc.size ? `${[...state.acc].map((cb) => cb.dataset.accName).join('・')} ${S.selected}` : S.noAccessories;
     if (plugCount && !plugCount.classList.contains('is-warn')) plugCount.textContent = names.length ? S.plugCount.replace('{n}', names.length) : S.plugNone;
     const sum = $('[data-plug-summary]', root);
-    if (sum) { sum.dataset.pick ??= sum.textContent; sum.textContent = names.length ? names.join('、') : sum.dataset.pick; sum.closest('summary').classList.toggle('has-pick', names.length > 0); }
+    if (sum) { sum.dataset.pick ??= sum.textContent; sum.textContent = names.length ? plugLabel(names) : sum.dataset.pick; sum.closest('summary').classList.toggle('has-pick', names.length > 0); }
     $('[data-variant-input]', root).value = !p.length || multi ? state.variant.id : p[0].dataset.bundleVariant;
     const avail = state.variant.available && state.variant.price > 0 && p.every((cb) => !cb.disabled);
     $$('[data-add], [data-buy-now]', root).forEach((x) => (x.disabled = !avail));
@@ -232,3 +232,9 @@ function init(root) {
 }
 
 document.querySelectorAll('[data-product-form]').forEach(init);
+
+/* dropdown label: up to 3 plugin names (without the "Archetype:" prefix), then 「ほか N 件」 */
+function plugLabel(names) {
+  const short = names.map((n) => n.replace(/^Archetype:\s*/i, ''));
+  return short.length > 3 ? `${short.slice(0, 3).join("、")}\u00a0ほか${short.length - 3}件` : short.join('、');
+}

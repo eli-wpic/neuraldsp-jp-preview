@@ -35,6 +35,7 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     root.querySelectorAll('.nd-yt iframe, .nd-yt video').forEach((f) => { f.parentElement.classList.remove('is-playing'); f.remove(); });
     const test = (el) => id === 'all' || (el.dataset.tones || '').split(/[\s,]+/).includes(id);
     let n = 0, nMini = 0;
+    const was = new Set(rows.filter((r) => !r.hidden));
     rows.forEach((r) => { const m = test(r); n += m; r.hidden = !m; r.classList.add('is-in'); });
     minis.forEach((c) => { const m = test(c); n += m; nMini += m; c.hidden = !m; });
     
@@ -42,7 +43,8 @@ document.querySelectorAll('[data-plugins]').forEach((root) => {
     if (empty) empty.hidden = n > 0;
     tabs.forEach((t) => { const on = t.dataset.tone === id; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; if (on) moveInk(t); });
     // the matching plugins rise in one after another
-    if (!reducedMotion()) rows.filter((r) => !r.hidden).forEach((r, k) => r.animate([{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'none' }], { duration: 480, delay: Math.min(k, 5) * 70, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
+    // only rows that were not showing before ease in (rows that stay don't blink); same motion tokens as the rest of the site
+    if (!reducedMotion()) rows.filter((r) => !r.hidden && !was.has(r)).forEach((r, k) => r.animate([{ opacity: 0.35, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 640, delay: Math.min(k, 4) * 70, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }));
     count.textContent = id === 'all' ? fmt(cfg.countAll, total) : fmt(cfg.countSome, n);
   };
   tabs.forEach((t, i) => {

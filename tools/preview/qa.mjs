@@ -39,6 +39,12 @@ const probe = `(async () => {
     while (pp && pp !== document.body) { const pc = getComputedStyle(pp); if (pc.overflow !== 'visible' && pc.overflowX !== 'visible') { const pr = pp.getBoundingClientRect(); const pad = parseFloat(c.outlineWidth || 0) + parseFloat(c.outlineOffset || 0);
       if (r.left - pad < pr.left - 0.5 || r.right + pad > pr.right + 0.5 || (r.top - pad < pr.top - 0.5 && pc.overflowY !== 'auto') ) { out.clipped.push(name(e) + ' in ' + name(pp)); } break; } pp = pp.parentElement; }
   }
+  // boxes missing one edge: rounded element with a border on some sides but not all (e.g. a highlight box without its bottom line)
+  out.edges = [];
+  for (const e of document.querySelectorAll('main *')) { const c = getComputedStyle(e); if (!vis(e) || parseFloat(c.borderTopLeftRadius) < 4) continue;
+    const w = ['Top','Right','Bottom','Left'].map((k) => c['border' + k + 'Style'] !== 'none' ? parseFloat(c['border' + k + 'Width']) : 0);
+    if (w.some((x) => x > 0) && w.some((x) => x === 0) && w.filter((x) => x > 0).length >= 2) out.edges.push(name(e)); }
+  out.edges = [...new Set(out.edges)].slice(0, 6);
   // overlapping text blocks (different leaf text elements whose boxes intersect)
   const leaves = [...document.querySelectorAll('main h1, main h2, main h3, main h4, main p, main li, main a, main button, main span, main b, main strong, main small, main time, main label, main dt, main dd')].filter((e) => vis(e) && shown(e) && e.children.length === 0 && e.textContent.trim().length > 1 && parseFloat(getComputedStyle(e).opacity) > 0.05);
   const boxes = leaves.map((e) => [e, e.getBoundingClientRect()]).filter(([, r]) => r.width > 0 && r.height > 0);

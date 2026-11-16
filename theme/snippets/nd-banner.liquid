@@ -6,7 +6,8 @@
 {%- endcomment -%}
 <div class="nd-banner" data-banner{% if s.fx_sheen != false %} data-fx-sheen{% endif %}{% if s.fx_glow != false %} data-fx-glow{% endif %}{% if s.fx_sparks != false %} data-fx-sparks{% endif %}{% if s.fx_grain %} data-fx-grain{% endif %}{% if s.fx_push %} data-fx-push{% endif %}>
   <picture class="nd-banner__img">
-    {%- if s.mobile_image_url != blank -%}<source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">{%- endif -%}
+    {%- if s.mobile_image_url != blank -%}<source media="(max-width: 900px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">
+    {%- elsif s.mobile_image_asset != blank -%}<source media="(max-width: 900px)" srcset="{{ s.mobile_image_asset | asset_url }}">{%- endif -%}
     {%- if s.image != blank or s.image_url != blank -%}
       {% render 'nd-media', image: s.image, url: s.image_url, alt: s.alt, loading: 'eager', sizes: '(max-width: 1280px) 100vw, 1400px' %}
     {%- elsif s.image_asset != blank -%}

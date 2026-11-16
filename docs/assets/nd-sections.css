@@ -705,11 +705,11 @@ img.nd-scaled { object-position: center center !important; }
 :is(.qc3d__dock-item, .qc3d__nav button, .nd-viewer__btn, .nd-versus__tabs button, .plug, .acc label, .gallery__thumbs button, .gallery__nav, .mega a, .nd-card, .mini-card, .faq summary, .plug-drop__btn, .qty button, .nd-colorbar button, .nd-yt, [data-genre], .tone__tab, .steps__nav button):active { scale: .97; }
 
 /* ===== white scheme: photos sit on the page, not in grey boxes; logos stay visible ===== */
-html[data-scheme="light"] :is(.nd-feature__media, .nd-numbered__media, .gallery__main, .nd-capv__card ~ *, .nd-update__media) { background: transparent !important; box-shadow: none !important; }
-html[data-scheme="light"] .nd-feature__media { border-radius: 0; }
-html[data-scheme="light"] :is(.nd-awards__item img, .chapter__awards img) { filter: invert(1) hue-rotate(180deg); }
-html[data-scheme="light"] .nd-capv__card { background: var(--bg-panel); }
-html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) :is(.nd-feature__media, .nd-numbered__media, .gallery__main, .nd-capv__card ~ *, .nd-update__media) { background: transparent !important; box-shadow: none !important; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature__media { border-radius: 0; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) :is(.nd-awards__item img, .chapter__awards img) { filter: invert(1) hue-rotate(180deg); }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-capv__card { background: var(--bg-panel); }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 
 /* ===== colour bar: same type as the header menu, no boxed buttons ===== */
 .nd-colorbar { height: 36px; gap: 22px; font-size: var(--fs-s); font-weight: 500; color: var(--text-3); background: var(--bg); }
@@ -768,10 +768,10 @@ html[data-scheme="light"] .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 }
 .nd-band--card { background: radial-gradient(80% 70% at 50% 0%, rgba(255,255,255,.06), transparent 60%), #0b0c0e; }
 /* white scheme: photo-only sections run edge to edge instead of floating in white */
-html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) { padding: 0 !important; }
-html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__grid { max-width: none; padding: 0; }
-html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__media { max-width: none !important; width: 100%; border-radius: 0; }
-html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__media img, html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__media video { width: 100% !important; max-height: 760px !important; object-fit: cover; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature--media:not(.nd-band--light) { padding: 0 !important; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature--media:not(.nd-band--light) .nd-feature__grid { max-width: none; padding: 0; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature--media:not(.nd-band--light) .nd-feature__media { max-width: none !important; width: 100%; border-radius: 0; }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature--media:not(.nd-band--light) .nd-feature__media img, html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature--media:not(.nd-band--light) .nd-feature__media video { width: 100% !important; max-height: 760px !important; object-fit: cover; }
 
 /* stack: photo on top, text in a left-aligned column (neuraldsp.com "Neural Capture", "Cortex Cloud", "Looks small. Plays big.") */
 .nd-feature--stack .nd-feature__grid { grid-template-columns: 1fr; gap: clamp(28px, 4vw, 48px); }
@@ -924,3 +924,31 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 /* one label says what the blocks are (shown on phones too) */
 .nd-colorbar .nd-colorbar__label { display: inline-block !important; margin-right: 6px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: .04em; color: var(--text-3); }
 .nd-colorbar .nd-colorbar__label { line-height: 30px; height: 30px; align-self: center; }
+
+/* menus: every dropdown has the same height — names stay on one line, items share one fixed height */
+.mega--list { width: min(calc(var(--n, 3) * 224px), 80vw); }
+.mega--list a { height: 136px; align-content: start; }
+.mega--list strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+
+/* 3D viewer: no "different photo first" — the angled placeholder stays hidden while the 3D model loads and fades in.
+   It only shows if 3D can't run (is-fallback) or hasn't loaded after 5 s. */
+.js .nd-viewer__stage:not(.is-fallback):not(.is-ready) .nd-viewer__poster { opacity: 0; animation: nd-poster-late .6s 5s forwards; }
+.js .nd-viewer__stage.is-ready .nd-viewer__poster { opacity: 0; animation: none; }
+@keyframes nd-poster-late { to { opacity: 1; } }
+
+/* no "press shrink" on large click targets (rows, cards, video tiles): the whole block jumping read as a flicker.
+   Small controls (buttons, tabs, pins, arrows) keep a subtle press. */
+:is(.faq summary, .nd-card, .mini-card, .nd-yt, .plug, .acc label, .mega a, .nd-post, .qc3d__dock-item, .plug-drop__btn, .nd-popcards__card):active { scale: none !important; transform: none; }
+:is(.faq summary, .nd-card, .mini-card, .plug, .acc label, .plug-drop__btn):active { background-color: rgba(var(--ink-rgb), .04); }
+
+/* numbered lists (I/O, controls) on every product: the highlight box keeps all four edges in every layout
+   (the full-width layout used to remove the bottom border) and hugs its text instead of stretching to the neighbour's height */
+.nd-numbered .nd-numbered__list > li { border: 1px solid transparent !important; align-self: start; }
+.nd-numbered .nd-numbered__list > li.is-hot { border-color: var(--text-3) !important; }
+.nd-numbered:not(.nd-numbered--stacked) .nd-numbered__list > li:not(.is-hot) { border-bottom-color: var(--line) !important; }
+
+/* feature popups (all products): photos and videos get a consistent, contained size with breathing room — never edge to edge */
+.nd-pop__detail img, .nd-pop__panel img { width: auto !important; max-width: min(100%, 680px) !important; max-height: min(44vh, 420px) !important; object-fit: contain; margin: 12px auto 28px !important; border-radius: 12px; }
+.nd-pop__panel video { width: 100%; max-width: 760px !important; max-height: min(44vh, 430px) !important; margin: 12px auto 28px !important; }
+.nd-pop__body { padding-bottom: 48px; }
+.nd-pop__rows { margin-bottom: 28px; }

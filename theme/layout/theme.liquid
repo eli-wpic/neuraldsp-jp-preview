@@ -1,5 +1,6 @@
+{%- assign campaign_tone = 'dark' -%}{%- if settings.campaign_bg != blank -%}{%- assign cb_lum = settings.campaign_bg | color_brightness -%}{%- if cb_lum > 140 -%}{%- assign campaign_tone = 'light' -%}{%- endif -%}{%- endif -%}
 <!doctype html>
-<html lang="{{ request.locale.iso_code }}" class="no-js" data-scheme="{{ settings.color_scheme | default: 'dark' }}">
+<html lang="{{ request.locale.iso_code }}" class="no-js" data-scheme="{{ settings.color_scheme | default: 'dark' }}" data-ctone="{{ campaign_tone }}">
 <script>document.documentElement.className = document.documentElement.className.replace("no-js", "js");</script>
 <head>
   <meta charset="utf-8">
@@ -40,11 +41,13 @@
         --line: color-mix(in srgb, {{ settings.campaign_text }} 14%, {{ settings.campaign_bg }}); --line-strong: color-mix(in srgb, {{ settings.campaign_text }} 26%, {{ settings.campaign_bg }});
         --accent: {{ settings.campaign_accent }}; --accent-soft: color-mix(in srgb, {{ settings.campaign_accent }} 16%, transparent);
         --paper: {{ settings.campaign_text }}; --on-paper: {{ settings.campaign_bg }};
-        --accent-text: color-mix(in srgb, {{ settings.campaign_accent }} 62%, #fff); --field-line: color-mix(in srgb, {{ settings.campaign_text }} 40%, {{ settings.campaign_bg }});
+        --accent-text: color-mix(in srgb, {{ settings.campaign_accent }} {% if campaign_tone == 'light' %}70%, #000{% else %}62%, #fff{% endif %}); --field-line: color-mix(in srgb, {{ settings.campaign_text }} 40%, {{ settings.campaign_bg }});
         --badge-bg: {{ settings.campaign_text }}; --badge-fg: {{ settings.campaign_bg }}; --sep: {{ settings.campaign_accent }};
         --btn1-bg: {{ settings.campaign_text }}; --btn1-fg: {{ settings.campaign_bg }}; --btn1-hover: color-mix(in srgb, {{ settings.campaign_text }} 88%, {{ settings.campaign_bg }});
         --btn2-bg: color-mix(in srgb, {{ settings.campaign_text }} 18%, {{ settings.campaign_bg }}); --btn2-fg: {{ settings.campaign_text }}; --btn2-hover: color-mix(in srgb, {{ settings.campaign_text }} 26%, {{ settings.campaign_bg }});
-        color-scheme: dark;
+        color-scheme: {{ campaign_tone }};
+        --bg-rgb: {{ settings.campaign_bg | color_extract: 'red' }}, {{ settings.campaign_bg | color_extract: 'green' }}, {{ settings.campaign_bg | color_extract: 'blue' }}; --ink-rgb: {{ settings.campaign_text | color_extract: 'red' }}, {{ settings.campaign_text | color_extract: 'green' }}, {{ settings.campaign_text | color_extract: 'blue' }}; --line-2: color-mix(in srgb, {{ settings.campaign_text }} 18%, transparent);
+        {%- if campaign_tone == 'light' -%}--dk-040405: color-mix(in srgb, {{ settings.campaign_text }} 1%, {{ settings.campaign_bg }}); --dk-050506: color-mix(in srgb, {{ settings.campaign_text }} 1.5%, {{ settings.campaign_bg }}); --dk-070708: color-mix(in srgb, {{ settings.campaign_text }} 2%, {{ settings.campaign_bg }}); --dk-0a0b0c: color-mix(in srgb, {{ settings.campaign_text }} 3%, {{ settings.campaign_bg }}); --dk-0c0d0f: color-mix(in srgb, {{ settings.campaign_text }} 3.5%, {{ settings.campaign_bg }}); --dk-0d0e10: color-mix(in srgb, {{ settings.campaign_text }} 4%, {{ settings.campaign_bg }}); --dk-0e0f11: color-mix(in srgb, {{ settings.campaign_text }} 4.5%, {{ settings.campaign_bg }}); --dk-121316: color-mix(in srgb, {{ settings.campaign_text }} 6%, {{ settings.campaign_bg }}); --dk-141517: color-mix(in srgb, {{ settings.campaign_text }} 6.5%, {{ settings.campaign_bg }}); --dk-15171a: color-mix(in srgb, {{ settings.campaign_text }} 7%, {{ settings.campaign_bg }}); --dk-16181b: color-mix(in srgb, {{ settings.campaign_text }} 7.5%, {{ settings.campaign_bg }}); --dk-1d1e20: color-mix(in srgb, {{ settings.campaign_text }} 9%, {{ settings.campaign_bg }}); --dk-24282d: color-mix(in srgb, {{ settings.campaign_text }} 12%, {{ settings.campaign_bg }}); --dk-303030: color-mix(in srgb, {{ settings.campaign_text }} 18%, {{ settings.campaign_bg }});{%- endif -%}
       }
       html[data-scheme="campaign"] body { background: {{ settings.campaign_bg }}{% if cbg != blank %} url("{{ cbg }}") center top / cover fixed{% endif %}; }
       html[data-scheme="campaign"] { --campaign-glow: color-mix(in srgb, {{ settings.campaign_accent }} {{ settings.campaign_glow | default: 14 }}%, transparent); --strip-bg: {{ settings.campaign_strip_bg | default: '#111111' }}; }

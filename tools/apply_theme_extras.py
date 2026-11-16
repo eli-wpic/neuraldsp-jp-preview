@@ -801,3 +801,15 @@ for blk in (d['sections']['qc3d']['blocks'].get('bf'), d['sections'].get('campai
     if blk: blk['settings']['image_asset'] = 'campaign-banner-bf.png'; blk['settings'].setdefault('alt', 'BLACK FRIDAY Sale 11.20 - 12.03')
 save('index', head, d)
 print('round 23 ok')
+
+# ---- round 24: demo seasonal campaign = 新生活 "Start guitar this spring" (Mar–Apr, Nano), edge-to-edge photo + effects ----
+# (the Black Friday key visual stays in assets as campaign-banner-bf.png; swap image_asset back to use it)
+head, d = load('index')
+bf = d['sections']['qc3d']['blocks'].get('bf')
+if bf:
+    bf['settings'].update(dock_label='新生活', dock_sub='3月〜4月', eyebrow='Neural DSP ／ 春のキャンペーン', title='新生活、\nギターをはじめよう。',
+        image_asset='campaign-demo-spring.jpg', mobile_image_asset='campaign-demo-spring-phone.jpg', banner_bleed=True,
+        button_url='/products/nano-cortex', button_label='Nano Cortex を見る', alt='新生活、ギターをはじめよう。START GUITAR THIS SPRING',
+        fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
+save('index', head, d)
+print('round 24 ok')

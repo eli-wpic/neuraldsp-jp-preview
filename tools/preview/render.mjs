@@ -64,7 +64,13 @@ const linklists = {
 };
 
 /* ---------- engine ---------- */
-const engine = new Liquid({ root: [path.join(THEME, 'snippets')], extname: '.liquid', strictFilters: false, strictVariables: false, jsTruthy: false, globals: { settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip: true, campaign_strip_text: '開催日程は近日公開', campaign_countdown: true, campaign_countdown_label: '終了まで', campaign_end: '2026-12-01', campaign_strip_bg: '#111111', campaign_glow: 14, campaign_grain: true } } }); // settings are global in Shopify, also inside {% render %}
+// preview campaign colours: CAMPAIGN_THEME=spring (default demo) | bf
+const CAMPAIGN_PRESETS = {
+  spring: { campaign_label: '新生活', campaign_bg: '#FBF6F3', campaign_surface: '#FFFFFF', campaign_text: '#1D1A1C', campaign_accent: '#C8466E', campaign_accent_text: '#ffffff', campaign_strip_bg: '#F7E3E9', campaign_strip_text: 'ギターをはじめよう ｜ 3月〜4月', campaign_countdown_label: '終了まで' },
+  bf: { campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip_bg: '#111111', campaign_strip_text: '開催日程は近日公開', campaign_countdown_label: '終了まで' },
+};
+const CP = CAMPAIGN_PRESETS[process.env.CAMPAIGN_THEME || 'spring'];
+const engine = new Liquid({ root: [path.join(THEME, 'snippets')], extname: '.liquid', strictFilters: false, strictVariables: false, jsTruthy: false, globals: { settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: CP.campaign_label, campaign_bg: CP.campaign_bg, campaign_surface: CP.campaign_surface, campaign_text: CP.campaign_text, campaign_accent: CP.campaign_accent, campaign_accent_text: CP.campaign_accent_text, campaign_strip: true, campaign_strip_text: CP.campaign_strip_text, campaign_countdown: true, campaign_countdown_label: CP.campaign_countdown_label, campaign_end: '2026-12-01', campaign_strip_bg: CP.campaign_strip_bg, campaign_glow: 14, campaign_grain: true } } }); // settings are global in Shopify, also inside {% render %}
 const yen = (c) => '¥' + Math.round(Number(c || 0) / 100).toLocaleString('ja-JP');
 const kw = (args) => Object.fromEntries(args.filter(Array.isArray));
 const imgSrc = (o, w) => {
@@ -77,6 +83,8 @@ const imgSrc = (o, w) => {
 engine.registerFilter('asset_url', (n) => '/assets/' + n);
 engine.registerFilter('stylesheet_tag', (u) => `<link rel="stylesheet" href="${u}">`);
 engine.registerFilter('image_url', (o, ...a) => imgSrc(o, kw(a).width));
+engine.registerFilter('color_extract', (c, part) => { const h = String(c || '').replace('#', ''); const i = { red: 0, green: 2, blue: 4 }[part]; return i === undefined || h.length < 6 ? 0 : parseInt(h.slice(i, i + 2), 16); });
+engine.registerFilter('color_brightness', (c) => { const h = String(c || '').replace('#', ''); if (h.length < 6) return 0; const [r, g, b] = [0, 2, 4].map((i) => parseInt(h.slice(i, i + 2), 16)); return (r * 299 + g * 587 + b * 114) / 1000; });
 engine.registerFilter('image_tag', (u, ...a) => { const k = kw(a); return `<img src="${u}" alt="${(k.alt ?? '').toString().replace(/"/g, '&quot;')}" loading="${k.loading || 'lazy'}"${k.class ? ` class="${k.class}"` : ''}${k.width ? ` width="${k.width}"` : ''}${k.height ? ` height="${k.height}"` : ''}>`; });
 engine.registerFilter('money', yen);
 engine.registerFilter('money_without_trailing_zeros', yen);
@@ -168,7 +176,7 @@ async function renderPage(tplName, outFile, extra = {}) {
     request: { host: 'localhost', locale: { iso_code: 'ja' }, page_type: tplName.split('.')[0] },
     cart: { item_count: 0, currency: { iso_code: 'JPY' } },
     localization: { available_countries: [], available_languages: [] },
-    settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip: true, campaign_strip_text: '開催日程は近日公開', campaign_countdown: true, campaign_countdown_label: '終了まで', campaign_end: '2026-12-01', campaign_strip_bg: '#111111', campaign_glow: 14, campaign_grain: true }, linklists, collections, blogs, all_products: products,
+    settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: CP.campaign_label, campaign_bg: CP.campaign_bg, campaign_surface: CP.campaign_surface, campaign_text: CP.campaign_text, campaign_accent: CP.campaign_accent, campaign_accent_text: CP.campaign_accent_text, campaign_strip: true, campaign_strip_text: CP.campaign_strip_text, campaign_countdown: true, campaign_countdown_label: CP.campaign_countdown_label, campaign_end: '2026-12-01', campaign_strip_bg: CP.campaign_strip_bg, campaign_glow: 14, campaign_grain: true }, linklists, collections, blogs, all_products: products,
     template: { name: tplName.split('.')[0], suffix: tplName.split('.')[1] || '' },
     canonical_url: '/', current_page: 1, page_title: extra.title || 'Neural DSP Japan', ...extra,
   };
