@@ -66,7 +66,7 @@ const linklists = {
 /* ---------- engine ---------- */
 // preview campaign colours: CAMPAIGN_THEME=spring (default demo) | bf
 const CAMPAIGN_PRESETS = {
-  spring: { campaign_label: '新生活', campaign_bg: '#FBF6F3', campaign_surface: '#FFFFFF', campaign_text: '#1D1A1C', campaign_accent: '#C8466E', campaign_accent_text: '#ffffff', campaign_strip_bg: '#F7E3E9', campaign_strip_text: 'ギターをはじめよう ｜ 3月〜4月', campaign_countdown_label: '終了まで' },
+  spring: { campaign_label: '新生活', campaign_bg: '#0B0A0B', campaign_surface: '#171416', campaign_text: '#ffffff', campaign_accent: '#E58FA8', campaign_accent_text: '#111111', campaign_strip_bg: '#1C1418', campaign_strip_text: '新しい部屋でも、フルボリュームで ｜ 3月〜4月', campaign_countdown_label: '終了まで' },
   bf: { campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip_bg: '#111111', campaign_strip_text: '開催日程は近日公開', campaign_countdown_label: '終了まで' },
 };
 const CP = CAMPAIGN_PRESETS[process.env.CAMPAIGN_THEME || 'spring'];

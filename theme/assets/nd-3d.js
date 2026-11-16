@@ -251,7 +251,7 @@ export class ND3D {
 
   lights() {
     const key = new THREE.DirectionalLight(0xffffff, 1.7);
-    key.position.set(-4, 7, 4.5);
+    key.position.set(-1.5, 9, 2.5); // nearly overhead: the shadow stays under the device instead of a dark slab beside it on light backgrounds
     key.castShadow = true;
     key.shadow.mapSize.set(2048, 2048);
     Object.assign(key.shadow.camera, { left: -3, right: 3, top: 3, bottom: -3, near: 1, far: 20 });
@@ -259,7 +259,7 @@ export class ND3D {
     const rim = new THREE.DirectionalLight(0xa9c8ff, 1.6); rim.position.set(4, 3, -6);
     const warm = new THREE.DirectionalLight(0xffb98a, 0.55); warm.position.set(6, 1.2, 3);
     this.scene.add(key, rim, warm, new THREE.AmbientLight(0xffffff, 0.08));
-    const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.5 }));
+    const ground = new THREE.Mesh(new THREE.PlaneGeometry(40, 40), new THREE.ShadowMaterial({ opacity: 0.14 }));
     ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; this.scene.add(ground);
   }
 

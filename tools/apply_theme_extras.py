@@ -813,3 +813,13 @@ if bf:
         fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
 save('index', head, d)
 print('round 24 ok')
+
+# ---- round 25: 新生活 demo re-aimed at Neural's real buyer: new apartment, can't play loud -> Nano + headphones (dark, on-brand) ----
+head, d = load('index')
+bf = d['sections']['qc3d']['blocks'].get('bf')
+if bf:
+    bf['settings'].update(eyebrow='Neural DSP ／ 新生活キャンペーン', title='新しい部屋でも、\nフルボリュームで。',
+        alt='新しい部屋でも、フルボリュームで。Nano Cortex とヘッドホンがあれば、夜中でも本気の音で弾ける。',
+        fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
+save('index', head, d)
+print('round 25 ok')
