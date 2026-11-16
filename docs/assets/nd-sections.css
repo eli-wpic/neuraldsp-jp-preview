@@ -921,3 +921,6 @@ html[data-scheme="light"] .nd-feature--media:not(.nd-band--light) .nd-feature__m
 .nd-colorbar button:focus-visible { outline: 2px solid var(--text); outline-offset: -2px; border-radius: 6px; }
 @media (max-width: 560px) { .nd-colorbar { gap: 6px; padding: 0; } .nd-colorbar button { width: 40px; } }
 .nd-colorbar button[data-scheme-set="dark"] i { border-color: rgba(var(--ink-rgb), .45) !important; }
+/* one label says what the blocks are (shown on phones too) */
+.nd-colorbar .nd-colorbar__label { display: inline-block !important; margin-right: 6px; font-size: var(--fs-xs); font-weight: 500; letter-spacing: .04em; color: var(--text-3); }
+.nd-colorbar .nd-colorbar__label { line-height: 30px; height: 30px; align-self: center; }

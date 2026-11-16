@@ -87,6 +87,7 @@
   {%- endif -%}
   {%- if settings.color_bar -%}
     <div class="nd-colorbar" role="group" aria-label="サイトの色">
+      <span class="nd-colorbar__label" aria-hidden="true">カラー</span>
       <button type="button" data-scheme-set="dark" aria-pressed="false" aria-label="ダーク" title="ダーク"><i aria-hidden="true"></i></button>
       <button type="button" data-scheme-set="light" aria-pressed="false" aria-label="ホワイト" title="ホワイト"><i aria-hidden="true"></i></button>
       {%- if campaign_live -%}<button type="button" data-scheme-set="campaign" aria-pressed="false" aria-label="{{ settings.campaign_label | default: 'CAMPAIGN' | escape }}" title="{{ settings.campaign_label | default: 'CAMPAIGN' | escape }}"><i aria-hidden="true"></i></button>{%- endif -%}
