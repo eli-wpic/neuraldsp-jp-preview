@@ -10,7 +10,7 @@
         "show_bundles": false,
         "show_accessories": false,
         "show_trial": false,
-        "photo_assets": "gigcase-photo-10.webp,gigcase-photo-1.webp,gigcase-photo-4.webp,gigcase-photo-6.webp,gigcase-photo-11.webp"
+        "photo_assets": "gigcase-hq-front.webp,gigcase-hq-front45.webp,gigcase-hq-strap.webp,gigcase-hq-open-full.webp"
       },
       "blocks": {},
       "block_order": []
@@ -91,7 +91,7 @@
       "settings": {
         "title": "Gig Case",
         "subtitle": "Neural DSP Quad Cortex 専用\nQuad Cortexをしっかりと保護するために特別に設計されています。精密成形された型で、Quad Cortexをしっかりと固定し、衝撃や天候から守ります。",
-        "asset_image": "gigcase-hero.webp",
+        "asset_image": "gigcase-hq-front45.webp",
         "show_buy": true,
         "buy_label": "購入する",
         "overlay": 0,

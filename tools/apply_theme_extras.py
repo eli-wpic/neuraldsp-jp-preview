@@ -845,3 +845,16 @@ t = t.replace('"label": "Windows installer (file in Content → Files)"', '"labe
 t = re.sub(r'("id": "mac_url", "label": "macOS download link", "info": ")[^"]*"', r'\1Open neuraldsp.com/downloads, right-click Windows / macOS under the plugin → Copy link address, and paste it here. Blank = 準備中."', t)
 p.write_text(t)
 print('round 27 ok')
+
+# ---- round 28: Gig Case = Neural's retail photography (4 clean transparent shots; old low-quality cutouts retired) ----
+head, d = load('product.gig-case')
+d['sections']['main']['settings']['photo_assets'] = 'gigcase-hq-front.webp,gigcase-hq-front45.webp,gigcase-hq-strap.webp,gigcase-hq-open-full.webp'
+for sec in d['sections'].values():
+    st = sec.get('settings', {})
+    if st.get('asset_image') == 'gigcase-hero.webp': st['asset_image'] = 'gigcase-hq-front45.webp'
+save('product.gig-case', head, d)
+p = THEME / 'snippets/nd-product-thumb.liquid'
+p.write_text(p.read_text().replace("assign cut = 'gigcase-hero.webp'", "assign cut = 'gigcase-hq-front45.webp'"))
+for old in ('gigcase-hero.webp', 'gigcase-photo-1.webp', 'gigcase-photo-4.webp', 'gigcase-photo-6.webp', 'gigcase-photo-10.webp', 'gigcase-photo-11.webp'):
+    (THEME / 'assets' / old).unlink(missing_ok=True)
+print('round 28 ok')
