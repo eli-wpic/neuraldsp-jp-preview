@@ -4,8 +4,12 @@
 {%- endcomment -%}
 {%- liquid
   assign s = section.settings
+  assign img_url = s.image_url
+  if s.image_asset != blank
+    assign img_url = s.image_asset | asset_url
+  endif
   assign has_media = false
-  if s.image != blank or s.image_url != blank or s.video_url != blank or s.youtube_id != blank
+  if s.image != blank or img_url != blank or s.video_url != blank or s.youtube_id != blank
     assign has_media = true
   endif
   assign layout = s.layout
@@ -39,10 +43,10 @@
         {%- elsif s.mobile_image_url != blank -%}
           <picture>
             <source media="(max-width: 749px)" srcset="{{ s.mobile_image_url | split: '?' | first }}?width=1000">
-            {% render 'nd-media', image: s.image, url: s.image_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
+            {% render 'nd-media', image: s.image, url: img_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
           </picture>
         {%- else -%}
-          {% render 'nd-media', image: s.image, url: s.image_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
+          {% render 'nd-media', image: s.image, url: img_url, alt: s.image_alt, sizes: '(max-width: 900px) 100vw, 60vw' %}
         {%- endif -%}
         {%- if s.link_url != blank -%}</a>{%- endif -%}
       </div>
@@ -199,6 +203,12 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "image_asset",
+      "label": "Photo from theme assets (optional)",
+      "info": "File name of a transparent photo shipped with the theme, e.g. gigcase-hq-strap.webp. Used instead of the image URL."
     },
     {
       "type": "text",

@@ -16,7 +16,7 @@
     <div class="trial-card__os">
       {%- for os in (1..2) -%}
         {%- if os == 1 -%}{%- assign url = win -%}{%- assign label = 'Windows' -%}{%- else -%}{%- assign url = mac -%}{%- assign label = 'macOS' -%}{%- endif -%}
-        {%- if url != blank -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" download>{{ label }}</a>{%- endif -%}{%- endif -%}
+        {%- if url != blank -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}{%- if url contains '://' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" download>{{ label }}</a>{%- endif -%}{%- endif -%}{%- endif -%}{%- endif -%}
         {%- else -%}<span class="btn btn--primary btn--nochev is-soon" aria-disabled="true">{{ label }} <small>{{ 'trial.soon' | t }}</small></span>{%- endif -%}
       {%- endfor -%}
     </div>

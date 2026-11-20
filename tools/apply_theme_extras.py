@@ -858,3 +858,19 @@ p.write_text(p.read_text().replace("assign cut = 'gigcase-hero.webp'", "assign c
 for old in ('gigcase-hero.webp', 'gigcase-photo-1.webp', 'gigcase-photo-4.webp', 'gigcase-photo-6.webp', 'gigcase-photo-10.webp', 'gigcase-photo-11.webp'):
     (THEME / 'assets' / old).unlink(missing_ok=True)
 print('round 28 ok')
+
+# ---- round 29: feature sections can use a theme-asset photo (transparent); Gig Case white-background photos replaced ----
+p = THEME / 'sections/nd-feature.liquid'
+t = p.read_text()
+if 'image_asset' not in t:
+    t = t.replace("  assign s = section.settings\n  assign has_media = false\n  if s.image != blank or s.image_url != blank",
+        "  assign s = section.settings\n  assign img_url = s.image_url\n  if s.image_asset != blank\n    assign img_url = s.image_asset | asset_url\n  endif\n  assign has_media = false\n  if s.image != blank or img_url != blank", 1)
+    t = t.replace("url: s.image_url, alt: s.image_alt", "url: img_url, alt: s.image_alt")
+    t = t.replace('      "id": "image_url",', '      "id": "image_asset",\n      "label": "Photo from theme assets (optional)",\n      "info": "File name of a transparent photo shipped with the theme, e.g. gigcase-hq-strap.webp. Used instead of the image URL."\n    },\n    {\n      "type": "text",\n      "id": "image_url",', 1)
+    p.write_text(t)
+head, d = load('product.gig-case')
+for k, asset in (('rich_text_phjttt', 'gigcase-hq-open-full.webp'), ('rich_text_pmd6aq', 'gigcase-hq-sleeve.webp'), ('rich_text_7xeexj', 'gigcase-hq-open-empty.webp'), ('rich_text_y6jmfx', 'gigcase-hq-strap.webp'), ('rich_text_qhvrkw', 'gigcase-hq-back.webp'), ('rich_text_tnjdpm', 'gigcase-hq-front45.webp')):
+    if k in d['sections']:
+        st = d['sections'][k]['settings']; st['image_asset'] = asset; st.pop('mobile_image_url', None)
+save('product.gig-case', head, d)
+print('round 29 ok')

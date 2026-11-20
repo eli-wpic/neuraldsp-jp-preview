@@ -33,7 +33,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_3_16f5327a-de9b-48e1-a7f8-fac71c43b828.jpg?v=1742958424",
         "image_alt": "",
         "heading": "耐久性のある保護",
-        "body": "<p>衝撃に耐え、Quad Cortexを損傷や天候から守るように設計されています。</p></p><p>"
+        "body": "<p>衝撃に耐え、Quad Cortexを損傷や天候から守るように設計されています。</p></p><p>",
+        "image_asset": "gigcase-hq-open-full.webp"
       }
     },
     "rich_text_pmd6aq": {
@@ -43,7 +44,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_7.jpg?v=1742958443",
         "image_alt": "",
         "heading": "上部コンパートメント",
-        "body": "<p>ケーブルやタブレット、ギターストラップを収納するのに便利な収納と、伸縮性のあるネオプレンプレートを備えています。Quad Cortexとは硬いプレートで仕切られています。</p><br/>"
+        "body": "<p>ケーブルやタブレット、ギターストラップを収納するのに便利な収納と、伸縮性のあるネオプレンプレートを備えています。Quad Cortexとは硬いプレートで仕切られています。</p><br/>",
+        "image_asset": "gigcase-hq-sleeve.webp"
       }
     },
     "rich_text_7xeexj": {
@@ -53,7 +55,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_5_581f2141-f612-4c02-8d2e-3add285edcc8.jpg?v=1742958460",
         "image_alt": "",
         "heading": "PSU収納",
-        "body": "<p>Quad Cortexの電源ユニット専用の収納です。<br/></p></p><p>"
+        "body": "<p>Quad Cortexの電源ユニット専用の収納です。<br/></p></p><p>",
+        "image_asset": "gigcase-hq-open-empty.webp"
       }
     },
     "rich_text_y6jmfx": {
@@ -63,7 +66,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_15.jpg?v=1742958685",
         "image_alt": "",
         "heading": "持ち運びオプション",
-        "body": "<p>快適なゴム製ハンドルと、丈夫なスチールフック付きの取り外し可能なパッド入りショルダーストラップが付いています。<br/></p></p><p>"
+        "body": "<p>快適なゴム製ハンドルと、丈夫なスチールフック付きの取り外し可能なパッド入りショルダーストラップが付いています。<br/></p></p><p>",
+        "image_asset": "gigcase-hq-strap.webp"
       }
     },
     "rich_text_qhvrkw": {
@@ -73,7 +77,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_16_785ba7e1-48a8-4b46-a3f1-6f9726d36cdc.jpg?v=1742958846",
         "image_alt": "",
         "heading": "コンパクトで軽量",
-        "body": "<p>サイズは406 x 254 x 127 mm、重量はわずか1 kgです。</p></p><p>"
+        "body": "<p>サイズは406 x 254 x 127 mm、重量はわずか1 kgです。</p></p><p>",
+        "image_asset": "gigcase-hq-back.webp"
       }
     },
     "rich_text_tnjdpm": {
@@ -83,7 +88,8 @@
         "image_url": "https://neuraldsp.jp/cdn/shop/files/Quad_Cortex_gigcase_photos_-_8.jpg?v=1742958727",
         "image_alt": "",
         "heading": "洗練されたデザイン",
-        "body": "<p>エレガントなグレーの色合い</p></p><p>"
+        "body": "<p>エレガントなグレーの色合い</p></p><p>",
+        "image_asset": "gigcase-hq-front45.webp"
       }
     },
     "hero": {
