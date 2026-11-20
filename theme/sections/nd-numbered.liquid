@@ -40,6 +40,7 @@
           {%- endif -%}
         </div>
       </div>
+      {%- if section.settings.show_numbers -%}<p class="nd-numbered__swipe" aria-hidden="true">← スワイプで全体を見る →</p>{%- endif -%}
     {%- endcapture -%}
     {%- unless head_below -%}{{ head }}{%- endunless -%}
     {%- if stacked -%}
@@ -84,6 +85,10 @@
       el.addEventListener('focus', () => lit(n, true));
       el.addEventListener('blur', () => lit(n, false));
     });
+    const strip = root.querySelector('.nd-numbered__media');
+    const pan = (n) => { const p = root.querySelector(`.nd-pin[data-n="${n}"]`); if (!p || !strip || strip.scrollWidth <= strip.clientWidth + 2) return;
+      strip.scrollTo({ left: p.offsetLeft - strip.clientWidth / 2, behavior: 'smooth' }); };
+    root.querySelectorAll('li[data-n]').forEach((li) => li.addEventListener('click', () => { pan(li.dataset.n); lit(li.dataset.n, true); setTimeout(() => lit(li.dataset.n, false), 1600); }));
     pins.forEach((p) => p.addEventListener('click', () => {
       const li = root.querySelector(`li[data-n="${p.dataset.n}"]`);
       if (!li) return;

@@ -45,11 +45,11 @@
       },
       {
         "type": "header",
-        "content": "Campaign colours (e.g. Black Friday)"
+        "content": "Seasonal campaign"
       },
       {
         "type": "paragraph",
-        "content": "A third colour scheme for seasonal campaigns. Between the start and end dates it becomes the default, and the colour bar gains a campaign button. Outside the dates it disappears."
+        "content": "To run a campaign: tick the box, set the dates, and pick two colours: Background and Buttons. Text, cards and the top strip adjust by themselves. Upload the campaign graphic in the home page banner."
       },
       {
         "type": "checkbox",
@@ -81,27 +81,39 @@
       },
       {
         "type": "color",
-        "id": "campaign_surface",
-        "label": "Cards and panels",
-        "default": "#141414"
+        "id": "campaign_accent",
+        "label": "Buttons and highlights",
+        "default": "#cb2b1e"
+      },
+      {
+        "type": "text",
+        "id": "campaign_strip_text",
+        "label": "Strip text",
+        "info": "e.g. 11/28（金）〜12/1（月）。The campaign name shows in the accent colour before it."
+      },
+      {
+        "type": "header",
+        "content": "Fine-tuning (optional — leave empty for automatic)"
       },
       {
         "type": "color",
         "id": "campaign_text",
-        "label": "Text",
-        "default": "#ffffff"
-      },
-      {
-        "type": "color",
-        "id": "campaign_accent",
-        "label": "Accent (buttons, highlights)",
-        "default": "#cb2b1e"
+        "label": "Text colour (automatic: white on dark, black on light)"
       },
       {
         "type": "color",
         "id": "campaign_accent_text",
-        "label": "Text on accent",
-        "default": "#ffffff"
+        "label": "Text on buttons (automatic)"
+      },
+      {
+        "type": "color",
+        "id": "campaign_surface",
+        "label": "Cards and panels (automatic)"
+      },
+      {
+        "type": "color",
+        "id": "campaign_strip_bg",
+        "label": "Top strip background (automatic)"
       },
       {
         "type": "image_picker",
@@ -114,20 +126,10 @@
         "label": "Background image URL (optional)"
       },
       {
-        "type": "header",
-        "content": "Campaign strip (top of every page)"
-      },
-      {
         "type": "checkbox",
         "id": "campaign_strip",
         "label": "Show the campaign strip",
         "default": true
-      },
-      {
-        "type": "text",
-        "id": "campaign_strip_text",
-        "label": "Strip text",
-        "info": "e.g. 11/28（金）〜12/1（月）。The campaign name shows in the accent colour before it."
       },
       {
         "type": "url",
@@ -145,16 +147,6 @@
         "id": "campaign_countdown_label",
         "label": "Countdown label",
         "default": "終了まで"
-      },
-      {
-        "type": "color",
-        "id": "campaign_strip_bg",
-        "label": "Strip background",
-        "default": "#111111"
-      },
-      {
-        "type": "header",
-        "content": "Campaign atmosphere"
       },
       {
         "type": "range",

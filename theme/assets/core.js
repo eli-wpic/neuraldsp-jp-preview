@@ -49,7 +49,13 @@ function initHeader() {
   const toggle = document.querySelector('[data-menu-toggle]');
   const mobile = document.getElementById('MobileNav');
   if (toggle && mobile) {
-    const set = (v) => { toggle.setAttribute('aria-expanded', String(v)); mobile.classList.toggle('is-open', v); document.body.style.overflow = v ? 'hidden' : ''; };
+    const set = (v) => {
+      // open just below the header (its height changes with the campaign strip and colour bar), never behind it
+      if (v) { const hb = (toggle.closest('header') || toggle).getBoundingClientRect().bottom; mobile.style.top = Math.max(0, Math.round(hb)) + 'px'; }
+      toggle.setAttribute('aria-expanded', String(v)); mobile.classList.toggle('is-open', v); document.body.style.overflow = v ? 'hidden' : '';
+    };
+    addEventListener('resize', () => { if (mobile.classList.contains('is-open')) set(true); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && mobile.classList.contains('is-open')) { set(false); toggle.focus(); } });
     toggle.addEventListener('click', () => set(toggle.getAttribute('aria-expanded') !== 'true'));
     mobile.addEventListener('click', (e) => { if (e.target.closest('a')) set(false); });
   }
@@ -283,7 +289,28 @@ export function readJSON(el) {
   try { return JSON.parse(el.textContent); } catch { return null; }
 }
 
+/* Phone numbers and email addresses written as plain text in page content become tappable (tel: / mailto:) */
+function initContactLinks() {
+  const re = /(\+81[\s-]?\d{1,4}[\s-]?\d{2,4}[\s-]?\d{3,4}|0\d{1,4}-\d{2,4}-\d{3,4})|([\w.+-]+@[\w-]+(?:\.[\w-]+)+)/g;
+  const one = new RegExp(re.source);
+  document.querySelectorAll('main .nd-prose, main .rte, main .page-content, main article, .site-footer').forEach((root) => {
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, { acceptNode: (n) => (n.parentElement.closest('a, script, style, input, textarea, button') || !one.test(n.nodeValue) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT) });
+    const hits = []; let n; while ((n = walker.nextNode())) hits.push(n);
+    hits.forEach((node) => {
+      const frag = document.createDocumentFragment(); let last = 0; const t = node.nodeValue; re.lastIndex = 0; let m;
+      while ((m = re.exec(t))) {
+        frag.append(t.slice(last, m.index));
+        const a = document.createElement('a');
+        a.href = m[1] ? 'tel:' + m[1].replace(/[^\d+]/g, '') : 'mailto:' + m[2];
+        a.textContent = m[0]; frag.append(a); last = m.index + m[0].length;
+      }
+      frag.append(t.slice(last)); node.replaceWith(frag);
+    });
+  });
+}
+
 initHeader();
+initContactLinks();
 initDialogs();
 initYouTube();
 initVideoLightbox();

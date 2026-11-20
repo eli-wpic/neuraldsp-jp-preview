@@ -798,29 +798,17 @@ print('round 22 ok')
 # ---- round 23: the real Black Friday key visual (KV-5-5.png from the team), used exactly as supplied ----
 head, d = load('index')
 for blk in (d['sections']['qc3d']['blocks'].get('bf'), d['sections'].get('campaign_banner')):
-    if blk: blk['settings']['image_asset'] = 'campaign-banner-bf.png'; blk['settings'].setdefault('alt', 'BLACK FRIDAY Sale 11.20 - 12.03')
+    if blk: blk['settings']['image_asset'] = 'campaign-banner-bf.webp'; blk['settings'].setdefault('alt', 'BLACK FRIDAY Sale 11.20 - 12.03')
 save('index', head, d)
 print('round 23 ok')
 
-# ---- round 24: demo seasonal campaign = 新生活 "Start guitar this spring" (Mar–Apr, Nano), edge-to-edge photo + effects ----
-# (the Black Friday key visual stays in assets as campaign-banner-bf.png; swap image_asset back to use it)
+# ---- round 26: seasonal campaigns = the client's own graphic banner + background/button colours only (demo banners removed) ----
 head, d = load('index')
 bf = d['sections']['qc3d']['blocks'].get('bf')
 if bf:
-    bf['settings'].update(dock_label='新生活', dock_sub='3月〜4月', eyebrow='Neural DSP ／ 春のキャンペーン', title='新生活、\nギターをはじめよう。',
-        image_asset='campaign-demo-spring.jpg', mobile_image_asset='campaign-demo-spring-phone.jpg', banner_bleed=True,
-        button_url='/products/nano-cortex', button_label='Nano Cortex を見る', alt='新生活、ギターをはじめよう。START GUITAR THIS SPRING',
-        fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
+    for k in ('mobile_image_asset', 'banner_bleed'): bf['settings'].pop(k, None)
+    bf['settings'].update(dock_label='BLACK FRIDAY', dock_sub='期間限定', eyebrow='Neural DSP ／ 期間限定キャンペーン', title='BLACK\nFRIDAY',
+        button_label='キャンペーン対象を見る', button_url='/collections/all', image_asset='campaign-banner-bf.webp',
+        fx_sheen=True, fx_glow=True, fx_sparks=True, fx_grain=False, fx_push=False, alt='BLACK FRIDAY Sale 11.20 - 12.03')
 save('index', head, d)
-print('round 24 ok')
-
-# ---- round 25: 新生活 demo re-aimed at Neural's real buyer: new apartment, can't play loud -> Nano + headphones (dark, on-brand) ----
-head, d = load('index')
-bf = d['sections']['qc3d']['blocks'].get('bf')
-if bf:
-    bf['settings'].update(eyebrow='Neural DSP ／ 新生活キャンペーン', title='新しい部屋でも、\nフルボリュームで。',
-        alt='新しい部屋でも、フルボリュームで。Nano Cortex とヘッドホンがあれば、夜中でも本気の音で弾ける。',
-        image_asset='campaign-demo-newroom.jpg', mobile_image_asset='campaign-demo-newroom-phone.jpg',
-        fx_sheen=True, fx_glow=False, fx_sparks=True, fx_grain=False, fx_push=True)
-save('index', head, d)
-print('round 25 ok')
+print('round 26 ok')

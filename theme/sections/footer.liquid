@@ -70,7 +70,7 @@
       <ul class="payment-icons" aria-label="{{ 'general.payment_methods' | t }}">
         {%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag }}</li>{%- endfor -%}
       </ul>
-      <span class="site-footer__copy">{{ section.settings.copyright }}</span>
+      {%- assign year_now = 'now' | date: '%Y' -%}<span class="site-footer__copy">{{ section.settings.copyright | replace: '{year}', year_now }}</span>
     </div>
     {%- if section.settings.legal != blank -%}<p class="site-footer__legal">{{ section.settings.legal }}</p>{%- endif -%}
   </div>
@@ -86,7 +86,7 @@
     { "type": "text", "id": "x_url", "label": "X URL" },
     { "type": "text", "id": "youtube_url", "label": "YouTube URL" },
     { "type": "text", "id": "line_url", "label": "LINE URL" },
-    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© 2026 Neural DSP 日本公式オンラインストア, All rights reserved." },
+    { "type": "text", "id": "copyright", "label": "Copyright", "default": "© {year} Neural DSP 日本公式オンラインストア, All rights reserved.", "info": "{year} becomes the current year automatically." },
     { "type": "textarea", "id": "legal", "label": "Trademark line", "default": "Neural DSP®, Neural Capture®, Capture®, Quad Cortex®, Archetype®, Algorithmically Perfect®, and Nameless® are registered trademarks of Neural DSP Technologies Oy." }
   ],
   "blocks": [

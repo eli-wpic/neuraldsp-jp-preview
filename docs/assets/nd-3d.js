@@ -400,20 +400,20 @@ export class ND3D {
     new ResizeObserver(() => this.resize()).observe(this.el);
     new IntersectionObserver(([e]) => { this.visible = e.isIntersecting; if (this.visible) this.loop(); }).observe(this.el);
     this.canvas.addEventListener('webglcontextlost', (e) => { e.preventDefault(); this.el.classList.add('is-fallback'); });
-    let sx = 0, sy = 0, lx = 0, ly = 0, lt = 0, mode = null, id = null;
+    let sx = 0, sy = 0, lx = 0, ly = 0, lt = 0, mode = null, id = null, free = false;
     const el = this.el;
-    el.addEventListener('pointerdown', (e) => { if (e.button !== 0 || e.target.closest('a,button')) return; sx = lx = e.clientX; sy = e.clientY; lt = performance.now(); mode = 'pending'; id = e.pointerId; });
+    el.addEventListener('pointerdown', (e) => { if (e.button !== 0 || e.target.closest('a,button')) return; sx = lx = e.clientX; sy = e.clientY; lt = performance.now(); mode = 'pending'; id = e.pointerId;
+      free = this.mode === 'viewer' || e.pointerType === 'mouse'; }); // a mouse turns freely everywhere (the wheel scrolls the page); touch keeps vertical swipes for scrolling
     el.addEventListener('pointermove', (e) => {
       if (e.pointerId !== id || !mode) return;
       const dx = e.clientX - sx, dy = e.clientY - sy;
       if (mode === 'pending') {
-        const free = this.mode === 'viewer'; // product pages turn freely; the homepage keeps vertical drags for page scrolling
         if ((Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy) * 1.2) || (free && Math.abs(dy) > 6)) { mode = 'drag'; this.dragging = true; el.setPointerCapture(id); el.classList.add('is-dragging'); this.onFirstDrag?.(); ly = e.clientY; }
         else if (Math.abs(dy) > 10) { mode = null; return; } else return;
       }
-      const now = performance.now(), step = (e.clientX - lx) * 0.008;
+      const now = performance.now(), step = (e.clientX - lx) * 0.01;
       this.spin += step; this.spinVel = (step / Math.max(1, now - lt)) * 16; lx = e.clientX; lt = now;
-      if (this.mode === 'viewer') { this.tiltTo = Math.max(-0.9, Math.min(0.75, this.tiltTo + (e.clientY - ly) * -0.006)); ly = e.clientY; }
+      if (free) { this.tiltTo = Math.max(-0.9, Math.min(0.75, this.tiltTo + (e.clientY - ly) * -0.007)); ly = e.clientY; } // the model has no underside, so tilt stops at eye level (phi clamp in frame)
     });
     const end = (e) => { if (e.pointerId !== id) return; mode = null; id = null; this.dragging = false; el.classList.remove('is-dragging'); };
     el.addEventListener('pointerup', end); el.addEventListener('pointercancel', end);
@@ -443,7 +443,7 @@ export class ND3D {
       this.frame(this.shown);
       if (!this.dragging) {
         this.spin += this.spinVel; this.spinVel *= reduced ? 0 : 0.92;
-        if (Math.abs(this.progress - this.shown) > 0.01 && Math.abs(this.spinVel) < 0.001) this.spin *= 0.9;
+        if (Math.abs(this.progress - this.shown) > 0.01 && Math.abs(this.spinVel) < 0.001) { this.spin *= 0.9; if (this.mode === 'scroll') this.tiltTo *= 0.9; }
       }
       if (this.model) this.model.rotation.y = this.spin;
       this.tilt += (this.tiltTo - this.tilt) * (reduced ? 1 : Math.min(1, dt * 8));

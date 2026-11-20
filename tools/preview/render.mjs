@@ -64,12 +64,12 @@ const linklists = {
 };
 
 /* ---------- engine ---------- */
-// preview campaign colours: CAMPAIGN_THEME=spring (default demo) | bf
+// preview campaign colours: CAMPAIGN_THEME=bf (default) | spring (colour-only example)
 const CAMPAIGN_PRESETS = {
-  spring: { campaign_label: '新生活', campaign_bg: '#0B0A0B', campaign_surface: '#171416', campaign_text: '#ffffff', campaign_accent: '#E58FA8', campaign_accent_text: '#111111', campaign_strip_bg: '#1C1418', campaign_strip_text: '新しい部屋でも、フルボリュームで ｜ 3月〜4月', campaign_countdown_label: '終了まで' },
-  bf: { campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_surface: '#141414', campaign_text: '#ffffff', campaign_accent: '#cb2b1e', campaign_accent_text: '#ffffff', campaign_strip_bg: '#111111', campaign_strip_text: '開催日程は近日公開', campaign_countdown_label: '終了まで' },
+  spring: { campaign_label: '新生活', campaign_bg: '#1A0F15', campaign_accent: '#E58FA8', campaign_strip_text: '新生活キャンペーン ｜ 3月〜4月', campaign_countdown_label: '終了まで' },
+  bf: { campaign_label: 'BLACK FRIDAY', campaign_bg: '#050505', campaign_accent: '#cb2b1e', campaign_strip_text: '開催日程は近日公開', campaign_countdown_label: '終了まで' },
 };
-const CP = CAMPAIGN_PRESETS[process.env.CAMPAIGN_THEME || 'spring'];
+const CP = CAMPAIGN_PRESETS[process.env.CAMPAIGN_THEME || 'bf'];
 const engine = new Liquid({ root: [path.join(THEME, 'snippets')], extname: '.liquid', strictFilters: false, strictVariables: false, jsTruthy: false, globals: { settings: { video_files: process.env.VIDEO_FILES || '', color_scheme: 'dark', color_bar: true, campaign_on: !!process.env.CAMPAIGN, campaign_label: CP.campaign_label, campaign_bg: CP.campaign_bg, campaign_surface: CP.campaign_surface, campaign_text: CP.campaign_text, campaign_accent: CP.campaign_accent, campaign_accent_text: CP.campaign_accent_text, campaign_strip: true, campaign_strip_text: CP.campaign_strip_text, campaign_countdown: true, campaign_countdown_label: CP.campaign_countdown_label, campaign_end: '2026-12-01', campaign_strip_bg: CP.campaign_strip_bg, campaign_glow: 14, campaign_grain: true } } }); // settings are global in Shopify, also inside {% render %}
 const yen = (c) => '¥' + Math.round(Number(c || 0) / 100).toLocaleString('ja-JP');
 const kw = (args) => Object.fromEntries(args.filter(Array.isArray));
@@ -81,6 +81,7 @@ const imgSrc = (o, w) => {
   return s + (s.includes('?') ? '&' : '?') + 'width=' + (w || 1200);
 };
 engine.registerFilter('asset_url', (n) => '/assets/' + n);
+engine.registerFilter('file_url', (n) => 'https://neuraldsp.jp/cdn/shop/files/' + n);
 engine.registerFilter('stylesheet_tag', (u) => `<link rel="stylesheet" href="${u}">`);
 engine.registerFilter('image_url', (o, ...a) => imgSrc(o, kw(a).width));
 engine.registerFilter('color_extract', (c, part) => { const h = String(c || '').replace('#', ''); const i = { red: 0, green: 2, blue: 4 }[part]; return i === undefined || h.length < 6 ? 0 : parseInt(h.slice(i, i + 2), 16); });

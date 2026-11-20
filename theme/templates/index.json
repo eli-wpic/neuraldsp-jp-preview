@@ -92,24 +92,22 @@
           "settings": {
             "enabled": false,
             "follow_site": true,
-            "dock_label": "新生活",
-            "dock_sub": "3月〜4月",
+            "dock_label": "BLACK FRIDAY",
+            "dock_sub": "期間限定",
             "model": "none",
-            "eyebrow": "Neural DSP ／ 新生活キャンペーン",
-            "title": "新しい部屋でも、\nフルボリュームで。",
+            "eyebrow": "Neural DSP ／ 期間限定キャンペーン",
+            "title": "BLACK\nFRIDAY",
             "lead": "",
-            "button_label": "Nano Cortex を見る",
-            "button_url": "/products/nano-cortex",
+            "button_label": "キャンペーン対象を見る",
+            "button_url": "/collections/all",
             "banner": true,
-            "image_asset": "campaign-demo-newroom.jpg",
+            "image_asset": "campaign-banner-bf.webp",
             "fx_sheen": true,
-            "fx_glow": false,
+            "fx_glow": true,
             "fx_sparks": true,
             "fx_grain": false,
-            "fx_push": true,
-            "alt": "新しい部屋でも、フルボリュームで。Nano Cortex とヘッドホンがあれば、夜中でも本気の音で弾ける。",
-            "mobile_image_asset": "campaign-demo-newroom-phone.jpg",
-            "banner_bleed": true
+            "fx_push": false,
+            "alt": "BLACK FRIDAY Sale 11.20 - 12.03"
           }
         }
       },
@@ -428,7 +426,7 @@
         "full_width": false,
         "alt": "BLACK FRIDAY Sale",
         "url": "/collections/all",
-        "image_asset": "campaign-banner-bf.png"
+        "image_asset": "campaign-banner-bf.webp"
       },
       "disabled": true
     }
