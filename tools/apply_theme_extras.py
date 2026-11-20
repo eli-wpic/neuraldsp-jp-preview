@@ -812,3 +812,36 @@ if bf:
         fx_sheen=True, fx_glow=True, fx_sparks=True, fx_grain=False, fx_push=False, alt='BLACK FRIDAY Sale 11.20 - 12.03')
 save('index', head, d)
 print('round 26 ok')
+
+# ---- round 27: 14-day trial downloads = Neural's own download pages (neuraldsp.com/downloads → right-click Windows/macOS → Copy link address) ----
+import urllib.parse as _up
+TRIAL_VER = {'archetype-plini': '1.0.2', 'archetype-gojira': '1.0.2', 'archetype-cory-wong': '1.0.1', 'archetype-john-mayer': '1.1.0',
+    'archetype-misha-mansoor': '1.1.0', 'archetype-tim-henson': '1.1.0', 'archetype-rabea': '1.1.0', 'archetype-petrucci': '1.0.0',
+    'archetype-nolly': '1.0.2', 'soldano-slo-100': '1.0.0', 'fortin-nameless-suite': '1.0.1', 'parallax': '1.0.0'}
+def _trial(slug, ver, plat):
+    return 'https://neuraldsp.com/download-confirmation/' + slug + '?' + _up.urlencode({'version': ver + ' (X)', 'platform': plat}, quote_via=_up.quote)
+for tpl in ('index', 'page.quadcortex-plugin-bundle', 'page.quadcortex-mini-plugin-bundle'):
+    head, d = load(tpl)
+    n = 0
+    for sec in d['sections'].values():
+        if sec.get('type') != 'nd-plugin-discovery': continue
+        for b in sec.get('blocks', {}).values():
+            st = b.setdefault('settings', {})
+            slug = (st.get('plugin_url') or '').rstrip('/').split('/')[-1]
+            if slug in TRIAL_VER:
+                v = TRIAL_VER[slug]
+                st['win_url'] = _trial(slug, v, 'pc'); st['mac_url'] = _trial(slug, v, 'macOS'); st['version'] = 'バージョン ' + v + ' (X)'; n += 1
+    save(tpl, head, d)
+    print('round 27', tpl, n)
+p = THEME / 'snippets/nd-trial-panel.liquid'
+t = p.read_text()
+old = '<a class="btn btn--primary btn--nochev" href="{{ url }}" download>{{ label }}</a>'
+if old in t:
+    t = t.replace(old, '{%- if url contains \'://\' -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" target="_blank" rel="noopener">{{ label }}</a>{%- else -%}<a class="btn btn--primary btn--nochev" href="{{ url }}" download>{{ label }}</a>{%- endif -%}')
+    p.write_text(t)
+p = THEME / 'sections/nd-plugin-discovery.liquid'
+t = p.read_text()
+t = t.replace('"label": "Windows installer (file in Content → Files)"', '"label": "Windows download link"').replace('"label": "macOS installer (file in Content → Files)"', '"label": "macOS download link"')
+t = re.sub(r'("id": "mac_url", "label": "macOS download link", "info": ")[^"]*"', r'\1Open neuraldsp.com/downloads, right-click Windows / macOS under the plugin → Copy link address, and paste it here. Blank = 準備中."', t)
+p.write_text(t)
+print('round 27 ok')

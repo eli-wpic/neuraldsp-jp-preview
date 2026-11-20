@@ -188,7 +188,10 @@
             "tones": "progressive,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/plinix-product-card.png",
             "youtube_id": "iiU1MQy-sUU",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-plini"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-plini",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-plini?version=1.0.2%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-plini?version=1.0.2%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.2 (X)"
           }
         },
         "plugin_1": {
@@ -202,7 +205,10 @@
             "tones": "acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/a-gojira-x-product-card_cfb2c9e8-e68e-493b-b7ff-4ab47441172f.png",
             "youtube_id": "MhnkGMBn1tw",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-gojira"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-gojira",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-gojira?version=1.0.2%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-gojira?version=1.0.2%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.2 (X)"
           }
         },
         "plugin_2": {
@@ -216,7 +222,10 @@
             "tones": "versatile,oldschool",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/cwx-product-card.png",
             "youtube_id": "Zy9uFDh9I6o",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-cory-wong"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-cory-wong",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-cory-wong?version=1.0.1%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-cory-wong?version=1.0.1%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.1 (X)"
           }
         },
         "plugin_3": {
@@ -229,7 +238,10 @@
             "tones": "oldschool,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-john-mayer-x-product-card_3cfebe92-ef46-421f-a63d-ad279b159d9e.png?width=800",
             "youtube_id": "qXxagV9Smcw",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-john-mayer"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-john-mayer",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-john-mayer?version=1.1.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-john-mayer?version=1.1.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.1.0 (X)"
           }
         },
         "plugin_4": {
@@ -242,7 +254,10 @@
             "tones": "progressive,acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-misha-mansoor-x-product-card.png?width=800",
             "youtube_id": "ZyMbzakf2G8",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-misha-mansoor"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-misha-mansoor",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-misha-mansoor?version=1.1.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-misha-mansoor?version=1.1.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.1.0 (X)"
           }
         },
         "plugin_5": {
@@ -255,7 +270,10 @@
             "tones": "progressive,acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-tim-henson-x-product-card.png?width=800",
             "youtube_id": "Mz1uL3K75pY",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-tim-henson"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-tim-henson",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-tim-henson?version=1.1.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-tim-henson?version=1.1.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.1.0 (X)"
           }
         },
         "plugin_6": {
@@ -268,7 +286,10 @@
             "tones": "acg,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-rabea-x-product-card.png?width=800",
             "youtube_id": "ZS5Swq-FPy8",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-rabea"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-rabea",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-rabea?version=1.1.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-rabea?version=1.1.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.1.0 (X)"
           }
         },
         "plugin_7": {
@@ -281,7 +302,10 @@
             "tones": "progressive,versatile",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/archetype-petrucci-x-product-card.png?width=800",
             "youtube_id": "XD5mratZFWE",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-petrucci"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-petrucci",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-petrucci?version=1.0.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-petrucci?version=1.0.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.0 (X)"
           }
         },
         "plugin_8": {
@@ -294,7 +318,10 @@
             "tones": "progressive",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nolly-x-product-card.png?width=800",
             "youtube_id": "bpod5JnymrA",
-            "plugin_url": "https://neuraldsp.com/plugins/archetype-nolly"
+            "plugin_url": "https://neuraldsp.com/plugins/archetype-nolly",
+            "win_url": "https://neuraldsp.com/download-confirmation/archetype-nolly?version=1.0.2%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/archetype-nolly?version=1.0.2%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.2 (X)"
           }
         },
         "plugin_9": {
@@ -307,7 +334,10 @@
             "tones": "oldschool",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/soldano-slo-100-x-product-card.png?width=800",
             "youtube_id": "hNEJM997cYM",
-            "plugin_url": "https://neuraldsp.com/plugins/soldano-slo-100"
+            "plugin_url": "https://neuraldsp.com/plugins/soldano-slo-100",
+            "win_url": "https://neuraldsp.com/download-confirmation/soldano-slo-100?version=1.0.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/soldano-slo-100?version=1.0.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.0 (X)"
           }
         },
         "plugin_10": {
@@ -320,7 +350,10 @@
             "tones": "acg",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/nameless-x-product-card_3.png?width=800",
             "youtube_id": "rE7e61rS9pE",
-            "plugin_url": "https://neuraldsp.com/plugins/fortin-nameless-suite"
+            "plugin_url": "https://neuraldsp.com/plugins/fortin-nameless-suite",
+            "win_url": "https://neuraldsp.com/download-confirmation/fortin-nameless-suite?version=1.0.1%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/fortin-nameless-suite?version=1.0.1%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.1 (X)"
           }
         },
         "plugin_11": {
@@ -333,7 +366,10 @@
             "tones": "bass",
             "image_url": "https://cdn.shopify.com/s/files/1/0503/9089/2702/files/parallax-x-product-card.png?width=800",
             "youtube_id": "VHpBHTmskDo",
-            "plugin_url": "https://neuraldsp.com/plugins/parallax"
+            "plugin_url": "https://neuraldsp.com/plugins/parallax",
+            "win_url": "https://neuraldsp.com/download-confirmation/parallax?version=1.0.0%20%28X%29&platform=pc",
+            "mac_url": "https://neuraldsp.com/download-confirmation/parallax?version=1.0.0%20%28X%29&platform=macOS",
+            "version": "バージョン 1.0.0 (X)"
           }
         }
       },
