@@ -707,7 +707,7 @@ img.nd-scaled { object-position: center center !important; }
 /* ===== white scheme: photos sit on the page, not in grey boxes; logos stay visible ===== */
 html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) :is(.nd-feature__media, .nd-numbered__media, .gallery__main, .nd-capv__card ~ *, .nd-update__media) { background: transparent !important; box-shadow: none !important; }
 html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-feature__media { border-radius: 0; }
-html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) :is(.nd-awards__item img, .chapter__awards img) { filter: invert(1) hue-rotate(180deg); }
+html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) :is(.nd-awards__item img, .chapter__awards img):not(:is(.nd-band--dark, .nd-hero, .is-dark-photo) img) { filter: invert(1) hue-rotate(180deg); }
 html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-capv__card { background: var(--bg-panel); }
 html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd-capv__lines { stroke: rgba(17, 18, 20, .1); }
 
@@ -927,7 +927,8 @@ html:is([data-scheme="light"], [data-scheme="campaign"][data-ctone="light"]) .nd
 
 /* menus: every dropdown has the same height — names stay on one line, items share one fixed height */
 .mega--list { width: min(calc(var(--n, 3) * 224px), 80vw); }
-.mega--list a { height: 136px; align-content: start; }
+.mega--list a { min-height: 136px; align-content: start; }
+.mega--list strong { line-height: 1.6; padding-block: 1px; }
 .mega--list strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
 
 /* 3D viewer: no "different photo first" — the angled placeholder stays hidden while the 3D model loads and fades in.
