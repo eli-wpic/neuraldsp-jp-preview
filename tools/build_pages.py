@@ -23,5 +23,10 @@ for f in list(out.rglob('*.html')):
     d = f.with_suffix('')
     if d.is_dir():
         shutil.copy(f, d / 'index.html')
+# retired asset names: old cached pages (browser / Pastel) still ask for them, so serve the replacement under the old name
+LEGACY = {'gigcase-hero.webp': 'gigcase-hq-front45.webp', 'gigcase-photo-10.webp': 'gigcase-hq-strap.webp', 'gigcase-photo-1.webp': 'gigcase-hq-front.webp',
+    'gigcase-photo-4.webp': 'gigcase-hq-open-full.webp', 'gigcase-photo-6.webp': 'gigcase-hq-open-full.webp', 'gigcase-photo-11.webp': 'gigcase-hq-strap.webp'}
+for old, new in LEGACY.items():
+    if (out / 'assets' / new).is_file() and not (out / 'assets' / old).exists(): shutil.copy(out / 'assets' / new, out / 'assets' / old)
 (out / '.nojekyll').write_text('')
 print('pages built:', sum(1 for _ in out.rglob('*.html')))
